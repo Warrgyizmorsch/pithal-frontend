@@ -88,27 +88,57 @@ export const industries = [
 ];
 
 export const projects = [
-  { location: "Rajasthan, India", plant: "250 TPH Crushing Plant", capacity: "250 TPH", result: "Granite aggregate production" },
-  { location: "Gujarat, India", plant: "M-Sand Processing Line", capacity: "200 TPH", result: "Consistent output grading" },
-  { location: "Oman", plant: "Hard Rock Crushing Plant", capacity: "500 TPH", result: "Export-quality aggregates" },
-  { location: "Kenya", plant: "Infrastructure Plant", capacity: "180 TPH", result: "Road base delivery" },
-  { location: "UAE", plant: "Mobile Screening Plant", capacity: "400 TPH", result: "Rapid commissioning" },
-  { location: "Maharashtra, India", plant: "Turnkey Quarry Plant", capacity: "300 TPH", result: "Reduced operating cost" },
+  {
+    location: "Rajasthan, India",
+    plant: "250 TPH Crushing Plant",
+    capacity: "250 TPH",
+    image: "/images/projects/rajasthan.jpg",
+  },
+  {
+    location: "Madhya Pradesh, India",
+    plant: "350 TPH Crushing Plant",
+    capacity: "350 TPH",
+    image: "/images/projects/madhya-pradesh.jpg",
+  },
+  {
+    location: "Karnataka, India",
+    plant: "500 TPH Crushing Plant",
+    capacity: "500 TPH",
+    image: "/images/projects/karnataka.jpg",
+  },
+  {
+    location: "Oman",
+    plant: "600 TPH Crushing Plant",
+    capacity: "600 TPH",
+    image: "/images/projects/oman.jpg",
+  },
+  {
+    location: "South Africa",
+    plant: "400 TPH Crushing Plant",
+    capacity: "400 TPH",
+    image: "/images/projects/south-africa.jpg",
+  },
+  {
+    location: "Indonesia",
+    plant: "300 TPH Crushing Plant",
+    capacity: "300 TPH",
+    image: "/images/projects/indonesia.jpg",
+  },
 ];
 
 export const processSteps = [
-  { number: "01", title: "Raw Material", text: "Large raw aggregate enters the circuit.", image: "/images/process/raw.svg" },
-  { number: "02", title: "Vibrating Feeder", text: "Controlled feeding for primary crushing.", image: "/images/products/feeders.svg" },
-  { number: "03", title: "Jaw Crusher", text: "Primary crushing delivers uniform feed.", image: "/images/products/crushers.svg" },
-  { number: "04", title: "Cone Crusher", text: "Secondary reduction achieves precise size.", image: "/images/process/cone.svg" },
-  { number: "05", title: "Vibrating Screen", text: "Accurate separation by required grade.", image: "/images/products/screens.svg" },
-  { number: "06", title: "Final Output", text: "Market-ready graded aggregate output.", image: "/images/process/output.svg" },
+  { number: "01", title: "Raw Material", text: "Large size material is fed into the plant", image: "/images/process/raw.png" },
+  { number: "02", title: "Vibrating Feeder", text: "Uniform feeding to primary crusher", image: "/images/process/feeder.png" },
+  { number: "03", title: "Jaw Crusher", text: "Primary crushing with high reduction efficiency", image: "/images/process/jaw-crusher.png" },
+  { number: "04", title: "Cone Crusher", text: "Secondary crushing for greater reduction and shape", image: "/images/process/cone.png" },
+  { number: "05", title: "Vibrating Screen", text: "Accurate screening for required final sizes.", image: "/images/process/screen1.png" },
+  { number: "06", title: "Final Output", text: "High quality, uniform product delivered.", image: "/images/process/output.png" },
 ];
 
 export const footerColumns = [
-  { title: "Products", links: ["Jaw Crushers", "Cone Crushers", "Impact Crushers", "Vibrating Screens", "Mobile Plants"] },
-  { title: "Solutions", links: ["Aggregate Production", "Mining & Quarrying", "Construction", "Turnkey Projects"] },
-  { title: "Quick Links", links: ["About Us", "Our Process", "Projects", "Blog", "Contact Us"] },
-  { title: "Downloads", links: ["Product Brochure", "Technical Catalogue", "Case Studies", "Quality Policy"] },
-  { title: "Certifications", links: ["ISO 9001:2015", "ISO 14001:2015", "CE Compliance", "Quality Assurance"] },
+  { title: "Products", links: ["Jaw Crushers", "Cone Crushers", "Impact Crushers", "Vibrating Feeders", "Vibrating Screens", "Mobile Crushing Plants", "Spare Parts", "Wear Parts"] },
+  { title: "Solutions", links: ["Aggregate Production", "Mining & Quarrying", "Construction & Demolition", "Sand & Gravel", "Metallurgy", "Recycling Solutions", "Custom Solutions", "Turnkey Projects"] },
+  { title: "Quick Links", links: ["About Us", "Our Process", "Projects", "Blog", "Careers", "News & Events", "Sustainability", "Contact Us"] },
+  { title: "Downloads", links: ["Product Brochures", "Technical Catalogues", "User Manuals", "Case Studies", "Product Videos", "Installation Guides"] },
+  { title: "Certifications", links: ["ISO 9001:2015", "CE Certified", "ISO 14001:2015", "ISO 45001:2018"] },
 ];

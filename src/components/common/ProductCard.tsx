@@ -22,7 +22,7 @@ export function ProductCard({
       <div className="relative mb-6 h-48 overflow-hidden bg-bg-light rounded">
         <Image alt={title} className="object-cover" fill sizes="(max-width: 768px) 100vw, 25vw" src={image} />
       </div>
-      <div className="flex gap-4 flex-grow bg-linear-to-t from-primary-dark to-primary/90 p-4 rounded text-white">
+      <div className="flex gap-4 flex-grow bg-white  p-4 rounded text-white">
         <div className="flex-shrink-0">
           {icon}
         </div>

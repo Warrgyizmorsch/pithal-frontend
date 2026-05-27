@@ -1,58 +1,214 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ChevronRight, Globe, Mail, MapPin, Phone } from "lucide-react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
+import { ScrollToTopButton } from "@/components/layout/ScrollToTopButton";
 import { footerColumns } from "@/data/homeData";
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 const socialLinks = [
-  { label: "LinkedIn", icon: FaLinkedinIn },
-  { label: "Facebook", icon: FaFacebookF },
-  { label: "Instagram", icon: FaInstagram },
-  { label: "YouTube", icon: FaYoutube },
+  { label: "LinkedIn", icon: FaLinkedinIn, href: "#" },
+  { label: "Facebook", icon: FaFacebookF, href: "#" },
+  { label: "YouTube", icon: FaYoutube, href: "#" },
+  { label: "Instagram", icon: FaInstagram, href: "#" },
+  { label: "WhatsApp", icon: FaWhatsapp, href: "#" },
 ];
 
-export function Footer() {
+const certifications = [
+  { code: "ISO 9001:2015", label: "Quality Management", icon: "/images/certifications/iso-seal.svg" },
+  { code: "CE Certified", label: "European Conformity", icon: "/images/certifications/ce-seal.svg" },
+  { code: "ISO 14001:2015", label: "Environmental Management", icon: "/images/certifications/iso-seal.svg" },
+  { code: "ISO 45001:2018", label: "Occupational Health & Safety", icon: "/images/certifications/iso-seal.svg" },
+];
+
+function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <footer className="bg-primary-dark text-white" id="global">
-      <Container className="grid gap-10 border-b border-white/12 py-14 lg:grid-cols-[1.5fr_repeat(5,1fr)]">
-        <div id="brochure">
-          <p className="headline text-3xl text-secondary">PM <span className="text-white">Pithal</span></p>
-          <p className="mt-4 max-w-xs text-sm leading-7 text-white/65">
-            Engineering world-class crushing, screening and material handling solutions for mining and infrastructure.
-          </p>
-          <address className="mt-6 space-y-2 not-italic text-xs text-white/70">
-            <span className="flex items-start gap-2"><MapPin aria-hidden className="mt-0.5 shrink-0 text-secondary" size={14} /> Rajsamand, Rajasthan - 313324, India</span>
-            <span className="flex items-center gap-2"><Phone aria-hidden className="shrink-0 text-secondary" size={14} /> +91 98875 37129</span>
-            <span className="flex items-center gap-2"><Mail aria-hidden className="shrink-0 text-secondary" size={14} /> info@pithalmachines.com</span>
-          </address>
-        </div>
-        {footerColumns.map((column) => (
-          <div key={column.title}>
-            <h3 className="text-[11px] font-bold uppercase tracking-[0.18em] text-secondary">{column.title}</h3>
-            <ul className="mt-5 space-y-3 text-xs text-white/65">
-              {column.links.map((link) => (
-                <li key={link}><a className="hover:text-white" href="#">{link}</a></li>
-              ))}
-            </ul>
+    <div className="mb-6">
+      <h3 className="text-[1.05rem] font-bold uppercase text-primary">{children}</h3>
+      <span aria-hidden className="mt-4 block h-[3px] w-9 bg-secondary" />
+    </div>
+  );
+}
+
+function FooterLink({ children }: { children: React.ReactNode }) {
+  return (
+    <li>
+      <Link
+        className="group flex items-center gap-3 text-[0.95rem] text-text-dark transition-colors hover:text-secondary"
+        href="#"
+      >
+        <ChevronRight
+          aria-hidden
+          className="shrink-0 text-secondary transition-transform group-hover:translate-x-0.5"
+          size={15}
+          strokeWidth={2.8}
+        />
+        {children}
+      </Link>
+    </li>
+  );
+}
+
+function BrandMark() {
+  return (
+    <Link aria-label="Pithal Machines Ltd. home" className="block max-w-[20.5rem]" href="#home">
+      <Image
+        alt="Pithal Machines Ltd. - Solutions That Drive Growth"
+        className="h-auto w-full"
+        height={140}
+        src="/images/brand/pithal-footer-logo.svg"
+        width={394}
+      />
+    </Link>
+  );
+}
+
+export function Footer() {
+  const navColumns = footerColumns.filter(
+    (column) => column.title.toLowerCase() !== "certifications",
+  );
+
+  return (
+    <footer className="border-t border-primary/20 bg-white" id="global">
+      <Container className="max-w-[1585px] py-12 xl:py-[4.25rem]">
+        <div className="grid gap-x-8 gap-y-12 border-b border-primary/20 pb-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.7fr_1.02fr_1.25fr_1fr_1.18fr_1.42fr] xl:pb-[3.7rem]">
+          <div className="md:col-span-2 lg:col-span-1">
+            <BrandMark />
+            <p className="mt-10 max-w-[18rem] text-[1rem] leading-[1.72] text-text-dark">
+              Engineering world-class crushing solutions and equipment that power
+              industries, build infrastructure and shape a stronger tomorrow.
+            </p>
+            <span aria-hidden className="mt-7 block h-[3px] w-[7.1rem] bg-gradient-to-r from-primary to-secondary" />
+            <address className="mt-8 space-y-4 not-italic text-[0.97rem] leading-[1.62] text-text-dark">
+              <span className="flex items-start gap-4">
+                <MapPin aria-hidden className="mt-1 shrink-0 text-primary" size={23} />
+                <span>
+                  <strong className="font-bold">Pithal Machines Ltd.</strong>
+                  <br />
+                  GIDC, Mehsana - 384002,
+                  <br />
+                  Gujarat, India.
+                </span>
+              </span>
+              <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919879716000">
+                <Phone aria-hidden className="shrink-0 text-primary" size={21} />
+                +91 98797 16000
+              </a>
+              <a className="flex items-center gap-4 hover:text-secondary" href="mailto:info@pithalmachines.com">
+                <Mail aria-hidden className="shrink-0 text-primary" size={22} />
+                info@pithalmachines.com
+              </a>
+              <a className="flex items-center gap-4 hover:text-secondary" href="https://www.pithalmachines.com">
+                <Globe aria-hidden className="shrink-0 text-primary" size={22} />
+                www.pithalmachines.com
+              </a>
+            </address>
           </div>
-        ))}
-      </Container>
-      <Container className="grid items-center gap-7 border-b border-white/12 py-7 md:grid-cols-[1fr_auto_auto]">
-        <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary">Global Presence</p>
-          <p className="mt-2 text-xs text-white/65">India | Middle East | Africa | Southeast Asia | Europe</p>
-        </div>
-        <div className="flex gap-3" aria-label="Social links">
-          {socialLinks.map(({ label, icon: Icon }) => (
-            <a aria-label={label} className="flex h-9 w-9 items-center justify-center border border-white/20 text-xs uppercase hover:border-secondary hover:text-secondary" href="#" key={label}>
-              <Icon aria-hidden size={15} />
-            </a>
+
+          {navColumns.map((column) => (
+            <div key={column.title}>
+              <FooterHeading>{column.title}</FooterHeading>
+              <ul className="space-y-[1.3rem]">
+                {column.links.map((link) => (
+                  <FooterLink key={link}>{link}</FooterLink>
+                ))}
+              </ul>
+            </div>
           ))}
+
+          <div>
+            <FooterHeading>Certifications</FooterHeading>
+            <div className="divide-y divide-primary/15">
+              {certifications.map((certification) => (
+                <div className="flex items-center gap-4 py-[0.86rem] first:pt-0" key={certification.code}>
+                  <Image
+                    alt=""
+                    aria-hidden
+                    className="h-[3.85rem] w-[3.85rem] shrink-0"
+                    height={72}
+                    src={certification.icon}
+                    width={72}
+                  />
+                  <span className="text-[0.9rem] leading-[1.6] text-text-dark">
+                    <strong className="block font-bold">{certification.code}</strong>
+                    {certification.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <Button className="min-h-11 primary-btn" href="#contact">Contact Us <ArrowRight aria-hidden size={14} /></Button>
+
+        <div className="grid gap-10 pt-8 xl:grid-cols-[1fr_2.08fr_1.23fr] xl:divide-x xl:divide-primary/20">
+          <div className="xl:pr-10">
+            <FooterHeading>Follow Us</FooterHeading>
+            <div aria-label="Social links" className="flex flex-wrap gap-2">
+              {socialLinks.map(({ href, icon: Icon, label }) => (
+                <Link
+                  aria-label={label}
+                  className="flex h-[2.3rem] w-[2.3rem] items-center justify-center rounded-full border border-secondary text-primary transition-colors hover:bg-secondary hover:text-white"
+                  href={href}
+                  key={label}
+                >
+                  <Icon aria-hidden size={20} />
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid items-center gap-7 md:grid-cols-[0.85fr_1.35fr] xl:px-14">
+            <div>
+              <FooterHeading>Global Presence</FooterHeading>
+              <p className="text-[1rem] leading-[1.65] text-text-dark">
+                Delivering solutions in 50+ countries across 6 continents.
+              </p>
+            </div>
+            <Image
+              alt="Map showing Pithal Machines global presence"
+              className="h-auto w-full object-contain"
+              height={872}
+              src="/hero/world-map.png"
+              width={1804}
+            />
+          </div>
+
+          <div className="xl:pl-14">
+            <FooterHeading>Get In Touch</FooterHeading>
+            <p className="mb-4 text-[1rem] leading-[1.65] text-text-dark">
+              Have a project in mind?
+              <br />
+              Our experts are ready to help.
+            </p>
+            <Button className="w-full max-w-[16.2rem] justify-between text-sm" href="#contact">
+              Contact Us
+              <ArrowRight aria-hidden size={19} />
+            </Button>
+          </div>
+        </div>
       </Container>
-      <div className="bg-[#021531] py-5 text-center text-[11px] text-white/55">
-        Copyright &copy; 2026 Pithal Machine Pvt. All rights reserved.
+
+      <div className="bg-gradient-to-r from-primary via-[#294385] to-secondary text-white">
+        <Container className="flex max-w-[1585px] flex-col items-center justify-between gap-4 py-4 text-sm sm:flex-row">
+          <p className="text-white/90">&copy; 2026 Pithal Machines Ltd. All Rights Reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-5 sm:justify-end">
+            {["Privacy Policy", "Terms & Conditions", "Sitemap"].map((item, index) => (
+              <span className="flex items-center gap-5" key={item}>
+                <Link className="transition-colors hover:text-white/70" href="#">
+                  {item}
+                </Link>
+                {index < 2 && <span aria-hidden className="text-white/65">|</span>}
+              </span>
+            ))}
+            <ScrollToTopButton />
+          </div>
+        </Container>
       </div>
     </footer>
   );

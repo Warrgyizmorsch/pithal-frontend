@@ -1,41 +1,42 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { Gauge, MapPin } from "lucide-react";
 
 export function ProjectCard({
   location,
   plant,
   capacity,
-  result,
-  index,
+  image,
 }: {
   location: string;
   plant: string;
   capacity: string;
-  result: string;
-  index: number;
+  image: string;
 }) {
   return (
-    <article className="image-hover lift overflow-hidden border border-border bg-white">
-      <div className="relative h-40 overflow-hidden">
+    <article className="image-hover overflow-hidden rounded-lg border border-primary/25 bg-white transition-shadow hover:shadow-[0_12px_32px_rgb(3_27_64_/_0.08)]">
+      <div className="relative h-[7.8rem] overflow-hidden sm:h-[8.4rem]">
         <Image
           alt={`${plant} in ${location}`}
           className="object-cover"
           fill
-          sizes="(max-width: 768px) 100vw, 33vw"
-          src={index % 2 ? "/images/projects/plant.svg" : "/images/projects/quarry.svg"}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          src={image}
         />
-        <span className="absolute left-3 top-3 bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-          {capacity}
-        </span>
       </div>
-      <div className="p-4">
-        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-secondary">{location}</p>
-        <h3 className="mt-2 text-sm font-bold uppercase text-primary">{plant}</h3>
-        <div className="mt-4 flex items-center justify-between gap-3 border-t border-border pt-3">
-          <p className="text-xs text-text-muted">{result}</p>
-          <a className="flex shrink-0 items-center gap-1 text-[11px] font-bold uppercase text-secondary" href="#contact">
-            View <ArrowRight aria-hidden size={13} />
-          </a>
+      <div className="grid grid-cols-[1fr_auto] items-center gap-3 px-4 py-3">
+        <div className="flex min-w-0 gap-3">
+          <MapPin aria-hidden className="mt-0.5 shrink-0 text-primary" size={27} strokeWidth={1.6} />
+          <div>
+            <h3 className="text-[0.8rem] font-bold uppercase text-text-dark sm:text-[0.85rem]">{plant}</h3>
+            <p className="mt-1 text-sm text-text-dark">{location}</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-3 border-l border-primary/25 pl-4">
+          <Gauge aria-hidden className="text-primary" size={29} strokeWidth={1.45} />
+          <div>
+            <p className="text-[9px] font-bold uppercase tracking-[0.08em] text-text-dark">Capacity</p>
+            <p className="mt-0.5 text-lg font-bold uppercase text-secondary">{capacity}</p>
+          </div>
         </div>
       </div>
     </article>

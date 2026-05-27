@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 394 140" role="img" aria-label="Pithal Machines Ltd.">
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1549a3"/>
+      <stop offset="1" stop-color="#092a79"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ec3b13"/>
+      <stop offset="1" stop-color="#fa5902"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#orange)" d="M7 35 42 13l35 20v19L65 59V40L42 27 19 41z"/>
+  <path fill="url(#blue)" d="M7 35 20 43v30l12 7V50l12 7v38L7 73z"/>
+  <path fill="url(#blue)" d="m20 43 22-13 23 13-13 8-10-6-10 6z"/>
+  <path fill="url(#orange)" d="m44 57 21-12v28L44 86z" opacity=".9"/>
+  <text x="94" y="56" fill="#082d89" font-family="Arial, Helvetica, sans-serif" font-size="51" font-weight="800" letter-spacing="1">PITHAL<tspan fill="#fa5902">.</tspan></text>
+  <path fill="#092a79" d="M96 70h4v25h-4z"/>
+  <text x="112" y="93" fill="#fa5902" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="800" letter-spacing=".5">MACHINES LTD.</text>
+  <text x="35" y="126" fill="#103f96" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2.35">SOLUTIONS THAT DRIVE GROWTH</text>
+</svg>
