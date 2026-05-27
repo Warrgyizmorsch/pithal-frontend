@@ -5,51 +5,56 @@ import { FileText, Lock } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const fieldStyle =
-  "mt-2 h-12 w-full rounded-lg border border-primary/20 bg-white px-4 text-sm font-normal text-text-dark outline-none transition-colors placeholder:text-text-muted focus:border-secondary";
+  "mt-2 h-12 w-full rounded-lg border border-primary/20 bg-white px-4 text-sm font-normal text-text-dark outline-none transition-[border-color,box-shadow] placeholder:text-text-muted focus:border-secondary focus:shadow-[0_0_0_3px_rgba(250,89,2,0.10)]";
 
 const labelStyle = "block text-sm font-bold text-primary";
 
 export function ContactCTA() {
   return (
-    <section className="scroll-mt-24 bg-white py-12 sm:py-14 lg:py-16" id="contact">
-      <Container className="max-w-none! px-[clamp(1.4rem,2.5vw,3rem)]">
-        <div className="overflow-hidden rounded-2xl border border-primary/70 lg:grid lg:min-h-[52rem] lg:grid-cols-[0.94fr_1.06fr]">
-          <div className="relative min-h-[47rem] overflow-hidden lg:min-h-0">
+    <section className="scroll-mt-24 bg-white py-8 sm:py-10 lg:py-12" id="contact">
+      <Container className="max-w-none! px-4 sm:px-[clamp(1.4rem,2.5vw,3rem)]">
+        <div className="overflow-hidden rounded-[1.15rem] border border-primary/80 lg:grid lg:min-h-[45rem] lg:grid-cols-[0.95fr_1.05fr] xl:min-h-[47rem]">
+          <div className="relative min-h-[34rem] overflow-hidden sm:min-h-[39rem] lg:min-h-0">
             <Image
               alt="Crushing plant processing aggregates at a quarry"
               className="object-cover object-bottom"
               fill
-              sizes="(max-width: 1024px) 100vw, 47vw"
-              src="/images/projects/karnataka.jpg"
+              sizes="(max-width: 1024px) 100vw, 48vw"
+              src="/images/contact/crushing-plant-contact.jpg"
             />
             <div
               aria-hidden
-              className="absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,#fff_44%,rgba(255,255,255,0.96)_54%,rgba(255,255,255,0.18)_67%,transparent_78%)]"
+              className="absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,#fff_43%,rgba(255,255,255,0.98)_51%,rgba(255,255,255,0.40)_62%,transparent_74%)]"
             />
-            <div className="relative px-7 pb-10 pt-9 sm:px-12 sm:pt-12 lg:px-[clamp(3rem,4vw,5.25rem)] lg:pt-[clamp(3rem,4.2vw,5rem)]">
-              <p className="mb-5 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.25em] text-primary">
+            <div className="relative px-5 pb-8 pt-7 min-[380px]:px-7 sm:px-10 sm:pt-10 lg:px-[clamp(2.3rem,3.3vw,4rem)] lg:pt-[clamp(2.3rem,3vw,3.4rem)]">
+              <p className="mb-4 flex items-center gap-2.5 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-primary min-[380px]:gap-3 min-[380px]:tracking-[0.2em] sm:text-[0.76rem]">
                 <span aria-hidden className="flex gap-1">
                   <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
                   <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
                   <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
                 </span>
                 Get the Right Solution
+                <span aria-hidden className="hidden gap-1 sm:flex">
+                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
+                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
+                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
+                </span>
               </p>
-              <h2 className="headline text-[clamp(2.5rem,4.7vw,4rem)] text-primary">
+              <h2 className="headline text-[clamp(2.05rem,11.6vw,2.85rem)] text-primary sm:text-[clamp(2.55rem,3.5vw,3.7rem)]">
                 Looking for the
                 <span className="mt-1 block text-secondary">Right Crushing</span>
                 <span className="mt-1 block text-secondary">Solution?</span>
               </h2>
-              <span aria-hidden className="mt-4 block h-[3px] w-20 bg-secondary" />
-              <p className="mt-5 max-w-[29rem] text-sm leading-7 text-text-dark sm:text-base">
+              <span aria-hidden className="mt-4 block h-[3px] w-20 bg-gradient-to-r from-secondary via-secondary to-primary" />
+              <p className="mt-4 max-w-[27rem] text-sm leading-7 text-text-dark sm:text-base">
                 Share your requirements with us and our experts will help you find the perfect crushing solution for
                 your business.
               </p>
             </div>
           </div>
 
-          <form className="m-4 rounded-xl border border-primary/20 bg-white px-5 py-7 sm:m-7 sm:px-8 sm:py-8 lg:m-[clamp(2rem,3vw,3.25rem)] lg:ml-0">
-            <div className="grid gap-[clamp(1.25rem,2vh,1.7rem)]">
+          <form className="m-3 rounded-2xl border border-primary/20 bg-white px-4 py-6 min-[380px]:m-4 min-[380px]:px-5 sm:m-6 sm:px-7 sm:py-7 lg:m-[clamp(1.45rem,2.1vw,2.25rem)] lg:ml-0 lg:px-[clamp(1.65rem,2vw,2.1rem)]">
+            <div className="grid gap-4 lg:gap-[clamp(0.85rem,1.4vh,1.2rem)]">
               <label className={labelStyle}>
                 Name
                 <input className={fieldStyle} name="name" placeholder="Your full name" type="text" />
@@ -77,7 +82,7 @@ export function ContactCTA() {
               <label className={labelStyle}>
                 Requirement
                 <textarea
-                  className={`${fieldStyle} h-24 resize-none py-3`}
+                  className={`${fieldStyle} h-[5.75rem] resize-none py-3`}
                   name="requirement"
                   placeholder="Briefly describe your requirement"
                 />
@@ -98,26 +103,26 @@ export function ContactCTA() {
               </label>
             </div>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid gap-3 lg:grid-cols-2 lg:gap-4">
               <Button
-                className="min-h-[4.4rem] whitespace-nowrap rounded-lg px-4 text-sm tracking-[0.03em]"
+                className="min-h-[3.4rem] w-full rounded-lg px-3 text-sm tracking-[0.03em] sm:min-h-[3.7rem] sm:px-4"
                 type="submit"
               >
                 <FileText aria-hidden size={23} strokeWidth={2} />
                 Request Quote
               </Button>
               <Button
-                className="min-h-[4.4rem] whitespace-nowrap rounded-lg px-4 text-sm tracking-[0.02em]"
+                className="min-h-[3.4rem] w-full rounded-lg px-3 text-sm tracking-[0.02em] sm:min-h-[3.7rem] sm:px-4"
                 href="https://wa.me/919887537129"
-                variant="outlineOrange"
+                variant="outlineNavy"
               >
                 <FaWhatsapp aria-hidden size={23} />
                 WhatsApp Consultation
               </Button>
             </div>
 
-            <p className="mt-7 flex items-center justify-center gap-3 text-sm text-text-muted">
-              <Lock aria-hidden size={16} />
+            <p className="mt-5 flex items-center justify-center gap-2 text-center text-sm text-text-muted sm:mt-6">
+              <Lock aria-hidden className="shrink-0" size={16} />
               Your information is safe with us.
             </p>
           </form>

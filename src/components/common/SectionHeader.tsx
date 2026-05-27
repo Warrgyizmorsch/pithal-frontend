@@ -16,15 +16,15 @@ export function SectionHeader({
   underline?: boolean;
 }) {
   return (
-    <header className={cn("mb-10", align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-xl")}>
+    <header className={cn("mb-8 sm:mb-10", align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-xl")}>
       {eyebrow && (
-        <p className="accent-bars mb-4 text-[11px] font-bold uppercase tracking-[0.26em] text-secondary">
+        <p className="accent-bars mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-secondary sm:text-[11px] sm:tracking-[0.26em]">
           
           {eyebrow}
           
         </p>
       )}
-      <h2 className="headline text-[clamp(2rem,4.6vw,3.25rem)] text-primary">
+      <h2 className="headline text-[clamp(1.8rem,9vw,2.2rem)] text-primary sm:text-[clamp(2rem,4.6vw,3.25rem)]">
         {title} {highlight && <span className="text-secondary">{highlight}</span>}
       </h2>
       {underline && <span aria-hidden className="mx-auto mt-3 block h-[3px] w-14 bg-secondary" />}

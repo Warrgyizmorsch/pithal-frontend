@@ -23,7 +23,7 @@ export function ProjectCard({
           src={image}
         />
       </div>
-      <div className="grid grid-cols-[1fr_auto] items-center gap-3 px-4 py-3">
+      <div className="grid gap-3 px-4 py-3 min-[420px]:grid-cols-[1fr_auto] min-[420px]:items-center">
         <div className="flex min-w-0 gap-3">
           <MapPin aria-hidden className="mt-0.5 shrink-0 text-primary" size={27} strokeWidth={1.6} />
           <div>
@@ -31,7 +31,7 @@ export function ProjectCard({
             <p className="mt-1 text-sm text-text-dark">{location}</p>
           </div>
         </div>
-        <div className="flex items-center gap-3 border-l border-primary/25 pl-4">
+        <div className="flex items-center gap-3 border-t border-primary/25 pt-3 min-[420px]:border-l min-[420px]:border-t-0 min-[420px]:pl-4 min-[420px]:pt-0">
           <Gauge aria-hidden className="text-primary" size={29} strokeWidth={1.45} />
           <div>
             <p className="text-[9px] font-bold uppercase tracking-[0.08em] text-text-dark">Capacity</p>

@@ -56,7 +56,7 @@ export default function WhyChoosePithal() {
         aria-hidden
         className="hidden object-cover object-center lg:block"
         fill
-        sizes="100vw"
+        sizes="(min-width: 1024px) 100vw, 1px"
         src="/images/hero/engineered-machine.png"
       />
 
@@ -72,7 +72,7 @@ export default function WhyChoosePithal() {
               Why Choose Pithal
             </p>
 
-            <h2 className="headline text-[clamp(2.05rem,3.35vw,3.2rem)] text-primary">
+            <h2 className="headline text-[clamp(1.9rem,9vw,2.2rem)] text-primary sm:text-[clamp(2.05rem,3.35vw,3.2rem)]">
               Engineered for More.
               <span className="mt-1 block text-secondary">Built to Last.</span>
             </h2>
@@ -86,7 +86,7 @@ export default function WhyChoosePithal() {
             <div className="mt-4 grid gap-x-7 sm:grid-cols-2">
               {features.map(({ title, description, icon: Icon }, index) => (
                 <article
-                  className={`flex gap-3 py-3 sm:min-h-[5.5rem] ${index < 4 ? "border-b border-border" : ""}`}
+                  className={`flex gap-3 py-3 sm:min-h-[5.5rem] ${index < features.length - 1 ? "border-b border-border sm:border-b-0" : ""} ${index < 4 ? "sm:border-b sm:border-border" : ""}`}
                   key={title}
                 >
                   <span className="flex h-[2.85rem] w-[2.85rem] shrink-0 items-center justify-center rounded border border-secondary/65 text-secondary">

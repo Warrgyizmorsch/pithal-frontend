@@ -58,7 +58,7 @@ function FooterLink({ children }: { children: React.ReactNode }) {
 
 function BrandMark() {
   return (
-    <Link aria-label="Pithal Machines Ltd. home" className="block max-w-[20.5rem]" href="#home">
+    <Link aria-label="Pithal Machines Ltd. home" className="block w-full max-w-[20.5rem]" href="#home">
       <Image
         alt="Pithal Machines Ltd. - Solutions That Drive Growth"
         className="h-auto w-full"
@@ -77,11 +77,11 @@ export function Footer() {
 
   return (
     <footer className="border-t border-primary/20 bg-white" id="global">
-      <Container className="max-w-[1585px] py-12 xl:py-[4.25rem]">
-        <div className="grid gap-x-8 gap-y-12 border-b border-primary/20 pb-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.7fr_1.02fr_1.25fr_1fr_1.18fr_1.42fr] xl:pb-[3.7rem]">
+      <Container className="max-w-[1585px] py-10 sm:py-12 xl:py-[4.25rem]">
+        <div className="grid gap-x-8 gap-y-10 border-b border-primary/20 pb-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.7fr_1.02fr_1.25fr_1fr_1.18fr_1.42fr] xl:gap-y-12 xl:pb-[3.7rem]">
           <div className="md:col-span-2 lg:col-span-1">
             <BrandMark />
-            <p className="mt-10 max-w-[18rem] text-[1rem] leading-[1.72] text-text-dark">
+            <p className="mt-7 max-w-[18rem] text-[0.95rem] leading-[1.72] text-text-dark sm:mt-10 sm:text-[1rem]">
               Engineering world-class crushing solutions and equipment that power
               industries, build infrastructure and shape a stronger tomorrow.
             </p>
@@ -101,11 +101,11 @@ export function Footer() {
                 <Phone aria-hidden className="shrink-0 text-primary" size={21} />
                 +91 98797 16000
               </a>
-              <a className="flex items-center gap-4 hover:text-secondary" href="mailto:info@pithalmachines.com">
+              <a className="flex items-center gap-4 break-all hover:text-secondary" href="mailto:info@pithalmachines.com">
                 <Mail aria-hidden className="shrink-0 text-primary" size={22} />
                 info@pithalmachines.com
               </a>
-              <a className="flex items-center gap-4 hover:text-secondary" href="https://www.pithalmachines.com">
+              <a className="flex items-center gap-4 break-all hover:text-secondary" href="https://www.pithalmachines.com">
                 <Globe aria-hidden className="shrink-0 text-primary" size={22} />
                 www.pithalmachines.com
               </a>
@@ -174,7 +174,7 @@ export function Footer() {
               alt="Map showing Pithal Machines global presence"
               className="h-auto w-full object-contain"
               height={872}
-              src="/hero/world-map.png"
+              src="/images/projects/world-map.jpg"
               width={1804}
             />
           </div>
@@ -195,9 +195,9 @@ export function Footer() {
       </Container>
 
       <div className="bg-gradient-to-r from-primary via-[#294385] to-secondary text-white">
-        <Container className="flex max-w-[1585px] flex-col items-center justify-between gap-4 py-4 text-sm sm:flex-row">
+        <Container className="flex max-w-[1585px] flex-col items-center justify-between gap-4 py-4 text-center text-sm sm:flex-row sm:text-left">
           <p className="text-white/90">&copy; 2026 Pithal Machines Ltd. All Rights Reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-5 sm:justify-end">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 sm:justify-end">
             {["Privacy Policy", "Terms & Conditions", "Sitemap"].map((item, index) => (
               <span className="flex items-center gap-5" key={item}>
                 <Link className="transition-colors hover:text-white/70" href="#">

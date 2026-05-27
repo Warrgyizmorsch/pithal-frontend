@@ -32,13 +32,13 @@ export function ProductCategories() {
           subtitle="High-performance crushing and screening solutions designed to deliver maximum productivity, reliability and value in every operation."
           title="Built for Performance."
         />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {products.map((product, index) => (
             <ProductCard key={product.title} {...product} icon={productIcons[index]} />
           ))}
         </div>
         <div className="mt-9 text-center">
-          <Button href="#contact" variant="outlineOrange">View All Products <ArrowRight aria-hidden size={14} /></Button>
+          <Button href="#contact" variant="outlineNavy">View All Products <ArrowRight aria-hidden size={14} /></Button>
         </div>
       </Container>
     </section>
