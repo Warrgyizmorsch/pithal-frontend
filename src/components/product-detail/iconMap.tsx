@@ -1,0 +1,86 @@
+import {
+  ArrowRight,
+  Blocks,
+  Boxes,
+  CircleDot,
+  Clock3,
+  Download,
+  Factory,
+  FileText,
+  Fuel,
+  Gauge,
+  HardHat,
+  HandCoins,
+  Headphones,
+  LayoutDashboard,
+  Layers3,
+  Mail,
+  Mountain,
+  Phone,
+  Pickaxe,
+  Plus,
+  Recycle,
+  Ruler,
+  Settings2,
+  ShieldCheck,
+  ShoppingBasket,
+  SlidersHorizontal,
+  Target,
+  TrendingUp,
+  Truck,
+  Wrench,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+
+const icons: Record<string, LucideIcon> = {
+  arrow: ArrowRight,
+  basket: ShoppingBasket,
+  boxes: Boxes,
+  building: Factory,
+  clock: Clock3,
+  cone: CircleDot,
+  conveyor: Truck,
+  download: Download,
+  factory: Factory,
+  feeder: Blocks,
+  file: FileText,
+  fuel: Fuel,
+  gauge: Gauge,
+  handCoins: HandCoins,
+  hardHat: HardHat,
+  headphones: Headphones,
+  impact: CircleDot,
+  layers: Layers3,
+  layout: LayoutDashboard,
+  mail: Mail,
+  mountain: Mountain,
+  phone: Phone,
+  pickaxe: Pickaxe,
+  plus: Plus,
+  recycle: Recycle,
+  ruler: Ruler,
+  screen: SlidersHorizontal,
+  settings: Settings2,
+  shield: ShieldCheck,
+  sliders: SlidersHorizontal,
+  target: Target,
+  trending: TrendingUp,
+  wrench: Wrench,
+  zap: Zap,
+};
+
+export function ProductIcon({
+  name,
+  className,
+  size = 22,
+  strokeWidth = 1.7,
+}: {
+  name: string;
+  className?: string;
+  size?: number;
+  strokeWidth?: number;
+}) {
+  const Icon = icons[name] ?? CircleDot;
+  return <Icon aria-hidden className={className} size={size} strokeWidth={strokeWidth} />;
+}

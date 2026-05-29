@@ -1,12 +1,12 @@
 export const navigation = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Projects", href: "#projects" },
-  { label: "Global Presence", href: "#global" },
-  { label: "Careers", href: "#careers" },
-  { label: "Blog", href: "#blog" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Products", href: "/products" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Projects", href: "/projects" },
+  { label: "Global Presence", href: "/global-presence" },
+  { label: "Careers", href: "/careers" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export const stats = [
@@ -21,21 +21,25 @@ export const products = [
     title: "Crushers",
     description: "Robust and reliable crushers built for high capacity and maximum efficiency.",
     image: "/images/products/crushers.png",
+    href: "/products/crushers",
   },
   {
     title: "Screening Solutions",
     description: "High efficiency screening equipment for accurate separation and productivity.",
     image: "/images/products/screening-solution.png",
+    href: "/products/screening-solutions",
   },
   {
     title: "Feeders",
     description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",
     image: "/images/products/feeders.png",
+    href: "/products/feeders",
   },
   {
     title: "Complete Plants",
     description: "Custom-built complete crushing plants tailored to your specific needs and applications.",
     image: "/images/products/complete-plants.png",
+    href: "/products/complete-plants",
   },
 ];
 
@@ -127,12 +131,18 @@ export const projects = [
 ];
 
 export const processSteps = [
-  { number: "01", title: "Raw Material", text: "Large size material is fed into the plant", image: "/images/process/raw.png" },
-  { number: "02", title: "Vibrating Feeder", text: "Uniform feeding to primary crusher", image: "/images/process/feeder.png" },
-  { number: "03", title: "Jaw Crusher", text: "Primary crushing with high reduction efficiency", image: "/images/process/jaw-crusher.png" },
-  { number: "04", title: "Cone Crusher", text: "Secondary crushing for greater reduction and shape", image: "/images/process/cone.png" },
-  { number: "05", title: "Vibrating Screen", text: "Accurate screening for required final sizes.", image: "/images/process/screen1.png" },
-  { number: "06", title: "Final Output", text: "High quality, uniform product delivered.", image: "/images/process/output.png" },
+  { number: "01", title: "Material Input", text: "Raw material is fed into the system from the feeder hopper.", image: "/images/process/raw.png", icon: "/icons/material-input.png" },
+  { number: "02", title: "Primary Crushing", text: "Jaw crusher reduces large rocks into smaller, manageable sizes.", image: "/images/process/jaw-crusher.png", icon: "/icons/primary-crushing.png" },
+  { number: "03", title: "Secondary Crushing", text: "Further size reduction using cone crusher for consistent output.", image: "/images/process/cone.png", icon: "/icons/secondary-crushing.png" },
+  { number: "04", title: "Screening", text: "Vibrating screens separate material into different sizes.", image: "/images/process/screen1.png", icon: "/icons/screening.png" },
+  { number: "05", title: "Final Output", text: "High-quality aggregates ready for various applications.", image: "/images/process/output.png", icon: "/icons/final-output.png" },
+];
+
+export const processFeatures = [
+  { title: "High Efficiency", text: "Optimized process flow for maximum productivity.", icon: "/icons/high-efficiency.png" },
+  { title: "Reliable Performance", text: "Engineered for continuous operation in tough conditions.", icon: "/icons/reliable-performace.png" },
+  { title: "Consistent Quality", text: "Precise crushing & screening for uniform output.", icon: "/icons/consistance-quality.png" },
+  { title: "Cost Effective", text: "Lower operating cost with higher return on investment.", icon: "/icons/cost-effective.png" },
 ];
 
 export const footerColumns = [

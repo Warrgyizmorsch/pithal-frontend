@@ -37,12 +37,12 @@ function FooterHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
-function FooterLink({ children }: { children: React.ReactNode }) {
+function FooterLink({ children, href = "#" }: { children: React.ReactNode; href?: string }) {
   return (
     <li>
       <Link
         className="group flex items-center gap-3 text-[0.95rem] text-text-dark transition-colors hover:text-secondary"
-        href="#"
+        href={href}
       >
         <ChevronRight
           aria-hidden
@@ -58,7 +58,7 @@ function FooterLink({ children }: { children: React.ReactNode }) {
 
 function BrandMark() {
   return (
-    <Link aria-label="Pithal Machines Ltd. home" className="block w-full max-w-[20.5rem]" href="#home">
+    <Link aria-label="Pithal Machines Ltd. home" className="block w-full max-w-[20.5rem]" href="/">
       <Image
         alt="Pithal Machines Ltd. - Solutions That Drive Growth"
         className="h-auto w-full"
@@ -112,16 +112,53 @@ export function Footer() {
             </address>
           </div>
 
-          {navColumns.map((column) => (
-            <div key={column.title}>
-              <FooterHeading>{column.title}</FooterHeading>
-              <ul className="space-y-[1.3rem]">
-                {column.links.map((link) => (
-                  <FooterLink key={link}>{link}</FooterLink>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {navColumns.map((column) => {
+            const linkMap: Record<string, Record<string, string>> = {
+              "Products": {
+                "Jaw Crushers": "/products/crushers",
+                "Cone Crushers": "/products/crushers",
+                "Impact Crushers": "/products/crushers",
+                "Vibrating Feeders": "/products/feeders",
+                "Vibrating Screens": "/products/screening-solutions",
+                "Mobile Crushing Plants": "/products/complete-plants",
+                "Spare Parts": "/products",
+                "Wear Parts": "/products",
+              },
+              "Solutions": {
+                "Aggregate Production": "/solutions",
+                "Mining & Quarrying": "/solutions",
+                "Construction & Demolition": "/solutions",
+                "Sand & Gravel": "/solutions",
+                "Metallurgy": "/solutions",
+                "Recycling Solutions": "/solutions",
+                "Custom Solutions": "/solutions",
+                "Turnkey Projects": "/solutions",
+              },
+              "Quick Links": {
+                "About Us": "/about",
+                "Our Process": "/",
+                "Projects": "/projects",
+                "Blog": "/blog",
+                "Careers": "/careers",
+                "News & Events": "/blog",
+                "Sustainability": "/about",
+                "Contact Us": "#contact",
+              },
+            };
+
+            return (
+              <div key={column.title}>
+                <FooterHeading>{column.title}</FooterHeading>
+                <ul className="space-y-[1.3rem]">
+                  {column.links.map((link) => (
+                    <FooterLink key={link} href={linkMap[column.title]?.[link] || "#"}>
+                      {link}
+                    </FooterLink>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
 
           <div>
             <FooterHeading>Certifications</FooterHeading>

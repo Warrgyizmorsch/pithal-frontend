@@ -7,11 +7,13 @@ export function ProductCard({
   description,
   image,
   icon,
+  href = "#contact",
 }: {
   title: string;
   description: string;
   image: string;
   icon?: React.ReactNode;
+  href?: string;
 }) {
   return (
     <article className="image-hover lift flex h-full flex-col overflow-hidden rounded border border-border bg-white p-4 sm:p-5 xl:p-6">
@@ -28,7 +30,7 @@ export function ProductCard({
         </div>
         <p className="text-sm leading-6 text-text-muted">{description}</p>
       </div>
-      <Button className="mt-6 min-h-10 w-full px-3" href="#contact" variant="outlineNavy">
+      <Button className="mt-6 min-h-10 w-full px-3" href={href} variant="outlineNavy">
         View Details <ArrowRight aria-hidden size={14} />
       </Button>
     </article>
