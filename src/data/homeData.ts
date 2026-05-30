@@ -18,22 +18,41 @@ export const stats = [
 
 export const products = [
   {
-    title: "Crushers",
+    title: "Jaw Crushers",
     description: "Robust and reliable crushers built for high capacity and maximum efficiency.",
     image: "/images/products/crushers.png",
-    href: "/products/crushers",
+    href: "/products/jaw-crushers",
   },
   {
-    title: "Screening Solutions",
+    title: "Cone Crushers",
+    description: "High efficiency screening equipment for accurate separation and productivity.",
+    image: "/images/products/cone-crusher.png",
+    href: "/products/cone-crushers",
+  },
+  {
+    title: "VSI Crushers",
     description: "High efficiency screening equipment for accurate separation and productivity.",
     image: "/images/products/screening-solution.png",
-    href: "/products/screening-solutions",
+    href: "/products/vsi-crushers",
+  },
+
+  {
+    title: "Vibrating Screens",
+    description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",
+    image: "/images/products/vibrating-screen.png",
+    href: "/products/vibrating-screens",
   },
   {
     title: "Feeders",
     description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",
     image: "/images/products/feeders.png",
     href: "/products/feeders",
+  },
+  {
+    title: "Conveyor Systems",
+    description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",
+    image: "/images/products/belt-conveyor.png",
+    href: "/products/conveyor-systems",
   },
   {
     title: "Complete Plants",

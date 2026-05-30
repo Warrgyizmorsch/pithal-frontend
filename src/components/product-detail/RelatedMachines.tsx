@@ -47,6 +47,14 @@ const conveyorIcon = (
   </svg>
 );
 
+const jawIcon = (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M6 3v18" />
+    <path d="M18 3l-8 18" />
+    <path d="M6 8h6M6 14h4" />
+  </svg>
+);
+
 export function RelatedMachines({
   section,
   machines,
@@ -58,6 +66,8 @@ export function RelatedMachines({
     switch (iconName.toLowerCase()) {
       case "cone":
         return coneIcon;
+      case "jaw":
+        return jawIcon;
       case "vsi":
         return vsiIcon;
       case "feeder":

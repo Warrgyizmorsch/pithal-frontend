@@ -245,7 +245,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 {data.form.title}
               </h3>
               <p className="mt-1 text-text-muted" style={{ fontSize: "0.76rem", lineHeight: "1.4" }}>
-                Fill in your requirements and we'll get back to you with the best solution.
+                Fill in your requirements and we&apos;ll get back to you with the best solution.
               </p>
             </div>
           </div>

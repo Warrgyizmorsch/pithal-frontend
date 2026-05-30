@@ -1,12 +1,16 @@
 import { ShieldCheck, Wrench, Weight, Fuel, Hexagon } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { SectionHeader } from "@/components/common/SectionHeader";
+import type { PerformanceFeature, SectionCopy } from "@/data/products/productDetailTypes";
+import { ProductIcon } from "./iconMap";
 
 type Feature = {
   icon: React.ReactNode;
   title: string;
   description: string;
 };
+
+type FeatureInput = Feature | PerformanceFeature;
 
 const defaultFeatures: Feature[] = [
   {
@@ -36,26 +40,43 @@ const defaultFeatures: Feature[] = [
   },
 ];
 
+function FeatureIcon({ feature }: { feature: FeatureInput }) {
+  if (typeof feature.icon === "string") {
+    return <ProductIcon className="text-secondary" name={feature.icon} size={32} strokeWidth={1.8} />;
+  }
+
+  return feature.icon;
+}
+
 export function FeaturesSection({
   features = defaultFeatures,
+  section,
+  eyebrow,
   heading = "Engineered For",
   highlightText = "Superior Performance",
   subtitle = "Our jaw crushers are built with advanced engineering and premium quality components to deliver unmatched performance, reliability and efficiency.",
 }: {
-  features?: Feature[];
+  features?: FeatureInput[];
+  section?: SectionCopy;
+  eyebrow?: string;
   heading?: string;
   highlightText?: string;
   subtitle?: string;
 }) {
+  const sectionEyebrow = eyebrow ?? section?.eyebrow ?? "Key Features";
+  const sectionHeading = section?.title ?? heading;
+  const sectionHighlight = section?.highlight ?? highlightText;
+  const sectionSubtitle = section?.subtitle ?? subtitle;
+
   return (
     <section className="relative overflow-hidden bg-[#f7f5f2] py-10 md:py-10 lg:py-10">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-38 bg-[radial-gradient(circle_at_top,rgba(255,147,34,0.12),transparent_55%)]" />
       <Container>
         <SectionHeader
-          eyebrow="Key Features"
-          title={heading}
-          highlight={highlightText}
-          subtitle={subtitle}
+          eyebrow={sectionEyebrow}
+          title={sectionHeading}
+          highlight={sectionHighlight}
+          subtitle={sectionSubtitle}
         />
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))] xl:gap-10">
@@ -66,7 +87,7 @@ export function FeaturesSection({
             >
               <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full border-2 border-dashed border-secondary/40 bg-secondary/5">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm">
-                  {feature.icon}
+                  <FeatureIcon feature={feature} />
                 </div>
               </div>
 

@@ -214,7 +214,7 @@ export function ResourcesSection({
             </div>
             <div className="text-left">
               <h4 className="text-primary font-bold uppercase" style={{ fontSize: "0.85rem", letterSpacing: "0.04em", lineHeight: "1.2" }}>
-                CAN'T FIND WHAT YOU'RE LOOKING FOR?
+                CAN&apos;T FIND WHAT YOU&apos;RE LOOKING FOR?
               </h4>
               <p className="text-text-muted mt-1" style={{ fontSize: "0.78rem", lineHeight: "1.3" }}>
                 Contact our team for customized documents or additional information.
