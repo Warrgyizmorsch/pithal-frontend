@@ -7,6 +7,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 import Link from "next/link";
 import { useState } from "react";
+import { Container } from "@/components/common/Container";
 
 const navLinkClass =
   "relative flex shrink-0 items-center gap-1.5 whitespace-nowrap bg-transparent py-5 text-primary transition-colors after:absolute after:bottom-[1rem] after:left-0 after:h-[3px] after:w-0 after:bg-secondary after:transition-all hover:text-secondary hover:after:w-full 2xl:gap-2";
@@ -86,7 +87,7 @@ function ProductsDropdown() {
 export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/96 backdrop-blur">
-      <div className="mx-auto flex h-[4.5rem] w-[calc(100%-clamp(2rem,6vw,7rem))] items-center justify-between gap-4 border-b border-border/70 sm:h-[5.25rem] sm:gap-7 xl:h-[5.95rem]">
+      <Container className="flex h-[4.5rem] items-center justify-between gap-4 border-b border-border/70 sm:h-[5.25rem] sm:gap-7 xl:h-[5.95rem]">
         <Link
           aria-label="Pithal Machines home"
           className="block shrink-0"
@@ -120,7 +121,7 @@ export function Header() {
           Contact Us <ArrowRight aria-hidden className="ml-2" size={16} />
         </Link>
         <MobileMenu />
-      </div>
+      </Container>
     </header>
   );
 }

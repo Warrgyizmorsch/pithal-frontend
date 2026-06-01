@@ -3,11 +3,24 @@ import { Button } from "@/components/common/Button";
 import { StatCard } from "@/components/common/StatCard";
 import { stats } from "@/data/homeData";
 import { ChevronRight } from "lucide-react";
+import { Container } from "@/components/common/Container";
 
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-white" id="home">
-      <div className="site-shell relative flex min-h-[calc(100svh-4.75rem)] flex-col gap-5 pt-9 sm:min-h-[calc(100svh-5.3rem)] sm:pt-14 lg:min-h-[calc(100svh-5.85rem)] lg:pt-[2.5rem]">
+      {/* Desktop Crushing Machine Image (Full-Bleed) */}
+      <div className="hidden lg:block lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:w-[52vw] xl:w-[55vw] 2xl:w-[58vw]">
+        <Image
+          alt="Mobile crushing machine operating in a quarry"
+          className="object-cover object-center"
+          fill
+          priority
+          sizes="55vw"
+          src="/images/hero/hero-machine-photo.png"
+        />
+      </div>
+
+      <Container className="relative flex min-h-[calc(100svh-4.75rem)] flex-col gap-5 pt-9 sm:min-h-[calc(100svh-5.3rem)] sm:pt-14 lg:min-h-[calc(100svh-5.85rem)] lg:pt-[2.5rem]">
         <div className="relative z-10 max-w-[32rem] xl:max-w-[34rem]">
           <p className="mb-5 flex items-center gap-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary sm:mb-6 sm:gap-3 sm:text-[13px] sm:tracking-[0.2em]">
             <span className="h-[2px] w-6 bg-secondary" /> Built strong. Built to perform.
@@ -30,7 +43,8 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
-        <div className="relative mt-8 h-[18rem] w-[calc(100%+2rem)] -translate-x-4 sm:mt-10 sm:h-[32rem] lg:absolute lg:-bottom-1 lg:-left-[clamp(2.5rem,6.5vw,7rem)] lg:-right-[clamp(2.5rem,6.5vw,7rem)] lg:top-0 lg:mt-0 lg:h-auto lg:w-auto lg:translate-x-0">
+        {/* Mobile/Tablet Inline Image */}
+        <div className="relative mt-8 h-[18rem] w-[calc(100%+2rem)] -translate-x-4 sm:mt-10 sm:h-[32rem] lg:hidden">
           <Image
             alt="Mobile crushing machine operating in a quarry"
             className="object-cover object-center"
@@ -49,7 +63,7 @@ export function HeroSection() {
             {stats.map((stat) => <StatCard key={stat.label} {...stat} />)}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

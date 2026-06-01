@@ -29,12 +29,12 @@ export const products = [
     image: "/images/products/cone-crusher.png",
     href: "/products/cone-crushers",
   },
-  // {
-  //   title: "VSI Crushers",
-  //   description: "High efficiency screening equipment for accurate separation and productivity.",
-  //   image: "/images/products/screening-solution.png",
-  //   href: "/products/vsi-crushers",
-  // },
+  {
+    title: "VSI Crushers",
+    description: "High efficiency screening equipment for accurate separation and productivity.",
+    image: "/images/products/vsi-crusher.png",
+    href: "/products/vsi-crushers",
+  },
 
   {
     title: "Vibrating Screens",
@@ -42,12 +42,12 @@ export const products = [
     image: "/images/products/vibrating-screen.png",
     href: "/products/vibrating-screens",
   },
-  {
-    title: "Feeders",
-    description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",
-    image: "/images/products/feeders.png",
-    href: "/products/feeders",
-  },
+  // {
+  //   title: "Feeders",
+  //   description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",
+  //   image: "/images/products/feeders.png",
+  //   href: "/products/feeders",
+  // },
   {
     title: "Conveyor Systems",
     description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",

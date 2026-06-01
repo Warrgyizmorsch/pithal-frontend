@@ -13,8 +13,8 @@ export function ProjectCard({
   image: string;
 }) {
   return (
-    <article className="image-hover overflow-hidden rounded-lg border border-primary/25 bg-white transition-shadow hover:shadow-[0_12px_32px_rgb(3_27_64_/_0.08)]">
-      <div className="relative h-[7.8rem] overflow-hidden sm:h-[8.4rem]">
+    <article className="image-hover flex h-full flex-col overflow-hidden rounded-lg border border-primary/25 bg-white transition-shadow hover:shadow-[0_12px_32px_rgb(3_27_64_/_0.08)]">
+      <div className="relative h-[7.8rem] shrink-0 overflow-hidden sm:h-[8.4rem]">
         <Image
           alt={`${plant} in ${location}`}
           className="object-cover"
@@ -23,7 +23,7 @@ export function ProjectCard({
           src={image}
         />
       </div>
-      <div className="grid gap-3 px-4 py-3 min-[420px]:grid-cols-[1fr_auto] min-[420px]:items-center">
+      <div className="grid gap-3 px-4 py-3 min-[420px]:grid-cols-[1fr_auto] min-[420px]:items-center flex-grow">
         <div className="flex min-w-0 gap-3">
           <MapPin aria-hidden className="mt-0.5 shrink-0 text-primary" size={27} strokeWidth={1.6} />
           <div>

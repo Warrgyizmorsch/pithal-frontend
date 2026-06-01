@@ -77,7 +77,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-primary/20 bg-white" id="global">
-      <Container className="max-w-[1585px] py-10 sm:py-12 xl:py-[4.25rem]">
+      <Container className="py-10 sm:py-12 xl:py-[4.25rem]">
         <div className="grid gap-x-8 gap-y-10 border-b border-primary/20 pb-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.7fr_1.02fr_1.25fr_1fr_1.18fr_1.42fr] xl:gap-y-12 xl:pb-[3.7rem]">
           <div className="md:col-span-2 lg:col-span-1">
             <BrandMark />
@@ -232,7 +232,7 @@ export function Footer() {
       </Container>
 
       <div className="bg-gradient-to-r from-primary via-[#294385] to-secondary text-white">
-        <Container className="flex max-w-[1585px] flex-col items-center justify-between gap-4 py-4 text-center text-sm sm:flex-row sm:text-left">
+        <Container className="flex flex-col items-center justify-between gap-4 py-4 text-center text-sm sm:flex-row sm:text-left">
           <p className="text-white/90">&copy; 2026 Pithal Machines Ltd. All Rights Reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 sm:justify-end">
             {["Privacy Policy", "Terms & Conditions", "Sitemap"].map((item, index) => (

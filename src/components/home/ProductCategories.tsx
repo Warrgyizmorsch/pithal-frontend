@@ -32,9 +32,14 @@ export function ProductCategories() {
           subtitle="High-performance crushing and screening solutions designed to deliver maximum productivity, reliability and value in every operation."
           title="Built for Performance."
         />
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-5">
           {products.map((product, index) => (
-            <ProductCard key={product.title} {...product} icon={productIcons[index]} />
+            <div
+              key={product.title}
+              className="w-full md:w-[calc(50%-0.625rem)] xl:w-[calc(33.333%-0.85rem)] flex shrink-0"
+            >
+              <ProductCard {...product} icon={productIcons[index]} />
+            </div>
           ))}
         </div>
         <div className="mt-9 text-center">
