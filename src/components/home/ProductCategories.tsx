@@ -32,7 +32,7 @@ export function ProductCategories() {
           subtitle="High-performance crushing and screening solutions designed to deliver maximum productivity, reliability and value in every operation."
           title="Built for Performance."
         />
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product, index) => (
             <ProductCard key={product.title} {...product} icon={productIcons[index]} />
           ))}

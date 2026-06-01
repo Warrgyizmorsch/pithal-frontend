@@ -63,7 +63,7 @@ function BrandMark() {
         alt="Pithal Machines Ltd. - Solutions That Drive Growth"
         className="h-auto w-full"
         height={140}
-        src="/images/brand/pithal-footer-logo.svg"
+        src="/images/brand/pithal-logo.png"
         width={394}
       />
     </Link>

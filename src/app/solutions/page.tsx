@@ -194,7 +194,7 @@ const builtApplications = [
 
 const performanceMetrics = [
   { pct: "92%", label: "HIGH OUTPUT EFFICIENCY", desc: "Engineered for maximum output with consistent performance across all operations.", icon: "gauge" },
-  { pct: "85%", label: "REDUCED DOWNTIME", desc: "Robust design and quality components ensure longer uptime and fewer breakdowns.", icon: "clock" },
+  { pct: "85%", label: "REDUCED DOWOWNTIME", desc: "Robust design and quality components ensure longer uptime and fewer breakdowns.", icon: "clock" },
   { pct: "30%", label: "LOWER OPERATING COST", desc: "Optimized design reduces wear, energy consumption, and maintenance costs.", icon: "rupee" },
   { pct: "25%", label: "ENERGY EFFICIENT SYSTEMS", desc: "Advanced engineering for lower power consumption and sustainable operations.", icon: "leaf" },
   { pct: "40%", label: "HIGH PRODUCTION CAPACITY", desc: "High-capacity systems built to handle demanding operations with ease.", icon: "chart" },
@@ -280,45 +280,53 @@ const whyChooseBottomStats = [
 
 const caseStudiesData = [
   {
-    title: "StoneVera Aggregates Plant",
-    image: "/images/projects/rajasthan.jpg",
+    tag: "LIMESTONE PLANT",
+    title: "250 TPH Limestone Crushing Plant",
     cat: "Quarry & Mining",
-    cap: "500 TPH",
-    loc: "Rajasthan, India",
-    machines: "Jaw Crusher, Cone Crusher, VSI, Screens",
-    result: "Increased output by 35% with improved product quality",
-    icon: "quarry",
-  },
-  {
-    title: "UltraBuild Infrastructure Project",
-    image: "/images/projects/madhya-pradesh.jpg",
-    cat: "Infrastructure",
-    cap: "350 TPH",
     loc: "Madhya Pradesh, India",
-    machines: "Primary Crusher, Cone Crusher, Vibrating Screen, Conveyor System",
-    result: "Reduced operating cost by 20% and ensured consistent output",
-    icon: "infra",
+    image: "/images/projects/madhya-pradesh.jpg",
+    metrics: [
+      { val: "35%", label: "Higher Productivity" },
+      { val: "20%", label: "Lower Downtime" },
+      { val: "98%", label: "Material Consistency" }
+    ]
   },
   {
-    title: "Desert Sand Solutions",
-    image: "/images/projects/oman.jpg",
+    tag: "SAND PLANT",
+    title: "200 TPH Sand Manufacturing Plant",
     cat: "Sand Manufacturing",
-    cap: "300 TPH",
-    loc: "Gujarat, India",
-    machines: "VSI Sand Maker, Washing System, Dewatering Screen",
-    result: "Achieved 30% higher sand recovery with superior quality",
-    icon: "sand",
+    loc: "Rajasthan, India",
+    image: "/images/projects/rajasthan.jpg",
+    metrics: [
+      { val: "30%", label: "Higher Output" },
+      { val: "15%", label: "Energy Savings" },
+      { val: "99%", label: "Gradation Accuracy" }
+    ]
   },
   {
-    title: "MegaRoad Construction Project",
-    image: "/images/projects/karnataka.jpg",
-    cat: "Road Construction",
-    cap: "600 TPH",
+    tag: "INFRASTRUCTURE PROJECT",
+    title: "300 TPH Infrastructure Crushing Project",
+    cat: "Aggregates",
     loc: "Maharashtra, India",
-    machines: "Jaw Crusher, Impact Crusher, Screens, Belt Conveyors",
-    result: "Completed project ahead of schedule with high efficiency",
-    icon: "road",
+    image: "/images/projects/oman.jpg",
+    metrics: [
+      { val: "40%", label: "Higher Capacity" },
+      { val: "25%", label: "Lower Operating Cost" },
+      { val: "100%", label: "Safe & Reliable Operation" }
+    ]
   },
+  {
+    tag: "CEMENT PLANT SOLUTION",
+    title: "Complete Crushing Solution for Cement Plant",
+    cat: "Industrial",
+    loc: "Gujarat, India",
+    image: "/images/projects/indonesia.jpg",
+    metrics: [
+      { val: "20%", label: "Process Efficiency" },
+      { val: "24/7", label: "Continuous Operation" },
+      { val: "Zero", label: "Unplanned Shutdown" }
+    ]
+  }
 ];
 
 const ctaPlanningCards = [
@@ -447,12 +455,12 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO & STATS BANNER */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-white py-16 text-primary lg:py-20">
+        <section className="relative overflow-hidden bg-white pt-4 pb-16 text-primary lg:pt-6 lg:pb-20">
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
           <div className="pointer-events-none absolute right-0 top-0 h-[58%] w-[55%] rounded-bl-[55%] border-l border-secondary/25 border-b border-secondary/25" />
           <Container className="relative z-10">
             {/* Breadcrumb */}
-            <div className="mb-8 flex items-center gap-2 text-[11px] font-medium text-primary/70">
+            <div className="mb-8 flex items-center gap-2 text-xs font-medium text-primary/70">
               <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
               <ChevronRight size={10} />
               <span>Solutions & Applications</span>
@@ -463,7 +471,7 @@ export default function SolutionsPage() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="h-[1.5px] w-6 bg-secondary" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
+                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
                     SOLUTIONS
                   </span>
                 </div>
@@ -475,7 +483,7 @@ export default function SolutionsPage() {
                 
                 <span aria-hidden className="mt-6 block h-[2px] w-14 bg-secondary" />
 
-                <p className="mt-6 max-w-xl text-sm md:text-[17px] leading-relaxed text-primary font-medium">
+                <p className="mt-6 max-w-xl text-sm md:text-[18px] lg:text-[20px] leading-relaxed text-primary font-medium">
                   From rugged mining operations to large-scale infrastructure projects, we deliver crushing solutions that maximize performance, minimize downtime, and drive <span className="text-secondary font-bold italic">real results</span>.
                 </p>
                 
@@ -514,9 +522,9 @@ export default function SolutionsPage() {
                       {renderCircleStatsIcon(stat.icon)}
                     </div>
                     <div>
-                      <h4 className="text-2xl font-black text-primary leading-none">{stat.value}</h4>
-                      <p className="text-[10px] font-black text-secondary uppercase tracking-widest mt-1.5">{stat.label}</p>
-                      <p className="text-[11px] text-slate-500 mt-0.5">{stat.desc}</p>
+                      <h4 className="text-2xl md:text-3xl font-black text-primary leading-none">{stat.value}</h4>
+                      <p className="text-xs md:text-sm font-black text-secondary uppercase tracking-widest mt-1.5">{stat.label}</p>
+                      <p className="text-xs md:text-sm text-slate-500 mt-0.5">{stat.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -538,7 +546,7 @@ export default function SolutionsPage() {
                     <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
                   ))}
                 </span>
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   INDUSTRIES WE SERVE
                 </span>
                 <span className="flex gap-1">
@@ -551,7 +559,7 @@ export default function SolutionsPage() {
                 SOLUTIONS THAT POWER <span className="text-secondary">EVERY INDUSTRY</span>
               </h2>
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 From raw material to final output, our engineered crushing solutions are built to perform in the toughest industrial environments.
               </p>
             </div>
@@ -588,26 +596,26 @@ export default function SolutionsPage() {
                   <div className="p-5 flex-1 flex flex-col justify-between">
                     <div className="space-y-4 mb-6">
                       <div>
-                        <span className="inline-flex gap-1.5 items-center text-[10px] font-black uppercase text-secondary tracking-wider">
+                        <span className="inline-flex gap-1.5 items-center text-xs font-black uppercase text-secondary tracking-wider">
                           <HelpCircle size={11} />
                           CHALLENGE
                         </span>
-                        <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                        <p className="mt-1 text-sm text-slate-600 leading-relaxed">
                           {item.challenge}
                         </p>
                       </div>
                       <div>
-                        <span className="inline-flex gap-1.5 items-center text-[10px] font-black uppercase text-primary tracking-wider">
+                        <span className="inline-flex gap-1.5 items-center text-xs font-black uppercase text-primary tracking-wider">
                           <CheckCircle2 size={11} />
                           OUR SOLUTION
                         </span>
-                        <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                        <p className="mt-1 text-sm text-slate-600 leading-relaxed">
                           {item.solution}
                         </p>
                       </div>
                     </div>
 
-                    <Link href="#contact" className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-secondary hover:text-primary transition-colors">
+                    <Link href="#contact" className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-secondary hover:text-primary transition-colors">
                       EXPLORE {item.title} SOLUTIONS
                       <ArrowRight size={12} />
                     </Link>
@@ -631,7 +639,7 @@ export default function SolutionsPage() {
                     <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
                   ))}
                 </span>
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   CHALLENGES WE SOLVE
                 </span>
                 <span className="flex gap-1">
@@ -644,7 +652,7 @@ export default function SolutionsPage() {
                 Every Challenge. <span className="text-secondary">Engineered Solution.</span>
               </h2>
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 We understand the real challenges of industrial operations and deliver solutions that improve performance, reduce downtime, and maximize productivity.
               </p>
             </div>
@@ -658,14 +666,14 @@ export default function SolutionsPage() {
                     <div key={i} className="flex flex-col md:flex-row items-center gap-4">
                       {/* Left: Challenge Card */}
                       <div className="relative flex-1 w-full p-4 bg-orange-50/50 border border-orange-100 rounded-xl flex gap-3.5 items-start">
-                        <span className="text-[10px] font-black uppercase tracking-wider text-secondary mt-0.5">
+                        <span className="text-xs font-black uppercase tracking-wider text-secondary mt-0.5">
                           {row.step}
                         </span>
                         <div>
-                          <h4 className="text-xs font-black uppercase text-secondary tracking-wider">
+                          <h4 className="text-xs md:text-sm font-black uppercase text-secondary tracking-wider">
                             INDUSTRY CHALLENGE: {row.challengeTitle}
                           </h4>
-                          <p className="mt-1 text-[11px] leading-relaxed text-slate-600">
+                          <p className="mt-1 text-xs md:text-sm leading-relaxed text-slate-600">
                             {row.challengeDesc}
                           </p>
                         </div>
@@ -682,10 +690,10 @@ export default function SolutionsPage() {
                           <SolIcon size={12} />
                         </div>
                         <div>
-                          <h4 className="text-xs font-black uppercase text-primary tracking-wider">
+                          <h4 className="text-xs md:text-sm font-black uppercase text-primary tracking-wider">
                             PITHAL SOLUTION: {row.solutionTitle}
                           </h4>
-                          <p className="mt-1 text-[11px] leading-relaxed text-slate-600">
+                          <p className="mt-1 text-xs md:text-sm leading-relaxed text-slate-600">
                             {row.solutionDesc}
                           </p>
                         </div>
@@ -695,13 +703,20 @@ export default function SolutionsPage() {
                 })}
               </div>
 
-              {/* Right Column tall visual mockup */}
+              {/* Right Column visual with premium overlay */}
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-lg bg-slate-800">
-                <div className="absolute inset-0 bg-slate-900/10 z-10" />
-                <div className="absolute inset-0 border border-dashed border-slate-700/50 m-4 rounded-xl flex items-center justify-center">
+                <Image
+                  src="/images/about/about-hero-industrial-generated.png"
+                  alt="Complete Assembly System"
+                  fill
+                  className="object-cover opacity-80"
+                  sizes="(min-width: 1024px) 35vw, 100vw"
+                />
+                <div className="absolute inset-0 bg-slate-900/20 z-10" />
+                <div className="absolute inset-0 border border-dashed border-white/20 m-4 rounded-xl flex items-center justify-center z-20 bg-slate-900/30 backdrop-blur-[1px]">
                   <div className="text-center p-4">
-                    <Construction size={40} className="text-secondary mx-auto mb-2" />
-                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Complete Assembly System</span>
+                    <Construction size={40} className="text-secondary mx-auto mb-2 animate-pulse" />
+                    <span className="text-xs font-black uppercase tracking-widest text-slate-300">Complete Assembly System</span>
                   </div>
                 </div>
               </div>
@@ -717,10 +732,10 @@ export default function SolutionsPage() {
                       <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary mb-2">
                         <BIcon size={16} />
                       </div>
-                      <h4 className="text-xs font-black uppercase tracking-wider text-primary">
+                      <h4 className="text-sm font-black uppercase tracking-wider text-primary">
                         {item.label}
                       </h4>
-                      <p className="mt-1 text-[10px] text-slate-500 leading-normal">
+                      <p className="mt-1 text-xs md:text-sm text-slate-500 leading-normal">
                         {item.desc}
                       </p>
                     </div>
@@ -744,7 +759,7 @@ export default function SolutionsPage() {
                     <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
                   ))}
                 </span>
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   COMPLETE PLANT SOLUTIONS
                 </span>
                 <span className="flex gap-1">
@@ -757,7 +772,7 @@ export default function SolutionsPage() {
                 INTELLIGENT SYSTEMS. <span className="text-secondary">SEAMLESS PERFORMANCE.</span>
               </h2>
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 From raw material to final product, our complete plant solutions are engineered for maximum efficiency, reliability, and productivity.
               </p>
             </div>
@@ -777,19 +792,29 @@ export default function SolutionsPage() {
                     {i === 5 && <Award size={18} />}
                   </div>
 
-                  <h3 className="mt-4 text-xs font-black uppercase tracking-wider text-primary leading-tight">
+                  <h3 className="mt-4 text-xs md:text-sm font-black uppercase tracking-wider text-primary leading-tight">
                     {item.title}
                   </h3>
                   
-                  <p className="mt-2 text-[10.5px] leading-relaxed text-slate-500 min-h-[44px]">
+                  <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500 min-h-[44px]">
                     {item.desc}
                   </p>
 
-                  {/* Arched Dummy Photo representer */}
-                  <div className="mt-4 w-full aspect-[4/3] rounded-lg bg-slate-800 overflow-hidden relative border border-slate-700/40">
-                    <div className="absolute inset-0 flex items-center justify-center border border-dashed border-slate-600/30 m-1.5 rounded">
-                      <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest">STAGE 0{item.step}</span>
-                    </div>
+                  {/* Arched Photo representer */}
+                  <div className="mt-4 w-full aspect-[4/3] rounded-lg overflow-hidden relative border border-slate-200 bg-slate-800">
+                    {item.image ? (
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 1024px) 15vw, (min-width: 640px) 30vw, 100vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center border border-dashed border-slate-600/30 m-1.5 rounded">
+                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">STAGE 0{item.step}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Process Connect Arrow */}
@@ -808,7 +833,7 @@ export default function SolutionsPage() {
               {plantWorkflow.map((item, i) => (
                 <div key={i} className="relative z-10 flex flex-col items-center">
                   <div className={cn(
-                    "h-5 w-5 rounded-full border-4 border-white flex items-center justify-center text-[8px] font-black text-white shadow-md",
+                    "h-5 w-5 rounded-full border-4 border-white flex items-center justify-center text-xs font-black text-white shadow-md",
                     i === 5 ? "bg-secondary" : "bg-slate-300"
                   )}>
                     {item.step}
@@ -827,10 +852,10 @@ export default function SolutionsPage() {
                       <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary mb-2">
                         <PIcon size={16} />
                       </div>
-                      <h4 className="text-xs font-black uppercase tracking-wider text-primary">
+                      <h4 className="text-sm font-black uppercase tracking-wider text-primary">
                         {item.label}
                       </h4>
-                      <p className="mt-1 text-[10px] text-slate-500 leading-normal">
+                      <p className="mt-1 text-xs md:text-sm text-slate-500 leading-normal">
                         {item.desc}
                       </p>
                     </div>
@@ -853,7 +878,7 @@ export default function SolutionsPage() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="h-[1.5px] w-6 bg-secondary" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
+                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
                     CUSTOM ENGINEERING SOLUTIONS
                   </span>
                 </div>
@@ -865,7 +890,7 @@ export default function SolutionsPage() {
                 
                 <span aria-hidden className="block h-[2.5px] w-12 bg-secondary my-5" />
                 
-                <p className="text-xs md:text-sm leading-relaxed text-slate-300 max-w-xl font-medium">
+                <p className="text-sm md:text-base leading-relaxed text-slate-300 max-w-xl font-medium">
                   Every site is unique. Our engineering experts design and deliver customized crushing solutions that match your goals, site conditions, and production requirements.
                 </p>
 
@@ -879,10 +904,10 @@ export default function SolutionsPage() {
                           <BIcon size={18} />
                         </div>
                         <div>
-                          <h4 className="text-xs font-black uppercase tracking-wide text-white">
+                          <h4 className="text-sm font-black uppercase tracking-wide text-white">
                             {item.title}
                           </h4>
-                          <p className="mt-0.5 text-[10.5px] text-slate-400">
+                          <p className="mt-0.5 text-xs md:text-sm text-slate-400">
                             {item.desc}
                           </p>
                         </div>
@@ -893,12 +918,18 @@ export default function SolutionsPage() {
               </div>
 
               {/* Right Column CAD Drawing representation */}
-              <div className="relative aspect-[4/3] w-full rounded-xl bg-slate-950 border border-white/5 overflow-hidden flex items-center justify-center shadow-2xl p-6">
-                <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-grid" />
-                <div className="text-center p-4 border border-dashed border-white/10 rounded-xl w-full h-full flex flex-col justify-center items-center">
-                  <Cpu size={40} className="text-secondary mb-2 animate-pulse" />
-                  <span className="text-xs font-black uppercase tracking-widest text-slate-400">CAD Engineering Blueprint</span>
-                  <p className="text-[10px] text-slate-600 mt-0.5">3D machine sizing & topography flow calculation</p>
+              <div className="relative aspect-[4/3] w-full rounded-xl bg-slate-950 border border-white/5 overflow-hidden flex items-center justify-center shadow-2xl">
+                <Image
+                  src="/images/products/jaw-crusher/technical-datasheet.png"
+                  alt="CAD Engineering Blueprint"
+                  fill
+                  className="object-cover opacity-60"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 z-10 text-left p-4">
+                  <span className="text-sm font-black uppercase tracking-widest text-white block">CAD Engineering Blueprint</span>
+                  <p className="text-xs text-slate-400 mt-0.5">3D machine sizing & topography flow calculation</p>
                 </div>
               </div>
             </div>
@@ -914,7 +945,7 @@ export default function SolutionsPage() {
                   <div className="h-3 w-[1.5px] bg-secondary" />
                 </div>
                 <div className="relative bg-slate-900 px-6">
-                  <span className="text-xs font-black uppercase tracking-[0.24em] text-white">
+                  <span className="text-sm font-black uppercase tracking-[0.24em] text-white">
                     OUR ENGINEERING SERVICES
                   </span>
                 </div>
@@ -925,13 +956,13 @@ export default function SolutionsPage() {
                 {engineeringServices.map((item, i) => (
                   <div key={i} className="bg-white/5 border border-white/5 p-5 rounded-xl hover:bg-white/10 transition-colors flex flex-col justify-between">
                     <div>
-                      <span className="text-[10px] font-black uppercase tracking-wider text-secondary">
+                      <span className="text-xs font-black uppercase tracking-wider text-secondary">
                         {item.step}
                       </span>
-                      <h4 className="mt-2 text-xs font-black uppercase tracking-wide text-white leading-tight">
+                      <h4 className="mt-2 text-sm font-black uppercase tracking-wide text-white leading-tight">
                         {item.title}
                       </h4>
-                      <p className="mt-2 text-[10.5px] leading-relaxed text-slate-400">
+                      <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-400">
                         {item.desc}
                       </p>
                     </div>
@@ -960,7 +991,7 @@ export default function SolutionsPage() {
                     <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
                   ))}
                 </span>
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   APPLICATIONS WE POWER
                 </span>
                 <span className="flex gap-1">
@@ -973,7 +1004,7 @@ export default function SolutionsPage() {
                 BUILT FOR <span className="text-secondary">EVERY APPLICATION.</span>
               </h2>
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 Our crushing solutions are engineered to perform across a wide range of industries and applications — delivering results where it matters most.
               </p>
             </div>
@@ -983,11 +1014,23 @@ export default function SolutionsPage() {
               {builtApplications.map((item, i) => (
                 <div key={i} className="group relative overflow-hidden rounded-xl bg-slate-900 text-white min-h-[300px] flex flex-col justify-end p-6 border border-slate-800 shadow-md">
                   
-                  {/* Photo mock with dark overlay */}
-                  <div className="absolute inset-0 bg-slate-950/80 mix-blend-multiply z-10 transition-colors duration-300 group-hover:bg-slate-950/70" />
-                  <div className="absolute inset-0 border border-dashed border-slate-800 m-3 rounded-lg z-0 flex items-center justify-center">
-                    <span className="text-[10px] uppercase font-black tracking-widest text-slate-800">IMAGE AREA {i + 1}</span>
-                  </div>
+                  {/* Photo with dark overlay */}
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 border border-dashed border-slate-800 m-3 rounded-lg z-0 flex items-center justify-center">
+                      <span className="text-xs uppercase font-black tracking-widest text-slate-800">IMAGE AREA {i + 1}</span>
+                    </div>
+                  )}
+
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-slate-950/75 z-10 transition-colors duration-300 group-hover:bg-slate-950/65" />
 
                   {/* Top orange circular badge */}
                   <div className="absolute left-6 top-6 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-secondary border border-white/10 shadow-lg">
@@ -996,17 +1039,17 @@ export default function SolutionsPage() {
 
                   {/* Text body */}
                   <div className="relative z-20">
-                    <h3 className="text-base font-black uppercase tracking-wider text-white group-hover:text-secondary transition-colors">
+                    <h3 className="text-lg font-black uppercase tracking-wider text-white group-hover:text-secondary transition-colors">
                       {item.title}
                     </h3>
                     
                     <span className="block h-[1.5px] w-6 bg-secondary my-2" />
                     
-                    <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                    <p className="text-sm text-slate-300 leading-relaxed mb-4">
                       {item.desc}
                     </p>
 
-                    <Link href="#contact" className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-secondary hover:text-white transition-colors">
+                    <Link href="#contact" className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-secondary hover:text-white transition-colors">
                       EXPLORE SOLUTIONS
                       <ArrowRight size={12} />
                     </Link>
@@ -1022,16 +1065,16 @@ export default function SolutionsPage() {
                   <HelpCircle size={18} />
                 </div>
                 <div>
-                  <h4 className="text-xs font-black uppercase text-primary tracking-wide">
+                  <h4 className="text-sm font-black uppercase text-primary tracking-wide">
                     Have a unique application?
                   </h4>
-                  <p className="text-[10.5px] text-slate-500">
+                  <p className="text-xs md:text-sm text-slate-500">
                     Our engineers will design a solution tailored to your exact needs.
                   </p>
                 </div>
               </div>
 
-              <Button href="#contact" variant="primary" className="flex items-center gap-2 group text-[10px] px-6 py-3 shrink-0">
+              <Button href="#contact" variant="primary" className="flex items-center gap-2 group text-xs px-6 py-3 shrink-0">
                 TALK TO AN EXPERT
                 <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
@@ -1053,7 +1096,7 @@ export default function SolutionsPage() {
                     <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
                   ))}
                 </span>
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   OUR PERFORMANCE. YOUR ADVANTAGE.
                 </span>
                 <span className="flex gap-1">
@@ -1066,7 +1109,7 @@ export default function SolutionsPage() {
                 MEASURABLE PERFORMANCE. <span className="text-secondary">MAXIMUM RESULTS.</span>
               </h2>
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 Our engineered crushing solutions are built to deliver superior performance, reduce operational costs, and maximize your productivity.
               </p>
             </div>
@@ -1085,17 +1128,17 @@ export default function SolutionsPage() {
                       {i === 4 && <TrendingUp size={16} />}
                     </div>
 
-                    <span className="text-lg font-black text-secondary flex items-center gap-0.5">
+                    <span className="text-xl font-black text-secondary flex items-center gap-0.5">
                       {item.pct}
-                      <span className="text-xs font-bold text-slate-400">↑</span>
+                      <span className="text-sm font-bold text-slate-400">↑</span>
                     </span>
                   </div>
 
-                  <h3 className="mt-4 text-xs font-black uppercase tracking-wider text-primary leading-tight">
+                  <h3 className="mt-4 text-sm font-black uppercase tracking-wider text-primary leading-tight">
                     {item.label}
                   </h3>
                   
-                  <p className="mt-2 text-[10.5px] leading-relaxed text-slate-500">
+                  <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500">
                     {item.desc}
                   </p>
                 </div>
@@ -1105,11 +1148,18 @@ export default function SolutionsPage() {
             {/* Lower layout stats with sliders */}
             <div className="grid gap-12 lg:grid-cols-3 lg:items-center border-t border-slate-200/80 pt-16">
               {/* Left Column Image Box */}
-              <div className="relative aspect-square w-full bg-white rounded-2xl border border-slate-200 flex items-center justify-center p-6 shadow-sm">
-                <div className="text-center p-4 border border-dashed border-slate-200 rounded-xl w-full h-full flex flex-col justify-center items-center">
-                  <Construction size={40} className="text-secondary mb-2" />
-                  <span className="text-xs font-black uppercase tracking-widest text-primary leading-tight">PERFORMANCE THAT<br />DRIVES YOUR SUCCESS</span>
-                  <p className="text-[10px] text-slate-500 mt-2 max-w-[200px]">
+              <div className="relative aspect-square w-full bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center">
+                <Image
+                  src="/images/about/factory-floor.png"
+                  alt="Factory Floor"
+                  fill
+                  className="object-cover opacity-20"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                />
+                <div className="relative text-center p-4 z-10">
+                  <Construction size={40} className="text-secondary mx-auto mb-2" />
+                  <span className="text-sm font-black uppercase tracking-widest text-primary leading-tight block">PERFORMANCE THAT<br />DRIVES YOUR SUCCESS</span>
+                  <p className="text-xs md:text-sm text-slate-500 mt-2 max-w-[200px] mx-auto">
                     Our solutions are designed to maximize every aspect of your operations.
                   </p>
                 </div>
@@ -1119,7 +1169,7 @@ export default function SolutionsPage() {
               <div className="space-y-5">
                 {performanceSliders.map((slider, i) => (
                   <div key={i}>
-                    <div className="flex justify-between items-center text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    <div className="flex justify-between items-center text-xs md:text-sm font-bold text-slate-700 uppercase tracking-wide mb-1.5">
                       <span>{slider.label}</span>
                       <span className="text-secondary">{slider.value}%</span>
                     </div>
@@ -1140,13 +1190,13 @@ export default function SolutionsPage() {
                       {i === 2 && <Headphones size={20} />}
                     </div>
                     <div>
-                      <h4 className="text-2xl font-black text-primary leading-none">
+                      <h4 className="text-2xl md:text-3xl font-black text-primary leading-none">
                         {item.value}
                       </h4>
-                      <p className="text-[10px] font-black text-secondary uppercase tracking-widest mt-1.5">
+                      <p className="text-xs font-black text-secondary uppercase tracking-widest mt-1.5">
                         {item.label}
                       </p>
-                      <p className="text-[11px] text-slate-500 mt-0.5">
+                      <p className="text-xs md:text-sm text-slate-500 mt-0.5">
                         {item.desc}
                       </p>
                     </div>
@@ -1171,7 +1221,7 @@ export default function SolutionsPage() {
                     <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
                   ))}
                 </span>
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   OUR SMART PROCESS
                 </span>
                 <span className="flex gap-1">
@@ -1184,7 +1234,7 @@ export default function SolutionsPage() {
                 INTELLIGENT WORKFLOW. <span className="text-secondary">SEAMLESS RESULTS.</span>
               </h2>
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 From initial consultation to lifelong support — our structured process ensures efficiency, transparency, and performance at every stage.
               </p>
             </div>
@@ -1197,13 +1247,23 @@ export default function SolutionsPage() {
 
               {smartProcessSteps.map((item, i) => (
                 <div key={i} className="relative flex flex-col items-center text-center z-10 bg-slate-50 border border-slate-200/50 p-4.5 rounded-xl">
-                  {/* Photo mock with overlay step */}
-                  <div className="w-full aspect-[4/3] rounded-lg bg-slate-800 border border-slate-700/40 relative overflow-hidden mb-4">
-                    <div className="absolute inset-0 flex items-center justify-center border border-dashed border-slate-600/30 m-1.5 rounded">
-                      <span className="text-[8px] font-bold text-slate-500 uppercase tracking-widest">PHASE {item.step}</span>
-                    </div>
+                  {/* Photo overlay step */}
+                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden relative mb-4 border border-slate-200">
+                    {item.image ? (
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 1024px) 15vw, (min-width: 640px) 30vw, 100vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center border border-dashed border-slate-600/30 m-1.5 rounded bg-slate-800">
+                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">PHASE {item.step}</span>
+                      </div>
+                    )}
 
-                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white text-primary text-[9px] font-black uppercase px-2.5 py-0.5 rounded shadow">
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white text-primary text-[10px] font-black uppercase px-2.5 py-0.5 rounded shadow z-10">
                       {item.step}
                     </div>
                   </div>
@@ -1218,11 +1278,11 @@ export default function SolutionsPage() {
                     {i === 5 && <Headphones size={16} />}
                   </div>
 
-                  <h3 className="text-xs font-black uppercase tracking-wider text-primary leading-tight">
+                  <h3 className="text-sm font-black uppercase tracking-wider text-primary leading-tight">
                     {item.title}
                   </h3>
                   
-                  <p className="mt-2 text-[10.5px] leading-relaxed text-slate-500">
+                  <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500">
                     {item.desc}
                   </p>
 
@@ -1257,10 +1317,10 @@ export default function SolutionsPage() {
                         <PIcon size={18} />
                       </div>
                       <div>
-                        <h4 className="text-xs font-black uppercase text-primary tracking-wide leading-tight">
+                        <h4 className="text-sm font-black uppercase text-primary tracking-wide leading-tight">
                           {item.title}
                         </h4>
-                        <p className="mt-1 text-[10.5px] text-slate-500 leading-normal">
+                        <p className="mt-1 text-xs md:text-sm text-slate-500 leading-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1286,7 +1346,7 @@ export default function SolutionsPage() {
                     <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
                   ))}
                 </span>
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   GLOBAL CAPABILITY
                 </span>
                 <span className="flex gap-1">
@@ -1303,7 +1363,7 @@ export default function SolutionsPage() {
               
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
               
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-slate-300">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-slate-300">
                 From design to delivery, installation to support — our solutions power industries across the globe with unmatched reliability and performance.
               </p>
             </div>
@@ -1320,10 +1380,10 @@ export default function SolutionsPage() {
                         <RIcon size={20} />
                       </div>
                       <div>
-                        <h3 className="text-sm font-black uppercase tracking-wide text-white leading-tight">
+                        <h3 className="text-base font-black uppercase tracking-wide text-white leading-tight">
                           {item.title}
                         </h3>
-                        <p className="mt-1.5 text-xs text-slate-400">
+                        <p className="mt-1.5 text-sm text-slate-400">
                           {item.desc}
                         </p>
                       </div>
@@ -1333,12 +1393,19 @@ export default function SolutionsPage() {
               </div>
 
               {/* Right Column Map representation */}
-              <div className="relative aspect-[16/10] w-full bg-slate-950 rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center p-6 shadow-inner">
-                <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-grid" />
-                <div className="text-center border border-dashed border-white/10 rounded-xl w-full h-full flex flex-col justify-center items-center m-3">
-                  <Globe size={40} className="text-secondary animate-pulse mb-2" />
-                  <span className="text-xs font-black uppercase tracking-widest text-slate-400">Supply Locations Network</span>
-                  <p className="text-[10px] text-slate-600 mt-0.5">India primary center & regional offices</p>
+              <div className="relative aspect-[16/10] w-full rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center shadow-inner">
+                <Image
+                  src="/images/projects/world-map.jpg"
+                  alt="Supply Locations Network"
+                  fill
+                  className="object-cover opacity-20"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                <div className="relative text-center p-4 z-10">
+                  <Globe size={40} className="text-secondary animate-pulse mb-2 mx-auto" />
+                  <span className="text-xs md:text-sm font-black uppercase tracking-widest text-slate-300">Supply Locations Network</span>
+                  <p className="text-xs text-slate-500 mt-0.5">India primary center & regional offices</p>
                 </div>
               </div>
             </div>
@@ -1349,10 +1416,10 @@ export default function SolutionsPage() {
                 <div key={i} className="bg-slate-950 border border-white/5 p-4 rounded-xl relative overflow-hidden flex flex-col justify-end min-h-[120px]">
                   <div className="absolute inset-0 border border-dashed border-white/5 m-1.5 rounded-lg z-0" />
                   <div className="relative z-10">
-                    <span className="text-[9px] font-black uppercase text-secondary tracking-widest">
+                    <span className="text-xs font-black uppercase text-secondary tracking-widest">
                       {card.name}
                     </span>
-                    <h4 className="mt-1 text-xs font-black uppercase text-white leading-snug">
+                    <h4 className="mt-1 text-sm font-black uppercase text-white leading-snug">
                       {card.desc}
                     </h4>
                   </div>
@@ -1365,13 +1432,13 @@ export default function SolutionsPage() {
               <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-5 sm:divide-x sm:divide-white/10">
                 {globalNavyBarMetrics.map((item, i) => (
                   <div key={i} className="text-center px-4 flex flex-col justify-center">
-                    <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">
+                    <span className="text-xs font-black uppercase tracking-wider text-slate-400">
                       {item.label}
                     </span>
-                    <h4 className="mt-2 text-2xl font-black text-secondary leading-none">
+                    <h4 className="mt-2 text-2xl md:text-3xl font-black text-secondary leading-none">
                       {item.value}
                     </h4>
-                    <p className="text-[10px] text-slate-400 mt-1 leading-normal font-medium">
+                    <p className="text-xs md:text-sm text-slate-400 mt-1 leading-normal font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -1386,7 +1453,7 @@ export default function SolutionsPage() {
                 return (
                   <div key={i} className="flex items-center gap-2">
                     <VIcon size={14} className="text-secondary" />
-                    <span className="text-xs font-black uppercase tracking-wide text-primary">
+                    <span className="text-sm font-black uppercase tracking-wide text-primary">
                       {item.title}
                     </span>
                   </div>
@@ -1410,7 +1477,7 @@ export default function SolutionsPage() {
                     <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
                   ))}
                 </span>
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   WHY CHOOSE PITHAL SOLUTIONS
                 </span>
                 <span className="flex gap-1">
@@ -1423,7 +1490,7 @@ export default function SolutionsPage() {
                 Solutions built around <span className="text-secondary">your success.</span>
               </h2>
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 We combine engineering excellence with practical solutions to deliver maximum performance, reliability, and long-term value.
               </p>
             </div>
@@ -1455,13 +1522,13 @@ export default function SolutionsPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-sm font-black uppercase tracking-[0.10em] text-primary">
+                      <h3 className="text-base font-black uppercase tracking-[0.10em] text-primary">
                         {item.title}
                       </h3>
                       
                       <span className="block h-[1.5px] w-6 bg-secondary my-2" />
                       
-                      <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                      <p className="mt-1 text-sm text-slate-500 leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -1481,7 +1548,7 @@ export default function SolutionsPage() {
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm text-secondary">
                       <SIcon size={12} />
                     </div>
-                    <span className="text-xs font-black uppercase tracking-wide text-primary">
+                    <span className="text-sm font-black uppercase tracking-wide text-primary">
                       {item.label}
                     </span>
                   </div>
@@ -1507,7 +1574,7 @@ export default function SolutionsPage() {
                   <div className="h-1.5 w-1.5 rounded-full bg-secondary -mt-[0.5px]" />
                 </div>
                 <div className="relative bg-slate-100 px-6 z-10">
-                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                  <span className="text-sm font-black uppercase tracking-[0.24em] text-secondary">
                     CASE STUDIES
                   </span>
                 </div>
@@ -1516,7 +1583,7 @@ export default function SolutionsPage() {
                 PROVEN SOLUTIONS. <span className="text-secondary">REAL RESULTS.</span>
               </h2>
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 Delivering performance-driven solutions across industries with precision engineering, advanced technology, and reliable support.
               </p>
             </div>
@@ -1528,7 +1595,7 @@ export default function SolutionsPage() {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={cn(
-                    "px-5 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-full border transition-all duration-300",
+                    "px-5 py-2.5 text-xs font-black uppercase tracking-widest rounded-full border transition-all duration-300",
                     activeTab === tab
                       ? "bg-secondary border-secondary text-white shadow-md"
                       : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
@@ -1542,65 +1609,55 @@ export default function SolutionsPage() {
             {/* 4 Cards Grid */}
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-10">
               {filteredProjects.map((item, idx) => (
-                <div key={idx} className="group flex flex-col bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
-                  
-                  {/* Photo box representer */}
-                  <div className="relative aspect-[4/3] w-full bg-slate-800">
-                    <div className="absolute inset-0 bg-slate-900/30 z-10" />
-                    <div className="absolute inset-0 border border-dashed border-slate-700/50 m-2.5 rounded-lg z-0 flex items-center justify-center">
-                      <span className="text-[9px] uppercase font-black tracking-widest text-slate-500">Project View {idx + 1}</span>
+                <div key={idx} className="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                  <div>
+                    {/* Photo box represented with tags */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                      {item.image ? (
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 border border-dashed border-slate-700/60 m-2 rounded-lg z-0 flex items-center justify-center">
+                          <span className="text-xs font-black uppercase tracking-widest text-slate-500">Related Plant Visual {idx+1}</span>
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-slate-950/15 z-10" />
+                      <span className="absolute left-3 top-3 z-20 text-[10px] font-black uppercase tracking-widest bg-white text-secondary px-2 py-0.5 rounded border border-slate-100 leading-none">
+                        {item.tag}
+                      </span>
                     </div>
 
-                    {/* Small badge icon inside circle top-left inside photo */}
-                    <div className="absolute left-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded bg-white/95 text-secondary shadow">
-                      <Construction size={14} />
-                    </div>
-                  </div>
-
-                  {/* Body elements */}
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-sm font-black uppercase text-primary leading-tight group-hover:text-secondary transition-colors">
+                    <div className="p-4.5">
+                      <h3 className="text-sm md:text-base font-black uppercase text-primary leading-tight group-hover:text-secondary transition-colors">
                         {item.title}
                       </h3>
-                      
-                      <span className="inline-flex gap-1 items-center text-[10px] font-black text-secondary uppercase tracking-wider mt-1.5">
-                        <MapPin size={10} />
-                        {item.cat}
+                      <span className="inline-flex gap-1 items-center text-xs font-black text-slate-400 uppercase tracking-wider mt-1.5">
+                        <MapPin size={9} className="text-secondary" /> {item.loc}
                       </span>
 
-                      <div className="mt-4 pt-4 border-t border-slate-100 space-y-2.5">
-                        <div className="flex justify-between items-center text-[10px] text-slate-500 uppercase font-bold">
-                          <span>Capacity:</span>
-                          <span className="text-primary font-black">{item.cap}</span>
-                        </div>
-                        <div className="flex justify-between items-center text-[10px] text-slate-500 uppercase font-bold">
-                          <span>Location:</span>
-                          <span className="text-primary font-black">{item.loc}</span>
-                        </div>
-                        <div className="flex justify-between items-start text-[10px] text-slate-500 uppercase font-bold">
-                          <span>Machines Used:</span>
-                          <span className="text-primary font-black text-right max-w-[120px] leading-normal">
-                            {item.machines}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-start text-[10px] text-slate-500 uppercase font-bold">
-                          <span>Result Achieved:</span>
-                          <span className="text-secondary font-black text-right max-w-[120px] leading-normal">
-                            {item.result}
-                          </span>
-                        </div>
+                      {/* 3 cols metrics */}
+                      <div className="mt-4 pt-3.5 border-t border-slate-100 grid grid-cols-3 gap-1.5 text-center">
+                        {item.metrics.map((met, i) => (
+                          <div key={i} className="px-0.5">
+                            <span className="text-sm font-black text-secondary leading-none block">{met.val}</span>
+                            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block mt-1.5 leading-tight">{met.label}</span>
+                          </div>
+                        ))}
                       </div>
-                    </div>
-
-                    <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between">
-                      <Link href="#contact" className="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-secondary hover:text-primary transition-colors">
-                        View Details
-                      </Link>
-                      <ChevronRight size={14} className="text-secondary" />
                     </div>
                   </div>
 
+                  <div className="p-4.5 pt-0">
+                    <Link href="#contact" className="w-full inline-flex items-center justify-between text-xs font-black uppercase tracking-widest text-secondary group-hover:text-primary transition-colors border-t border-slate-100 pt-3">
+                      <span>VIEW CASE STUDY</span>
+                      <ArrowRight size={11} />
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
@@ -1629,7 +1686,7 @@ export default function SolutionsPage() {
                     <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
                   ))}
                 </span>
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   READY TO BUILD. READY TO PERFORM.
                 </span>
                 <span className="flex gap-1">
@@ -1643,7 +1700,7 @@ export default function SolutionsPage() {
                 <span className="text-secondary">Next Crushing Solution.</span>
               </h2>
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 From concept to commissioning, we deliver engineering-driven solutions that maximize performance, efficiency, and long-term value.
               </p>
             </div>
@@ -1662,10 +1719,10 @@ export default function SolutionsPage() {
                           <CIcon size={16} />
                         </div>
                         <div>
-                          <h4 className="text-xs font-black uppercase tracking-wide text-primary leading-tight">
+                          <h4 className="text-sm font-black uppercase tracking-wide text-primary leading-tight">
                             {card.title}
                           </h4>
-                          <p className="mt-1 text-[10.5px] leading-normal text-slate-500">
+                          <p className="mt-1 text-xs md:text-sm leading-normal text-slate-500">
                             {card.desc}
                           </p>
                         </div>
@@ -1690,7 +1747,7 @@ export default function SolutionsPage() {
 
                 <div className="mt-8 flex items-center gap-2">
                   <Shield size={14} className="text-secondary" />
-                  <span className="text-[10.5px] text-slate-500 font-medium">
+                  <span className="text-xs md:text-sm text-slate-500 font-medium">
                     Trusted by industries worldwide for reliable, high-performance crushing solutions.
                   </span>
                 </div>
@@ -1698,11 +1755,18 @@ export default function SolutionsPage() {
 
               {/* Right Column photo with overlay banner */}
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-md bg-slate-800">
+                <Image
+                  src="/images/contact/crushing-plant-contact.jpg"
+                  alt="Pithal Engineering Officer"
+                  fill
+                  className="object-cover opacity-60"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                />
                 <div className="absolute inset-0 bg-slate-900/10 z-10" />
-                <div className="absolute inset-0 border border-dashed border-slate-700/60 m-4 rounded-xl flex items-center justify-center">
+                <div className="absolute inset-0 border border-dashed border-slate-700/60 m-4 rounded-xl flex items-center justify-center z-20 bg-slate-900/30 backdrop-blur-[1px]">
                   <div className="text-center p-4">
-                    <HardHat size={40} className="text-secondary mx-auto mb-2" />
-                    <span className="text-xs font-black uppercase tracking-widest text-slate-400 font-bold">Pithal Engineering Officer</span>
+                    <HardHat size={40} className="text-secondary mx-auto mb-2 animate-pulse" />
+                    <span className="text-sm font-black uppercase tracking-widest text-slate-300 font-bold">Pithal Engineering Officer</span>
                   </div>
                 </div>
 
@@ -1714,7 +1778,7 @@ export default function SolutionsPage() {
                       return (
                         <div key={i} className="px-1 flex flex-col items-center justify-center">
                           <MIcon size={14} className="text-secondary" />
-                          <span className="mt-1 text-[8.5px] font-bold uppercase tracking-wider text-slate-300 leading-tight">
+                          <span className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-300 leading-tight">
                             {item.title}
                           </span>
                         </div>

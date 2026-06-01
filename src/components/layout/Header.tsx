@@ -113,12 +113,12 @@ export function Header() {
             ),
           )}
         </nav>
-        <a
+        <Link
           className="primary-btn hidden min-h-12 shrink-0 items-center justify-center rounded-[0.3rem] border px-6 text-[11px] font-bold uppercase tracking-widest text-white xl:inline-flex min-[1400px]:px-5 min-[1400px]:text-[12px] 2xl:px-7 2xl:text-[13px] 2xl:tracking-[0.12em]"
-          href="#contact"
+          href="/contact"
         >
           Contact Us <ArrowRight aria-hidden className="ml-2" size={16} />
-        </a>
+        </Link>
         <MobileMenu />
       </div>
     </header>

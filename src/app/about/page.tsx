@@ -37,7 +37,6 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/common/Button";
-import { Card } from "@/components/common/Card";
 import { Container } from "@/components/common/Container";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -117,52 +116,41 @@ function Eyebrow({
   );
 }
 
-function SplitHeading({
-  title,
-  highlight,
-  className,
-}: {
-  title: string;
-  highlight: string;
-  className?: string;
-}) {
-  return (
-    <h2
-      className={cn(
-        "headline text-[clamp(2rem,5vw,3.55rem)] text-primary",
-        className,
-      )}
-    >
-      {title} <span className="text-secondary">{highlight}</span>
-    </h2>
-  );
-}
-
 function HeroSection() {
   const { hero, stats } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-white pb-10 lg:pb-12">
-      <div className="relative min-h-[430px] overflow-hidden lg:min-h-[500px]">
+    <section className="relative overflow-hidden bg-white pb-8 lg:pb-10">
+      <div className="relative min-h-[500px] overflow-hidden sm:min-h-[535px] lg:min-h-[590px]">
         <Image
-          alt={hero.image.alt}
+          alt="Pithal Machines industrial factory floor and quarry application background"
           className="object-cover object-center"
           fill
           priority
           sizes="100vw"
-          src={hero.image.src}
+          src="/images/about/about-hero-industrial-generated.png"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_25%,rgba(255,255,255,.86)_43%,rgba(255,255,255,.18)_72%,rgba(255,255,255,0)_100%)]" />
-        <div className="absolute inset-y-0 left-0 w-[55%] industrial-grid opacity-60" />
         <div
           aria-hidden
-          className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white via-white/80 to-transparent"
+          className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_22%,rgba(255,255,255,.88)_38%,rgba(255,255,255,.36)_58%,rgba(255,255,255,0)_78%)]"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-y-0 left-0 w-[58%] industrial-grid opacity-60"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/85 to-transparent"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-dark/70 via-primary-dark/20 to-transparent"
         />
 
-        <Container className="relative z-10 flex min-h-[430px] flex-col justify-start py-7 lg:min-h-[500px] lg:py-9">
+        <Container className="relative z-10 flex min-h-[500px] flex-col justify-start pb-24 pt-6 sm:min-h-[535px] lg:min-h-[590px] lg:pb-28 lg:pt-8">
           <nav
             aria-label="Breadcrumb"
-            className="mb-7 flex items-center gap-3 text-sm font-black text-primary"
+            className="mb-8 flex items-center gap-3 text-xs font-black text-primary sm:mb-10 sm:text-sm"
           >
             <Link
               className="flex items-center gap-2 transition-colors hover:text-secondary"
@@ -176,32 +164,53 @@ function HeroSection() {
           </nav>
 
           <div className="max-w-[650px]">
-            <Eyebrow>{hero.eyebrow}</Eyebrow>
-            <h1 className="headline mt-4 text-[clamp(2.35rem,5.2vw,4.35rem)] text-primary">
+            <div className="mb-5 flex items-center gap-3 text-secondary">
+              <span className="flex items-center gap-[5px]" aria-hidden>
+                {[0, 1, 2].map((index) => (
+                  <span
+                    className="block h-[8px] w-[6px] skew-x-[-30deg] bg-current"
+                    key={index}
+                  />
+                ))}
+              </span>
+              <p className="text-xs font-black uppercase tracking-[0.08em] sm:text-sm">
+                {hero.eyebrow}
+              </p>
+              <span className="flex items-center gap-[5px]" aria-hidden>
+                {[0, 1, 2].map((index) => (
+                  <span
+                    className="block h-[8px] w-[6px] skew-x-[-30deg] bg-current"
+                    key={index}
+                  />
+                ))}
+              </span>
+              <span className="hidden h-px w-16 bg-secondary/30 sm:block" />
+            </div>
+            <h1 className="headline text-[clamp(2.55rem,6.2vw,4.6rem)] leading-[0.92] text-primary">
               {hero.title}
               <span className="block text-secondary">{hero.highlight}</span>
             </h1>
-            <p className="mt-3 max-w-xl text-sm font-medium leading-7 text-text-dark sm:text-base">
+            <p className="mt-4 max-w-[560px] text-sm font-medium leading-7 text-text-dark sm:text-[17px]">
               {hero.subtitle}
             </p>
             <div className="mt-6 flex flex-col gap-4 sm:flex-row">
               <Button
-                className="min-h-[52px] px-6 text-[11px] shadow-[0_10px_22px_rgba(250,89,2,0.24)]"
+                className="min-h-[54px] rounded-md px-6 text-[11px] shadow-[0_14px_28px_rgba(250,89,2,0.24)] sm:text-[12px]"
                 href={hero.ctas[0].href}
                 variant="primary"
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-primary">
-                  <Factory size={16} />
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-primary">
+                  <Factory size={17} />
                 </span>
                 {hero.ctas[0].label}
-                <ArrowRight aria-hidden size={18} />
+                <ArrowRight aria-hidden size={19} />
               </Button>
               <Button
-                className="min-h-[52px] border-secondary/35 bg-white/95 px-6 text-[11px] shadow-[0_10px_22px_rgba(3,27,64,0.08)]"
+                className="min-h-[54px] rounded-md border-secondary/35 bg-white/95 px-6 text-[11px] shadow-[0_12px_22px_rgba(3,27,64,0.09)] sm:text-[12px]"
                 href={hero.ctas[1].href}
                 variant="outlineNavy"
               >
-                <Headphones className="text-secondary" size={17} />
+                <Headphones className="text-secondary" size={18} />
                 {hero.ctas[1].label}
                 <ArrowRight aria-hidden className="text-secondary" size={18} />
               </Button>
@@ -210,41 +219,38 @@ function HeroSection() {
         </Container>
       </div>
 
-      <div
-        aria-hidden
-        className="absolute inset-x-0 bottom-0 h-32 bg-[url('/images/industries/mining.jpg')] bg-cover bg-center opacity-95"
-      >
-        <div className="absolute inset-0 bg-primary-dark/50" />
-      </div>
-
-      <Container className="relative z-20 -mt-3 lg:-mt-6">
-        <div className="overflow-hidden rounded-[1.35rem] bg-white shadow-[0_28px_70px_rgba(3,27,64,0.2)]">
-          <div className="grid divide-y divide-border lg:grid-cols-[repeat(5,minmax(0,1fr))_1.65fr] lg:divide-x lg:divide-y-0">
+      <Container className="relative z-20 -mt-20 lg:-mt-24">
+        <div className="overflow-hidden rounded-2xl bg-white shadow-[0_22px_55px_rgba(3,27,64,0.2)]">
+          <div className="grid divide-y divide-border lg:grid-cols-[repeat(5,minmax(0,1fr))_1.75fr] lg:divide-x lg:divide-y-0">
             {stats.map((stat) => (
               <article
-                className="flex min-h-[104px] items-center gap-3 px-5 py-4"
+                className="flex min-h-[92px] items-center gap-3 px-4 py-4 lg:min-h-[104px]"
                 key={stat.label}
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
-                  <Icon name={stat.icon} size={24} />
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary lg:h-14 lg:w-14">
+                  <Icon name={stat.icon} size={25} />
                 </span>
                 <div>
-                  <p className="headline text-[28px] text-primary">
+                  <p className="headline text-[27px] leading-none text-primary lg:text-[31px]">
                     {stat.value}
                   </p>
-                  <p className="max-w-[8rem] text-[11px] font-black leading-4 text-primary-dark">
+                  <p className="mt-1 max-w-[8rem] text-[11px] font-black leading-4 text-primary-dark lg:text-[12px]">
                     {stat.label}
                   </p>
                 </div>
               </article>
             ))}
-            <article className="relative min-h-[104px] overflow-hidden bg-primary-dark text-white">
-              <div className="flex h-full min-h-[104px] items-center gap-4 p-5">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary text-white">
+            <article className="relative min-h-[98px] overflow-hidden bg-primary-dark text-white lg:min-h-[104px]">
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(250,89,2,0.18),transparent_35%)]"
+              />
+              <div className="relative flex h-full min-h-[98px] items-center gap-4 p-4 lg:min-h-[104px]">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary text-white shadow-[0_12px_22px_rgba(250,89,2,0.25)]">
                   <Play fill="currentColor" size={17} />
                 </span>
                 <div>
-                  <p className="max-w-[8rem] text-xs font-black leading-5">
+                  <p className="max-w-[7rem] text-xs font-black leading-5">
                     Watch Our {hero.video.label}
                   </p>
                   <ArrowRight
@@ -253,7 +259,7 @@ function HeroSection() {
                     size={16}
                   />
                 </div>
-                <div className="relative ml-auto hidden h-[62px] w-[112px] overflow-hidden rounded-lg border border-secondary/35 sm:block">
+                <div className="relative ml-auto hidden h-[66px] w-[126px] overflow-hidden rounded-lg border border-secondary/45 sm:block">
                   <Image
                     alt={hero.video.label}
                     className="object-cover"
@@ -280,7 +286,7 @@ function WhoWeAreSection() {
   const { experience } = aboutPageData;
 
   return (
-    <section className="bg-white py-16 lg:py-20">
+    <section className="bg-white py-12 lg:py-16">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
           {/* ── Left Column ── */}
@@ -312,7 +318,7 @@ function WhoWeAreSection() {
             </div>
 
             {/* Headline */}
-            <h2 className="headline text-[clamp(2.2rem,5.2vw,4rem)] leading-[0.92] text-primary">
+            <h2 className="headline text-[clamp(2rem,4.6vw,3.35rem)] leading-[0.94] text-primary">
               {experience.title}
               <span className="block text-secondary">
                 {experience.highlight}
@@ -384,7 +390,7 @@ function WhoWeAreSection() {
         </div>
 
         {/* ── Bottom Feature Cards Row ── */}
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-white shadow-[0_10px_30px_rgba(3,27,64,0.07)]">
+        <div className="mt-9 overflow-hidden rounded-2xl border border-border bg-white shadow-[0_10px_30px_rgba(3,27,64,0.07)]">
           <div className="grid divide-y divide-border sm:grid-cols-2 sm:divide-y-0 sm:divide-x lg:grid-cols-4">
             {experience.metrics.map((metric) => (
               <article className="flex gap-4 p-6" key={metric.title}>
@@ -414,7 +420,7 @@ function VisionMissionSection() {
   const mission = visionMission.items[1];
 
   return (
-    <section className="relative overflow-hidden bg-[#f1f4f8] py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-[#f1f4f8] py-12 lg:py-16">
       {/* Blueprint grid overlay */}
       <div
         aria-hidden
@@ -458,7 +464,7 @@ function VisionMissionSection() {
               ))}
             </span>
           </div>
-          <h2 className="headline text-[clamp(2.2rem,5.6vw,3.8rem)] leading-[0.92] text-primary">
+          <h2 className="headline text-[clamp(2rem,5vw,3.25rem)] leading-[0.94] text-primary">
             {visionMission.title}
           </h2>
           <span
@@ -471,7 +477,7 @@ function VisionMissionSection() {
         </div>
 
         {/* ── Cards Row ── */}
-        <div className="relative mx-auto mt-12 flex max-w-5xl flex-col items-stretch gap-0 md:flex-row md:items-center">
+        <div className="relative mx-auto mt-9 flex max-w-5xl flex-col items-stretch gap-0 md:flex-row md:items-center">
           {/* ▌ Vision Card (dark, arrow-shaped) */}
           <div className="relative z-[2] flex-1">
             {/* Arrow/chevron shape via clip-path — desktop only */}
@@ -486,7 +492,7 @@ function VisionMissionSection() {
                   backgroundSize: "32px 32px",
                 }}
               />
-              <div className="relative flex items-start gap-5 p-8 pr-10 md:min-h-[200px] md:pr-16">
+              <div className="relative flex items-start gap-5 p-6 pr-8 md:min-h-[170px] md:pr-14">
                 {/* Icon */}
                 <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-secondary/50 bg-white/[0.06]">
                   <Icon
@@ -521,7 +527,7 @@ function VisionMissionSection() {
           {/* ▌ Mission Card (white, arrow-shaped) */}
           <div className="relative z-[1] flex-1 mt-4 md:mt-0">
             <div className="relative overflow-hidden rounded-2xl md:rounded-l-none border-l-0 md:border-l-[3px] md:border-l-secondary bg-white shadow-[0_10px_30px_rgba(3,27,64,0.08)]">
-              <div className="relative flex items-start gap-5 p-8 md:min-h-[200px] md:pl-12">
+              <div className="relative flex items-start gap-5 p-6 md:min-h-[170px] md:pl-12">
                 {/* Icon (mobile only — hidden on desktop since the center hub shows it) */}
                 <span className="flex md:hidden h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-primary-dark/20 bg-primary-dark/[0.04]">
                   <Icon
@@ -572,7 +578,7 @@ function WhyChooseSection() {
   const { whyChoose } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
       {/* Industrial grid background */}
       <div
         aria-hidden
@@ -634,7 +640,7 @@ function WhyChooseSection() {
           </div>
 
           {/* Headline */}
-          <h2 className="headline text-[clamp(2.4rem,6vw,4.2rem)] leading-[0.92] text-primary">
+          <h2 className="headline text-[clamp(2.15rem,5.2vw,3.45rem)] leading-[0.94] text-primary">
             {whyChoose.title}{" "}
             <span className="text-secondary">{whyChoose.highlight}</span>
           </h2>
@@ -648,10 +654,10 @@ function WhyChooseSection() {
         </div>
 
         {/* ── Cards 3×2 Grid ── */}
-        <div className="mx-auto mt-12 grid max-w-[1100px] gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-9 grid max-w-[1100px] gap-4 md:grid-cols-2 lg:grid-cols-3">
           {whyChoose.cards.map((card) => (
             <article
-              className="group relative flex gap-5 rounded-xl border border-border/80 bg-white p-6 shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
+              className="group relative flex gap-4 rounded-xl border border-border/80 bg-white p-5 shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
               key={card.title}
             >
               {/* Orange top accent bar */}
@@ -661,8 +667,8 @@ function WhyChooseSection() {
               />
 
               {/* Icon */}
-              <span className="mt-1 flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-full border-2 border-primary/15 bg-white text-secondary transition-colors duration-300 group-hover:border-secondary/40 group-hover:bg-secondary/[0.04]">
-                <Icon name={card.icon} size={26} />
+              <span className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-primary/15 bg-white text-secondary transition-colors duration-300 group-hover:border-secondary/40 group-hover:bg-secondary/[0.04]">
+                <Icon name={card.icon} size={22} />
               </span>
 
               {/* Content */}
@@ -674,7 +680,7 @@ function WhyChooseSection() {
                   aria-hidden
                   className="mt-2 block h-[2.5px] w-7 bg-secondary"
                 />
-                <p className="mt-3 text-[13px] leading-[1.65] text-text-muted">
+                <p className="mt-3 text-[12px] leading-[1.6] text-text-muted">
                   {card.text}
                 </p>
               </div>
@@ -684,7 +690,7 @@ function WhyChooseSection() {
       </Container>
 
       {/* ── Bottom Dark Bar ── */}
-      <div className="relative mt-14 overflow-hidden bg-primary-dark py-5">
+      <div className="relative mt-10 overflow-hidden bg-primary-dark py-4">
         <Container className="relative flex items-center gap-4">
           {/* Left orange slashes */}
           <span className="flex shrink-0 items-center gap-[5px]">
@@ -724,38 +730,16 @@ function ManufacturingSection() {
   const { manufacturing } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-white">
-      {/* Faint gear watermarks */}
+    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-20 -top-20 h-[280px] w-[280px] opacity-[0.03]"
-      >
-        <svg
-          viewBox="0 0 200 200"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-full w-full"
-        >
-          <path
-            d="M100 30a70 70 0 1 1 0 140 70 70 0 0 1 0-140Zm0 20a50 50 0 1 0 0 100 50 50 0 0 0 0-100Z"
-            fill="#092a5c"
-          />
-          <path
-            d="M93 0h14v30H93V0Zm0 170h14v30H93v-30ZM0 93h30v14H0V93Zm170 0h30v14h-30V93ZM28 28l10 10-21 21-10-10L28 28Zm134 134 10 10-21 21-10-10 21-21ZM162 28l-10 10 21 21 10-10-21-21ZM28 162l-10 10 21 21 10-10-21-21Z"
-            fill="#092a5c"
-          />
-        </svg>
-      </div>
+        className="pointer-events-none absolute inset-0 industrial-grid opacity-45"
+      />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-16 top-[40%] h-[250px] w-[250px] opacity-[0.025]"
+        className="pointer-events-none absolute -left-16 -top-16 hidden h-[280px] w-[280px] opacity-[0.035] lg:block"
       >
-        <svg
-          viewBox="0 0 200 200"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-full w-full"
-        >
+        <svg className="h-full w-full" fill="none" viewBox="0 0 200 200">
           <path
             d="M100 30a70 70 0 1 1 0 140 70 70 0 0 1 0-140Zm0 20a50 50 0 1 0 0 100 50 50 0 0 0 0-100Z"
             fill="#092a5c"
@@ -767,120 +751,69 @@ function ManufacturingSection() {
         </svg>
       </div>
 
-      {/* ── Hero Image Header ── */}
-      <div className="relative min-h-[420px] sm:min-h-[480px]">
-        {/* Background image */}
-        <Image
-          alt="Pithal Machines manufacturing floor"
-          className="object-cover"
-          fill
-          priority
-          sizes="100vw"
-          src={manufacturing.heroImage}
-        />
-        {/* Dark overlay gradient */}
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-primary-dark/65 to-primary-dark/80"
-        />
-
-        {/* Header content */}
-        <div className="relative z-[2] flex flex-col items-center justify-center px-6 pt-14 pb-24 text-center sm:pt-16 sm:pb-28">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-5">
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2, 3].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[8px] w-[4px] skew-x-[-28deg] bg-secondary"
-                />
-              ))}
-            </span>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-secondary">
-              {manufacturing.eyebrow}
-            </p>
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2, 3].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[8px] w-[4px] skew-x-[-28deg] bg-secondary"
-                />
-              ))}
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h2 className="headline text-[clamp(2.4rem,6.5vw,4.5rem)] leading-[0.92] text-white">
+      <Container className="relative">
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow>{manufacturing.eyebrow}</Eyebrow>
+          <h2 className="headline mt-4 text-[clamp(2.15rem,5.2vw,3.45rem)] leading-[0.94] text-primary">
             {manufacturing.title}{" "}
             <span className="text-secondary">{manufacturing.highlight}</span>
           </h2>
           <span
             aria-hidden
-            className="mx-auto mt-5 block h-[3px] w-14 bg-secondary"
+            className="mx-auto mt-4 block h-[3px] w-14 bg-secondary"
           />
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/75 sm:text-[15px]">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-text-muted sm:text-[15px]">
             {manufacturing.subtitle}
           </p>
         </div>
 
-        {/* ── 5-Icon Steps Strip (overlapping bottom) ── */}
-        <div className="absolute inset-x-0 bottom-0 z-[3] translate-y-1/2">
-          <Container>
-            <div className="mx-auto grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-5 sm:gap-0">
-              {manufacturing.steps.map((step) => (
-                <div
-                  className="flex flex-col items-center gap-2 rounded-xl bg-white px-3 py-4 text-center shadow-[0_6px_20px_rgba(3,27,64,0.10)] sm:rounded-none sm:first:rounded-l-xl sm:last:rounded-r-xl sm:shadow-none sm:border-r sm:border-border/50 sm:last:border-r-0"
-                  key={step.title}
-                >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/15 text-secondary">
-                    <Icon name={step.icon} size={22} />
-                  </span>
-                  <p className="text-[9px] font-black uppercase tracking-[0.1em] text-primary leading-[1.4] sm:text-[10px]">
-                    {step.title}
-                  </p>
-                </div>
-              ))}
+        <div className="mx-auto mt-8 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-5 sm:gap-0">
+          {manufacturing.steps.map((step) => (
+            <div
+              className="flex flex-col items-center gap-2 border-border/70 bg-white px-3 py-3 text-center shadow-[0_8px_22px_rgba(3,27,64,0.06)] sm:border-r sm:shadow-none sm:last:border-r-0"
+              key={step.title}
+            >
+              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-secondary/5 text-secondary">
+                <Icon name={step.icon} size={22} />
+              </span>
+              <p className="text-[9px] font-black uppercase leading-[1.35] tracking-[0.1em] text-primary sm:text-[10px]">
+                {step.title}
+              </p>
             </div>
-          </Container>
+          ))}
         </div>
-      </div>
 
-      {/* ── 5-Column Image Cards ── */}
-      <div className="relative z-[1] px-4 pt-20 pb-16 sm:px-6 lg:pt-24">
-        <Container>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {manufacturing.cards.map((card) => (
-              <article className="group" key={card.title}>
-                {/* Image */}
-                <div className="image-hover relative h-[185px] overflow-hidden rounded-xl shadow-[0_8px_24px_rgba(3,27,64,0.10)] sm:h-[200px]">
-                  <Image
-                    alt={card.title}
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    fill
-                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 20vw"
-                    src={card.image}
-                  />
-                </div>
-                {/* Text */}
-                <div className="mt-4 pl-1">
-                  <span
-                    aria-hidden
-                    className="block h-[2.5px] w-8 bg-secondary"
-                  />
-                  <h3 className="headline mt-3 text-[12px] tracking-[0.1em] text-primary leading-[1.3] sm:text-[13px]">
-                    {card.title}
-                  </h3>
-                  <p className="mt-2 text-[12px] leading-[1.6] text-text-muted sm:text-[13px]">
-                    {card.text}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {manufacturing.cards.map((card) => (
+            <article
+              className="group overflow-hidden rounded-sm border border-border/80 bg-white shadow-[0_8px_26px_rgba(3,27,64,0.08)]"
+              key={card.title}
+            >
+              <div className="image-hover relative h-[150px] overflow-hidden">
+                <Image
+                  alt={card.title}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 20vw"
+                  src={card.image}
+                />
+              </div>
+              <div className="relative min-h-[128px] px-4 pb-4 pt-4">
+                <span
+                  aria-hidden
+                  className="block h-[2.5px] w-8 bg-secondary"
+                />
+                <h3 className="headline mt-3 text-[12px] leading-[1.25] tracking-[0.1em] text-primary sm:text-[13px]">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-[12px] leading-[1.55] text-text-muted">
+                  {card.text}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Container>
     </section>
   );
 }
@@ -889,7 +822,7 @@ function GlobalSection() {
   const { global: globalData } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
       {/* Faint grid background */}
       <div
         aria-hidden
@@ -938,7 +871,7 @@ function GlobalSection() {
             </span>
           </div>
 
-          <h2 className="headline text-[clamp(2.4rem,6vw,4.2rem)] leading-[0.92] text-primary">
+          <h2 className="headline text-[clamp(2.15rem,5.2vw,3.45rem)] leading-[0.94] text-primary">
             {globalData.title}{" "}
             <span className="text-secondary">{globalData.highlight}</span>
           </h2>
@@ -952,9 +885,9 @@ function GlobalSection() {
         </div>
 
         {/* ── Map + Callout ── */}
-        <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_300px] lg:items-center">
+        <div className="mt-9 grid gap-5 lg:grid-cols-[1fr_290px] lg:items-center">
           {/* Map image */}
-          <div className="relative min-h-[320px] overflow-hidden rounded-xl sm:min-h-[380px]">
+          <div className="relative min-h-[250px] overflow-hidden rounded-xl sm:min-h-[310px]">
             <Image
               alt="World map showing Pithal Machines global presence across continents"
               className="object-contain"
@@ -965,7 +898,7 @@ function GlobalSection() {
           </div>
 
           {/* Right callout card */}
-          <div className="rounded-xl border border-border/80 bg-white p-7 shadow-[0_8px_28px_rgba(3,27,64,0.08)]">
+          <div className="rounded-xl border border-border/80 bg-white p-6 shadow-[0_8px_28px_rgba(3,27,64,0.08)]">
             <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-primary/15 text-secondary">
               <Icon name={globalData.callout.icon} size={28} />
             </span>
@@ -979,10 +912,10 @@ function GlobalSection() {
         </div>
 
         {/* ── Bottom 4 Feature Cards ── */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {globalData.cards.map((card) => (
             <article
-              className="group relative flex gap-4 rounded-xl border border-border/80 bg-white p-6 shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
+              className="group relative flex gap-4 rounded-xl border border-border/80 bg-white p-5 shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
               key={card.title}
             >
               {/* Orange top bar */}
@@ -1017,7 +950,7 @@ function IndustriesSection() {
   const { industries } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f9fc] py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-12 lg:py-16">
       {/* Faint grid */}
       <div
         aria-hidden
@@ -1078,7 +1011,7 @@ function IndustriesSection() {
             </span>
           </div>
 
-          <h2 className="headline text-[clamp(2.4rem,6vw,4.2rem)] leading-[0.92] text-primary">
+          <h2 className="headline text-[clamp(2.15rem,5.2vw,3.45rem)] leading-[0.94] text-primary">
             {industries.title}{" "}
             <span className="text-secondary">{industries.highlight}</span>
           </h2>
@@ -1092,14 +1025,14 @@ function IndustriesSection() {
         </div>
 
         {/* ── 6-Column Cards ── */}
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-9 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {industries.cards.map((industry) => (
             <article
               className="group relative overflow-visible rounded-xl border border-border/80 bg-white shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
               key={industry.title}
             >
               {/* Image */}
-              <div className="relative h-[160px] overflow-hidden rounded-t-xl">
+              <div className="relative h-[140px] overflow-hidden rounded-t-xl">
                 <Image
                   alt={industry.title}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1141,7 +1074,7 @@ function ValuesSection() {
   const { values } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f9fc] pt-16 lg:pt-20">
+    <section className="relative overflow-hidden bg-[#f7f9fc] pt-12 lg:pt-16">
       {/* Decorative dot grid top-right */}
       <div
         aria-hidden
@@ -1190,13 +1123,13 @@ function ValuesSection() {
         </svg>
       </div>
 
-      <Container className="relative z-10 pb-16 lg:pb-20">
+      <Container className="relative z-10 pb-12 lg:pb-16">
         {/* We wrap the whole grid in relative to place the connecting lines absolute on desktop */}
         <div className="relative grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           {/* Left Column */}
           <div className="flex flex-col">
             <Eyebrow>{values.eyebrow}</Eyebrow>
-            <h2 className="headline mt-4 text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
+            <h2 className="headline mt-4 text-[clamp(2rem,4.6vw,3rem)] font-black leading-[1.02] text-primary">
               BUILT ON VALUES.
               <br />
               <span className="text-secondary">DRIVEN BY PURPOSE.</span>
@@ -1207,7 +1140,7 @@ function ValuesSection() {
             </p>
 
             {/* Circular Image Container */}
-            <div className="relative mx-auto lg:mx-0 mt-12 aspect-square w-full max-w-[320px] lg:max-w-[360px] flex items-center justify-center">
+            <div className="relative mx-auto mt-9 flex aspect-square w-full max-w-[280px] items-center justify-center lg:mx-0 lg:max-w-[320px]">
               {/* Concentric rings */}
               <div className="absolute inset-0 rounded-full border border-slate-200/70" />
               <div className="absolute inset-[14px] rounded-full border border-slate-200/90" />
@@ -1355,7 +1288,7 @@ function ValuesSection() {
       </Container>
 
       {/* Navy Bottom Banner */}
-      <div className="border-t border-white/10 bg-[#031b40] py-8 text-white relative z-10">
+      <div className="relative z-10 border-t border-white/10 bg-[#031b40] py-6 text-white">
         <Container>
           <div className="grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-white/15">
             {values.bottomItems.map((item, idx) => {
@@ -1393,43 +1326,128 @@ function ImpactSection() {
   const { impact } = aboutPageData;
 
   return (
-    <section className="bg-white py-16 lg:py-20">
-      {/* ── HTML Header with White Background ── */}
-      <Container className="mb-12">
-        <div className="mx-auto max-w-3xl text-center">
-          <Eyebrow>{impact.eyebrow}</Eyebrow>
-          <h2 className="headline mt-4 text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-            FROM VISION TO <span className="text-secondary">GLOBAL IMPACT</span>
-          </h2>
-          <span
-            aria-hidden
-            className="mx-auto mt-4 block h-[3px] w-14 bg-secondary"
+    <section className="overflow-hidden bg-white">
+      <div className="relative flex min-h-[230px] items-center overflow-hidden bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f7f9fc_55%,#eef2f7_100%)] py-8 sm:min-h-[250px] lg:min-h-[270px]">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 industrial-grid opacity-35"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -left-10 bottom-0 hidden h-[180px] w-[360px] opacity-[0.11] sm:block lg:h-[215px] lg:w-[430px]"
+        >
+          <Image
+            alt=""
+            className="object-contain object-left-bottom grayscale"
+            fill
+            sizes="430px"
+            src="/images/about/our-foundation-1.png"
           />
-          <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
-            Our journey is a story of passion, perseverance and progress.
-            <br className="hidden sm:inline" />
-            Each milestone reflects our commitment to engineering excellence and
-            the trust of our customers worldwide.
-          </p>
         </div>
-      </Container>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-16 top-8 hidden h-[265px] w-[300px] text-primary opacity-[0.055] md:block lg:right-0 lg:h-[300px] lg:w-[360px]"
+        >
+          <svg
+            className="h-full w-full"
+            fill="none"
+            viewBox="0 0 360 300"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {[{ cx: 165, cy: 72, r: 48 }, { cx: 238, cy: 190, r: 63 }, { cx: 314, cy: 68, r: 73 }].map(
+              (gear) => (
+                <g key={`${gear.cx}-${gear.cy}`}>
+                  {Array.from({ length: 16 }).map((_, index) => (
+                    <rect
+                      height={gear.r * 0.28}
+                      key={index}
+                      rx="2"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      transform={`rotate(${index * 22.5} ${gear.cx} ${gear.cy})`}
+                      width={gear.r * 0.12}
+                      x={gear.cx - gear.r * 0.06}
+                      y={gear.cy - gear.r * 1.12}
+                    />
+                  ))}
+                  <circle
+                    cx={gear.cx}
+                    cy={gear.cy}
+                    r={gear.r}
+                    stroke="currentColor"
+                    strokeWidth="1.2"
+                  />
+                  <circle
+                    cx={gear.cx}
+                    cy={gear.cy}
+                    r={gear.r * 0.62}
+                    stroke="currentColor"
+                    strokeWidth="1"
+                  />
+                  <circle
+                    cx={gear.cx}
+                    cy={gear.cy}
+                    r={gear.r * 0.24}
+                    stroke="currentColor"
+                    strokeWidth="1"
+                  />
+                </g>
+              ),
+            )}
+          </svg>
+        </div>
 
-      {/* ── Timeline Image (Cropped to show only the dark blue/navy cards) ── */}
-      <div className="bg-[#08162b] py-12 lg:py-16">
-        <Container>
-          <div className="w-full overflow-x-auto pb-4 scrollbar-thin select-none">
-            <div className="relative min-w-[900px] lg:min-w-0 aspect-[1535/469] w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_16px_40px_rgba(3,27,64,0.15)] transition-all duration-300">
-              <Image
-                alt="Pithal Machines global impact journey timeline milestones"
-                className="object-cover object-bottom"
-                fill
-                sizes="(max-width: 1200px) 100vw, 1535px"
-                src="/images/about/global-impact.png"
-                priority
-              />
+        <Container className="relative z-10">
+          <div className="mx-auto max-w-[1040px] text-center">
+            <div className="mb-4 flex items-center justify-center gap-4 text-secondary">
+              <span className="flex items-center gap-[5px]" aria-hidden>
+                {[0, 1, 2].map((index) => (
+                  <span
+                    className="block h-[9px] w-[6px] skew-x-[-30deg] bg-current"
+                    key={index}
+                  />
+                ))}
+              </span>
+              <p className="text-sm font-black uppercase tracking-[0.06em] sm:text-lg">
+                {impact.eyebrow}
+              </p>
+              <span className="flex items-center gap-[5px]" aria-hidden>
+                {[0, 1, 2].map((index) => (
+                  <span
+                    className="block h-[9px] w-[6px] skew-x-[-30deg] bg-current"
+                    key={index}
+                  />
+                ))}
+              </span>
             </div>
+            <h2 className="headline text-[clamp(2.45rem,6.5vw,4.25rem)] leading-[0.94] text-primary">
+              {impact.title}{" "}
+              <span className="text-secondary">{impact.highlight}</span>
+            </h2>
+            <span
+              aria-hidden
+              className="mx-auto mt-6 block h-[2px] w-14 bg-secondary sm:mt-7"
+            />
+            <p className="mx-auto mt-5 max-w-[665px] whitespace-pre-line text-sm font-medium leading-[1.55] text-primary-dark sm:text-base lg:text-lg">
+              {impact.subtitle}
+            </p>
           </div>
         </Container>
+      </div>
+
+      <div className="bg-[#08182c]">
+        <div className="w-full">
+          <div className="relative aspect-[1535/699] w-full select-none">
+            <Image
+              alt="Pithal Machines global impact journey timeline milestones"
+              className="object-cover object-top"
+              fill
+              priority
+              sizes="100vw"
+              src="/images/about/global-impact.png"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -1439,69 +1457,62 @@ function renderCertIcon(iconName: string) {
   switch (iconName.toLowerCase()) {
     case "iso":
       return (
-        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#031b40" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" stroke="#031b40" strokeWidth="1.2" />
-          <path d="M2 12h20" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-          <path d="M2.5 7.5h19M2.5 16.5h19" strokeWidth="0.8" opacity="0.6" />
-          <rect x="5.5" y="9" width="13" height="6" rx="1.5" fill="#031b40" />
-          <text x="12" y="13.5" fontSize="4.8" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="white" letterSpacing="0.2">ISO</text>
+        <svg className="h-12 w-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="26" fill="#f8fafc" />
+          <circle cx="32" cy="32" r="22" stroke="#071c3b" strokeWidth="2.5" />
+          <path d="M10 32h44M32 10c7 7 10.5 14.4 10.5 22S39 47 32 54M32 10C25 17 21.5 24.4 21.5 32S25 47 32 54M14 20.5h36M14 43.5h36" stroke="#071c3b" strokeLinecap="round" strokeWidth="1.8" />
+          <rect x="12.5" y="22.5" width="39" height="19" rx="2.5" fill="#071c3b" />
+          <text x="32" y="37" fill="white" fontSize="17" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" textAnchor="middle" letterSpacing="-1">ISO</text>
         </svg>
       );
     case "award":
       return (
-        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M8 14l-2 8 6-3 6 8-2-8" stroke="#031b40" strokeWidth="1.5" fill="#ff5a00" />
-          <path d="M10 15.5l-1 4.5 3-2 3 2-1-4.5" fill="#031b40" />
-          <circle cx="12" cy="9" r="7.5" fill="#031b40" />
-          <circle cx="12" cy="9" r="6" stroke="#ff5a00" strokeWidth="1" strokeDasharray="2 2" />
-          <circle cx="12" cy="9" r="3.5" fill="#ff5a00" />
-          <path d="m10.5 9 1 1 2-2" stroke="white" strokeWidth="1.5" />
+        <svg className="h-12 w-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="m21 39.5-4.7 16.8L32 48l15.7 8.3L43 39.5" fill="#fa5902" stroke="#071c3b" strokeWidth="2.4" strokeLinejoin="round" />
+          <path d="m26.8 42.3-2 7 7.2-3.8 7.2 3.8-2-7" fill="#071c3b" />
+          <circle cx="32" cy="27" r="20" fill="#071c3b" />
+          <circle cx="32" cy="27" r="15.2" stroke="#fa5902" strokeDasharray="3 3" strokeWidth="2" />
+          <circle cx="32" cy="27" r="8.5" fill="#fa5902" />
+          <path d="m27.7 26.8 3 3.2 6.5-6.8" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
         </svg>
       );
     case "shield":
       return (
-        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 11c0-5 4-8 9-8s9 3 9 8H3z" fill="#ff5a00" stroke="#031b40" strokeWidth="1.5" />
-          <path d="M10 3a10 10 0 0 1 4 0v3h-4V3z" fill="white" stroke="#031b40" strokeWidth="1.2" />
-          <path d="M12 3v3" stroke="#031b40" strokeWidth="1" />
-          <path d="M2 11h20v1.5H2V11z" fill="white" stroke="#031b40" strokeWidth="1.5" />
-          <rect x="7" y="13.5" width="10" height="4.5" rx="2" fill="#031b40" stroke="#031b40" strokeWidth="1" />
-          <circle cx="9.5" cy="15.5" r="1.2" fill="white" />
-          <circle cx="14.5" cy="15.5" r="1.2" fill="white" />
-          <path d="M12 15h0" stroke="white" strokeWidth="1.5" />
+        <svg className="h-12 w-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 29C14.8 16 25 9.5 32 9.5S49.2 16 51 29H13Z" fill="#fa5902" stroke="#071c3b" strokeLinejoin="round" strokeWidth="2.3" />
+          <path d="M26 10.8c3.8-1.2 8.2-1.2 12 0v10H26v-10Z" fill="white" stroke="#071c3b" strokeWidth="2" />
+          <path d="M32 9v12" stroke="#fa5902" strokeLinecap="round" strokeWidth="2" />
+          <path d="M10 29h44v5H10v-5Z" fill="white" stroke="#071c3b" strokeLinejoin="round" strokeWidth="2.3" />
+          <rect x="16" y="36" width="32" height="13" rx="6.5" fill="#071c3b" />
+          <circle cx="25" cy="42.5" r="3.2" fill="white" />
+          <circle cx="39" cy="42.5" r="3.2" fill="white" />
+          <path d="M28.5 42.5h7" stroke="white" strokeLinecap="round" strokeWidth="2" />
         </svg>
       );
     case "clipboard":
       return (
-        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="10" cy="14" r="5" fill="#031b40" />
-          {[...Array(8)].map((_, i) => (
-            <path
-              key={i}
-              d="M10 7.5v2"
-              transform={`rotate(${i * 45} 10 14)`}
-              stroke="#031b40"
-              strokeWidth="2.5"
-            />
+        <svg className="h-12 w-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="25" cy="36" r="15" fill="#071c3b" />
+          {Array.from({ length: 10 }).map((_, index) => (
+            <path d="M25 16v6" key={index} stroke="#071c3b" strokeLinecap="round" strokeWidth="4" transform={`rotate(${index * 36} 25 36)`} />
           ))}
-          <circle cx="10" cy="14" r="2" fill="white" />
-          <rect x="12" y="4" width="10" height="13" rx="1.5" fill="white" stroke="#031b40" strokeWidth="1.5" />
-          <line x1="15" y1="7.5" x2="19" y2="7.5" stroke="#ff5a00" strokeWidth="1.2" />
-          <line x1="15" y1="10.5" x2="19" y2="10.5" stroke="#031b40" strokeWidth="1" />
-          <line x1="15" y1="13.5" x2="17" y2="13.5" stroke="#ff5a00" strokeWidth="1" />
-          <circle cx="20" cy="14" r="2.5" fill="#ff5a00" />
-          <path d="m19 14 .7.7 1.3-1.3" stroke="white" strokeWidth="0.8" />
+          <circle cx="25" cy="36" r="6" fill="#eef3f8" />
+          <path d="M25 27v9l7 4" stroke="#fa5902" strokeLinecap="round" strokeWidth="2.4" />
+          <rect x="31" y="12" width="27" height="38" rx="3.5" fill="white" stroke="#071c3b" strokeWidth="2.2" />
+          <path d="M39 22h12M39 30h12M39 38h7" stroke="#071c3b" strokeLinecap="round" strokeWidth="2" />
+          <path d="M39 22h8M39 38h5" stroke="#fa5902" strokeLinecap="round" strokeWidth="2.5" />
+          <circle cx="53" cy="46" r="7" fill="#fa5902" />
+          <path d="m49.7 45.8 2.3 2.3 4-4.4" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
         </svg>
       );
     case "leaf":
       return (
-        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="9.5" stroke="#ff5a00" strokeWidth="1.5" />
-          <circle cx="12" cy="12" r="8" fill="white" />
-          <path d="M8 16c2-1 4-3 5-6 1 3 3 5 5 6" stroke="#031b40" strokeWidth="1.2" />
-          <path d="M13 10c-1.5-1.5-3.5-2.5-6-2.5 0 2.5 1 4.5 2.5 6 1.5-1.5 2.5-2.5 3.5-3.5z" fill="#10b981" stroke="#031b40" strokeWidth="1" />
-          <path d="M13 10c1.5-1 3-1.5 5-1.5 0 2-1 3.5-2.5 4.5-1-1-1.5-2-2.5-3z" fill="#10b981" stroke="#031b40" strokeWidth="1" />
+        <svg className="h-12 w-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="24" fill="white" stroke="#fa5902" strokeWidth="3" />
+          <path d="M14 46c11-4.5 18-15.5 22-31 3 13.5 8.5 23.5 15.5 30" stroke="#071c3b" strokeLinecap="round" strokeWidth="2.4" />
+          <path d="M35 20c-8.6-6.7-18.2-8.4-29-5.2 1.2 10.2 6.2 17.6 15 22.2 4.2-6.5 8.9-12 14-17Z" fill="#59b83f" stroke="#071c3b" strokeLinejoin="round" strokeWidth="2" />
+          <path d="M35 20c7.2-4.2 14.8-5 23-2.5-1.1 8.3-5.1 14.3-12 18-3.2-5.5-6.9-10.7-11-15.5Z" fill="#7ed957" stroke="#071c3b" strokeLinejoin="round" strokeWidth="2" />
+          <path d="M19 23c5.5.7 11.6 3.4 18.5 8M43 24c-3.5 1.2-6.9 3.3-10 6.2" stroke="white" strokeLinecap="round" strokeWidth="2" />
         </svg>
       );
     default:
@@ -1517,100 +1528,215 @@ function CertificationsSection() {
   const { certifications } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 lg:py-20" id="certifications">
-      {/* Decorative background watermarks */}
-      <div className="pointer-events-none absolute -left-16 -top-16 hidden opacity-[0.025] text-primary lg:block">
-        <svg width="300" height="300" viewBox="0 0 100 100" fill="currentColor">
-          <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" strokeWidth="2" />
-          <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
-          {[...Array(12)].map((_, i) => (
-            <rect key={i} x="47" y="18" width="6" height="10" rx="1.5" fill="currentColor" transform={`rotate(${i * 30} 50 50)`} />
-          ))}
-        </svg>
-      </div>
-
-      <Container className="relative z-10">
-        {/* Header Block */}
-        <div className="mx-auto max-w-3xl text-center">
-          <Eyebrow>Our Standards</Eyebrow>
-          <h2 className="headline mt-4 text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-            CERTIFIED. <span className="text-secondary">COMMITTED.</span>
-          </h2>
-          <span aria-hidden className="mx-auto mt-4 block h-[3px] w-14 bg-secondary" />
-          <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-text-muted">
-            Our processes, materials, and manufacturing systems adhere to globally recognized standards that ensure{" "}
-            <span className="font-bold text-slate-800">quality, safety, and reliability</span> in everything we build.
-          </p>
+    <section
+      className="relative scroll-mt-[6.25rem] overflow-hidden bg-[#edf2f7]"
+      id="certifications"
+    >
+      <div className="relative overflow-hidden bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f9fbfd_56%,#edf2f7_100%)] pb-5 pt-10 sm:pt-12 lg:pb-6">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 industrial-grid opacity-35"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -left-10 bottom-[-18px] hidden h-[175px] w-[360px] opacity-[0.13] sm:block lg:h-[215px] lg:w-[440px]"
+        >
+          <Image
+            alt=""
+            className="object-contain object-left-bottom grayscale"
+            fill
+            sizes="440px"
+            src="/images/about/our-foundation-1.png"
+          />
+        </div>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-16 top-4 hidden h-[245px] w-[300px] text-primary opacity-[0.06] md:block lg:right-0 lg:h-[285px] lg:w-[360px]"
+        >
+          <svg
+            className="h-full w-full"
+            fill="none"
+            viewBox="0 0 360 285"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {[{ cx: 168, cy: 70, r: 46 }, { cx: 242, cy: 186, r: 62 }, { cx: 316, cy: 66, r: 72 }].map(
+              (gear) => (
+                <g key={`${gear.cx}-${gear.cy}`}>
+                  {Array.from({ length: 16 }).map((_, index) => (
+                    <rect
+                      height={gear.r * 0.28}
+                      key={index}
+                      rx="2"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      transform={`rotate(${index * 22.5} ${gear.cx} ${gear.cy})`}
+                      width={gear.r * 0.12}
+                      x={gear.cx - gear.r * 0.06}
+                      y={gear.cy - gear.r * 1.12}
+                    />
+                  ))}
+                  <circle
+                    cx={gear.cx}
+                    cy={gear.cy}
+                    r={gear.r}
+                    stroke="currentColor"
+                    strokeWidth="1.2"
+                  />
+                  <circle
+                    cx={gear.cx}
+                    cy={gear.cy}
+                    r={gear.r * 0.62}
+                    stroke="currentColor"
+                    strokeWidth="1"
+                  />
+                  <circle
+                    cx={gear.cx}
+                    cy={gear.cy}
+                    r={gear.r * 0.24}
+                    stroke="currentColor"
+                    strokeWidth="1"
+                  />
+                </g>
+              ),
+            )}
+          </svg>
         </div>
 
-        {/* Title Badge Block with exact bracket lines */}
-        <div className="relative flex justify-center items-center my-14 w-full max-w-4xl mx-auto">
-          <div className="absolute inset-x-0 h-[1px] bg-slate-200/80" />
-          {/* Left drop line */}
-          <div className="absolute left-[8%] right-[50%] top-0 h-[1px] bg-secondary flex items-start">
-            <div className="h-4 w-[1px] bg-secondary" />
+        <Container className="relative z-10">
+          <div className="mx-auto max-w-[860px] text-center">
+            <div className="mb-5 flex items-center justify-center gap-4 text-secondary">
+              <span className="flex items-center gap-[5px]" aria-hidden>
+                {[0, 1, 2].map((index) => (
+                  <span
+                    className="block h-[8px] w-[6px] skew-x-[-30deg] bg-current"
+                    key={index}
+                  />
+                ))}
+              </span>
+              <p className="text-sm font-black uppercase tracking-[0.05em] sm:text-base">
+                Our Standards
+              </p>
+              <span className="flex items-center gap-[5px]" aria-hidden>
+                {[0, 1, 2].map((index) => (
+                  <span
+                    className="block h-[8px] w-[6px] skew-x-[-30deg] bg-current"
+                    key={index}
+                  />
+                ))}
+              </span>
+            </div>
+            <h2 className="headline text-[clamp(2.45rem,6.3vw,4rem)] leading-[0.94] text-primary">
+              Certified. <span className="text-secondary">Committed.</span>
+            </h2>
+            <span
+              aria-hidden
+              className="mx-auto mt-6 block h-[2px] w-14 bg-secondary"
+            />
+            <p className="mx-auto mt-4 max-w-[640px] text-sm font-medium leading-[1.55] text-primary-dark sm:text-base">
+              Our processes, materials, and manufacturing systems adhere to
+              globally recognized standards that ensure{" "}
+              <span className="font-black">quality, safety, and reliability</span>{" "}
+              in everything we build.
+            </p>
           </div>
-          {/* Right drop line */}
-          <div className="absolute left-[50%] right-[8%] top-0 h-[1px] bg-secondary flex items-start justify-end">
-            <div className="h-4 w-[1px] bg-secondary" />
-          </div>
-          {/* Text in center */}
-          <div className="relative bg-white px-6">
-            <span className="text-[10px] font-black uppercase tracking-[0.24em] text-primary sm:text-xs">
+        </Container>
+      </div>
+
+      <div className="relative border-y border-white/70 bg-[#edf2f7] pb-6 shadow-[inset_0_18px_38px_rgba(3,27,64,0.08)]">
+        <Container className="relative z-10">
+          <div className="relative mx-auto flex w-full max-w-[820px] items-center justify-center py-3">
+            <span className="absolute inset-x-0 top-1/2 h-px bg-primary/10" />
+            <span className="absolute left-[18%] top-0 hidden h-4 w-px bg-secondary sm:block" />
+            <span className="absolute right-[18%] top-0 hidden h-4 w-px bg-secondary sm:block" />
+            <span className="relative bg-[#edf2f7] px-5 text-center text-xs font-black uppercase tracking-[0.12em] text-primary sm:text-sm">
               OUR COMPLIANCE & STANDARDS
             </span>
           </div>
-        </div>
 
-        {/* 5-Column Grid with separators */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 relative">
-          {certifications.map((item, idx) => (
-            <div className="relative text-center flex flex-col items-center px-4" key={item.title}>
-              {/* Custom SVG Icon Container with 3D Dish Effect */}
-              <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-slate-50 shadow-[inset_0_2px_5px_rgba(3,27,64,0.06),0_8px_20px_rgba(3,27,64,0.05)] transition-transform duration-300 hover:scale-105">
-                {/* Inner white circle float shadow */}
-                <div className="absolute inset-[6px] rounded-full bg-white shadow-[0_4px_12px_rgba(3,27,64,0.08)] flex items-center justify-center">
-                  {renderCertIcon(item.icon)}
+          <div className="relative mt-4 grid gap-7 sm:grid-cols-2 lg:grid-cols-5 lg:gap-0">
+            {certifications.map((item, idx) => (
+              <article
+                className="relative flex flex-col items-center px-4 text-center lg:min-h-[178px] lg:border-r lg:border-primary/10 lg:last:border-r-0"
+                key={item.title}
+              >
+                <div className="relative flex h-[86px] w-[86px] items-center justify-center rounded-full border border-white bg-[#f4f7fb] shadow-[inset_0_2px_8px_rgba(3,27,64,0.05),0_12px_26px_rgba(3,27,64,0.09)]">
+                  <span className="absolute inset-[8px] rounded-full border border-primary/5 bg-white shadow-[0_7px_15px_rgba(3,27,64,0.08)]" />
+                  <svg
+                    aria-hidden
+                    className="absolute inset-[-3px] h-[92px] w-[92px] -rotate-90"
+                    viewBox="0 0 110 110"
+                  >
+                    <circle
+                      cx="55"
+                      cy="55"
+                      fill="none"
+                      r="51"
+                      stroke="#fa5902"
+                      strokeDasharray="74 260"
+                      strokeLinecap="round"
+                      strokeWidth="2.2"
+                    />
+                    <circle
+                      cx="55"
+                      cy="55"
+                      fill="none"
+                      r="43"
+                      stroke="#d7e0eb"
+                      strokeDasharray="2 5"
+                      strokeWidth="1"
+                    />
+                  </svg>
+                  <span className="relative z-10 scale-[1.08]">
+                    {renderCertIcon(item.icon)}
+                  </span>
                 </div>
-
-                {/* Orange crescent arc at the top */}
-                <svg className="absolute -inset-[2px] h-[100px] w-[100px] -rotate-90 pointer-events-none" viewBox="0 0 100 100">
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="48"
-                    stroke="#ff5a00"
-                    strokeWidth="2"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeDasharray="60 300"
+                <h3 className="mt-3 text-sm font-black text-primary">
+                  {item.title}
+                </h3>
+                <span
+                  aria-hidden
+                  className="mt-2 block h-[2px] w-7 bg-secondary"
+                />
+                <p className="mt-2 max-w-[170px] text-[10px] font-medium leading-[1.35] text-primary-dark/80">
+                  {item.text}
+                </p>
+                {idx < certifications.length - 1 && (
+                  <div
+                    aria-hidden
+                    className="absolute right-[-5px] top-[70px] hidden h-2.5 w-2.5 rounded-full bg-secondary lg:block"
                   />
-                </svg>
-              </div>
-              
-              <h3 className="mt-5 text-sm font-black uppercase tracking-[0.10em] text-primary">
-                {item.title}
-              </h3>
-              
-              {/* Small orange accent bar below title */}
-              <span className="mx-auto block h-[2.5px] w-8 bg-secondary mt-2 mb-3" />
-              
-              <p className="mt-1 text-xs leading-relaxed text-text-muted">
-                {item.text}
-              </p>
+                )}
+              </article>
+            ))}
+          </div>
 
-              {/* Dotted Vertical Connector Dot for desktop */}
-              {idx < 4 && (
-                <div className="absolute right-[-16px] top-[40px] hidden lg:flex flex-col items-center h-[80px] pointer-events-none z-0">
-                  <div className="w-[1px] flex-1 border-r border-dashed border-slate-200" />
-                  <div className="h-1.5 w-1.5 rounded-full bg-secondary my-1" />
-                  <div className="w-[1px] flex-1 border-r border-dashed border-slate-200" />
-                </div>
-              )}
+          <div className="relative mt-6 overflow-hidden rounded-2xl border border-white bg-white/86 px-5 py-4 shadow-[0_18px_34px_rgba(3,27,64,0.12)] sm:px-7">
+            <div className="relative z-10 grid gap-5 lg:grid-cols-[1fr_0.88fr] lg:items-center">
+              <div className="flex gap-5">
+                <span className="headline shrink-0 text-[4.25rem] leading-[0.8] text-secondary">
+                  &ldquo;
+                </span>
+                <p className="max-w-[620px] pt-2 text-sm font-bold leading-6 text-primary-dark">
+                  We continuously work towards meeting the{" "}
+                  <span className="font-black italic text-secondary">
+                    highest global benchmarks
+                  </span>{" "}
+                  to ensure excellence in everything we build.
+                </p>
+              </div>
+              <div className="relative min-h-[86px] overflow-hidden rounded-lg sm:min-h-[96px]">
+                <Image
+                  alt="Global benchmark map with orange connection arcs"
+                  className="object-cover object-center mix-blend-multiply"
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 560px"
+                  src="/images/about/global-benchmarks-map.png"
+                />
+              </div>
             </div>
-          ))}
-        </div>
-      </Container>
+          </div>
+        </Container>
+      </div>
     </section>
   );
 }
@@ -1619,62 +1745,91 @@ function FinalCtaSection() {
   const { cta } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 lg:py-24">
-      {/* Industrial plant watermark background */}
-      <div className="pointer-events-none absolute right-0 bottom-0 hidden lg:block h-[90%] w-[450px] opacity-[0.07] z-0 select-none">
+    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f8fafc_52%,#edf2f7_100%)] py-8 lg:py-10">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 industrial-grid opacity-25"
+      />
+      <div className="pointer-events-none absolute bottom-0 right-0 hidden h-[86%] w-[470px] opacity-[0.1] lg:block">
         <Image
-          src="/images/about/our-foundation-1.png"
-          alt="Industrial plant sketch decoration"
-          fill
+          alt=""
           className="object-contain object-bottom grayscale"
+          fill
+          sizes="470px"
+          src="/images/about/our-foundation-1.png"
         />
       </div>
-
-      {/* 3 orange slanted bars in bottom-right */}
-      <div className="absolute bottom-4 right-4 hidden lg:flex gap-1.5">
-        {[0, 1, 2].map((i) => (
-          <span key={i} className="h-5 w-2.5 skew-x-[-28deg] bg-secondary" />
+      <div
+        aria-hidden
+        className="absolute right-8 top-6 hidden items-center gap-3 text-secondary lg:flex"
+      >
+        {[0, 1, 2].map((index) => (
+          <span
+            className="block h-8 w-5 skew-x-[-28deg] rounded-sm border border-current/35"
+            key={index}
+          />
+        ))}
+      </div>
+      <div
+        aria-hidden
+        className="absolute bottom-5 right-6 hidden items-center gap-1.5 text-secondary lg:flex"
+      >
+        {[0, 1, 2].map((index) => (
+          <span
+            className="block h-1.5 w-2.5 skew-x-[-28deg] bg-current"
+            key={index}
+          />
         ))}
       </div>
 
       <Container className="relative z-10">
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-          {/* Left Column Content */}
+        <div className="grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="h-[2px] w-6 bg-secondary" />
-              <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
-                LET'S BUILD
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-[2px] w-5 bg-secondary" />
+              <span className="text-xs font-black uppercase tracking-[0.08em] text-secondary">
+                LET&apos;S BUILD
               </span>
             </div>
-            <h2 className="headline text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-              Let's Build Industrial Solutions <span className="text-secondary">Together.</span>
+            <h2 className="max-w-4xl text-[clamp(2rem,4.5vw,3.25rem)] font-black leading-[1.05] text-primary">
+              {cta.title}{" "}
+              <span className="text-secondary">{cta.highlight}</span>
             </h2>
-            <p className="mt-5 max-w-2xl text-sm md:text-[15px] leading-relaxed text-text-muted">
-              Whether it's a new project, a complex challenge, or a long-term partnership, we're ready to engineer solutions that drive <span className="text-secondary font-black">real impact</span>.
+            <p className="mt-4 max-w-3xl text-sm font-medium leading-6 text-primary-dark">
+              Whether it&apos;s a new project, a complex challenge, or a
+              long-term partnership, we&apos;re ready to engineer solutions that
+              drive <span className="font-black italic text-secondary">real impact.</span>
             </p>
           </div>
 
-          {/* Right Column Buttons */}
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-start lg:justify-end">
+          <div className="flex flex-col gap-3 sm:flex-row lg:pb-1">
             <Button
-              href="#contact"
+              className="min-h-[46px] justify-center rounded-md px-5 text-[10px]"
+              href={cta.primary.href}
               variant="primary"
-              className="flex items-center justify-center gap-2 group text-xs font-black uppercase tracking-[0.14em] px-6 py-4"
             >
-              LET'S WORK TOGETHER
-              <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+              {cta.primary.label}
+              <ArrowRight aria-hidden size={15} />
             </Button>
             <Button
-              href="/global-presence"
+              className="min-h-[46px] justify-center rounded-md border-primary/45 bg-white/70 px-5 text-[10px]"
+              href={cta.secondary.href}
               variant="outlineNavy"
-              className="flex items-center justify-center gap-2 text-xs font-black uppercase tracking-[0.14em] px-6 py-4"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-0.5">
-                <line x1="22" y1="2" x2="11" y2="13" />
+              <svg
+                aria-hidden
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <line x1="22" x2="11" y1="2" y2="13" />
                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
               </svg>
-              GET IN TOUCH
+              {cta.secondary.label}
             </Button>
           </div>
         </div>

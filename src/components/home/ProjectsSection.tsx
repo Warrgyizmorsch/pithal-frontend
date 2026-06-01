@@ -26,8 +26,8 @@ const proofPoints = [
 export function ProjectsSection() {
   return (
     <section className="relative overflow-hidden bg-white py-10 sm:py-14 lg:py-16" id="projects">
-      <div aria-hidden className="pointer-events-none absolute right-0 top-0 hidden h-120 w-[70%] opacity-20 lg:block">
-        <Image alt="World map background" className="object-cover object-right" fill priority sizes="50vw" src="/images/projects/world-map.jpg" />
+      <div aria-hidden className="pointer-events-none absolute right-12 top-[-20px] hidden h-[400px] w-[55%] opacity-100 lg:block">
+        <Image alt="World map background" className="object-contain object-center" fill priority sizes="50vw" src="/images/projects/world-map.jpg" />
       </div>
       <Container className="relative">
         <div className="mb-8 grid items-end gap-8 lg:grid-cols-[0.86fr_1.32fr]">

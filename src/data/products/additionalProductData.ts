@@ -145,7 +145,7 @@ function createProductData(config: ProductConfig): ProductDetailData {
       highlight: config.introHighlight,
       description: config.introDescription,
       image: {
-        src: `${folderPath}/product-review.svg`,
+        src: `${folderPath}/product-review.png`,
         alt: config.machineAlt,
       },
       ctas: [

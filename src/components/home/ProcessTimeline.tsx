@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
@@ -9,7 +10,6 @@ export function ProcessTimeline() {
   return (
     <section className="section-space bg-white">
       <Container>
-
         {/* Section Header */}
         <SectionHeader
           eyebrow="Smart Crushing Process"
@@ -18,9 +18,9 @@ export function ProcessTimeline() {
           subtitle="Our advanced crushing plants are designed to deliver maximum reduction, consistent quality, and higher productivity."
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-0">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:flex xl:flex-row xl:justify-center xl:items-stretch xl:gap-6">
           {processSteps.map((step, index) => (
-            <div key={step.number} className="relative flex min-w-0 items-center">
+            <div key={step.number} className="relative flex min-w-0 xl:w-[210px] xl:shrink-0">
               <article className="flex h-full min-w-0 flex-1 flex-col rounded-2xl border-2 border-primary bg-white p-3 transition-all hover:border-primary/60 hover:shadow-md sm:p-4 xl:p-3">
                 <div className="mb-3 flex items-start gap-2">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary text-lg font-black leading-none text-white">
@@ -47,11 +47,11 @@ export function ProcessTimeline() {
               </article>
 
               {index < processSteps.length - 1 && (
-                <div className="z-10 hidden shrink-0 items-center justify-center px-1 pb-14 xl:flex">
+                <div className="absolute -right-5 top-[40%] -translate-y-1/2 z-10 hidden items-center justify-center xl:flex">
                   <ArrowRight
                     aria-hidden
                     className="text-secondary"
-                    size={24}
+                    size={20}
                     strokeWidth={2.5}
                   />
                 </div>
@@ -68,7 +68,6 @@ export function ProcessTimeline() {
             Explore Our Plant Solutions <ArrowRight aria-hidden size={18} />
           </Button>
         </div>
-
       </Container>
     </section>
   );
