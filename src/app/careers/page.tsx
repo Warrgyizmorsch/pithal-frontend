@@ -497,30 +497,36 @@ export default function CareersPage() {
     <>
       <Header />
       <main className="careers-page bg-white text-gray-900 font-sans overflow-x-hidden">
+        
         {/* ── SECTION 1: HERO ── */}
         <section className="relative overflow-hidden bg-white pt-4 pb-12 text-primary lg:pt-6 lg:pb-16">
+          <Image
+                  alt="Pithal Machines manufacturing and team"
+                  className="object-cover object-center"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  src="/careerimg/20.jpg"
+                />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
           <div className="pointer-events-none absolute right-0 top-0 h-[58%] w-[55%] rounded-bl-[55%] border-l border-secondary/25 border-b border-secondary/25" />
 
           <div className="relative z-10 mx-auto max-w-7xl px-6">
-            <div className="mb-8 flex items-center gap-2 text-xs font-medium text-primary/70">
-              <Link href="/" className="hover:text-secondary transition-colors">
+            <div className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-text-muted">
+              <Link href="/" className="hover:text-primary transition-colors">
                 Home
               </Link>
-              <ChevronRight size={10} />
-              <span>Careers</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+              <span className="text-secondary">Careers</span>
             </div>
 
             <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="h-[1.5px] w-6 bg-secondary" />
-                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
-                    CAREERS
-                  </span>
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/5 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-secondary">
+                  CAREERS
                 </div>
 
-                <h1 className="headline text-[clamp(3rem,7vw,5.3rem)] uppercase leading-[0.96] tracking-tight text-primary">
+                <h1 className="headline text-[clamp(2.15rem,5vw,3.3rem)] text-white leading-[0.92] mb-4">
                   BUILD MACHINES. <br />
                   FOR A <span className="text-secondary">STRONGER FUTURE.</span>
                 </h1>
@@ -530,7 +536,7 @@ export default function CareersPage() {
                   className="mt-6 block h-[2px] w-14 bg-secondary"
                 />
 
-                <p className="mt-6 max-w-xl text-sm md:text-[18px] lg:text-[20px] leading-relaxed text-primary font-medium">
+                <p className="mt-6 max-w-lg text-sm leading-relaxed text-white/90 mb-6">
                   Join Pithal Machines and be part of a team that engineers
                   high-performance solutions and powers industries across the
                   globe.
@@ -558,25 +564,16 @@ export default function CareersPage() {
                 </div>
               </div>
 
-              <div className="relative min-h-[360px] w-full overflow-hidden rounded-bl-[7rem] rounded-tl-[2rem] bg-slate-100 lg:min-h-[560px]">
-                <Image
-                  alt="Pithal Machines manufacturing and team"
-                  className="object-cover object-center"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 58vw, 100vw"
-                  src="/images/about/factory-hero.png"
-                />
-              </div>
+              
             </div>
           </div>
 
-          <div className="relative z-10 mx-auto max-w-7xl px-6 pb-10 pt-5">
-            <div className="grid gap-4 rounded-xl border border-white/10 bg-primary-dark p-5 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] sm:grid-cols-2 xl:grid-cols-4 sm:p-6">
+          <div className="relative z-10 mx-auto max-w-7xl px-6 pb-0 pt-5">
+            <div className="grid gap-4 rounded-xl border border-white/10 bg-white/50 p-5 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] sm:grid-cols-2 xl:grid-cols-4 sm:p-6">
               {heroStats.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 rounded-lg bg-white/5 p-6"
+                  className="flex items-start gap-4 rounded-lg bg-primary-dark/90 p-6"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
                     {item.icon}
@@ -620,7 +617,7 @@ export default function CareersPage() {
               {advantages.map((a, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border border-slate-200 bg-white p-8 shadow-[0_24px_60px_rgba(15,23,42,0.06)] transition hover:-translate-y-1"
+                  className="rounded-lg border border-slate-200 bg-white p-8 shadow-[0_24px_70px_rgba(15,23,42,0.14)] transition hover:-translate-y-1"
                 >
                   <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
                     {a.icon}
@@ -808,7 +805,7 @@ export default function CareersPage() {
 
             <div className="grid gap-6 lg:grid-cols-3">
               {/* Management Card */}
-              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.04)] overflow-hidden flex flex-col h-full">
+              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_22px_55px_rgba(15,23,42,0.12)] overflow-hidden flex flex-col h-full">
                 <div className="p-8 text-center flex-1 flex flex-col">
                   <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                     <svg
@@ -830,7 +827,7 @@ export default function CareersPage() {
                   </h3>
                   <div className="overflow-hidden rounded-lg mb-6 h-40 relative">
                     <Image
-                      src="/images/about/factory-hero.png"
+                      src="/careerimg/management roles.jpg"
                       alt="Management"
                       fill
                       className="object-cover"
@@ -934,7 +931,7 @@ export default function CareersPage() {
               </div>
 
               {/* Office Card */}
-              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.04)] overflow-hidden flex flex-col h-full">
+              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_22px_55px_rgba(15,23,42,0.12)] overflow-hidden flex flex-col h-full">
                 <div className="p-8 text-center flex-1 flex flex-col">
                   <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                     <svg
@@ -956,7 +953,7 @@ export default function CareersPage() {
                   </h3>
                   <div className="overflow-hidden rounded-lg mb-6 h-40 relative">
                     <Image
-                      src="/images/about/manufacturing-01.png"
+                      src="/careerimg/office and coordination roles.jpg"
                       alt="Office"
                       fill
                       className="object-cover"
@@ -1080,7 +1077,7 @@ export default function CareersPage() {
               </div>
 
               {/* Production Card */}
-              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.04)] overflow-hidden flex flex-col h-full">
+              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_22px_55px_rgba(15,23,42,0.12)] overflow-hidden flex flex-col h-full">
                 <div className="p-8 text-center flex-1 flex flex-col">
                   <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                     <svg
@@ -1102,7 +1099,7 @@ export default function CareersPage() {
                   </h3>
                   <div className="overflow-hidden rounded-lg mb-6 h-40 relative">
                     <Image
-                      src="/images/about/manufacturing-02.png"
+                      src="/careerimg/production & technical roles.jpg"
                       alt="Production"
                       fill
                       className="object-cover"
@@ -1206,7 +1203,7 @@ export default function CareersPage() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-lg bg-white border border-slate-100 shadow-[0_18px_40px_rgba(15,23,42,0.04)] px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="mt-8 rounded-lg bg-white border border-slate-100 shadow-[0_22px_55px_rgba(15,23,42,0.12)] px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <div className="h-12 w-12 rounded-full bg-slate-50 flex items-center justify-center">
                   <svg
@@ -1266,7 +1263,7 @@ export default function CareersPage() {
             </div>
 
             {/* Filters */}
-            <div className="bg-white rounded-lg p-4 shadow-sm mb-8">
+            <div className="bg-white rounded-lg p-4 shadow-lg mb-8">
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex-1">
                   <label className="sr-only">Search</label>
@@ -1343,7 +1340,7 @@ export default function CareersPage() {
                 .map((job, i) => (
                   <div
                     key={i}
-                    className="bg-white border border-gray-100 rounded-xl p-5 hover:shadow-md transition-shadow flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+                    className="bg-white border border-gray-100 rounded-xl p-5 shadow-[0_16px_45px_rgba(15,23,42,0.10)] hover:shadow-xl transition-shadow flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
                   >
                     {/* Role & Department */}
                     <div className="flex items-center gap-4 md:w-1/3">
@@ -1475,7 +1472,7 @@ export default function CareersPage() {
                     <div className="flex flex-col items-center justify-center shrink-0 w-32 gap-2">
                       <Button
                         href="#"
-                        variant={job.hot ? "primary" : "outlineNavy"}
+                        variant="primary"
                         className="w-full h-10 min-h-0 flex items-center justify-center gap-2 text-[11px] font-bold tracking-wider"
                       >
                         Apply Now
@@ -1647,30 +1644,31 @@ export default function CareersPage() {
             {/* Image Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
               {[
-                { title: "FABRICATION", img: "/placeholder-fabrication.jpg" },
-                { title: "CNC OPERATIONS", img: "/placeholder-cnc.jpg" },
-                { title: "WELDING", img: "/placeholder-welding.jpg" },
-                { title: "ASSEMBLY", img: "/placeholder-assembly.jpg" },
+                { title: "FABRICATION", img: "/careerimg/fabrication.jpg" },
+                { title: "CNC OPERATIONS", img: "/careerimg/cnc operation.jpg" },
+                { title: "WELDING", img: "/careerimg/welding.jpg" },
+                { title: "ASSEMBLY", img: "/careerimg/manufacturing experience.jpg" },
+
                 {
                   title: "STATE-OF-THE-ART PLANT",
-                  img: "/placeholder-plant.jpg",
+                  img: "/careerimg/state of the art plant.jpg",
                 },
                 {
                   title: "PRECISION MACHINING",
-                  img: "/placeholder-machining.jpg",
+                  img: "/careerimg/precision machining.jpg",
                 },
                 {
                   title: "HEAVY ENGINEERING CAPABILITY",
-                  img: "/placeholder-heavy.jpg",
+                  img: "/careerimg/heavy engineeering.jpg",
                 },
                 {
                   title: "TECHNICAL WORKFORCE",
-                  img: "/placeholder-workforce.jpg",
+                  img: "/careerimg/technical  workforce.jpg",
                 },
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="flex flex-col rounded-md overflow-hidden bg-white shadow-sm border border-gray-200 group"
+                  className="flex flex-col rounded-md overflow-hidden bg-white shadow-lg border border-gray-200 group"
                 >
                   <div className="relative h-[220px] bg-slate-200 overflow-hidden">
                     {/* Replace standard img tag with Next/Image if you are using Next.js */}
@@ -1701,7 +1699,7 @@ export default function CareersPage() {
             </div>
 
             {/* Bottom Features Banner */}
-            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col md:flex-row flex-wrap justify-between items-start md:items-center gap-6">
+            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-xl flex flex-col md:flex-row flex-wrap justify-between items-start md:items-center gap-6">
               {[
                 {
                   title: "Advanced Machinery",
@@ -1993,7 +1991,7 @@ export default function CareersPage() {
               ].map((b, i) => (
                 <div
                   key={i}
-                  className={`bg-white rounded-lg p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border-b-[5px] ${b.borderColor} text-center flex flex-col items-center group transition-all duration-300 hover:shadow-lg`}
+                  className={`bg-white rounded-lg p-6 shadow-[0_16px_45px_rgba(15,23,42,0.12)] border-b-[5px] ${b.borderColor} text-center flex flex-col items-center group transition-all duration-300 hover:shadow-xl`}
                 >
                   {b.icon}
                   <h3 className="font-extrabold text-primary text-[17px] mb-3 leading-tight whitespace-pre-line">
@@ -2134,7 +2132,7 @@ export default function CareersPage() {
                 {
                   title: "Technical Learning",
                   desc: "Gain hands-on knowledge through structured training programs and real-time manufacturing projects.",
-                  img: "/placeholder-tech.jpg",
+                  img: "/careerimg/technical learning.jpg",
                   iconBg: "bg-blue-50",
                   icon: (
                     <path
@@ -2148,7 +2146,7 @@ export default function CareersPage() {
                 {
                   title: "Skill Development",
                   desc: "Enhance your technical and industrial skills with continuous learning and upskilling initiatives.",
-                  img: "/placeholder-skill.jpg",
+                  img: "/careerimg/skill development.jpg",
                   iconBg: "bg-orange-50",
                   icon: (
                     <path
@@ -2162,7 +2160,7 @@ export default function CareersPage() {
                 {
                   title: "Industrial Exposure",
                   desc: "Work on diverse machines and projects that give you strong industry exposure.",
-                  img: "/placeholder-industry.jpg",
+                  img: "/careerimg/industry experiendce.jpg",
                   iconBg: "bg-teal-50",
                   icon: (
                     <path
@@ -2176,7 +2174,7 @@ export default function CareersPage() {
                 {
                   title: "Leadership Growth",
                   desc: "Opportunities to take ownership, lead teams and grow into future leaders of the organization.",
-                  img: "/placeholder-leadership.jpg",
+                  img: "/careerimg/leadership growth.jpg",
                   iconBg: "bg-purple-50",
                   icon: (
                     <path
@@ -2190,7 +2188,7 @@ export default function CareersPage() {
                 {
                   title: "Manufacturing Expertise",
                   desc: "Build deep expertise in advanced manufacturing, quality standards and engineering excellence.",
-                  img: "/placeholder-expertise.jpg",
+                  img: "/careerimg/manufacturing experience.jpg",
                   iconBg: "bg-red-50",
                   icon: (
                     <path
@@ -2204,7 +2202,7 @@ export default function CareersPage() {
               ].map((card, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-lg shadow-[0_4px_24px_-8px_rgba(0,0,0,0.08)] border border-gray-100 p-5 flex flex-col items-center text-center transition-transform hover:-translate-y-1"
+                  className="bg-white rounded-lg shadow-[0_18px_45px_rgba(15,23,42,0.12)] border border-gray-100 p-5 flex flex-col items-center text-center transition-transform hover:-translate-y-1"
                 >
                   {/* Icon */}
                   <div
@@ -2539,7 +2537,7 @@ export default function CareersPage() {
 
                     {/* Content Card */}
                     <div
-                      className={`bg-white rounded-xl p-5 lg:p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border-b-[5px] ${step.borderColor} text-center w-full h-full transition-shadow group-hover:shadow-lg flex flex-col`}
+                      className={`bg-white rounded-xl p-5 lg:p-6 shadow-[0_16px_45px_rgba(15,23,42,0.12)] border-b-[5px] ${step.borderColor} text-center w-full h-full transition-shadow group-hover:shadow-xl flex flex-col`}
                     >
                       <h4 className="font-extrabold text-primary text-[16px] mb-3">
                         {step.title}
@@ -2661,7 +2659,7 @@ export default function CareersPage() {
               {[
                 {
                   title: "ITI / Diploma",
-                  img: "/placeholder-iti.jpg",
+                  img: "/careerimg/ITI.jpg",
                   icon: (
                     <path
                       strokeLinecap="round"
@@ -2679,7 +2677,7 @@ export default function CareersPage() {
                 },
                 {
                   title: "B.Tech / BE",
-                  img: "/placeholder-btech.jpg",
+                  img: "/careerimg/B TECH.jpg",
                   icon: (
                     <path
                       strokeLinecap="round"
@@ -2697,7 +2695,7 @@ export default function CareersPage() {
                 },
                 {
                   title: "MBA",
-                  img: "/placeholder-mba.jpg",
+                  img: "/careerimg/MBA.jpg",
                   icon: (
                     <path
                       strokeLinecap="round"
@@ -2715,7 +2713,7 @@ export default function CareersPage() {
                 },
                 {
                   title: "Industry Experience",
-                  img: "/placeholder-experience.jpg",
+                  img: "/careerimg/Industry experiendce.jpg",
                   icon: (
                     <path
                       strokeLinecap="round"
@@ -2733,7 +2731,7 @@ export default function CareersPage() {
                 },
                 {
                   title: "Technical Skills",
-                  img: "/placeholder-technical.jpg",
+                  img: "/careerimg/technical skills.jpg",
                   icon: (
                     <path
                       strokeLinecap="round"
@@ -2751,7 +2749,7 @@ export default function CareersPage() {
                 },
                 {
                   title: "Communication Skills",
-                  img: "/placeholder-communication.jpg",
+                  img: "/careerimg/communication skillsexplosure.jpg",
                   icon: (
                     <path
                       strokeLinecap="round"
@@ -2770,7 +2768,7 @@ export default function CareersPage() {
               ].map((card, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-lg shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] border border-gray-100 overflow-hidden flex flex-col hover:shadow-lg transition-shadow group"
+                  className="bg-white rounded-lg shadow-[0_16px_42px_rgba(15,23,42,0.12)] border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-shadow group"
                 >
                   {/* Top Icon & Title Area */}
                   <div className="pt-6 pb-4 px-4 flex flex-col items-center justify-center">
@@ -3015,7 +3013,7 @@ export default function CareersPage() {
               ].map((t, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-lg p-8 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col h-full relative"
+                  className="bg-white rounded-lg p-8 shadow-[0_18px_48px_rgba(15,23,42,0.12)] border border-gray-100 flex flex-col h-full relative"
                 >
                   {/* Top Quotes Icon */}
                   <div className="absolute top-8 right-8 text-secondary font-heading text-5xl leading-none">
@@ -3077,7 +3075,7 @@ export default function CareersPage() {
         {/* ── SECTION 12: FINAL CTA ── */}
         <section className="py-12 bg-white flex justify-center">
           <div className="max-w-[1200px] w-full px-6">
-            <div className="bg-[#fcfdff] border border-gray-100 shadow-[0_4px_30px_-10px_rgba(0,0,0,0.06)] rounded-xl overflow-hidden">
+            <div className="bg-[#fcfdff] border border-gray-100 shadow-[0_24px_70px_rgba(15,23,42,0.14)] rounded-xl overflow-hidden">
               {/* Top Main Section */}
               <div className="flex flex-col lg:flex-row items-center p-6 lg:p-8 border-b border-gray-100 gap-8">
                 {/* Left Side: Logo & Text */}

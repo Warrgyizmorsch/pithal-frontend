@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { Globe, Building2, Clock, Settings, ChevronRight, Mail, TrendingUp, Cog, Lightbulb, Lock } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Globe, Building2, Clock, Settings, ChevronRight, Mail, TrendingUp, Cog, Lightbulb, Lock, X, Pickaxe, Gem, Factory, HardHat, Recycle, Truck, Gauge, Wrench, BookOpen } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/common/Button";
@@ -174,111 +174,52 @@ const featuredPosts = [
 
 const categories = [
   {
-    icon: (
-      <svg viewBox="0 0 60 60" fill="none" className="w-10 h-10">
-        <path d="M15 45V30l8-15h14l8 15v15H15z" stroke="#0d1b2e" strokeWidth="2" fill="none" />
-        <circle cx="30" cy="28" r="5" stroke="#E8762C" strokeWidth="2" />
-        <path d="M10 45h40" stroke="#0d1b2e" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Pickaxe className="h-10 w-10 stroke-[1.8]" />,
     name: "MINING",
     desc: "Insights on mining operations, equipment and productivity.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 60 60" fill="none" className="w-10 h-10">
-        <circle cx="20" cy="30" r="6" stroke="#0d1b2e" strokeWidth="2" />
-        <circle cx="35" cy="25" r="5" stroke="#0d1b2e" strokeWidth="2" />
-        <circle cx="45" cy="32" r="4" stroke="#0d1b2e" strokeWidth="2" />
-        <path d="M10 42h40" stroke="#E8762C" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Gem className="h-10 w-10 stroke-[1.8]" />,
     name: "AGGREGATES",
     desc: "Best practices for aggregate production and processing.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 60 60" fill="none" className="w-10 h-10">
-        <path d="M30 8v20M22 28h16M18 44h24" stroke="#0d1b2e" strokeWidth="2" strokeLinecap="round" />
-        <rect x="24" y="28" width="12" height="16" stroke="#E8762C" strokeWidth="2" rx="1" />
-      </svg>
-    ),
+    icon: <Factory className="h-10 w-10 stroke-[1.8]" />,
     name: "CEMENT",
     desc: "Knowledge hub for cement manufacturing and plant operations.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 60 60" fill="none" className="w-10 h-10">
-        <rect x="18" y="28" width="24" height="16" rx="1" stroke="#0d1b2e" strokeWidth="2" />
-        <path d="M22 28V20a8 8 0 0116 0v8" stroke="#0d1b2e" strokeWidth="2" />
-        <path d="M14 44h32" stroke="#E8762C" strokeWidth="2" strokeLinecap="round" />
-        <path d="M30 8v8" stroke="#E8762C" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <HardHat className="h-10 w-10 stroke-[1.8]" />,
     name: "CONSTRUCTION",
     desc: "Solutions and insights for construction professionals.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 60 60" fill="none" className="w-10 h-10">
-        <path d="M20 40l5-10 5 5 5-15 5 20" stroke="#E8762C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M12 40h36" stroke="#0d1b2e" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Recycle className="h-10 w-10 stroke-[1.8]" />,
     name: "RECYCLING",
     desc: "Sustainable practices and recycling technologies.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 60 60" fill="none" className="w-10 h-10">
-        <circle cx="30" cy="32" r="3" stroke="#0d1b2e" strokeWidth="2" />
-        <path d="M30 20v4M30 40v4M20 32h4M36 32h4M22 24l2.8 2.8M34.4 35.2L37.2 38M22 40l2.8-2.8M34.4 28.8L37.2 26" stroke="#E8762C" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Truck className="h-10 w-10 stroke-[1.8]" />,
     name: "MATERIAL HANDLING",
     desc: "Insights on conveying, handling and bulk material systems.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 60 60" fill="none" className="w-10 h-10">
-        <path d="M16 44V28l14-16 14 16v16H16z" stroke="#0d1b2e" strokeWidth="2" fill="none" />
-        <path d="M22 44V34h16v10" stroke="#E8762C" strokeWidth="2" />
-        <path d="M28 30h4v4h-4z" fill="#E8762C" />
-      </svg>
-    ),
+    icon: <Gauge className="h-10 w-10 stroke-[1.8]" />,
     name: "PLANT OPTIMIZATION",
     desc: "Improve efficiency, reduce costs and maximize performance.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 60 60" fill="none" className="w-10 h-10">
-        <circle cx="30" cy="30" r="10" stroke="#0d1b2e" strokeWidth="2" fill="none" />
-        <path d="M26 26l8 4-8 4V26z" fill="#E8762C" />
-        <path d="M30 10v6M30 44v6M10 30h6M44 30h6" stroke="#E8762C" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Wrench className="h-10 w-10 stroke-[1.8]" />,
     name: "MAINTENANCE",
     desc: "Maintenance strategies for high performance and reliability.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 60 60" fill="none" className="w-10 h-10">
-        <rect x="12" y="14" width="36" height="28" rx="2" stroke="#0d1b2e" strokeWidth="2" />
-        <path d="M20 22h20M20 28h14M20 34h8" stroke="#E8762C" strokeWidth="2" strokeLinecap="round" />
-        <path d="M40 28l6 4-6 4V28z" fill="#E8762C" />
-      </svg>
-    ),
+    icon: <BookOpen className="h-10 w-10 stroke-[1.8]" />,
     name: "ENGINEERING GUIDES",
     desc: "Technical guides and resources from industry experts.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 60 60" fill="none" className="w-10 h-10">
-        <circle cx="30" cy="26" r="8" stroke="#0d1b2e" strokeWidth="2" fill="none" />
-        <path d="M30 18v-4M26 14l8 8M18 26h4M38 26h4" stroke="#E8762C" strokeWidth="2" strokeLinecap="round" />
-        <path d="M22 44c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#0d1b2e" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <TrendingUp className="h-10 w-10 stroke-[1.8]" />,
     name: "INDUSTRY TRENDS",
     desc: "Latest trends, innovations and market perspectives.",
   },
@@ -814,19 +755,19 @@ function SectionHeader({ eyebrow, title, sub, linkText, linkHref, dark = false }
       <div>
         {eyebrow && (
           <div className="flex items-center gap-3 mb-3">
-            <span className="w-8 h-0.5 bg-orange-500 inline-block" />
-            <span className={`text-xs font-bold uppercase tracking-widest ${dark ? "text-orange-400" : "text-orange-500"}`}>{eyebrow}</span>
-            <span className="w-8 h-0.5 bg-orange-500 inline-block" />
+            <span className="w-8 h-0.5 bg-secondary inline-block" />
+            <span className={`text-xs font-bold uppercase tracking-widest ${dark ? "text-secondary" : "text-secondary"}`}>{eyebrow}</span>
+            <span className="w-8 h-0.5 bg-secondary inline-block" />
           </div>
         )}
-        <h2 className={`text-3xl font-extrabold ${dark ? "text-white" : "text-[#0d1b2e]"}`}>{title}</h2>
-        {sub && <p className={`text-sm mt-2 ${dark ? "text-gray-400" : "text-gray-500"}`}>{sub}</p>}
+        <h2 className={`headline text-[clamp(1.9rem,4vw,3rem)] ${dark ? "text-white" : "text-primary"}`}>{title}</h2>
+        {sub && <p className={`text-sm mt-2 leading-6 ${dark ? "text-slate-300" : "text-text-muted"}`}>{sub}</p>}
       </div>
       {linkText && linkHref && (
         <Button
-          variant="ghost"
+          variant={dark ? "outlineOrange" : "outlineNavy"}
           href={linkHref}
-          className={`flex items-center gap-2 text-sm font-bold whitespace-nowrap mt-1 p-0 min-h-0 border-0 ${dark ? "text-orange-400 hover:text-orange-300" : "text-[#0d1b2e] hover:text-orange-500"} transition-colors`}
+          className="h-11 min-h-0 rounded-lg px-5 whitespace-nowrap mt-1"
         >
           {linkText}
           <ArrowRight />
@@ -862,6 +803,15 @@ const LargeFolderIcon = () => (
 export default function BlogPage() {
   const [email, setEmail] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const popupTimer = window.setTimeout(() => {
+      setShowPopup(true);
+    }, 3000);
+
+    return () => window.clearTimeout(popupTimer);
+  }, []);
 
   return (
     <>
@@ -877,8 +827,8 @@ export default function BlogPage() {
           backgroundImage: "url('/blogpageimg/top.jpg')",
         }}
       >
-        {/* faint map background */}
-        
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/30" />
+        <div className="absolute inset-0 industrial-grid opacity-70" />
 
         <Container className="relative z-10">
           {/* Breadcrumb */}
@@ -914,7 +864,7 @@ export default function BlogPage() {
           </div>
 
           {/* Stats strip */}
-          <div className="mt-12 rounded-xl border border-slate-100 bg-slate-50 p-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-12 grid gap-6 rounded-xl border border-border bg-white/90 p-6 shadow-[0_24px_70px_rgba(3,27,64,0.12)] backdrop-blur-sm sm:grid-cols-2 lg:grid-cols-4">
             {heroSectionStats.map((s, i) => (
               <div key={i} className="flex gap-3 items-start">
                 <div className="w-10 h-10 rounded-full border border-secondary/20 bg-secondary/5 flex items-center justify-center text-secondary flex-shrink-0">
@@ -947,14 +897,14 @@ export default function BlogPage() {
 
           <div className="grid md:grid-cols-2 gap-6 min-h-0 md:min-h-[500px]">
             {/* Large featured card */}
-            <div className="relative rounded-xl overflow-hidden group cursor-pointer min-h-[350px] sm:min-h-[400px]">
-              <ImgBox src={featuredPosts[0].img} alt={featuredPosts[0].title} fill label="Featured Image" className="group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2e]/90 via-[#0d1b2e]/40 to-transparent" />
+            <div className="relative rounded-xl overflow-hidden group cursor-pointer min-h-[350px] sm:min-h-[400px] shadow-[0_24px_70px_rgba(3,27,64,0.18)]">
+              <ImgBox src={featuredPosts[0].img} alt={featuredPosts[0].title} fill label="" className="group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary/50 to-transparent" />
               <div className="absolute top-4 left-4">
-                <span className="bg-[#0d1b2e] text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider">FEATURED</span>
+                <span className="bg-primary text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider">FEATURED</span>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
-                <span className="text-orange-400 text-xs font-bold uppercase tracking-wider mb-3 block">{featuredPosts[0].tag}</span>
+                <span className="text-secondary text-xs font-bold uppercase tracking-wider mb-3 block">{featuredPosts[0].tag}</span>
                 <h3 className="text-white text-2xl font-extrabold leading-tight mb-3">{featuredPosts[0].title}</h3>
                 <p className="text-gray-300 text-xs leading-relaxed mb-5 max-w-md">{featuredPosts[0].desc}</p>
                 <div className="flex items-center justify-between">
@@ -972,19 +922,19 @@ export default function BlogPage() {
             {/* Right column — 2 smaller cards */}
             <div className="flex flex-col gap-6">
               {featuredPosts.slice(1).map((post, i) => (
-                <div key={i} className="relative rounded-xl overflow-hidden group cursor-pointer flex-1 min-h-[200px] sm:min-h-[185px]">
-                  <ImgBox src={post.img} alt={post.title} fill label="Article Image" className="group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2e]/90 via-[#0d1b2e]/50 to-transparent" />
+                <div key={i} className="relative rounded-xl overflow-hidden group cursor-pointer flex-1 min-h-[200px] sm:min-h-[185px] shadow-[0_18px_45px_rgba(3,27,64,0.14)]">
+                  <ImgBox src={post.img} alt={post.title}  className="group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary/55 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
-                    <span className="text-orange-400 text-[10px] font-bold uppercase tracking-wider mb-2 block">{post.tag}</span>
+                    <span className="text-secondary text-[10px] font-bold uppercase tracking-wider mb-2 block">{post.tag}</span>
                     <h3 className="text-white text-base font-extrabold leading-tight mb-3">{post.title}</h3>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3 text-gray-400 text-[10px]">
                         <span><CalendarIcon />{post.date}</span>
                         <span><ClockIcon />{post.read}</span>
                       </div>
-                      <Button variant="ghost" href="#" className="text-white text-[10px] font-bold flex items-center gap-1 hover:text-orange-400 p-0 min-h-0 border-0">
-                        Read More <div className="w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center"><ArrowRight cls="w-3 h-3" /></div>
+                      <Button variant="ghost" href="#" className="text-white text-[10px] font-bold flex items-center gap-1 hover:text-secondary p-0 min-h-0 border-0">
+                        Read More <div className="w-5 h-5 bg-secondary rounded-full flex items-center justify-center"><ArrowRight cls="w-3 h-3" /></div>
                       </Button>
                     </div>
                   </div>
@@ -998,21 +948,21 @@ export default function BlogPage() {
       {/* ══════════════════════════════════════════
           SECTION 4 — EXPLORE BY CATEGORY
       ══════════════════════════════════════════ */}
-      <section className="py-10 bg-[#f8fafc]">
+      <section className="py-10 bg-bg-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-secondary mb-3">
                 Explore By Category
               </p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0d1b2e] tracking-tight">
+              <h2 className="headline text-[clamp(1.9rem,4vw,3rem)] text-primary">
                 Find insights across key industries and topics
               </h2>
             </div>
             <Button
-              variant="ghost"
+              variant="outlineNavy"
               href="#"
-              className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.16em] text-[#0d1b2e] hover:text-secondary p-0 min-h-0 border-0"
+              className="h-11 min-h-0 rounded-lg px-5"
             >
               View all categories <ArrowRight cls="w-4 h-4" />
             </Button>
@@ -1023,15 +973,15 @@ export default function BlogPage() {
               <Link
                 key={i}
                 href="#"
-                className="group rounded-lg border border-slate-200 bg-white p-4 sm:p-6 text-center shadow-sm transition duration-300 hover:border-secondary/50 hover:shadow-lg flex flex-col h-full"
+                className="group lift rounded-lg border border-border bg-white p-4 text-center shadow-[0_12px_32px_rgba(3,27,64,0.06)] sm:p-6 flex flex-col h-full"
               >
                 <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary transition duration-300 group-hover:bg-secondary/20">
                   {cat.icon}
                 </div>
-                <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-[#0d1b2e] mb-3">
+                <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-primary mb-3">
                   {cat.name}
                 </h3>
-                <p className="text-[0.82rem] leading-6 text-slate-500 mb-6 flex-grow">{cat.desc}</p>
+                <p className="text-[0.82rem] leading-6 text-text-muted mb-6 flex-grow">{cat.desc}</p>
                 <div className="mt-auto flex justify-center">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-secondary/10 text-secondary transition duration-300 group-hover:bg-secondary group-hover:text-white">
                     <ArrowRight cls="w-4 h-4" />
@@ -1046,21 +996,21 @@ export default function BlogPage() {
       {/* ══════════════════════════════════════════
           SECTION 5 — LATEST ARTICLES
       ══════════════════════════════════════════ */}
-      <section id="articles" className="py-10 bg-[#f8fafc]">
+      <section id="articles" className="py-10 bg-bg-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-secondary mb-3">
                 Latest Articles
               </p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0d1b2e] tracking-tight">
+              <h2 className="headline text-[clamp(1.9rem,4vw,3rem)] text-primary">
                 Stay updated with the latest insights, trends and expert perspectives.
               </h2>
             </div>
             <Button
-              variant="ghost"
+              variant="outlineNavy"
               href="#"
-              className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.16em] text-[#0d1b2e] hover:text-secondary p-0 min-h-0 border-0"
+              className="h-11 min-h-0 rounded-lg px-5"
             >
               View all articles <ArrowRight cls="w-4 h-4" />
             </Button>
@@ -1068,19 +1018,19 @@ export default function BlogPage() {
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {latestArticles.slice(0, 3).map((art, i) => (
-              <div key={i} className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:shadow-lg flex flex-col h-full">
+              <div key={i} className="group lift overflow-hidden rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(3,27,64,0.07)] flex flex-col h-full">
                 <div className="relative h-48 sm:h-72 overflow-hidden flex-shrink-0">
-                  <ImgBox src={art.img} alt={art.title} fill label="Article image" className="group-hover:scale-105 transition-transform duration-500" />
+                  <ImgBox src={art.img} alt={art.title}  className="group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-4 sm:p-6 flex flex-col flex-grow">
                   <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary/10 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-secondary self-start">
                     {art.tagIcon}
                     {art.tag}
                   </div>
-                  <h3 className="text-2xl font-extrabold text-[#0d1b2e] leading-tight mb-4 group-hover:text-secondary transition-colors">
+                  <h3 className="text-2xl font-extrabold text-primary leading-tight mb-4 group-hover:text-secondary transition-colors">
                     {art.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-slate-600 mb-6 flex-grow">{art.desc}</p>
+                  <p className="text-sm leading-relaxed text-text-muted mb-6 flex-grow">{art.desc}</p>
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-sm text-slate-500 mt-auto pt-4 border-t border-slate-100">
                     <div className="flex items-center gap-5">
                       <span className="flex items-center gap-2 text-slate-500"><CalendarIcon />{art.date}</span>
@@ -1100,7 +1050,7 @@ export default function BlogPage() {
       {/* ══════════════════════════════════════════
           SECTION 6 — INDUSTRIAL KNOWLEDGE HUB
       ══════════════════════════════════════════ */}
-      <section className="py-10 bg-[#f5f3ef]">
+      <section className="py-10 bg-bg-light">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-10">
@@ -1109,7 +1059,7 @@ export default function BlogPage() {
               <span className="text-secondary text-xs font-bold uppercase tracking-[0.25em]">INDUSTRIAL KNOWLEDGE HUB</span>
               <span className="w-10 h-0.5 bg-secondary" />
             </div>
-            <h2 className="text-center text-[2.25rem] sm:text-[3rem] font-bold text-primary leading-[1.15] tracking-tight font-sans">
+            <h2 className="headline text-center text-[clamp(1.9rem,4vw,3rem)] text-primary">
               EXPERT INSIGHTS ACROSS EVERY STAGE<br />
               OF <span className="text-secondary">INDUSTRIAL OPERATIONS.</span>
             </h2>
@@ -1123,7 +1073,7 @@ export default function BlogPage() {
             {/* Left column cards */}
             <div className="space-y-6">
               {knowledgeHubTopics.slice(0, 2).map((topic, i) => (
-                <div key={i} className="rounded-lg border border-slate-100 bg-white shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-slate-200">
+                <div key={i} className="lift rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(3,27,64,0.07)] overflow-hidden">
                   <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-stretch min-h-[220px]">
                     <div className="p-5 sm:p-7 flex flex-col justify-between">
                       <div>
@@ -1154,7 +1104,7 @@ export default function BlogPage() {
                     </div>
                     {/* Image with Left-to-Right Fade */}
                     <div className="relative h-52 lg:h-auto overflow-hidden">
-                      <ImgBox src={topic.img} alt={topic.title} fill label="Topic image" className="object-cover" />
+                      <ImgBox src={topic.img} alt={topic.title} fill label="" className="object-cover" />
                       <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent pointer-events-none hidden lg:block" />
                       <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white to-transparent pointer-events-none lg:hidden" />
                     </div>
@@ -1211,7 +1161,7 @@ export default function BlogPage() {
             {/* Right column cards */}
             <div className="space-y-6">
               {knowledgeHubTopics.slice(2, 4).map((topic, i) => (
-                <div key={i} className="rounded-lg border border-slate-100 bg-white shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:border-slate-200">
+                <div key={i} className="lift rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(3,27,64,0.07)] overflow-hidden">
                   <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-stretch min-h-[220px]">
                     <div className="p-5 sm:p-7 flex flex-col justify-between">
                       <div>
@@ -1242,7 +1192,7 @@ export default function BlogPage() {
                     </div>
                     {/* Image with Left-to-Right Fade */}
                     <div className="relative h-52 lg:h-auto overflow-hidden">
-                      <ImgBox src={topic.img} alt={topic.title} fill label="Topic image" className="object-cover" />
+                      <ImgBox src={topic.img} alt={topic.title} fill label="" className="object-cover" />
                       <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent pointer-events-none hidden lg:block" />
                       <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white to-transparent pointer-events-none lg:hidden" />
                     </div>
@@ -1253,7 +1203,7 @@ export default function BlogPage() {
           </div>
 
           {/* Unified Bottom stats banner */}
-          <div className="mt-12 bg-white rounded-xl border border-slate-100 p-5 sm:p-8 shadow-sm">
+          <div className="mt-12 bg-white rounded-xl border border-border p-5 sm:p-8 shadow-[0_18px_45px_rgba(3,27,64,0.08)]">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-slate-100">
               {hubStats.map((s, i) => (
                 <div key={i} className="flex gap-4 items-center px-4 first:pl-0 last:pr-0">
@@ -1363,19 +1313,19 @@ export default function BlogPage() {
       {/* ══════════════════════════════════════════
           SECTION 8 — RESOURCE CENTER
       ══════════════════════════════════════════ */}
-      <section id="solutions" className="py-10 bg-[#f5f3ef]">
+      <section id="solutions" className="py-10 bg-bg-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="w-12 h-0.5 bg-orange-500" />
-              <span className="text-orange-500 text-xs font-bold uppercase tracking-widest">RESOURCE CENTER</span>
+              <span className="w-12 h-0.5 bg-secondary" />
+              <span className="text-secondary text-xs font-bold uppercase tracking-widest">RESOURCE CENTER</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0d1b2e] leading-tight">
+            <h2 className="headline text-[clamp(1.9rem,4vw,3rem)] text-primary">
               EXPERT RESOURCES.
               <br />
-              <span className="text-orange-500">PRACTICAL SOLUTIONS.</span>
+              <span className="text-secondary">PRACTICAL SOLUTIONS.</span>
             </h2>
-            <p className="text-gray-500 text-sm mt-3 max-w-md mx-auto">
+            <p className="text-text-muted text-sm mt-3 max-w-md mx-auto leading-6">
               Download our expert guides, checklists and technical resources to improve efficiency,
               reduce downtime and maximize performance.
             </p>
@@ -1387,34 +1337,34 @@ export default function BlogPage() {
               return (
                 <div
                   key={i}
-                  className="group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:border-orange-300 hover:shadow-xl flex flex-col h-full"
+                  className="group lift relative overflow-hidden rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(3,27,64,0.07)] flex flex-col h-full"
                 >
                   <div className="relative h-52 overflow-hidden flex-shrink-0">
-                    <ImgBox src={guide.img} alt={guide.title} fill label="Guide Image" className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2e]/70 to-transparent" />
+                    <ImgBox src={guide.img} alt={guide.title} fill label="" className="object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
                   </div>
                   {/* Floating Icon - placed outside the overflow-hidden parent to prevent clipping */}
                   <div className="absolute left-1/2 top-52 z-20 -translate-x-1/2 -translate-y-1/2">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white bg-white text-orange-500 shadow-lg">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white bg-white text-secondary shadow-lg">
                       <IconComponent className="h-7 w-7" />
                     </div>
                   </div>
                   <div className="pt-10 px-4 sm:px-6 pb-5 sm:pb-6 flex-1 flex flex-col justify-between">
                     <div>
-                      <h4 className="text-[#0d1b2e] font-extrabold text-lg mb-3">{guide.title}</h4>
-                      <p className="text-sm leading-relaxed text-slate-600 mb-5">{guide.desc}</p>
+                      <h4 className="text-primary font-extrabold text-lg mb-3">{guide.title}</h4>
+                      <p className="text-sm leading-relaxed text-text-muted mb-5">{guide.desc}</p>
                       <ul className="space-y-3 mb-6">
                         {guide.items.map((item, j) => (
-                          <li key={j} className="flex items-start gap-3 text-sm text-slate-600">
-                            <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-orange-500" />
+                          <li key={j} className="flex items-start gap-3 text-sm text-text-muted">
+                            <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-secondary" />
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     <Button
-                      variant="ghost"
-                      className="w-full justify-center gap-2 rounded-full bg-orange-500 text-white border-orange-500 hover:bg-orange-600 hover:text-white mt-auto"
+                      variant="primary"
+                      className="w-full justify-center gap-2 rounded-lg mt-auto"
                     >
                       <DownloadIcon />DOWNLOAD RESOURCE
                     </Button>
@@ -1425,23 +1375,23 @@ export default function BlogPage() {
           </div>
 
           {/* Custom guide form */}
-          <div className="bg-white rounded-xl border border-gray-200 p-5 sm:p-7 flex flex-col md:flex-row items-center gap-8">
+          <div className="bg-white rounded-xl border border-border p-5 sm:p-7 flex flex-col md:flex-row items-center gap-8 shadow-[0_18px_45px_rgba(3,27,64,0.08)]">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
                 <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-                  <path d="M12 2l2 4 4.5.6-3.3 3.2.8 4.5L12 12 7 14.3l.8-4.5L4.5 6.6 9 6 12 2z" stroke="#E8762C" strokeWidth="1.5" fill="none" />
-                  <path d="M6 19h12M9 22h6" stroke="#E8762C" strokeWidth="1.5" strokeLinecap="round" />
+                  <path d="M12 2l2 4 4.5.6-3.3 3.2.8 4.5L12 12 7 14.3l.8-4.5L4.5 6.6 9 6 12 2z" stroke="var(--secondary)" strokeWidth="1.5" fill="none" />
+                  <path d="M6 19h12M9 22h6" stroke="var(--secondary)" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
               </div>
               <div>
-                <p className="font-extrabold text-[#0d1b2e] text-sm">NEED A CUSTOM GUIDE?</p>
-                <p className="text-gray-500 text-xs">Tell us your industry needs and we will send you the relevant resources.</p>
+                <p className="font-extrabold text-primary text-sm">NEED A CUSTOM GUIDE?</p>
+                <p className="text-text-muted text-xs">Tell us your industry needs and we will send you the relevant resources.</p>
               </div>
             </div>
             <div className="flex flex-1 flex-col sm:flex-row flex-wrap gap-3 w-full">
-              <input type="text" placeholder="Full Name" className="border border-gray-300 rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-orange-400" />
-              <input type="email" placeholder="Work Email" className="border border-gray-300 rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-orange-400" />
-              <input type="text" placeholder="Company Name" className="border border-gray-300 rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-orange-400" />
+              <input type="text" placeholder="Full Name" className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary" />
+              <input type="email" placeholder="Work Email" className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary" />
+              <input type="text" placeholder="Company Name" className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary" />
               <Button variant="primary" className="w-full sm:w-auto whitespace-nowrap">
                 GET RESOURCES →
               </Button>
@@ -1460,13 +1410,13 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="w-12 h-0.5 bg-orange-500" />
-              <span className="text-orange-500 text-xs font-bold uppercase tracking-widest">EXPERT INSIGHTS</span>
+              <span className="w-12 h-0.5 bg-secondary" />
+              <span className="text-secondary text-xs font-bold uppercase tracking-widest">EXPERT INSIGHTS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0d1b2e] leading-tight">
+            <h2 className="headline text-[clamp(1.9rem,4vw,3rem)] text-primary">
               EXPERT PERSPECTIVES.
               <br />
-              <span className="text-orange-500">REAL INDUSTRY EXPERIENCE.</span>
+              <span className="text-secondary">REAL INDUSTRY EXPERIENCE.</span>
             </h2>
             <p className="text-gray-500 text-sm mt-3 max-w-md mx-auto">
               Our engineering experts share their insights, technical perspectives and industry observations
@@ -1478,17 +1428,17 @@ export default function BlogPage() {
             {expertQuotes.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border border-slate-200 bg-white p-5 sm:p-8 shadow-sm transition hover:border-orange-300 hover:shadow-xl"
+                className="lift rounded-lg border border-border bg-white p-5 sm:p-8 shadow-[0_14px_38px_rgba(3,27,64,0.07)]"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-orange-200 bg-orange-50 text-3xl font-black text-orange-500">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-secondary/20 bg-secondary/10 text-3xl font-black text-secondary">
                     “
                   </div>
                   <p className="text-sm leading-7 text-slate-700 italic">{q.quote}</p>
                 </div>
 
                 <div className="mt-8 border-t border-slate-100 pt-5 flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-sm font-black text-[#0d1b2e]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-bg-light text-sm font-black text-primary">
                     {q.author
                       .split(" ")
                       .map((name) => name[0])
@@ -1496,10 +1446,10 @@ export default function BlogPage() {
                       .slice(0, 2)}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#0d1b2e] leading-tight">
+                    <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-primary leading-tight">
                       {q.author}
                     </p>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-orange-500">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-secondary">
                       {q.role}
                     </p>
                   </div>
@@ -1895,9 +1845,24 @@ export default function BlogPage() {
       {/* ══════════════════════════════════════════
           POPUP STRIP — LET'S ENGINEER
       ══════════════════════════════════════════ */}
-      <section className="py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-xl border border-border bg-[#fafafa]/50 p-5 sm:p-10 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+      <section
+        className={`fixed inset-x-0 bottom-0 z-50 px-4 pb-4 sm:px-6 lg:px-8 transition-all duration-500 ease-out ${
+          showPopup
+            ? "translate-y-0 opacity-100"
+            : "translate-y-8 opacity-0 pointer-events-none"
+        }`}
+        aria-hidden={!showPopup}
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="relative rounded-xl border border-border bg-white/95 p-5 pr-12 shadow-[0_24px_80px_rgba(15,23,42,0.22)] backdrop-blur-md sm:p-10 sm:pr-16 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <button
+              type="button"
+              aria-label="Close popup"
+              onClick={() => setShowPopup(false)}
+              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-primary shadow-sm transition hover:border-secondary hover:text-secondary"
+            >
+              <X className="h-4 w-4" />
+            </button>
             {/* Left side text */}
             <div className="flex flex-col gap-3">
               {/* Orange accent line */}
