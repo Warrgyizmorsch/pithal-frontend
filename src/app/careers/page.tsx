@@ -23,13 +23,13 @@ const heroStats = [
       <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7">
         <path
           d="M5 20h14M8 20V12m8 8V12"
-          stroke="#F97316"
+          stroke="var(--secondary)"
           strokeWidth="1.8"
           strokeLinecap="round"
         />
         <path
           d="M4 9.5h4M16 9.5h4M7 4.5h10"
-          stroke="#F97316"
+          stroke="var(--secondary)"
           strokeWidth="1.8"
           strokeLinecap="round"
         />
@@ -42,10 +42,10 @@ const heroStats = [
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7">
-        <circle cx="12" cy="12" r="9" stroke="#F97316" strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="9" stroke="var(--secondary)" strokeWidth="1.8" />
         <path
           d="M12 7.5v4.5l3 1.5"
-          stroke="#F97316"
+          stroke="var(--secondary)"
           strokeWidth="1.8"
           strokeLinecap="round"
         />
@@ -64,18 +64,18 @@ const heroStats = [
           width="16"
           height="10"
           rx="2"
-          stroke="#F97316"
+          stroke="var(--secondary)"
           strokeWidth="1.8"
         />
         <path
           d="M8 11h3M8 15h3"
-          stroke="#F97316"
+          stroke="var(--secondary)"
           strokeWidth="1.8"
           strokeLinecap="round"
         />
         <path
           d="M15 11h2M15 15h2"
-          stroke="#F97316"
+          stroke="var(--secondary)"
           strokeWidth="1.8"
           strokeLinecap="round"
         />
@@ -90,7 +90,7 @@ const heroStats = [
       <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7">
         <path
           d="M5 16l4-4 3 3 7-7"
-          stroke="#F97316"
+          stroke="var(--secondary)"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -109,14 +109,14 @@ const advantages = [
       <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
         <path
           d="M10 22L16 16L24 24L30 18"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M7 28H33"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
           strokeLinecap="round"
         />
@@ -128,10 +128,10 @@ const advantages = [
   {
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-        <circle cx="20" cy="20" r="14" stroke="#E8762C" strokeWidth="2" />
+        <circle cx="20" cy="20" r="14" stroke="var(--secondary)" strokeWidth="2" />
         <path
           d="M12 20h16M20 12v16"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
           strokeLinecap="round"
         />
@@ -149,12 +149,12 @@ const advantages = [
           width="20"
           height="20"
           rx="3"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
         />
         <path
           d="M14 18h12M14 24h12"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
           strokeLinecap="round"
         />
@@ -168,14 +168,14 @@ const advantages = [
       <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
         <path
           d="M12 30V18L20 10L28 18V30"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M16 22H24"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
           strokeLinecap="round"
         />
@@ -189,26 +189,26 @@ const advantages = [
       <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
         <path
           d="M20 10L20 18"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
           strokeLinecap="round"
         />
         <path
           d="M12 26H28"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
           strokeLinecap="round"
         />
         <path
           d="M14 14L18 18L14 22"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M26 14L22 18L26 22"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -221,15 +221,15 @@ const advantages = [
   {
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-        <circle cx="20" cy="14" r="5" stroke="#E8762C" strokeWidth="2" />
+        <circle cx="20" cy="14" r="5" stroke="var(--secondary)" strokeWidth="2" />
         <path
           d="M10 30C10 24 14 20 20 20C26 20 30 24 30 30"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
         />
         <path
           d="M16 30H24"
-          stroke="#E8762C"
+          stroke="var(--secondary)"
           strokeWidth="2"
           strokeLinecap="round"
         />
@@ -572,20 +572,20 @@ export default function CareersPage() {
           </div>
 
           <div className="relative z-10 mx-auto max-w-7xl px-6 pb-10 pt-5">
-            <div className="grid gap-4 rounded-[1.75rem] border border-white/10 bg-[#061b33] p-5 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] sm:grid-cols-2 xl:grid-cols-4 sm:p-6">
+            <div className="grid gap-4 rounded-xl border border-white/10 bg-primary-dark p-5 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] sm:grid-cols-2 xl:grid-cols-4 sm:p-6">
               {heroStats.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 rounded-[1.35rem] bg-white/5 p-6"
+                  className="flex items-start gap-4 rounded-lg bg-white/5 p-6"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/15 text-orange-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
                     {item.icon}
                   </div>
                   <div>
                     <div className="text-3xl font-black tracking-[-0.03em] text-white sm:text-4xl">
                       {item.value}
                     </div>
-                    <p className="mt-2 text-sm font-bold uppercase tracking-[0.2em] text-orange-300">
+                    <p className="mt-2 text-sm font-bold uppercase tracking-[0.2em] text-secondary">
                       {item.title}
                     </p>
                     <p className="mt-3 text-sm leading-6 text-slate-300">
@@ -602,10 +602,10 @@ export default function CareersPage() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-14">
-              <p className="text-orange-500 text-xs font-bold uppercase tracking-[0.35em] mb-3">
+              <p className="text-secondary text-xs font-bold uppercase tracking-[0.35em] mb-3">
                 WHY JOIN PITHAL MACHINES
               </p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-slate-950">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight font-sans">
                 Advantages That Shape Your Future
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-7 text-slate-500">
@@ -613,16 +613,16 @@ export default function CareersPage() {
                 resources, and a culture that helps you grow, innovate and
                 achieve more every day.
               </p>
-              <div className="mx-auto mt-6 h-1.5 w-24 rounded-full bg-orange-500" />
+              <div className="mx-auto mt-6 h-1 w-24 bg-secondary rounded-full" />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
               {advantages.map((a, i) => (
                 <div
                   key={i}
-                  className="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-[0_24px_60px_rgba(15,23,42,0.06)] transition hover:-translate-y-1"
+                  className="rounded-lg border border-slate-200 bg-white p-8 shadow-[0_24px_60px_rgba(15,23,42,0.06)] transition hover:-translate-y-1"
                 >
-                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-[1.5rem] bg-orange-50 text-orange-600">
+                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
                     {a.icon}
                   </div>
                   <h3 className="text-base font-bold text-slate-950 mb-3">
@@ -633,10 +633,10 @@ export default function CareersPage() {
               ))}
             </div>
 
-            <div className="mt-14 rounded-[1.75rem] bg-slate-950 px-6 py-8 shadow-[0_28px_80px_rgba(15,23,42,0.24)]">
+            <div className="mt-14 rounded-xl bg-primary-dark border border-slate-800 px-6 py-8 shadow-[0_28px_80px_rgba(15,23,42,0.24)]">
               <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr] items-center">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-[1.5rem] bg-orange-500 text-white">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-secondary text-white">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -664,7 +664,7 @@ export default function CareersPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm uppercase tracking-[0.35em] font-bold text-orange-300 mb-2">
+                    <p className="text-sm uppercase tracking-[0.35em] font-bold text-secondary mb-2">
                       We don&apos;t just build machines.
                     </p>
                     <p className="text-lg sm:text-xl font-semibold text-white leading-tight">
@@ -700,13 +700,13 @@ export default function CareersPage() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               {/* Left text */}
               <div>
-                <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-3">
+                <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-3">
                   LIFE AT PITHAL
                 </p>
-                <h2 className="text-4xl font-extrabold text-gray-900 leading-tight mb-6">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight font-sans mb-6">
                   A Place to Grow.
                   <br />
-                  <span className="text-orange-500">A Team to Inspire.</span>
+                  <span className="text-secondary">A Team to Inspire.</span>
                 </h2>
                 <p className="text-gray-500 leading-relaxed mb-8 text-sm">
                   At PithalMachines, we believe in a culture of collaboration,
@@ -727,7 +727,7 @@ export default function CareersPage() {
                       key={i}
                       className="bg-white border border-gray-200 rounded p-4 text-center shadow-sm"
                     >
-                      <div className="text-2xl font-extrabold text-orange-500">
+                      <div className="text-2xl font-extrabold text-secondary">
                         {s.value}
                       </div>
                       <div className="text-xs text-gray-500 mt-1">
@@ -743,7 +743,7 @@ export default function CareersPage() {
                 {galleryImages.map((img, i) => (
                   <div
                     key={i}
-                    className={`relative bg-gray-200 overflow-hidden ${i === 0 ? "col-span-2 row-span-2" : ""} rounded-[1rem]`}
+                    className={`relative bg-gray-200 overflow-hidden ${i === 0 ? "col-span-2 row-span-2" : ""} rounded-lg`}
                     style={{ height: i === 0 ? 260 : 120 }}
                   >
                     <Image
@@ -768,7 +768,7 @@ export default function CareersPage() {
                 {galleryImages.slice(0, 3).map((img, i) => (
                   <div
                     key={i}
-                    className="relative h-40 bg-gray-200 overflow-hidden rounded-[1rem]"
+                    className="relative h-40 bg-gray-200 overflow-hidden rounded-lg"
                   >
                     <Image
                       src={img.src}
@@ -793,10 +793,10 @@ export default function CareersPage() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
-              <p className="text-orange-500 text-xs font-bold uppercase tracking-[0.35em] mb-2">
+              <p className="text-secondary text-xs font-bold uppercase tracking-[0.35em] mb-2">
                 DEPARTMENTS & OPPORTUNITIES
               </p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight font-sans">
                 Explore Roles. Build Your Career.
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-7 text-slate-500">
@@ -808,9 +808,9 @@ export default function CareersPage() {
 
             <div className="grid gap-6 lg:grid-cols-3">
               {/* Management Card */}
-              <div className="rounded-[1.25rem] bg-white border border-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.04)] overflow-hidden">
-                <div className="p-8 text-center">
-                  <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 text-orange-600">
+              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.04)] overflow-hidden flex flex-col h-full">
+                <div className="p-8 text-center flex-1 flex flex-col">
+                  <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -819,7 +819,7 @@ export default function CareersPage() {
                     >
                       <path
                         d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0"
-                        stroke="#E8762C"
+                        stroke="var(--secondary)"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                       />
@@ -837,7 +837,7 @@ export default function CareersPage() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 gap-0 divide-y">
+                  <div className="grid grid-cols-1 gap-0 divide-y mt-auto">
                     <div className="p-4">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-semibold text-slate-700">
@@ -845,12 +845,12 @@ export default function CareersPage() {
                         </span>
                         <svg
                           viewBox="0 0 20 20"
-                          className="w-4 h-4 text-orange-400"
+                          className="w-4 h-4 text-secondary/70"
                           fill="none"
                         >
                           <path
                             d="M6 4l6 6-6 6"
-                            stroke="#F97316"
+                            stroke="var(--secondary)"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -865,12 +865,12 @@ export default function CareersPage() {
                         </span>
                         <svg
                           viewBox="0 0 20 20"
-                          className="w-4 h-4 text-orange-400"
+                          className="w-4 h-4 text-secondary/70"
                           fill="none"
                         >
                           <path
                             d="M6 4l6 6-6 6"
-                            stroke="#F97316"
+                            stroke="var(--secondary)"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -885,12 +885,12 @@ export default function CareersPage() {
                         </span>
                         <svg
                           viewBox="0 0 20 20"
-                          className="w-4 h-4 text-orange-400"
+                          className="w-4 h-4 text-secondary/70"
                           fill="none"
                         >
                           <path
                             d="M6 4l6 6-6 6"
-                            stroke="#F97316"
+                            stroke="var(--secondary)"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -901,22 +901,22 @@ export default function CareersPage() {
                   </div>
                 </div>
 
-                <div className="bg-slate-50 border-t border-slate-100 px-6 py-4 flex items-center gap-4">
+                <div className="bg-secondary/5 border-t border-slate-100 px-6 py-4 flex items-center gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded bg-white shadow">
                     <svg
                       viewBox="0 0 20 20"
-                      className="w-6 h-6 text-slate-900"
+                      className="w-6 h-6 text-primary"
                       fill="none"
                     >
                       <path
                         d="M10 3v8"
-                        stroke="#0f172a"
+                        stroke="var(--primary)"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                       />
                       <path
                         d="M6 16h8"
-                        stroke="#0f172a"
+                        stroke="var(--primary)"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                       />
@@ -934,9 +934,9 @@ export default function CareersPage() {
               </div>
 
               {/* Office Card */}
-              <div className="rounded-[1.25rem] bg-white border border-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.04)] overflow-hidden">
-                <div className="p-8 text-center">
-                  <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 text-orange-600">
+              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.04)] overflow-hidden flex flex-col h-full">
+                <div className="p-8 text-center flex-1 flex flex-col">
+                  <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -945,7 +945,7 @@ export default function CareersPage() {
                     >
                       <path
                         d="M4 7h16M4 12h16M4 17h16"
-                        stroke="#E8762C"
+                        stroke="var(--secondary)"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                       />
@@ -963,7 +963,7 @@ export default function CareersPage() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 gap-0 divide-y">
+                  <div className="grid grid-cols-1 gap-0 divide-y mt-auto">
                     <div className="p-4">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-semibold text-slate-700">
@@ -971,12 +971,12 @@ export default function CareersPage() {
                         </span>
                         <svg
                           viewBox="0 0 20 20"
-                          className="w-4 h-4 text-orange-400"
+                          className="w-4 h-4 text-secondary/70"
                           fill="none"
                         >
                           <path
                             d="M6 4l6 6-6 6"
-                            stroke="#F97316"
+                            stroke="var(--secondary)"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -991,12 +991,12 @@ export default function CareersPage() {
                         </span>
                         <svg
                           viewBox="0 0 20 20"
-                          className="w-4 h-4 text-orange-400"
+                          className="w-4 h-4 text-secondary/70"
                           fill="none"
                         >
                           <path
                             d="M6 4l6 6-6 6"
-                            stroke="#F97316"
+                            stroke="var(--secondary)"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -1011,12 +1011,12 @@ export default function CareersPage() {
                         </span>
                         <svg
                           viewBox="0 0 20 20"
-                          className="w-4 h-4 text-orange-400"
+                          className="w-4 h-4 text-secondary/70"
                           fill="none"
                         >
                           <path
                             d="M6 4l6 6-6 6"
-                            stroke="#F97316"
+                            stroke="var(--secondary)"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -1031,12 +1031,12 @@ export default function CareersPage() {
                         </span>
                         <svg
                           viewBox="0 0 20 20"
-                          className="w-4 h-4 text-orange-400"
+                          className="w-4 h-4 text-secondary/70"
                           fill="none"
                         >
                           <path
                             d="M6 4l6 6-6 6"
-                            stroke="#F97316"
+                            stroke="var(--secondary)"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -1047,22 +1047,22 @@ export default function CareersPage() {
                   </div>
                 </div>
 
-                <div className="bg-orange-50 px-6 py-4 flex items-center gap-4 border-t border-slate-100">
+                <div className="bg-secondary/5 px-6 py-4 flex items-center gap-4 border-t border-slate-100">
                   <div className="flex h-10 w-10 items-center justify-center rounded bg-white shadow">
                     <svg
                       viewBox="0 0 20 20"
-                      className="w-6 h-6 text-orange-500"
+                      className="w-6 h-6 text-secondary"
                       fill="none"
                     >
                       <path
                         d="M3 10h14"
-                        stroke="#F97316"
+                        stroke="var(--secondary)"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                       />
                       <path
                         d="M7 6h6v8"
-                        stroke="#F97316"
+                        stroke="var(--secondary)"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                       />
@@ -1080,9 +1080,9 @@ export default function CareersPage() {
               </div>
 
               {/* Production Card */}
-              <div className="rounded-[1.25rem] bg-white border border-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.04)] overflow-hidden">
-                <div className="p-8 text-center">
-                  <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.04)] overflow-hidden flex flex-col h-full">
+                <div className="p-8 text-center flex-1 flex flex-col">
+                  <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -1091,7 +1091,7 @@ export default function CareersPage() {
                     >
                       <path
                         d="M3 13h18M6 6h12M6 20h12"
-                        stroke="#059669"
+                        stroke="var(--secondary)"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                       />
@@ -1109,7 +1109,7 @@ export default function CareersPage() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 gap-0 divide-y">
+                  <div className="grid grid-cols-1 gap-0 divide-y mt-auto">
                     <div className="p-4">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-semibold text-slate-700">
@@ -1117,12 +1117,12 @@ export default function CareersPage() {
                         </span>
                         <svg
                           viewBox="0 0 20 20"
-                          className="w-4 h-4 text-emerald-500"
+                          className="w-4 h-4 text-secondary/70"
                           fill="none"
                         >
                           <path
                             d="M6 4l6 6-6 6"
-                            stroke="#10B981"
+                            stroke="var(--secondary)"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -1137,12 +1137,12 @@ export default function CareersPage() {
                         </span>
                         <svg
                           viewBox="0 0 20 20"
-                          className="w-4 h-4 text-emerald-500"
+                          className="w-4 h-4 text-secondary/70"
                           fill="none"
                         >
                           <path
                             d="M6 4l6 6-6 6"
-                            stroke="#10B981"
+                            stroke="var(--secondary)"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -1157,12 +1157,12 @@ export default function CareersPage() {
                         </span>
                         <svg
                           viewBox="0 0 20 20"
-                          className="w-4 h-4 text-emerald-500"
+                          className="w-4 h-4 text-secondary/70"
                           fill="none"
                         >
                           <path
                             d="M6 4l6 6-6 6"
-                            stroke="#10B981"
+                            stroke="var(--secondary)"
                             strokeWidth="1.5"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -1173,22 +1173,22 @@ export default function CareersPage() {
                   </div>
                 </div>
 
-                <div className="bg-emerald-50 px-6 py-4 flex items-center gap-4 border-t border-slate-100">
+                <div className="bg-secondary/5 px-6 py-4 flex items-center gap-4 border-t border-slate-100">
                   <div className="flex h-10 w-10 items-center justify-center rounded bg-white shadow">
                     <svg
                       viewBox="0 0 20 20"
-                      className="w-6 h-6 text-emerald-600"
+                      className="w-6 h-6 text-secondary"
                       fill="none"
                     >
                       <path
                         d="M4 12h12"
-                        stroke="#10B981"
+                        stroke="var(--secondary)"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                       />
                       <path
                         d="M6 6h8v8"
-                        stroke="#10B981"
+                        stroke="var(--secondary)"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                       />
@@ -1206,17 +1206,17 @@ export default function CareersPage() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-[1.25rem] bg-white border border-slate-100 shadow-[0_18px_40px_rgba(15,23,42,0.04)] px-6 py-6 flex items-center justify-between">
+            <div className="mt-8 rounded-lg bg-white border border-slate-100 shadow-[0_18px_40px_rgba(15,23,42,0.04)] px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <div className="h-12 w-12 rounded-full bg-slate-50 flex items-center justify-center">
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-6 h-6 text-orange-500"
+                    className="w-6 h-6 text-secondary"
                     fill="none"
                   >
                     <path
                       d="M12 2l3 7h7l-5.5 4 2 7L12 17l-6.5 3 2-7L2 9h7z"
-                      stroke="#F97316"
+                      stroke="var(--secondary)"
                       strokeWidth="1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -1227,26 +1227,27 @@ export default function CareersPage() {
                   <p className="text-sm text-slate-700">
                     Every role plays a part.
                   </p>
-                  <p className="text-lg font-semibold text-orange-500">
+                  <p className="text-lg font-semibold text-secondary">
                     Find your path. Grow with Pithal Machines.
                   </p>
                 </div>
               </div>
-              <Link
+              <Button
                 href="#openings"
-                className="inline-flex items-center gap-3 border border-orange-300 text-orange-600 px-5 py-3 rounded-md font-bold hover:bg-orange-50"
+                variant="outlineNavy"
+                className="inline-flex items-center gap-3 border border-secondary/30 text-secondary px-5 py-3 rounded-md font-bold hover:bg-secondary/5 min-h-0 h-11"
               >
                 VIEW OPEN POSITIONS
                 <svg viewBox="0 0 20 20" className="w-4 h-4" fill="none">
                   <path
                     d="M6 4l6 6-6 6"
-                    stroke="#F97316"
+                    stroke="currentColor"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
-              </Link>
+              </Button>
             </div>
           </div>
         </section>
@@ -1255,13 +1256,13 @@ export default function CareersPage() {
         <section id="openings" className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
-              <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">
+              <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-2">
                 WE ARE HIRING
               </p>
-              <h2 className="text-4xl font-extrabold text-gray-900">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary font-sans">
                 Current Openings
               </h2>
-              <div className="w-16 h-1 bg-orange-500 mx-auto mt-4" />
+              <div className="w-16 h-1 bg-secondary mx-auto mt-4" />
             </div>
 
             {/* Filters */}
@@ -1347,7 +1348,7 @@ export default function CareersPage() {
                     {/* Role & Department */}
                     <div className="flex items-center gap-4 md:w-1/3">
                       <div
-                        className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 ${job.hot ? "bg-orange-50 text-orange-500" : "bg-blue-50 text-[#0d1b2e]"}`}
+                        className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 ${job.hot ? "bg-secondary/10 text-secondary" : "bg-primary/5 text-primary"}`}
                       >
                         {/* Role Icon */}
                         <svg
@@ -1359,12 +1360,11 @@ export default function CareersPage() {
                             d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0"
                             stroke="currentColor"
                             strokeWidth="1.5"
-                            strokeLinecap="round"
                           />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-[17px] font-bold text-[#0d1b2e]">
+                        <h4 className="text-[17px] font-bold text-primary">
                           {job.title}
                         </h4>
                         <div className="flex items-center gap-1.5 mt-1">
@@ -1382,7 +1382,7 @@ export default function CareersPage() {
                             />
                           </svg>
                           <span
-                            className={`text-[13px] font-medium ${job.hot ? "text-orange-500" : "text-blue-600"}`}
+                            className={`text-[13px] font-medium ${job.hot ? "text-secondary" : "text-primary"}`}
                           >
                             {job.department || "Production & Technical"}
                           </span>
@@ -1411,7 +1411,7 @@ export default function CareersPage() {
                         <div className="text-[13px] text-gray-500 mb-0.5">
                           Experience
                         </div>
-                        <div className="text-[14px] font-semibold text-[#0d1b2e]">
+                        <div className="text-[14px] font-semibold text-primary">
                           {job.exp || "10+ Years"}
                         </div>
                       </div>
@@ -1438,7 +1438,7 @@ export default function CareersPage() {
                         <div className="text-[13px] text-gray-500 mb-0.5">
                           Salary Range
                         </div>
-                        <div className="text-[14px] font-semibold text-[#0d1b2e]">
+                        <div className="text-[14px] font-semibold text-primary">
                           {job.salary || "₹40,000+"}
                         </div>
                       </div>
@@ -1465,21 +1465,18 @@ export default function CareersPage() {
                         <div className="text-[13px] text-gray-500 mb-0.5">
                           Openings
                         </div>
-                        <div className="text-[14px] font-semibold text-[#0d1b2e]">
+                        <div className="text-[14px] font-semibold text-primary">
                           {job.openings || "01"}
                         </div>
                       </div>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-col items-center justify-center shrink-0 w-32">
-                      <Link
+                    <div className="flex flex-col items-center justify-center shrink-0 w-32 gap-2">
+                      <Button
                         href="#"
-                        className={`flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-md font-semibold text-[14px] transition-colors ${
-                          job.hot
-                            ? "bg-[#f97316] hover:bg-[#ea580c] text-white"
-                            : "bg-[#0a192f] hover:bg-[#112240] text-white"
-                        }`}
+                        variant={job.hot ? "primary" : "outlineNavy"}
+                        className="w-full h-10 min-h-0 flex items-center justify-center gap-2 text-[11px] font-bold tracking-wider"
                       >
                         Apply Now
                         <svg
@@ -1495,13 +1492,14 @@ export default function CareersPage() {
                             d="M14 5l7 7m0 0l-7 7m7-7H3"
                           />
                         </svg>
-                      </Link>
-                      <Link
+                      </Button>
+                      <Button
                         href="#"
-                        className="mt-2 text-[13px] font-medium text-blue-600 hover:text-blue-800 hover:underline"
+                        variant="ghost"
+                        className="w-full h-8 min-h-0 text-[11px] font-bold text-primary hover:text-secondary"
                       >
                         View Details
-                      </Link>
+                      </Button>
                     </div>
                   </div>
                 ))}
@@ -1510,15 +1508,16 @@ export default function CareersPage() {
             {/* Bottom notice */}
             <div className="mt-10 text-center border border-dashed border-gray-300 rounded-lg p-8">
               <p className="text-gray-500 text-sm mb-2 font-medium">
-                Can't see the right role?
+                Can&apos;t see the right role?
               </p>
               <p className="text-gray-400 text-xs mb-5">
-                Drop your resume and we'll reach out when a relevant opportunity
+                Drop your resume and we&apos;ll reach out when a relevant opportunity
                 opens up.
               </p>
-              <Link
+              <Button
                 href="mailto:careers@pithalmachines.com"
-                className="inline-flex items-center gap-2 bg-[#0d1b2e] text-white font-bold text-sm px-7 py-3 hover:bg-[#1a2d47] transition-all"
+                variant="primary"
+                className="inline-flex items-center gap-2"
               >
                 Send Your Resume
                 <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4">
@@ -1530,7 +1529,7 @@ export default function CareersPage() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </Link>
+              </Button>
             </div>
           </div>
         </section>
@@ -1541,13 +1540,13 @@ export default function CareersPage() {
             {/* Section Header */}
             <div className="text-center mb-10">
               <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-[2px] bg-orange-500" />
-                <p className="text-orange-600 text-sm font-bold uppercase tracking-wider">
+                <div className="w-12 h-[2px] bg-secondary" />
+                <p className="text-secondary text-xs font-bold uppercase tracking-widest">
                   Our Manufacturing Strength
                 </p>
-                <div className="w-12 h-[2px] bg-orange-500" />
+                <div className="w-12 h-[2px] bg-secondary" />
               </div>
-              <h2 className="text-4xl md:text-[42px] font-extrabold text-[#0a192f] uppercase tracking-tight mb-4 font-sans">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary uppercase tracking-tight mb-4 font-sans">
                 Powered by People. Driven by Precision.
               </h2>
               <p className="text-gray-600 max-w-3xl mx-auto text-[15px]">
@@ -1623,7 +1622,7 @@ export default function CareersPage() {
                 },
               ].map((stat, i) => (
                 <div key={i} className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full border-2 border-[#1e3352]/20 text-[#0a192f] flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-full border-2 border-primary/20 text-primary flex items-center justify-center shrink-0">
                     <svg
                       className="w-6 h-6"
                       fill="none"
@@ -1634,7 +1633,7 @@ export default function CareersPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-[22px] font-extrabold text-orange-600 leading-none">
+                    <div className="text-[22px] font-extrabold text-secondary leading-none">
                       {stat.value}
                     </div>
                     <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wide mt-1">
@@ -1692,7 +1691,7 @@ export default function CareersPage() {
                       Image: {item.title}
                     </div>
                   </div>
-                  <div className="bg-[#0a192f] text-white text-center py-3.5 px-2">
+                  <div className="bg-primary text-white text-center py-3.5 px-2">
                     <h3 className="text-[13px] font-bold uppercase tracking-wider">
                       {item.title}
                     </h3>
@@ -1766,7 +1765,7 @@ export default function CareersPage() {
                 },
               ].map((feature, i) => (
                 <div key={i} className="flex items-start gap-4 max-w-[220px]">
-                  <div className="text-[#0a192f] shrink-0">
+                  <div className="text-primary shrink-0">
                     <svg
                       className="w-8 h-8"
                       fill="none"
@@ -1777,7 +1776,7 @@ export default function CareersPage() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-[14px] font-bold text-[#0a192f] leading-tight mb-1">
+                    <h4 className="text-[14px] font-bold text-primary leading-tight mb-1">
                       {feature.title}
                     </h4>
                     <p className="text-[12px] text-gray-500 leading-snug">
@@ -1796,17 +1795,17 @@ export default function CareersPage() {
             {/* Header Section */}
             <div className="text-center mb-14">
               <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-[2px] bg-orange-500" />
-                <p className="text-orange-600 text-[13px] font-bold uppercase tracking-widest">
+                <div className="w-12 h-[2px] bg-secondary" />
+                <p className="text-secondary text-xs font-bold uppercase tracking-widest">
                   Employee Benefits
                 </p>
-                <div className="w-12 h-[2px] bg-orange-500" />
+                <div className="w-12 h-[2px] bg-secondary" />
               </div>
 
-              <h2 className="text-4xl md:text-[42px] font-extrabold text-[#0a192f] tracking-tight mb-4 font-sans">
-                We Care<span className="text-orange-500">.</span> We Grow
-                <span className="text-orange-500">.</span> We Succeed Together
-                <span className="text-[#0a192f]">.</span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-4 font-sans">
+                We Care<span className="text-secondary">.</span> We Grow
+                <span className="text-secondary">.</span> We Succeed Together
+                <span className="text-primary">.</span>
               </h2>
 
               <p className="text-gray-600 text-[15px] mt-4 max-w-2xl mx-auto">
@@ -1821,11 +1820,11 @@ export default function CareersPage() {
                 {
                   title: "Competitive\nSalary",
                   desc: "Attractive pay packages and performance-based incentives.",
-                  borderColor: "border-orange-500",
+                  borderColor: "border-secondary",
                   icon: (
-                    <div className="relative flex items-center justify-center w-16 h-16 bg-orange-50 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
+                    <div className="relative flex items-center justify-center w-16 h-16 bg-secondary/10 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
                       <svg
-                        className="w-8 h-8 text-[#0a192f]"
+                        className="w-8 h-8 text-primary"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -1837,7 +1836,7 @@ export default function CareersPage() {
                           d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
-                      <div className="absolute top-0 right-0 w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-sm">
+                      <div className="absolute top-0 right-0 w-5 h-5 bg-secondary rounded-full flex items-center justify-center text-white text-xs font-bold shadow-sm">
                         ₹
                       </div>
                     </div>
@@ -1848,9 +1847,9 @@ export default function CareersPage() {
                   desc: "Clear career paths with continuous growth opportunities.",
                   borderColor: "border-blue-600",
                   icon: (
-                    <div className="relative flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
+                    <div className="relative flex items-center justify-center w-16 h-16 bg-primary/5 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
                       <svg
-                        className="w-8 h-8 text-[#0a192f]"
+                        className="w-8 h-8 text-primary"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -1868,7 +1867,7 @@ export default function CareersPage() {
                           d="M4 12v8m4-5v5m4-8v8"
                         />
                       </svg>
-                      <div className="absolute top-1 right-1 w-4 h-4 text-orange-500">
+                      <div className="absolute top-1 right-1 w-4 h-4 text-secondary">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                           <path d="M21 3l-6 6-4-4-8 8v5l8-8 4 4 8-8z" />
                         </svg>
@@ -1883,7 +1882,7 @@ export default function CareersPage() {
                   icon: (
                     <div className="relative flex items-center justify-center w-16 h-16 bg-emerald-50 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
                       <svg
-                        className="w-9 h-9 text-[#0a192f]"
+                        className="w-9 h-9 text-primary"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -1895,7 +1894,7 @@ export default function CareersPage() {
                           d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                         />
                       </svg>
-                      <div className="absolute top-1 right-1 w-4 h-4 bg-orange-500 rounded-full flex items-center justify-center text-white text-[10px]">
+                      <div className="absolute top-1 right-1 w-4 h-4 bg-secondary rounded-full flex items-center justify-center text-white text-[10px]">
                         ✓
                       </div>
                     </div>
@@ -1908,7 +1907,7 @@ export default function CareersPage() {
                   icon: (
                     <div className="relative flex items-center justify-center w-16 h-16 bg-purple-50 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
                       <svg
-                        className="w-9 h-9 text-[#0a192f]"
+                        className="w-9 h-9 text-primary"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -1926,7 +1925,7 @@ export default function CareersPage() {
                           strokeLinejoin="round"
                         />
                       </svg>
-                      <div className="absolute bottom-2 -right-1 w-3 h-6 bg-orange-500 rounded-sm"></div>
+                      <div className="absolute bottom-2 -right-1 w-3 h-6 bg-secondary rounded-sm"></div>
                     </div>
                   ),
                 },
@@ -1937,7 +1936,7 @@ export default function CareersPage() {
                   icon: (
                     <div className="relative flex items-center justify-center w-16 h-16 bg-red-50 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
                       <svg
-                        className="w-9 h-9 text-[#0a192f]"
+                        className="w-9 h-9 text-primary"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -1949,7 +1948,7 @@ export default function CareersPage() {
                           d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                         />
                       </svg>
-                      <div className="absolute bottom-1 right-0 text-orange-500">
+                      <div className="absolute bottom-1 right-0 text-secondary">
                         <svg
                           className="w-5 h-5"
                           fill="currentColor"
@@ -1971,15 +1970,15 @@ export default function CareersPage() {
                   desc: "Collaborative culture focused on respect, integrity and teamwork.",
                   borderColor: "border-blue-400",
                   icon: (
-                    <div className="relative flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
+                    <div className="relative flex items-center justify-center w-16 h-16 bg-primary/5 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
                       <svg
-                        className="w-9 h-9 text-[#0a192f]"
+                        className="w-9 h-9 text-primary"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
                         <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
                       </svg>
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 text-orange-500 mt-2">
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 text-secondary mt-2">
                         <svg
                           className="w-3 h-3"
                           fill="currentColor"
@@ -1994,10 +1993,10 @@ export default function CareersPage() {
               ].map((b, i) => (
                 <div
                   key={i}
-                  className={`bg-white rounded-2xl p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border-b-[5px] ${b.borderColor} text-center flex flex-col items-center group transition-all duration-300 hover:shadow-lg`}
+                  className={`bg-white rounded-lg p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border-b-[5px] ${b.borderColor} text-center flex flex-col items-center group transition-all duration-300 hover:shadow-lg`}
                 >
                   {b.icon}
-                  <h3 className="font-extrabold text-[#0a192f] text-[17px] mb-3 leading-tight whitespace-pre-line">
+                  <h3 className="font-extrabold text-primary text-[17px] mb-3 leading-tight whitespace-pre-line">
                     {b.title}
                   </h3>
                   <p className="text-[13px] text-gray-500 leading-relaxed font-medium">
@@ -2008,12 +2007,12 @@ export default function CareersPage() {
             </div>
 
             {/* Bottom Growth Banner */}
-            <div className="bg-[#0a192f] rounded-[1.25rem] shadow-xl flex flex-col lg:flex-row relative overflow-hidden border-l-[12px] border-orange-500">
+            <div className="bg-primary-dark rounded-xl shadow-xl flex flex-col lg:flex-row relative overflow-hidden border-l-[12px] border-secondary">
               {/* Text & List Section */}
               <div className="flex-1 flex flex-col md:flex-row items-center p-8 md:p-12 lg:pr-6 z-10">
                 {/* Quote & Title */}
                 <div className="w-full md:w-auto md:pr-10 mb-8 md:mb-0">
-                  <div className="text-orange-500 text-6xl md:text-7xl font-heading leading-none h-10 mb-2">
+                  <div className="text-secondary text-6xl md:text-7xl font-heading leading-none h-10 mb-2">
                     “
                   </div>
                   <h3 className="text-white font-bold text-3xl md:text-4xl leading-snug tracking-tight mb-5">
@@ -2021,7 +2020,7 @@ export default function CareersPage() {
                     <br />
                     Our Commitment.
                   </h3>
-                  <div className="w-12 h-1 bg-orange-600"></div>
+                  <div className="w-12 h-1 bg-secondary"></div>
                 </div>
 
                 {/* Vertical Divider (Desktop) */}
@@ -2038,7 +2037,7 @@ export default function CareersPage() {
                     ].map((item, idx) => (
                       <li key={idx} className="flex items-center gap-3">
                         <svg
-                          className="w-[22px] h-[22px] text-orange-500 flex-shrink-0"
+                          className="w-[22px] h-[22px] text-secondary flex-shrink-0"
                           viewBox="0 0 24 24"
                           fill="none"
                         >
@@ -2069,7 +2068,7 @@ export default function CareersPage() {
               {/* Right Side Image */}
               <div className="w-full lg:w-[45%] xl:w-[40%] relative min-h-[300px] lg:min-h-full">
                 {/* Gradient overlay to smoothly blend dark section and image on large screens if needed, otherwise distinct line */}
-                <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#0a192f] to-transparent z-10"></div>
+                <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-primary-dark to-transparent z-10"></div>
                 <img
                   src="/placeholder-workers.jpg"
                   alt="Happy Workers"
@@ -2092,17 +2091,17 @@ export default function CareersPage() {
               {/* Left Text Content */}
               <div className="w-full lg:w-1/2 pr-0 lg:pr-12 relative z-10 py-8 lg:py-16 bg-white/90 lg:bg-transparent lg:bg-gradient-to-r lg:from-white lg:via-white lg:to-transparent">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-[2px] bg-orange-500" />
-                  <p className="text-orange-600 text-[13px] font-bold uppercase tracking-widest">
+                  <div className="w-10 h-[2px] bg-secondary" />
+                  <p className="text-secondary text-xs font-bold uppercase tracking-widest">
                     Training & Growth
                   </p>
-                  <div className="w-10 h-[2px] bg-orange-500" />
+                  <div className="w-10 h-[2px] bg-secondary" />
                 </div>
 
-                <h2 className="text-5xl md:text-[56px] font-extrabold text-[#0a192f] uppercase tracking-tight leading-[1.1] mb-2 font-sans">
+                <h2 className="text-5xl md:text-[56px] font-extrabold text-primary uppercase tracking-tight leading-[1.1] mb-2 font-sans">
                   Grow Your Skills.
                 </h2>
-                <h2 className="text-5xl md:text-[56px] font-extrabold text-orange-600 uppercase tracking-tight leading-[1.1] mb-6 font-sans">
+                <h2 className="text-5xl md:text-[56px] font-extrabold text-secondary uppercase tracking-tight leading-[1.1] mb-6 font-sans">
                   Shape Your Future.
                 </h2>
 
@@ -2205,11 +2204,11 @@ export default function CareersPage() {
               ].map((card, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-[1.25rem] shadow-[0_4px_24px_-8px_rgba(0,0,0,0.08)] border border-gray-100 p-5 flex flex-col items-center text-center transition-transform hover:-translate-y-1"
+                  className="bg-white rounded-lg shadow-[0_4px_24px_-8px_rgba(0,0,0,0.08)] border border-gray-100 p-5 flex flex-col items-center text-center transition-transform hover:-translate-y-1"
                 >
                   {/* Icon */}
                   <div
-                    className={`w-14 h-14 rounded-full ${card.iconBg} text-[#0a192f] flex items-center justify-center mb-4`}
+                    className={`w-14 h-14 rounded-full ${card.iconBg === "bg-orange-50" ? "bg-secondary/10" : card.iconBg === "bg-blue-50" ? "bg-primary/5" : card.iconBg} text-primary flex items-center justify-center mb-4`}
                   >
                     <svg
                       className="w-7 h-7"
@@ -2222,10 +2221,10 @@ export default function CareersPage() {
                   </div>
 
                   {/* Title & Divider */}
-                  <h3 className="font-extrabold text-[#0a192f] text-[13px] uppercase tracking-wider mb-2 h-8 flex items-center justify-center">
+                  <h3 className="font-extrabold text-primary text-[13px] uppercase tracking-wider mb-2 h-8 flex items-center justify-center">
                     {card.title}
                   </h3>
-                  <div className="w-8 h-[2px] bg-orange-500 mb-4 rounded-full"></div>
+                  <div className="w-8 h-[2px] bg-secondary mb-4 rounded-full"></div>
 
                   {/* Image */}
                   <div className="w-full h-[110px] bg-gray-200 rounded-lg overflow-hidden mb-4">
@@ -2248,12 +2247,12 @@ export default function CareersPage() {
             </div>
 
             {/* Bottom Stats Banner */}
-            <div className="bg-[#0a192f] rounded-[1.25rem] shadow-xl p-6 lg:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 relative z-20">
+            <div className="bg-primary-dark rounded-xl shadow-xl p-6 lg:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 relative z-20">
               {/* Left Intro text */}
               <div className="flex items-center gap-5 w-full lg:w-auto shrink-0">
-                <div className="w-16 h-16 rounded-full border-2 border-orange-500/30 flex items-center justify-center relative bg-orange-500/10">
+                <div className="w-16 h-16 rounded-full border-2 border-secondary/30 flex items-center justify-center relative bg-secondary/10">
                   <svg
-                    className="w-8 h-8 text-orange-500"
+                    className="w-8 h-8 text-secondary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -2270,7 +2269,7 @@ export default function CareersPage() {
                   <h4 className="text-white font-extrabold text-[15px] uppercase tracking-wide leading-tight">
                     We Grow Together.
                   </h4>
-                  <h4 className="text-orange-500 font-extrabold text-[15px] uppercase tracking-wide leading-tight mb-1">
+                  <h4 className="text-secondary font-extrabold text-[15px] uppercase tracking-wide leading-tight mb-1">
                     Your Journey Matters.
                   </h4>
                   <p className="text-gray-400 text-[12px] max-w-[200px] leading-snug">
@@ -2303,8 +2302,8 @@ export default function CareersPage() {
                   {
                     value: "200+",
                     label: "Employees Trained Annually",
-                    iconBg: "bg-orange-500/20",
-                    iconColor: "text-orange-400",
+                    iconBg: "bg-secondary/20",
+                    iconColor: "text-secondary",
                     icon: (
                       <path
                         strokeLinecap="round"
@@ -2345,8 +2344,8 @@ export default function CareersPage() {
                   {
                     value: "Future",
                     label: "Ready Careers Built Here",
-                    iconBg: "bg-orange-500/20",
-                    iconColor: "text-orange-400",
+                    iconBg: "bg-secondary/20",
+                    iconColor: "text-secondary",
                     icon: (
                       <path
                         strokeLinecap="round"
@@ -2371,7 +2370,7 @@ export default function CareersPage() {
                           {stat.icon}
                         </svg>
                       </div>
-                      <div className="text-orange-500 font-extrabold text-[22px] leading-none">
+                      <div className="text-secondary font-extrabold text-[22px] leading-none">
                         {stat.value}
                       </div>
                     </div>
@@ -2400,14 +2399,14 @@ export default function CareersPage() {
             {/* Section Header */}
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-[2px] bg-orange-500" />
-                <p className="text-orange-600 text-[13px] font-bold uppercase tracking-widest">
+                <div className="w-12 h-[2px] bg-secondary" />
+                <p className="text-secondary text-xs font-bold uppercase tracking-widest">
                   Hiring Process
                 </p>
-                <div className="w-12 h-[2px] bg-orange-500" />
+                <div className="w-12 h-[2px] bg-secondary" />
               </div>
 
-              <h2 className="text-4xl md:text-[42px] font-extrabold text-[#0a192f] tracking-tight mb-4 font-sans">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-4 font-sans">
                 Your Journey to Pithal Machines
               </h2>
 
@@ -2429,8 +2428,8 @@ export default function CareersPage() {
                     num: "01",
                     title: "Application",
                     desc: "Submit your application through our careers portal with your updated details.",
-                    borderColor: "border-orange-500",
-                    badgeBg: "bg-orange-500",
+                    borderColor: "border-secondary",
+                    badgeBg: "bg-secondary",
                     icon: (
                       <path
                         strokeLinecap="round"
@@ -2444,8 +2443,8 @@ export default function CareersPage() {
                     num: "02",
                     title: "Screening",
                     desc: "Our HR team reviews your application and shortlists suitable profiles.",
-                    borderColor: "border-[#0a192f]",
-                    badgeBg: "bg-[#0a192f]",
+                    borderColor: "border-primary",
+                    badgeBg: "bg-primary",
                     icon: (
                       <path
                         strokeLinecap="round"
@@ -2498,7 +2497,7 @@ export default function CareersPage() {
                         strokeWidth={1.5}
                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z M20 12l-2-2m0 0l-2 2m2-2v6"
                       />
-                    ), // Alternative person icon for simplicity
+                    ),
                   },
                   {
                     num: "06",
@@ -2523,7 +2522,7 @@ export default function CareersPage() {
                     {/* Top Icon Circle */}
                     <div className="w-[88px] h-[88px] bg-white rounded-full flex items-center justify-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 relative mb-8 z-10 transition-transform group-hover:scale-105">
                       <svg
-                        className="w-8 h-8 text-[#0a192f]"
+                        className="w-8 h-8 text-primary"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -2542,7 +2541,7 @@ export default function CareersPage() {
                     <div
                       className={`bg-white rounded-xl p-5 lg:p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border-b-[5px] ${step.borderColor} text-center w-full h-full transition-shadow group-hover:shadow-lg flex flex-col`}
                     >
-                      <h4 className="font-extrabold text-[#0a192f] text-[16px] mb-3">
+                      <h4 className="font-extrabold text-primary text-[16px] mb-3">
                         {step.title}
                       </h4>
                       <p className="text-[13px] text-gray-500 leading-relaxed font-medium">
@@ -2555,7 +2554,7 @@ export default function CareersPage() {
             </div>
 
             {/* Bottom Features Banner */}
-            <div className="bg-[#f0f4f8] rounded-2xl border border-[#e2e8f0] p-6 lg:p-8">
+            <div className="bg-[#f0f4f8] rounded-xl border border-[#e2e8f0] p-6 lg:p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                 {[
                   {
@@ -2608,7 +2607,7 @@ export default function CareersPage() {
                   },
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-white border border-[#e2e8f0] text-[#0a192f] flex items-center justify-center shrink-0 shadow-sm">
+                    <div className="w-12 h-12 rounded-full bg-white border border-[#e2e8f0] text-primary flex items-center justify-center shrink-0 shadow-sm">
                       <svg
                         className="w-6 h-6"
                         fill="none"
@@ -2619,7 +2618,7 @@ export default function CareersPage() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-extrabold text-[#0a192f] text-[15px] mb-1">
+                      <h4 className="font-extrabold text-primary text-[15px] mb-1">
                         {feature.title}
                       </h4>
                       <p className="text-[13px] text-gray-500 leading-snug font-medium">
@@ -2639,14 +2638,14 @@ export default function CareersPage() {
             {/* Section Header */}
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-[2px] bg-orange-500" />
-                <p className="text-orange-600 text-[13px] font-bold uppercase tracking-widest">
+                <div className="w-12 h-[2px] bg-secondary" />
+                <p className="text-secondary text-xs font-bold uppercase tracking-widest">
                   Eligibility & Qualifications
                 </p>
-                <div className="w-12 h-[2px] bg-orange-500" />
+                <div className="w-12 h-[2px] bg-secondary" />
               </div>
 
-              <h2 className="text-4xl md:text-[42px] font-extrabold text-[#0a192f] tracking-tight uppercase mb-4 font-sans">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight uppercase mb-4 font-sans">
                 Build Your Career With The Right Foundation.
               </h2>
 
@@ -2771,11 +2770,11 @@ export default function CareersPage() {
               ].map((card, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-[1rem] shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] border border-gray-100 overflow-hidden flex flex-col hover:shadow-lg transition-shadow group"
+                  className="bg-white rounded-lg shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] border border-gray-100 overflow-hidden flex flex-col hover:shadow-lg transition-shadow group"
                 >
                   {/* Top Icon & Title Area */}
                   <div className="pt-6 pb-4 px-4 flex flex-col items-center justify-center">
-                    <div className="w-[52px] h-[52px] rounded-full border-2 border-[#e6f0fa] flex items-center justify-center text-[#0a192f] mb-3 group-hover:bg-[#0a192f] group-hover:text-white transition-colors duration-300">
+                    <div className="w-[52px] h-[52px] rounded-full border-2 border-primary/10 flex items-center justify-center text-primary mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                       <svg
                         className="w-6 h-6"
                         fill="none"
@@ -2785,7 +2784,7 @@ export default function CareersPage() {
                         {card.icon}
                       </svg>
                     </div>
-                    <h3 className="font-extrabold text-[#0a192f] text-[13px] uppercase tracking-wide text-center">
+                    <h3 className="font-extrabold text-primary text-[13px] uppercase tracking-wide text-center">
                       {card.title}
                     </h3>
                   </div>
@@ -2808,7 +2807,7 @@ export default function CareersPage() {
                       {card.points.map((point, j) => (
                         <li key={j} className="flex items-start gap-2">
                           <svg
-                            className="w-[15px] h-[15px] text-orange-500 mt-[2px] shrink-0"
+                            className="w-[15px] h-[15px] text-secondary mt-[2px] shrink-0"
                             viewBox="0 0 24 24"
                             fill="none"
                           >
@@ -2839,7 +2838,7 @@ export default function CareersPage() {
             </div>
 
             {/* Bottom Banner */}
-            <div className="bg-[#0a192f] rounded-2xl overflow-hidden flex flex-col lg:flex-row shadow-xl">
+            <div className="bg-primary-dark rounded-xl overflow-hidden flex flex-col lg:flex-row shadow-xl">
               {/* Left side: Image */}
               <div className="w-full lg:w-[28%] relative min-h-[250px] lg:min-h-[auto]">
                 <img
@@ -2852,12 +2851,12 @@ export default function CareersPage() {
                   }}
                 />
                 {/* Subtle gradient to blend into the dark blue on desktop */}
-                <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0a192f] to-transparent"></div>
+                <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-primary-dark to-transparent"></div>
               </div>
 
               {/* Middle side: Quote */}
               <div className="w-full lg:w-[32%] p-8 lg:py-12 lg:px-10 flex flex-col justify-center relative z-10">
-                <div className="text-orange-500 text-6xl lg:text-7xl font-heading leading-none h-8 lg:h-10 mb-2">
+                <div className="text-secondary text-6xl lg:text-7xl font-heading leading-none h-8 lg:h-10 mb-2">
                   “
                 </div>
                 <h3 className="text-white text-3xl md:text-4xl font-extrabold leading-tight mb-1 tracking-tight">
@@ -2866,7 +2865,7 @@ export default function CareersPage() {
                 <h3 className="text-white text-3xl md:text-4xl font-extrabold leading-tight mb-6 tracking-tight">
                   We build the future.
                 </h3>
-                <div className="w-12 h-[3px] bg-orange-500"></div>
+                <div className="w-12 h-[3px] bg-secondary"></div>
               </div>
 
               {/* Right side: 4 Traits Grid */}
@@ -2955,24 +2954,24 @@ export default function CareersPage() {
             {/* Section Header */}
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-[2px] bg-orange-500" />
-                <p className="text-orange-600 text-[13px] font-bold uppercase tracking-widest">
+                <div className="w-12 h-[2px] bg-secondary" />
+                <p className="text-secondary text-xs font-bold uppercase tracking-widest">
                   Employee Testimonials
                 </p>
-                <div className="w-12 h-[2px] bg-orange-500" />
+                <div className="w-12 h-[2px] bg-secondary" />
               </div>
 
-              <h2 className="text-4xl md:text-[42px] font-extrabold text-[#0a192f] tracking-tight mb-4 font-sans">
-                Real People<span className="text-orange-500">.</span> Real
-                Growth<span className="text-orange-500">.</span> Real Impact
-                <span className="text-orange-500">.</span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-4 font-sans">
+                Real People<span className="text-secondary">.</span> Real
+                Growth<span className="text-secondary">.</span> Real Impact
+                <span className="text-secondary">.</span>
               </h2>
 
-              <p className="text-[#0a192f] text-[15px] mt-4 font-medium max-w-2xl mx-auto leading-relaxed">
+              <p className="text-primary text-[15px] mt-4 font-medium max-w-2xl mx-auto leading-relaxed">
                 Our people are at the heart of everything we do.
                 <br />
                 <span className="text-gray-500">
-                  Here's what they have to say about their journey at Pithal
+                  Here&apos;s what they have to say about their journey at Pithal
                   Machines.
                 </span>
               </p>
@@ -3016,15 +3015,15 @@ export default function CareersPage() {
               ].map((t, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-2xl p-8 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col h-full relative"
+                  className="bg-white rounded-lg p-8 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col h-full relative"
                 >
                   {/* Top Quotes Icon */}
-                  <div className="absolute top-8 right-8 text-orange-500 font-heading text-5xl leading-none">
+                  <div className="absolute top-8 right-8 text-secondary font-heading text-5xl leading-none">
                     “
                   </div>
 
                   {/* Quote Text */}
-                  <p className="text-[#0a192f] text-[15px] font-bold leading-relaxed mb-8 flex-1 relative z-10 pr-6">
+                  <p className="text-primary text-[15px] font-bold leading-relaxed mb-8 flex-1 relative z-10 pr-6">
                     “{t.quote}”
                   </p>
 
@@ -3045,13 +3044,13 @@ export default function CareersPage() {
                       />
                     </div>
                     <div className="flex flex-col justify-center">
-                      <h4 className="font-extrabold text-[#0a192f] text-[15px] leading-tight mb-1">
+                      <h4 className="font-extrabold text-primary text-[15px] leading-tight mb-1">
                         {t.name}
                       </h4>
                       <p className="text-gray-500 text-[12px] leading-snug font-medium mb-1">
                         {t.role}
                       </p>
-                      <p className="text-[#0a192f] text-[12px] font-bold leading-snug mb-1">
+                      <p className="text-primary text-[12px] font-bold leading-snug mb-1">
                         {t.years}
                       </p>
 
@@ -3060,7 +3059,7 @@ export default function CareersPage() {
                         {[...Array(5)].map((_, j) => (
                           <svg
                             key={j}
-                            className="w-3.5 h-3.5 text-orange-500 fill-current"
+                            className="w-3.5 h-3.5 text-secondary fill-current"
                             viewBox="0 0 20 20"
                           >
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -3093,24 +3092,24 @@ export default function CareersPage() {
                       {/* Simplified Pithal P logo representation */}
                       <path
                         d="M50 15c-19.3 0-35 15.7-35 35s15.7 35 35 35 35-15.7 35-35c0-10.3-4.5-19.6-11.6-26.1"
-                        stroke="#f97316"
+                        stroke="var(--secondary)"
                         strokeWidth="6"
                         strokeLinecap="round"
                         strokeDasharray="15 15"
                       />
                       <path
                         d="M45 35h15c8.3 0 15 6.7 15 15s-6.7 15-15 15H45V35z"
-                        fill="#0a192f"
+                        fill="var(--primary)"
                       />
                       <path d="M45 50h15" stroke="#fff" strokeWidth="4" />
                     </svg>
                   </div>
 
                   <div>
-                    <h2 className="text-[28px] lg:text-[32px] font-extrabold text-[#0a192f] tracking-tight leading-[1.1] mb-1 font-sans uppercase">
+                    <h2 className="text-[28px] lg:text-[32px] font-extrabold text-primary tracking-tight leading-[1.1] mb-1 font-sans uppercase">
                       Build Your Future
                     </h2>
-                    <h2 className="text-[28px] lg:text-[32px] font-extrabold text-[#ea580c] tracking-tight leading-[1.1] mb-3 font-sans uppercase">
+                    <h2 className="text-[28px] lg:text-[32px] font-extrabold text-secondary tracking-tight leading-[1.1] mb-3 font-sans uppercase">
                       With Pithal Machines.
                     </h2>
                     <p className="text-[#4b5563] text-[13px] font-medium leading-relaxed max-w-sm">
@@ -3176,7 +3175,7 @@ export default function CareersPage() {
                       className="flex flex-col items-center justify-center text-center"
                     >
                       <svg
-                        className="w-[34px] h-[34px] text-[#0a192f] mb-3"
+                        className="w-[34px] h-[34px] text-primary mb-3"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -3184,7 +3183,7 @@ export default function CareersPage() {
                         {/* Simulated Orange highlight on icons as per design */}
                         <path
                           d="M17 7l4 4-4 4"
-                          stroke="#f97316"
+                          stroke="var(--secondary)"
                           strokeWidth={1.5}
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -3192,7 +3191,7 @@ export default function CareersPage() {
                         />
                         {item.icon}
                       </svg>
-                      <h4 className="text-[#0a192f] text-[10px] font-bold uppercase tracking-wider whitespace-pre-line leading-tight">
+                      <h4 className="text-primary text-[10px] font-bold uppercase tracking-wider whitespace-pre-line leading-tight">
                         {item.title}
                       </h4>
                     </div>
@@ -3204,9 +3203,10 @@ export default function CareersPage() {
 
                 {/* Right Side: Action Buttons */}
                 <div className="flex flex-col gap-3 lg:w-[20%] w-full shrink-0">
-                  <Link
+                  <Button
                     href="#"
-                    className="bg-[#f97316] hover:bg-[#ea580c] text-white rounded-md py-3 px-4 flex items-center justify-between transition-colors shadow-sm group"
+                    variant="primary"
+                    className="w-full flex items-center justify-between h-12 shadow-sm group"
                   >
                     <div className="flex items-center gap-3">
                       <svg
@@ -3222,7 +3222,7 @@ export default function CareersPage() {
                           d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                         />
                       </svg>
-                      <span className="text-[12px] font-bold uppercase tracking-wide">
+                      <span className="text-[11px] font-bold uppercase tracking-wide text-white">
                         Upload Your CV
                       </span>
                     </div>
@@ -3239,11 +3239,12 @@ export default function CareersPage() {
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </Link>
+                  </Button>
 
-                  <Link
+                  <Button
                     href="#"
-                    className="bg-transparent border border-[#0a192f] hover:bg-[#0a192f] text-[#0a192f] hover:text-white rounded-md py-3 px-4 flex items-center justify-between transition-colors shadow-sm group"
+                    variant="outlineNavy"
+                    className="w-full flex items-center justify-between h-12 shadow-sm group"
                   >
                     <div className="flex items-center gap-3">
                       <svg
@@ -3259,7 +3260,7 @@ export default function CareersPage() {
                           d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                         />
                       </svg>
-                      <span className="text-[12px] font-bold uppercase tracking-wide">
+                      <span className="text-[11px] font-bold uppercase tracking-wide">
                         Explore Open Positions
                       </span>
                     </div>
@@ -3276,7 +3277,7 @@ export default function CareersPage() {
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </Link>
+                  </Button>
                 </div>
               </div>
 
@@ -3334,7 +3335,7 @@ export default function CareersPage() {
                   >
                     <div className="flex items-center gap-2">
                       <svg
-                        className="w-[18px] h-[18px] text-[#0a192f]"
+                        className="w-[18px] h-[18px] text-primary"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -3342,7 +3343,7 @@ export default function CareersPage() {
                         {/* Simulated Orange highlight on bottom icons */}
                         <path
                           d="M5 13l4 4L19 7"
-                          stroke="#f97316"
+                          stroke="var(--secondary)"
                           strokeWidth={2}
                           strokeLinecap="round"
                           strokeLinejoin="round"

@@ -77,8 +77,8 @@ export function Footer() {
 
   return (
     <footer className="border-t border-primary/20 bg-white" id="global">
-      <Container className="py-10 sm:py-12 xl:py-[4.25rem]">
-        <div className="grid gap-x-8 gap-y-10 border-b border-primary/20 pb-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.7fr_1.02fr_1.25fr_1fr_1.18fr_1.42fr] xl:gap-y-12 xl:pb-[3.7rem]">
+      <Container className="py-8 sm:py-10 xl:py-12">
+        <div className="grid gap-x-8 gap-y-8 border-b border-primary/20 pb-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.7fr_1.02fr_1.25fr_1fr_1.18fr_1.42fr] xl:gap-y-10 xl:pb-[2.8rem]">
           <div className="md:col-span-2 lg:col-span-1">
             <BrandMark />
             <p className="mt-7 max-w-[18rem] text-[0.95rem] leading-[1.72] text-text-dark sm:mt-10 sm:text-[1rem]">
@@ -183,7 +183,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="grid gap-10 pt-8 xl:grid-cols-[1fr_2.08fr_1.23fr] xl:divide-x xl:divide-primary/20">
+        <div className="grid gap-8 pt-6 xl:grid-cols-[1fr_2.08fr_1.23fr] xl:divide-x xl:divide-primary/20">
           <div className="xl:pr-10">
             <FooterHeading>Follow Us</FooterHeading>
             <div aria-label="Social links" className="flex flex-wrap gap-2">

@@ -376,7 +376,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* Stats row below Hero */}
-            <div className="mt-10 bg-white text-slate-800 rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
+            <div className="mt-10 bg-white text-slate-800 rounded-xl p-6 md:p-8 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-center">
                 {stats.map((stat, i) => (
                   <div key={i} className="flex items-center gap-4.5 group">
@@ -472,7 +472,7 @@ export default function ContactUsPage() {
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-stretch">
               
               {/* Left Column: Form */}
-              <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-2xl shadow-sm">
+              <div className="bg-slate-50 border border-slate-200/80 p-8 rounded-xl shadow-sm">
                 <span className="text-xs font-black uppercase tracking-widest text-secondary block">
                   ENGINEERING CONSULTATION
                 </span>
@@ -819,7 +819,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* Bottom commitments strip */}
-            <div className="mt-12 bg-slate-50 border border-slate-200/80 rounded-2xl p-5.5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
+            <div className="mt-12 bg-slate-50 border border-slate-200/80 rounded-xl p-5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
               <div className="flex items-center gap-2 text-slate-700">
                 <Shield size={16} className="text-secondary" />
                 <span className="font-semibold">We ensure your query reaches the right expert for a quick and effective response.</span>
@@ -879,7 +879,7 @@ export default function ContactUsPage() {
               </div>
 
               {/* Right Column Map representation */}
-              <div className="relative aspect-[16/10] w-full rounded-2xl border border-slate-200 bg-white overflow-hidden flex items-center justify-center p-6 shadow-sm">
+              <div className="relative aspect-[16/10] w-full rounded-xl border border-slate-200 bg-white overflow-hidden flex items-center justify-center p-6 shadow-sm">
                 <Image
                   src="/images/about/global-benchmarks-map.png"
                   alt="Worldwide Support Hubs Map"
@@ -987,7 +987,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* Bottom banner block */}
-            <div className="mt-12 bg-slate-50 border border-slate-200/80 rounded-2xl p-6.5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs md:text-sm">
+            <div className="mt-12 bg-slate-50 border border-slate-200/80 rounded-xl p-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs md:text-sm">
               <div className="flex items-center gap-3">
                 <Handshake size={18} className="text-secondary shrink-0" />
                 <span className="font-semibold text-primary">Our commitment doesn&apos;t end with the sale. We partner with you for long-term success.</span>
@@ -1045,7 +1045,7 @@ export default function ContactUsPage() {
                           cx="50"
                           cy="50"
                           r="47"
-                          stroke="#ff5a00"
+                          stroke="var(--secondary)"
                           strokeWidth="2.5"
                           fill="none"
                           strokeLinecap="round"
@@ -1079,7 +1079,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* Bottom commitments strip */}
-            <div className="bg-white border border-slate-200/85 rounded-2xl p-6.5 shadow-sm">
+            <div className="bg-white border border-slate-200/85 rounded-xl p-6 shadow-sm">
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-center sm:divide-x sm:divide-slate-100">
                 {processCommitments.map((item, i) => {
                   const PIcon = item.icon;
@@ -1173,7 +1173,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* FAQ Footer block */}
-            <div className="max-w-4xl mx-auto bg-slate-50 border border-slate-200/80 rounded-2xl p-5.5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="max-w-4xl mx-auto bg-slate-50 border border-slate-200/80 rounded-xl p-5 flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-3.5">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-sm">
                   <Headphones size={20} />
@@ -1266,7 +1266,7 @@ export default function ContactUsPage() {
               </div>
 
               {/* Right Address card with map pointer */}
-              <div className="bg-[#031b40] text-white p-6 rounded-2xl border border-white/5 flex flex-col justify-between shadow-xl">
+              <div className="bg-primary-dark text-white p-6 rounded-xl border border-white/5 flex flex-col justify-between shadow-xl">
                 <div className="space-y-6">
                   <span className="text-[10px] font-black uppercase text-secondary tracking-widest block border-b border-white/10 pb-2">
                     OUR FACILITY
@@ -1344,7 +1344,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* Bottom strip see experience trust */}
-            <div className="mt-12 bg-white border border-slate-200/80 rounded-2xl p-5.5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="mt-12 bg-white border border-slate-200/80 rounded-xl p-5 flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex flex-col gap-1">
                 <span className="text-xs font-black uppercase tracking-widest text-slate-400 leading-none">
                   SEE. EXPERIENCE. TRUST.
@@ -1386,7 +1386,7 @@ export default function ContactUsPage() {
         {/* ========================================================================= */}
         <section className="bg-white py-16 lg:pb-24">
           <Container>
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-slate-900 text-white min-h-[380px] lg:min-h-[460px] flex flex-col justify-center p-8 md:p-12 lg:p-16">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 shadow-xl bg-slate-900 text-white min-h-[380px] lg:min-h-[460px] flex flex-col justify-center p-8 md:p-12 lg:p-16">
               
               {/* Plant Visual Background */}
               <Image
@@ -1414,7 +1414,7 @@ export default function ContactUsPage() {
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4 items-center">
-                  <Button href="tel:+912812387373" variant="primary" className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5 bg-[#031b40] hover:bg-secondary border-none">
+                  <Button href="tel:+912812387373" variant="primary" className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8">
                     <Phone size={14} />
                     CALL NOW
                   </Button>
