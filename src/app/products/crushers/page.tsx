@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/common/Container";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { crushersData } from "@/data/products/crushersData";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function CrushersPage() {
@@ -24,8 +25,15 @@ export default function CrushersPage() {
             />
 
             <div className="mt-16 grid md:grid-cols-2 gap-12">
-              <div className="bg-gray-200 rounded-lg h-80 flex items-center justify-center">
-                <p className="text-gray-500">Product Image</p>
+              <div className="relative h-80 overflow-hidden rounded-lg border border-border bg-bg-light">
+                <Image
+                  alt="Pithal crushing equipment"
+                  className="object-contain p-8"
+                  fill
+                  sizes="(max-width: 767px) 100vw, 50vw"
+                  src="/images/products/crushers.png"
+                  priority
+                />
               </div>
 
               <div className="space-y-6">

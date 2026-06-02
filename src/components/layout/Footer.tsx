@@ -115,9 +115,9 @@ export function Footer() {
           {navColumns.map((column) => {
             const linkMap: Record<string, Record<string, string>> = {
               "Products": {
-                "Jaw Crushers": "/products/crushers",
-                "Cone Crushers": "/products/crushers",
-                "Impact Crushers": "/products/crushers",
+                "Jaw Crushers": "/products/jaw-crushers",
+                "Cone Crushers": "/products/cone-crushers",
+                "Impact Crushers": "/products/vsi-crushers",
                 "Vibrating Feeders": "/products/feeders",
                 "Vibrating Screens": "/products/screening-solutions",
                 "Mobile Crushing Plants": "/products/complete-plants",

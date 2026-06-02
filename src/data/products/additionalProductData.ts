@@ -224,7 +224,7 @@ function createProductData(config: ProductConfig): ProductDetailData {
       points: config.features.slice(0, 4).map((feature) => feature.title),
       features: config.features.slice(0, 4),
       thumbnail: {
-        src: `${folderPath}/video-showcase.svg`,
+        src: `${folderPath}/video-showcase.png`,
         alt: `${config.crumb} performance video thumbnail`,
       },
       caption: "FULL MACHINE DEMONSTRATION",

@@ -150,11 +150,12 @@ export const projects = [
 ];
 
 export const processSteps = [
-  { number: "01", title: "Material Input", text: "Raw material is fed into the system from the feeder hopper.", image: "/images/process/raw.png", icon: "/icons/material-input.png" },
-  { number: "02", title: "Primary Crushing", text: "Jaw crusher reduces large rocks into smaller, manageable sizes.", image: "/images/process/jaw-crusher.png", icon: "/icons/primary-crushing.png" },
-  { number: "03", title: "Secondary Crushing", text: "Further size reduction using cone crusher for consistent output.", image: "/images/process/cone.png", icon: "/icons/secondary-crushing.png" },
-  { number: "04", title: "Screening", text: "Vibrating screens separate material into different sizes.", image: "/images/process/screen1.png", icon: "/icons/screening.png" },
-  { number: "05", title: "Final Output", text: "High-quality aggregates ready for various applications.", image: "/images/process/output.png", icon: "/icons/final-output.png" },
+  { number: "01", title: "Material Input", text: "Raw material is loaded into the hopper by dump trucks or loaders.", image: "/images/process/raw.png", icon: "/icons/material-input.png" },
+  { number: "02", title: "Feed Hopper", text: "Feeder hopper regulates the continuous and uniform flow of materials.", image: "/images/process/feed-hopper.png", icon: "/icons/material-input.png" },
+  { number: "03", title: "Primary Crushing", text: "Jaw crusher reduces large rocks into smaller, manageable sizes.", image: "/images/process/jaw-crusher.png", icon: "/icons/primary-crushing.png" },
+  { number: "04", title: "Secondary Crushing", text: "Further size reduction using cone crusher for consistent output.", image: "/images/process/cone.png", icon: "/icons/secondary-crushing.png" },
+  { number: "05", title: "Screening", text: "Vibrating screens separate material into different sizes.", image: "/images/process/screen1.png", icon: "/icons/screening.png" },
+  { number: "06", title: "Final Output", text: "High-quality aggregates ready for various applications.", image: "/images/process/output.png", icon: "/icons/final-output.png" },
 ];
 
 export const processFeatures = [
