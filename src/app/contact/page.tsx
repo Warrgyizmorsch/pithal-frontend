@@ -321,75 +321,78 @@ export default function ContactUsPage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO & STATS BANNER */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-white pt-4 pb-12 text-primary lg:pt-6 lg:pb-14">
-          <div className="pointer-events-none absolute inset-0 industrial-grid opacity-30" />
-          <div className="pointer-events-none absolute right-0 top-0 h-[60%] w-[50%] rounded-bl-[60%] border-l border-secondary/20 border-b border-secondary/20" />
+        <section className="relative overflow-hidden pt-4 pb-12 text-white lg:pt-6 lg:pb-14">
+          {/* Background image */}
+          <Image
+            src="/contactus/front.jpg"
+            alt="Pithal Crushing Plant"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="pointer-events-none absolute inset-0 bg-primary-dark/60" />
+          {/* Industrial grid overlay */}
+          <div className="pointer-events-none absolute inset-0 industrial-grid opacity-10" />
+          {/* Corner accent */}
+          <div className="pointer-events-none absolute right-0 top-0 h-[60%] w-[50%] rounded-bl-[60%] border-l border-secondary/25 border-b border-secondary/25" />
+
           <Container className="relative z-10">
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-xs font-medium text-primary/70">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium text-white/60">
               <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
               <ChevronRight size={10} />
               <span className="text-secondary">Contact Us</span>
             </div>
 
-            <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="max-w-3xl py-6 lg:py-10">
               {/* Left Column Text */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="h-[1.5px] w-6 bg-secondary" />
-                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
-                    CONTACT US
-                  </span>
-                </div>
-                
-                <h1 className="headline text-[clamp(2.35rem,5.4vw,4rem)] uppercase leading-[0.96] tracking-tight text-primary">
-                  LET&apos;S BUILD <br />
-                  INDUSTRIAL SOLUTIONS <span className="text-secondary">TOGETHER.</span>
-                </h1>
-                
-                <span aria-hidden className="mt-6 block h-[2px] w-14 bg-secondary" />
-
-                <p className="mt-6 max-w-xl text-sm md:text-[18px] lg:text-[20px] leading-relaxed text-primary font-medium">
-                  Partner with our engineering experts to design, build and deliver high-performance solutions that drive your operations forward.
-                </p>
-                
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Button href="#consultation" variant="primary" className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5">
-                    TALK TO OUR EXPERTS
-                    <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1.5" />
-                  </Button>
-                </div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="h-[1.5px] w-6 bg-secondary" />
+                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                  CONTACT US
+                </span>
               </div>
 
-              {/* Right Column Photo */}
-              <div className="relative min-h-[300px] w-full overflow-hidden rounded-bl-[5rem] rounded-tl-[1.5rem] bg-slate-100 lg:min-h-[390px] border border-slate-200 shadow-md">
-                <Image
-                  alt="Pithal Engineering Team"
-                  className="object-cover object-center"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 45vw, 100vw"
-                  src="/images/contact/crushing-plant-contact.jpg"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/5 to-transparent" />
+              <h1 className="headline text-[clamp(2.35rem,5.4vw,4rem)] uppercase leading-[0.96] tracking-tight text-white">
+                LET&apos;S BUILD <br />
+                INDUSTRIAL SOLUTIONS <span className="text-secondary">TOGETHER.</span>
+              </h1>
+
+              <span aria-hidden className="mt-6 block h-[2px] w-14 bg-secondary" />
+
+              <p className="mt-6 max-w-xl text-sm md:text-[18px] lg:text-[20px] leading-relaxed text-slate-300 font-medium">
+                Partner with our engineering experts to design, build and deliver high-performance solutions that drive your operations forward.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Button href="#consultation" variant="primary" className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5">
+                  TALK TO OUR EXPERTS
+                  <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+                </Button>
+                <Button href="#contact-info" variant="outlineOrange" className="flex items-center justify-center gap-2 text-xs font-black tracking-[0.14em] px-8 py-5.5 text-white border-white/25 hover:bg-white hover:text-primary">
+                  VIEW CONTACT INFO
+                  <ArrowRight size={14} />
+                </Button>
               </div>
             </div>
 
             {/* Stats row below Hero */}
-            <div className="mt-10 bg-white text-slate-800 rounded-xl p-6 md:p-8 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
+            <div className="mt-10 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-xl p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.2)] relative z-20">
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-center">
                 {stats.map((stat, i) => (
-                  <div key={i} className="flex items-center gap-4.5 group">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-200/80 shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] text-primary">
-                      {i === 0 && <Building2 size={18} className="text-secondary" />}
-                      {i === 1 && <Globe size={18} className="text-secondary" />}
-                      {i === 2 && <Users size={18} className="text-secondary" />}
-                      {i === 3 && <Headphones size={18} className="text-secondary" />}
+                  <div key={i} className="flex items-center gap-4 group">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/10 text-secondary">
+                      {i === 0 && <Building2 size={18} />}
+                      {i === 1 && <Globe size={18} />}
+                      {i === 2 && <Users size={18} />}
+                      {i === 3 && <Headphones size={18} />}
                     </div>
                     <div>
-                      <h4 className="text-xl md:text-2xl font-black text-primary leading-none">{stat.value}</h4>
+                      <h4 className="text-xl md:text-2xl font-black text-white leading-none">{stat.value}</h4>
                       <p className="text-xs font-black text-secondary uppercase tracking-widest mt-1.5">{stat.label}</p>
-                      <p className="text-xs md:text-sm text-slate-500 mt-0.5">{stat.desc}</p>
+                      <p className="text-xs md:text-sm text-slate-300 mt-0.5">{stat.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -688,11 +691,9 @@ export default function ContactUsPage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  src="/images/about/factory-hero.png"
+                  src="/contactus/manufacturingfcility.jpg"
                 />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-slate-950/40 z-10" />
-                
+
                 {/* Bottom Left Label Banner */}
                 <div className="relative z-20 bg-primary/95 text-white p-4.5 rounded-lg border border-white/5 max-w-md backdrop-blur-sm">
                   <div className="flex items-start gap-3">
@@ -714,10 +715,10 @@ export default function ContactUsPage() {
               {/* Right Column (4 small cards in 2x2 grid) */}
               <div className="grid gap-6 sm:grid-cols-2">
                 {[
-                  { title: "PRODUCTION WORKSHOP", desc: "Precision machining and fabrication with world-class equipment.", image: "/images/about/factory-floor.png" },
-                  { title: "ENGINEERING DEPARTMENT", desc: "Expert engineers delivering innovative and customized solutions.", image: "/images/about/manufacturing-exelilence-1.png" },
-                  { title: "PRODUCTION FLOOR", desc: "Efficient processes ensuring consistent quality and timely delivery.", image: "/images/about/manufacturing-02.png" },
-                  { title: "QUALITY ASSURANCE", desc: "Rigorous testing and inspection at every stage to ensure reliability.", image: "/images/about/manufacturing-03.png" }
+                  { title: "PRODUCTION WORKSHOP", desc: "Precision machining and fabrication with world-class equipment.", image: "/contactus/production.jpg" },
+                  { title: "ENGINEERING DEPARTMENT", desc: "Expert engineers delivering innovative and customized solutions.", image: "/contactus/engineeringdep.jpg" },
+                  { title: "PRODUCTION FLOOR", desc: "Efficient processes ensuring consistent quality and timely delivery.", image: "/contactus/productionfloor.jpg" },
+                  { title: "QUALITY ASSURANCE", desc: "Rigorous testing and inspection at every stage to ensure reliability.", image: "/contactus/qualityassuarance.jpg" }
                 ].map((item, idx) => (
                   <div key={idx} className="group relative overflow-hidden rounded-xl border border-slate-200 bg-slate-900 min-h-[220px] lg:min-h-[238px] flex flex-col justify-end p-4.5 shadow-sm">
                     <Image
@@ -727,7 +728,6 @@ export default function ContactUsPage() {
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                       src={item.image}
                     />
-                    <div className="absolute inset-0 bg-slate-950/50 z-10" />
                     
                     {/* Bottom Left Overlay */}
                     <div className="relative z-20 bg-primary/95 text-white p-3.5 rounded-lg border border-white/5 backdrop-blur-xs">
@@ -835,41 +835,49 @@ export default function ContactUsPage() {
         {/* ========================================================================= */}
         {/* SECTION 6: SUPPORTING INDUSTRIES & WORLDWIDE REACH */}
         {/* ========================================================================= */}
-        <section className="bg-slate-50 py-12 lg:py-16" id="worldwide-reach">
-          <Container>
-            <div className="grid gap-12 lg:grid-cols-[1fr_1.10fr] lg:items-center">
-              
-              {/* Left Column Content */}
+        <section className="relative overflow-hidden bg-primary-dark py-12 lg:py-16" id="worldwide-reach">
+          {/* Background image */}
+          <Image
+            src="/contactus/map.jpg"
+            alt="Worldwide Operations Background"
+            fill
+            className="object-cover object-center opacity-50"
+            sizes="100vw"
+          />
+          {/* Dark overlay */}
+          
+          <Container className="relative z-10">
+            {/* Top row: left text + right map */}
+            <div className="grid gap-10 lg:grid-cols-[1fr_1.35fr] lg:items-start"></div>
+
+              {/* Left Column */}
               <div>
-                <span className="text-xs font-black uppercase tracking-widest text-secondary block">
+                <span className="text-xs font-black uppercase tracking-widest text-secondary block mb-3">
                   GLOBAL SUPPORT NETWORK
                 </span>
-                <h2 className="headline text-[clamp(2rem,4.2vw,3rem)] font-black text-primary uppercase mt-2">
+                <h2 className="headline text-[clamp(2rem,4vw,3rem)] font-black text-white uppercase leading-[1.0]">
                   SUPPORTING INDUSTRIES.<br />
                   <span className="text-secondary">AROUND THE WORLD.</span>
                 </h2>
-                <p className="text-sm text-slate-500 leading-relaxed max-w-lg mt-3">
+                <p className="text-sm text-slate-300 leading-relaxed max-w-sm mt-4">
                   Pithal Machinery is trusted in 35+ countries across 6 continents. Our global support network ensures you get the right solutions and timely support, wherever you operate.
                 </p>
 
-                {/* Metrics highlights list */}
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {/* Vertical stacked metric list — icon left, bold title + desc right */}
+                <div className="mt-8 space-y-6">
                   {globalReachPoints.map((item, i) => (
-                    <div key={i} className="flex gap-3.5 p-4 bg-white border border-slate-200/80 rounded-xl shadow-xs">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary">
+                    <div key={i} className="flex gap-4 items-start">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-secondary/50 bg-secondary/10 text-secondary">
                         {i === 0 && <Globe size={18} />}
-                        {i === 1 && <Clock size={18} />}
+                        {i === 1 && <Headphones size={18} />}
                         {i === 2 && <Shield size={18} />}
                         {i === 3 && <Layers size={18} />}
                       </div>
                       <div>
-                        <h4 className="text-base font-black text-primary leading-tight">
+                        <h4 className="text-sm font-black text-white uppercase tracking-wide leading-tight">
                           {item.value}
                         </h4>
-                        <p className="text-xs text-slate-500 font-bold uppercase mt-1 leading-none">
-                          {item.label}
-                        </p>
-                        <p className="text-xs text-slate-400 mt-1">
+                        <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                           {item.desc}
                         </p>
                       </div>
@@ -878,64 +886,58 @@ export default function ContactUsPage() {
                 </div>
               </div>
 
-              {/* Right Column Map representation */}
-              <div className="relative aspect-[16/10] w-full rounded-xl border border-slate-200 bg-white overflow-hidden flex items-center justify-center p-6 shadow-sm">
-                <Image
-                  src="/images/about/global-benchmarks-map.png"
-                  alt="Worldwide Support Hubs Map"
-                  fill
-                  className="object-contain opacity-80 p-2"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
-                <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2.5 px-4">
-                  {["EUROPE", "MIDDLE EAST", "ASIA", "AFRICA", "SOUTH AMERICA"].map((region) => (
-                    <span key={region} className="bg-primary text-white text-[9px] font-black uppercase px-2 py-1 rounded shadow-md border border-white/10 tracking-wider">
-                      {region}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
 
-            {/* Bottom presence regions columns */}
-            <div className="mt-10 pt-10 border-t border-slate-200/80">
-              <h3 className="text-xs font-black tracking-widest text-primary uppercase text-center mb-8">
-                OUR PRESENCE BY REGION
-              </h3>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
-                {globalPresenceRegions.map((region, i) => (
-                  <div key={i} className="bg-white border border-slate-200/85 p-4 rounded-xl flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-black uppercase text-secondary tracking-widest leading-none block">
-                        {region.name}
-                      </span>
-                      <span className="text-xs font-bold text-primary mt-1 block">
-                        {region.countries}
-                      </span>
-                      <p className="mt-2 text-[10.5px] leading-relaxed text-slate-500">
-                        {region.desc}
-                      </p>
+            {/* Bottom: OUR PRESENCE BY REGION bordered box */}
+            <div className="mt-12 border border-white/10 rounded-xl overflow-hidden">
+              {/* Title row */}
+              <div className="py-4 px-6 border-b border-white/10 bg-white/5 text-center">
+                <h3 className="text-xs font-black tracking-[0.22em] text-white uppercase inline-flex items-center gap-3">
+                  <span className="h-px w-10 bg-secondary inline-block" />
+                  OUR PRESENCE BY REGION
+                  <span className="h-px w-10 bg-secondary inline-block" />
+                </h3>
+              </div>
+              {/* 6 Region columns */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-x divide-y lg:divide-y-0 divide-white/10">
+                {[
+                  { name: "EUROPE",       countries: "Countries: 8+",  desc: "Strong presence in key European markets with reliable partners.",               colorClass: "text-primary" },
+                  { name: "MIDDLE EAST",  countries: "Countries: 10+", desc: "Serving the core industries with advanced crushing solutions.",                  colorClass: "text-secondary" },
+                  { name: "ASIA",         countries: "Countries: 12+", desc: "Expanding rapidly across emerging and industrial economies.",                    colorClass: "text-primary" },
+                  { name: "AFRICA",       countries: "Countries: 12+", desc: "Empowering mining and construction industries across Africa.",                   colorClass: "text-primary" },
+                  { name: "SOUTH AMERICA",countries: "Countries: 6+",  desc: "Delivering performance and reliability across growing markets.",                 colorClass: "text-secondary" },
+                  { name: "GLOBAL REACH", countries: "35+ Countries",  desc: "A global network built on trust, quality and expertise.",                        colorClass: "text-primary" },
+                ].map((region, i) => (
+                  <div key={i} className="p-4 flex flex-col gap-2 bg-white/5 hover:bg-white/10 transition-colors">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 shrink-0">
+                      <Globe size={13} className={region.colorClass} />
                     </div>
-                    <div className="mt-4 pt-2 border-t border-slate-100 flex justify-end">
-                      <Globe size={12} className="text-secondary" />
-                    </div>
+                    <span className={`text-[10px] font-black uppercase tracking-wider leading-tight ${region.colorClass}`}>
+                      {region.name}
+                    </span>
+                    <p className="text-[10px] text-slate-300 leading-snug flex-1">
+                      {region.desc}
+                    </p>
+                    <span className="text-[9px] font-black text-white/40 uppercase tracking-widest mt-1 border-t border-white/10 pt-2">
+                      {region.countries}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Bottom features strip */}
-            <div className="mt-12 bg-white border border-slate-200/85 rounded-xl p-4.5 flex flex-wrap items-center justify-center gap-6 md:gap-12">
-              {["Global Footprint. Local Commitment.", "24/7 Support Availability", "Spare Parts Support", "On-site Assistance", "Technical Expertise"].map((f, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary">
-                    <Check size={10} className="stroke-[3]" />
-                  </div>
-                  <span className="text-xs font-black uppercase tracking-wide text-primary">
-                    {f}
-                  </span>
-                </div>
-              ))}
+            <div className="mt-6 border border-white/10 rounded-xl bg-white/5 px-6 py-4 flex flex-wrap items-center justify-center gap-x-0 gap-y-3 divide-x divide-white/15">
+              <div className="flex items-center gap-2 px-5 text-xs font-black uppercase tracking-wide text-primary">
+                <Globe size={14} className="text-secondary shrink-0" />
+                <span>Global Footprint. Local Commitment.</span>
+              </div>
+              <div className="flex items-center gap-2 px-5 text-xs font-black uppercase tracking-wide text-white">
+                <Headphones size={14} className="text-secondary shrink-0" />
+                <span>24/7 Support Availability</span>
+              </div>
+              <span className="px-5 text-xs font-black uppercase tracking-wide text-white">Spare Parts Support</span>
+              <span className="px-5 text-xs font-black uppercase tracking-wide text-white">On-site Assistance</span>
+              <span className="px-5 text-xs font-black uppercase tracking-wide text-white">Technical Expertise</span>
             </div>
           </Container>
         </section>
@@ -1236,17 +1238,17 @@ export default function ContactUsPage() {
                     className="object-cover"
                     fill
                     sizes="(min-width: 1024px) 58vw, 100vw"
-                    src="/images/about/factory-hero.png"
+                    src="/contactus/manufacturingfcility.jpg"
                   />
                 </div>
                 
                 {/* 4 smaller floor images row */}
                 <div className="grid grid-cols-4 gap-4 mt-4">
                   {[
-                    { label: "Advanced Manufacturing", image: "/images/about/manufacturing-exelilence-2.png" },
-                    { label: "Precision Engineering", image: "/images/about/manufacturing-exelilence-3.png" },
-                    { label: "Quality Production", image: "/images/about/manufacturing-exelilence-4.png" },
-                    { label: "Engineering Excellence", image: "/images/about/manufacturing-exelilence-5.png" }
+                    { label: "Advanced Manufacturing", image: "/contactus/advancemanufacturing.jpg" },
+                    { label: "Precision Engineering", image: "/contactus/precision engineering.jpg" },
+                    { label: "Quality Production", image: "/contactus/quality production.jpg" },
+                    { label: "Engineering Excellence", image: "/contactus/engineering excellence.jpg" }
                   ].map((sub, i) => (
                     <div key={i} className="group relative aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-800">
                       <Image
@@ -1386,14 +1388,14 @@ export default function ContactUsPage() {
         {/* ========================================================================= */}
         <section className="bg-white py-16 lg:pb-24">
           <Container>
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 shadow-xl bg-slate-900 text-white min-h-[380px] lg:min-h-[460px] flex flex-col justify-center p-8 md:p-12 lg:p-16">
+            <div className="relative overflow-hidden rounded-xl border  text-white min-h-[380px] lg:min-h-[460px] flex flex-col justify-center p-8 md:p-12 lg:p-16">
               
               {/* Plant Visual Background */}
               <Image
-                src="/images/contact/crushing-plant-contact.jpg"
+                src="/contactus/2.jpg"
                 alt="Pithal Crushing Plant Officer"
                 fill
-                className="object-cover object-right opacity-30"
+                className="object-cover object-right "
                 sizes="100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
