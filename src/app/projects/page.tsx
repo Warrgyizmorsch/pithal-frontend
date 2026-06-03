@@ -89,7 +89,17 @@ export default function CaseStudyPage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO (Rajasthan Zinc Crushing Plant) */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-[#031b40] to-slate-950 py-20 lg:py-24 text-white">
+        <section className="relative overflow-hidden  py-20 lg:py-24 text-white">
+          <Image
+            alt="Rajasthan Zinc Crushing Plant"
+            className="object-cover object-center"
+            fill
+            priority
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            src="/projectimg/rajasthan zinc crushing plant.jpg"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-slate-950/70" />
+          <div className="pointer-events-none absolute inset-0 industrial-grid opacity-35" />
           <Container className="relative z-10">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 mb-8 text-[11px] font-medium text-slate-400">
@@ -152,18 +162,6 @@ export default function CaseStudyPage() {
                     <Download size={14} className="mr-0.5" />
                     DOWNLOAD CASE STUDY
                   </Button>
-                </div>
-              </div>
-
-              {/* Right Column Photo Representer */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] bg-slate-800">
-                <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply z-10" />
-                <div className="absolute inset-0 border border-dashed border-slate-700/50 m-5 rounded-xl flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <Construction size={44} className="text-secondary mx-auto animate-pulse mb-3" />
-                    <span className="text-xs font-black uppercase tracking-widest text-slate-400 block">Rajasthan Zinc Crushing Plant</span>
-                    <p className="text-[10px] text-slate-500 mt-1">Operational view of 500 TPH complete circuit</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -299,14 +297,11 @@ export default function CaseStudyPage() {
               </div>
 
               {/* Right column representative photo */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-md">
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-md bg-[url('/projectimg/overview.jpg')] bg-cover bg-center">
                 <div className="absolute inset-0 bg-slate-950/10 z-10" />
                 <div className="absolute inset-0 border border-dashed border-slate-700/60 m-4 rounded-xl flex items-center justify-center">
                   <div className="text-center p-4">
-                    <Construction size={40} className="text-secondary mx-auto mb-2 animate-pulse" />
-                    <span className="text-xs font-black uppercase tracking-widest text-slate-400 font-bold block">Udaipur Site Photographic Visual</span>
-                    <p className="text-[9px] text-slate-500 mt-1">Multi-stage crushing setup overview</p>
-                  </div>
+                   </div>
                 </div>
               </div>
             </div>
@@ -362,11 +357,15 @@ export default function CaseStudyPage() {
 
               {/* Right column representative photo & navy warning block */}
               <div className="flex flex-col gap-6">
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-md flex-1 min-h-[220px]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-md flex-1 min-h-[220px]">
+                  <Image
+                    src="/projectimg/overcoming%20operational%20cahllenges.jpg"
+                    alt="Overcoming Operational Challenges"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover object-center"
+                  />
                   <div className="absolute inset-0 bg-slate-950/10 z-10" />
-                  <div className="absolute inset-0 border border-dashed border-slate-700/60 m-4 rounded-xl flex items-center justify-center">
-                    <span className="text-xs font-black uppercase tracking-widest text-slate-400 font-bold block">Mining Site Challenge Profile</span>
-                  </div>
                 </div>
 
                 {/* Warning Card */}
@@ -467,10 +466,13 @@ export default function CaseStudyPage() {
 
                 {/* 3D circuit box */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-900 flex items-center justify-center">
-                  <div className="text-center p-4 z-10">
-                    <Workflow size={36} className="text-secondary mx-auto mb-2" />
-                    <span className="text-[11px] font-black uppercase tracking-widest text-slate-400 block">3D Complete Circuit Mapping</span>
-                  </div>
+                  <Image
+                    src="/projectimg/pithal%20engineering%20solution.jpg"
+                    alt="Pithal Engineering Solution"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover object-center"
+                  />
                 </div>
 
                 {/* 4 Bottom values grid */}
@@ -541,14 +543,14 @@ export default function CaseStudyPage() {
             </div>
 
             {/* Plant Workflow Wide Image Box */}
-            <div className="relative aspect-[2.4/1] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-md mb-12 flex items-center justify-center">
+            <div className="relative aspect-[4/1] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-md mb-12 flex items-center justify-center">
+              <Image
+                alt="Engineered flow"
+                src="/projectimg/engineered flow.jpg"
+                fill
+                className="object-cover object-center"
+              />
               <div className="absolute inset-0 bg-slate-950/10 z-10" />
-              <div className="absolute inset-0 border border-dashed border-slate-700/60 m-4 rounded-xl flex items-center justify-center">
-                <div className="text-center p-4">
-                  <Workflow size={48} className="text-secondary mx-auto mb-2 animate-pulse" />
-                  <span className="text-xs font-black uppercase tracking-widest text-slate-400 font-bold block">High Capacity Plant Process Flow Visual</span>
-                </div>
-              </div>
             </div>
 
             {/* Bottom 4 Stats Pills */}
@@ -592,6 +594,7 @@ export default function CaseStudyPage() {
                   number: "01",
                   name: "JAW CRUSHER",
                   model: "PEW 1100 x 750",
+                  img: "/images/products/jaw-crusher/main-machine.png",
                   role: "Primary crushing of run-of-mine material into manageable size.",
                   specs: [
                     { label: "Feed Opening", val: "1100 x 750 mm" },
@@ -605,6 +608,7 @@ export default function CaseStudyPage() {
                   number: "02",
                   name: "CONE CRUSHER",
                   model: "PCH 220",
+                  img: "/images/products/cone-crusher/main-machine.png",
                   role: "Secondary crushing for further size reduction and shape control.",
                   specs: [
                     { label: "Max Feed Size", val: "185 mm" },
@@ -618,6 +622,7 @@ export default function CaseStudyPage() {
                   number: "03",
                   name: "VSI CRUSHER",
                   model: "PVSI 1145",
+                  img: "/images/products/vsi-crusher/product-review.png",
                   role: "Tertiary crushing & shaping for high-quality, cubical products.",
                   specs: [
                     { label: "Rotor Diameter", val: "1145 mm" },
@@ -631,6 +636,7 @@ export default function CaseStudyPage() {
                   number: "04",
                   name: "VIBRATING SCREEN",
                   model: "3YK 2160",
+                  img: "/images/products/vibrating-screen/product-review.png",
                   role: "Separation and classification of material by size.",
                   specs: [
                     { label: "Screen Size", val: "2100 x 6000 mm" },
@@ -644,6 +650,7 @@ export default function CaseStudyPage() {
                   number: "05",
                   name: "BELT CONVEYORS",
                   model: "BC Series",
+                  img: "/images/products/belt-conveyor/product-review.png",
                   role: "Efficient material transfer between different stages of the plant.",
                   specs: [
                     { label: "Belt Width", val: "800 - 1500 mm" },
@@ -667,9 +674,14 @@ export default function CaseStudyPage() {
                     <h4 className="text-[11.5px] font-black uppercase text-primary leading-tight">{card.name}</h4>
                     <p className="text-[9.5px] text-slate-400 font-bold uppercase tracking-wider leading-none mt-0.5">{card.model}</p>
 
-                    {/* Transparent machine outline placeholder */}
-                    <div className="relative aspect-[1.1/1] w-full rounded bg-white overflow-hidden border border-slate-100 my-4 flex items-center justify-center">
-                      <span className="text-[8px] font-black uppercase tracking-widest text-slate-400">Machine Render {idx+1}</span>
+                    {/* Machine image */}
+                    <div className="relative aspect-[1.1/1] w-full rounded overflow-hidden border border-slate-100 my-4">
+                      <Image
+                        src={card.img}
+                        alt={card.name}
+                        fill
+                        className="object-cover object-center"
+                      />
                     </div>
 
                     <div className="mt-3.5 border-t border-slate-100 pt-3">
@@ -730,20 +742,24 @@ export default function CaseStudyPage() {
             {/* 6 Grid Cards */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {[
-                { number: "01", name: "PLANT SETUP", desc: "Complete plant layout and equipment arrangement as per engineered design." },
-                { number: "02", name: "CRANE LIFTING", desc: "Safe and efficient lifting of heavy machinery using advanced cranes and rigging." },
-                { number: "03", name: "EQUIPMENT INSTALLATION", desc: "Precise installation and alignment of crushers, screens and conveyors." },
-                { number: "04", name: "FABRICATION", desc: "In-house fabrication of structural components ensuring strength and durability." },
-                { number: "05", name: "SITE ENGINEERS", desc: "Our expert team supervising on-site execution with strict adherence to safety and quality." },
-                { number: "06", name: "COMMISSIONING", desc: "Final testing, trial runs and commissioning for smooth and reliable plant operation." }
+                { number: "01", name: "PLANT SETUP", desc: "Complete plant layout and equipment arrangement as per engineered design.", img: "/projectimg/plant setup.jpg" },
+                { number: "02", name: "CRANE LIFTING", desc: "Safe and efficient lifting of heavy machinery using advanced cranes and rigging.", img: "/projectimg/crane lifting.jpg" },
+                { number: "03", name: "EQUIPMENT INSTALLATION", desc: "Precise installation and alignment of crushers, screens and conveyors.", img: "/projectimg/equipment installation.jpg" },
+                { number: "04", name: "FABRICATION", desc: "In-house fabrication of structural components ensuring strength and durability.", img: "/projectimg/fabrication.jpg" },
+                { number: "05", name: "SITE ENGINEERS", desc: "Our expert team supervising on-site execution with strict adherence to safety and quality.", img: "/projectimg/site engineers.jpg" },
+                { number: "06", name: "COMMISSIONING", desc: "Final testing, trial runs and commissioning for smooth and reliable plant operation.", img: "/projectimg/commissioning.jpg" }
               ].map((step, idx) => (
                 <div key={idx} className="group bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
                   {/* Photo represented box */}
-                  <div className="relative aspect-[16/9] w-full bg-slate-900">
+                  <div className="relative aspect-[16/9] w-full bg-slate-900 overflow-hidden">
+                    <Image
+                      src={step.img}
+                      alt={step.name}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
                     <div className="absolute inset-0 bg-slate-950/15 z-10" />
-                    <div className="absolute inset-0 border border-dashed border-slate-700/60 m-2.5 rounded-xl z-0 flex items-center justify-center">
-                      <span className="text-[8px] font-black uppercase tracking-widest text-slate-500">Site Log Photo {idx+1}</span>
-                    </div>
                   </div>
 
                   {/* Text card body */}
@@ -902,10 +918,14 @@ export default function CaseStudyPage() {
             {/* Main testimonial block */}
             <div className="grid gap-12 lg:grid-cols-2 lg:items-stretch mb-12">
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-md">
+                <Image
+                  src="/projectimg/trusted by leaders.jpg"
+                  alt="Client Testimonial"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover object-center"
+                />
                 <div className="absolute inset-0 bg-slate-950/15 z-10" />
-                <div className="absolute inset-0 border border-dashed border-slate-700/60 m-4 rounded-xl flex items-center justify-center">
-                  <span className="text-xs font-black uppercase tracking-widest text-slate-400 font-bold block">Engineers Handshake Site Photographic Visual</span>
-                </div>
               </div>
 
               {/* Quote block */}
@@ -993,10 +1013,14 @@ export default function CaseStudyPage() {
             <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center mb-12">
               {/* Left reach world map image */}
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-md">
+                <Image
+                  src="/projectimg/global reach local support.jpg"
+                  alt="Global Reach Map"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover object-center"
+                />
                 <div className="absolute inset-0 bg-slate-950/15 z-10" />
-                <div className="absolute inset-0 border border-dashed border-slate-700/60 m-4 rounded-xl flex items-center justify-center">
-                  <span className="text-xs font-black uppercase tracking-widest text-slate-400 font-bold block">Reach Pins Geographic Map visual</span>
-                </div>
               </div>
 
               {/* Right col: 4 cards list */}
@@ -1074,6 +1098,7 @@ export default function CaseStudyPage() {
                   tag: "LIMESTONE PLANT",
                   title: "250 TPH Limestone Crushing Plant",
                   loc: "Madhya Pradesh, India",
+                  img: "/projectimg/lime stone plant.jpg",
                   metrics: [
                     { val: "35%", text: "Higher Productivity" },
                     { val: "20%", text: "Lower Downtime" },
@@ -1084,6 +1109,7 @@ export default function CaseStudyPage() {
                   tag: "SAND PLANT",
                   title: "200 TPH Sand Manufacturing Plant",
                   loc: "Rajasthan, India",
+                  img: "/projectimg/sand plant.jpg",
                   metrics: [
                     { val: "30%", text: "Higher Output" },
                     { val: "15%", text: "Energy Savings" },
@@ -1094,6 +1120,7 @@ export default function CaseStudyPage() {
                   tag: "INFRASTRUCTURE PROJECT",
                   title: "300 TPH Infrastructure Crushing Project",
                   loc: "Maharashtra, India",
+                  img: "/projectimg/18.jpg",
                   metrics: [
                     { val: "40%", text: "Higher Capacity" },
                     { val: "25%", text: "Lower Operating Cost" },
@@ -1104,6 +1131,7 @@ export default function CaseStudyPage() {
                   tag: "CEMENT PLANT SOLUTION",
                   title: "Complete Crushing Solution for Cement Plant",
                   loc: "Gujarat, India",
+                  img: "/projectimg/17.jpg",
                   metrics: [
                     { val: "20%", text: "Process Efficiency" },
                     { val: "24/7", text: "Continuous Operation" },
@@ -1114,11 +1142,15 @@ export default function CaseStudyPage() {
                 <div key={idx} className="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
                   <div>
                     {/* Photo box represented with tags */}
-                    <div className="relative aspect-[16/10] w-full bg-slate-900">
+                    <div className="relative aspect-[16/10] w-full bg-slate-900 overflow-hidden">
+                      <Image
+                        src={card.img}
+                        alt={card.title}
+                        fill
+                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
                       <div className="absolute inset-0 bg-slate-950/15 z-10" />
-                      <div className="absolute inset-0 border border-dashed border-slate-700/60 m-2 rounded-lg z-0 flex items-center justify-center">
-                        <span className="text-[8px] font-black uppercase tracking-widest text-slate-500">Related Plant Visual {idx+1}</span>
-                      </div>
                       <span className="absolute left-3 top-3 z-20 text-[8px] font-black uppercase tracking-widest bg-white text-secondary px-2 py-0.5 rounded border border-slate-100 leading-none">
                         {card.tag}
                       </span>
