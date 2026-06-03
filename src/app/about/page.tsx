@@ -420,11 +420,11 @@ function VisionMissionSection() {
   const mission = visionMission.items[1];
 
   return (
-    <section className="relative overflow-hidden bg-[#f1f4f8] py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-[#f1f4f8] py-16 lg:py-20">
       {/* Blueprint grid overlay */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
             "linear-gradient(to right, #092a5c 1px, transparent 1px), linear-gradient(to bottom, #092a5c 1px, transparent 1px)",
@@ -434,24 +434,24 @@ function VisionMissionSection() {
       {/* Faint industrial image overlay */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[url('/images/about/our-foundation-1.png')] bg-cover bg-center opacity-[0.04]"
+        className="pointer-events-none absolute inset-0 bg-[url('/images/about/our-foundation-1.png')] bg-cover bg-center opacity-[0.03]"
       />
 
       <Container className="relative">
         {/* ── Header ── */}
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl text-center mb-12">
           {/* Eyebrow: /// OUR DIRECTION /// */}
-          <div className="flex items-center justify-center gap-3 mb-5">
+          <div className="flex items-center justify-center gap-3 mb-4">
             <span className="flex items-center gap-[4px]">
               {[0, 1, 2].map((i) => (
                 <span
                   key={i}
                   aria-hidden
-                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-secondary"
+                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
                 />
               ))}
             </span>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-secondary">
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
               {visionMission.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -459,114 +459,117 @@ function VisionMissionSection() {
                 <span
                   key={i}
                   aria-hidden
-                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-secondary"
+                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
                 />
               ))}
             </span>
           </div>
-          <h2 className="headline text-[clamp(2rem,5vw,3.25rem)] leading-[0.94] text-primary">
+          <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] text-[#031b40] font-black tracking-tight uppercase">
             {visionMission.title}
           </h2>
           <span
             aria-hidden
-            className="mx-auto mt-4 block h-[3px] w-14 bg-secondary"
+            className="mx-auto mt-4 block h-[3px] w-12 bg-[#fa5902]"
           />
-          <p className="mt-5 text-sm leading-7 text-text-muted sm:text-[15px] whitespace-pre-line">
-            {visionMission.subtitle}
-          </p>
         </div>
 
-        {/* ── Cards Row ── */}
-        <div className="relative mx-auto mt-9 flex max-w-5xl flex-col items-stretch gap-0 md:flex-row md:items-center">
-          {/* ▌ Vision Card (dark, arrow-shaped) */}
-          <div className="relative z-[2] flex-1">
-            {/* Arrow/chevron shape via clip-path — desktop only */}
-            <div className="relative overflow-hidden rounded-2xl md:rounded-r-none bg-primary-dark text-white md:clip-arrow-right">
-              {/* Subtle grid texture inside the dark card */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 opacity-[0.06]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
-                  backgroundSize: "32px 32px",
-                }}
-              />
-              <div className="relative flex items-start gap-5 p-6 pr-8 md:min-h-[170px] md:pr-14">
-                {/* Icon */}
-                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-secondary/50 bg-white/[0.06]">
-                  <Icon
-                    name={vision.icon}
-                    className="text-secondary"
-                    size={28}
-                  />
-                </span>
-                <div>
-                  <h3 className="headline text-[clamp(1.1rem,2.2vw,1.4rem)] tracking-[0.1em] text-white">
-                    {vision.title}
-                  </h3>
-                  <p className="mt-3 max-w-sm text-[13.5px] leading-[1.7] text-white/75">
-                    {vision.text}
-                  </p>
+        {/* ── Cards Container with relative positioning for the bottom tab ── */}
+        <div className="relative mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-5 items-stretch">
+            
+            {/* ▌ Vision Card (Dark Navy) */}
+            <div className="relative z-[2] flex">
+              <div 
+                className="w-full bg-[#031b40] text-white border-l-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pr-16 shadow-lg md:clip-vision"
+              >
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 w-full">
+                  {/* Custom Double Ring Icon Container */}
+                  <div className="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-[#fa5902]/40 p-2">
+                    <div className="w-full h-full rounded-full border border-white/10 flex items-center justify-center bg-white/[0.02]">
+                      {/* Custom Mountain with Flag SVG */}
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="w-10 h-10 text-white"
+                      >
+                        <line x1="12" y1="3" x2="12" y2="12" />
+                        <path d="M12 3l6 2.5-6 2.5V3z" fill="#fa5902" stroke="#fa5902" />
+                        <path d="M3 20l7-9 5 5 2-2 4 6" />
+                        <path d="M2 20h20" />
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="text-center sm:text-left flex-1">
+                    <h3 className="text-2xl font-black tracking-wider text-white uppercase">
+                      {vision.title}
+                    </h3>
+                    <span className="block w-8 h-[3px] bg-[#fa5902] mt-2 mb-4 mx-auto sm:mx-0" />
+                    <p className="text-[14px] sm:text-[15px] leading-[1.65] text-white/80 font-medium">
+                      {vision.text}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* ▌ Centre hub icon (shared circle between cards) — desktop only */}
-          <div className="relative z-[3] hidden md:flex -mx-7 items-center justify-center">
-            <span className="flex h-[72px] w-[72px] items-center justify-center rounded-full border-[3px] border-primary-dark bg-white shadow-[0_8px_24px_rgba(3,27,64,0.16)]">
-              <Icon
-                name={mission.icon}
-                className="text-primary-dark"
-                size={28}
-              />
-            </span>
-          </div>
-
-          {/* ▌ Mission Card (white, arrow-shaped) */}
-          <div className="relative z-[1] flex-1 mt-4 md:mt-0">
-            <div className="relative overflow-hidden rounded-2xl md:rounded-l-none border-l-0 md:border-l-[3px] md:border-l-secondary bg-white shadow-[0_10px_30px_rgba(3,27,64,0.08)]">
-              <div className="relative flex items-start gap-5 p-6 md:min-h-[170px] md:pl-12">
-                {/* Icon (mobile only — hidden on desktop since the center hub shows it) */}
-                <span className="flex md:hidden h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-primary-dark/20 bg-primary-dark/[0.04]">
-                  <Icon
-                    name={mission.icon}
-                    className="text-primary-dark"
-                    size={28}
-                  />
-                </span>
-                <div>
-                  <h3 className="headline text-[clamp(1.1rem,2.2vw,1.4rem)] tracking-[0.1em] text-primary">
-                    {mission.title}
-                  </h3>
-                  <p className="mt-3 max-w-sm text-[13.5px] leading-[1.7] text-text-muted">
-                    {mission.text}
-                  </p>
+            {/* ▌ Mission Card (White) */}
+            <div className="relative z-[1] flex">
+              <div 
+                className="w-full bg-white text-[#031b40] border-r-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pl-16 shadow-lg md:clip-mission-card"
+              >
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 w-full">
+                  {/* Custom Double Ring Icon Container */}
+                  <div className="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-dashed border-[#fa5902]/30 p-2">
+                    <div className="w-full h-full rounded-full border border-[#031b40]/10 flex items-center justify-center bg-gray-50/50">
+                      <Cog className="w-10 h-10 text-[#031b40]" strokeWidth={1.5} />
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="text-center sm:text-left flex-1">
+                    <h3 className="text-2xl font-black tracking-wider text-[#031b40] uppercase">
+                      {mission.title}
+                    </h3>
+                    <span className="block w-8 h-[3px] bg-[#fa5902] mt-2 mb-4 mx-auto sm:mx-0" />
+                    <p className="text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/70 font-medium">
+                      {mission.text}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* ── Bottom orange accent slashes ── */}
-        <div className="mt-10 flex items-center justify-center gap-[5px]">
-          {[0, 1, 2, 3].map((i) => (
-            <span
-              key={i}
-              aria-hidden
-              className="inline-block h-[8px] w-[4px] skew-x-[-28deg] bg-secondary"
-            />
-          ))}
+          </div>
+
+          {/* ▌ Center Bottom Skewed Navy Tab with Orange Slashes */}
+          <div className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[2px] z-10">
+            <div className="bg-[#031b40] border-[3px] border-white px-8 py-3.5 skew-x-[-28deg] flex items-center gap-[5px] shadow-md rounded-tl-sm">
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  className="block h-[11px] w-[5.5px] bg-[#fa5902] skew-x-[-5deg]"
+                />
+              ))}
+            </div>
+          </div>
+
         </div>
       </Container>
 
-      {/* CSS for the arrow clip-path (desktop only) */}
+      {/* Clip path styles for desktop visual slide alignment */}
       <style>{`
         @media (min-width: 768px) {
-          .md\\:clip-arrow-right {
-            clip-path: polygon(0 0, calc(100% - 36px) 0, 100% 50%, calc(100% - 36px) 100%, 0 100%);
-            border-radius: 16px 0 0 16px;
+          .md\\:clip-vision {
+            clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
+          }
+          .md\\:clip-mission-card {
+            clip-path: polygon(28px 0, 100% 0, 100% 100%, 0 100%, 0 28px);
           }
         }
       `}</style>
@@ -577,22 +580,32 @@ function VisionMissionSection() {
 function WhyChooseSection() {
   const { whyChoose } = aboutPageData;
 
+  const flaticonMap: Record<string, string> = {
+    gauge: "/icons/high-efficiency.png",
+    factory: "/icons/primary-crushing.png",
+    wrench: "/icons/cost-effective.png",
+    users: "/icons/reliable-performace.png",
+    globe: "/icons/screening.png",
+    shield: "/icons/consistance-quality.png",
+  };
+
   return (
-    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-white py-16 lg:py-20">
       {/* Industrial grid background */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        className="pointer-events-none absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
             "linear-gradient(to right, #092a5c 1px, transparent 1px), linear-gradient(to bottom, #092a5c 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
+      
       {/* Faint gear watermark top-right */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-16 -top-16 h-[340px] w-[340px] opacity-[0.03]"
+        className="pointer-events-none absolute -right-16 -top-16 h-[340px] w-[340px] opacity-[0.02] hidden lg:block"
       >
         <svg
           viewBox="0 0 200 200"
@@ -613,74 +626,79 @@ function WhyChooseSection() {
 
       <Container className="relative">
         {/* ── Header ── */}
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center mb-12">
           {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-3 mb-5">
+          <div className="flex items-center justify-center gap-3 mb-4">
             <span className="flex items-center gap-[4px]">
-              {[0, 1, 2, 3].map((i) => (
+              {[0, 1, 2].map((i) => (
                 <span
                   key={i}
                   aria-hidden
-                  className="inline-block h-[8px] w-[4px] skew-x-[-28deg] bg-secondary"
+                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
                 />
               ))}
             </span>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-secondary">
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
               {whyChoose.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
-              {[0, 1, 2, 3].map((i) => (
+              {[0, 1, 2].map((i) => (
                 <span
                   key={i}
                   aria-hidden
-                  className="inline-block h-[8px] w-[4px] skew-x-[-28deg] bg-secondary"
+                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
                 />
               ))}
             </span>
           </div>
 
           {/* Headline */}
-          <h2 className="headline text-[clamp(2.15rem,5.2vw,3.45rem)] leading-[0.94] text-primary">
-            {whyChoose.title}{" "}
-            <span className="text-secondary">{whyChoose.highlight}</span>
+          <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] font-black uppercase tracking-tight text-[#031b40]">
+            {whyChoose.title} <span className="text-[#fa5902]">{whyChoose.highlight}</span>
           </h2>
-          <span
-            aria-hidden
-            className="mx-auto mt-4 block h-[3px] w-14 bg-secondary"
-          />
-          <p className="mt-5 text-sm leading-7 text-text-muted sm:text-[15px]">
+          <p className="mt-5 max-w-2xl mx-auto text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/75 font-medium">
             {whyChoose.subtitle}
           </p>
         </div>
 
         {/* ── Cards 3×2 Grid ── */}
-        <div className="mx-auto mt-9 grid max-w-[1100px] gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-9 grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
           {whyChoose.cards.map((card) => (
             <article
-              className="group relative flex gap-4 rounded-xl border border-border/80 bg-white p-5 shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
+              className="group relative flex items-start gap-5 rounded-xl border border-slate-100 bg-white p-6 shadow-[0_12px_38px_rgba(3,27,64,0.04)] transition-all duration-300 hover:shadow-[0_16px_44px_rgba(3,27,64,0.08)] border-b-[4px] border-b-[#fa5902]"
               key={card.title}
             >
-              {/* Orange top accent bar */}
-              <span
-                aria-hidden
-                className="absolute inset-x-0 top-0 h-[3px] rounded-t-xl bg-secondary"
-              />
-
-              {/* Icon */}
-              <span className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-primary/15 bg-white text-secondary transition-colors duration-300 group-hover:border-secondary/40 group-hover:bg-secondary/[0.04]">
-                <Icon name={card.icon} size={22} />
-              </span>
+              {/* Hexagon Container */}
+              <div className="relative shrink-0 w-20 h-20 flex items-center justify-center">
+                <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full text-[#031b40]/5 fill-[#f8fafc] transition-colors duration-300 group-hover:text-[#fa5902]/10">
+                  <polygon
+                    points="50,3 97,27 97,73 50,97 3,73 3,27"
+                    stroke="currentColor"
+                    strokeWidth="3.5"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <div className="relative z-10 flex items-center justify-center">
+                  <Image
+                    src={flaticonMap[card.icon] ?? "/icons/high-efficiency.png"}
+                    alt={card.title}
+                    width={38}
+                    height={38}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
 
               {/* Content */}
-              <div className="min-w-0">
-                <h3 className="headline text-[13px] tracking-[0.1em] text-primary leading-[1.3]">
+              <div className="min-w-0 flex-1">
+                <h3 className="text-[15px] font-black uppercase tracking-wider text-[#031b40] leading-[1.3]">
                   {card.title}
                 </h3>
                 <span
                   aria-hidden
-                  className="mt-2 block h-[2.5px] w-7 bg-secondary"
+                  className="mt-2 block h-[3px] w-6 bg-[#fa5902]"
                 />
-                <p className="mt-3 text-[12px] leading-[1.6] text-text-muted">
+                <p className="mt-3 text-[13px] leading-[1.6] text-slate-500 font-medium">
                   {card.text}
                 </p>
               </div>
@@ -690,36 +708,44 @@ function WhyChooseSection() {
       </Container>
 
       {/* ── Bottom Dark Bar ── */}
-      <div className="relative mt-10 overflow-hidden bg-primary-dark py-4">
-        <Container className="relative flex items-center gap-4">
-          {/* Left orange slashes */}
-          <span className="flex shrink-0 items-center gap-[5px]">
-            {[0, 1, 2, 3].map((i) => (
-              <span
-                key={i}
-                aria-hidden
-                className="inline-block h-[18px] w-[5px] skew-x-[-22deg] bg-secondary"
-              />
-            ))}
-          </span>
-          {/* Text */}
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white sm:text-xs">
-            {whyChoose.bottomBar}
-          </p>
-          {/* Spacer */}
-          <span className="flex-1" />
+      <div className="relative mt-16 bg-[#031b40] text-white py-6 overflow-hidden">
+        {/* Slanted overlay on the right */}
+        <div 
+          className="absolute inset-y-0 right-0 w-[45%] bg-[#062454]/60 skew-x-[-28deg] translate-x-[15%] pointer-events-none border-l border-white/10 hidden md:block"
+        />
+        
+        <Container className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            {/* Left orange slashes */}
+            <span className="flex shrink-0 items-center gap-[5px]">
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  aria-hidden
+                  className="inline-block h-[20px] w-[5.5px] skew-x-[-28deg] bg-[#fa5902]"
+                />
+              ))}
+            </span>
+            {/* Text */}
+            <div className="text-[11px] md:text-[12px] font-black uppercase tracking-[0.2em] leading-[1.5]">
+              <p className="text-white">
+                ENGINEERED FOR PERFORMANCE.
+              </p>
+              <p className="text-slate-300">
+                BUILT FOR RELIABILITY. DELIVERED WORLDWIDE.
+              </p>
+            </div>
+          </div>
+          
           {/* Right dot pattern */}
-          <span
-            aria-hidden
-            className="hidden shrink-0 sm:grid grid-cols-6 gap-[6px]"
-          >
-            {Array.from({ length: 18 }).map((_, i) => (
+          <div className="hidden sm:grid grid-cols-8 gap-[6px] opacity-40">
+            {Array.from({ length: 24 }).map((_, i) => (
               <span
                 key={i}
-                className="inline-block h-[5px] w-[5px] rounded-full bg-secondary"
+                className="inline-block h-[4px] w-[4px] rounded-full bg-[#fa5902]"
               />
             ))}
-          </span>
+          </div>
         </Container>
       </div>
     </section>
@@ -729,15 +755,23 @@ function WhyChooseSection() {
 function ManufacturingSection() {
   const { manufacturing } = aboutPageData;
 
+  const stepFlaticons: Record<string, string> = {
+    settings: "/icons/reliable-performace.png",
+    shield: "/icons/consistance-quality.png",
+    wrench: "/icons/high-efficiency.png",
+    building: "/icons/primary-crushing.png",
+    award: "/icons/final-output.png",
+  };
+
   return (
-    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-white py-16 lg:py-20">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 industrial-grid opacity-45"
+        className="pointer-events-none absolute inset-0 industrial-grid opacity-30"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-16 -top-16 hidden h-[280px] w-[280px] opacity-[0.035] lg:block"
+        className="pointer-events-none absolute -left-16 -top-16 hidden h-[280px] w-[280px] opacity-[0.02] lg:block"
       >
         <svg className="h-full w-full" fill="none" viewBox="0 0 200 200">
           <path
@@ -752,61 +786,93 @@ function ManufacturingSection() {
       </div>
 
       <Container className="relative">
-        <div className="mx-auto max-w-3xl text-center">
-          <Eyebrow>{manufacturing.eyebrow}</Eyebrow>
-          <h2 className="headline mt-4 text-[clamp(2.15rem,5.2vw,3.45rem)] leading-[0.94] text-primary">
-            {manufacturing.title}{" "}
-            <span className="text-secondary">{manufacturing.highlight}</span>
+        {/* ── Header ── */}
+        <div className="mx-auto max-w-3xl text-center mb-12">
+          {/* Eyebrow */}
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="flex items-center gap-[4px]">
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  aria-hidden
+                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
+                />
+              ))}
+            </span>
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
+              {manufacturing.eyebrow}
+            </p>
+            <span className="flex items-center gap-[4px]">
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  aria-hidden
+                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
+                />
+              ))}
+            </span>
+          </div>
+
+          <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] font-black uppercase tracking-tight text-[#031b40]">
+            {manufacturing.title} <span className="text-[#fa5902]">{manufacturing.highlight}</span>
           </h2>
           <span
             aria-hidden
-            className="mx-auto mt-4 block h-[3px] w-14 bg-secondary"
+            className="mx-auto mt-4 block h-[3px] w-12 bg-[#fa5902]"
           />
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-text-muted sm:text-[15px]">
+          <p className="mx-auto mt-5 max-w-3xl text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/75 font-medium">
             {manufacturing.subtitle}
           </p>
         </div>
 
-        <div className="mx-auto mt-8 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-5 sm:gap-0">
+        {/* ── Steps Horizontal Block ── */}
+        <div className="mx-auto mt-8 grid grid-cols-2 md:grid-cols-5 border border-slate-100 bg-white shadow-[0_8px_30px_rgba(3,27,64,0.03)] rounded-xl py-6 divide-y md:divide-y-0 md:divide-x divide-slate-100 max-w-6xl">
           {manufacturing.steps.map((step) => (
             <div
-              className="flex flex-col items-center gap-2 border-border/70 bg-white px-3 py-3 text-center shadow-[0_8px_22px_rgba(3,27,64,0.06)] sm:border-r sm:shadow-none sm:last:border-r-0"
+              className="flex flex-col items-center gap-4 px-3 py-3 text-center"
               key={step.title}
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-secondary/5 text-secondary">
-                <Icon name={step.icon} size={22} />
+              <span className="flex h-24 w-24 items-center justify-center rounded-full bg-slate-50/50">
+                <Image
+                  src={stepFlaticons[step.icon] ?? "/icons/reliable-performace.png"}
+                  alt={step.title}
+                  width={64}
+                  height={64}
+                  className="object-contain"
+                />
               </span>
-              <p className="text-[9px] font-black uppercase leading-[1.35] tracking-[0.1em] text-primary sm:text-[10px]">
+              <p className="text-[11px] font-black uppercase tracking-wider text-[#031b40] leading-[1.3] px-2">
                 {step.title}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        {/* ── Cards Row ── */}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 max-w-7xl mx-auto">
           {manufacturing.cards.map((card) => (
             <article
-              className="group overflow-hidden rounded-sm border border-border/80 bg-white shadow-[0_8px_26px_rgba(3,27,64,0.08)]"
+              className="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_12px_38px_rgba(3,27,64,0.03)] hover:shadow-[0_16px_44px_rgba(3,27,64,0.06)] transition-all duration-300 border-b-[4px] border-b-[#fa5902] flex flex-col h-full"
               key={card.title}
             >
-              <div className="image-hover relative h-[150px] overflow-hidden">
+              <div className="image-hover relative h-[155px] overflow-hidden shrink-0">
                 <Image
                   alt={card.title}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   fill
-                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 20vw"
+                  sizes="(max-width: 639px) 100vw, 20vw"
                   src={card.image}
                 />
               </div>
-              <div className="relative min-h-[128px] px-4 pb-4 pt-4">
+              <div className="p-5 flex-1 flex flex-col">
                 <span
                   aria-hidden
-                  className="block h-[2.5px] w-8 bg-secondary"
+                  className="block h-[3px] w-7 bg-[#fa5902] mb-3"
                 />
-                <h3 className="headline mt-3 text-[12px] leading-[1.25] tracking-[0.1em] text-primary sm:text-[13px]">
+                <h3 className="text-[13.5px] font-black uppercase text-[#031b40] tracking-wide mb-2.5 leading-snug">
                   {card.title}
                 </h3>
-                <p className="mt-2 text-[12px] leading-[1.55] text-text-muted">
+                <p className="text-[12.5px] leading-[1.55] text-slate-500 font-medium">
                   {card.text}
                 </p>
               </div>

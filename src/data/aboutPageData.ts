@@ -59,14 +59,14 @@ export const aboutPageData = {
       "Our vision defines where we are headed.\nOur mission drives everything we do.",
     items: [
       {
-        title: "Our Vision",
-        text: "To be a globally trusted leader in delivering innovative crushing solutions and shaping a stronger, more sustainable future.",
+        title: "Vision",
+        text: "To lead the world in engineering advanced crushing solutions and empower industries to build a better tomorrow.",
         icon: "vision",
         dark: true,
       },
       {
-        title: "Our Mission",
-        text: "To deliver reliable, efficient and cost-effective crushing solutions through engineering excellence, advanced manufacturing and customer-focused service.",
+        title: "Mission",
+        text: "To provide reliable, high-performance crushing solutions with uncompromising quality and exceptional service.",
         icon: "mission",
         dark: false,
       },

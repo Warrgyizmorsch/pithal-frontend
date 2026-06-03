@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Users, Settings, BookOpen, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -692,96 +692,157 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 3: A PLACE TO GROW ── */}
-        <section id="about" className="py-16 bg-gray-50">
+        <section id="about" className="py-16 bg-gray-50/50">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center mb-8">
               {/* Left text */}
               <div>
-                <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-3">
-                  LIFE AT PITHAL
-                </p>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight font-sans mb-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="h-[1.5px] w-6 bg-secondary" />
+                  <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
+                    LIFE AT PITHAL
+                  </span>
+                </div>
+                <h2 className="text-3xl sm:text-[2.6rem] font-black text-primary leading-[1.08] tracking-tight uppercase mb-6">
                   A Place to Grow.
                   <br />
                   <span className="text-secondary">A Team to Inspire.</span>
                 </h2>
-                <p className="text-gray-500 leading-relaxed mb-8 text-sm">
-                  At PithalMachines, we believe in a culture of collaboration,
-                  continuous learning, and shared excellence. Whether you're
-                  freshly graduated or an industry veteran, you'll find a home
-                  here.
+                <p className="text-gray-500 leading-relaxed mb-8 text-xs sm:text-[13px] font-medium max-w-xl">
+                  At Pithal Machines, we foster a culture of collaboration,
+                  innovation and continuous improvement. Here, every
+                  individual plays a part in building world-class solutions
+                  that power industries worldwide.
                 </p>
 
-                {/* Stat pills */}
-                <div className="grid grid-cols-2 gap-4">
+                {/* Stat pills (Redesigned as Feature Cards from image) */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {[
-                    { value: "300+", label: "Employees" },
-                    { value: "25+", label: "Years Legacy" },
-                    { value: "40+", label: "Countries" },
-                    { value: "98%", label: "Retention" },
-                  ].map((s, i) => (
-                    <div
-                      key={i}
-                      className="bg-white border border-gray-200 rounded p-4 text-center shadow-sm"
-                    >
-                      <div className="text-2xl font-extrabold text-secondary">
-                        {s.value}
+                    {
+                      icon: Users,
+                      title: "COLLABORATIVE TEAMS",
+                      desc: "Work together. Achieve together.",
+                    },
+                    {
+                      icon: Settings,
+                      title: "HANDS-ON EXPERIENCE",
+                      desc: "Real projects. Real impact.",
+                    },
+                    {
+                      icon: BookOpen,
+                      title: "LEARNING & DEVELOPMENT",
+                      desc: "Grow your skills. Shape your future.",
+                    },
+                    {
+                      icon: ShieldCheck,
+                      title: "SAFETY & WELL-BEING",
+                      desc: "Your safety. Our priority.",
+                    },
+                  ].map((card, i) => {
+                    const Icon = card.icon;
+                    return (
+                      <div
+                        key={i}
+                        className="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm flex flex-col items-center justify-between min-h-[145px]"
+                      >
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-50 text-secondary border border-slate-100 mb-3">
+                          <Icon size={20} className="text-secondary stroke-[1.8]" />
+                        </div>
+                        <h4 className="text-[9px] font-black uppercase tracking-wider text-primary leading-tight">
+                          {card.title}
+                        </h4>
+                        <p className="text-[9px] text-slate-400 font-medium mt-1.5 leading-normal">
+                          {card.desc}
+                        </p>
                       </div>
-                      <div className="text-xs text-gray-500 mt-1">
-                        {s.label}
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 
-              {/* Right: Gallery Grid */}
-              <div className="grid grid-cols-3 gap-2">
-                {galleryImages.map((img, i) => (
+              {/* Right: 2x2 Gallery Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  {
+                    src: "/careerimg/team%20collab.jpg",
+                    alt: "TEAM COLLABORATION",
+                  },
+                  {
+                    src: "/careerimg/heavy engineeering.jpg",
+                    alt: "ADVANCED MANUFACTURING",
+                  },
+                  {
+                    src: "/careerimg/state%20of%20the%20art%20facility.jpg",
+                    alt: "STATE-OF-THE-ART FACILITY",
+                  },
+                  {
+                    src: "/careerimg/knowledge%20sharing.jpg",
+                    alt: "KNOWLEDGE SHARING",
+                  },
+                ].map((img, i) => (
                   <div
                     key={i}
-                    className={`relative bg-gray-200 overflow-hidden ${i === 0 ? "col-span-2 row-span-2" : ""} rounded-lg`}
-                    style={{ height: i === 0 ? 260 : 120 }}
+                    className="group relative overflow-hidden rounded-2xl border border-slate-250/60 shadow-sm bg-white flex flex-col"
                   >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      className="object-cover"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = "none";
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-[#0d1b2e]/20 flex items-center justify-center text-[#0d1b2e]/30 text-xs font-medium">
-                      {img.alt}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden">
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(min-width: 1024px) 25vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="bg-[#031b40] py-3 text-center border-t border-[#031b40]">
+                      <span className="text-[9px] font-black uppercase tracking-widest text-white">
+                        {img.alt}
+                      </span>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            {/* bottom Gallery Grid */}
-            <div className="grid gap-16 items-center pt-3">
-              <div className="grid grid-cols-3 gap-2">
-                {galleryImages.slice(0, 3).map((img, i) => (
-                  <div
-                    key={i}
-                    className="relative h-40 bg-gray-200 overflow-hidden rounded-lg"
-                  >
+
+            {/* bottom Gallery Grid Row (4 Columns) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 border-t border-slate-200">
+              {[
+                {
+                  src: "/careerimg/skilled%20workforce.jpg",
+                  alt: "SKILLED WORKFORCE",
+                },
+                {
+                  src: "/careerimg/training%20%26%20upskilling.jpg",
+                  alt: "TRAINING & UPSKILLING",
+                },
+                {
+                  src: "/careerimg/engineering%20excellence.jpg",
+                  alt: "ENGINEERING EXCELLENCE",
+                },
+                {
+                  src: "/careerimg/A%20team%20that%20builds%20the%20future.jpg",
+                  alt: "A TEAM THAT BUILDS THE FUTURE",
+                },
+              ].map((img, i) => (
+                <div
+                  key={i}
+                  className="group relative overflow-hidden rounded-2xl border border-slate-250/60 shadow-sm bg-white flex flex-col"
+                >
+                  <div className="relative aspect-[16/10] w-full overflow-hidden">
                     <Image
                       src={img.src}
                       alt={img.alt}
                       fill
-                      className="object-cover"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = "none";
-                      }}
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-[#0d1b2e]/20 flex items-end p-3 text-white text-xs font-medium">
-                      {img.alt}
-                    </div>
                   </div>
-                ))}
-              </div>
+                  <div className="bg-[#031b40] py-3 text-center border-t border-[#031b40]">
+                    <span className="text-[9px] font-black uppercase tracking-widest text-white">
+                      {img.alt}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

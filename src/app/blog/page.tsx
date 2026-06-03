@@ -821,16 +821,19 @@ export default function BlogPage() {
       {/* ══════════════════════════════════════════
           SECTION 1 — HERO
       ══════════════════════════════════════════ */}
-      <section
-        className="relative bg-cover bg-center pt-16 pb-10 lg:pt-20 lg:pb-12 overflow-hidden"
-        style={{
-          backgroundImage: "url('/blogpageimg/top.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/30" />
-        <div className="absolute inset-0 industrial-grid opacity-70" />
+      <section className="relative pt-16 pb-10 lg:pt-20 lg:pb-12 overflow-hidden ">
+        <Image
+          src="/blogpageimg/top.jpg"
+          alt="Blog Hero Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        
+        <div className="absolute inset-0 industrial-grid opacity-70 z-10" />
 
-        <Container className="relative z-10">
+        <Container className="relative z-20">
           {/* Breadcrumb */}
           <div className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-text-muted">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -1069,7 +1072,7 @@ export default function BlogPage() {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[1.05fr_auto_1.05fr] lg:items-center">
+          <div className="grid gap-6 lg:grid-cols-[1.05fr_auto_1.05fr] lg:items-stretch">
             {/* Left column cards */}
             <div className="space-y-6">
               {knowledgeHubTopics.slice(0, 2).map((topic, i) => (
@@ -1114,7 +1117,7 @@ export default function BlogPage() {
             </div>
 
             {/* Center hub graphic */}
-            <div className="relative hidden lg:flex h-[480px] w-[260px] items-center justify-center px-4">
+            <div className="relative hidden lg:flex w-[260px] items-center justify-center px-4 self-stretch">
               {/* Graphic background SVG */}
               <svg className="absolute inset-0 w-full h-full text-slate-200 pointer-events-none" viewBox="0 0 200 200" fill="none">
                 <circle cx="100" cy="100" r="32" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
@@ -1128,25 +1131,25 @@ export default function BlogPage() {
               </svg>
 
               {/* Labels */}
-              <div className="absolute top-3 flex justify-center w-full">
+              <div className="absolute top-0 flex justify-center w-full">
                 <div className="rounded-full border border-slate-100 bg-white px-4 py-1.5 text-center text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500 shadow-sm whitespace-nowrap">
                   Engineering Knowledge
                 </div>
               </div>
 
-              <div className="absolute left-0 top-1/2 -translate-x-[42%] -translate-y-1/2 z-11">
+              <div className="absolute left-0 top-1/2 -translate-x-[68%] -translate-y-1/2 z-11">
                 <div className="rounded-full border border-slate-100 bg-white px-4 py-1.5 text-center text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500 shadow-sm whitespace-nowrap">
                   Technical Resources
                 </div>
               </div>
 
-              <div className="absolute right-0 top-1/2 translate-x-[42%] -translate-y-1/2 z-11 ">
+              <div className="absolute right-0 top-1/2 translate-x-[68%] -translate-y-1/2 z-11">
                 <div className="rounded-full border border-slate-100 bg-white px-4 py-1.5 text-center text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500 shadow-sm whitespace-nowrap">
                   Industry Expertise
                 </div>
               </div>
 
-              <div className="absolute bottom-3 flex justify-center w-full">
+              <div className="absolute bottom-0 flex justify-center w-full">
                 <div className="rounded-full border border-slate-100 bg-white px-4 py-1.5 text-center text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500 shadow-sm whitespace-nowrap">
                   Best Practices
                 </div>
@@ -1303,7 +1306,7 @@ export default function BlogPage() {
                 href="#"
                 className="inline-flex items-center gap-2 rounded-full border border-secondary bg-white px-8 py-3 text-xs font-bold uppercase tracking-[0.16em] text-secondary transition hover:bg-secondary hover:text-white shadow-sm min-h-0 h-11"
               >
-                Explore More Insights <span className="font-black text-xs">→</span>
+                Explore More Insights <span className="secondary-btn"></span>
               </Button>
             </div>
           </div>
@@ -1363,7 +1366,7 @@ export default function BlogPage() {
                       </ul>
                     </div>
                     <Button
-                      variant="primary"
+                      variant="outlineNavy"
                       className="w-full justify-center gap-2 rounded-lg mt-auto"
                     >
                       <DownloadIcon />DOWNLOAD RESOURCE
