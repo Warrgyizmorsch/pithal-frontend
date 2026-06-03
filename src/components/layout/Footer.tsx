@@ -58,13 +58,17 @@ function FooterLink({ children, href = "#" }: { children: React.ReactNode; href?
 
 function BrandMark() {
   return (
-    <Link aria-label="Pithal Machines Ltd. home" className="block w-full max-w-[20.5rem]" href="/">
+    <Link
+      aria-label="Pithal Machines Ltd. home"
+      className="relative block h-[5.7rem] w-full max-w-[20.5rem] overflow-hidden"
+      href="/"
+    >
       <Image
         alt="Pithal Machines Ltd. - Solutions That Drive Growth"
-        className="h-auto w-full"
+        className="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2 scale-[1.08]"
         height={140}
         src="/images/brand/pithal-logo.png"
-        width={394}
+        width={354}
       />
     </Link>
   );
@@ -81,7 +85,7 @@ export function Footer() {
         <div className="grid gap-x-8 gap-y-8 border-b border-primary/20 pb-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.7fr_1.02fr_1.25fr_1fr_1.18fr_1.42fr] xl:gap-y-10 xl:pb-[2.8rem]">
           <div className="md:col-span-2 lg:col-span-1">
             <BrandMark />
-            <p className="mt-7 max-w-[18rem] text-[0.95rem] leading-[1.72] text-text-dark sm:mt-10 sm:text-[1rem]">
+            <p className="mt-4 max-w-[18rem] text-[0.95rem] leading-[1.72] text-text-dark sm:mt-6 sm:text-[1rem]">
               Engineering world-class crushing solutions and equipment that power
               industries, build infrastructure and shape a stronger tomorrow.
             </p>
@@ -230,23 +234,28 @@ export function Footer() {
           </div>
         </div>
       </Container>
+      {/* Full width gradient bottom bar */}
 
-      <div className="bg-gradient-to-r from-primary via-[#294385] to-secondary text-white">
-        <Container className="flex flex-col items-center justify-between gap-4 py-4 text-center text-sm sm:flex-row sm:text-left">
-          <p className="text-white/90">&copy; 2026 Pithal Machines Ltd. All Rights Reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 sm:justify-end">
-            {["Privacy Policy", "Terms & Conditions", "Sitemap"].map((item, index) => (
-              <span className="flex items-center gap-5" key={item}>
-                <Link className="transition-colors hover:text-white/70" href="#">
-                  {item}
-                </Link>
-                {index < 2 && <span aria-hidden className="text-white/65">|</span>}
-              </span>
-            ))}
+        <Container className="bg-gradient-to-r from-primary via-[#294385] to-secondary flex flex-col items-center justify-between gap-4 py-4 text-sm text-white sm:flex-row">
+          <p className="order-2 mt-2 text-white/90 sm:order-1 sm:mt-0">&copy; 2026 Pithal Machines Ltd. All Rights Reserved.</p>
+
+          <div className="order-1 flex items-center gap-4 sm:order-2">
+            <div className="hidden flex-wrap items-center gap-3 sm:flex">
+              {["Privacy Policy", "Terms & Conditions", "Sitemap"].map((item, index) => (
+                <span className="flex items-center gap-3 text-white/95" key={item}>
+                  <Link className="transition-colors hover:text-white/80" href="#">
+                    {item}
+                  </Link>
+                  {index < 2 && <span aria-hidden className="text-white/60">|</span>}
+                </span>
+              ))}
+            </div>
+
             <ScrollToTopButton />
           </div>
         </Container>
-      </div>
+
+
     </footer>
   );
 }

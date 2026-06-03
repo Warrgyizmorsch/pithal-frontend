@@ -11,7 +11,10 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-white" id="home">
       {/* Desktop Crushing Machine Video */}
-      <div className="pointer-events-none absolute right-0 top-[50%] hidden h-[min(36rem,95%)] w-[75vw] -translate-y-1/2 lg:block xl:h-[min(50rem,100%)] xl:w-[100vw]">
+      
+
+      <Container className="relative flex min-h-[34rem] flex-col gap-3 pt-7 sm:min-h-[38rem] sm:pt-10 lg:min-h-[33.5rem] lg:pt-[2.25rem] xl:min-h-[35rem]">
+        <div className="pointer-events-none absolute right-0 top-[50%] hidden h-[min(36rem,95%)] w-[75vw] -translate-y-1/2 lg:block xl:h-[min(50rem,100%)] xl:w-full">
         <video
           aria-label="Mobile crushing machine operating in a quarry"
           autoPlay
@@ -25,8 +28,6 @@ export function HeroSection() {
           <source src={heroMachineVideo} type="video/mp4" />
         </video>
       </div>
-
-      <Container className="relative flex min-h-[34rem] flex-col gap-3 pt-7 sm:min-h-[38rem] sm:pt-10 lg:min-h-[33.5rem] lg:pt-[2.25rem] xl:min-h-[35rem]">
         <div className="relative z-10 max-w-[32rem] xl:max-w-[35rem]">
           <p className="mb-3 flex items-center gap-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary sm:mb-4 sm:gap-3 sm:text-[13px] sm:tracking-[0.2em]">
             <span className="h-[2px] w-6 bg-secondary" /> Built strong. Built to
