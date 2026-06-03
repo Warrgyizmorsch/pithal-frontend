@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="relative z-0 bg-bg-light">
         <HeroSection />
         <ProductCategories />
         <WhyChoosePithal />

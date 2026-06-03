@@ -200,7 +200,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid items-center gap-7 md:grid-cols-[0.85fr_1.35fr] xl:px-14">
+          <div className="grid items-center gap-2 md:grid-cols-[0.85fr_1.35fr] xl:px-10">
             <div>
               <FooterHeading>Global Presence</FooterHeading>
               <p className="text-[1rem] leading-[1.65] text-text-dark">
@@ -208,11 +208,11 @@ export function Footer() {
               </p>
             </div>
             <Image
-              alt="Map showing Pithal Machines global presence"
-              className="h-auto w-full object-contain"
-              height={872}
-              src="/images/projects/world-map.jpg"
-              width={1804}
+              alt="Pithal Machines global presence map"
+              className="mx-auto h-auto w-full max-w-[31rem] object-contain opacity-100 md:mx-0 md:max-w-[38rem] md:justify-self-end"
+              height={930}
+              src="/images/footer/footer-world-map.png"
+              width={1996}
             />
           </div>
 

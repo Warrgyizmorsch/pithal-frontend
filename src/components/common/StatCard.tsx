@@ -1,4 +1,5 @@
 import { Cog, Factory, Globe, UsersRound } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const icons = {
   factory: Factory,
@@ -7,15 +8,51 @@ const icons = {
   partners: UsersRound,
 };
 
-export function StatCard({ value, label, icon }: { value: string; label: string; icon: string }) {
+export function StatCard({
+  value,
+  label,
+  icon,
+  compact = false,
+}: {
+  value: string;
+  label: string;
+  icon: string;
+  compact?: boolean;
+}) {
   const Icon = icons[icon as keyof typeof icons] ?? Globe;
 
   return (
-    <article className="flex items-center gap-3 border-border py-4 pl-0 pr-3 sm:border-r sm:px-5 sm:first:pl-0 sm:last:border-r-0 lg:py-4 lg:pr-8">
-      <Icon aria-hidden className="h-9 w-9 shrink-0 text-primary sm:h-[43px] sm:w-[43px]" strokeWidth={1.25} />
+    <article
+      className={cn(
+        "flex items-center gap-3 border-border pl-0 pr-3 sm:border-r sm:px-5 sm:first:pl-0 sm:last:border-r-0",
+        compact ? "py-3 sm:px-4 lg:py-3 lg:pr-6" : "py-4 lg:py-4 lg:pr-8",
+      )}
+    >
+      <Icon
+        aria-hidden
+        className={cn(
+          "shrink-0 text-primary",
+          compact ? "h-8 w-8 sm:h-9 sm:w-9" : "h-9 w-9 sm:h-[43px] sm:w-[43px]",
+        )}
+        strokeWidth={1.25}
+      />
       <div>
-        <p className="headline text-[1.85rem] leading-none text-secondary sm:text-[2.15rem]">{value}</p>
-        <p className="mt-1 max-w-32 text-xs font-bold uppercase leading-[1.25] text-primary">{label}</p>
+        <p
+          className={cn(
+            "headline leading-none text-secondary",
+            compact ? "text-[1.75rem] sm:text-[2rem]" : "text-[1.85rem] sm:text-[2.15rem]",
+          )}
+        >
+          {value}
+        </p>
+        <p
+          className={cn(
+            "mt-1 max-w-32 font-bold uppercase text-primary",
+            compact ? "text-[11px] leading-[1.15]" : "text-xs leading-[1.25]",
+          )}
+        >
+          {label}
+        </p>
       </div>
     </article>
   );

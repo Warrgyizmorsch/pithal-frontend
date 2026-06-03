@@ -16,7 +16,7 @@ export const jawCrusherData: ProductDetailData = {
       "Heavy duty primary crushers designed for high crushing ratio and superior performance in the toughest mining conditions.",
     descriptionHighlight: "toughest mining conditions",
     image: {
-      src: "/images/process/jaw-crusher/hero-scene.png",
+      src: "/images/products/jaw-crusher/hero-scene.png",
       alt: "Pithal heavy-duty jaw crusher operating in a quarry",
     },
     ctas: [
@@ -52,7 +52,7 @@ export const jawCrusherData: ProductDetailData = {
     description:
       "Pithal Jaw Crushers are engineered for maximum crushing efficiency, high durability, and low operating cost. Designed to handle the toughest materials with ease in mining, quarrying and construction.",
     image: {
-      src: "/images/process/jaw-crusher/main-machine.png",
+      src: "/images/products/jaw-crusher/main-machine.png",
       alt: "Jaw crusher machine with technical part callouts",
     },
     ctas: [
@@ -221,7 +221,7 @@ export const jawCrusherData: ProductDetailData = {
       },
     ],
     thumbnail: {
-      src: "/images/process/jaw-crusher/video-showcase.png",
+      src: "/images/products/jaw-crusher/video-showcase.png",
       alt: "Jaw crusher plant performance testing video thumbnail",
     },
     caption: "FULL MACHINE DEMONSTRATION",
@@ -251,7 +251,7 @@ export const jawCrusherData: ProductDetailData = {
     description:
       "Share your requirements and our experts will recommend the best crushing solution tailored to your needs.",
     image: {
-      src: "/images/process/jaw-crusher/contact-us.png",
+      src: "/images/products/jaw-crusher/contact-us.png",
       alt: "Industrial crushing plant consultation support",
     },
     benefits: [
@@ -298,7 +298,7 @@ export const jawCrusherData: ProductDetailData = {
       type: "PDF",
       title: "PRODUCT BROCHURE",
       description: "Comprehensive overview of features, benefits and applications.",
-      image: { src: "/images/process/jaw-crusher/product-brochure.png", alt: "PRODUCT BROCHURE" },
+      image: { src: "/images/products/jaw-crusher/product-brochure.png", alt: "PRODUCT BROCHURE" },
       href: "#",
       actionLabel: "DOWNLOAD PDF",
     },
@@ -306,7 +306,7 @@ export const jawCrusherData: ProductDetailData = {
       type: "DATASHEET",
       title: "TECHNICAL DATASHEET",
       description: "Detailed technical specifications and performance data.",
-      image: { src: "/images/process/jaw-crusher/technical-datasheet.png", alt: "TECHNICAL DATASHEET" },
+      image: { src: "/images/products/jaw-crusher/technical-datasheet.png", alt: "TECHNICAL DATASHEET" },
       href: "#",
       actionLabel: "DOWNLOAD PDF",
     },
@@ -314,7 +314,7 @@ export const jawCrusherData: ProductDetailData = {
       type: "MANUAL",
       title: "OPERATION & MAINTENANCE MANUAL",
       description: "Step-by-step guide for safe operation, maintenance and best practices.",
-      image: { src: "/images/process/jaw-crusher/operation-maintanance-manual.png", alt: "OPERATION & MAINTENANCE MANUAL" },
+      image: { src: "/images/products/jaw-crusher/operation-maintanance-manual.png", alt: "OPERATION & MAINTENANCE MANUAL" },
       href: "#",
       actionLabel: "DOWNLOAD PDF",
     },

@@ -5,6 +5,9 @@ import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 import type { ContactSectionData } from "@/data/products/productDetailTypes";
 
+const CONTACT_SECTION_BACKGROUND =
+  "/images/products-images/universal-quarry-plant-background.png";
+
 export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
   const renderBenefitIcon = (iconName: string) => {
     const props = { size: 20, strokeWidth: 2.2 };
@@ -109,7 +112,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
             style={{ 
               borderRadius: "20px",
               boxShadow: "0 15px 35px rgba(3, 27, 64, 0.05)",
-              backgroundImage: `url(${data.image.src})`,
+              backgroundImage: `url(${CONTACT_SECTION_BACKGROUND})`,
               backgroundSize: "cover",
               backgroundPosition: "center bottom",
               backgroundRepeat: "no-repeat"
@@ -494,5 +497,4 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
     </section>
   );
 }
-
 
