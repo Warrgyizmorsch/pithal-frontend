@@ -63,42 +63,42 @@ const industriesServe = [
   {
     title: "MINING",
     icon: "mining",
-    image: "/images/industries/mining.jpg",
+    image: "/solutionspage/mining.jpg",
     challenge: "High abrasion, tough rock and continuous operation demanding maximum uptime.",
     solution: "Heavy-duty crushers designed for high capacity, durability & reliability.",
   },
   {
     title: "AGGREGATES",
     icon: "aggregate",
-    image: "/images/industries/aggregates.jpg",
+    image: "/solutionspage/aggregate.jpg",
     challenge: "Consistent quality, shape & gradation with high production demands.",
     solution: "Advanced crushing & screening systems for superior output & efficiency.",
   },
   {
     title: "CEMENT",
     icon: "cement",
-    image: "/images/industries/cement.jpg",
+    image: "/solutionspage/cement.jpg",
     challenge: "Hard limestone, high temperatures and strict quality requirements.",
     solution: "Robust equipment built for high performance in harsh conditions.",
   },
   {
     title: "INFRASTRUCTURE",
     icon: "infra",
-    image: "/images/industries/infrastructure.jpg",
+    image: "/solutionspage/infrastructure.jpg",
     challenge: "Large-scale projects need reliable supply of quality aggregates on time.",
     solution: "Efficient, high-capacity solutions that ensure timely project completion.",
   },
   {
     title: "CONSTRUCTION",
     icon: "const",
-    image: "/images/industries/construction.jpg",
+    image: "/solutionspage/construction.jpg",
     challenge: "Tight deadlines, limited space and need for cost-effective solutions.",
     solution: "Compact, mobile & efficient crushing systems for every construction need.",
   },
   {
     title: "RECYCLING",
     icon: "recycle",
-    image: "/images/industries/recycling.jpg",
+    image: "/solutionspage/7.jpg",
     challenge: "Processing demolition waste efficiently while maintaining environmental compliance.",
     solution: "Specialized crushing & screening solutions for maximum recycling.",
   },
@@ -107,7 +107,7 @@ const industriesServe = [
 const challengesSolve = [
   {
     step: "01",
-    image: "/images/industries/mining.jpg",
+    image: "/solutionspage/challenges we solve 1.jpg",
     challengeTitle: "High Wear & Frequent Downtime",
     challengeDesc: "Heavy wear parts lead to breakdowns, production loss, and higher costs.",
     solutionTitle: "Built Tough. Built to Last.",
@@ -116,7 +116,7 @@ const challengesSolve = [
   },
   {
     step: "02",
-    image: "/images/projects/rajasthan.jpg",
+    image: "/solutionspage/challenges we solve 2.jpg",
     challengeTitle: "Inconsistent Output Quality",
     challengeDesc: "Irregular size, shape, and gradation affect final product quality.",
     solutionTitle: "Precision Crushing & Screening",
@@ -125,7 +125,7 @@ const challengesSolve = [
   },
   {
     step: "03",
-    image: "/images/products/belt-conveyor/hero.png",
+    image: "/solutionspage/challenges we solve 3.jpg",
     challengeTitle: "Low Productivity & High Costs",
     challengeDesc: "High energy consumption and inefficient processes increase OPEX.",
     solutionTitle: "High Efficiency, Lower Operating Cost",
@@ -134,7 +134,7 @@ const challengesSolve = [
   },
   {
     step: "04",
-    image: "/images/contact/crushing-plant-contact.jpg",
+    image: "/solutionspage/challenges we solve 14operations.jpg",
     challengeTitle: "Complex Operations & Maintenance",
     challengeDesc: "Difficult maintenance and complex operations lead to delays.",
     solutionTitle: "Easy Operation, Hassle-Free Maintenance",
@@ -152,12 +152,12 @@ const challengesBottomBar = [
 ];
 
 const plantWorkflow = [
-  { step: "01", title: "RAW MATERIAL", desc: "Excavated material fed into the system.", icon: "raw", image: "/images/industries/mining.jpg" },
-  { step: "02", title: "PRIMARY CRUSHER", desc: "Reduces large rocks into manageable size.", icon: "primary", image: "/images/products/jaw-crusher/hero.png" },
-  { step: "03", title: "SECONDARY CRUSHER", desc: "Further reduction for consistent output.", icon: "secondary", image: "/images/products/cone-crusher/hero.png" },
-  { step: "04", title: "SCREENING", desc: "Separates material into required sizes.", icon: "screen", image: "/images/products/vibrating-screen/hero.png" },
-  { step: "05", title: "CONVEYOR SYSTEM", desc: "Efficient material transfer across stages.", icon: "conveyor", image: "/images/products/belt-conveyor/hero.png" },
-  { step: "06", title: "FINAL OUTPUT", desc: "High-quality, uniform material ready to use.", icon: "final", image: "/images/process/final-output.png" },
+  { step: "01", title: "RAW MATERIAL", desc: "Excavated material fed into the system.", icon: "raw", image: "/solutionspage/complete plant processs 1material.jpg" },
+  { step: "02", title: "PRIMARY CRUSHER", desc: "Reduces large rocks into manageable size.", icon: "primary", image: "/solutionspage/complete plant processs 2 1material.jpg" },
+  { step: "03", title: "SECONDARY CRUSHER", desc: "Further reduction for consistent output.", icon: "secondary", image: "/solutionspage/complete plant processs 3.jpg" },
+  { step: "04", title: "SCREENING", desc: "Separates material into required sizes.", icon: "screen", image: "/solutionspage/complete plant processs 4.jpg" },
+  { step: "05", title: "CONVEYOR SYSTEM", desc: "Efficient material transfer across stages.", icon: "conveyor", image: "/solutionspage/complete plant processs 5.jpg" },
+  { step: "06", title: "FINAL OUTPUT", desc: "High-quality, uniform material ready to use.", icon: "final", image: "/solutionspage/complete plant processs 6.jpg" },
 ];
 
 const workflowBottomPillars = [
@@ -176,20 +176,20 @@ const operationBullets = [
 ];
 
 const engineeringServices = [
-  { step: "01", title: "PLANT PLANNING", desc: "We plan your entire crushing plant for optimal workflow, safety, and future scalability." },
-  { step: "02", title: "MACHINE SELECTION", desc: "The right machine for the right application — chosen for performance, efficiency & durability." },
-  { step: "03", title: "LAYOUT OPTIMIZATION", desc: "We design smart layouts that maximize space utilization, material flow & operational efficiency." },
-  { step: "04", title: "CAPACITY PLANNING", desc: "Data-driven capacity calculations to ensure your plant meets today's needs and tomorrow's growth." },
-  { step: "05", title: "SITE CONSULTATION", desc: "On-site analysis & expert guidance to create solutions tailored to your exact site conditions." },
+  { step: "01", title: "PLANT PLANNING", desc: "We plan your entire crushing plant for optimal workflow, safety, and future scalability.", image: "/solutionspage/our services 4 (2).png" },
+  { step: "02", title: "MACHINE SELECTION", desc: "The right machine for the right application — chosen for performance, efficiency & durability.", image: "/solutionspage/our our services (3).png"},
+  { step: "03", title: "LAYOUT OPTIMIZATION", desc: "We design smart layouts that maximize space utilization, material flow & operational efficiency.", image: "/solutionspage/our services 5.png" },
+  { step: "04", title: "CAPACITY PLANNING", desc: "Data-driven capacity calculations to ensure your plant meets today's needs and tomorrow's growth.", image: "/solutionspage/our services , 1.png" },
+  { step: "05", title: "SITE CONSULTATION", desc: "On-site analysis & expert guidance to create solutions tailored to your exact site conditions.", image: "/solutionspage/our services 2.png" },
 ];
 
 const builtApplications = [
-  { title: "GRANITE CRUSHING", desc: "High-capacity crushing solutions designed for hard rock applications with maximum productivity.", image: "/images/products/jaw-crusher/hero.png" },
-  { title: "LIMESTONE PROCESSING", desc: "Efficient processing systems for consistent output and superior material quality.", image: "/images/products/complete-plants/hero.png" },
-  { title: "SAND MANUFACTURING", desc: "Advanced sand-making solutions for high-quality manufactured sand and controlled grading.", image: "/images/projects/oman.jpg" },
-  { title: "ROAD CONSTRUCTION", desc: "Reliable crushing and screening solutions for road base, sub-base and asphalt applications.", image: "/images/industries/infrastructure.jpg" },
-  { title: "QUARRY OPERATIONS", desc: "Complete crushing systems built for demanding quarry environments and continuous use.", image: "/images/industries/construction.jpg" },
-  { title: "INDUSTRIAL MATERIAL HANDLING", desc: "Robust material handling solutions for bulk operations across various industrial sectors.", image: "/images/products/belt-conveyor/hero.png" },
+  { title: "GRANITE CRUSHING", desc: "High-capacity crushing solutions designed for hard rock applications with maximum productivity.", image: "/solutionspage/application we power 1.jpg" },
+  { title: "LIMESTONE PROCESSING", desc: "Efficient processing systems for consistent output and superior material quality.", image: "/solutionspage/application we power 2.jpg" },
+  { title: "SAND MANUFACTURING", desc: "Advanced sand-making solutions for high-quality manufactured sand and controlled grading.", image: "/solutionspage/application we power 3.jpg" },
+  { title: "ROAD CONSTRUCTION", desc: "Reliable crushing and screening solutions for road base, sub-base and asphalt applications.", image: "/solutionspage/application we power 4.jpg" },
+  { title: "QUARRY OPERATIONS", desc: "Complete crushing systems built for demanding quarry environments and continuous use.", image: "/solutionspage/application we power 5.jpg" },
+  { title: "INDUSTRIAL MATERIAL HANDLING", desc: "Robust material handling solutions for bulk operations across various industrial sectors.", image: "/solutionspage/7.jpg" },
 ];
 
 const performanceMetrics = [
@@ -215,12 +215,12 @@ const performanceStatsList = [
 ];
 
 const smartProcessSteps = [
-  { step: "01", title: "SITE INSPECTION", desc: "We assess your site conditions, material characteristics, and production goals.", image: "/images/contact/crushing-plant-contact.jpg" },
-  { step: "02", title: "PLANNING", desc: "Our engineers create optimized plant layouts and process flows tailored to your requirements.", image: "/images/products/jaw-crusher/technical-datasheet.png" },
-  { step: "03", title: "MACHINE SELECTION", desc: "We recommend the right equipment for maximum efficiency and long-term value.", image: "/images/products/cone-crusher/main-machine.png" },
-  { step: "04", title: "INSTALLATION", desc: "Our team ensures safe, timely, and precise installation with minimal downtime.", image: "/images/products/complete-plants/hero.png" },
-  { step: "05", title: "COMMISSIONING", desc: "We test, optimize, and fine-tune the system for reliable and consistent performance.", image: "/images/products/complete-plants/main-machine.png" },
-  { step: "06", title: "SUPPORT", desc: "24/7 support, preventive maintenance, and genuine parts for uninterrupted operations.", image: "/images/about/global-impact.png" },
+  { step: "01", title: "SITE INSPECTION", desc: "We assess your site conditions, material characteristics, and production goals.", image: "/solutionspage/our smart procss 1.jpg" },
+  { step: "02", title: "PLANNING", desc: "Our engineers create optimized plant layouts and process flows tailored to your requirements.", image: "/solutionspage/our smart procss2.jpg" },
+  { step: "03", title: "MACHINE SELECTION", desc: "We recommend the right equipment for maximum efficiency and long-term value.", image: "/solutionspage/our smart procss3.jpg" },
+  { step: "04", title: "INSTALLATION", desc: "Our team ensures safe, timely, and precise installation with minimal downtime.", image: "/solutionspage/our smart procss 4.jpg" },
+  { step: "05", title: "COMMISSIONING", desc: "We test, optimize, and fine-tune the system for reliable and consistent performance.", image: "/solutionspage/our smart procss 5.jpg" },
+  { step: "06", title: "SUPPORT", desc: "24/7 support, preventive maintenance, and genuine parts for uninterrupted operations.", image: "/solutionspage/our smart procss 6.jpg" },
 ];
 
 const smartProcessPillars = [
@@ -237,11 +237,11 @@ const globalReachPoints = [
 ];
 
 const globalFlagsCards = [
-  { name: "INDIA", desc: "300 TPH Crushing & Screening Plant" },
-  { name: "INDONESIA", desc: "500 TPH Limestone Processing Plant" },
-  { name: "UNITED ARAB EMIRATES", desc: "250 TPH Aggregates Plant" },
-  { name: "KENYA", desc: "200 TPH Crushing Plant" },
-  { name: "PHILIPPINES", desc: "150 TPH Sand Making Plant" },
+  { name: "INDIA", desc: "300 TPH Crushing & Screening Plant", image: "/solutionspage/global capability 1.jpg" },
+  { name: "INDONESIA", desc: "500 TPH Limestone Processing Plant", image: "/solutionspage/global capability 2.jpg" },
+  { name: "UNITED ARAB EMIRATES", desc: "250 TPH Aggregates Plant", image: "/solutionspage/global capability 3.jpg" },
+  { name: "KENYA", desc: "200 TPH Crushing Plant", image: "/solutionspage/global capability 4.jpg" },
+  { name: "PHILIPPINES", desc: "150 TPH Sand Making Plant", image: "/solutionspage/global capability 5.jpg" },
 ];
 
 const globalNavyBarMetrics = [
@@ -284,7 +284,7 @@ const caseStudiesData = [
     title: "250 TPH Limestone Crushing Plant",
     cat: "Quarry & Mining",
     loc: "Madhya Pradesh, India",
-    image: "/images/projects/madhya-pradesh.jpg",
+    image: "/solutionspage/case study 1.jpg",
     metrics: [
       { val: "35%", label: "Higher Productivity" },
       { val: "20%", label: "Lower Downtime" },
@@ -296,7 +296,7 @@ const caseStudiesData = [
     title: "200 TPH Sand Manufacturing Plant",
     cat: "Sand Manufacturing",
     loc: "Rajasthan, India",
-    image: "/images/projects/rajasthan.jpg",
+    image: "/solutionspage/case study 2.jpg",
     metrics: [
       { val: "30%", label: "Higher Output" },
       { val: "15%", label: "Energy Savings" },
@@ -308,7 +308,7 @@ const caseStudiesData = [
     title: "300 TPH Infrastructure Crushing Project",
     cat: "Aggregates",
     loc: "Maharashtra, India",
-    image: "/images/projects/oman.jpg",
+    image: "/solutionspage/case study 3.jpg",
     metrics: [
       { val: "40%", label: "Higher Capacity" },
       { val: "25%", label: "Lower Operating Cost" },
@@ -320,7 +320,7 @@ const caseStudiesData = [
     title: "Complete Crushing Solution for Cement Plant",
     cat: "Industrial",
     loc: "Gujarat, India",
-    image: "/images/projects/indonesia.jpg",
+    image: "/solutionspage/case study 4.jpg",
     metrics: [
       { val: "20%", label: "Process Efficiency" },
       { val: "24/7", label: "Continuous Operation" },
@@ -462,7 +462,7 @@ export default function SolutionsPage() {
             fill
             priority
             sizes="100vw"
-            src="/images/products/complete-plants/hero.png"
+            src="/solutionspage/ffirst page.jpg"
           />
           <div
             aria-hidden
@@ -574,8 +574,6 @@ export default function SolutionsPage() {
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       src={item.image}
                     />
-                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
-
                     {/* Dark blue circle overlay */}
                     <div className="absolute left-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-primary border border-white/10 shadow-lg group-hover:bg-secondary transition-colors">
                       <Settings size={18} className="text-white" />
@@ -583,7 +581,7 @@ export default function SolutionsPage() {
 
                     {/* Title inside image */}
                     <div className="absolute bottom-4 left-4 z-20">
-                      <h3 className="text-lg font-black uppercase tracking-wider text-white">
+                      <h3 className="text-lg font-black uppercase tracking-wider text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                         {item.title}
                       </h3>
                     </div>
@@ -682,7 +680,7 @@ export default function SolutionsPage() {
                       </div>
 
                       {/* Right: Solution Card */}
-                      <div className="flex-1 w-full p-4 bg-blue-50/40 border border-blue-100/80 rounded-xl flex gap-3.5 items-start">
+                      <div className="flex-1 w-full p-4 bg-slate-50 border border-slate-200/80 rounded-xl flex gap-3.5 items-start">
                         <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-white shrink-0 mt-0.5">
                           <SolIcon size={12} />
                         </div>
@@ -703,14 +701,13 @@ export default function SolutionsPage() {
               {/* Right Column visual with premium overlay */}
               <div className="relative aspect-[4/4] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-lg bg-slate-800">
                 <Image
-                  src="/images/about/about-hero-industrial-generated.png"
+                  src="/solutionspage/challenges we solve 5.jpg"
                   alt="Complete Assembly System"
                   fill
                   className="object-cover opacity-80"
                   sizes="(min-width: 1024px) 35vw, 100vw"
                 />
                 <div className="absolute inset-0 z-10" />
-              
               </div>
             </div>
 
@@ -907,19 +904,15 @@ export default function SolutionsPage() {
               </div>
 
               {/* Right Column CAD Drawing representation */}
-              <div className="relative aspect-[4/3] w-full rounded-2xl bg-slate-900 border border-slate-200 overflow-hidden flex items-center justify-center shadow-xl">
+              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden flex items-center justify-center ">
                 <Image
-                  src="/images/products/jaw-crusher/technical-datasheet.png"
+                  src="/solutionspage/blueprint_1440x780.png"
                   alt="CAD Engineering Blueprint"
                   fill
-                  className="object-cover opacity-50"
+                  className="object-contain"
                   sizes="(min-width: 1024px) 40vw, 100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 z-10 text-left p-4">
-                  <span className="text-sm font-black uppercase tracking-widest text-white block">CAD Engineering Blueprint</span>
-                  <p className="text-xs text-slate-300 mt-0.5">3D machine sizing & topography flow calculation</p>
-                </div>
+               
               </div>
             </div>
 
@@ -943,8 +936,19 @@ export default function SolutionsPage() {
               {/* 5 columns */}
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
                 {engineeringServices.map((item, i) => (
-                  <div key={i} className="bg-slate-50 border border-slate-200/80 p-5 rounded-xl hover:bg-slate-100/70 transition-colors flex flex-col justify-between">
+                  <div key={i} className="group bg-slate-50 border border-slate-200/80 p-5 rounded-xl hover:bg-slate-100/70 transition-all duration-300 flex flex-col justify-between">
                     <div>
+                      {item.image && (
+                        <div className="relative w-full aspect-[16/10] mb-4 rounded-lg overflow-hidden bg-white border border-slate-100 flex items-center justify-center">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                            sizes="(min-width: 1024px) 15vw, 30vw"
+                          />
+                        </div>
+                      )}
                       <span className="text-xs font-black uppercase tracking-wider text-secondary">
                         {item.step}
                       </span>
@@ -1017,8 +1021,8 @@ export default function SolutionsPage() {
                     </div>
                   )}
 
-                  {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-slate-950/75 z-10 transition-colors duration-300 group-hover:bg-slate-950/65" />
+                  {/* Bottom shadow fade for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent z-10" />
 
                   {/* Top orange circular badge */}
                   <div className="absolute left-6 top-6 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-secondary border border-white/10 shadow-lg">
@@ -1138,18 +1142,14 @@ export default function SolutionsPage() {
               {/* Left Column Image Box */}
               <div className="relative aspect-square w-full bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center">
                 <Image
-                  src="/images/about/factory-floor.png"
+                  src="/solutionspage/our performance your advantage.jpg"
                   alt="Factory Floor"
                   fill
-                  className="object-cover opacity-20"
+                  className="object-cover "
                   sizes="(min-width: 1024px) 33vw, 100vw"
                 />
                 <div className="relative text-center p-4 z-10">
-                  <Construction size={40} className="text-secondary mx-auto mb-2" />
-                  <span className="text-sm font-black uppercase tracking-widest text-primary leading-tight block">PERFORMANCE THAT<br />DRIVES YOUR SUCCESS</span>
-                  <p className="text-xs md:text-sm text-slate-500 mt-2 max-w-[200px] mx-auto">
-                    Our solutions are designed to maximize every aspect of your operations.
-                  </p>
+                  
                 </div>
               </div>
 
@@ -1324,124 +1324,185 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 9: GLOBAL CAPABILITY (Engineered to Perform. Delivered Worldwide) */}
         {/* ========================================================================= */}
-        <section className="bg-white py-16 lg:py-24">
-          <Container>
-            {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
-                  ))}
-                </span>
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                  GLOBAL CAPABILITY
-                </span>
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
-                  ))}
-                </span>
-              </div>
+        <section className="relative overflow-hidden bg-slate-50 py-20 lg:py-28">
+          <Container className="relative z-10">
+            
+            {/* Top Row: Two Columns */}
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-start mb-16">
               
-              <h2 className="headline text-primary text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] uppercase">
-                ENGINEERED TO PERFORM. <br />
-                <span className="text-secondary">DELIVERED WORLDWIDE.</span>
-              </h2>
-              
-              <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-slate-600">
-                From design to delivery, installation to support — our solutions power industries across the globe with unmatched reliability and performance.
-              </p>
-            </div>
+              {/* Left Column Content */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="h-[1.5px] w-8 bg-secondary" />
+                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                    GLOBAL CAPABILITY
+                  </span>
+                  <span className="h-[1.5px] w-8 bg-secondary" />
+                </div>
+                
+                <h2 className="headline text-[clamp(2.4rem,5.5vw,3.6rem)] font-black leading-[1.0] text-primary">
+                  ENGINEERED TO PERFORM. <br />
+                  <span className="text-secondary">DELIVERED WORLDWIDE.</span>
+                </h2>
+                
+                <p className="mt-6 max-w-xl text-sm md:text-base leading-relaxed text-slate-500 font-medium">
+                  From design to delivery, installation to support – our solutions power industries across the globe with unmatched reliability and performance.
+                </p>
 
-            {/* Map and points columns */}
-            <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center mb-16">
-              {/* Left Column values */}
-              <div className="space-y-6">
-                {globalReachPoints.map((item, i) => {
-                  const RIcon = item.icon;
-                  return (
-                    <div key={i} className="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-200/60">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-100 border border-slate-200 text-secondary">
-                        <RIcon size={20} />
-                      </div>
-                      <div>
-                        <h3 className="text-base font-black uppercase tracking-wide text-primary leading-tight">
+                {/* 3 Horizontal Features */}
+                <div className="grid grid-cols-3 gap-4 mt-10 pt-8 border-t border-slate-200">
+                  {globalReachPoints.map((item, i) => {
+                    const RIcon = item.icon;
+                    return (
+                      <div key={i} className="text-center flex flex-col items-center">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-sm mb-3">
+                          <RIcon size={22} className="stroke-[1.8]" />
+                        </div>
+                        <h4 className="text-[11px] font-black uppercase tracking-wider text-primary mb-1">
                           {item.title}
-                        </h3>
-                        <p className="mt-1.5 text-sm text-text-muted">
+                        </h4>
+                        <p className="text-[10px] leading-relaxed text-slate-500 font-medium">
                           {item.desc}
                         </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Right Column Map Representation */}
+              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden flex items-center justify-center bg-slate-50">
+                <Image
+                  src="/images/projects/world-map.jpg"
+                  alt="Supply Locations Network"
+                  fill
+                  className="object-cover opacity-60 mix-blend-multiply"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+                
+                {/* Dots / Lines / Labels over Map (Simulated Pin overlays) */}
+                <div className="absolute inset-0 z-10 pointer-events-none">
+                  
+                  {/* Pithal (India) Central Pin */}
+                  <div className="absolute top-[52%] left-[64%] flex flex-col items-center">
+                    <div className="relative flex h-7 w-7 items-center justify-center">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                      <MapPin size={20} className="text-secondary fill-secondary relative z-10" />
+                    </div>
+                    <span className="text-[9px] font-black uppercase bg-secondary text-white px-2 py-0.5 rounded shadow leading-none mt-1">PITHAL</span>
+                  </div>
+
+                  {/* NORTH AMERICA */}
+                  <div className="absolute top-[32%] left-[15%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">NORTH AMERICA</span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                  </div>
+
+                  {/* EUROPE */}
+                  <div className="absolute top-[20%] left-[45%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">EUROPE</span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                  </div>
+
+                  {/* ASIA */}
+                  <div className="absolute top-[30%] left-[82%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">ASIA</span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                  </div>
+
+                  {/* SOUTH AMERICA */}
+                  <div className="absolute top-[62%] left-[22%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">SOUTH AMERICA</span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                  </div>
+
+                  {/* AFRICA */}
+                  <div className="absolute top-[65%] left-[48%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">AFRICA</span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                  </div>
+
+                  {/* AUSTRALIA */}
+                  <div className="absolute top-[72%] left-[80%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">AUSTRALIA</span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            {/* 5 Flags Cards Row */}
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5 mb-16">
+              {globalFlagsCards.map((card, i) => {
+                let flagEmoji = "🇮🇳";
+                if (card.name === "INDONESIA") flagEmoji = "🇮🇩";
+                if (card.name === "UNITED ARAB EMIRATES") flagEmoji = "🇦🇪";
+                if (card.name === "KENYA") flagEmoji = "🇰🇪";
+                if (card.name === "PHILIPPINES") flagEmoji = "🇵🇭";
+
+                return (
+                  <div key={i} className="group relative overflow-hidden rounded-2xl border border-slate-200 shadow-md bg-white flex flex-col">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900">
+                      {card.image && (
+                        <Image
+                          src={card.image}
+                          alt={card.name}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          sizes="(min-width: 1024px) 20vw, 50vw"
+                        />
+                      )}
+                    </div>
+                    <div className="bg-[#031b40] p-4 text-left border-t border-[#031b40]">
+                      <div className="flex items-center gap-2">
+                        <span className="text-base leading-none">{flagEmoji}</span>
+                        <span className="text-xs font-black uppercase tracking-wider text-white">
+                          {card.name}
+                        </span>
+                      </div>
+                      <p className="mt-2 text-xs text-slate-300 leading-snug font-medium">
+                        {card.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Navy Stats Banner */}
+            <div className="bg-[#031b40] rounded-3xl p-8 shadow-xl mb-6 text-white relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none opacity-5 industrial-grid" />
+              <div className="relative z-10 grid gap-8 sm:grid-cols-3 lg:grid-cols-5 sm:divide-x sm:divide-white/10">
+                {globalNavyBarMetrics.map((item, i) => {
+                  return (
+                    <div key={i} className="flex items-center gap-4.5 pl-0 lg:pl-6 first:pl-0">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-secondary">
+                        {i === 0 && <Globe size={26} className="text-secondary stroke-[1.8]" />}
+                        {i === 1 && <Building2 size={26} className="text-secondary stroke-[1.8]" />}
+                        {i === 2 && <Settings size={26} className="text-secondary stroke-[1.8]" />}
+                        {i === 3 && <Users size={26} className="text-secondary stroke-[1.8]" />}
+                        {i === 4 && <Headphones size={26} className="text-secondary stroke-[1.8]" />}
+                      </div>
+                      <div>
+                        <h4 className="text-3xl font-black text-white leading-none tracking-tight">{item.value}</h4>
+                        <p className="text-[10px] font-black text-white uppercase tracking-widest mt-1.5">{item.label}</p>
+                        <p className="text-[10px] text-slate-400 mt-0.5 leading-snug font-medium">{item.desc}</p>
                       </div>
                     </div>
                   );
                 })}
               </div>
-
-              {/* Right Column Map representation */}
-              <div className="relative aspect-[16/10] w-full rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center shadow-inner bg-slate-50">
-                <Image
-                  src="/images/projects/world-map.jpg"
-                  alt="Supply Locations Network"
-                  fill
-                  className="object-cover opacity-30 mix-blend-multiply"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent" />
-                <div className="relative text-center p-4 z-10">
-                  <Globe size={40} className="text-secondary animate-pulse mb-2 mx-auto" />
-                  <span className="text-xs md:text-sm font-black uppercase tracking-widest text-slate-800">Supply Locations Network</span>
-                  <p className="text-xs text-slate-500 mt-0.5">India primary center & regional offices</p>
-                </div>
-              </div>
             </div>
 
-            {/* 5 flags cards */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5 mb-16">
-              {globalFlagsCards.map((card, i) => (
-                <div key={i} className="bg-slate-50 border border-slate-200/80 p-4 rounded-xl relative overflow-hidden flex flex-col justify-end min-h-[120px]">
-                  <div className="absolute inset-0 border border-dashed border-slate-200/40 m-1.5 rounded-lg z-0" />
-                  <div className="relative z-10">
-                    <span className="text-xs font-black uppercase text-secondary tracking-widest">
-                      {card.name}
-                    </span>
-                    <h4 className="mt-1 text-sm font-black uppercase text-primary leading-snug">
-                      {card.desc}
-                    </h4>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Blue Banner Metric Stats */}
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 shadow-sm mb-8">
-              <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-5 sm:divide-x sm:divide-slate-200">
-                {globalNavyBarMetrics.map((item, i) => (
-                  <div key={i} className="text-center px-4 flex flex-col justify-center">
-                    <span className="text-xs font-black uppercase tracking-wider text-slate-500">
-                      {item.label}
-                    </span>
-                    <h4 className="mt-2 text-2xl md:text-3xl font-black text-secondary leading-none">
-                      {item.value}
-                    </h4>
-                    <p className="text-xs md:text-sm text-slate-500 mt-1 leading-normal font-medium">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom White values row */}
-            <div className="bg-slate-50 text-slate-800 border border-slate-200/80 rounded-2xl p-6.5 shadow-sm flex flex-wrap items-center justify-center gap-6 md:gap-12">
+            {/* Bottom White Card Row */}
+            <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm flex flex-wrap items-center justify-between gap-6 px-8 mt-6">
               {globalBottomValues.map((item, i) => {
                 const VIcon = item.icon;
                 return (
-                  <div key={i} className="flex items-center gap-2">
-                    <VIcon size={14} className="text-secondary" />
-                    <span className="text-sm font-black uppercase tracking-wide text-primary">
+                  <div key={i} className="flex items-center gap-3">
+                    <VIcon size={20} className="text-secondary stroke-[1.8]" />
+                    <span className="text-xs font-black uppercase tracking-wide text-primary">
                       {item.title}
                     </span>
                   </div>
@@ -1744,19 +1805,14 @@ export default function SolutionsPage() {
               {/* Right Column photo with overlay banner */}
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-md bg-slate-800">
                 <Image
-                  src="/images/contact/crushing-plant-contact.jpg"
+                  src="/solutionspage/ready to build ready to perform.jpg"
                   alt="Pithal Engineering Officer"
                   fill
                   className="object-cover opacity-60"
                   sizes="(min-width: 1024px) 40vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-slate-900/10 z-10" />
-                <div className="absolute inset-0 border border-dashed border-slate-700/60 m-4 rounded-xl flex items-center justify-center z-20 bg-slate-900/30 backdrop-blur-[1px]">
-                  <div className="text-center p-4">
-                    <HardHat size={40} className="text-secondary mx-auto mb-2 animate-pulse" />
-                    <span className="text-sm font-black uppercase tracking-widest text-slate-300 font-bold">Pithal Engineering Officer</span>
-                  </div>
-                </div>
+                
 
                 {/* Overlay Navy stats banner on the bottom */}
                 <div className="absolute bottom-0 inset-x-0 bg-[#031b40]/95 text-white p-4.5 z-20 border-t border-white/5 backdrop-blur-sm">

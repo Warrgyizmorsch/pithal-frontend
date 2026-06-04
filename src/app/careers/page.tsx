@@ -511,7 +511,7 @@ export default function CareersPage() {
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
           <div className="pointer-events-none absolute right-0 top-0 h-[58%] w-[55%] rounded-bl-[55%] border-l border-secondary/25 border-b border-secondary/25" />
 
-          <div className="relative z-10 mx-auto max-w-7xl px-6">
+          <div className="relative z-10 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             <div className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-text-muted">
               <Link href="/" className="hover:text-primary transition-colors">
                 Home
@@ -568,24 +568,24 @@ export default function CareersPage() {
             </div>
           </div>
 
-          <div className="relative z-10 mx-auto max-w-7xl px-6 pb-0 pt-5">
-            <div className="grid gap-4 rounded-xl border border-white/10 bg-white/50 p-5 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] sm:grid-cols-2 xl:grid-cols-4 sm:p-6">
+          <div className="relative z-10 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 pb-0 pt-4">
+            <div className="grid gap-4 rounded-xl border border-white/10 bg-white/50 p-3 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] sm:grid-cols-2 xl:grid-cols-4 sm:p-4">
               {heroStats.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 rounded-lg bg-primary-dark/90 p-6"
+                  className="flex items-start gap-3 rounded-lg bg-primary-dark/90 p-4"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-3xl font-black tracking-[-0.03em] text-white sm:text-4xl">
+                    <div className="text-2xl font-black tracking-[-0.03em] text-white sm:text-3xl">
                       {item.value}
                     </div>
-                    <p className="mt-2 text-sm font-bold uppercase tracking-[0.2em] text-secondary">
+                    <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-secondary">
                       {item.title}
                     </p>
-                    <p className="mt-3 text-sm leading-6 text-slate-300">
+                    <p className="mt-1.5 text-xs leading-relaxed text-slate-300">
                       {item.desc}
                     </p>
                   </div>
@@ -597,7 +597,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 2: ADVANTAGES ── */}
         <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             <div className="text-center mb-14">
               <p className="text-secondary text-xs font-bold uppercase tracking-[0.35em] mb-3">
                 WHY JOIN PITHAL MACHINES
@@ -693,7 +693,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 3: A PLACE TO GROW ── */}
         <section id="about" className="py-16 bg-gray-50/50">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center mb-8">
               {/* Left text */}
               <div>
@@ -849,7 +849,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 4: EXPLORE ROLES ── */}
         <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             <div className="text-center mb-12">
               <p className="text-secondary text-xs font-bold uppercase tracking-[0.35em] mb-2">
                 DEPARTMENTS & OPPORTUNITIES
@@ -1312,7 +1312,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 5: CURRENT OPENINGS ── */}
         <section id="openings" className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             <div className="text-center mb-12">
               <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-2">
                 WE ARE HIRING
