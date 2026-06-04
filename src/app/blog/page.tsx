@@ -889,7 +889,7 @@ export default function BlogPage() {
           SECTION 3 — FEATURED INSIGHTS
       ══════════════════════════════════════════ */}
       <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <Container>
           <SectionHeader
             eyebrow="FEATURED INSIGHTS"
             title="Featured Insights"
@@ -945,14 +945,14 @@ export default function BlogPage() {
               ))}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ══════════════════════════════════════════
           SECTION 4 — EXPLORE BY CATEGORY
       ══════════════════════════════════════════ */}
       <section className="py-10 bg-bg-light">
-        <div className="max-w-7xl mx-auto px-6">
+        <Container>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-secondary mb-3">
@@ -993,14 +993,14 @@ export default function BlogPage() {
               </Link>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ══════════════════════════════════════════
           SECTION 5 — LATEST ARTICLES
       ══════════════════════════════════════════ */}
       <section id="articles" className="py-10 bg-bg-light">
-        <div className="max-w-7xl mx-auto px-6">
+        <Container>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-secondary mb-3">
@@ -1047,14 +1047,14 @@ export default function BlogPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ══════════════════════════════════════════
           SECTION 6 — INDUSTRIAL KNOWLEDGE HUB
       ══════════════════════════════════════════ */}
       <section className="py-10 bg-bg-light">
-        <div className="max-w-7xl mx-auto px-6">
+        <Container>
           {/* Header */}
           <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-3.5 mb-4">
@@ -1222,14 +1222,14 @@ export default function BlogPage() {
               ))}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ══════════════════════════════════════════
           SECTION 7 — TRENDING INSIGHTS
       ══════════════════════════════════════════ */}
       <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <Container>
           {/* Header */}
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between mb-8">
             <div>
@@ -1310,14 +1310,14 @@ export default function BlogPage() {
               </Button>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ══════════════════════════════════════════
           SECTION 8 — RESOURCE CENTER
       ══════════════════════════════════════════ */}
       <section id="solutions" className="py-10 bg-bg-light">
-        <div className="max-w-7xl mx-auto px-6">
+        <Container>
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="w-12 h-0.5 bg-secondary" />
@@ -1403,14 +1403,14 @@ export default function BlogPage() {
               We respect your privacy. No spam, ever.
             </p>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ══════════════════════════════════════════
           SECTION 9 — EXPERT PERSPECTIVES
       ══════════════════════════════════════════ */}
       <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <Container>
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="w-12 h-0.5 bg-secondary" />
@@ -1465,14 +1465,14 @@ export default function BlogPage() {
           </div>
 
           
-        </div>
+        </Container>
       </section>
 
       {/* ══════════════════════════════════════════
           SECTION 10 — NEWSLETTER
       ══════════════════════════════════════════ */}
       <section className="py-10 bg-bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="rounded-xl border border-border bg-white overflow-hidden shadow-xl lg:grid lg:grid-cols-12 min-h-[580px]">
             {/* Left Column */}
             <div className="lg:col-span-7 p-5 sm:p-12 lg:p-14 xl:p-16 flex flex-col justify-center bg-white">
@@ -1633,14 +1633,14 @@ export default function BlogPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ══════════════════════════════════════════
           SECTION 11 — COMPREHENSIVE COVERAGE
       ══════════════════════════════════════════ */}
       <section className="py-10 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           {/* Header */}
           <div className="text-center mb-8">
             <p className="text-[12px] font-bold uppercase tracking-[0.25em] text-secondary mb-3 text-center">
@@ -1735,14 +1735,14 @@ export default function BlogPage() {
               <span className="text-xs">→</span>
             </Button>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ══════════════════════════════════════════
           SECTION 12 — FROM INSIGHTS TO SOLUTIONS
       ══════════════════════════════════════════ */}
       <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Container>
           <div className="rounded-xl border border-border bg-[#fafafa]/50 p-8 sm:p-12 shadow-sm">
             <div className="flex flex-col lg:grid lg:grid-cols-12 lg:items-center justify-between gap-8">
               {/* Left Column */}
@@ -1842,7 +1842,7 @@ export default function BlogPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ══════════════════════════════════════════
@@ -1856,7 +1856,7 @@ export default function BlogPage() {
         }`}
         aria-hidden={!showPopup}
       >
-        <div className="mx-auto max-w-7xl">
+        <Container>
           <div className="relative rounded-xl border border-border bg-white/95 p-5 pr-12 shadow-[0_24px_80px_rgba(15,23,42,0.22)] backdrop-blur-md sm:p-10 sm:pr-16 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <button
               type="button"
@@ -1924,7 +1924,7 @@ export default function BlogPage() {
               </Button>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </main>
     <Footer />

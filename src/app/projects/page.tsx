@@ -89,7 +89,7 @@ export default function CaseStudyPage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO (Rajasthan Zinc Crushing Plant) */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden  py-20 lg:py-24 text-white">
+        <section className="relative overflow-hidden h-[calc(100vh-4.25rem)] sm:h-[calc(100vh-4.75rem)] xl:h-[calc(100vh-5.25rem)] min-h-[600px] flex items-center py-4 lg:py-6 text-white">
           <Image
             alt="Rajasthan Zinc Crushing Plant"
             className="object-cover object-center"
@@ -100,9 +100,9 @@ export default function CaseStudyPage() {
           />
           <div className="pointer-events-none absolute inset-0 bg-slate-950/70" />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-35" />
-          <Container className="relative z-10">
+          <Container className="relative z-10 w-full h-full flex flex-col justify-between">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 mb-8 text-[11px] font-medium text-slate-400">
+            <div className="flex items-center gap-2 mb-2 text-[11px] font-medium text-slate-400">
               <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
               <ChevronRight size={10} />
               <Link href="/projects" className="hover:text-secondary transition-colors">Projects & Case Studies</Link>
@@ -113,7 +113,7 @@ export default function CaseStudyPage() {
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               {/* Left Column Text */}
               <div>
-                <div className="flex items-center gap-2.5 mb-4 text-secondary">
+                <div className="flex items-center gap-2.5 mb-2.5 text-secondary">
                   <CheckCircle2 size={13} className="text-secondary" />
                   <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
                     FEATURED PROJECT
@@ -125,16 +125,16 @@ export default function CaseStudyPage() {
                   CRUSHING PLANT
                 </h1>
                 
-                <h2 className="text-sm md:text-base font-black text-secondary uppercase tracking-widest mt-3.5">
+                <h2 className="text-sm md:text-base font-black text-secondary uppercase tracking-widest mt-2">
                   500 TPH Crushing & Screening Solution
                 </h2>
                 
-                <p className="mt-5 max-w-xl text-xs md:text-[13px] leading-relaxed text-slate-300 font-medium">
+                <p className="mt-3 max-w-xl text-xs md:text-[13px] leading-relaxed text-slate-300 font-medium">
                   A robust and high-performance crushing system designed to deliver consistent output, maximum efficiency, and long-term reliability in demanding mining conditions.
                 </p>
 
                 {/* Quick Specs Blocks */}
-                <div className="mt-7 flex flex-wrap gap-x-6.5 gap-y-4 pt-5 border-t border-white/10">
+                <div className="mt-4 flex flex-wrap gap-x-6.5 gap-y-3 pt-3 border-t border-white/10">
                   <div className="flex items-center gap-2 text-[11px] font-bold text-slate-300">
                     <Building2 size={13} className="text-secondary" />
                     <span className="uppercase text-slate-400 font-medium">Industry:</span> Mining
@@ -153,7 +153,7 @@ export default function CaseStudyPage() {
                   </div>
                 </div>
                 
-                <div className="mt-8 flex flex-wrap gap-4">
+                <div className="mt-4.5 flex flex-wrap gap-4">
                   <Button href="#overview" variant="primary" className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5">
                     EXPLORE PROJECT
                     <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -167,7 +167,7 @@ export default function CaseStudyPage() {
             </div>
 
             {/* Bottom Stats row */}
-            <div className="mt-14 bg-white text-slate-800 rounded-2xl p-6 md:p-7 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
+            <div className="mt-4 bg-white text-slate-800 rounded-2xl p-6 md:p-6 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
               <div className="grid gap-6 grid-cols-2 md:grid-cols-6 items-center text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-slate-100">
                 <div className="pt-4 md:pt-0 first:pt-0 flex flex-col items-center md:items-start md:px-4 first:pl-0">
                   <Building2 size={16} className="text-secondary mb-1.5" />

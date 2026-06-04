@@ -283,7 +283,7 @@ export default function GlobalPresencePage() {
         {/* ══════════════════════════════════════════════════════════════════
     SECTION 1 — HERO
     ══════════════════════════════════════════════════════════════════ */}
-        <section className="relative isolate overflow-hidden bg-[#f4f8fc] pt-6 pb-6 lg:pt-10">
+        <section className="relative isolate overflow-hidden bg-[#f4f8fc] h-[calc(100vh-4.25rem)] sm:h-[calc(100vh-4.75rem)] xl:h-[calc(100vh-5.25rem)] min-h-[600px] flex items-center py-4 lg:py-6">
           <div className="absolute inset-0 z-0 overflow-hidden">
             <Image
               src="/images/global-presense/hero.png"
@@ -298,9 +298,9 @@ export default function GlobalPresencePage() {
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f4f8fc] via-[#f4f8fc]/50 to-transparent" />
           </div>
 
-          <Container className="relative z-10 max-w-[1320px] px-2 sm:px-4 lg:px-6">
+          <Container className="relative z-10 max-w-[1320px] px-2 sm:px-4 lg:px-6 w-full h-full flex flex-col justify-between">
             {/* Breadcrumb */}
-            <div className="mb-10 flex items-center gap-2 text-sm font-semibold text-primary/80">
+            <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary/80">
               <Link href="/" className="hover:text-secondary transition-colors">
                 Home
               </Link>
@@ -310,13 +310,13 @@ export default function GlobalPresencePage() {
 
             <div className="max-w-[640px]">
               {/* ✅ Badge — outline style, orange border + text, NOT filled */}
-              <div className="mb-7 inline-flex items-center gap-2.5 rounded-md border border-secondary/40 bg-white/80 px-4 py-2 text-sm font-black uppercase tracking-widest text-secondary">
+              <div className="mb-3 inline-flex items-center gap-2.5 rounded-md border border-secondary/40 bg-white/80 px-4 py-2 text-sm font-black uppercase tracking-widest text-secondary">
                 <Globe className="h-4 w-4 stroke-[2] text-secondary" />
                 Global Presence
               </div>
 
               {/* ✅ Headline — both lines same large size */}
-              <h1 className="headline mb-5 leading-[0.95]">
+              <h1 className="headline mb-3 leading-[0.95]">
                 <span className="block text-[clamp(2.2rem,4.8vw,4.4rem)] font-black text-primary">
                   ENGINEERING EXCELLENCE.
                 </span>
@@ -326,7 +326,7 @@ export default function GlobalPresencePage() {
               </h1>
 
               {/* ✅ Description — normal weight (not semibold) */}
-              <p className="mb-8 max-w-[500px] text-[clamp(0.95rem,1.1vw,1.05rem)] font-normal leading-relaxed text-[#3f5068]">
+              <p className="mb-4 max-w-[500px] text-[clamp(0.95rem,1.1vw,1.05rem)] font-normal leading-relaxed text-[#3f5068]">
                 Pithal Engineering delivers advanced crushing &amp; screening
                 solutions across the globe with precision, reliability and
                 unmatched support. From engineering to installation — we&apos;re
@@ -354,7 +354,7 @@ export default function GlobalPresencePage() {
             </div>
 
             {/* Stats bar */}
-            <div className="mt-14 rounded-2xl border border-white/80 bg-white/95 px-4 py-5 shadow-[0_18px_45px_rgba(10,35,70,0.12)] backdrop-blur-sm sm:px-6 lg:mt-20 lg:px-10">
+            <div className="mt-4 rounded-2xl border border-white/80 bg-white/95 px-4 py-4 shadow-[0_18px_45px_rgba(10,35,70,0.12)] backdrop-blur-sm sm:px-6 lg:mt-6 lg:px-10">
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
                 {heroStats.map((s, i) => (
                   <div
@@ -384,7 +384,7 @@ export default function GlobalPresencePage() {
             </div>
 
             {/* Trust bar */}
-            <div className="mx-auto mt-5 flex max-w-[1000px] flex-col items-center justify-center gap-4 text-center text-sm font-semibold text-[#4a5b72] md:flex-row md:gap-10 md:text-left">
+            <div className="mx-auto mt-4 flex max-w-[1000px] flex-col items-center justify-center gap-4 text-center text-sm font-semibold text-[#4a5b72] md:flex-row md:gap-10 md:text-left">
               <span className="flex items-center gap-3">
                 <Shield className="h-5 w-5 text-secondary" />
                 Engineered for global standards. Delivered with trust. Built for
