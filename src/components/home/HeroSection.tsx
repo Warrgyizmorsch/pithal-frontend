@@ -9,11 +9,11 @@ const heroMachinePoster = "/images/hero/hero-machine-photo.png";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-white" id="home">
+    <section className="relative overflow-hidden bg-white h-[calc(100vh-4.25rem)] sm:h-[calc(100vh-4.75rem)] xl:h-[calc(100vh-5.25rem)]" id="home">
       {/* Desktop Crushing Machine Video */}
       
 
-      <Container className="relative flex min-h-[34rem] flex-col gap-3 pt-7 sm:min-h-[38rem] sm:pt-10 lg:min-h-[33.5rem] lg:pt-[2.25rem] xl:min-h-[35rem]">
+      <Container className="relative flex h-full flex-col gap-3 pt-7 pb-6 sm:pt-10 sm:pb-8 lg:pt-[2.25rem] lg:pb-8">
         <div className="pointer-events-none absolute right-0 top-[50%] hidden h-[min(36rem,95%)] w-[75vw] -translate-y-1/2 lg:block xl:h-[min(50rem,100%)] xl:w-full">
         <video
           aria-label="Mobile crushing machine operating in a quarry"

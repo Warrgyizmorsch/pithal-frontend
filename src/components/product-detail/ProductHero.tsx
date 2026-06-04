@@ -85,7 +85,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
           </div>
         </div>
 
-        <div className="mt-auto w-full max-w-[820px] rounded-xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-7 py-6 shadow-[0_22px_55px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
+        <div className="mt-auto w-full max-w-[820px] rounded-2xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-7 py-6 shadow-[0_22px_55px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-white/30">
             {data.quickStats.map((stat) => (
               <article className="flex items-center gap-4 lg:px-6 lg:first:pl-0 lg:last:pr-0" key={stat.label}>

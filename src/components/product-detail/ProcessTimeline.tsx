@@ -65,7 +65,7 @@ export function ProcessTimeline({
                   <div className="relative h-[180px] overflow-hidden rounded-t-[1.5rem]">
                     <Image
                       alt={step.image.alt}
-                      className="object-cover"
+                      className="object-contain p-4"
                       fill
                       sizes="(max-width: 1000px) 100vw, 20vw"
                       src={step.image.src}

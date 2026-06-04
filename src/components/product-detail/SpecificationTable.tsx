@@ -5,7 +5,7 @@ import { ProductCtaButton } from "./ProductCtaButton";
 
 function getCellClass(column: SpecificationColumn) {
   return cn(
-    "px-3 py-2.5",
+    "px-4 py-3",
     column.emphasis === "primary" && "font-bold text-primary",
     column.emphasis === "secondary" && "font-bold text-secondary",
     !column.emphasis && "text-text-muted",
@@ -23,7 +23,7 @@ export function SpecificationTable({
   return (
     <section className="bg-bg-light py-8 sm:py-10 lg:py-12">
       <Container>
-        <div className="overflow-hidden rounded-xl border border-border bg-white shadow-sm">
+        <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
           <div className="border-b border-border px-4 py-5 sm:px-6 lg:px-7">
             <header className="max-w-4xl">
               {section.eyebrow && (
@@ -40,11 +40,11 @@ export function SpecificationTable({
           </div>
 
           <div className="overflow-x-auto px-0 py-3 sm:px-4 lg:px-5">
-            <table className="min-w-[1080px] w-full border-separate border-spacing-0 text-left text-xs sm:text-[13px]">
+            <table className="min-w-[1080px] w-full border-separate border-spacing-0 text-left text-[13px] sm:text-[14.5px]">
               <thead className="bg-primary-dark text-white">
                 <tr>
                   {section.columns.map((column) => (
-                    <th className="border-r border-white/15 px-3 py-3 text-[9px] font-bold uppercase tracking-[0.14em] last:border-r-0" key={column.key}>
+                    <th className="border-r border-white/15 px-4 py-3.5 text-[10.5px] sm:text-[11.5px] font-bold uppercase tracking-[0.12em] last:border-r-0" key={column.key}>
                       {column.label}
                     </th>
                   ))}

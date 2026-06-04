@@ -181,7 +181,7 @@ export function ResourcesSection({
         </div>
 
         {/* Support Features Row */}
-        <div className="mt-8 border border-gray-200/80 bg-white p-6 rounded-xl shadow-sm">
+        <div className="mt-8 border border-gray-200/80 bg-white p-6 rounded-2xl shadow-sm">
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             {supportFeatures.map((feature) => (
               <article className="flex items-start gap-3.5" key={feature.title}>
@@ -204,7 +204,7 @@ export function ResourcesSection({
         {/* Bottom Banner */}
         <div className="mt-6 border border-gray-200/60 bg-gray-50/50 p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
           <div className="flex items-center gap-4">
-            <div className="flex shrink-0 items-center justify-center rounded-xl bg-white border border-gray-200 shadow-sm" style={{ width: 52, height: 52 }}>
+            <div className="flex shrink-0 items-center justify-center rounded-2xl bg-white border border-gray-200 shadow-sm" style={{ width: 52, height: 52 }}>
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#092a5c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
                 <path d="M2 10h20" />

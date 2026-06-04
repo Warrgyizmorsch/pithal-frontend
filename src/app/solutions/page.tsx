@@ -455,39 +455,49 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO & STATS BANNER */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-white pt-4 pb-16 text-primary lg:pt-6 lg:pb-20">
+        <section className="relative overflow-hidden bg-white h-[calc(100vh-4.25rem)] sm:h-[calc(100vh-4.75rem)] xl:h-[calc(100vh-5.25rem)] text-primary">
+          <Image
+            alt="Pithal complete crushing and screening plant"
+            className="object-cover object-center"
+            fill
+            priority
+            sizes="100vw"
+            src="/images/products/complete-plants/hero.png"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_22%,rgba(255,255,255,.88)_38%,rgba(255,255,255,.36)_58%,rgba(255,255,255,0)_78%)]"
+          />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
-          <div className="pointer-events-none absolute right-0 top-0 h-[58%] w-[55%] rounded-bl-[55%] border-l border-secondary/25 border-b border-secondary/25" />
-          <Container className="relative z-10">
-            {/* Breadcrumb */}
-            <div className="mb-8 flex items-center gap-2 text-xs font-medium text-primary/70">
-              <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
-              <ChevronRight size={10} />
-              <span>Solutions & Applications</span>
-            </div>
+          <Container className="relative z-10 h-full flex flex-col justify-between pt-3 pb-4 sm:pt-4 sm:pb-5 lg:pt-6 lg:pb-6">
+            <div>
+              {/* Breadcrumb */}
+              <div className="mb-3 flex items-center gap-2 text-xs font-medium text-primary/70">
+                <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
+                <ChevronRight size={10} />
+                <span>Solutions & Applications</span>
+              </div>
 
-            <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-              {/* Left Column Text */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
+              <div className="max-w-[650px] py-1 lg:py-3">
+                <div className="flex items-center gap-3 mb-3">
                   <span className="h-[1.5px] w-6 bg-secondary" />
                   <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
                     SOLUTIONS
                   </span>
                 </div>
                 
-                <h1 className="headline text-[clamp(3rem,7vw,5.3rem)] uppercase leading-[0.96] tracking-tight text-primary">
+                <h1 className="headline text-[clamp(2.35rem,5.5vw,4.2rem)] uppercase leading-[0.92] tracking-tight text-primary">
                   ENGINEERED SOLUTIONS <br />
                   FOR <span className="text-secondary">EVERY INDUSTRY.</span>
                 </h1>
                 
-                <span aria-hidden className="mt-6 block h-[2px] w-14 bg-secondary" />
+                <span aria-hidden className="mt-4 block h-[2px] w-14 bg-secondary" />
 
-                <p className="mt-6 max-w-xl text-sm md:text-[18px] lg:text-[20px] leading-relaxed text-primary font-medium">
+                <p className="mt-4 max-w-[560px] text-sm md:text-[17px] leading-relaxed text-primary font-medium">
                   From rugged mining operations to large-scale infrastructure projects, we deliver crushing solutions that maximize performance, minimize downtime, and drive <span className="text-secondary font-bold italic">real results</span>.
                 </p>
                 
-                <div className="mt-8 flex flex-wrap gap-4">
+                <div className="mt-5 flex flex-wrap gap-4">
                   <Button href="#industries" variant="primary" className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5">
                     EXPLORE SOLUTIONS
                     <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -498,23 +508,10 @@ export default function SolutionsPage() {
                   </Button>
                 </div>
               </div>
-
-              {/* Right Column Photo */}
-              <div className="relative min-h-[360px] w-full overflow-hidden rounded-bl-[7rem] rounded-tl-[2rem] bg-slate-100 lg:min-h-[560px]">
-                <Image
-                  alt="Pithal complete crushing and screening plant"
-                  className="object-cover object-center"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 58vw, 100vw"
-                  src="/images/products/complete-plants/hero.png"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/35 to-transparent" />
-              </div>
             </div>
 
             {/* Stats row below Hero */}
-            <div className="mt-14 bg-white text-slate-800 rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
+            <div className="bg-white text-slate-800 rounded-2xl p-4 md:py-5 md:px-6 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-center">
                 {stats.map((stat, i) => (
                   <div key={i} className="flex items-center gap-4.5 group">
@@ -629,7 +626,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 3: CHALLENGES WE SOLVE (Every Challenge. Engineered Solution.) */}
         {/* ========================================================================= */}
-        <section className="bg-slate-100 py-16 lg:py-24">
+        <section className="bg-white py-16 lg:py-24">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
@@ -704,7 +701,7 @@ export default function SolutionsPage() {
               </div>
 
               {/* Right Column visual with premium overlay */}
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-lg bg-slate-800">
+              <div className="relative aspect-[4/4] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-lg bg-slate-800">
                 <Image
                   src="/images/about/about-hero-industrial-generated.png"
                   alt="Complete Assembly System"
@@ -712,13 +709,8 @@ export default function SolutionsPage() {
                   className="object-cover opacity-80"
                   sizes="(min-width: 1024px) 35vw, 100vw"
                 />
-                <div className="absolute inset-0 bg-slate-900/20 z-10" />
-                <div className="absolute inset-0 border border-dashed border-white/20 m-4 rounded-xl flex items-center justify-center z-20 bg-slate-900/30 backdrop-blur-[1px]">
-                  <div className="text-center p-4">
-                    <Construction size={40} className="text-secondary mx-auto mb-2 animate-pulse" />
-                    <span className="text-xs font-black uppercase tracking-widest text-slate-300">Complete Assembly System</span>
-                  </div>
-                </div>
+                <div className="absolute inset-0 z-10" />
+              
               </div>
             </div>
 
@@ -729,8 +721,8 @@ export default function SolutionsPage() {
                   const BIcon = item.icon;
                   return (
                     <div key={i} className="text-center px-4 flex flex-col items-center">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary mb-2">
-                        <BIcon size={16} />
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary mb-2.5">
+                        <BIcon size={26} />
                       </div>
                       <h4 className="text-sm font-black uppercase tracking-wider text-primary">
                         {item.label}
@@ -783,13 +775,13 @@ export default function SolutionsPage() {
                 <div key={i} className="relative flex flex-col items-center text-center p-4 bg-slate-50 border border-slate-200/50 rounded-xl hover:border-slate-300 transition-colors">
                   
                   {/* Icon badge */}
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary">
-                    {i === 0 && <Layers size={18} />}
-                    {i === 1 && <Settings size={18} />}
-                    {i === 2 && <Settings2 size={18} />}
-                    {i === 3 && <Activity size={18} />}
-                    {i === 4 && <TrendingUp size={18} />}
-                    {i === 5 && <Award size={18} />}
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary">
+                    {i === 0 && <Layers size={26} />}
+                    {i === 1 && <Settings size={26} />}
+                    {i === 2 && <Settings2 size={26} />}
+                    {i === 3 && <Activity size={26} />}
+                    {i === 4 && <TrendingUp size={26} />}
+                    {i === 5 && <Award size={26} />}
                   </div>
 
                   <h3 className="mt-4 text-xs md:text-sm font-black uppercase tracking-wider text-primary leading-tight">
@@ -832,10 +824,7 @@ export default function SolutionsPage() {
               <div className="absolute inset-x-0 h-[1.5px] bg-slate-200/80 z-0" />
               {plantWorkflow.map((item, i) => (
                 <div key={i} className="relative z-10 flex flex-col items-center">
-                  <div className={cn(
-                    "h-5 w-5 rounded-full border-4 border-white flex items-center justify-center text-xs font-black text-white shadow-md",
-                    i === 5 ? "bg-secondary" : "bg-slate-300"
-                  )}>
+                  <div className="h-6 w-6 rounded-full border-2 border-secondary flex items-center justify-center text-[10px] font-black text-secondary shadow-sm bg-white">
                     {item.step}
                   </div>
                 </div>
@@ -849,8 +838,8 @@ export default function SolutionsPage() {
                   const PIcon = item.icon;
                   return (
                     <div key={i} className="text-center px-4 flex flex-col items-center">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary mb-2">
-                        <PIcon size={16} />
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary mb-2.5">
+                        <PIcon size={26} />
                       </div>
                       <h4 className="text-sm font-black uppercase tracking-wider text-primary">
                         {item.label}
@@ -870,7 +859,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 5: ENGINEERED AROUND YOUR OPERATION */}
         {/* ========================================================================= */}
-        <section className="bg-slate-900 text-white py-16 lg:py-24">
+        <section className="bg-white py-16 lg:py-24">
           <Container>
             {/* Top Grid layout */}
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center mb-16">
@@ -883,14 +872,14 @@ export default function SolutionsPage() {
                   </span>
                 </div>
                 
-                <h2 className="headline text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] uppercase">
+                <h2 className="headline text-primary text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] uppercase">
                   ENGINEERED AROUND <br />
                   <span className="text-secondary">YOUR OPERATION.</span>
                 </h2>
                 
                 <span aria-hidden className="block h-[2.5px] w-12 bg-secondary my-5" />
                 
-                <p className="text-sm md:text-base leading-relaxed text-slate-300 max-w-xl font-medium">
+                <p className="text-sm md:text-base leading-relaxed text-slate-600 max-w-xl font-medium">
                   Every site is unique. Our engineering experts design and deliver customized crushing solutions that match your goals, site conditions, and production requirements.
                 </p>
 
@@ -900,14 +889,14 @@ export default function SolutionsPage() {
                     const BIcon = item.icon;
                     return (
                       <div key={i} className="flex gap-3.5 items-start">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-secondary">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-200 text-secondary">
                           <BIcon size={18} />
                         </div>
                         <div>
-                          <h4 className="text-sm font-black uppercase tracking-wide text-white">
+                          <h4 className="text-sm font-black uppercase tracking-wide text-primary">
                             {item.title}
                           </h4>
-                          <p className="mt-0.5 text-xs md:text-sm text-slate-400">
+                          <p className="mt-0.5 text-xs md:text-sm text-text-muted">
                             {item.desc}
                           </p>
                         </div>
@@ -918,24 +907,24 @@ export default function SolutionsPage() {
               </div>
 
               {/* Right Column CAD Drawing representation */}
-              <div className="relative aspect-[4/3] w-full rounded-xl bg-slate-950 border border-white/5 overflow-hidden flex items-center justify-center shadow-2xl">
+              <div className="relative aspect-[4/3] w-full rounded-2xl bg-slate-900 border border-slate-200 overflow-hidden flex items-center justify-center shadow-xl">
                 <Image
                   src="/images/products/jaw-crusher/technical-datasheet.png"
                   alt="CAD Engineering Blueprint"
                   fill
-                  className="object-cover opacity-60"
+                  className="object-cover opacity-50"
                   sizes="(min-width: 1024px) 40vw, 100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 z-10 text-left p-4">
                   <span className="text-sm font-black uppercase tracking-widest text-white block">CAD Engineering Blueprint</span>
-                  <p className="text-xs text-slate-400 mt-0.5">3D machine sizing & topography flow calculation</p>
+                  <p className="text-xs text-slate-300 mt-0.5">3D machine sizing & topography flow calculation</p>
                 </div>
               </div>
             </div>
 
             {/* Bottom block: Our Engineering Services */}
-            <div className="border-t border-white/10 pt-14">
+            <div className="border-t border-slate-200 pt-14">
               {/* Bracketed Title Header */}
               <div className="relative flex justify-center items-center mb-10 w-full max-w-4xl mx-auto">
                 <div className="absolute left-[8%] right-[50%] top-0 h-[1.5px] bg-secondary flex items-start">
@@ -944,8 +933,8 @@ export default function SolutionsPage() {
                 <div className="absolute left-[50%] right-[8%] top-0 h-[1.5px] bg-secondary flex items-start justify-end">
                   <div className="h-3 w-[1.5px] bg-secondary" />
                 </div>
-                <div className="relative bg-slate-900 px-6">
-                  <span className="text-sm font-black uppercase tracking-[0.24em] text-white">
+                <div className="relative bg-white px-6">
+                  <span className="text-sm font-black uppercase tracking-[0.24em] text-primary">
                     OUR ENGINEERING SERVICES
                   </span>
                 </div>
@@ -954,15 +943,15 @@ export default function SolutionsPage() {
               {/* 5 columns */}
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
                 {engineeringServices.map((item, i) => (
-                  <div key={i} className="bg-white/5 border border-white/5 p-5 rounded-xl hover:bg-white/10 transition-colors flex flex-col justify-between">
+                  <div key={i} className="bg-slate-50 border border-slate-200/80 p-5 rounded-xl hover:bg-slate-100/70 transition-colors flex flex-col justify-between">
                     <div>
                       <span className="text-xs font-black uppercase tracking-wider text-secondary">
                         {item.step}
                       </span>
-                      <h4 className="mt-2 text-sm font-black uppercase tracking-wide text-white leading-tight">
+                      <h4 className="mt-2 text-sm font-black uppercase tracking-wide text-primary leading-tight">
                         {item.title}
                       </h4>
-                      <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-400">
+                      <p className="mt-2 text-xs md:text-sm leading-relaxed text-text-muted">
                         {item.desc}
                       </p>
                     </div>
@@ -974,7 +963,6 @@ export default function SolutionsPage() {
                 ))}
               </div>
             </div>
-
           </Container>
         </section>
 
@@ -1086,7 +1074,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 7: MEASURABLE PERFORMANCE. MAXIMUM RESULTS. */}
         {/* ========================================================================= */}
-        <section className="bg-slate-100 py-16 lg:py-24">
+        <section className="bg-white py-16 lg:py-24">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
@@ -1336,7 +1324,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 9: GLOBAL CAPABILITY (Engineered to Perform. Delivered Worldwide) */}
         {/* ========================================================================= */}
-        <section className="bg-slate-900 text-white py-16 lg:py-24">
+        <section className="bg-white py-16 lg:py-24">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
@@ -1356,14 +1344,14 @@ export default function SolutionsPage() {
                 </span>
               </div>
               
-              <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] uppercase">
+              <h2 className="headline text-primary text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] uppercase">
                 ENGINEERED TO PERFORM. <br />
                 <span className="text-secondary">DELIVERED WORLDWIDE.</span>
               </h2>
               
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
               
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-slate-300">
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-slate-600">
                 From design to delivery, installation to support — our solutions power industries across the globe with unmatched reliability and performance.
               </p>
             </div>
@@ -1375,15 +1363,15 @@ export default function SolutionsPage() {
                 {globalReachPoints.map((item, i) => {
                   const RIcon = item.icon;
                   return (
-                    <div key={i} className="flex gap-4 p-5 rounded-xl bg-white/5 border border-white/5">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-secondary">
+                    <div key={i} className="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-200/60">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-100 border border-slate-200 text-secondary">
                         <RIcon size={20} />
                       </div>
                       <div>
-                        <h3 className="text-base font-black uppercase tracking-wide text-white leading-tight">
+                        <h3 className="text-base font-black uppercase tracking-wide text-primary leading-tight">
                           {item.title}
                         </h3>
-                        <p className="mt-1.5 text-sm text-slate-400">
+                        <p className="mt-1.5 text-sm text-text-muted">
                           {item.desc}
                         </p>
                       </div>
@@ -1393,18 +1381,18 @@ export default function SolutionsPage() {
               </div>
 
               {/* Right Column Map representation */}
-              <div className="relative aspect-[16/10] w-full rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center shadow-inner">
+              <div className="relative aspect-[16/10] w-full rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center shadow-inner bg-slate-50">
                 <Image
                   src="/images/projects/world-map.jpg"
                   alt="Supply Locations Network"
                   fill
-                  className="object-cover opacity-20"
+                  className="object-cover opacity-30 mix-blend-multiply"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent" />
                 <div className="relative text-center p-4 z-10">
                   <Globe size={40} className="text-secondary animate-pulse mb-2 mx-auto" />
-                  <span className="text-xs md:text-sm font-black uppercase tracking-widest text-slate-300">Supply Locations Network</span>
+                  <span className="text-xs md:text-sm font-black uppercase tracking-widest text-slate-800">Supply Locations Network</span>
                   <p className="text-xs text-slate-500 mt-0.5">India primary center & regional offices</p>
                 </div>
               </div>
@@ -1413,13 +1401,13 @@ export default function SolutionsPage() {
             {/* 5 flags cards */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5 mb-16">
               {globalFlagsCards.map((card, i) => (
-                <div key={i} className="bg-slate-950 border border-white/5 p-4 rounded-xl relative overflow-hidden flex flex-col justify-end min-h-[120px]">
-                  <div className="absolute inset-0 border border-dashed border-white/5 m-1.5 rounded-lg z-0" />
+                <div key={i} className="bg-slate-50 border border-slate-200/80 p-4 rounded-xl relative overflow-hidden flex flex-col justify-end min-h-[120px]">
+                  <div className="absolute inset-0 border border-dashed border-slate-200/40 m-1.5 rounded-lg z-0" />
                   <div className="relative z-10">
                     <span className="text-xs font-black uppercase text-secondary tracking-widest">
                       {card.name}
                     </span>
-                    <h4 className="mt-1 text-sm font-black uppercase text-white leading-snug">
+                    <h4 className="mt-1 text-sm font-black uppercase text-primary leading-snug">
                       {card.desc}
                     </h4>
                   </div>
@@ -1428,17 +1416,17 @@ export default function SolutionsPage() {
             </div>
 
             {/* Blue Banner Metric Stats */}
-            <div className="bg-slate-950 border border-white/10 rounded-2xl p-8 shadow-2xl mb-8">
-              <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-5 sm:divide-x sm:divide-white/10">
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 shadow-sm mb-8">
+              <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-5 sm:divide-x sm:divide-slate-200">
                 {globalNavyBarMetrics.map((item, i) => (
                   <div key={i} className="text-center px-4 flex flex-col justify-center">
-                    <span className="text-xs font-black uppercase tracking-wider text-slate-400">
+                    <span className="text-xs font-black uppercase tracking-wider text-slate-500">
                       {item.label}
                     </span>
                     <h4 className="mt-2 text-2xl md:text-3xl font-black text-secondary leading-none">
                       {item.value}
                     </h4>
-                    <p className="text-xs md:text-sm text-slate-400 mt-1 leading-normal font-medium">
+                    <p className="text-xs md:text-sm text-slate-500 mt-1 leading-normal font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -1447,7 +1435,7 @@ export default function SolutionsPage() {
             </div>
 
             {/* Bottom White values row */}
-            <div className="bg-white text-slate-800 rounded-2xl p-6.5 shadow-md flex flex-wrap items-center justify-center gap-6 md:gap-12">
+            <div className="bg-slate-50 text-slate-800 border border-slate-200/80 rounded-2xl p-6.5 shadow-sm flex flex-wrap items-center justify-center gap-6 md:gap-12">
               {globalBottomValues.map((item, i) => {
                 const VIcon = item.icon;
                 return (
@@ -1562,7 +1550,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 11: CASE STUDIES (Proven Solutions. Real Results.) */}
         {/* ========================================================================= */}
-        <section className="bg-slate-100 py-16 lg:py-24" id="case-studies">
+        <section className="bg-white py-16 lg:py-24" id="case-studies">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-12">

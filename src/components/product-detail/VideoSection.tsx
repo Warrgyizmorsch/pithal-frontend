@@ -126,7 +126,7 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
             }}
           >
             {/* Video Player */}
-            <div className="relative aspect-video overflow-hidden rounded-lg bg-primary-dark">
+            <div className="relative aspect-video overflow-hidden rounded-xl bg-primary-dark">
               <Image
                 alt={data.thumbnail.alt}
                 className="object-cover opacity-90"
@@ -226,7 +226,7 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
             <div className="mt-4 flex items-center justify-between gap-4 max-sm:flex-col max-sm:items-stretch">
               <div className="flex items-center gap-3 flex-1 min-w-0">
                 <div 
-                  className="flex shrink-0 items-center justify-center rounded-lg bg-[#fa5902]/[0.05]"
+                  className="flex shrink-0 items-center justify-center rounded-xl bg-[#fa5902]/[0.05]"
                   style={{
                     width: 44,
                     height: 44,

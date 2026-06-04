@@ -141,7 +141,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
                   </span>
                   <article
                     className={cn(
-                      "absolute z-20 hidden w-[160px] rounded border border-border bg-white/95 p-3 shadow-[0_12px_28px_rgba(3,27,64,0.1)] lg:block",
+                      "absolute z-20 hidden w-[160px] rounded-xl border border-border bg-white/95 p-3 shadow-[0_12px_28px_rgba(3,27,64,0.1)] lg:block",
                       calloutCardPositions[callout.position],
                     )}
                   >
@@ -156,7 +156,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:hidden">
               {data.callouts.map((callout) => (
                 <article
-                  className="rounded-xl border border-border bg-white p-4 shadow-sm"
+                  className="rounded-2xl border border-border bg-white p-4 shadow-sm"
                   key={callout.label}
                 >
                   <div className="flex items-center gap-2 mb-2">

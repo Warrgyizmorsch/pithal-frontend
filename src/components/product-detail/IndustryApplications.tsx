@@ -20,7 +20,7 @@ export function IndustryApplications({
         <SectionHeader eyebrow={section.eyebrow} highlight={section.highlight} subtitle={section.subtitle} title={section.title} />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {industries.map((industry) => (
-            <article className="group relative min-h-[360px] overflow-hidden rounded-[2rem] bg-slate-950 text-white shadow-sm" key={industry.title}>
+            <article className="group relative min-h-[360px] overflow-hidden rounded-2xl bg-slate-950 text-white shadow-sm" key={industry.title}>
               <Image
                 alt={industry.image.alt}
                 className="absolute inset-0 h-full w-full object-cover"
@@ -28,10 +28,10 @@ export function IndustryApplications({
                 sizes="(max-width: 1023px) 100vw, 20vw"
                 src={industry.image.src}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/80 to-slate-950/25" />
-              <div className="absolute inset-x-0 top-0 h-1 bg-secondary" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/30 to-transparent" />
+              <div className="absolute inset-y-0 left-0 w-1 bg-secondary scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <div className="relative z-10 flex h-full flex-col justify-end p-5 sm:p-6">
-                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-secondary/10 text-secondary">
+                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
                   <ProductIcon name={industry.icon} size={20} />
                 </span>
                 <h3 className="text-lg font-bold uppercase tracking-[0.18em] text-white">{industry.title}</h3>
@@ -45,7 +45,7 @@ export function IndustryApplications({
           ))}
         </div>
 
-        <div className="mt-10 rounded-[2rem] border border-border/70 bg-white px-6 py-6 shadow-sm sm:px-8 lg:px-10">
+        <div className="mt-10 rounded-2xl border border-border/70 bg-white px-6 py-6 shadow-sm sm:px-8 lg:px-10">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <span className="flex h-12 w-12 min-w-[3rem] items-center justify-center rounded-full bg-secondary/10 text-secondary">
