@@ -120,7 +120,6 @@ function HeroSection() {
   const { hero, stats } = aboutPageData;
 
   return (
-<<<<<<< Updated upstream
     <section className="relative overflow-hidden bg-white pb-8 lg:pb-10">
       <Image
         alt="Pithal Machines industrial factory floor and quarry application background"
@@ -148,38 +147,7 @@ function HeroSection() {
       />
 
       <div className="relative min-h-[500px] overflow-hidden sm:min-h-[535px] lg:min-h-[590px]">
-=======
-    <section className="relative overflow-hidden bg-white pb-8 lg:pb-2">
-      <div className="relative overflow-hidden sm:min-h-[535px] lg:min-h-[590px]">
-        
-
-        <Container className="relative z-10 flex min-h-[680px] flex-col justify-start pb-2 pt-6 sm:min-h-[535px] lg:min-h-[590px] lg:pb-28 lg:pt-8">
-         
-         <Image
-          alt="Pithal Machines industrial factory floor and quarry application background"
-          className="object-cover object-center"
-          fill
-          priority
-          sizes="100vw"
-          src="/images/about/about-hero-industrial-generated.png"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_22%,rgba(255,255,255,.88)_38%,rgba(255,255,255,.36)_58%,rgba(255,255,255,0)_78%)]"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-y-0 left-0 w-[58%] industrial-grid opacity-60"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/85 to-transparent"
-        />
-        <div
-          aria-hidden
-          className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-dark/70 via-primary-dark/20 to-transparent"
-        />
->>>>>>> Stashed changes
+        <Container className="relative z-10 flex min-h-[500px] flex-col justify-start pb-28 pt-8 sm:min-h-[535px] lg:min-h-[590px]">
 
           <nav
             aria-label="Breadcrumb"
