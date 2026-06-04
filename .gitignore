@@ -1,7 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # .gitignore
+# keep ignoring product images generally, but allow jaw-crusher images needed for the site
 public/images/products/
+!public/images/products/jaw-crusher/
+!public/images/products/jaw-crusher/*
 # Or if you just want to ignore large raw assets
 *.zip
 *.pdf
