@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Roboto_Condensed } from "next/font/google";
+import { Oswald, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 
-const headingFont = Bebas_Neue({
+const headingFont = Oswald({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600", "700"],
   variable: "--font-display",
 });
 

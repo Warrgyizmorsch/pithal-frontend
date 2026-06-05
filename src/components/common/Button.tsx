@@ -2,13 +2,14 @@ import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "outlineNavy" | "outlineOrange" | "ghost";
+type Variant = "primary" | "outlineNavy" | "outlineOrange" | "ghost" | "outlineNavySwap";
 
 const variants: Record<Variant, string> = {
   primary: "primary-btn",
   outlineNavy: "secondary-btn",
   outlineOrange: "secondary-btn",
   ghost: "border-transparent text-primary hover:bg-primary/5",
+  outlineNavySwap: "download-btn",
 };
 
 type Props = {
@@ -27,7 +28,7 @@ export function Button({
   ...props
 }: Props) {
   const buttonVariant = variants[variant];
-  const isAnimatedButton = ["primary", "outlineNavy", "outlineOrange"].includes(variant);
+  const isAnimatedButton = ["primary", "outlineNavy", "outlineOrange", "outlineNavySwap"].includes(variant);
   
   const styles = cn(
     "inline-flex min-h-12 items-center justify-center gap-2 border px-6 text-[11px] font-bold uppercase tracking-[0.16em] rounded",

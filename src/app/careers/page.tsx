@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronRight, Users, Settings, BookOpen, ShieldCheck } from "lucide-react";
+import { ChevronRight, Users, Settings, BookOpen, ShieldCheck, Home, Trophy, Lightbulb, Globe, Briefcase, Award, Megaphone, TrendingUp, FileText, Cpu, Wrench, ArrowRight, Search, MapPin, RotateCcw, Wallet, UserCheck, Upload, Mail } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -20,85 +20,55 @@ const stats = [
 const heroStats = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7">
-        <path
-          d="M5 20h14M8 20V12m8 8V12"
-          stroke="var(--secondary)"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
-        <path
-          d="M4 9.5h4M16 9.5h4M7 4.5h10"
-          stroke="var(--secondary)"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.0" className="h-14 w-14 text-[#fa5902] stroke-[1.0]" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
     value: "300+",
-    title: "Employees",
+    title: "EMPLOYEES",
     desc: "Driven by skill. United by purpose.",
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7">
-        <circle cx="12" cy="12" r="9" stroke="var(--secondary)" strokeWidth="1.8" />
-        <path
-          d="M12 7.5v4.5l3 1.5"
-          stroke="var(--secondary)"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.0" className="h-14 w-14 text-[#fa5902] stroke-[1.0]" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
     value: "24/7",
-    title: "Manufacturing",
+    title: "MANUFACTURING",
     desc: "Round-the-clock operations built on precision.",
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7">
-        <rect
-          x="4"
-          y="7"
-          width="16"
-          height="10"
-          rx="2"
-          stroke="var(--secondary)"
-          strokeWidth="1.8"
-        />
-        <path
-          d="M8 11h3M8 15h3"
-          stroke="var(--secondary)"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
-        <path
-          d="M15 11h2M15 15h2"
-          stroke="var(--secondary)"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.0" className="h-14 w-14 text-[#fa5902] stroke-[1.0]" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+        <line x1="9" y1="22" x2="9" y2="16" />
+        <line x1="15" y1="22" x2="15" y2="16" />
+        <line x1="9" y1="16" x2="15" y2="16" />
+        <path d="M8 6h2v2H8V6zm6 0h2v2h-2V6zm-6 4h2v2H8v-2zm6 0h2v2h-2v-2z" />
       </svg>
     ),
-    value: "Multiple",
-    title: "Departments",
+    value: "MULTIPLE",
+    title: "DEPARTMENTS",
     desc: "Engineering, Production, Sales, Service & more.",
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7">
-        <path
-          d="M5 16l4-4 3 3 7-7"
-          stroke="var(--secondary)"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.0" className="h-14 w-14 text-[#fa5902] stroke-[1.0]" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18" />
+        <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+        <path d="M17 8h3v3" />
+        <rect x="7" y="16" width="2" height="4" />
+        <rect x="12" y="12" width="2" height="8" />
+        <rect x="17" y="9" width="2" height="11" />
       </svg>
     ),
-    value: "Growth",
-    title: "Opportunities",
+    value: "GROWTH",
+    title: "OPPORTUNITIES",
     desc: "Build your career with continuous learning.",
   },
 ];
@@ -106,7 +76,7 @@ const heroStats = [
 const advantages = [
   {
     icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
+      <svg viewBox="0 0 40 40" fill="none" className="w-9 h-9">
         <path
           d="M10 22L16 16L24 24L30 18"
           stroke="var(--secondary)"
@@ -127,14 +97,9 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-        <circle cx="20" cy="20" r="14" stroke="var(--secondary)" strokeWidth="2" />
-        <path
-          d="M12 20h16M20 12v16"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+      <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 11l2 2 4-4" />
       </svg>
     ),
     title: "Stable & Trusted Organization",
@@ -142,22 +107,9 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-        <rect
-          x="10"
-          y="10"
-          width="20"
-          height="20"
-          rx="3"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-        />
-        <path
-          d="M14 18h12M14 24h12"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+      <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
       </svg>
     ),
     title: "Industrial Exposure",
@@ -165,20 +117,8 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-        <path
-          d="M12 30V18L20 10L28 18V30"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M16 22H24"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+      <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 10l-4 3V4l-8 6v10h20v-7l-8-3z" />
       </svg>
     ),
     title: "Advanced Manufacturing",
@@ -186,33 +126,8 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-        <path
-          d="M20 10L20 18"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M12 26H28"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M14 14L18 18L14 22"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M26 14L22 18L26 22"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+      <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
       </svg>
     ),
     title: "Learning Opportunities",
@@ -220,19 +135,11 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-        <circle cx="20" cy="14" r="5" stroke="var(--secondary)" strokeWidth="2" />
-        <path
-          d="M10 30C10 24 14 20 20 20C26 20 30 24 30 30"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-        />
-        <path
-          d="M16 30H24"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+      <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
     title: "Professional Culture",
@@ -287,17 +194,17 @@ type Opening = {
 const openings: Opening[] = [
   {
     title: "Vice President – Marketing",
-    exp: "8–12 Yrs",
+    exp: "18 - 24 Years",
     location: "Rajasthan",
     type: "Full Time",
     department: "Management",
-    salary: "₹18 – 24 LPA",
+    salary: "₹18 - 24 LPA",
     openings: "01",
     hot: true,
   },
   {
-    title: "CNC Operator",
-    exp: "2–5 Yrs",
+    title: "VMC Operator",
+    exp: "10+ Years",
     location: "Rajasthan",
     type: "Full Time",
     department: "Production & Technical",
@@ -307,7 +214,7 @@ const openings: Opening[] = [
   },
   {
     title: "Technical Coordinator",
-    exp: "3–6 Yrs",
+    exp: "7+ Years",
     location: "Rajasthan",
     type: "Full Time",
     department: "Office & Coordination",
@@ -316,18 +223,18 @@ const openings: Opening[] = [
     hot: false,
   },
   {
-    title: "Sr. Accountant",
-    exp: "4–8 Yrs",
+    title: "Welder",
+    exp: "5+ Years",
     location: "Rajasthan",
     type: "Full Time",
-    department: "Office & Coordination",
+    department: "Production & Technical",
     salary: "₹30,000+",
-    openings: "02",
+    openings: "40",
     hot: false,
   },
   {
     title: "Marketing Manager",
-    exp: "5–9 Yrs",
+    exp: "8+ Years",
     location: "Rajasthan",
     type: "Full Time",
     department: "Office & Coordination",
@@ -491,101 +398,106 @@ export default function CareersPage() {
     "management" | "office" | "production"
   >("management");
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterDept, setFilterDept] = useState("All Departments");
+  const [filterDept, setFilterDept] = useState("");
 
   return (
     <>
       <Header />
       <main className="careers-page bg-white text-gray-900 font-sans overflow-x-hidden">
         
-        {/* ── SECTION 1: HERO ── */}
-        <section className="relative overflow-hidden bg-white pt-4 pb-12 text-primary lg:pt-6 lg:pb-16">
-          <Image
-                  alt="Pithal Machines manufacturing and team"
-                  className="object-cover object-center"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 58vw, 100vw"
-                  src="/careerimg/20.jpg"
-                />
-          <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
-          <div className="pointer-events-none absolute right-0 top-0 h-[58%] w-[55%] rounded-bl-[55%] border-l border-secondary/25 border-b border-secondary/25" />
+        <section className="relative overflow-hidden bg-white text-primary lg:h-[calc(100vh-90px)] lg:min-h-[600px] flex flex-col justify-between pt-4 pb-4 lg:pt-6 lg:pb-6">
+          
+          {/* Full Background Image covering the entire section */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              alt="Pithal Machines manufacturing and team"
+              className="object-cover object-center lg:object-right"
+              fill
+              priority
+              src="/careerimg/20.jpg"
+            />
+            {/* Responsive white gradient overlay: vertical fade on mobile, strong horizontal fade on desktop */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-white/70 lg:bg-gradient-to-r lg:from-white lg:via-white lg:via-[28%] lg:to-transparent z-10 pointer-events-none" />
+          </div>
 
-          <div className="relative z-10 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
-            <div className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-text-muted">
-              <Link href="/" className="hover:text-primary transition-colors">
+          <div className="relative z-20 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex-grow flex flex-col justify-center">
+            {/* Breadcrumbs */}
+            <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-slate-500">
+              <Link href="/" className="hover:text-[#fa5902] transition-colors flex items-center gap-1.5">
+                <Home size={14} className="stroke-[2]" />
                 Home
               </Link>
-              <ChevronRight className="w-3.5 h-3.5" />
-              <span className="text-secondary">Careers</span>
+              <ChevronRight className="w-3.5 h-3.5 text-slate-400 stroke-[2.5]" />
+              <span className="text-slate-500">Careers</span>
             </div>
 
-            <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-              <div>
-                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/5 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-secondary">
-                  CAREERS
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+              <div className="py-2">
+                {/* Careers Tag with line */}
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#fa5902]">
+                    CAREERS
+                  </span>
+                  <span className="h-[1.5px] w-12 bg-[#fa5902]" />
                 </div>
 
-                <h1 className="headline text-[clamp(2.15rem,5vw,3.3rem)] text-white leading-[0.92] mb-4">
-                  BUILD MACHINES. <br />
-                  FOR A <span className="text-secondary">STRONGER FUTURE.</span>
+                <h1 className="font-extrabold text-[2.5rem] sm:text-[3.25rem] lg:text-[3.5rem] leading-[1.05] tracking-tight text-[#092a5c] uppercase">
+                  BUILD MACHINES.<br />
+                  <span className="text-[#fa5902]">BUILD YOUR FUTURE.</span>
                 </h1>
 
-                <span
-                  aria-hidden
-                  className="mt-6 block h-[2px] w-14 bg-secondary"
-                />
-
-                <p className="mt-6 max-w-lg text-sm leading-relaxed text-white/90 mb-6">
-                  Join Pithal Machines and be part of a team that engineers
+                <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg">
+                  Join Pithal Machines and be a part of a team that engineers
                   high-performance solutions and powers industries across the
                   globe.
                 </p>
 
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Button
+                <div className="mt-6 flex flex-wrap gap-4">
+                  <Link
                     href="#openings"
-                    variant="primary"
-                    className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5"
+                    className="inline-flex items-center justify-center gap-3.5 bg-[#fa5902] text-white px-7 py-4 rounded-lg text-xs font-black tracking-[0.14em] hover:bg-[#e04f02] transition-colors"
                   >
                     EXPLORE OPPORTUNITIES
-                    <ChevronRight
-                      size={14}
-                      className="transition-transform duration-300 group-hover:translate-x-1.5"
-                    />
-                  </Button>
-                  <Button
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
+                      <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </Link>
+                  <Link
                     href="#about"
-                    variant="outlineNavy"
-                    className="flex items-center justify-center gap-2 text-xs font-black tracking-[0.14em] px-8 py-5.5"
+                    className="inline-flex items-center justify-center gap-3.5 border border-[#092a5c] text-[#092a5c] px-7 py-4 rounded-lg text-xs font-black tracking-[0.14em] hover:bg-slate-50 transition-colors"
                   >
                     LIFE AT PITHAL
-                  </Button>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
+                      <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
 
-              
+              {/* Spacer on desktop to allow background image to be visible on the right without forcing extra height */}
+              <div className="hidden lg:block h-[100px] pointer-events-none" />
             </div>
           </div>
 
-          <div className="relative z-10 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 pb-0 pt-4">
-            <div className="grid gap-4 rounded-xl border border-white/10 bg-white/50 p-3 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] sm:grid-cols-2 xl:grid-cols-4 sm:p-4">
+          {/* Stats Card Banner */}
+          <div className="relative z-20 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 pb-0 pt-4 mt-auto">
+            <div className="grid gap-0 rounded-2xl bg-[#031b40] p-6 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] md:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-slate-700/50">
               {heroStats.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-3 rounded-lg bg-primary-dark/90 p-4"
+                  className="flex items-start gap-4 p-4 lg:px-6 first:pl-0 last:pr-0"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center">
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-2xl font-black tracking-[-0.03em] text-white sm:text-3xl">
+                    <div className="text-3xl sm:text-[2.2rem] font-extrabold tracking-tight text-white leading-none">
                       {item.value}
                     </div>
-                    <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-secondary">
+                    <p className="mt-1.5 text-xs sm:text-[13px] font-extrabold uppercase tracking-wider text-[#fa5902]">
                       {item.title}
                     </p>
-                    <p className="mt-1.5 text-xs leading-relaxed text-slate-300">
+                    <p className="mt-2 text-[13px] sm:text-sm leading-relaxed text-slate-300 font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -596,91 +508,68 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 2: ADVANTAGES ── */}
-        <section className="py-16 bg-white">
+        <section className="py-10 bg-white">
           <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             <div className="text-center mb-14">
-              <p className="text-secondary text-xs font-bold uppercase tracking-[0.35em] mb-3">
+              <p className="text-secondary text-sm sm:text-base font-bold uppercase tracking-[0.35em] mb-3">
                 WHY JOIN PITHAL MACHINES
               </p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight font-sans">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight font-sans">
                 Advantages That Shape Your Future
               </h2>
-              <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-7 text-slate-500">
+              <p className="mx-auto mt-5 max-w-2xl text-base sm:text-lg leading-7 text-slate-500">
                 At Pithal Machines, we empower you with opportunities,
                 resources, and a culture that helps you grow, innovate and
                 achieve more every day.
               </p>
-              <div className="mx-auto mt-6 h-1 w-24 bg-secondary rounded-full" />
+              <div className="mx-auto mt-6 h-1.5 w-28 bg-secondary rounded-full" />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
               {advantages.map((a, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border border-slate-200 bg-white p-8 shadow-[0_24px_70px_rgba(15,23,42,0.14)] transition hover:-translate-y-1"
+                  className="rounded-lg border border-slate-200 bg-white p-8 shadow-[0_24px_70px_rgba(15,23,42,0.14)] transition hover:-translate-y-1 flex flex-col items-center text-center"
                 >
-                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
+                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                     {a.icon}
                   </div>
-                  <h3 className="text-base font-bold text-slate-950 mb-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-950 mb-3">
                     {a.title}
                   </h3>
-                  <p className="text-sm leading-6 text-slate-500">{a.desc}</p>
+                  <p className="text-[15px] sm:text-base leading-relaxed text-slate-500">{a.desc}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-14 rounded-xl bg-primary-dark border border-slate-800 px-6 py-8 shadow-[0_28px_80px_rgba(15,23,42,0.24)]">
-              <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr] items-center">
+            <div className="mt-14 rounded-xl bg-[#ebf1fd] px-6 py-8 shadow-[0_16px_50px_rgba(3,27,64,0.06)] border border-slate-200/50">
+              <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr] items-center">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-secondary text-white">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="h-6 w-6"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M5 21h14"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M7 21V10.5C7 9.675 7.675 9 8.5 9h7c.825 0 1.5.675 1.5 1.5V21"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M9.5 9V6.5a3.5 3.5 0 0 1 7 0V9"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#092a5c] text-white animate-pulse">
+                    {/* Prize / Trophy Icon */}
+                    <Trophy className="h-9 w-9 stroke-[1.8]" />
                   </div>
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.35em] font-bold text-secondary mb-2">
+                  <div className="border-l-4 border-solid border-secondary pl-4">
+                    <p className="text-sm sm:text-base uppercase tracking-[0.35em] font-extrabold text-[#092a5c] mb-1">
                       We don&apos;t just build machines.
                     </p>
-                    <p className="text-lg sm:text-xl font-semibold text-white leading-tight">
+                    <p className="text-lg sm:text-xl lg:text-2xl font-black text-secondary leading-tight">
                       We build people, capabilities and a better tomorrow
                       together.
                     </p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 border-t border-slate-800 pt-5 sm:border-t-0 sm:border-l sm:pl-6 sm:pt-0">
+                <div className="grid grid-cols-2 gap-y-6 gap-x-2 sm:grid-cols-4 pt-5 lg:pt-0 border-t border-slate-200/60 lg:border-t-0 lg:border-l lg:border-slate-300 lg:pl-6 lg:divide-x lg:divide-slate-300">
                   {[
-                    { icon: "👥", label: "Employee Focused" },
-                    { icon: "🏆", label: "Excellence Driven" },
-                    { icon: "💡", label: "Innovation Led" },
-                    { icon: "🌍", label: "Global Opportunities" },
+                    { icon: <Users size={30} className="stroke-[1.8]" />, label: "Employee Focused" },
+                    { icon: <Trophy size={30} className="stroke-[1.8]" />, label: "Excellence Driven" },
+                    { icon: <Lightbulb size={30} className="stroke-[1.8]" />, label: "Innovation Led" },
+                    { icon: <Globe size={30} className="stroke-[1.8]" />, label: "Global Opportunities" },
                   ].map((item, idx) => (
-                    <div key={idx} className="text-left sm:text-center">
-                      <div className="text-xl">{item.icon}</div>
-                      <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-300">
+                    <div key={idx} className="flex flex-col items-center justify-center text-center px-1 sm:px-2 first:pl-0">
+                      <div className="text-secondary mb-2 shrink-0">{item.icon}</div>
+                      <p className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-[#092a5c] leading-tight text-center">
                         {item.label}
                       </p>
                     </div>
@@ -692,23 +581,23 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 3: A PLACE TO GROW ── */}
-        <section id="about" className="py-16 bg-gray-50/50">
+        <section id="about" className="py-10 bg-gray-50/50">
           <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
-            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center mb-8">
+            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center mb-2">
               {/* Left text */}
               <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="h-[1.5px] w-6 bg-secondary" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="h-[3px] w-8 bg-secondary rounded-full" />
+                  <span className="text-sm sm:text-base font-black uppercase tracking-[0.24em] text-secondary">
                     LIFE AT PITHAL
                   </span>
                 </div>
-                <h2 className="text-3xl sm:text-[2.6rem] font-black text-primary leading-[1.08] tracking-tight uppercase mb-6">
-                  A Place to Grow.
+                <h2 className="text-4xl sm:text-[3.25rem] font-black text-primary leading-[1.08] tracking-tight uppercase mb-6">
+                  A PLACE TO GROW.
                   <br />
-                  <span className="text-secondary">A Team to Inspire.</span>
+                  A TEAM <span className="text-secondary">TO INSPIRE.</span>
                 </h2>
-                <p className="text-gray-500 leading-relaxed mb-8 text-xs sm:text-[13px] font-medium max-w-xl">
+                <p className="text-gray-500 leading-relaxed mb-8 text-sm sm:text-base font-medium max-w-xl">
                   At Pithal Machines, we foster a culture of collaboration,
                   innovation and continuous improvement. Here, every
                   individual plays a part in building world-class solutions
@@ -716,7 +605,7 @@ export default function CareersPage() {
                 </p>
 
                 {/* Stat pills (Redesigned as Feature Cards from image) */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-2 md:gap-x-0 md:divide-x md:divide-slate-200 mt-8">
                   {[
                     {
                       icon: Users,
@@ -743,15 +632,15 @@ export default function CareersPage() {
                     return (
                       <div
                         key={i}
-                        className="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm flex flex-col items-center justify-between min-h-[145px]"
+                        className="flex flex-col items-center text-center px-4 first:pl-0"
                       >
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-50 text-secondary border border-slate-100 mb-3">
-                          <Icon size={20} className="text-secondary stroke-[1.8]" />
+                        <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.05)] border border-slate-100 mb-4">
+                          <Icon size={40} className="text-secondary stroke-[1.8]" />
                         </div>
-                        <h4 className="text-[9px] font-black uppercase tracking-wider text-primary leading-tight">
+                        <h4 className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-primary leading-tight max-w-[150px]">
                           {card.title}
                         </h4>
-                        <p className="text-[9px] text-slate-400 font-medium mt-1.5 leading-normal">
+                        <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-2 leading-relaxed max-w-[160px]">
                           {card.desc}
                         </p>
                       </div>
@@ -793,8 +682,8 @@ export default function CareersPage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
-                    <div className="bg-[#031b40] py-3 text-center border-t border-[#031b40]">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-white">
+                    <div className="bg-[#031b40] py-2 text-center border-t border-[#031b40]">
+                      <span className="text-[11px] sm:text-xs font-black uppercase tracking-widest text-white">
                         {img.alt}
                       </span>
                     </div>
@@ -804,7 +693,7 @@ export default function CareersPage() {
             </div>
 
             {/* bottom Gallery Grid Row (4 Columns) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 border-t border-slate-200">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
               {[
                 {
                   src: "/careerimg/skilled%20workforce.jpg",
@@ -836,8 +725,8 @@ export default function CareersPage() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="bg-[#031b40] py-3 text-center border-t border-[#031b40]">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-white">
+                  <div className="bg-[#031b40] py-2 text-center border-t border-[#031b40]">
+                    <span className="text-[11px] sm:text-xs font-black uppercase tracking-widest text-white">
                       {img.alt}
                     </span>
                   </div>
@@ -848,420 +737,141 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 4: EXPLORE ROLES ── */}
-        <section className="py-16 bg-white">
+        <section className="py-10 bg-white">
           <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             <div className="text-center mb-12">
-              <p className="text-secondary text-xs font-bold uppercase tracking-[0.35em] mb-2">
+              <p className="text-secondary text-sm sm:text-base font-bold uppercase tracking-[0.35em] mb-2">
                 DEPARTMENTS & OPPORTUNITIES
               </p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight font-sans">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight font-sans">
                 Explore Roles. Build Your Career.
               </h2>
-              <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-7 text-slate-500">
+              <p className="mx-auto mt-5 max-w-2xl text-base sm:text-lg leading-7 text-slate-500">
                 At Pithal Machines, we offer diverse career opportunities across
                 departments. Find the right path that fits your skills and
                 ambitions.
               </p>
             </div>
 
-            <div className="grid gap-6 lg:grid-cols-3">
-              {/* Management Card */}
-              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_22px_55px_rgba(15,23,42,0.12)] overflow-hidden flex flex-col h-full">
-                <div className="p-8 text-center flex-1 flex flex-col">
-                  <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="w-7 h-7"
-                      aria-hidden
-                    >
-                      <path
-                        d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0"
-                        stroke="var(--secondary)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900 uppercase mb-4">
-                    Management Roles
-                  </h3>
-                  <div className="overflow-hidden rounded-lg mb-6 h-40 relative">
-                    <Image
-                      src="/careerimg/management roles.jpg"
-                      alt="Management"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+            <div className="grid gap-8 lg:grid-cols-3">
+              {[
+                {
+                  title: "Management Roles",
+                  icon: Users,
+                  image: "/careerimg/management roles.jpg",
+                  roles: [
+                    { title: "Vice President – Marketing", icon: Megaphone },
+                    { title: "Vice President – Technical", icon: Settings },
+                    { title: "Vice President – Commercial", icon: TrendingUp },
+                  ],
+                  footer: {
+                    icon: Award,
+                    line1: "Lead teams. Drive strategy.",
+                    line2: "Create impact at the highest level."
+                  }
+                },
+                {
+                  title: "Office & Coordination Roles",
+                  icon: Briefcase,
+                  image: "/careerimg/office and coordination roles.jpg",
+                  roles: [
+                    { title: "Technical Coordinator", icon: Settings },
+                    { title: "Marketing Manager", icon: Megaphone },
+                    { title: "Commercial Coordinator", icon: TrendingUp },
+                    { title: "Marketing Executive", icon: FileText },
+                  ],
+                  footer: {
+                    icon: Award,
+                    line1: "Support operations. Drive coordination.",
+                    line2: "Be the force behind our success."
+                  }
+                },
+                {
+                  title: "Production & Technical Roles",
+                  icon: Cpu,
+                  image: "/careerimg/production & technical roles.jpg",
+                  roles: [
+                    { title: "VMC Operator", icon: Wrench },
+                    { title: "CNC Operator", icon: Cpu },
+                    { title: "Boring Machine Operator", icon: Settings },
+                  ],
+                  footer: {
+                    icon: Award,
+                    line1: "Build with precision. Operate with excellence.",
+                    line2: "Power the machines that power industries."
+                  }
+                }
+              ].map((dept, i) => {
+                const DeptIcon = dept.icon;
+                const FooterIcon = dept.footer.icon;
+                return (
+                  <div
+                    key={i}
+                    className="bg-white rounded-3xl border border-slate-100 shadow-[0_15px_50px_rgba(3,27,64,0.06)] flex flex-col justify-between overflow-hidden h-full pt-8"
+                  >
+                    {/* Top Section: Icon & Title */}
+                    <div className="text-center px-6 mb-6">
+                      <div className={`mx-auto mb-3 inline-flex h-16 w-16 items-center justify-center rounded-full ${i === 1 ? 'bg-[#f6e6d3]' : i === 2 ? 'bg-[#ecf5ef]' : 'bg-[#eef4ff]'} text-primary border border-blue-50/50`}>
+                        <DeptIcon size={28} className="text-[#092a5c] stroke-[1.8]" />
+                      </div>
+                      <h3 className="text-base font-black tracking-wider text-[#092a5c] uppercase">
+                        {dept.title}
+                      </h3>
+                      <div className="h-[3px] w-8 bg-secondary mx-auto mt-2.5 rounded-full" />
+                    </div>
 
-                  <div className="grid grid-cols-1 gap-0 divide-y mt-auto">
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-700">
-                          Vice President – Marketing
-                        </span>
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 text-secondary/70"
-                          fill="none"
-                        >
-                          <path
-                            d="M6 4l6 6-6 6"
-                            stroke="var(--secondary)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
+                    {/* Image */}
+                    <div className="px-6 mb-6">
+                      <div className="overflow-hidden rounded-2xl h-44 relative shadow-sm">
+                        <Image
+                          src={dept.image}
+                          alt={dept.title}
+                          fill
+                          className="object-cover transition-transform duration-500 hover:scale-105"
+                        />
                       </div>
                     </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-700">
-                          Vice President – Technical
-                        </span>
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 text-secondary/70"
-                          fill="none"
-                        >
-                          <path
-                            d="M6 4l6 6-6 6"
-                            stroke="var(--secondary)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-700">
-                          Vice President – Commercial
-                        </span>
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 text-secondary/70"
-                          fill="none"
-                        >
-                          <path
-                            d="M6 4l6 6-6 6"
-                            stroke="var(--secondary)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div className="bg-secondary/5 border-t border-slate-100 px-6 py-4 flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded bg-white shadow">
-                    <svg
-                      viewBox="0 0 20 20"
-                      className="w-6 h-6 text-primary"
-                      fill="none"
-                    >
-                      <path
-                        d="M10 3v8"
-                        stroke="var(--primary)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M6 16h8"
-                        stroke="var(--primary)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-500">
-                      Lead teams. Drive strategy.
-                    </p>
-                    <p className="text-sm font-semibold text-slate-900">
-                      Create impact at the highest level.
-                    </p>
-                  </div>
-                </div>
-              </div>
+                    {/* Roles List */}
+                    <div className="px-6 flex-1 flex flex-col justify-start">
+                      <div className="space-y-4 mb-6">
+                        {dept.roles.map((role, idx) => {
+                          const RoleIcon = role.icon;
+                          return (
+                            <div
+                              key={idx}
+                              className="flex items-center justify-between pb-4 border-b border-slate-100 last:border-0 last:pb-0"
+                            >
+                              <div className="flex items-center gap-4">
+                                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${i === 1 ? 'bg-[#f6e6d3]' : i === 2 ? 'bg-[#ecf5ef]' : 'bg-[#eef4ff]'} text-[#092a5c]`}>
+                                  <RoleIcon size={20} className="text-[#092a5c] stroke-[1.8]" />
+                                </div>
+                                <span className="text-[14px] sm:text-base font-bold text-[#092a5c] leading-tight">
+                                  {role.title}
+                                </span>
+                              </div>
+                              <ArrowRight size={18} className="text-secondary hover:translate-x-1 transition-transform cursor-pointer" />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
 
-              {/* Office Card */}
-              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_22px_55px_rgba(15,23,42,0.12)] overflow-hidden flex flex-col h-full">
-                <div className="p-8 text-center flex-1 flex flex-col">
-                  <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="w-7 h-7"
-                      aria-hidden
-                    >
-                      <path
-                        d="M4 7h16M4 12h16M4 17h16"
-                        stroke="var(--secondary)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900 uppercase mb-4">
-                    Office & Coordination Roles
-                  </h3>
-                  <div className="overflow-hidden rounded-lg mb-6 h-40 relative">
-                    <Image
-                      src="/careerimg/office and coordination roles.jpg"
-                      alt="Office"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 gap-0 divide-y mt-auto">
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-700">
-                          Technical Coordinator
-                        </span>
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 text-secondary/70"
-                          fill="none"
-                        >
-                          <path
-                            d="M6 4l6 6-6 6"
-                            stroke="var(--secondary)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-700">
-                          Marketing Manager
-                        </span>
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 text-secondary/70"
-                          fill="none"
-                        >
-                          <path
-                            d="M6 4l6 6-6 6"
-                            stroke="var(--secondary)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-700">
-                          Commercial Coordinator
-                        </span>
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 text-secondary/70"
-                          fill="none"
-                        >
-                          <path
-                            d="M6 4l6 6-6 6"
-                            stroke="var(--secondary)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-700">
-                          Marketing Executive
-                        </span>
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 text-secondary/70"
-                          fill="none"
-                        >
-                          <path
-                            d="M6 4l6 6-6 6"
-                            stroke="var(--secondary)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
+                    {/* Bottom Bar */}
+                    <div className={`${i === 1 ? 'bg-[#f6e6d3]' : i === 2 ? 'bg-[#ecf5ef]' : 'bg-[#f4f7fe]'} px-6 py-4 flex items-center gap-4 border-t border-slate-100 mt-auto`}>
+                      <FooterIcon size={38} className="text-[#092a5c] stroke-[1.8] shrink-0" />
+                      <div className="text-left">
+                        <p className="text-[13px] sm:text-sm text-slate-600 font-semibold">
+                          {dept.footer.line1}
+                        </p>
+                        <p className="text-base sm:text-lg font-black text-[#092a5c] leading-tight mt-1">
+                          {dept.footer.line2}
+                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="bg-secondary/5 px-6 py-4 flex items-center gap-4 border-t border-slate-100">
-                  <div className="flex h-10 w-10 items-center justify-center rounded bg-white shadow">
-                    <svg
-                      viewBox="0 0 20 20"
-                      className="w-6 h-6 text-secondary"
-                      fill="none"
-                    >
-                      <path
-                        d="M3 10h14"
-                        stroke="var(--secondary)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M7 6h6v8"
-                        stroke="var(--secondary)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-600">
-                      Support operations. Drive coordination.
-                    </p>
-                    <p className="text-sm font-semibold text-slate-900">
-                      Be the force behind our success.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Production Card */}
-              <div className="rounded-lg bg-white border border-slate-200 shadow-[0_22px_55px_rgba(15,23,42,0.12)] overflow-hidden flex flex-col h-full">
-                <div className="p-8 text-center flex-1 flex flex-col">
-                  <div className="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="w-7 h-7"
-                      aria-hidden
-                    >
-                      <path
-                        d="M3 13h18M6 6h12M6 20h12"
-                        stroke="var(--secondary)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900 uppercase mb-4">
-                    Production & Technical Roles
-                  </h3>
-                  <div className="overflow-hidden rounded-lg mb-6 h-40 relative">
-                    <Image
-                      src="/careerimg/production & technical roles.jpg"
-                      alt="Production"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 gap-0 divide-y mt-auto">
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-700">
-                          VMC Operator
-                        </span>
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 text-secondary/70"
-                          fill="none"
-                        >
-                          <path
-                            d="M6 4l6 6-6 6"
-                            stroke="var(--secondary)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-700">
-                          CNC Operator
-                        </span>
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 text-secondary/70"
-                          fill="none"
-                        >
-                          <path
-                            d="M6 4l6 6-6 6"
-                            stroke="var(--secondary)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-slate-700">
-                          Boring Machine Operator
-                        </span>
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 text-secondary/70"
-                          fill="none"
-                        >
-                          <path
-                            d="M6 4l6 6-6 6"
-                            stroke="var(--secondary)"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-secondary/5 px-6 py-4 flex items-center gap-4 border-t border-slate-100">
-                  <div className="flex h-10 w-10 items-center justify-center rounded bg-white shadow">
-                    <svg
-                      viewBox="0 0 20 20"
-                      className="w-6 h-6 text-secondary"
-                      fill="none"
-                    >
-                      <path
-                        d="M4 12h12"
-                        stroke="var(--secondary)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M6 6h8v8"
-                        stroke="var(--secondary)"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-600">
-                      Build with precision. Operate with excellence.
-                    </p>
-                    <p className="text-sm font-semibold text-slate-900">
-                      Power the machines that power industries.
-                    </p>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
 
             <div className="mt-8 rounded-lg bg-white border border-slate-100 shadow-[0_22px_55px_rgba(15,23,42,0.12)] px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -1311,82 +921,78 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 5: CURRENT OPENINGS ── */}
-        <section id="openings" className="py-16 bg-gray-50">
+        <section id="openings" className="py-10 bg-[#f8fafc]">
           <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             <div className="text-center mb-12">
-              <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-2">
-                WE ARE HIRING
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary font-sans">
-                Current Openings
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
+                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
+                  OPEN POSITIONS
+                </span>
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
+              </div>
+              <h2 className="text-4xl sm:text-[3.25rem] font-black text-[#092a5c] tracking-wider uppercase">
+                CURRENT OPENINGS
               </h2>
-              <div className="w-16 h-1 bg-secondary mx-auto mt-4" />
+              <p className="mx-auto mt-4 max-w-3xl text-slate-500 text-sm sm:text-base font-medium">
+                Explore exciting career opportunities at Pithal Machines. Filter by department,
+                <br className="hidden sm:block" />
+                experience or location to find the right role for you.
+              </p>
             </div>
 
             {/* Filters */}
-            <div className="bg-white rounded-lg p-4 shadow-lg mb-8">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                <div className="flex-1">
-                  <label className="sr-only">Search</label>
-                  <div className="relative">
-                    <span className="absolute inset-y-0 left-3 flex items-center text-gray-400">
-                      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-                        <path
-                          d="M21 21l-4.35-4.35"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <circle
-                          cx="11"
-                          cy="11"
-                          r="6"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                        />
-                      </svg>
-                    </span>
-                    <input
-                      type="text"
-                      placeholder="Search job title or keyword"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 rounded-md border border-gray-200 text-sm focus:outline-none"
-                    />
-                  </div>
+            <div className="bg-white rounded-2xl p-4 shadow-[0_10px_35px_rgba(3,27,64,0.03)] border border-slate-100 mb-8">
+              <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-4">
+                {/* Search */}
+                <div className="flex-1 relative">
+                  <span className="absolute inset-y-0 left-4 flex items-center text-slate-400">
+                    <Search size={18} />
+                  </span>
+                  <input
+                    type="text"
+                    placeholder="Search job title or keyword"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 bg-[#f8fafc] focus:outline-none focus:border-slate-300 transition-colors"
+                  />
                 </div>
 
-                <div className="flex items-center gap-3">
+                {/* Dropdowns & Clear button */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                   <select
                     value={filterDept}
                     onChange={(e) => setFilterDept(e.target.value)}
-                    className="border border-gray-200 rounded px-4 py-3 text-sm bg-white"
+                    className="border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold text-slate-600 bg-white focus:outline-none cursor-pointer min-w-[160px]"
                   >
-                    <option>All Departments</option>
-                    <option>Management</option>
-                    <option>Office & Coordination</option>
-                    <option>Production & Technical</option>
+                    <option value="">All Departments</option>
+                    <option value="Management">Management</option>
+                    <option value="Office & Coordination">Office & Coordination</option>
+                    <option value="Production & Technical">Production & Technical</option>
                   </select>
-                  <select className="border border-gray-200 rounded px-4 py-3 text-sm bg-white">
+
+                  <select className="border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold text-slate-600 bg-white focus:outline-none cursor-pointer min-w-[140px]">
                     <option>All Experience</option>
                     <option>0–2 Yrs</option>
                     <option>3–5 Yrs</option>
                     <option>5+ Yrs</option>
                   </select>
-                  <select className="border border-gray-200 rounded px-4 py-3 text-sm bg-white">
+
+                  <select className="border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold text-slate-600 bg-white focus:outline-none cursor-pointer min-w-[140px]">
                     <option>All Locations</option>
                     <option>Rajasthan</option>
                     <option>Gujarat</option>
                   </select>
+
                   <button
                     onClick={() => {
                       setSearchTerm("");
                       setFilterDept("");
                     }}
-                    className="ml-2 text-sm text-sky-600"
+                    className="flex items-center justify-center gap-2 text-sm font-bold text-slate-600 hover:text-secondary transition-colors px-2 py-3"
                   >
                     Clear Filters
+                    <RotateCcw size={16} className="stroke-[2.2] text-[#092a5c]" />
                   </button>
                 </div>
               </div>
@@ -1395,219 +1001,178 @@ export default function CareersPage() {
             {/* Openings list */}
             <div className="space-y-4">
               {openings
-                .filter((o) =>
-                  o.title.toLowerCase().includes(searchTerm.toLowerCase()),
-                )
-                .map((job, i) => (
-                  <div
-                    key={i}
-                    className="bg-white border border-gray-100 rounded-xl p-5 shadow-[0_16px_45px_rgba(15,23,42,0.10)] hover:shadow-xl transition-shadow flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
-                  >
-                    {/* Role & Department */}
-                    <div className="flex items-center gap-4 md:w-1/3">
-                      <div
-                        className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 ${job.hot ? "bg-secondary/10 text-secondary" : "bg-primary/5 text-primary"}`}
-                      >
-                        {/* Role Icon */}
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          className="w-7 h-7"
-                        >
-                          <path
-                            d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 20a8 8 0 0116 0"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                          />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="text-[17px] font-bold text-primary">
-                          {job.title}
-                        </h4>
-                        <div className="flex items-center gap-1.5 mt-1">
-                          <svg
-                            className="w-4 h-4 text-gray-400"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={1.5}
-                              d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                            />
-                          </svg>
-                          <span
-                            className={`text-[13px] font-medium ${job.hot ? "text-secondary" : "text-primary"}`}
-                          >
-                            {job.department || "Production & Technical"}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+                .filter((o) => {
+                  const matchSearch = o.title.toLowerCase().includes(searchTerm.toLowerCase());
+                  const matchDept = filterDept ? o.department === filterDept : true;
+                  return matchSearch && matchDept;
+                })
+                .map((job, i) => {
+                  // Determine specific styles and icons based on job titles to match mockup exactly
+                  let badgeBg = "bg-blue-50/70 text-[#092a5c]";
+                  let badgeText = "text-blue-600";
+                  let deptIcon = <Users size={28} className="stroke-[1.8]" />;
+                  let btnBg = "bg-[#092a5c] hover:bg-[#031b40]";
 
-                    {/* Experience */}
-                    <div className="flex items-center gap-3 md:w-1/6">
-                      <div className="text-gray-600 border border-gray-200 rounded-full p-2">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                          />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-[13px] text-gray-500 mb-0.5">
-                          Experience
-                        </div>
-                        <div className="text-[14px] font-semibold text-primary">
-                          {job.exp || "10+ Years"}
-                        </div>
-                      </div>
-                    </div>
+                  if (job.title === "VMC Operator") {
+                    badgeBg = "bg-orange-50/70 text-secondary";
+                    badgeText = "text-secondary";
+                    deptIcon = <Settings size={28} className="stroke-[1.8]" />;
+                    btnBg = "bg-secondary hover:bg-[#d94801]";
+                  } else if (job.title === "Technical Coordinator") {
+                    badgeBg = "bg-emerald-50/70 text-emerald-600";
+                    badgeText = "text-emerald-600";
+                    deptIcon = <UserCheck size={28} className="stroke-[1.8]" />;
+                    btnBg = "bg-[#092a5c] hover:bg-[#031b40]";
+                  } else if (job.title === "Welder") {
+                    badgeBg = "bg-orange-50/70 text-secondary";
+                    badgeText = "text-secondary";
+                    deptIcon = <Wrench size={28} className="stroke-[1.8]" />;
+                    btnBg = "bg-secondary hover:bg-[#d94801]";
+                  } else if (job.title === "Marketing Manager") {
+                    badgeBg = "bg-blue-50/70 text-[#092a5c]";
+                    badgeText = "text-blue-600";
+                    deptIcon = <TrendingUp size={28} className="stroke-[1.8]" />;
+                    btnBg = "bg-[#092a5c] hover:bg-[#031b40]";
+                  }
 
-                    {/* Salary Range */}
-                    <div className="flex items-center gap-3 md:w-1/6">
-                      <div className="text-gray-600 border border-gray-200 rounded-full p-2">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                          />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-[13px] text-gray-500 mb-0.5">
-                          Salary Range
+                  return (
+                    <div
+                      key={i}
+                      className="bg-white border border-slate-100 rounded-2xl p-6 shadow-[0_8px_30px_rgba(3,27,64,0.03)] hover:shadow-[0_15px_40px_rgba(3,27,64,0.06)] transition-all flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6"
+                    >
+                      {/* 1. Role & Department Info */}
+                      <div className="flex items-center gap-4 lg:w-1/3">
+                        <div className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 ${badgeBg}`}>
+                          {deptIcon}
                         </div>
-                        <div className="text-[14px] font-semibold text-primary">
-                          {job.salary || "₹40,000+"}
+                        <div>
+                          <h4 className="text-xl font-black text-[#092a5c] leading-snug">
+                            {job.title}
+                          </h4>
+                          <div className="flex items-center gap-1.5 mt-1.5">
+                            <Briefcase size={15} className={badgeText} />
+                            <span className={`text-sm font-black uppercase tracking-wide ${badgeText}`}>
+                              {job.department}
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    {/* Openings */}
-                    <div className="flex items-center gap-3 md:w-1/6">
-                      <div className="text-gray-600 border border-gray-200 rounded-full p-2">
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                          />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-[13px] text-gray-500 mb-0.5">
-                          Openings
-                        </div>
-                        <div className="text-[14px] font-semibold text-primary">
-                          {job.openings || "01"}
+                      {/* 2. Experience Column */}
+                      <div className="flex items-center gap-3 lg:w-[15%]">
+                        <Award size={26} className="stroke-[1.8] text-slate-500 shrink-0" />
+                        <div>
+                          <div className="text-[12px] font-extrabold text-slate-400 uppercase tracking-wide leading-none mb-1">
+                            Experience
+                          </div>
+                          <div className="text-[15px] font-black text-[#092a5c]">
+                            {job.exp}
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    {/* Action Buttons */}
-                    <div className="flex flex-col items-center justify-center shrink-0 w-32 gap-2">
-                      <Button
-                        href="#"
-                        variant="primary"
-                        className="w-full h-10 min-h-0 flex items-center justify-center gap-2 text-[11px] font-bold tracking-wider"
-                      >
-                        Apply Now
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
+                      {/* 3. Salary Range Column */}
+                      <div className="flex items-center gap-3 lg:w-[18%]">
+                        <Wallet size={26} className="stroke-[1.8] text-slate-500 shrink-0" />
+                        <div>
+                          <div className="text-[12px] font-extrabold text-slate-400 uppercase tracking-wide leading-none mb-1">
+                            Salary Range
+                          </div>
+                          <div className="text-[15px] font-black text-[#092a5c]">
+                            {job.salary}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* 4. Openings Column */}
+                      <div className="flex items-center gap-3 lg:w-[15%]">
+                        <Users size={26} className="stroke-[1.8] text-slate-500 shrink-0" />
+                        <div>
+                          <div className="text-[12px] font-extrabold text-slate-400 uppercase tracking-wide leading-none mb-1">
+                            Openings
+                          </div>
+                          <div className="text-[15px] font-black text-[#092a5c]">
+                            {job.openings}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* 5. Action Buttons (Apply & View Details) */}
+                      <div className="flex flex-col items-center justify-center shrink-0 lg:w-40 gap-2">
+                        <Link
+                          href="#"
+                          className={`w-full h-10 rounded-xl ${btnBg} text-white flex items-center justify-center gap-2 text-xs font-black tracking-wider transition-colors`}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </Button>
-                      <Button
-                        href="#"
-                        variant="ghost"
-                        className="w-full h-8 min-h-0 text-[11px] font-bold text-primary hover:text-secondary"
-                      >
-                        View Details
-                      </Button>
+                          Apply Now
+                          <ArrowRight size={14} className="stroke-[2.5]" />
+                        </Link>
+                        <Link
+                          href="#"
+                          className="w-full text-center text-xs font-bold text-slate-400 hover:text-secondary transition-colors pt-1"
+                        >
+                          View Details
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
             </div>
 
-            {/* Bottom notice */}
-            <div className="mt-10 text-center border border-dashed border-gray-300 rounded-lg p-8">
-              <p className="text-gray-500 text-sm mb-2 font-medium">
-                Can&apos;t see the right role?
-              </p>
-              <p className="text-gray-400 text-xs mb-5">
-                Drop your resume and we&apos;ll reach out when a relevant opportunity
-                opens up.
-              </p>
-              <Button
-                href="mailto:careers@pithalmachines.com"
-                variant="primary"
-                className="inline-flex items-center gap-2"
-              >
-                Send Your Resume
-                <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4">
-                  <path
-                    d="M4 10h12M10 4l6 6-6 6"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </Button>
+            {/* Bottom upload notice */}
+            <div className="mt-8 rounded-2xl bg-[#ebf1fd] p-6 shadow-[0_8px_30px_rgba(3,27,64,0.03)] border border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                <div className="h-14 w-14 rounded-full bg-[#092a5c] text-white flex items-center justify-center shrink-0 shadow-md">
+                  <FileText size={26} className="stroke-[1.8]" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-black text-[#092a5c]">
+                    Don&apos;t see the right role?
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-500 font-semibold mt-1">
+                    Send us your CV and we&apos;ll reach out when a suitable opportunity opens up.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
+                <Link
+                  href="#"
+                  className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-50 text-[#092a5c] font-black border border-slate-200 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
+                >
+                  Upload Your CV
+                  <Upload size={16} className="stroke-[2.2]" />
+                </Link>
+                
+                <div className="h-8 w-[1px] bg-slate-300 hidden md:block" />
+
+                <Link
+                  href="mailto:careers@pithalmachines.com"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 text-xs sm:text-sm font-black text-[#092a5c] hover:text-secondary transition-colors py-2"
+                >
+                  <Mail size={16} className="stroke-[2.2]" />
+                  careers@pithalmachines.com
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
         {/* ── SECTION 6: POWERED BY PEOPLE ── */}
-        <section className="py-16 bg-[#f8f9fa]">
+        <section className="py-10 bg-[#f8f9fa]">
           <div className="max-w-[1400px] mx-auto px-6">
             {/* Section Header */}
             <div className="text-center mb-10">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-[2px] bg-secondary" />
-                <p className="text-secondary text-xs font-bold uppercase tracking-widest">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
+                <p className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
                   Our Manufacturing Strength
                 </p>
-                <div className="w-12 h-[2px] bg-secondary" />
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary uppercase tracking-tight mb-4 font-sans">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-primary uppercase tracking-tight mb-4 font-sans">
                 Powered by People. Driven by Precision.
               </h2>
-              <p className="text-gray-600 max-w-3xl mx-auto text-[15px]">
+              <p className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg">
                 At Pithal Machines, our advanced infrastructure, skilled
                 workforce and cutting-edge technology{" "}
                 <br className="hidden md:block" />
@@ -1760,7 +1325,7 @@ export default function CareersPage() {
             </div>
 
             {/* Bottom Features Banner */}
-            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-xl flex flex-col md:flex-row flex-wrap justify-between items-start md:items-center gap-6">
+            <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-[0_12px_40px_rgba(3,27,64,0.04)] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-center lg:divide-x lg:divide-blue-100">
               {[
                 {
                   title: "Advanced Machinery",
@@ -1823,10 +1388,10 @@ export default function CareersPage() {
                   ),
                 },
               ].map((feature, i) => (
-                <div key={i} className="flex items-start gap-4 max-w-[220px]">
-                  <div className="text-primary shrink-0">
+                <div key={i} className="flex items-center gap-4 lg:pl-6 first:pl-0">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-[#092a5c]/20 bg-[#ebf1fd]/40 text-[#092a5c]">
                     <svg
-                      className="w-8 h-8"
+                      className="w-7 h-7"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -1849,25 +1414,25 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 7: EMPLOYEE BENEFITS ── */}
-        <section className="py-16 bg-[#f8f9fa]">
+        <section className="py-10 bg-[#f8f9fa]">
           <div className="max-w-[1400px] mx-auto px-6">
             {/* Header Section */}
             <div className="text-center mb-14">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-[2px] bg-secondary" />
-                <p className="text-secondary text-xs font-bold uppercase tracking-widest">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
+                <p className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
                   Employee Benefits
                 </p>
-                <div className="w-12 h-[2px] bg-secondary" />
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-4 font-sans">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-primary tracking-tight mb-4 font-sans">
                 We Care<span className="text-secondary">.</span> We Grow
                 <span className="text-secondary">.</span> We Succeed Together
                 <span className="text-primary">.</span>
               </h2>
 
-              <p className="text-gray-600 text-[15px] mt-4 max-w-2xl mx-auto">
+              <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
                 We believe in empowering our people with the right
                 opportunities, resources and environment to achieve their best.
               </p>
@@ -1877,190 +1442,133 @@ export default function CareersPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 xl:gap-6 mb-16">
               {[
                 {
-                  title: "Competitive\nSalary",
+                  title: "Competitive Salary",
                   desc: "Attractive pay packages and performance-based incentives.",
-                  borderColor: "border-secondary",
+                  borderColor: "border-[#fa5902]",
+                  accentColor: "bg-[#fa5902]",
                   icon: (
-                    <div className="relative flex items-center justify-center w-16 h-16 bg-secondary/10 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
-                      <svg
-                        className="w-8 h-8 text-primary"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
+                    <div className="w-28 h-28 rounded-full bg-[#fdf2e9] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
+                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                        {/* Blue Hand */}
+                        <path d="M12 40h12l14 8h16a4 4 0 000-8H36l-8-4-10-8H12" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                        {/* Orange Rupee Coin */}
+                        <circle cx="42" cy="22" r="10" fill="#fa5902" />
+                        <path d="M39 19h6M39 22h6M42 19c-2 0-3 1-3 3s1 2 3 2 3 1 3 3-1 3-3 3M42 16v12" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
                       </svg>
-                      <div className="absolute top-0 right-0 w-5 h-5 bg-secondary rounded-full flex items-center justify-center text-white text-xs font-bold shadow-sm">
-                        ₹
-                      </div>
                     </div>
                   ),
                 },
                 {
-                  title: "Career\nGrowth",
+                  title: "Career Growth",
                   desc: "Clear career paths with continuous growth opportunities.",
                   borderColor: "border-blue-600",
+                  accentColor: "bg-blue-600",
                   icon: (
-                    <div className="relative flex items-center justify-center w-16 h-16 bg-primary/5 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
-                      <svg
-                        className="w-8 h-8 text-primary"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M4 12v8m4-5v5m4-8v8"
-                        />
+                    <div className="w-28 h-28 rounded-full bg-[#eef4ff] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
+                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                        {/* Bars */}
+                        <rect x="14" y="38" width="6" height="12" rx="1.5" fill="#092a5c" />
+                        <rect x="24" y="28" width="6" height="22" rx="1.5" fill="#092a5c" />
+                        <rect x="34" y="20" width="6" height="30" rx="1.5" fill="#092a5c" />
+                        <rect x="44" y="12" width="6" height="38" rx="1.5" fill="#092a5c" />
+                        {/* Orange Curved Arrow */}
+                        <path d="M14 34c8-10 18-12 28-8" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" />
+                        <path d="M38 26h6v6" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                      <div className="absolute top-1 right-1 w-4 h-4 text-secondary">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M21 3l-6 6-4-4-8 8v5l8-8 4 4 8-8z" />
-                        </svg>
-                      </div>
                     </div>
                   ),
                 },
                 {
-                  title: "Stable\nOrganization",
+                  title: "Stable Organization",
                   desc: "Be a part of a financially strong and trusted multinational company.",
-                  borderColor: "border-emerald-400",
+                  borderColor: "border-emerald-500",
+                  accentColor: "bg-emerald-500",
                   icon: (
-                    <div className="relative flex items-center justify-center w-16 h-16 bg-emerald-50 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
-                      <svg
-                        className="w-9 h-9 text-primary"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                        />
+                    <div className="w-28 h-28 rounded-full bg-[#e8f8f0] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
+                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                        {/* Shield */}
+                        <path d="M32 10c12 0 16 4 16 16 0 10-6 18-16 22C22 44 16 36 16 26c0-12 4-16 16-16z" fill="#092a5c" />
+                        {/* Orange Check */}
+                        <path d="M25 28l5 5 10-10" stroke="#fa5902" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                      <div className="absolute top-1 right-1 w-4 h-4 bg-secondary rounded-full flex items-center justify-center text-white text-[10px]">
-                        ✓
-                      </div>
                     </div>
                   ),
                 },
                 {
-                  title: "Skill\nDevelopment",
+                  title: "Skill Development",
                   desc: "Regular training, workshops and upskilling to keep you ahead.",
-                  borderColor: "border-purple-500",
+                  borderColor: "border-purple-600",
+                  accentColor: "bg-purple-600",
                   icon: (
-                    <div className="relative flex items-center justify-center w-16 h-16 bg-purple-50 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
-                      <svg
-                        className="w-9 h-9 text-primary"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          d="M12 14l9-5-9-5-9 5 9 5z"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
+                    <div className="w-28 h-28 rounded-full bg-[#f3eefc] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
+                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                        {/* Cap Diamond */}
+                        <path d="M32 14L50 24L32 34L14 24L32 14z" fill="#092a5c" />
+                        {/* Cap Under */}
+                        <path d="M20 27.5v8c0 4 6 6.5 12 6.5s12-2.5 12-6.5v-8" fill="#092a5c" />
+                        {/* Orange Tassel */}
+                        <path d="M32 24l16 4v10" stroke="#fa5902" strokeWidth="2.5" strokeLinecap="round" />
+                        <circle cx="48" cy="39" r="2.5" fill="#fa5902" />
                       </svg>
-                      <div className="absolute bottom-2 -right-1 w-3 h-6 bg-secondary rounded-sm"></div>
                     </div>
                   ),
                 },
                 {
-                  title: "Modern\nInfrastructure",
+                  title: "Modern Infrastructure",
                   desc: "Work with advanced machines and world-class facilities.",
-                  borderColor: "border-red-500",
+                  borderColor: "border-[#fa5902]",
+                  accentColor: "bg-[#fa5902]",
                   icon: (
-                    <div className="relative flex items-center justify-center w-16 h-16 bg-red-50 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
-                      <svg
-                        className="w-9 h-9 text-primary"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                        />
+                    <div className="w-28 h-28 rounded-full bg-[#fdf2e9] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
+                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                        {/* Factory */}
+                        <path d="M14 48V26l10 8V26l10 8V20l12 10v18H14z" fill="#092a5c" />
+                        {/* Gear */}
+                        <circle cx="44" cy="42" r="7" fill="#fa5902" />
+                        {/* Gear teeth */}
+                        <path d="M44 32v2M44 50v2M34 42h2M52 42h2" stroke="#fa5902" strokeWidth="2.5" strokeLinecap="round" />
                       </svg>
-                      <div className="absolute bottom-1 right-0 text-secondary">
-                        <svg
-                          className="w-5 h-5"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                          <path
-                            fillRule="evenodd"
-                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
                     </div>
                   ),
                 },
                 {
-                  title: "Professional\nEnvironment",
+                  title: "Professional Environment",
                   desc: "Collaborative culture focused on respect, integrity and teamwork.",
-                  borderColor: "border-blue-400",
+                  borderColor: "border-blue-600",
+                  accentColor: "bg-blue-600",
                   icon: (
-                    <div className="relative flex items-center justify-center w-16 h-16 bg-primary/5 rounded-full mb-4 mx-auto group-hover:-translate-y-1 transition-transform">
-                      <svg
-                        className="w-9 h-9 text-primary"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                    <div className="w-28 h-28 rounded-full bg-[#eef4ff] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
+                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                        {/* Left User */}
+                        <circle cx="20" cy="24" r="5" fill="#092a5c" />
+                        <path d="M12 42c0-5 4-8 8-8s8 3 8 8" fill="#092a5c" />
+                        {/* Right User */}
+                        <circle cx="44" cy="24" r="5" fill="#092a5c" />
+                        <path d="M36 42c0-5 4-8 8-8s8 3 8 8" fill="#092a5c" />
+                        {/* Center User */}
+                        <circle cx="32" cy="22" r="6" fill="#092a5c" />
+                        <path d="M22 42c0-6 5-10 10-10s10 4 10 10" fill="#092a5c" />
+                        {/* Orange Tie */}
+                        <path d="M32 32l1.5 5-1.5 3-1.5-3z" fill="#fa5902" />
                       </svg>
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 text-secondary mt-2">
-                        <svg
-                          className="w-3 h-3"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 2L2 22h20L12 2z" />
-                        </svg>
-                      </div>
                     </div>
                   ),
                 },
               ].map((b, i) => (
                 <div
                   key={i}
-                  className={`bg-white rounded-lg p-6 shadow-[0_16px_45px_rgba(15,23,42,0.12)] border-b-[5px] ${b.borderColor} text-center flex flex-col items-center group transition-all duration-300 hover:shadow-xl`}
+                  className="bg-white rounded-[28px] pt-6 pb-4 px-4 shadow-[0_12px_45px_rgba(3,27,64,0.06)] relative overflow-hidden text-center flex flex-col items-center group transition-all duration-300 hover:shadow-[0_20px_55px_rgba(3,27,64,0.1)] hover:-translate-y-1"
                 >
                   {b.icon}
-                  <h3 className="font-extrabold text-primary text-[17px] mb-3 leading-tight whitespace-pre-line">
+                  <h3 className="font-black text-[#092a5c] text-[18px] sm:text-[19px] leading-tight text-center">
                     {b.title}
                   </h3>
-                  <p className="text-[13px] text-gray-500 leading-relaxed font-medium">
+                  <div className={`h-[2.5px] w-8 ${b.accentColor} mx-auto mt-1.5 rounded-full`} />
+                  <p className="text-[13px] text-slate-500 leading-relaxed font-medium mt-2.5 text-center">
                     {b.desc}
                   </p>
+                  {/* Expanding line on hover from center to corners */}
+                  <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[5px] w-0 group-hover:w-full transition-all duration-300 ease-out ${b.accentColor}`} />
                 </div>
               ))}
             </div>
@@ -2087,16 +1595,16 @@ export default function CareersPage() {
 
                 {/* Checkmark List */}
                 <div className="w-full md:w-auto md:pl-6 lg:pl-10">
-                  <ul className="space-y-4">
+                  <ul className="space-y-5">
                     {[
                       "Recognition & Rewards",
                       "Health & Safety",
                       "Work-Life Balance",
                       "Long-Term Career Opportunities",
                     ].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-3">
+                      <li key={idx} className="flex items-center gap-4.5">
                         <svg
-                          className="w-[22px] h-[22px] text-secondary flex-shrink-0"
+                          className="w-[28px] h-[28px] text-secondary flex-shrink-0"
                           viewBox="0 0 24 24"
                           fill="none"
                         >
@@ -2115,7 +1623,7 @@ export default function CareersPage() {
                             strokeLinejoin="round"
                           />
                         </svg>
-                        <span className="text-gray-200 text-[15px] font-medium tracking-wide">
+                        <span className="text-white text-[17px] sm:text-[20px] font-bold tracking-wide">
                           {item}
                         </span>
                       </li>
@@ -2143,49 +1651,70 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 8: GROW YOUR SKILLS ── */}
-        <section className="py-16 bg-white relative">
-          <div className="max-w-[1400px] mx-auto px-6">
-            {/* Top Hero Section */}
-            <div className="relative flex flex-col lg:flex-row items-center justify-between mb-12 min-h-[300px]">
-              {/* Left Text Content */}
-              <div className="w-full lg:w-1/2 pr-0 lg:pr-12 relative z-10 py-8 lg:py-16 bg-white/90 lg:bg-transparent lg:bg-gradient-to-r lg:from-white lg:via-white lg:to-transparent">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-[2px] bg-secondary" />
-                  <p className="text-secondary text-xs font-bold uppercase tracking-widest">
-                    Training & Growth
-                  </p>
-                  <div className="w-10 h-[2px] bg-secondary" />
-                </div>
-
-                <h2 className="text-5xl md:text-[56px] font-extrabold text-primary uppercase tracking-tight leading-[1.1] mb-2 font-sans">
-                  Grow Your Skills.
-                </h2>
-                <h2 className="text-5xl md:text-[56px] font-extrabold text-secondary uppercase tracking-tight leading-[1.1] mb-6 font-sans">
-                  Shape Your Future.
-                </h2>
-
-                <p className="text-gray-600 text-[16px] leading-relaxed max-w-xl">
-                  At Pithal Machines, we invest in your growth. Through
-                  structured training, real-world projects and continuous
-                  learning, we help you build a strong foundation for a
-                  long-term career.
-                </p>
+        <section className="py-0 bg-white relative w-full overflow-hidden">
+          <div className="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center min-h-[460px]">
+            {/* Left Column - Content */}
+            <div className="w-full lg:w-[48%] py-12 lg:py-16 text-left">
+              {/* Tag */}
+              <div className="flex items-center gap-3 mb-5">
+                <span className="w-6 h-[2px] bg-[#fa5902]"></span>
+                <span className="text-[#fa5902] text-xs sm:text-sm font-black uppercase tracking-[0.2em]">
+                  Training & Growth
+                </span>
+                <span className="w-6 h-[2px] bg-[#fa5902]"></span>
               </div>
 
-              {/* Right Image Background (Fades into left) */}
-              <div className="absolute inset-0 lg:left-1/3 z-0 hidden md:block">
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent z-10 w-1/3"></div>
-                <img
-                  src="/placeholder-training-hero.jpg"
-                  alt="Training and Growth"
-                  className="w-full h-full object-cover object-top lg:object-center rounded-tr-xl rounded-br-xl"
-                  onError={(e) => {
-                    e.currentTarget.src =
-                      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80";
-                  }}
-                />
-              </div>
+              {/* Heading */}
+              <h2 className="text-[36px] sm:text-[44px] md:text-[50px] font-black text-[#092a5c] uppercase tracking-tight leading-[1.08] mb-1 font-sans">
+                Grow Your Skills.
+              </h2>
+              <h2 className="text-[36px] sm:text-[44px] md:text-[50px] font-black text-[#092a5c] uppercase tracking-tight leading-[1.08] mb-5 font-sans">
+                Shape <span className="text-[#fa5902]">Your Future.</span>
+              </h2>
+
+              {/* Orange Underline */}
+              <div className="w-24 h-[1.5px] bg-[#fa5902] mb-6"></div>
+
+              {/* Paragraph */}
+              <p className="text-slate-650 text-[14px] sm:text-[15px] leading-relaxed max-w-lg font-medium">
+                At Pithal Machines, we invest in your growth. Through structured
+                training, real-world projects and continuous learning, we help
+                you build a strong foundation for a long-term career.
+              </p>
             </div>
+
+            {/* Right Column - Image wrapper */}
+            <div className="absolute inset-y-0 right-0 w-1/2 hidden lg:block z-0">
+              {/* Smooth Fade Transition from Left */}
+              <div className="absolute inset-y-0 left-0 w-[120px] bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+              <img
+                src="/careerimg/training%20%26%20upskilling.jpg"
+                alt="Training and Growth"
+                className="w-full h-full object-cover object-center"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80";
+                }}
+              />
+            </div>
+          </div>
+          
+          {/* Fallback image for mobile/tablet where absolute column is hidden */}
+          <div className="w-full h-[300px] sm:h-[380px] relative lg:hidden z-0">
+            <img
+              src="/careerimg/training%20%26%2520upskilling.jpg"
+              alt="Training and Growth"
+              className="w-full h-full object-cover object-center"
+              onError={(e) => {
+                e.currentTarget.src =
+                  "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80";
+              }}
+            />
+          </div>
+        </section>
+
+        <section className="py-10 bg-white relative">
+          <div className="max-w-[1400px] mx-auto px-6">
 
             {/* 5-Column Cards Section */}
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 relative z-20 mb-12">
@@ -2342,12 +1871,12 @@ export default function CareersPage() {
               <div className="hidden lg:block w-px h-16 bg-slate-700/60 mx-2"></div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 lg:flex lg:flex-row lg:justify-around w-full gap-6 lg:gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-5 w-full gap-6 lg:gap-0 lg:divide-x lg:divide-slate-700/60">
                 {[
                   {
                     value: "50+",
                     label: "Training Programs Every Year",
-                    iconBg: "bg-blue-500/20",
+                    iconBg: "bg-blue-500",
                     iconColor: "text-blue-400",
                     icon: (
                       <path
@@ -2361,7 +1890,7 @@ export default function CareersPage() {
                   {
                     value: "200+",
                     label: "Employees Trained Annually",
-                    iconBg: "bg-secondary/20",
+                    iconBg: "bg-secondary",
                     iconColor: "text-secondary",
                     icon: (
                       <path
@@ -2375,7 +1904,7 @@ export default function CareersPage() {
                   {
                     value: "80%",
                     label: "Internal Growth Opportunities",
-                    iconBg: "bg-green-500/20",
+                    iconBg: "bg-green-500",
                     iconColor: "text-green-400",
                     icon: (
                       <path
@@ -2389,7 +1918,7 @@ export default function CareersPage() {
                   {
                     value: "1000+",
                     label: "Skills Upgraded Every Year",
-                    iconBg: "bg-purple-500/20",
+                    iconBg: "bg-purple-500",
                     iconColor: "text-purple-400",
                     icon: (
                       <path
@@ -2403,7 +1932,7 @@ export default function CareersPage() {
                   {
                     value: "Future",
                     label: "Ready Careers Built Here",
-                    iconBg: "bg-secondary/20",
+                    iconBg: "bg-secondary",
                     iconColor: "text-secondary",
                     icon: (
                       <path
@@ -2415,13 +1944,13 @@ export default function CareersPage() {
                     ),
                   },
                 ].map((stat, i) => (
-                  <div key={i} className="flex flex-col gap-2">
-                    <div className="flex items-center gap-3">
+                  <div key={i} className="flex flex-col items-center text-center gap-2 lg:pl-6 lg:first:pl-0 w-full">
+                    <div className="flex items-center justify-center gap-3">
                       <div
-                        className={`w-8 h-8 rounded-md ${stat.iconBg} ${stat.iconColor} flex items-center justify-center shrink-0`}
+                        className={`w-10 h-10 rounded-full ${stat.iconBg} text-white flex items-center justify-center shrink-0`}
                       >
                         <svg
-                          className="w-4 h-4"
+                          className="w-[22px] h-[22px]"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -2433,7 +1962,7 @@ export default function CareersPage() {
                         {stat.value}
                       </div>
                     </div>
-                    <div className="text-gray-300 text-[12px] font-medium leading-snug pr-4">
+                    <div className="text-gray-300 text-[12px] font-medium leading-snug text-center lg:px-2">
                       {stat.label.split(" ").map((word, wIdx, arr) => (
                         <span key={wIdx}>
                           {word}
@@ -2453,23 +1982,23 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 9: YOUR JOURNEY ── */}
-        <section className="py-16 bg-[#fafbfd]">
+        <section className="py-10 bg-[#fafbfd]">
           <div className="max-w-[1400px] mx-auto px-6">
             {/* Section Header */}
             <div className="text-center mb-16">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-[2px] bg-secondary" />
-                <p className="text-secondary text-xs font-bold uppercase tracking-widest">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
+                <p className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
                   Hiring Process
                 </p>
-                <div className="w-12 h-[2px] bg-secondary" />
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-4 font-sans">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-primary tracking-tight mb-4 font-sans">
                 Your Journey to Pithal Machines
               </h2>
 
-              <p className="text-gray-500 text-[15px] mt-4 max-w-2xl mx-auto font-medium">
+              <p className="text-gray-500 text-base sm:text-lg mt-4 max-w-2xl mx-auto font-medium">
                 Our structured and transparent hiring process ensures the right
                 opportunity <br className="hidden md:block" />
                 for both you and our organization.
@@ -2479,7 +2008,16 @@ export default function CareersPage() {
             {/* Journey Steps (6 Columns) */}
             <div className="relative mb-12">
               {/* Background Connecting Dotted Line (Desktop Only) */}
-              <div className="hidden lg:block absolute top-[44px] left-[8%] right-[8%] border-t-2 border-dotted border-slate-400 z-0 opacity-60"></div>
+              <div className="hidden lg:block absolute top-[27px] left-[8.33%] right-[8.33%] border-t-2 border-dotted border-slate-300 z-0 opacity-80"></div>
+              
+              {/* Orange Midpoint Dots (Desktop Only) */}
+              <div className="hidden lg:block absolute top-[27px] left-0 right-0 z-0 pointer-events-none">
+                <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '16.66%' }} />
+                <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '33.33%' }} />
+                <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '50%' }} />
+                <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '66.66%' }} />
+                <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '83.33%' }} />
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative z-10">
                 {[
@@ -2487,90 +2025,88 @@ export default function CareersPage() {
                     num: "01",
                     title: "Application",
                     desc: "Submit your application through our careers portal with your updated details.",
-                    borderColor: "border-secondary",
-                    badgeBg: "bg-secondary",
+                    borderColor: "border-[#fa5902]",
                     icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
+                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
+                        <rect x="18" y="10" width="28" height="44" rx="3" stroke="#092a5c" strokeWidth="3.5" fill="none" />
+                        <path d="M24 20h16M24 28h16M24 36h10" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
+                        <path d="M38 48l8-8 3 3-8 8h-3v-3z" fill="#fa5902" stroke="#092a5c" strokeWidth="2" strokeLinejoin="round" />
+                      </svg>
                     ),
                   },
                   {
                     num: "02",
                     title: "Screening",
                     desc: "Our HR team reviews your application and shortlists suitable profiles.",
-                    borderColor: "border-primary",
-                    badgeBg: "bg-primary",
+                    borderColor: "border-[#092a5c]",
                     icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-                      />
+                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
+                        <rect x="18" y="14" width="28" height="38" rx="3" stroke="#092a5c" strokeWidth="3.5" fill="none" />
+                        <path d="M26 14v-4h12v4" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <circle cx="32" cy="26" r="5" stroke="#092a5c" strokeWidth="3.5" fill="none" />
+                        <path d="M24 38c0-3.5 3.5-6 8-6s8 2.5 8 6" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" />
+                        <path d="M24 44h16" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
+                      </svg>
                     ),
                   },
                   {
                     num: "03",
                     title: "Interview",
                     desc: "Initial HR interview to understand your experience, skills and career aspirations.",
-                    borderColor: "border-emerald-500",
-                    badgeBg: "bg-emerald-500",
+                    borderColor: "border-[#10b981]",
                     icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
-                      />
+                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
+                        <circle cx="20" cy="26" r="4.5" stroke="#092a5c" strokeWidth="3.5" />
+                        <path d="M13 39c0-3.5 3-5.5 7-5.5s7 2 7 5.5" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
+                        <circle cx="44" cy="26" r="4.5" stroke="#092a5c" strokeWidth="3.5" />
+                        <path d="M37 39c0-3.5 3-5.5 7-5.5s7 2 7 5.5" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
+                        <path d="M12 45h40M18 45v7M46 45v7" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
+                        <path d="M24 14h16a4 4 0 014 4v4a4 4 0 01-4 4h-4l-4 4v-4h-4a4 4 0 01-4-4v-4a4 4 0 014-4z" fill="none" stroke="#fa5902" strokeWidth="2.5" strokeLinejoin="round" />
+                        <circle cx="29" cy="19" r="1.5" fill="#fa5902" />
+                        <circle cx="32" cy="19" r="1.5" fill="#fa5902" />
+                        <circle cx="35" cy="19" r="1.5" fill="#fa5902" />
+                      </svg>
                     ),
                   },
                   {
                     num: "04",
                     title: "Technical Round",
                     desc: "Role-specific technical assessment or practical test to evaluate your expertise.",
-                    borderColor: "border-purple-500",
-                    badgeBg: "bg-purple-500",
+                    borderColor: "border-[#8b5cf6]",
                     icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                      />
+                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
+                        <rect x="14" y="16" width="36" height="24" rx="2" stroke="#092a5c" strokeWidth="3.5" fill="none" />
+                        <path d="M8 40h48c2 0 4 2 4 4v1H4v-1c0-2 2-2 4-4z" stroke="#092a5c" strokeWidth="3.5" fill="none" strokeLinejoin="round" />
+                        <path d="M29 44h6" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
+                        <path d="M23 25l-4 3 4 3M41 25l4 3-4 3M34 23l-4 10" stroke="#fa5902" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
                     ),
                   },
                   {
                     num: "05",
                     title: "Selection",
                     desc: "Final evaluation by the panel and confirmation of your selection.",
-                    borderColor: "border-red-500",
-                    badgeBg: "bg-red-500",
+                    borderColor: "border-[#fa5902]",
                     icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z M20 12l-2-2m0 0l-2 2m2-2v6"
-                      />
+                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
+                        <circle cx="28" cy="22" r="7.5" stroke="#092a5c" strokeWidth="3.5" fill="none" />
+                        <path d="M12 43c0-6.5 6.5-11 16-11s16 4.5 16 11" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
+                        <circle cx="46" cy="38" r="8" fill="white" stroke="#fa5902" strokeWidth="3" />
+                        <path d="M42 38l3 3 5-5" stroke="#fa5902" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
                     ),
                   },
                   {
                     num: "06",
                     title: "Onboarding",
                     desc: "Welcome to Pithal Machines! Get onboarded and begin your journey with us.",
-                    borderColor: "border-blue-500",
-                    badgeBg: "bg-blue-500",
+                    borderColor: "border-[#3b82f6]",
                     icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
-                      />
+                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
+                        <path d="M22 38l6 6c1.5 1.5 4 1.5 5.5 0l15-15c1.5-1.5 1.5-4 0-5.5s-4-1.5-5.5 0L28 38l-3-3" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M34 26l-3-3c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5l3 3" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M32 12v-4M23 16l-3-3M41 16l3-3" stroke="#fa5902" strokeWidth="2.5" strokeLinecap="round" />
+                      </svg>
                     ),
                   },
                 ].map((step, i) => (
@@ -2579,31 +2115,26 @@ export default function CareersPage() {
                     className="flex flex-col items-center relative group"
                   >
                     {/* Top Icon Circle */}
-                    <div className="w-[88px] h-[88px] bg-white rounded-full flex items-center justify-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-gray-100 relative mb-8 z-10 transition-transform group-hover:scale-105">
-                      <svg
-                        className="w-8 h-8 text-primary"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        {step.icon}
-                      </svg>
-                      {/* Number Badge */}
-                      <div
-                        className={`absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-8 h-8 ${step.badgeBg} text-white text-[12px] font-bold rounded-full flex items-center justify-center border-[3px] border-white shadow-sm`}
-                      >
-                        {step.num}
-                      </div>
+                    <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_-3px_rgba(0,0,0,0.08)] border border-gray-100 relative mb-12 z-10 transition-transform group-hover:scale-105">
+                      {step.icon}
                     </div>
 
                     {/* Content Card */}
                     <div
-                      className={`bg-white rounded-xl p-5 lg:p-6 shadow-[0_16px_45px_rgba(15,23,42,0.12)] border-b-[5px] ${step.borderColor} text-center w-full h-full transition-shadow group-hover:shadow-xl flex flex-col`}
+                      className={`bg-white rounded-xl pt-7 pb-4 px-4 shadow-[0_16px_45px_rgba(15,23,42,0.12)] border-b-[5px] ${step.borderColor} text-center w-full h-[170px] transition-shadow group-hover:shadow-xl flex flex-col justify-center relative`}
                     >
-                      <h4 className="font-extrabold text-primary text-[16px] mb-3">
+                      {/* Overlapping Number Badge */}
+                      <div
+                        className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#fa5902] text-white text-[12px] font-black rounded-full flex items-center justify-center border-[3px] border-white shadow-md z-20"
+                      >
+                        {step.num}
+                      </div>
+
+                      <h4 className="font-extrabold text-primary text-[18px] sm:text-[19px] mb-1">
                         {step.title}
                       </h4>
-                      <p className="text-[13px] text-gray-500 leading-relaxed font-medium">
+                      <div className="w-8 h-[2px] bg-secondary mx-auto mb-2.5 rounded-full" />
+                      <p className="text-[14px] sm:text-[14.5px] text-gray-500 leading-relaxed font-medium">
                         {step.desc}
                       </p>
                     </div>
@@ -2666,9 +2197,9 @@ export default function CareersPage() {
                   },
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-white border border-[#e2e8f0] text-primary flex items-center justify-center shrink-0 shadow-sm">
+                    <div className="w-14 h-14 rounded-full bg-slate-100 border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-sm">
                       <svg
-                        className="w-6 h-6"
+                        className="w-7 h-7"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -2692,23 +2223,23 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 10: BUILD WITH RIGHT FOUNDATION ── */}
-        <section className="py-16 bg-[#f8f9fa]">
+        <section className="py-10 bg-[#f8f9fa]">
           <div className="max-w-[1400px] mx-auto px-6">
             {/* Section Header */}
             <div className="text-center mb-12">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-[2px] bg-secondary" />
-                <p className="text-secondary text-xs font-bold uppercase tracking-widest">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
+                <p className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
                   Eligibility & Qualifications
                 </p>
-                <div className="w-12 h-[2px] bg-secondary" />
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight uppercase mb-4 font-sans">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-primary tracking-tight uppercase mb-4 font-sans">
                 Build Your Career With The Right Foundation.
               </h2>
 
-              <p className="text-gray-600 text-[15px] mt-3 max-w-3xl mx-auto font-medium">
+              <p className="text-gray-600 text-base sm:text-lg mt-3 max-w-3xl mx-auto font-medium">
                 We welcome talented and motivated individuals who are eager to
                 learn, <br className="hidden md:block" />
                 grow and contribute to world-class engineering solutions.
@@ -2929,78 +2460,118 @@ export default function CareersPage() {
 
               {/* Right side: 4 Traits Grid */}
               <div className="w-full lg:w-[40%] p-8 lg:py-12 lg:pr-12 lg:pl-0 flex flex-col justify-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-                  {[
-                    {
-                      title: "Passion to Learn",
-                      desc: "A strong desire to learn and grow every day.",
-                      icon: (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z M19 11l-2 2-3-3"
-                        />
-                      ),
-                    },
-                    {
-                      title: "Team Player",
-                      desc: "Work collaboratively and support team success.",
-                      icon: (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        />
-                      ),
-                    },
-                    {
-                      title: "Positive Attitude",
-                      desc: "A can-do attitude and willingness to take on challenges.",
-                      icon: (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      ),
-                    },
-                    {
-                      title: "Commitment to Excellence",
-                      desc: "Deliver quality and strive for excellence in all you do.",
-                      icon: (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                        />
-                      ),
-                    },
-                  ].map((trait, i) => (
-                    <div key={i} className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-full border border-slate-600 flex items-center justify-center shrink-0 text-white mt-1">
+                <div className="flex flex-col divide-y divide-slate-700/40">
+                  {/* Row 1 */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 sm:divide-x sm:divide-slate-700/40 pb-6 lg:pb-8">
+                    {/* Passion to Learn */}
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 text-white mt-1">
                         <svg
-                          className="w-5 h-5"
+                          className="w-6 h-6"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
                         >
-                          {trait.icon}
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z M19 11l-2 2-3-3"
+                          />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-bold text-white text-[14px] mb-1 leading-snug">
-                          {trait.title}
+                        <h4 className="font-bold text-white text-[16px] sm:text-[17px] mb-1.5 leading-snug">
+                          Passion to Learn
                         </h4>
-                        <p className="text-[12px] text-gray-400 leading-snug">
-                          {trait.desc}
+                        <p className="text-[13px] sm:text-[14px] text-gray-400 leading-relaxed">
+                          A strong desire to learn and grow every day.
                         </p>
                       </div>
                     </div>
-                  ))}
+                    {/* Team Player */}
+                    <div className="flex items-start gap-4 sm:pl-6 lg:pl-8">
+                      <div className="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 text-white mt-1">
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                          />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white text-[16px] sm:text-[17px] mb-1.5 leading-snug">
+                          Team Player
+                        </h4>
+                        <p className="text-[13px] sm:text-[14px] text-gray-400 leading-relaxed">
+                          Work collaboratively and support team success.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Row 2 */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 sm:divide-x sm:divide-slate-700/40 pt-6 lg:pt-8">
+                    {/* Positive Attitude */}
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 text-white mt-1">
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white text-[16px] sm:text-[17px] mb-1.5 leading-snug">
+                          Positive Attitude
+                        </h4>
+                        <p className="text-[13px] sm:text-[14px] text-gray-400 leading-relaxed">
+                          A can-do attitude and willingness to take on challenges.
+                        </p>
+                      </div>
+                    </div>
+                    {/* Commitment to Excellence */}
+                    <div className="flex items-start gap-4 sm:pl-6 lg:pl-8">
+                      <div className="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 text-white mt-1">
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z"
+                          />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white text-[16px] sm:text-[17px] mb-1.5 leading-snug">
+                          Commitment to Excellence
+                        </h4>
+                        <p className="text-[13px] sm:text-[14px] text-gray-400 leading-relaxed">
+                          Deliver quality and strive for excellence in all you do.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3008,25 +2579,25 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 11: TESTIMONIALS ── */}
-        <section className="py-16 bg-[#fafbfd]">
+        <section className="py-10 bg-[#fafbfd]">
           <div className="max-w-[1400px] mx-auto px-6">
             {/* Section Header */}
             <div className="text-center mb-16">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-[2px] bg-secondary" />
-                <p className="text-secondary text-xs font-bold uppercase tracking-widest">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
+                <p className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
                   Employee Testimonials
                 </p>
-                <div className="w-12 h-[2px] bg-secondary" />
+                <span className="w-12 h-0.5 bg-secondary inline-block" />
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-4 font-sans">
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-primary tracking-tight mb-4 font-sans">
                 Real People<span className="text-secondary">.</span> Real
                 Growth<span className="text-secondary">.</span> Real Impact
                 <span className="text-secondary">.</span>
               </h2>
 
-              <p className="text-primary text-[15px] mt-4 font-medium max-w-2xl mx-auto leading-relaxed">
+              <p className="text-primary text-base sm:text-lg mt-4 font-medium max-w-2xl mx-auto leading-relaxed">
                 Our people are at the heart of everything we do.
                 <br />
                 <span className="text-gray-500">
@@ -3045,7 +2616,7 @@ export default function CareersPage() {
                   name: "Rahul Patil",
                   role: "CNC Operator",
                   years: "5+ Years at Pithal",
-                  img: "/placeholder-rahul.jpg",
+                  img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
                 },
                 {
                   quote:
@@ -3053,7 +2624,7 @@ export default function CareersPage() {
                   name: "Sneha Jadhav",
                   role: "Design Engineer",
                   years: "3+ Years at Pithal",
-                  img: "/placeholder-sneha.jpg",
+                  img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
                 },
                 {
                   quote:
@@ -3061,7 +2632,7 @@ export default function CareersPage() {
                   name: "Akash More",
                   role: "Production Supervisor",
                   years: "6+ Years at Pithal",
-                  img: "/placeholder-akash.jpg",
+                  img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80",
                 },
                 {
                   quote:
@@ -3069,47 +2640,52 @@ export default function CareersPage() {
                   name: "Priya Deshmukh",
                   role: "Marketing Executive",
                   years: "2+ Years at Pithal",
-                  img: "/placeholder-priya.jpg",
+                  img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80",
                 },
               ].map((t, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-lg p-8 shadow-[0_18px_48px_rgba(15,23,42,0.12)] border border-gray-100 flex flex-col h-full relative"
+                  className="bg-white rounded-[20px] p-8 shadow-[0_16px_40px_rgba(15,23,42,0.08)] border border-slate-100 flex flex-col h-full relative hover:shadow-[0_20px_50px_rgba(15,23,42,0.12)] transition-shadow duration-300"
                 >
                   {/* Top Quotes Icon */}
-                  <div className="absolute top-8 right-8 text-secondary font-heading text-5xl leading-none">
+                  <div className="absolute top-8 right-8 text-[#fa5902] font-heading text-5xl leading-none opacity-80">
                     “
                   </div>
 
                   {/* Quote Text */}
-                  <p className="text-primary text-[15px] font-bold leading-relaxed mb-8 flex-1 relative z-10 pr-6">
+                  <p className="text-[#092a5c] text-[16px] font-bold leading-relaxed mb-6 flex-1 relative z-10 pr-6">
                     “{t.quote}”
                   </p>
 
                   {/* Divider */}
-                  <div className="w-full h-px bg-gray-100 mb-6"></div>
+                  <div className="w-full h-px bg-slate-100 mb-6"></div>
 
                   {/* Author Profile */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-[52px] h-[52px] bg-gray-200 rounded-lg overflow-hidden shrink-0 border border-gray-100">
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-slate-100 rounded-[14px] overflow-hidden shrink-0 border border-slate-100">
                       <img
                         src={t.img}
                         alt={t.name}
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          e.currentTarget.src =
-                            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80"; // Fallback generic avatar
+                          const fallbacks = [
+                            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80", // Rahul (Man with glasses)
+                            "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80", // Sneha (Woman)
+                            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80", // Akash (Man)
+                            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80", // Priya (Woman)
+                          ];
+                          e.currentTarget.src = fallbacks[i] || fallbacks[0];
                         }}
                       />
                     </div>
                     <div className="flex flex-col justify-center">
-                      <h4 className="font-extrabold text-primary text-[15px] leading-tight mb-1">
+                      <h4 className="font-black text-[#092a5c] text-[16px] sm:text-[17px] leading-tight mb-1">
                         {t.name}
                       </h4>
-                      <p className="text-gray-500 text-[12px] leading-snug font-medium mb-1">
+                      <p className="text-slate-500 text-[13px] font-semibold leading-none mb-1">
                         {t.role}
                       </p>
-                      <p className="text-primary text-[12px] font-bold leading-snug mb-1">
+                      <p className="text-slate-400 text-[12px] font-medium leading-none mb-2">
                         {t.years}
                       </p>
 
@@ -3118,7 +2694,7 @@ export default function CareersPage() {
                         {[...Array(5)].map((_, j) => (
                           <svg
                             key={j}
-                            className="w-3.5 h-3.5 text-secondary fill-current"
+                            className="w-[15px] h-[15px] text-[#fa5902] fill-current"
                             viewBox="0 0 20 20"
                           >
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -3134,294 +2710,212 @@ export default function CareersPage() {
         </section>
 
         {/* ── SECTION 12: FINAL CTA ── */}
-        <section className="py-12 bg-white flex justify-center">
-          <div className="max-w-[1200px] w-full px-6">
-            <div className="bg-[#fcfdff] border border-gray-100 shadow-[0_24px_70px_rgba(15,23,42,0.14)] rounded-xl overflow-hidden">
-              {/* Top Main Section */}
-              <div className="flex flex-col lg:flex-row items-center p-6 lg:p-8 border-b border-gray-100 gap-8">
-                {/* Left Side: Logo & Text */}
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-6 lg:w-[45%] shrink-0">
-                  {/* Circular Logo */}
-                  <div className="w-[88px] h-[88px] bg-white rounded-full flex items-center justify-center shrink-0 border border-gray-100 shadow-sm relative p-4">
-                    <svg
-                      viewBox="0 0 100 100"
-                      fill="none"
-                      className="w-full h-full"
-                    >
-                      {/* Simplified Pithal P logo representation */}
-                      <path
-                        d="M50 15c-19.3 0-35 15.7-35 35s15.7 35 35 35 35-15.7 35-35c0-10.3-4.5-19.6-11.6-26.1"
-                        stroke="var(--secondary)"
-                        strokeWidth="6"
-                        strokeLinecap="round"
-                        strokeDasharray="15 15"
-                      />
-                      <path
-                        d="M45 35h15c8.3 0 15 6.7 15 15s-6.7 15-15 15H45V35z"
-                        fill="var(--primary)"
-                      />
-                      <path d="M45 50h15" stroke="#fff" strokeWidth="4" />
-                    </svg>
-                  </div>
-
-                  <div>
-                    <h2 className="text-[28px] lg:text-[32px] font-extrabold text-primary tracking-tight leading-[1.1] mb-1 font-sans uppercase">
-                      Build Your Future
-                    </h2>
-                    <h2 className="text-[28px] lg:text-[32px] font-extrabold text-secondary tracking-tight leading-[1.1] mb-3 font-sans uppercase">
-                      With Pithal Machines.
-                    </h2>
-                    <p className="text-[#4b5563] text-[13px] font-medium leading-relaxed max-w-sm">
-                      Join a team that builds innovative solutions, drives
-                      industrial progress and creates long-term impact.
-                    </p>
-                  </div>
+        <section className="pt-10 pb-0 bg-[#f8f9fa] w-full">
+          <div className="bg-white border-y border-[#e2e8f0] shadow-[0_16px_48px_rgba(15,23,42,0.04)] rounded-none overflow-hidden w-full">
+            
+            {/* Top Main Section */}
+            <div className="max-w-[1400px] mx-auto px-6 py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-2">
+              
+              {/* Left Side: Logo & Text */}
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:w-[42%] w-full shrink-0">
+                {/* Circular Logo */}
+                <div className="w-[105px] h-[105px] bg-white rounded-full flex items-center justify-center shrink-0 border border-slate-100 shadow-[0_10px_30px_rgba(9,42,92,0.06)] relative p-3">
+                  <svg viewBox="0 0 100 100" className="w-[72px] h-[72px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {/* Orange Gear Part */}
+                    <path d="M 44 24 A 26 26 0 0 0 44 76 A 26 26 0 0 0 44 24" stroke="#fa5902" strokeWidth="6.5" strokeLinecap="round" />
+                    {/* Teeth around the gear */}
+                    <path d="M 26 32 L 19 26" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
+                    <path d="M 18 50 L 9 50" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
+                    <path d="M 26 68 L 19 74" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
+                    <path d="M 44 76 L 44 84" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
+                    <path d="M 44 24 L 44 16" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
+                    <path d="M 33 17 L 30 24" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
+                    <path d="M 33 83 L 30 76" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
+                    
+                    {/* Dark Blue stylized P */}
+                    <path d="M 49 31 H 63 C 70 31 75 36 75 44 C 75 52 70 57 63 57 H 56 V 73" stroke="#092a5c" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                    <path d="M 56 31 V 73" stroke="#092a5c" strokeWidth="8" strokeLinecap="round" />
+                  </svg>
                 </div>
 
-                {/* Middle Vertical Divider (Desktop only) */}
-                <div className="hidden lg:block w-px h-28 bg-gray-200 shrink-0 mx-2"></div>
-
-                {/* Middle: 4 Icons Section */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 lg:w-[35%] w-full">
-                  {[
-                    {
-                      title: "CAREER\nGROWTH",
-                      icon: (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6 M4 12v8m4-5v5m4-8v8"
-                        />
-                      ),
-                    },
-                    {
-                      title: "CONTINUOUS\nLEARNING",
-                      icon: (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                        />
-                      ),
-                    },
-                    {
-                      title: "INDUSTRIAL\nEXPOSURE",
-                      icon: (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                        />
-                      ),
-                    },
-                    {
-                      title: "FUTURE\nOPPORTUNITIES",
-                      icon: (
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        />
-                      ),
-                    },
-                  ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex flex-col items-center justify-center text-center"
-                    >
-                      <svg
-                        className="w-[34px] h-[34px] text-primary mb-3"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        {/* Simulated Orange highlight on icons as per design */}
-                        <path
-                          d="M17 7l4 4-4 4"
-                          stroke="var(--secondary)"
-                          strokeWidth={1.5}
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="opacity-0"
-                        />
-                        {item.icon}
-                      </svg>
-                      <h4 className="text-primary text-[10px] font-bold uppercase tracking-wider whitespace-pre-line leading-tight">
-                        {item.title}
-                      </h4>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Right Vertical Divider (Desktop only) */}
-                <div className="hidden lg:block w-px h-28 bg-gray-200 shrink-0 mx-2"></div>
-
-                {/* Right Side: Action Buttons */}
-                <div className="flex flex-col gap-3 lg:w-[20%] w-full shrink-0">
-                  <Button
-                    href="#"
-                    variant="primary"
-                    className="w-full flex items-center justify-between h-12 shadow-sm group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                        />
-                      </svg>
-                      <span className="text-[11px] font-bold uppercase tracking-wide text-white">
-                        Upload Your CV
-                      </span>
-                    </div>
-                    <svg
-                      className="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </Button>
-
-                  <Button
-                    href="#"
-                    variant="outlineNavy"
-                    className="w-full flex items-center justify-between h-12 shadow-sm group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                      <span className="text-[11px] font-bold uppercase tracking-wide">
-                        Explore Open Positions
-                      </span>
-                    </div>
-                    <svg
-                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </Button>
+                <div className="text-center sm:text-left">
+                  <h2 className="text-[28px] lg:text-[31px] font-extrabold text-[#092a5c] tracking-tight leading-[1.1] font-sans uppercase">
+                    Build Your Future
+                  </h2>
+                  <h2 className="text-[28px] lg:text-[31px] font-extrabold text-[#fa5902] tracking-tight leading-[1.1] mb-3 font-sans uppercase">
+                    With Pithal Machines.
+                  </h2>
+                  <p className="text-[#5a6e85] text-[13px] md:text-[14px] font-medium leading-relaxed max-w-sm">
+                    Join a team that builds innovative solutions, drives industrial progress and creates long-term impact.
+                  </p>
                 </div>
               </div>
 
-              {/* Bottom Bar Section */}
-              <div className="bg-[#fafbfd] py-4 px-6 flex flex-wrap justify-between items-center gap-4">
+              {/* Middle Vertical Divider (Desktop only) */}
+              <div className="hidden lg:block w-px h-28 bg-[#e2e8f0] shrink-0 mx-6"></div>
+
+              {/* Middle: 4 Icons Section */}
+              <div className="flex flex-row items-stretch justify-between lg:w-[36%] w-full py-4 lg:py-0 divide-x divide-slate-100">
+                {[
+                  {
+                    title: "CAREER\nGROWTH",
+                    icon: (
+                      <svg className="w-[38px] h-[38px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="14" width="3" height="6" rx="1" fill="#092a5c" />
+                        <rect x="9" y="10" width="3" height="10" rx="1" fill="#092a5c" />
+                        <rect x="15" y="5" width="3" height="15" rx="1" fill="#092a5c" />
+                        <path d="M 3 15 L 9 9 L 14 11 L 21 3" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M 17 3 H 21 V 7" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: "CONTINUOUS\nLEARNING",
+                    icon: (
+                      <svg className="w-[38px] h-[38px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3L2 8L12 13L22 8L12 3Z" stroke="#092a5c" strokeWidth="2" strokeLinejoin="round" />
+                        <path d="M6 10.5V16.5C6 16.5 8.5 19.5 12 19.5C15.5 19.5 18 16.5 18 16.5V10.5" stroke="#092a5c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M20 9.5V15.5" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" />
+                        <circle cx="20" cy="16.5" r="1.5" fill="#fa5902" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: "INDUSTRIAL\nEXPOSURE",
+                    icon: (
+                      <svg className="w-[38px] h-[38px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 21V9L14 6V11L9 8V13L4 10V21H19Z" stroke="#092a5c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <rect x="6" y="15" width="2" height="3" fill="#fa5902" />
+                        <rect x="11" y="15" width="2" height="3" fill="#fa5902" />
+                        <circle cx="16.5" cy="13.5" r="1" fill="#fa5902" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    title: "FUTURE\nOPPORTUNITIES",
+                    icon: (
+                      <svg className="w-[38px] h-[38px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="7" r="4" stroke="#092a5c" strokeWidth="2" />
+                        <path d="M2 18C2 14.5 5 13 8 13C11 13 14 14.5 14 18V20H2V18Z" stroke="#092a5c" strokeWidth="2" strokeLinejoin="round" />
+                        <circle cx="16" cy="7" r="3.5" stroke="#fa5902" strokeWidth="2" />
+                        <path d="M12.5 13.5C13.5 12.8 14.8 12.5 16 12.5C18.5 12.5 21.5 13.5 21.5 16.5V18.5" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" />
+                      </svg>
+                    ),
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex-1 flex flex-col items-center justify-center text-center px-1"
+                  >
+                    <div className="mb-3 flex items-center justify-center h-[40px]">
+                      {item.icon}
+                    </div>
+                    <h4 className="text-[#092a5c] text-[10.5px] font-extrabold uppercase tracking-wider whitespace-pre-line leading-tight">
+                      {item.title}
+                    </h4>
+                  </div>
+                ))}
+              </div>
+
+              {/* Right Vertical Divider (Desktop only) */}
+              <div className="hidden lg:block w-px h-28 bg-[#e2e8f0] shrink-0 mx-6"></div>
+
+              {/* Right Side: Action Buttons */}
+              <div className="flex flex-col gap-3 lg:w-[22%] w-full shrink-0">
+                <a
+                  href="#"
+                  className="w-full flex items-center justify-between h-[52px] bg-[#fa5902] text-white rounded-xl font-bold uppercase tracking-wider text-[12px] px-6 transition-all hover:bg-[#e04f02] shadow-[0_4px_15px_rgba(250,89,2,0.15)] group"
+                >
+                  <div className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <span>Upload Your CV</span>
+                  </div>
+                  <svg
+                    className="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+
+                <a
+                  href="#"
+                  className="w-full flex items-center justify-between h-[52px] bg-white text-[#092a5c] border-2 border-[#092a5c] rounded-xl font-bold uppercase tracking-wider text-[12px] px-6 transition-all hover:bg-slate-50 group"
+                >
+                  <div className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-[#092a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>Explore Open Positions</span>
+                  </div>
+                  <svg
+                    className="w-4 h-4 text-[#092a5c] transform group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Bottom Bar Section */}
+            <div className="bg-[#f8f9fa] border-t border-[#e2e8f0] py-5">
+              <div className="max-w-[1400px] mx-auto px-6 flex flex-col lg:flex-row justify-between items-center gap-4 lg:divide-x lg:divide-slate-200/80">
                 {[
                   {
                     text: "300+ Professionals",
                     icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                      />
+                      <svg className="w-5 h-5 text-[#092a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
                     ),
                   },
                   {
                     text: "Advanced Manufacturing Environment",
                     icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
+                      <svg className="w-5 h-5 text-[#092a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
                     ),
                   },
                   {
                     text: "Continuous Learning Culture",
                     icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                      />
+                      <svg className="w-5 h-5 text-[#092a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
                     ),
                   },
                   {
                     text: "Growth-Focused Opportunities",
                     icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6 M4 12v8m4-5v5m4-8v8"
-                      />
+                      <svg className="w-5 h-5 text-[#092a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6 M4 12v8m4-5v5m4-8v8" />
+                      </svg>
                     ),
                   },
-                ].map((feature, idx, arr) => (
+                ].map((feature, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center flex-1 min-w-[200px] justify-center lg:justify-start"
+                    className={`flex items-center gap-3 justify-center w-full lg:w-auto ${idx !== 0 ? 'lg:pl-6' : ''}`}
                   >
-                    <div className="flex items-center gap-2">
-                      <svg
-                        className="w-[18px] h-[18px] text-primary"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        {/* Simulated Orange highlight on bottom icons */}
-                        <path
-                          d="M5 13l4 4L19 7"
-                          stroke="var(--secondary)"
-                          strokeWidth={2}
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="opacity-0"
-                        />
-                        {feature.icon}
-                      </svg>
-                      <span className="text-[#334155] text-[12px] font-semibold">
-                        {feature.text}
-                      </span>
+                    <div className="flex items-center justify-center shrink-0">
+                      {feature.icon}
                     </div>
-                    {/* Vertical separators between items */}
-                    {idx !== arr.length - 1 && (
-                      <div className="hidden lg:block w-px h-5 bg-gray-200 ml-auto mr-4"></div>
-                    )}
+                    <span className="text-[#334155] text-[13px] font-semibold tracking-wide">
+                      {feature.text}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
+
           </div>
         </section>
 

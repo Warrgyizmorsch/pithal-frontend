@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Globe, Building2, Clock, Settings, ChevronRight, Mail, TrendingUp, Cog, Lightbulb, Lock, X, Pickaxe, Gem, Factory, HardHat, Recycle, Truck, Gauge, Wrench, BookOpen } from "lucide-react";
+import { Globe, Building2, Clock, Settings, ChevronRight, Mail, TrendingUp, Cog, Lightbulb, Lock, X, Pickaxe, Gem, Factory, HardHat, Recycle, Truck, Gauge, Wrench, BookOpen, FileText } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/common/Button";
@@ -756,7 +756,7 @@ function SectionHeader({ eyebrow, title, sub, linkText, linkHref, dark = false }
         {eyebrow && (
           <div className="flex items-center gap-3 mb-3">
             <span className="w-8 h-0.5 bg-secondary inline-block" />
-            <span className={`text-xs font-bold uppercase tracking-widest ${dark ? "text-secondary" : "text-secondary"}`}>{eyebrow}</span>
+            <span className={`text-base sm:text-lg font-black uppercase tracking-[0.22em] ${dark ? "text-secondary" : "text-secondary"}`}>{eyebrow}</span>
             <span className="w-8 h-0.5 bg-secondary inline-block" />
           </div>
         )}
@@ -892,7 +892,7 @@ export default function BlogPage() {
         <Container>
           <SectionHeader
             eyebrow="FEATURED INSIGHTS"
-            title="Featured Insights"
+            title=""
             sub="Curated knowledge from industry experts"
             linkText="View all insights →"
             linkHref="#"
@@ -954,14 +954,13 @@ export default function BlogPage() {
       <section className="py-10 bg-bg-light">
         <Container>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl">
-              <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-secondary mb-3">
-                Explore By Category
-              </p>
-              <h2 className="headline text-[clamp(1.9rem,4vw,3rem)] text-primary">
-                Find insights across key industries and topics
-              </h2>
-            </div>
+            <SectionHeader
+            eyebrow="FEATURED INSIGHTS"
+            title=""
+            sub="Curated knowledge from industry experts"
+            linkText="View all insights →"
+            linkHref="#"
+          />
             <Button
               variant="outlineNavy"
               href="#"
@@ -1059,7 +1058,7 @@ export default function BlogPage() {
           <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-3.5 mb-4">
               <span className="w-10 h-0.5 bg-secondary" />
-              <span className="text-secondary text-xs font-bold uppercase tracking-[0.25em]">INDUSTRIAL KNOWLEDGE HUB</span>
+              <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">INDUSTRIAL KNOWLEDGE HUB</span>
               <span className="w-10 h-0.5 bg-secondary" />
             </div>
             <h2 className="headline text-center text-[clamp(1.9rem,4vw,3rem)] text-primary">
@@ -1235,7 +1234,7 @@ export default function BlogPage() {
             <div>
               <div className="flex items-center gap-3 mb-2.5">
                 <span className="w-8 h-0.5 bg-secondary" />
-                <h2 className="text-2xl font-bold uppercase tracking-[0.2em] text-primary">TRENDING INSIGHTS</h2>
+                <h2 className="text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em] text-[#092a5c]">TRENDING INSIGHTS</h2>
                 <span className="w-8 h-0.5 bg-secondary" />
               </div>
               <p className="text-xs text-text-muted font-medium">Most popular reads from our industry experts</p>
@@ -1256,7 +1255,7 @@ export default function BlogPage() {
                 {/* 1. Left unified badge & image block */}
                 <div className="flex rounded-lg overflow-hidden flex-shrink-0 border border-slate-100 w-full lg:w-auto" style={{ height: 110 }}>
                   {/* Number Badge */}
-                  <div className="w-14 bg-primary-dark flex items-center justify-center text-white text-base font-black flex-shrink-0">
+                  <div className="w-10 bg-primary-dark flex items-center justify-center text-white text-base font-black flex-shrink-0 border-r-4 border-white">
                     {post.num}
                   </div>
                   {/* Image */}
@@ -1267,13 +1266,13 @@ export default function BlogPage() {
 
                 {/* 2. Middle Text Block with vertical divider on the right */}
                 <div className="min-w-0 lg:pr-8 lg:border-r lg:border-slate-100 h-full flex flex-col justify-center">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary mb-2 block">
+                  <span className="text-[12px] font-black uppercase tracking-[0.2em] text-secondary mb-2 block">
                     {post.tag}
                   </span>
-                  <h3 className="text-primary font-extrabold text-base leading-snug mb-2 hover:text-secondary transition-colors cursor-pointer">
+                  <h3 className="text-primary font-black text-lg sm:text-xl leading-snug mb-2 hover:text-secondary transition-colors cursor-pointer">
                     {post.title}
                   </h3>
-                  <p className="text-[12px] leading-relaxed text-slate-500 font-medium">{post.desc}</p>
+                  <p className="text-[14px] sm:text-[15px] leading-relaxed text-slate-500 font-medium">{post.desc}</p>
                 </div>
 
                 {/* 3. Right Stats Columns */}
@@ -1281,19 +1280,19 @@ export default function BlogPage() {
                   {/* Views */}
                   <div>
                     <LargeEyeIcon />
-                    <div className="text-sm font-extrabold text-primary">{post.views}</div>
-                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">Views</div>
+                    <div className="text-base sm:text-lg font-black text-primary">{post.views}</div>
+                    <div className="text-[11px] sm:text-[12px] text-slate-400 font-bold uppercase tracking-wider mt-1">Views</div>
                   </div>
                   {/* Read Time */}
                   <div>
                     <LargeClockIcon />
-                    <div className="text-sm font-extrabold text-primary">{post.read}</div>
-                    <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">min read</div>
+                    <div className="text-base sm:text-lg font-black text-primary">{post.read}</div>
+                    <div className="text-[11px] sm:text-[12px] text-slate-400 font-bold uppercase tracking-wider mt-1">min read</div>
                   </div>
                   {/* Category */}
                   <div className="flex flex-col justify-between h-full">
                     <LargeFolderIcon />
-                    <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wide leading-tight px-1">{post.category}</div>
+                    <div className="text-[11px] sm:text-[12px] font-bold text-slate-500 uppercase tracking-wide leading-tight px-1">{post.category}</div>
                   </div>
                 </div>
 
@@ -1321,7 +1320,8 @@ export default function BlogPage() {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="w-12 h-0.5 bg-secondary" />
-              <span className="text-secondary text-xs font-bold uppercase tracking-widest">RESOURCE CENTER</span>
+              <span className="text-secondary text-xl font-bold uppercase tracking-widest">RESOURCE CENTER</span>
+              <span className="w-12 h-0.5 bg-secondary" />
             </div>
             <h2 className="headline text-[clamp(1.9rem,4vw,3rem)] text-primary">
               EXPERT RESOURCES.
@@ -1348,8 +1348,8 @@ export default function BlogPage() {
                   </div>
                   {/* Floating Icon - placed outside the overflow-hidden parent to prevent clipping */}
                   <div className="absolute left-1/2 top-52 z-20 -translate-x-1/2 -translate-y-1/2">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white bg-white text-secondary shadow-lg">
-                      <IconComponent className="h-7 w-7" />
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#fdf3ee] text-secondary shadow-lg">
+                      <IconComponent className="h-10 w-10" />
                     </div>
                   </div>
                   <div className="pt-10 px-4 sm:px-6 pb-5 sm:pb-6 flex-1 flex flex-col justify-between">
@@ -1366,7 +1366,7 @@ export default function BlogPage() {
                       </ul>
                     </div>
                     <Button
-                      variant="outlineNavy"
+                      variant="outlineNavySwap"
                       className="w-full justify-center gap-2 rounded-lg mt-auto"
                     >
                       <DownloadIcon />DOWNLOAD RESOURCE
@@ -1378,28 +1378,25 @@ export default function BlogPage() {
           </div>
 
           {/* Custom guide form */}
-          <div className="bg-white rounded-xl border border-border p-5 sm:p-7 flex flex-col md:flex-row items-center gap-8 shadow-[0_18px_45px_rgba(3,27,64,0.08)]">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-                  <path d="M12 2l2 4 4.5.6-3.3 3.2.8 4.5L12 12 7 14.3l.8-4.5L4.5 6.6 9 6 12 2z" stroke="var(--secondary)" strokeWidth="1.5" fill="none" />
-                  <path d="M6 19h12M9 22h6" stroke="var(--secondary)" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
+          <div className="bg-white rounded-xl border border-border p-6 sm:p-8 flex flex-col gap-6 shadow-[0_18px_45px_rgba(3,27,64,0.08)]">
+            <div className="flex flex-col lg:flex-row items-center gap-8 justify-between">
+              <div className="flex items-center gap-5">
+                <FileText className="w-12 h-12 text-primary flex-shrink-0" />
+                <div>
+                  <p className="font-black text-primary text-lg sm:text-xl uppercase tracking-wider">NEED A CUSTOM GUIDE?</p>
+                  <p className="text-text-muted text-sm sm:text-base mt-1">Tell us your industry needs and we will send you the relevant resources.</p>
+                </div>
               </div>
-              <div>
-                <p className="font-extrabold text-primary text-sm">NEED A CUSTOM GUIDE?</p>
-                <p className="text-text-muted text-xs">Tell us your industry needs and we will send you the relevant resources.</p>
+              <div className="flex flex-1 flex-col sm:flex-row flex-wrap gap-3 w-full lg:max-w-3xl">
+                <input type="text" placeholder="Full Name" className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary" />
+                <input type="email" placeholder="Work Email" className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary" />
+                <input type="text" placeholder="Company Name" className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary" />
+                <Button variant="primary" className="w-full sm:w-auto whitespace-nowrap">
+                  GET RESOURCES →
+                </Button>
               </div>
             </div>
-            <div className="flex flex-1 flex-col sm:flex-row flex-wrap gap-3 w-full">
-              <input type="text" placeholder="Full Name" className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary" />
-              <input type="email" placeholder="Work Email" className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary" />
-              <input type="text" placeholder="Company Name" className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary" />
-              <Button variant="primary" className="w-full sm:w-auto whitespace-nowrap">
-                GET RESOURCES →
-              </Button>
-            </div>
-            <p className="mt-4 text-center text-xs text-slate-500 md:text-left md:ml-2">
+            <p className="text-center text-xs text-slate-500">
               We respect your privacy. No spam, ever.
             </p>
           </div>
@@ -1413,8 +1410,9 @@ export default function BlogPage() {
         <Container>
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="w-8 h-0.5 bg-secondary inline-block" />
+              <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">EXPERT INSIGHTS</span>
               <span className="w-12 h-0.5 bg-secondary" />
-              <span className="text-secondary text-xs font-bold uppercase tracking-widest">EXPERT INSIGHTS</span>
             </div>
             <h2 className="headline text-[clamp(1.9rem,4vw,3rem)] text-primary">
               EXPERT PERSPECTIVES.
@@ -1643,9 +1641,11 @@ export default function BlogPage() {
         <Container>
           {/* Header */}
           <div className="text-center mb-8">
-            <p className="text-[12px] font-bold uppercase tracking-[0.25em] text-secondary mb-3 text-center">
-              — INDUSTRY TOPICS —
-            </p>
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <span className="w-8 h-0.5 bg-secondary inline-block" />
+              <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">INDUSTRY TOPICS</span>
+              <span className="w-8 h-0.5 bg-secondary inline-block" />
+            </div>
             <h2 className="text-center text-[2.25rem] sm:text-[3rem] font-bold text-primary leading-[1.15] tracking-tight font-sans">
               COMPREHENSIVE COVERAGE.<br />
               REAL INDUSTRY <span className="text-secondary">KNOWLEDGE.</span>

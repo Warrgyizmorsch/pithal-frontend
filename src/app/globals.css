@@ -43,6 +43,14 @@ body {
   font-family: var(--font-body), "Arial Narrow", Arial, sans-serif;
 }
 
+h1, h2, h3, h4 {
+  font-family: var(--heading-font), sans-serif !important;
+  display: block;
+  transform: scaleY(1.12);
+  transform-origin: left top;
+  margin-bottom: 0.35em; /* Increased spacing to prevent overlapping and create breathing room under the scaled fonts */
+}
+
 @layer base {
   a {
     color: inherit;
@@ -149,3 +157,17 @@ textarea {
   border-color: var(--secondary);
   color: var(--secondary);
 }
+
+.download-btn {
+  background: color-mix(in srgb, var(--secondary) 7%, white);
+  border-color: var(--secondary);
+  color: var(--secondary);
+  transition: background-color 240ms ease, border-color 240ms ease, color 240ms ease;
+}
+
+.download-btn:hover {
+  background: var(--surface);
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
