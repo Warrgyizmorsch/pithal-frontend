@@ -486,18 +486,17 @@ export default function SolutionsPage() {
                   </span>
                 </div>
                 
-                <h1 className="headline mb-4 text-[clamp(2.15rem,5.2vw,4rem)] uppercase leading-[1.05] tracking-tight text-primary sm:mb-5">
+                <h1 className="headline mb-4 text-[clamp(2.15rem,5.2vw,4rem)] uppercase leading-[1.05] tracking-tight text-primary sm:mb-6">
                   ENGINEERED SOLUTIONS <br />
                   FOR <span className="text-secondary">EVERY INDUSTRY.</span>
                 </h1>
 
-                <span aria-hidden className="mt-4 block h-[2px] w-14 bg-secondary sm:mt-5" />
 
-                <p className="mt-4 max-w-[560px] text-sm font-medium leading-6 text-primary md:text-[16px] lg:leading-7">
+                <p className="mt-8 max-w-[560px] text-sm font-medium leading-6 text-primary md:text-[16px] lg:leading-7">
                   From rugged mining operations to large-scale infrastructure projects, we deliver crushing solutions that maximize performance, minimize downtime, and drive <span className="text-secondary font-bold italic">real results</span>.
                 </p>
                 
-                <div className="mt-5 flex flex-wrap gap-3 lg:mt-6">
+                <div className="mt-5 flex flex-wrap gap-3 lg:mt-8">
                   <Button href="#industries" variant="primary" className="group flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7">
                     EXPLORE SOLUTIONS
                     <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1.5" />
