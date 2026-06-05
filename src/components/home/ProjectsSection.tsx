@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
 import { Container } from "@/components/common/Container";
 import { ProjectCard } from "@/components/common/ProjectCard";
@@ -27,80 +24,6 @@ const proofPoints = [
 ];
 
 export function ProjectsSection() {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const [isPaused, setIsPaused] = React.useState(false);
-  const sliderRef = React.useRef<HTMLDivElement | null>(null);
-
-  const scrollSliderTo = React.useCallback((index: number) => {
-    const slider = sliderRef.current;
-    const slide = slider?.querySelector<HTMLElement>(
-      `[data-project-slide="${index}"]`,
-    );
-    if (!slider || !slide) return;
-
-    const sliderRect = slider.getBoundingClientRect();
-    const slideRect = slide.getBoundingClientRect();
-    const centeredLeft =
-      slider.scrollLeft +
-      slideRect.left -
-      sliderRect.left -
-      (slider.clientWidth - slide.offsetWidth) / 2;
-
-    slider.scrollTo({
-      behavior: "smooth",
-      left: centeredLeft,
-    });
-  }, []);
-
-  const scrollToProject = React.useCallback((index: number) => {
-    const nextIndex = (index + projects.length) % projects.length;
-
-    setActiveIndex(nextIndex);
-    scrollSliderTo(nextIndex);
-  }, [scrollSliderTo]);
-
-  React.useEffect(() => {
-    if (isPaused) return;
-
-    const interval = window.setInterval(() => {
-      setActiveIndex((currentIndex) => {
-        const nextIndex = (currentIndex + 1) % projects.length;
-        scrollSliderTo(nextIndex);
-
-        return nextIndex;
-      });
-    }, 3500);
-
-    return () => window.clearInterval(interval);
-  }, [isPaused, scrollSliderTo]);
-
-  const handleScroll = React.useCallback(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    const slides = Array.from(
-      slider.querySelectorAll<HTMLElement>("[data-project-slide]"),
-    );
-    const sliderCenter =
-      slider.getBoundingClientRect().left + slider.clientWidth / 2;
-    const closestSlide = slides.reduce(
-      (closest, slide) => {
-        const slideRect = slide.getBoundingClientRect();
-        const slideCenter = slideRect.left + slideRect.width / 2;
-        const distance = Math.abs(slideCenter - sliderCenter);
-
-        return distance < closest.distance
-          ? { distance, index: Number(slide.dataset.projectSlide) }
-          : closest;
-      },
-      { distance: Number.POSITIVE_INFINITY, index: activeIndex },
-    );
-
-    if (closestSlide.index !== activeIndex) {
-      setActiveIndex(closestSlide.index);
-    }
-  }, [activeIndex]);
-
   return (
     <section className="relative overflow-hidden bg-white py-10 sm:py-14 lg:py-1" id="projects">
       <div aria-hidden className="pointer-events-none absolute right-12 top-[-20px] hidden h-[400px] w-[55%] opacity-100 lg:block">
@@ -139,53 +62,17 @@ export function ProjectsSection() {
             ))}
           </div>
         </div>
-        <div
-          className="relative"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onTouchEnd={() => setIsPaused(false)}
-          onTouchStart={() => setIsPaused(true)}
-        >
-          <div
-            aria-label="Projects carousel"
-            className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-3 overflow-x-auto px-5 pb-2 [scrollbar-width:none] sm:-mx-8 sm:scroll-px-8 sm:px-8 lg:-mx-10 lg:scroll-px-10 lg:px-10 [&::-webkit-scrollbar]:hidden"
-            onScroll={handleScroll}
-            ref={sliderRef}
-          >
-            {projects.map((project, index) => (
-              <div
-                className="flex w-full shrink-0 snap-center sm:w-[calc(50%-0.375rem)] lg:w-[calc(33.333%-0.5rem)]"
-                data-project-slide={index}
-                key={project.plant + project.location}
-              >
-                <ProjectCard {...project} />
-              </div>
-            ))}
-          </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => <ProjectCard key={project.plant + project.location} {...project} />)}
         </div>
-
-        <div className="mt-5 flex items-center justify-center gap-2">
-          {projects.map((project, index) => (
-            <button
-              aria-label={`Show ${project.plant} in ${project.location}`}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                activeIndex === index ? "w-8 bg-secondary" : "w-2.5 bg-primary/20"
-              }`}
-              key={project.plant + project.location}
-              onClick={() => scrollToProject(index)}
-              type="button"
-            />
-          ))}
-        </div>
-
         <div className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
           <Button className="w-full min-[420px]:w-auto min-[420px]:min-w-[15rem]" href="#contact" variant="outlineNavy">
             View All Projects <ArrowRight aria-hidden size={16} />
           </Button>
-          <button aria-label="Previous projects" className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/25 text-primary transition-colors hover:border-primary hover:bg-primary hover:text-white" onClick={() => scrollToProject(activeIndex - 1)} type="button">
+          <button aria-label="Previous projects" className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/25 text-primary transition-colors hover:border-primary hover:bg-primary hover:text-white" type="button">
             <ArrowLeft aria-hidden size={16} />
           </button>
-          <button aria-label="Next projects" className="flex h-12 w-12 items-center justify-center rounded-full border border-secondary/60 text-secondary transition-colors hover:bg-secondary hover:text-white" onClick={() => scrollToProject(activeIndex + 1)} type="button">
+          <button aria-label="Next projects" className="flex h-12 w-12 items-center justify-center rounded-full border border-secondary/60 text-secondary transition-colors hover:bg-secondary hover:text-white" type="button">
             <ArrowRight aria-hidden size={16} />
           </button>
         </div>
