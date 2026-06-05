@@ -74,7 +74,7 @@ export default function WhyChoosePithal() {
               Why Choose Pithal
             </p>
 
-            <h2 className="headline text-[clamp(1.9rem,9vw,2.2rem)] text-primary sm:text-[clamp(2.05rem,3.35vw,3.2rem)]">
+            <h2 className="headline text-[clamp(1.9rem,9vw,2.2rem)] text-primary sm:text-[clamp(2.05rem,3.35vw,3.2rem)] pb-4">
               Engineered for More.
               <span className="mt-1 block text-secondary">Built to Last.</span>
             </h2>

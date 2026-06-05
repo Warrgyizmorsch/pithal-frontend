@@ -42,7 +42,7 @@ export function HeroSection() {
             <br />
             Mining Solutions
           </h1>
-          <p className="mt-3 max-w-[28rem] text-[0.95rem] leading-7 text-[#48576c] sm:text-[clamp(1rem,1.1vw,1.1rem)]">
+          <p className="mt-3 max-w-[28rem] text-[0.95rem] leading-7 text-[#48576c] sm:text-[clamp(1rem,1.1vw,1.1rem)] pt-5">
             High-performance crushing, screening &amp; mining machinery trusted
             by industrial leaders worldwide.
           </p>
