@@ -60,13 +60,13 @@ export function ProcessTimeline() {
             return (
               <div
                 key={step.number}
-                className="relative flex min-w-0"
+                className={`relative min-w-0 ${isActive ? "flex" : "hidden sm:flex"}`}
               >
                 <article
-                  className={`flex h-full min-w-0 flex-1 flex-col rounded-2xl border-2 transition-all duration-300 p-3 sm:p-4 xl:p-2 bg-white ${
+                  className={`flex h-full min-w-0 flex-1 flex-col rounded-2xl border-2 bg-white p-3 transition-all duration-300 sm:p-4 xl:p-2 ${
                     isActive
-                      ? "border-secondary scale-[1.03] shadow-xl z-20"
-                      : "border-primary/20 opacity-60 scale-[0.98]"
+                      ? "z-20 border-secondary shadow-xl sm:scale-[1.03]"
+                      : "border-primary/20 sm:scale-[0.98] sm:opacity-60"
                   }`}
                 >
                   <div className="mb-3 flex items-start gap-2">
@@ -86,7 +86,7 @@ export function ProcessTimeline() {
                       </p>
                     </div>
                   </div>
-                  <div className="relative mt-auto h-80 w-full sm:h-80 overflow-hidden rounded-xl bg-white">
+                  <div className="relative mt-auto h-72 w-full overflow-hidden rounded-xl bg-white min-[420px]:h-80 sm:h-80">
                     {mounted ? (
                       <video
                         ref={(el) => {
@@ -124,6 +124,24 @@ export function ProcessTimeline() {
             </div>
           );
         })}
+        </div>
+
+        <div className="mt-5 flex items-center justify-center gap-2 sm:hidden">
+          {processSteps.map((step, index) => {
+            const isActive = index === activeIndex;
+
+            return (
+              <button
+                aria-label={`Show process step ${step.number}`}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  isActive ? "w-8 bg-secondary" : "w-2.5 bg-primary/20"
+                }`}
+                key={step.number}
+                onClick={() => setActiveIndex(index)}
+                type="button"
+              />
+            );
+          })}
         </div>
 
         {/* Bottom Moving/Animated Flow Arrow */}
