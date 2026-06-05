@@ -7,21 +7,38 @@ import { Container } from "@/components/common/Container";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { processSteps } from "@/data/homeData";
 import { ArrowRight } from "lucide-react";
-
 export function ProcessTimeline() {
-  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
+  const [mounted, setMounted] = React.useState(false);
+  const [activeIndex, setActiveIndex] = React.useState<number>(0);
   const videoRefs = React.useRef<(HTMLVideoElement | null)[]>([]);
 
+  // Set mounted state
   React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Automatic transition every 3 seconds
+  React.useEffect(() => {
+    if (!mounted) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % processSteps.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [mounted]);
+
+  // Synchronize playing and pausing based on the active index
+  React.useEffect(() => {
+    if (!mounted) return;
     videoRefs.current.forEach((video, idx) => {
       if (!video) return;
-      if (idx === hoveredIndex) {
+      if (idx === activeIndex) {
         video.play().catch(() => {});
       } else {
         video.pause();
+        video.currentTime = 0; // reset non-active videos to start
       }
     });
-  }, [hoveredIndex]);
+  }, [activeIndex, mounted]);
 
   return (
     <section className="section-space bg-white">
@@ -34,30 +51,25 @@ export function ProcessTimeline() {
           subtitle="Our advanced crushing plants are designed to deliver maximum reduction, consistent quality, and higher productivity."
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:flex xl:flex-row xl:justify-center xl:items-stretch xl:gap-5">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 xl:items-stretch xl:gap-4">
           {processSteps.map((step, index) => {
-            const isHovered = hoveredIndex === index;
-            const isAnyHovered = hoveredIndex !== null;
+            const isActive = index === activeIndex;
             return (
               <div
                 key={step.number}
-                className="relative flex min-w-0 xl:flex-1 xl:min-w-0"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                className="relative flex min-w-0"
               >
                 <article
-                  className={`flex h-full min-w-0 flex-1 flex-col rounded-2xl border-2 transition-all duration-300 p-3 sm:p-4 xl:p-3 bg-white ${
-                    isHovered
+                  className={`flex h-full min-w-0 flex-1 flex-col rounded-2xl border-2 transition-all duration-300 p-3 sm:p-4 xl:p-2 bg-white ${
+                    isActive
                       ? "border-secondary scale-[1.03] shadow-xl z-20"
-                      : isAnyHovered
-                      ? "border-primary/20 opacity-60 scale-[0.98]"
-                      : "border-primary hover:shadow-md"
+                      : "border-primary/20 opacity-60 scale-[0.98]"
                   }`}
                 >
                   <div className="mb-3 flex items-start gap-2">
                     <div
                       className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-lg font-black leading-none text-white transition-colors duration-300 ${
-                        isHovered ? "bg-secondary" : "bg-primary"
+                        isActive ? "bg-secondary" : "bg-primary"
                       }`}
                     >
                       {step.number}
@@ -72,28 +84,35 @@ export function ProcessTimeline() {
                     </div>
                   </div>
                   <div className="relative mt-auto h-80 w-full sm:h-80 overflow-hidden rounded-xl bg-white">
-                    <video
-                      ref={(el) => {
-                        videoRefs.current[index] = el;
-                      }}
-                      className="h-full w-full object-contain"
-                      loop
-                      muted
-                      playsInline
-                    >
-                      <source
-                        src={
-                          step.number === "01" ? "/workvideo/magnific_animate-this-image-as-a-c_kLBgSFq16B.mp4" :
-                          step.number === "02" ? "/workvideo/magnific_animate-this-image-as-a-c_xgIwPatjfW.mp4" :
-                          step.number === "03" ? "/workvideo/magnific_animate-this-image-as-the_1soSjUvr4r.mp4" :
-                          step.number === "04" ? "/workvideo/magnific_animate-this-image-as-the_LUm7UMHswO.mp4" :
-                          step.number === "05" ? "/workvideo/magnific_animate-this-image-as-the_SOfPNJrUb8.mp4" :
-                          "/workvideo/magnific_animate-this-image-as-the_WMwpnNgcXe.mp4"
-                        }
-                        type="video/mp4"
-                      />
-                      Your browser does not support the video tag.
-                    </video>
+                    {mounted ? (
+                      <video
+                        ref={(el) => {
+                          videoRefs.current[index] = el;
+                        }}
+                        className="h-full w-full object-contain"
+                        muted
+                        playsInline
+                      >
+                        <source
+                          src={
+                            step.number === "01" ? "/workvideo/magnific_animate-this-image-as-the_LUm7UMHswO.mp4" :
+                            step.number === "02" ? "/workvideo/magnific_animate-this-image-as-the_SOfPNJrUb8.mp4" :
+                            step.number === "03" ? "/workvideo/magnific_animate-this-image-as-the_vunFBBia47.mp4" :
+                            step.number === "04" ? "/workvideo/magnific_animate-this-image-as-the_WMwpnNgcXe.mp4" :
+                            step.number === "05" ? "/workvideo/magnific_animate-this-image-as-the_1soSjUvr4r.mp4" :
+                            step.number === "06" ? "/workvideo/magnific_animate-this-image-as-a-c_kLBgSFq16B.mp4" :
+                            step.number === "07" ? "/workvideo/magnific_animate-this-image-as-a-c_xgIwPatjfW.mp4" :
+                            "/workvideo/magnific_animate-this-image-as-the_vunFBBia47.mp4"
+                          }
+                          type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      <div className="h-full w-full bg-slate-50/50 flex items-center justify-center text-[10px] font-medium text-slate-400">
+                        Loading...
+                      </div>
+                    )}
                     {/* Fade vignette to blend corners with the white card background */}
                     <div className="absolute inset-0 pointer-events-none z-10 bg-[radial-gradient(circle,_transparent_50%,_#ffffff_98%)]" />
                   </div>

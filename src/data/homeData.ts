@@ -155,7 +155,8 @@ export const processSteps = [
   { number: "03", title: "Primary Crushing", text: "Jaw crusher reduces large rocks into smaller, manageable sizes.", image: "/images/process/jaw-crusher.png", icon: "/icons/primary-crushing.png" },
   { number: "04", title: "Secondary Crushing", text: "Further size reduction using cone crusher for consistent output.", image: "/images/process/cone.png", icon: "/icons/secondary-crushing.png" },
   { number: "05", title: "Screening", text: "Vibrating screens separate material into different sizes.", image: "/images/process/screen1.png", icon: "/icons/screening.png" },
-  { number: "06", title: "Final Output", text: "High-quality aggregates ready for various applications.", image: "/images/process/output.png", icon: "/icons/final-output.png" },
+  { number: "06", title: "Conveyer Belt", text: "Carries materials to the desired location.", image: "/images/process/stockpile.png", icon: "/icons/stockpile.png" },
+  { number: "07", title: "Final Output", text: "High-quality aggregates ready for various applications.", image: "/images/process/output.png", icon: "/icons/final-output.png" },
 ];
 
 export const processFeatures = [
