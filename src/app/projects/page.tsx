@@ -1,47 +1,30 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
   ChevronRight,
-  Settings,
-  HelpCircle,
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-  Sparkles,
   Zap,
   Shield,
-  Award,
-  Users,
   CheckCircle2,
-  Play,
-  RotateCcw,
   TrendingUp,
   FileText,
   Workflow,
-  Globe,
-  Settings2,
-  HardHat,
-  Cpu,
-  Layers,
   Wrench,
-  Construction,
-  Gem,
-  Check,
   Download,
   Calendar,
-  FileCheck,
   Handshake,
-  DollarSign,
-  Star,
-  Activity,
   Headphones,
   Building2,
   AlertTriangle,
+  MapPin,
+  Star,
+  Activity,
+  Layers,
+  Clock,
+  Check,
 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
@@ -378,7 +361,7 @@ export default function CaseStudyPage() {
                       LIMITING TOTAL POTENTIAL
                     </h4>
                     <p className="mt-1.5 text-[10.5px] leading-relaxed text-slate-300 font-medium">
-                      These challenges were limiting the plant's true potential and impacting overall operational efficiency. Pithal was engaged to deliver a complete end-to-end solution to overcome these issues and ensure maximum performance.
+                      These challenges were limiting the plant&apos;s true potential and impacting overall operational efficiency. Pithal was engaged to deliver a complete end-to-end solution to overcome these issues and ensure maximum performance.
                     </p>
                   </div>
                 </div>
@@ -1007,7 +990,7 @@ export default function CaseStudyPage() {
             <SectionTitle
               eyebrow="GLOBAL CAPABILITY & SUPPORT"
               title={<>GLOBAL REACH. LOCAL SUPPORT. <span className="text-secondary">ALWAYS WITH YOU.</span></>}
-              subtitle="Pithal Engineering delivers world-class solutions backed by strong global capabilities and dedicated support at every stage of your plant's journey."
+              subtitle="Pithal Engineering delivers world-class solutions backed by strong global capabilities and dedicated support at every stage of your plant&apos;s journey."
             />
 
             <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center mb-12">
@@ -1072,7 +1055,7 @@ export default function CaseStudyPage() {
                   <strong>PARTNER WITH PITHAL ENGINEERING</strong> — From engineering excellence to lifetime support, we ensure your success at every step.
                 </p>
                 <Button href="#contact" variant="primary" className="mt-3.5 flex items-center justify-center gap-1.5 text-[8.5px] font-black uppercase tracking-widest py-3 px-5">
-                  LET'S BUILD YOUR SUCCESS STORY <ArrowRight size={11} />
+                  LET&apos;S BUILD YOUR SUCCESS STORY <ArrowRight size={11} />
                 </Button>
               </div>
             </div>
@@ -1230,7 +1213,7 @@ export default function CaseStudyPage() {
                 YOUR VISION. OUR ENGINEERING.
               </span>
               <h2 className="text-[clamp(2.2rem,6vw,3.5rem)] font-black uppercase leading-[1.05] tracking-tight mt-4 text-white">
-                Let's Build Your Next <br />
+                Let&apos;s Build Your Next <br />
                 <span className="text-secondary">Industrial Success Story.</span>
               </h2>
               <span aria-hidden className="mt-5 block h-[2.5px] w-12 bg-secondary" />

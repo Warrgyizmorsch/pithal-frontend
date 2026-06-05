@@ -562,6 +562,7 @@ const expertQuotes = [
     author: "VIKRAM DESHPANDE",
     role: "Chief Engineering Officer",
     experience: "24+ Years Experience",
+    image: "/testimonials/OIP.webp",
   },
   {
     quote:
@@ -569,6 +570,7 @@ const expertQuotes = [
     author: "RAHUL SATHE",
     role: "Head of Plant Design",
     experience: "20+ Years Experience",
+    image: "/testimonials/OIP.webp",
   },
   {
     quote:
@@ -576,6 +578,7 @@ const expertQuotes = [
     author: "SACHIN KULKARNI",
     role: "Head of Maintenance",
     experience: "22+ Years Experience",
+    image: "/testimonials/OIP.webp",
   },
   {
     quote:
@@ -583,6 +586,7 @@ const expertQuotes = [
     author: "AMIT MHATRE",
     role: "Head of Technology",
     experience: "18+ Years Experience",
+    image: "/testimonials/OIP.webp",
   },
 ];
 
@@ -2051,29 +2055,28 @@ export default function BlogPage() {
                   <div className="w-8 h-[2px] bg-secondary mb-6"></div>
 
                   {/* Author Card */}
-                  <div className="mt-auto flex items-stretch border border-orange-50 rounded-xl overflow-hidden bg-gradient-to-br from-orange-50/30 to-transparent">
+                  <div className="mt-auto flex items-stretch">
                     {/* Author Image - Ensure q.image exists in your data */}
-                    <div className="w-20 shrink-0 self-end flex items-end">
-                      ? (
+                    <div className="w-24 shrink-0 self-end flex items-end">
+                      {q.image ? (
                         <img
-                          
+                          src={q.image}
                           alt={q.author}
-                          className="w-full h-auto object-cover"
+                          className="w-full h-auto object-cover rounded-lg"
                         />
                       ) : (
-                        /* Fallback if no image is provided */
-                        <div className="flex h-16 w-full items-center justify-center bg-bg-light text-sm font-black text-primary">
+                        <div className="flex h-16 w-full items-center justify-center text-sm font-black text-primary">
                           {q.author
                             .split(" ")
                             .map((name) => name[0])
                             .join("")
                             .slice(0, 2)}
                         </div>
-                      )
+                      )}
                     </div>
 
                     {/* Author Details */}
-                    <div className="p-3 flex flex-col justify-center min-w-0">
+                    <div className="p-3 pl-5 flex flex-col justify-center min-w-0">
                       <p className="text-[12px] font-extrabold uppercase tracking-wide text-primary leading-tight mb-1 truncate">
                         {q.author}
                       </p>
@@ -2577,7 +2580,7 @@ export default function BlogPage() {
                 {/* Orange accent line */}
                 <div className="w-8 h-1 bg-secondary rounded" />
                 <h3 className="text-[1.75rem] sm:text-[2.25rem] font-bold text-primary leading-tight font-sans uppercase">
-                  LET'S ENGINEER
+                  LET&apos;S ENGINEER
                   <br />
                   <span className="text-secondary">BETTER</span> INDUSTRIAL
                   OUTCOMES.

@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { processSteps } from "@/data/homeData";
 import { ArrowRight } from "lucide-react";
+
 export function ProcessTimeline() {
   const [mounted, setMounted] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState<number>(0);
@@ -14,7 +14,10 @@ export function ProcessTimeline() {
 
   // Set mounted state
   React.useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   // Automatic transition every 3 seconds

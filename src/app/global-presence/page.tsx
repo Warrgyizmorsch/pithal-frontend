@@ -12,6 +12,7 @@ import {
   Truck,
   ArrowRight,
   ChevronRight,
+  Home,
   Shield,
   Award,
   TrendingUp,
@@ -298,35 +299,38 @@ export default function GlobalPresencePage() {
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f4f8fc] via-[#f4f8fc]/50 to-transparent" />
           </div>
 
-          <Container className="relative z-10 max-w-[1320px] px-2 sm:px-4 lg:px-6 w-full h-full flex flex-col justify-between">
+          <Container className="relative z-10 max-w-[1520px] px-5 sm:px-8 lg:px-10 w-full h-full flex flex-col justify-between">
             {/* Breadcrumb */}
-            <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary/80">
-              <Link href="/" className="hover:text-secondary transition-colors">
+            <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-slate-500">
+              <Link href="/" className="hover:text-secondary transition-colors flex items-center gap-1.5">
+                <Home size={14} className="stroke-[2]" />
                 Home
               </Link>
-              <ChevronRight className="h-4 w-4 text-primary/50" />
-              <span className="text-secondary">Global Presence</span>
+              <ChevronRight className="w-3.5 h-3.5 text-slate-400 stroke-[2.5]" />
+              <span className="text-slate-500">Global Presence</span>
             </div>
 
-            <div className="max-w-[640px]">
-              {/* ✅ Badge — outline style, orange border + text, NOT filled */}
-              <div className="mb-3 inline-flex items-center gap-2.5 rounded-md border border-secondary/40 bg-white/80 px-4 py-2 text-sm font-black uppercase tracking-widest text-secondary">
-                <Globe className="h-4 w-4 stroke-[2] text-secondary" />
-                Global Presence
+            <div className="max-w-[800px]">
+              {/* ✅ Badge — matching Careers tag style */}
+              <div className="mb-4 flex items-center gap-3">
+                <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
+                  GLOBAL PRESENCE
+                </span>
+                <span className="h-[1.5px] w-12 bg-secondary" />
               </div>
 
-              {/* ✅ Headline — both lines same large size */}
-              <h1 className="headline mb-3 leading-[0.95]">
-                <span className="block text-[clamp(2.2rem,4.8vw,4.4rem)] font-black text-primary">
+              {/* ✅ Headline — matching Careers H1 size and leading */}
+              <h1 className="font-extrabold text-[2.5rem] sm:text-[3.25rem] lg:text-[3.5rem] leading-[1.1] tracking-tight text-primary uppercase mb-6">
+                <span className="block">
                   ENGINEERING EXCELLENCE.
                 </span>
-                <span className="block text-[clamp(2.2rem,4.8vw,4.4rem)] font-black text-secondary">
+                <span className="block text-secondary">
                   DELIVERED WORLDWIDE.
                 </span>
               </h1>
 
-              {/* ✅ Description — normal weight (not semibold) */}
-              <p className="mb-4 max-w-[500px] text-[clamp(0.95rem,1.1vw,1.05rem)] font-normal leading-relaxed text-[#3f5068]">
+              {/* ✅ Description — matching Careers paragraph style */}
+              <p className="mt-6 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg mb-8">
                 Pithal Engineering delivers advanced crushing &amp; screening
                 solutions across the globe with precision, reliability and
                 unmatched support. From engineering to installation — we&apos;re
@@ -410,27 +414,26 @@ export default function GlobalPresencePage() {
             <div className="grid lg:grid-cols-12 gap-8 items-start mb-2">
               {/* LEFT: Label + Headline + Description + Legend */}
               <div className="lg:col-span-5">
-                {/* ✅ "OUR GLOBAL NETWORK" with orange dashes on both sides */}
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="h-px w-8 bg-secondary" />
-                  <span className="text-xs font-black uppercase tracking-[0.25em] text-secondary">
+                {/* ✅ matching Careers tag style */}
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
                     OUR GLOBAL NETWORK
                   </span>
-                  <span className="h-px w-8 bg-secondary" />
+                  <span className="h-[1.5px] w-12 bg-secondary" />
                 </div>
 
-                {/* ✅ Both headline lines same large size */}
-                <h2 className="headline leading-[0.95] mb-4">
-                  <span className="block text-[clamp(1.8rem,3.4vw,2.8rem)] text-primary font-black">
+                {/* ✅ Matching Careers H2 size and leading */}
+                <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
+                  <span className="block">
                     A WORLDWIDE NETWORK.
                   </span>
-                  <span className="block text-[clamp(1.8rem,3.4vw,2.8rem)] text-secondary font-black">
+                  <span className="block text-secondary">
                     DELIVERING INDUSTRIAL EXCELLENCE.
                   </span>
                 </h2>
 
-                {/* ✅ Normal weight description */}
-                <p className="text-sm font-normal text-text-muted max-w-lg leading-relaxed mb-6">
+                {/* ✅ Matching Careers paragraph style */}
+                <p className="mt-5 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg mb-8">
                   Pithal Engineering delivers advanced crushing &amp; screening
                   solutions to clients across the globe. Our strong global
                   network ensures seamless delivery, installation and long-term
@@ -698,19 +701,26 @@ export default function GlobalPresencePage() {
               <div className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,#fff_33%,rgba(255,255,255,0.92)_45%,rgba(255,255,255,0.22)_64%,rgba(255,255,255,0)_100%)]" />
               <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white via-white/80 to-transparent" />
 
-              <div className="relative z-10 flex min-h-[590px] flex-col justify-between px-5 pb-7 pt-8 sm:px-8 lg:min-h-[425px] lg:px-11 lg:pt-9">
-                <div className="max-w-[650px]">
-                  <p className="mb-4 flex items-center gap-3 text-[13px] font-black uppercase tracking-[0.07em] text-[#fa5902]">
-                    <span className="h-[2px] w-8 bg-[#fa5902]" />
-                    OUR EXPORT CAPABILITY
-                  </p>
-                  <h2 className="headline max-w-[640px] text-[clamp(2.35rem,4.25vw,4.2rem)] leading-[0.94] text-[#061f49]">
+              <div className="relative z-10 flex min-h-[590px] flex-col justify-between px-5 pb-7 pt-8 sm:px-8 lg:min-h-[425px] lg:px-11 lg:pt-9 max-w-[1520px] mx-auto">
+                <div className="max-w-[750px]">
+                  {/* ✅ matching Careers tag style */}
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
+                      OUR EXPORT CAPABILITY
+                    </span>
+                    <span className="h-[1.5px] w-12 bg-secondary" />
+                  </div>
+
+                  {/* ✅ Matching Careers H2 size and leading */}
+                  <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
                     BUILT TO MEET WORLDWIDE
-                    <span className="block text-[#fa5902]">
+                    <span className="block text-secondary">
                       STANDARDS. DELIVERED WITH CARE.
                     </span>
                   </h2>
-                  <p className="mt-5 max-w-[560px] text-[clamp(0.95rem,1.15vw,1.08rem)] font-semibold leading-7 text-[#273b5a]">
+                  
+                  {/* ✅ Matching Careers paragraph style */}
+                  <p className="mt-5 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg mb-8">
                     From engineering to export logistics, we ensure our
                     solutions reach you safely, compliantly and on time -
                     anywhere in the world.
@@ -1005,21 +1015,28 @@ export default function GlobalPresencePage() {
         {/* ══════════════════════════════════════════════════════════════════
             SECTION 4 — INDUSTRIES SERVED
             ══════════════════════════════════════════════════════════════════ */}
-        <section className="bg-white px-5 py-8 sm:px-8 lg:px-9">
-          <div className="mx-auto max-w-[1390px]">
-            <div className="mb-7 grid items-end gap-8 lg:grid-cols-[1.08fr_1.52fr]">
+        <section className="bg-white py-12">
+          <Container>
+            <div className="mb-10 grid items-end gap-8 lg:grid-cols-[1.15fr_1.45fr]">
               <div>
-                <p className="mb-3 flex items-center gap-3 text-[14px] font-black uppercase tracking-[0.06em] text-[#fa5902]">
-                  <span className="h-[2px] w-8 bg-[#fa5902]" />
-                  INDUSTRIES WE SERVE GLOBALLY
-                </p>
-                <h2 className="headline text-[clamp(2.6rem,4.4vw,4.6rem)] leading-[0.92] text-[#061f49]">
+                {/* ✅ matching Careers tag style */}
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
+                    INDUSTRIES WE SERVE GLOBALLY
+                  </span>
+                  <span className="h-[1.5px] w-12 bg-secondary" />
+                </div>
+
+                {/* ✅ Matching Careers H2 size and leading */}
+                <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
                   POWERING INDUSTRIES.
-                  <span className="block text-[#fa5902]">
+                  <span className="block text-secondary">
                     ACROSS THE WORLD.
                   </span>
                 </h2>
-                <p className="mt-4 max-w-[590px] text-[16px] font-semibold leading-7 text-[#273b5a]">
+
+                {/* ✅ Matching Careers paragraph style */}
+                <p className="mt-5 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg">
                   Pithal Engineering solutions are trusted in diverse industries
                   worldwide. Built for performance. Engineered for global
                   impact.
@@ -1055,17 +1072,17 @@ export default function GlobalPresencePage() {
                 ].map((stat) => (
                   <div
                     key={stat.label}
-                    className="flex min-h-[106px] items-start gap-4 px-5 py-2 xl:border-l xl:border-[#cfd6e2]"
+                    className="flex min-h-[106px] items-start gap-4 px-5 py-2 xl:border-l xl:border-slate-100"
                   >
-                    <stat.icon className="mt-1 h-12 w-12 shrink-0 stroke-[1.45] text-[#fa5902]" />
+                    <stat.icon className="mt-1 h-12 w-12 shrink-0 stroke-[1.45] text-secondary" />
                     <div>
-                      <div className="text-[30px] font-black leading-none text-[#fa5902]">
+                      <div className="text-[30px] font-black leading-none text-secondary">
                         {stat.value}
                       </div>
-                      <div className="mt-1 text-[12px] font-black uppercase leading-4 text-[#061f49]">
+                      <div className="mt-1 text-[12px] font-black uppercase leading-4 text-primary">
                         {stat.label}
                       </div>
-                      <p className="mt-3 max-w-[140px] text-[11px] font-semibold leading-4 text-[#40516d]">
+                      <p className="mt-3 max-w-[140px] text-[11px] font-semibold leading-4 text-text-muted">
                         {stat.desc}
                       </p>
                     </div>
@@ -1074,7 +1091,7 @@ export default function GlobalPresencePage() {
               </div>
             </div>
 
-            <div className="grid gap-5 lg:grid-cols-3">
+            <div className="grid gap-6 lg:grid-cols-3">
               {[
                 {
                   id: "01",
@@ -1153,9 +1170,9 @@ export default function GlobalPresencePage() {
               ].map((ind) => (
                 <article
                   key={ind.id}
-                  className="group relative h-[430px] overflow-hidden rounded-[10px] bg-white shadow-[0_14px_34px_rgba(9,31,66,0.12)] ring-1 ring-[#dfe6ef] sm:h-[330px] lg:h-[306px]"
+                  className="group relative h-[430px] overflow-hidden rounded-[1.5rem] bg-white shadow-sm border border-slate-100 sm:h-[330px] lg:h-[320px] transition-all hover:shadow-md"
                 >
-                  <div className="absolute inset-x-0 top-0 h-[238px] overflow-hidden bg-[#dbe3ef] sm:h-[218px] lg:h-[208px]">
+                  <div className="absolute inset-x-0 top-0 h-[238px] overflow-hidden bg-slate-50 sm:h-[218px] lg:h-[208px]">
                     <Image
                       src={ind.image}
                       alt={`${ind.name} industry`}
@@ -1163,11 +1180,11 @@ export default function GlobalPresencePage() {
                       sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw"
                       className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.035]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#061f49]/5 via-transparent to-[#061f49]/8" />
-                    <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-[5px] bg-[#061f49] text-[15px] font-black text-white shadow-[0_8px_16px_rgba(9,31,66,0.22)]">
+                    <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/8" />
+                    <div className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-[15px] font-black text-white shadow-sm">
                       {ind.id}
                     </div>
-                    <div className="absolute right-4 top-4 flex items-center gap-2 rounded-[7px] bg-white/92 px-3 py-2 text-[12px] font-black text-[#061f49] shadow-[0_8px_18px_rgba(9,31,66,0.14)] backdrop-blur">
+                    <div className="absolute right-4 top-4 flex items-center gap-2 rounded-lg bg-white/95 px-3 py-2 text-[12px] font-black text-primary shadow-sm backdrop-blur">
                       <span className="text-[18px] leading-none">
                         {ind.flag}
                       </span>
@@ -1178,9 +1195,9 @@ export default function GlobalPresencePage() {
                   <div className="absolute inset-x-0 bottom-0 h-[226px] overflow-hidden sm:h-[176px] lg:h-[164px]">
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[186px] bg-white sm:h-[132px] lg:h-[124px]" />
                     <div className="pointer-events-none absolute -left-10 top-0 h-[132px] w-[126%] rounded-t-[100%] bg-white sm:-left-8 sm:h-[116px] lg:-left-7 lg:h-[108px]" />
-                    <div className="relative px-4 pb-4 pt-7 sm:pt-2 lg:pt-1">
-                      <div className="mb-3 flex items-end gap-4 lg:mb-2">
-                        <div className="flex h-[82px] w-[82px] shrink-0 items-center justify-center rounded-[10px] bg-white text-[#fa5902] shadow-[0_12px_26px_rgba(9,31,66,0.12)] ring-1 ring-[#eef2f7] lg:h-[78px] lg:w-[78px]">
+                    <div className="relative px-5 pb-5 pt-7 sm:pt-2 lg:pt-1">
+                      <div className="mb-4 flex items-end gap-4 lg:mb-2">
+                        <div className="flex h-[82px] w-[82px] shrink-0 items-center justify-center rounded-2xl bg-white text-secondary shadow-md border border-slate-50 lg:h-[78px] lg:w-[78px]">
                           <Image
                             src={ind.icon}
                             alt=""
@@ -1190,45 +1207,45 @@ export default function GlobalPresencePage() {
                           />
                         </div>
                         <div className="pb-1">
-                          <h3 className="headline text-[28px] leading-none text-[#061f49] lg:text-[26px]">
+                          <h3 className="text-2xl font-black leading-none text-primary lg:text-xl">
                             {ind.name}
                           </h3>
-                          <p className="mt-1 max-w-[270px] text-[13px] font-semibold leading-5 text-[#273b5a] lg:text-[12px] lg:leading-[1.35]">
+                          <p className="mt-1 max-w-[270px] text-xs font-semibold leading-relaxed text-slate-500">
                             {ind.desc}
                           </p>
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-3 gap-0 border-t border-[#e5ebf2] pt-3 lg:pt-2">
+                      <div className="grid grid-cols-3 gap-0 border-t border-slate-100 pt-4 lg:pt-2">
                         {[
                           {
                             icon: MapPin,
-                            label: "Regions Served",
+                            label: "Regions",
                             value: ind.regions,
                           },
                           {
                             icon: Settings,
-                            label: "Key Applications",
+                            label: "Applications",
                             value: ind.applications,
                           },
                           {
                             icon: TrendingUp,
-                            label: "Solution Impact",
+                            label: "Impact",
                             value: ind.impact,
                           },
                         ].map((item, index) => (
                           <div
                             key={item.label}
                             className={`flex gap-2 px-3 first:pl-0 last:pr-0 lg:gap-1.5 lg:px-2 ${
-                              index > 0 ? "border-l border-[#e5ebf2]" : ""
+                              index > 0 ? "border-l border-slate-100" : ""
                             }`}
                           >
-                            <item.icon className="mt-0.5 h-6 w-6 shrink-0 stroke-[1.55] text-[#fa5902] lg:h-5 lg:w-5" />
+                            <item.icon className="mt-0.5 h-6 w-6 shrink-0 stroke-[1.55] text-secondary lg:h-5 lg:w-5" />
                             <div>
-                              <div className="text-[10px] font-black leading-4 text-[#061f49] lg:text-[9px]">
+                              <div className="text-[10px] font-black leading-4 text-primary lg:text-[9px]">
                                 {item.label}
                               </div>
-                              <div className="text-[10px] font-semibold leading-4 text-[#40516d] lg:text-[9px] lg:leading-[1.25]">
+                              <div className="text-[10px] font-semibold leading-4 text-slate-500 lg:text-[9px] lg:leading-[1.25]">
                                 {item.value}
                               </div>
                             </div>
@@ -1238,45 +1255,49 @@ export default function GlobalPresencePage() {
                     </div>
                   </div>
 
-                  <div className="absolute inset-x-0 bottom-0 h-[3px] bg-[#fa5902]" />
+                  <div className="absolute inset-x-0 bottom-0 h-[3px] bg-secondary" />
                 </article>
               ))}
             </div>
 
-            <div className="mt-6 flex min-h-[62px] flex-col items-center gap-4 rounded-[8px] bg-[#f4f6f9] px-6 py-4 shadow-[0_10px_26px_rgba(9,31,66,0.06)] md:flex-row">
-              <div className="flex items-center gap-4 pr-8 text-[#061f49] md:border-r md:border-[#cfd6e2]">
-                <Globe className="h-9 w-9 shrink-0 stroke-[1.45] text-[#fa5902]" />
-                <span className="text-[15px] font-black uppercase tracking-[0.03em]">
+            <div className="mt-8 flex min-h-[62px] flex-col items-center gap-4 rounded-2xl bg-slate-50 px-6 py-5 border border-slate-100 md:flex-row">
+              <div className="flex items-center gap-4 pr-8 text-primary md:border-r md:border-slate-200">
+                <Globe className="h-9 w-9 shrink-0 stroke-[1.45] text-secondary" />
+                <span className="text-[15px] font-black uppercase tracking-wide">
                   GLOBAL IMPACT. LOCAL UNDERSTANDING.
                 </span>
               </div>
-              <p className="text-center text-[13px] font-semibold leading-5 text-[#273b5a] md:flex-1">
+              <p className="text-center text-sm font-semibold leading-relaxed text-slate-600 md:flex-1">
                 Delivered to global standards with local support — ensuring the
                 best performance, everywhere.
               </p>
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* ══════════════════════════════════════════════════════════════════
             SECTION 5 — INTERNATIONAL PROJECTS
             ══════════════════════════════════════════════════════════════════ */}
-        <section className="bg-white px-5 py-8 sm:px-8 lg:px-9">
-          <div className="mx-aufix to max-w-[1440px]">
-            <div className="grid items-start gap-7 lg:grid-cols-[minmax(0,610px)_minmax(0,1fr)] xl:gap-8">
-              <div className="min-w-0">
+        <section className="bg-white py-12">
+          <Container>
+            <div className="grid items-start gap-10 lg:grid-cols-[1fr_auto]">
+              <div className="max-w-[750px]">
+                {/* ✅ matching Careers tag style */}
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="h-px w-8 bg-[#fa5902]" />
-                  <span className="text-[14px] font-black uppercase tracking-[0.02em] text-[#fa5902]">
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
                     GLOBAL PROJECTS. PROVEN RESULTS.
                   </span>
+                  <span className="h-[1.5px] w-12 bg-secondary" />
                 </div>
-                <h2 className="headline max-w-[670px] text-[clamp(2.25rem,3.4vw,3.65rem)] leading-[0.95] text-[#061f49]">
+
+                {/* ✅ Matching Careers H2 size and leading */}
+                <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
                   DELIVERING EXCELLENCE
-                  <br />
-                  <span className="text-[#fa5902]">ACROSS BORDERS.</span>
+                  <span className="block text-secondary">ACROSS BORDERS.</span>
                 </h2>
-                <p className="mt-5 max-w-[640px] text-[14px] font-semibold leading-[1.65] text-[#273b5a]">
+
+                {/* ✅ Matching Careers paragraph style */}
+                <p className="mt-5 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg mb-8">
                   Pithal Machines Ltd. has successfully delivered advanced
                   crushing &amp; screening solutions in 35+ countries. Every
                   project reflects our commitment to quality, reliability and
@@ -1284,112 +1305,95 @@ export default function GlobalPresencePage() {
                 </p>
               </div>
 
-              <div className="flex min-w-0 flex-wrap items-start justify-start gap-x-5 gap-y-5 self-start lg:mt-[58px] xl:flex-nowrap">
+              <div className="flex flex-wrap items-start justify-start gap-8 lg:mt-12">
                 {[
                   {
                     icon: Globe,
                     value: "35+",
                     label: "COUNTRIES",
-                    desc: "Global Presence",
                   },
                   {
                     icon: Clipboard,
                     value: "1500+",
-                    label: "INSTALLATIONS",
-                    desc: "Successful Projects",
+                    label: "PROJECTS",
                   },
                   {
                     icon: Settings,
                     value: "20+",
                     label: "INDUSTRIES",
-                    desc: "Diverse Applications",
-                  },
-                  {
-                    icon: Shield,
-                    value: "100%",
-                    label: "PERFORMANCE",
-                    desc: "Client Satisfaction",
                   },
                 ].map((stat, index) => (
                   <div
                     key={stat.label}
-                    className={`flex h-[78px] w-[142px] items-start gap-2.5 px-3 py-0 ${
-                      index > 0 ? "xl:border-l xl:border-[#cfd6e2]" : ""
+                    className={`flex items-start gap-4 ${
+                      index > 0 ? "lg:border-l lg:border-slate-100 lg:pl-8" : ""
                     }`}
                   >
-                    <stat.icon className="mt-0.5 h-[38px] w-[38px] shrink-0 stroke-[1.45] text-[#fa5902]" />
+                    <stat.icon className="h-10 w-10 shrink-0 stroke-[1.45] text-secondary" />
                     <div>
-                      <div className="text-[26px] font-black leading-none text-[#fa5902]">
+                      <div className="text-3xl font-black leading-none text-secondary">
                         {stat.value}
                       </div>
-                      <div className="mt-1 text-[10px] font-black uppercase leading-3 text-[#061f49]">
+                      <div className="mt-1 text-[11px] font-black uppercase leading-tight text-primary">
                         {stat.label}
                       </div>
-                      <p className="mt-3 text-[10px] font-semibold leading-3 text-[#40516d]">
-                        {stat.desc}
-                      </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-6 overflow-hidden rounded-[10px] bg-white shadow-[0_16px_38px_rgba(9,31,66,0.11)] ring-1 ring-[#e3e9f1]">
-              <div className="flex items-center justify-between px-4 pb-4 pt-5 sm:px-5">
+            <div className="mt-10 overflow-hidden rounded-[2rem] bg-white border border-slate-100 shadow-sm">
+              <div className="flex items-center justify-between px-8 py-8 border-b border-slate-50">
                 <div>
-                  <h3 className="text-[18px] font-black uppercase leading-none text-[#061f49]">
+                  <h3 className="text-xl font-black uppercase text-primary">
                     INTERNATIONAL PROJECTS
                   </h3>
-                  <span className="mt-3 block h-px w-14 bg-[#fa5902]" />
+                  <span className="mt-2 block h-[2px] w-12 bg-secondary" />
                 </div>
                 <Link
                   href="/projects"
-                  className="group flex items-center gap-3 text-[13px] font-black uppercase text-[#061f49]"
+                  className="group flex items-center gap-2 text-xs font-black uppercase text-primary hover:text-secondary transition-colors"
                 >
                   VIEW ALL PROJECTS
-                  <ArrowRight className="h-6 w-6 stroke-[1.6] text-[#fa5902] transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
 
-              <div className="grid gap-4 px-4 pb-4 sm:grid-cols-2 sm:px-5 lg:grid-cols-5">
+              <div className="grid gap-6 p-8 sm:grid-cols-2 lg:grid-cols-5">
                 {projectsData.map((p) => (
                   <article
                     key={p.id}
-                    className="group flex h-[405px] flex-col overflow-hidden rounded-[7px] bg-white shadow-[0_10px_24px_rgba(9,31,66,0.12)] ring-1 ring-[#dfe6ef]"
+                    className="group flex flex-col overflow-hidden rounded-2xl bg-white border border-slate-100 transition-all hover:shadow-md"
                   >
-                    <div className="relative h-[166px] shrink-0 overflow-hidden bg-[#dbe3ef]">
+                    <div className="relative h-44 shrink-0 overflow-hidden bg-slate-50">
                       <Image
                         src={p.image}
                         alt={`${p.country} ${p.title}`}
-                        width={320}
-                        height={190}
+                        fill
                         sizes="(min-width: 1024px) 18vw, (min-width: 640px) 45vw, 100vw"
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.035]"
                       />
-                      <div className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-[5px] bg-[#fa5902] text-[13px] font-black text-white shadow-[0_8px_16px_rgba(250,89,2,0.25)]">
+                      <div className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-lg bg-secondary text-[13px] font-black text-white shadow-sm">
                         {p.id}
                       </div>
                     </div>
 
-                    <div className="flex flex-1 flex-col px-4 pb-3 pt-3">
-                      <div className="mb-3 flex min-h-[30px] items-center justify-between gap-3">
-                        <div className="flex items-center gap-2 text-[12px] font-black uppercase leading-4 text-[#061f49]">
-                          <span className="text-[21px] leading-none">
+                    <div className="flex flex-1 flex-col p-5">
+                      <div className="mb-4 flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2 text-xs font-black uppercase text-primary">
+                          <span className="text-[20px] leading-none">
                             {p.flag}
                           </span>
                           {p.country}
                         </div>
-                        <div className="flex max-w-[94px] items-center gap-1.5 text-[9px] font-bold leading-3 text-[#40516d]">
-                          <Clipboard className="h-[15px] w-[15px] shrink-0 stroke-[1.7] text-[#fa5902]" />
-                          {p.industry}
-                        </div>
                       </div>
 
-                      <h4 className="headline mb-4 text-[18px] leading-none text-[#061f49]">
+                      <h4 className="text-lg font-black leading-tight text-primary mb-5 group-hover:text-secondary transition-colors">
                         {p.title}
                       </h4>
 
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         {[
                           {
                             icon: Settings,
@@ -1398,24 +1402,19 @@ export default function GlobalPresencePage() {
                           },
                           {
                             icon: Wrench,
-                            label: "Machines Supplied",
+                            label: "Machines",
                             value: p.machines,
-                          },
-                          {
-                            icon: Award,
-                            label: "Result Delivered",
-                            value: p.result,
                           },
                         ].map((row) => (
                           <div
                             key={row.label}
-                            className="grid grid-cols-[18px_82px_1fr] gap-2 text-[8.5px] leading-[1.45] text-[#40516d]"
+                            className="flex flex-col gap-1"
                           >
-                            <row.icon className="mt-0.5 h-[16px] w-[16px] stroke-[1.65] text-[#fa5902]" />
-                            <div className="font-black text-[#061f49]">
+                            <div className="flex items-center gap-2 text-[10px] font-black uppercase text-slate-400">
+                              <row.icon className="h-3.5 w-3.5 text-secondary" />
                               {row.label}
                             </div>
-                            <div className="font-semibold [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3] overflow-hidden">
+                            <div className="text-[11px] font-bold text-slate-600 line-clamp-2">
                               {row.value}
                             </div>
                           </div>
@@ -1423,47 +1422,47 @@ export default function GlobalPresencePage() {
                       </div>
                     </div>
 
-                    <div className="h-[2px] shrink-0 bg-[#fa5902]" />
+                    <div className="h-[3px] shrink-0 bg-secondary" />
                   </article>
                 ))}
               </div>
             </div>
 
-            <div className="grid min-h-[102px] gap-0 rounded-b-[10px] bg-white shadow-[0_10px_28px_rgba(9,31,66,0.08)] ring-1 ring-[#e6ebf2] sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid gap-0 rounded-2xl bg-slate-50 border border-slate-100 sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
               {[
                 {
                   icon: Award,
-                  t: "ENGINEERED FOR PERFORMANCE",
-                  d: "Built with precision engineering for maximum efficiency and durability.",
+                  t: "PERFORMANCE",
+                  d: "Built with precision engineering for maximum efficiency.",
                 },
                 {
                   icon: Globe,
-                  t: "ADAPTED GLOBALLY",
-                  d: "Solutions customized to meet local requirements and site conditions.",
+                  t: "ADAPTED",
+                  d: "Solutions customized to meet local requirements.",
                 },
                 {
                   icon: Headphones,
-                  t: "SUPPORTED ALWAYS",
-                  d: "Global after-sales support ensuring long-term project success.",
+                  t: "SUPPORTED",
+                  d: "Global after-sales support for long-term success.",
                 },
                 {
                   icon: Handshake,
-                  t: "BUILT ON TRUST",
+                  t: "TRUSTED",
                   d: "Strong relationships with clients across the world.",
                 },
               ].map((item, index) => (
                 <div
                   key={item.t}
-                  className={`flex items-center gap-4 px-8 py-5 ${
-                    index > 0 ? "lg:border-l lg:border-[#cfd6e2]" : ""
+                  className={`flex items-center gap-4 px-8 py-6 ${
+                    index > 0 ? "lg:border-l lg:border-slate-200" : ""
                   }`}
                 >
-                  <item.icon className="h-10 w-10 shrink-0 stroke-[1.45] text-[#fa5902]" />
+                  <item.icon className="h-10 w-10 shrink-0 stroke-[1.45] text-secondary" />
                   <div>
-                    <div className="text-[12px] font-black uppercase leading-4 text-[#061f49]">
+                    <div className="text-xs font-black uppercase tracking-wide text-primary">
                       {item.t}
                     </div>
-                    <div className="mt-2 text-[11px] font-semibold leading-5 text-[#40516d]">
+                    <div className="mt-2 text-[11px] font-semibold leading-relaxed text-slate-500">
                       {item.d}
                     </div>
                   </div>
@@ -1471,105 +1470,95 @@ export default function GlobalPresencePage() {
               ))}
             </div>
 
-            <div className="grid min-h-[98px] items-center gap-4 rounded-[8px] bg-[#eef2f6] px-7 py-4 shadow-[0_10px_28px_rgba(9,31,66,0.08)] lg:grid-cols-[330px_1fr_2px_300px]">
-              <div className="relative h-[78px] w-full max-w-[330px]">
-                <Image
-                  src="/images/global-presense/project-footprint-map.png"
-                  alt="Global project footprint map"
-                  fill
-                  sizes="330px"
-                  className="object-contain object-left"
-                />
-              </div>
+            <div className="mt-10 grid items-center gap-6 rounded-[2.5rem] bg-primary p-8 lg:grid-cols-[1fr_auto]">
               <div>
-                <h3 className="text-[22px] font-black uppercase leading-none text-[#061f49]">
-                  GLOBAL FOOTPRINT. LOCAL COMMITMENT.
+                <h3 className="text-2xl sm:text-3xl font-black uppercase text-white leading-tight mb-3">
+                  GLOBAL FOOTPRINT. <span className="text-secondary">LOCAL COMMITMENT.</span>
                 </h3>
-                <p className="mt-2 max-w-[560px] text-[13px] font-semibold leading-5 text-[#273b5a]">
+                <p className="text-sm sm:text-base font-medium text-slate-300 max-w-2xl">
                   Delivering world-class crushing &amp; screening solutions that
-                  drive industries forward.
+                  drive industries forward. Let&apos;s discuss how we can power your next project.
                 </p>
               </div>
-              <div className="hidden h-12 w-px bg-[#fa5902] lg:block" />
               <Button
                 href="/contact"
                 variant="primary"
-                className="h-12 rounded-[7px] px-8 text-[14px] font-black uppercase"
+                className="h-14 rounded-2xl px-10 text-sm font-black uppercase"
               >
                 DISCUSS YOUR PROJECT
-                <ArrowRight className="h-6 w-6 stroke-[1.6]" />
+                <ArrowRight className="h-5 w-5 ml-2" />
               </Button>
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* ══════════════════════════════════════════════════════════════════
             SECTION 6 — SUPPORT SYSTEM
             ══════════════════════════════════════════════════════════════════ */}
         {/* --- ENGINEERING & SUPPORT SYSTEM SECTION --- */}
-        <section className="bg-[#f4f7fa] px-4 py-12 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="mx-auto max-w-7xl">
+        <section className="bg-slate-50 py-16">
+          <Container>
             {/* --- TOP HEADER & METRICS GRID --- */}
-            <div className="grid items-start gap-8 lg:grid-cols-[1fr_2fr] xl:grid-cols-[450px_1fr]">
+            <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_1.9fr]">
               <div>
-                <div className="mb-2 flex items-center gap-3">
-                  <span className="h-[2px] w-6 bg-[#fa5902]" />
-                  <span className="text-[12px] font-black uppercase tracking-wider text-[#fa5902]">
-                    OUR ENGINEERING &amp; SUPPORT SYSTEM
+                {/* ✅ matching Careers tag style */}
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
+                    ENGINEERING &amp; SUPPORT SYSTEM
                   </span>
+                  <span className="h-[1.5px] w-12 bg-secondary" />
                 </div>
-                <h2 className="text-[clamp(1.8rem,2.8vw,2.4rem)] font-extrabold tracking-tight leading-[1.05] text-[#061f49]">
+
+                {/* ✅ Matching Careers H2 size and leading */}
+                <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
                   BUILT FOR PERFORMANCE.
-                  <br />
-                  <span className="text-[#fa5902]">SUPPORTED FOR LIFE.</span>
+                  <span className="block text-secondary">SUPPORTED FOR LIFE.</span>
                 </h2>
-                <p className="mt-3 max-w-[480px] text-[13px] font-medium leading-5 text-[#40516d]">
+
+                {/* ✅ Matching Careers paragraph style */}
+                <p className="mt-5 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg">
                   Our global engineering &amp; support network ensures your
                   operations run smoothly — today and every day ahead.
                 </p>
               </div>
 
-              <div className="grid gap-6 pt-2 sm:grid-cols-2 xl:grid-cols-4 lg:pt-6">
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:pt-8">
                 {[
                   {
-                    icon: "/images/global-presense/support-icons/global-support.png",
+                    icon: Globe,
                     title: "GLOBAL SUPPORT",
-                    desc: "Support available across 35+ countries",
+                    desc: "Across 35+ countries",
                   },
                   {
-                    icon: "/images/global-presense/support-icons/assistance-headset.png",
+                    icon: Headphones,
                     title: "24/7 ASSISTANCE",
-                    desc: "Round-the-clock technical support",
+                    desc: "Round-the-clock technical help",
                   },
                   {
-                    icon: "/images/global-presense/support-icons/expert-engineers.png",
+                    icon: HardHat,
                     title: "EXPERT ENGINEERS",
-                    desc: "Experienced engineers across continents",
+                    desc: "Experienced global teams",
                   },
                   {
-                    icon: "/images/global-presense/support-icons/uptime-shield.png",
+                    icon: Shield,
                     title: "MAXIMUM UPTIME",
-                    desc: "Minimizing downtime. Maximizing output.",
+                    desc: "Minimizing operational delays",
                   },
                 ].map((item, index) => (
                   <div
                     key={item.title}
-                    className={`flex items-start gap-3 px-2 ${
-                      index > 0 ? "xl:border-l xl:border-[#cfd6e2]" : ""
+                    className={`flex flex-col items-start gap-4 ${
+                      index > 0 ? "lg:border-l lg:border-slate-200 lg:pl-6" : ""
                     }`}
                   >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-orange-50 p-1">
-                      <img
-                        src={item.icon}
-                        alt=""
-                        className="h-9 w-9 object-contain"
-                      />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white border border-slate-100 text-secondary shadow-sm">
+                      <item.icon className="h-6 w-6 stroke-[1.8]" />
                     </div>
                     <div>
-                      <div className="text-[11px] font-black uppercase tracking-wide text-[#061f49]">
+                      <div className="text-[11px] font-black uppercase tracking-wide text-primary">
                         {item.title}
                       </div>
-                      <p className="mt-1 text-[11px] font-medium leading-normal text-[#5c6e8c]">
+                      <p className="mt-2 text-[11px] font-bold text-slate-500 leading-tight">
                         {item.desc}
                       </p>
                     </div>
@@ -1791,50 +1780,56 @@ export default function GlobalPresencePage() {
                       </div>
                     </div>
                     <div className="relative h-full w-full bg-[#dbe3ef]">
-                      <img
+                      <Image
                         src={item.image}
                         alt={item.title}
-                        className="h-full w-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* ══════════════════════════════════════════════════════════════════
             SECTION 7 — MANUFACTURING WORKFLOW
             ══════════════════════════════════════════════════════════════════ */}
 
-        <section className="bg-white py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <section className="bg-white py-12 relative overflow-hidden">
           {/* --- FULL-WIDTH HEADER BACKGROUND ACCENT --- */}
-          {/* This container ensures the world map / engineering blueprint asset spreads full-width behind the header text */}
           <div className="absolute top-0 left-0 right-0 h-[280px] pointer-events-none z-0">
-            <img
+            <Image
               src="/images/global-presense/background-section-7.png"
               alt=""
-              className="w-full h-full object-cover object-center opacity-[0.52]"
+              fill
+              className="object-cover object-center opacity-[0.52]"
             />
           </div>
 
-          <div className="mx-auto max-w-7xl relative z-10">
+          <Container className="relative z-10">
             {/* --- TOP HEADER --- */}
             <div className="text-center mb-12">
-              <div className="relative mb-2 flex items-center justify-center gap-2">
-                <span className="h-[1px] w-5 bg-[#fa5902]" />
-                <span className="text-[12px] font-black uppercase tracking-wider text-[#fa5902]">
+              {/* ✅ matching Careers tag style */}
+              <div className="mb-4 flex items-center justify-center gap-3">
+                <span className="h-[1.5px] w-12 bg-secondary" />
+                <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
                   OUR PROCESS. YOUR ADVANTAGE.
                 </span>
-                <span className="h-[1px] w-5 bg-[#fa5902]" />
+                <span className="h-[1.5px] w-12 bg-secondary" />
               </div>
-              <h2 className="text-[clamp(1.8rem,3.2vw,2.8rem)] font-extrabold tracking-tight leading-[1.05] text-[#061f49] mb-3">
+
+              {/* ✅ Matching Careers H2 size and leading */}
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
                 PRECISELY ENGINEERED.
                 <br />
-                <span className="text-[#fa5902]">PERFECTLY DELIVERED.</span>
+                <span className="text-secondary">PERFECTLY DELIVERED.</span>
               </h2>
-              <p className="max-w-[640px] mx-auto text-[13px] font-semibold leading-relaxed text-[#273b5a]">
+
+              {/* ✅ Matching Careers paragraph style */}
+              <p className="max-w-[640px] mx-auto text-sm sm:text-[15px] leading-relaxed text-slate-600">
                 From concept to commissioning, our integrated manufacturing
                 &amp; export workflow ensures unmatched quality, reliability and
                 on-time delivery.
@@ -1842,8 +1837,8 @@ export default function GlobalPresencePage() {
             </div>
 
             {/* --- WORKFLOW TIMELINE CONTAINER --- */}
-            <div className="bg-white rounded-2xl border border-[#e1e7ef] p-6 shadow-[0_4px_20px_rgba(9,31,66,0.03)] mb-8">
-              <p className="text-center text-[11px] font-black uppercase tracking-widest text-[#061f49] mb-10">
+            <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm mb-8">
+              <p className="text-center text-[11px] font-black uppercase tracking-widest text-primary mb-10">
                 OUR MANUFACTURING &amp; EXPORT WORKFLOW
               </p>
 
@@ -1934,39 +1929,40 @@ export default function GlobalPresencePage() {
                     >
                       {/* Connector line between top node circles */}
                       {idx < arr.length - 1 && (
-                        <div className="absolute top-[18px] left-[calc(50%+18px)] right-[-50%] h-[2px] bg-[#fa5902] z-0" />
+                        <div className="absolute top-[18px] left-[calc(50%+18px)] right-[-50%] h-[2px] bg-secondary z-0" />
                       )}
 
                       {/* Step Sequence Bubble Indicator */}
-                      <div className="relative z-10 mb-2 flex items-center justify-center h-9 w-9 rounded-full bg-[#061f49] text-white font-black text-[12px] ring-[5px] ring-white shadow-sm transition-transform group-hover:scale-105">
+                      <div className="relative z-10 mb-2 flex items-center justify-center h-9 w-9 rounded-full bg-primary text-white font-black text-[12px] ring-[5px] ring-white shadow-sm transition-transform group-hover:scale-105">
                         {step.id}
                       </div>
 
                       {/* Step Label Name */}
-                      <span className="text-[10px] font-black uppercase tracking-wide text-[#061f49] mb-1">
+                      <span className="text-[10px] font-black uppercase tracking-wide text-primary mb-1">
                         {step.name}
                       </span>
 
                       {/* Accent Dynamic Icon */}
-                      <span className="text-base text-orange-500 mb-3">
+                      <span className="text-base text-secondary mb-3">
                         {step.icon}
                       </span>
 
                       {/* Card Base Structure */}
-                      <div className="w-full bg-white rounded-xl border border-[#e2e8f0] p-2.5 shadow-sm hover:border-orange-300 transition-all duration-200">
-                        <div className="w-full h-24 rounded-lg overflow-hidden bg-[#f1f5f9] relative mb-3">
-                          <img
+                      <div className="w-full bg-white rounded-xl border border-slate-100 p-2.5 shadow-sm hover:border-secondary/30 transition-all duration-200">
+                        <div className="w-full h-24 rounded-lg overflow-hidden bg-slate-50 relative mb-3">
+                          <Image
                             src={step.image}
                             alt={step.name}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
                           />
                         </div>
 
                         {/* Sub Bullet Descriptive List */}
-                        <ul className="text-[10px] font-medium leading-relaxed text-[#40516d] space-y-1 pl-1">
+                        <ul className="text-[10px] font-medium leading-relaxed text-slate-500 space-y-1 pl-1">
                           {step.bullets.map((bullet, i) => (
                             <li key={i} className="flex items-start gap-1">
-                              <span className="text-orange-500 font-bold">
+                              <span className="text-secondary font-bold">
                                 •
                               </span>
                               <span className="truncate">{bullet}</span>
@@ -1981,11 +1977,11 @@ export default function GlobalPresencePage() {
             </div>
 
             {/* --- BUILT IN INDIA DELIVERY FLOW --- */}
-            <div className="bg-[#f8fafc] rounded-2xl border border-[#e2e8f0] p-6 lg:p-8 mb-6 relative">
-              <p className="text-center text-[12px] font-black uppercase tracking-wider text-[#061f49] mb-2">
+            <div className="bg-slate-50/50 rounded-2xl border border-slate-100 p-6 lg:p-8 mb-6 relative">
+              <p className="text-center text-[12px] font-black uppercase tracking-wider text-primary mb-2">
                 BUILT IN INDIA. DELIVERED GLOBALLY.
               </p>
-              <p className="text-center text-[11px] font-medium text-[#5c6e8c] mb-10 max-w-[500px] mx-auto">
+              <p className="text-center text-xs font-medium text-slate-500 mb-10 max-w-[500px] mx-auto">
                 Our streamlined process and export expertise ensure your
                 equipment reaches you safely, wherever you are.
               </p>
@@ -2030,22 +2026,23 @@ export default function GlobalPresencePage() {
                   >
                     {/* Dashed Connecting Arrow Pipelines between steps */}
                     {i < 5 && (
-                      <div className="hidden lg:block absolute top-[45px] left-[75%] w-[50%] h-px border-t-2 border-dashed border-gray-300 z-0 after:content-['►'] after:text-[8px] after:text-gray-400 after:absolute after:right-0 after:-top-[5px]" />
+                      <div className="hidden lg:block absolute top-[45px] left-[75%] w-[50%] h-px border-t-2 border-dashed border-slate-200 z-0 after:content-['►'] after:text-[8px] after:text-slate-300 after:absolute after:right-0 after:-top-[5px]" />
                     )}
 
                     {/* Graphic Frame Container Wrapper */}
                     <div
-                      className={`w-24 h-24 bg-white border border-gray-200 shadow-sm overflow-hidden mb-3 flex items-center justify-center relative transition-transform duration-200 group-hover:scale-105 ${stage.style}`}
+                      className={`w-24 h-24 bg-white border border-slate-100 shadow-sm overflow-hidden mb-3 flex items-center justify-center relative transition-transform duration-200 group-hover:scale-105 ${stage.style}`}
                     >
-                      <img
+                      <Image
                         src={stage.img}
                         alt={stage.title}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     </div>
 
                     {/* Sequence Title Label Description */}
-                    <p className="text-[10px] font-black uppercase leading-tight tracking-wide text-[#061f49] whitespace-pre-line">
+                    <p className="text-[10px] font-black uppercase leading-tight tracking-wide text-primary whitespace-pre-line">
                       {stage.title}
                     </p>
                   </div>
@@ -2054,22 +2051,10 @@ export default function GlobalPresencePage() {
             </div>
 
             {/* --- CORE BRAND PROMISE BANNER FOOTER --- */}
-            <div className="bg-[#061f49] rounded-xl px-5 py-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-md">
+            <div className="bg-primary rounded-xl px-5 py-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-md">
               <div className="flex items-center gap-3">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-orange-500/30 bg-orange-500/10 p-1">
-                  <svg
-                    className="w-4 h-4 text-[#fa5902]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2.5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                    />
-                  </svg>
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-secondary/30 bg-secondary/10 p-1">
+                  <Shield className="w-4 h-4 text-secondary" />
                 </div>
                 <span className="text-[12px] font-black uppercase tracking-wide text-white">
                   A PROVEN PROCESS. A PROMISE DELIVERED.
@@ -2078,18 +2063,18 @@ export default function GlobalPresencePage() {
 
               <div className="hidden md:block h-4 w-px bg-white/20" />
 
-              <p className="text-[11px] font-medium tracking-wide text-[#cfd6e2] text-center md:text-right">
+              <p className="text-[11px] font-medium tracking-wide text-slate-300 text-center md:text-right">
                 Engineering excellence • Manufacturing precision • Global
                 delivery • Lifetime partnership
               </p>
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* ══════════════════════════════════════════════════════════════════
             SECTION 8 — CERTIFICATIONS
             ══════════════════════════════════════════════════════════════════ */}
-        <section className="relative overflow-hidden bg-[#061f49] px-4 pb-6 pt-8 text-white sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden bg-primary py-16 text-white">
           <div className="absolute inset-0 overflow-hidden">
             <Image
               src="/images/global-presense/background-section-8.png"
@@ -2098,31 +2083,36 @@ export default function GlobalPresencePage() {
               sizes="100vw"
               className="object-cover object-center opacity-85"
             />
-            <div className="absolute inset-0 bg-[#061f49]/25" />
+            <div className="absolute inset-0 bg-primary/25" />
           </div>
 
-          <div className="relative mx-auto max-w-[1400px]">
-            <div className="mx-auto max-w-[760px] text-center">
+          <Container className="relative z-10">
+            <div className="mx-auto max-w-[760px] text-center mb-10">
+              {/* ✅ matching Careers tag style */}
               <div className="mb-4 flex items-center justify-center gap-3">
-                <span className="h-px w-7 bg-[#fa5902]" />
-                <p className="text-[14px] font-black uppercase tracking-wide text-[#fa5902]">
+                <span className="h-[1.5px] w-12 bg-secondary" />
+                <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
                   CERTIFIED. COMPLIANT. TRUSTED WORLDWIDE.
-                </p>
-                <span className="h-px w-7 bg-[#fa5902]" />
+                </span>
+                <span className="h-[1.5px] w-12 bg-secondary" />
               </div>
-              <h2 className="headline text-[clamp(2.5rem,4vw,4.1rem)] leading-[0.96] text-white">
+
+              {/* ✅ Matching Careers H2 size and leading */}
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight uppercase mb-4">
                 BUILT ON STANDARDS.
                 <br />
-                <span className="text-[#fa5902]">DELIVERED WITH CONFIDENCE.</span>
+                <span className="text-secondary">DELIVERED WITH CONFIDENCE.</span>
               </h2>
-              <p className="mx-auto mt-4 max-w-[700px] text-[15px] font-semibold leading-7 text-white/90">
+
+              {/* ✅ Matching Careers paragraph style */}
+              <p className="mx-auto mt-4 max-w-[700px] text-sm sm:text-[15px] leading-relaxed text-white/90">
                 Our commitment to international quality, safety and compliance ensures that
                 every Pithal solution meets global benchmarks and exceeds expectations.
               </p>
             </div>
 
-            <div className="relative z-10 mt-5 overflow-hidden rounded-[16px] bg-white text-[#061f49] shadow-[0_18px_38px_rgba(0,0,0,0.25)] ring-1 ring-[#dfe6f0]">
-              <div className="grid min-h-[150px] grid-cols-1 divide-y divide-[#cfd6e2] sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-6">
+            <div className="relative z-10 overflow-hidden rounded-[16px] bg-white text-primary shadow-lg border border-slate-100">
+              <div className="grid min-h-[150px] grid-cols-1 divide-y divide-slate-100 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-6">
                 {[
                   {
                     image: "/images/global-presense/certifications/iso-1.png",
@@ -2169,7 +2159,7 @@ export default function GlobalPresencePage() {
                 ].map((cert) => (
                   <div
                     key={cert.title}
-                    className="flex min-h-[150px] items-center gap-0.5 px-1 py-2 lg:px-1 xl:gap-1 xl:px-1"
+                    className="flex min-h-[150px] items-center gap-0.5 px-2 py-4"
                   >
                     <div className="flex h-[94px] w-[102px] shrink-0 items-center justify-center">
                       <Image
@@ -2181,10 +2171,10 @@ export default function GlobalPresencePage() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-[11px] font-black uppercase leading-[1.45] text-[#061f49] xl:text-[12px]">
+                      <h3 className="text-[11px] font-black uppercase leading-[1.45] text-primary">
                         {cert.title}
                       </h3>
-                      <p className="mt-2 text-[9px] font-semibold leading-[1.55] text-[#40516d] xl:text-[9.5px]">
+                      <p className="mt-2 text-[9px] font-semibold leading-[1.55] text-slate-500">
                         {cert.desc}
                       </p>
                     </div>
@@ -2192,50 +2182,56 @@ export default function GlobalPresencePage() {
                 ))}
               </div>
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* ══════════════════════════════════════════════════════════════════
             SECTION 9 — PARTNERSHIPS
             ══════════════════════════════════════════════════════════════════ */}
-        <section className="relative overflow-hidden bg-white mt-2 px-5 pb-5 pt-8 sm:px-7 lg:px-8">
-          <Image
-            src="/images/global-presense/partnership-assets/background-section-9.png"
-            alt=""
-            width={1200}
-            height={220}
-            className="pointer-events-none absolute left-1/2 top-0 h-[190px] w-full max-w-[1420px] -translate-x-1/2 object-cover opacity-90"
-          />
+        <section className="relative overflow-hidden bg-white py-16">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1520px] h-[220px] pointer-events-none opacity-90">
+            <Image
+              src="/images/global-presense/partnership-assets/background-section-9.png"
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
 
-          <div className="relative mx-auto max-w-[1400px]">
-            <div className="mx-auto mb-7 max-w-[610px] text-center">
-              <div className="mb-2.5 flex items-center justify-center gap-3">
-                <span className="h-px w-7 bg-[#fa5902]" />
-                <p className="text-[14px] font-black uppercase tracking-wide text-[#fa5902]">
+          <Container className="relative z-10">
+            <div className="mx-auto mb-12 max-w-[800px] text-center">
+              {/* ✅ matching Careers tag style */}
+              <div className="mb-4 flex items-center justify-center gap-3">
+                <span className="h-[1.5px] w-12 bg-secondary" />
+                <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
                   GLOBAL PARTNERSHIP. PROVEN TRUST.
-                </p>
-                <span className="h-px w-7 bg-[#fa5902]" />
+                </span>
+                <span className="h-[1.5px] w-12 bg-secondary" />
               </div>
-              <h2 className="headline text-[clamp(2.2rem,3.6vw,3.35rem)] leading-[0.95] text-[#061f49]">
+
+              {/* ✅ Matching Careers H2 size and leading */}
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
                 TRUSTED BY INDUSTRIES.
                 <br />
-                <span className="text-[#fa5902]">PARTNERED FOR PROGRESS.</span>
+                <span className="text-secondary">PARTNERED FOR PROGRESS.</span>
               </h2>
-              <p className="mx-auto mt-3 max-w-[560px] text-[13px] font-semibold leading-6 text-[#233654]">
+
+              {/* ✅ Matching Careers paragraph style */}
+              <p className="mx-auto mt-4 max-w-[640px] text-sm sm:text-[15px] leading-relaxed text-slate-600">
                 Across continents and industries, we build more than machines -
                 we build long-term partnerships grounded in trust, performance and support.
               </p>
             </div>
 
-            <div className="grid items-start gap-3.5 lg:grid-cols-4">
-              <div className="relative rounded-[8px] border border-[#dce4ee] bg-white px-3 pb-3 pt-9 shadow-[0_8px_24px_rgba(6,31,73,0.08)]">
-                <div className="absolute left-1/2 top-[-23px] flex h-[34px] w-[220px] -translate-x-1/2 items-center justify-center gap-2 rounded-[4px] bg-[#061f49] text-white shadow-[0_8px_18px_rgba(6,31,73,0.24)]">
+            <div className="grid items-start gap-6 lg:grid-cols-4">
+              <div className="relative rounded-[12px] border border-slate-100 bg-white px-3 pb-3 pt-9 shadow-sm">
+                <div className="absolute left-1/2 top-[-23px] flex h-[34px] w-[220px] -translate-x-1/2 items-center justify-center gap-2 rounded-[4px] bg-primary text-white shadow-md">
                   <Factory className="h-4 w-4 text-white" />
                   <span className="text-[12px] font-black uppercase tracking-wide">
                     GLOBAL PARTNERSHIPS
                   </span>
                 </div>
-                <div className="grid grid-cols-3 overflow-hidden rounded-[6px] border border-[#dfe7f1]">
+                <div className="grid grid-cols-3 overflow-hidden rounded-[6px] border border-slate-100">
                   {[
                     "thyssenkrupp-logo.png",
                     "lafarge-logo.png",
@@ -2249,7 +2245,7 @@ export default function GlobalPresencePage() {
                   ].map((logo) => (
                     <div
                       key={logo}
-                      className="flex h-[54px] items-center justify-center border-b border-r border-[#e5ebf3] bg-white px-2 last:border-r-0"
+                      className="flex h-[54px] items-center justify-center border-b border-r border-slate-50 bg-white px-2 last:border-r-0"
                     >
                       <Image
                         src={`/images/global-presense/partnership-assets/${logo}`}
@@ -2261,13 +2257,13 @@ export default function GlobalPresencePage() {
                     </div>
                   ))}
                 </div>
-                <p className="mt-3 text-center text-[11px] font-semibold text-[#3d4d67]">
+                <p className="mt-3 text-center text-[11px] font-semibold text-slate-400">
                   And many more global partners...
                 </p>
               </div>
 
-              <div className="relative rounded-[8px] border border-[#dce4ee] bg-white px-3 pb-3 pt-9 shadow-[0_8px_24px_rgba(6,31,73,0.08)]">
-                <div className="absolute left-1/2 top-[-23px] flex h-[34px] w-[245px] -translate-x-1/2 items-center justify-center gap-2 rounded-[4px] bg-[#061f49] text-white shadow-[0_8px_18px_rgba(6,31,73,0.24)]">
+              <div className="relative rounded-[12px] border border-slate-100 bg-white px-3 pb-3 pt-9 shadow-sm">
+                <div className="absolute left-1/2 top-[-23px] flex h-[34px] w-[245px] -translate-x-1/2 items-center justify-center gap-2 rounded-[4px] bg-primary text-white shadow-md">
                   <Settings className="h-4 w-4 text-white" />
                   <span className="text-[12px] font-black uppercase tracking-wide">
                     INDUSTRIES WE SERVE GLOBALLY
@@ -2302,7 +2298,7 @@ export default function GlobalPresencePage() {
                   ].map((industry) => (
                     <div
                       key={industry.label}
-                      className="flex h-[85px] flex-col items-center justify-center rounded-[6px] border border-[#dfe7f1] bg-[#fbfcfe]"
+                      className="flex h-[85px] flex-col items-center justify-center rounded-[6px] border border-slate-50 bg-slate-50/50"
                     >
                       <Image
                         src={`/images/global-presense/industry-icons/${industry.icon}`}
@@ -2311,7 +2307,7 @@ export default function GlobalPresencePage() {
                         height={42}
                         className="mb-2 h-[38px] w-[38px] object-contain"
                       />
-                      <span className="text-[10px] font-black uppercase text-[#061f49]">
+                      <span className="text-[10px] font-black uppercase text-primary">
                         {industry.label}
                       </span>
                     </div>
@@ -2319,14 +2315,14 @@ export default function GlobalPresencePage() {
                 </div>
               </div>
 
-              <div className="relative rounded-[8px] border border-[#dce4ee] bg-white px-3 pb-3 pt-9 shadow-[0_8px_24px_rgba(6,31,73,0.08)]">
-                <div className="absolute left-1/2 top-[-23px] flex h-[34px] w-[215px] -translate-x-1/2 items-center justify-center gap-2 rounded-[4px] bg-[#061f49] text-white shadow-[0_8px_18px_rgba(6,31,73,0.24)]">
+              <div className="relative rounded-[12px] border border-slate-100 bg-white px-3 pb-3 pt-9 shadow-sm">
+                <div className="absolute left-1/2 top-[-23px] flex h-[34px] w-[215px] -translate-x-1/2 items-center justify-center gap-2 rounded-[4px] bg-primary text-white shadow-md">
                   <Shield className="h-4 w-4 text-white" />
                   <span className="text-[12px] font-black uppercase tracking-wide">
                     OUR TRUST IN NUMBERS
                   </span>
                 </div>
-                <div className="grid grid-cols-3 divide-x divide-y divide-[#dfe7f1] overflow-hidden rounded-[6px] border border-[#dfe7f1]">
+                <div className="grid grid-cols-3 divide-x divide-y divide-slate-50 overflow-hidden rounded-[6px] border border-slate-100">
                   {[
                     ["35+", "COUNTRIES", "Global Presence"],
                     ["1200+", "PROJECTS", "Successfully Delivered"],
@@ -2339,13 +2335,13 @@ export default function GlobalPresencePage() {
                       key={`${value}-${label}`}
                       className="flex h-[85px] flex-col items-center justify-center bg-white px-1 text-center"
                     >
-                      <div className="text-[25px] font-black leading-none text-[#fa5902]">
+                      <div className="text-2xl font-black leading-none text-secondary">
                         {value}
                       </div>
-                      <div className="mt-1 text-[9px] font-black uppercase leading-tight text-[#061f49]">
+                      <div className="mt-1 text-[9px] font-black uppercase leading-tight text-primary">
                         {label}
                       </div>
-                      <div className="mt-1 text-[8px] font-semibold leading-tight text-[#52627a]">
+                      <div className="mt-1 text-[8px] font-semibold leading-tight text-slate-400">
                         {desc}
                       </div>
                     </div>
@@ -2353,8 +2349,8 @@ export default function GlobalPresencePage() {
                 </div>
               </div>
 
-              <div className="relative rounded-[8px] border border-[#dce4ee] bg-white px-3 pb-3 pt-9 shadow-[0_8px_24px_rgba(6,31,73,0.08)]">
-                <div className="absolute left-1/2 top-[-23px] flex h-[34px] w-[220px] -translate-x-1/2 items-center justify-center gap-2 rounded-[4px] bg-[#061f49] text-white shadow-[0_8px_18px_rgba(6,31,73,0.24)]">
+              <div className="relative rounded-[12px] border border-slate-100 bg-white px-3 pb-3 pt-9 shadow-sm">
+                <div className="absolute left-1/2 top-[-23px] flex h-[34px] w-[220px] -translate-x-1/2 items-center justify-center gap-2 rounded-[4px] bg-primary text-white shadow-md">
                   <Users className="h-4 w-4 text-white" />
                   <span className="text-[12px] font-black uppercase tracking-wide">
                     WHAT OUR CLIENTS SAY
@@ -2383,16 +2379,16 @@ export default function GlobalPresencePage() {
                   ].map((item) => (
                     <div
                       key={item.author}
-                      className="grid grid-cols-[1fr_86px] items-center gap-2 rounded-[6px] border border-[#e3eaf2] bg-white p-2"
+                      className="grid grid-cols-[1fr_86px] items-center gap-2 rounded-[6px] border border-slate-100 bg-white p-2"
                     >
                       <div className="relative pl-6">
-                        <span className="absolute left-0 top-[-6px] text-[32px] font-black leading-none text-[#fa5902]">
+                        <span className="absolute left-0 top-[-6px] text-2xl font-black leading-none text-secondary">
                           &ldquo;
                         </span>
-                        <p className="text-[8.5px] font-bold leading-[1.45] text-[#233654]">
+                        <p className="text-[9px] font-bold leading-tight text-slate-600">
                           {item.quote}
                         </p>
-                        <p className="mt-1 text-[8px] font-black leading-tight text-[#52627a]">
+                        <p className="mt-1 text-[8px] font-black leading-tight text-slate-400">
                           - {item.author}
                         </p>
                       </div>
@@ -2409,19 +2405,19 @@ export default function GlobalPresencePage() {
               </div>
             </div>
 
-            <div className="mt-3 grid overflow-hidden rounded-[6px] bg-[#061f49] text-white shadow-[0_10px_28px_rgba(6,31,73,0.16)] lg:grid-cols-[340px_1fr_285px]">
-              <div className="px-6 py-5">
-                <h3 className="headline text-[22px] leading-[0.98] text-white">
+            <div className="mt-8 grid overflow-hidden rounded-[1rem] bg-primary text-white shadow-lg lg:grid-cols-[340px_1fr_285px]">
+              <div className="px-6 py-8">
+                <h3 className="text-2xl font-black leading-tight text-white mb-3">
                   BEYOND EQUIPMENT.
                   <br />
-                  <span className="text-[#fa5902]">A PARTNERSHIP THAT LASTS.</span>
+                  <span className="text-secondary">A PARTNERSHIP THAT LASTS.</span>
                 </h3>
-                <p className="mt-3 text-[11px] font-semibold leading-5 text-white/85">
+                <p className="text-sm font-semibold leading-relaxed text-slate-300">
                   We stand with you at every step - from concept to commissioning and beyond.
                   Your success is our priority.
                 </p>
               </div>
-              <div className="grid grid-cols-2 divide-y divide-[#fa5902]/45 border-y border-white/10 md:grid-cols-5 md:divide-x md:divide-y-0 md:border-y-0">
+              <div className="grid grid-cols-2 divide-y divide-secondary/45 border-y border-white/10 md:grid-cols-5 md:divide-x md:divide-y-0 md:border-y-0">
                 {[
                   { icon: Globe, title: "GLOBAL SUPPORT", desc: "Local teams. Global strength." },
                   { icon: Users, title: "EXPERT ENGINEERING", desc: "Custom solutions. Proven expertise." },
@@ -2433,11 +2429,11 @@ export default function GlobalPresencePage() {
                     key={item.title}
                     className="flex min-h-[116px] flex-col items-center justify-center px-4 py-4 text-center"
                   >
-                    <item.icon className="h-9 w-9 stroke-[1.7] text-white" />
-                    <h4 className="mt-2 text-[10px] font-black uppercase leading-tight text-[#fa5902]">
+                    <item.icon className="h-8 w-8 stroke-[1.7] text-white" />
+                    <h4 className="mt-2 text-[10px] font-black uppercase leading-tight text-secondary">
                       {item.title}
                     </h4>
-                    <p className="mt-1 text-[8.5px] font-semibold leading-tight text-white/80">
+                    <p className="mt-1 text-[9px] font-semibold leading-tight text-slate-300">
                       {item.desc}
                     </p>
                   </div>
@@ -2448,38 +2444,34 @@ export default function GlobalPresencePage() {
                   src="/images/global-presense/handshake-section-9.png"
                   alt=""
                   fill
-                  sizes="285px"
                   className="object-cover object-right"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#061f49] via-[#061f49]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/20 to-transparent" />
               </div>
             </div>
 
-            <div className="mt-3 grid overflow-hidden rounded-[8px] border border-[#fa5902] bg-white shadow-[0_8px_20px_rgba(6,31,73,0.08)] lg:grid-cols-[420px_1fr]">
-              <div className="relative px-7 py-5">
-                <span className="absolute left-6 top-0 text-[78px] font-black leading-none text-[#fa5902]">
+            <div className="mt-6 grid overflow-hidden rounded-[1rem] border border-secondary/50 bg-white shadow-sm lg:grid-cols-[420px_1fr]">
+              <div className="relative px-7 py-8">
+                <span className="absolute left-6 top-2 text-6xl font-black leading-none text-secondary/20">
                   &ldquo;
                 </span>
-                <div className="relative pl-14">
-                  <h3 className="headline text-[23px] leading-[1.02] text-[#061f49]">
+                <div className="relative pl-8">
+                  <h3 className="text-2xl font-black leading-tight text-primary mb-3">
                     BUILT ON RELIABILITY.
                     <br />
-                    <span className="text-[#fa5902]">DRIVEN BY PARTNERSHIP.</span>
+                    <span className="text-secondary">DRIVEN BY PARTNERSHIP.</span>
                   </h3>
-                  <p className="mt-3 max-w-[310px] text-[10.5px] font-semibold leading-5 text-[#233654]">
+                  <p className="max-w-[310px] text-sm font-medium leading-relaxed text-slate-600">
                     In a world that demands more, we deliver what matters most -
                     reliability, consistency and unwavering support across every border.
                     Our machines are built in India, trusted worldwide.
                   </p>
-                  <p className="mt-3 text-[11px] font-black text-[#061f49]">
+                  <p className="mt-4 text-sm font-black text-primary">
                     - Pithal Machines Ltd.
                   </p>
                 </div>
-                <span className="absolute bottom-0 right-6 text-[78px] font-black leading-none text-[#fa5902]">
-                  &rdquo;
-                </span>
               </div>
-              <div className="grid min-h-[155px] grid-cols-2 gap-0 bg-[#edf3f9] p-0 sm:grid-cols-3 lg:grid-cols-6">
+              <div className="grid min-h-[155px] grid-cols-2 gap-0 bg-slate-50 p-0 sm:grid-cols-3 lg:grid-cols-6">
                 {[
                   ["KENYA", "Mining", "kenya-300hp.svg", "kenya.png"],
                   ["UAE", "Cement", "uae-cement.svg", "uae.png"],
@@ -2490,25 +2482,25 @@ export default function GlobalPresencePage() {
                 ].map(([country, type, image, flag]) => (
                   <div
                     key={country}
-                    className="group relative min-h-[142px] overflow-hidden bg-[#061f49] [clip-path:polygon(7%_0,100%_0,93%_100%,0_100%)]"
+                    className="group relative min-h-[142px] overflow-hidden bg-primary [clip-path:polygon(7%_0,100%_0,93%_100%,0_100%)]"
                   >
                     <Image
                       src={`/images/global-presense/${image}`}
                       alt=""
                       fill
-                      sizes="180px"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#061f49]/85 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-transparent to-transparent" />
                     <div className="absolute bottom-3 left-4 right-3">
                       <div className="flex items-center gap-2">
-                        <Image
-                          src={`/images/global-presense/partnership-assets/flags/${flag}`}
-                          alt={`${country} flag`}
-                          width={36}
-                          height={24}
-                          className="h-6 w-9 rounded-[2px] border border-white/70 object-cover shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
-                        />
+                        <div className="relative h-6 w-9 shrink-0 overflow-hidden rounded-[2px] border border-white/70 shadow-sm">
+                          <Image
+                            src={`/images/global-presense/partnership-assets/flags/${flag}`}
+                            alt={`${country} flag`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
                         <div>
                           <div className="text-[10px] font-black uppercase leading-none text-white">
                             {country}
@@ -2524,35 +2516,35 @@ export default function GlobalPresencePage() {
               </div>
             </div>
 
-            <div className="mt-3 flex flex-col items-center justify-between gap-4 rounded-[6px] bg-[#061f49] px-7 py-4 text-white md:flex-row">
+            <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-xl bg-primary px-7 py-6 text-white md:flex-row shadow-lg">
               <div className="flex items-center gap-4">
-                <Shield className="h-7 w-7 text-[#fa5902]" />
-                <h3 className="text-[17px] font-black uppercase tracking-wide">
+                <Shield className="h-7 w-7 text-secondary" />
+                <h3 className="text-base font-black uppercase tracking-wide">
                   ONE VISION. ONE GOAL. YOUR SUCCESS.
                 </h3>
               </div>
               <div className="hidden h-8 w-px bg-white/20 md:block" />
-              <p className="text-center text-[11px] font-semibold text-white/85 md:text-left">
-                We don't just build machines. We build trust that powers progress worldwide.
+              <p className="text-center text-xs font-semibold text-slate-300 md:text-left">
+                We don&apos;t just build machines. We build trust that powers progress worldwide.
               </p>
-              <h3 className="text-[17px] font-black uppercase tracking-wide text-[#fa5902]">
+              <h3 className="text-base font-black uppercase tracking-wide text-secondary">
                 LET&apos;S BUILD THE FUTURE TOGETHER.
               </h3>
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* ══════════════════════════════════════════════════════════════════
             SECTION 10 — GLOBAL PRESENCE MAP
             ══════════════════════════════════════════════════════════════════ */}
-        <section className="bg-[#f8fbff] px-5 py-5 sm:px-7 lg:px-8">
-          <div className="mx-auto max-w-[1400px]">
-            <div className="grid items-start gap-4 lg:grid-cols-[270px_1fr_345px]">
-              <div className="rounded-[12px] bg-[#061f49] p-4 text-white shadow-[0_14px_34px_rgba(6,31,73,0.18)]">
-                <h3 className="mb-5 px-2 text-[18px] font-black uppercase leading-none">
+        <section className="bg-slate-50/50 py-12">
+          <Container>
+            <div className="grid items-start gap-6 lg:grid-cols-[280px_1fr_360px]">
+              <div className="rounded-[1rem] bg-primary p-5 text-white shadow-lg">
+                <h3 className="mb-6 px-1 text-lg font-black uppercase leading-tight">
                   OUR GLOBAL PRESENCE
                 </h3>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {[
                     {
                       icon: Globe,
@@ -2581,17 +2573,17 @@ export default function GlobalPresencePage() {
                   ].map((stat) => (
                     <div
                       key={stat.label}
-                      className="flex min-h-[92px] items-center gap-4 rounded-[8px] border border-[#1b4d87] bg-[#082d60] px-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)]"
+                      className="flex min-h-[92px] items-center gap-4 rounded-xl border border-white/10 bg-white/5 px-4 shadow-inner"
                     >
-                      <stat.icon className="h-11 w-11 shrink-0 stroke-[1.9] text-[#fa5902]" />
+                      <stat.icon className="h-10 w-10 shrink-0 stroke-[1.9] text-secondary" />
                       <div>
-                        <div className="text-[30px] font-black leading-none text-white">
+                        <div className="text-2xl font-black leading-none text-white">
                           {stat.value}
                         </div>
-                        <div className="mt-1 text-[11px] font-black uppercase leading-tight text-white">
+                        <div className="mt-1 text-[10px] font-black uppercase leading-tight text-white">
                           {stat.label}
                         </div>
-                        <p className="mt-1 text-[10.5px] font-semibold leading-tight text-white/85">
+                        <p className="mt-1 text-[10px] font-medium leading-tight text-slate-300">
                           {stat.desc}
                         </p>
                       </div>
@@ -2601,39 +2593,44 @@ export default function GlobalPresencePage() {
               </div>
 
               <div>
-                <div className="mb-3 text-center">
-                  <div className="mb-2 flex items-center justify-center gap-3">
-                    <ArrowRight className="h-5 w-5 rotate-180 text-[#fa5902]" />
-                    <p className="text-[15px] font-black uppercase tracking-wide text-[#fa5902]">
+                <div className="mb-8 text-center">
+                  {/* ✅ matching Careers tag style */}
+                  <div className="mb-4 flex items-center justify-center gap-3">
+                    <span className="h-[1.5px] w-12 bg-secondary" />
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
                       GLOBAL REACH. LOCAL SUPPORT.
-                    </p>
-                    <ArrowRight className="h-5 w-5 text-[#fa5902]" />
+                    </span>
+                    <span className="h-[1.5px] w-12 bg-secondary" />
                   </div>
-                  <h2 className="headline text-[clamp(2.6rem,4.35vw,4.35rem)] leading-[0.9] text-[#061f49]">
+
+                  {/* ✅ Matching Careers H2 size and leading */}
+                  <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
                     WHEREVER YOU OPERATE,
                     <br />
-                    <span className="text-[#fa5902]">WE ARE THERE.</span>
+                    <span className="text-secondary">WE ARE THERE.</span>
                   </h2>
-                  <p className="mx-auto mt-2 max-w-[610px] text-[14px] font-semibold leading-6 text-[#233654]">
+
+                  {/* ✅ Matching Careers paragraph style */}
+                  <p className="mx-auto mt-4 max-w-[640px] text-sm sm:text-[15px] leading-relaxed text-slate-600">
                     Our global presence ensures faster response, greater uptime
                     and reliable support - wherever your operations are.
                   </p>
                 </div>
 
-                <div className="relative overflow-hidden rounded-[12px] bg-[#061f49] shadow-[0_12px_30px_rgba(6,31,73,0.18)] ring-1 ring-[#dbe5f0]">
+                <div className="relative overflow-hidden rounded-[1rem] bg-primary shadow-xl border border-slate-100">
                   <Image
                     src="/images/global-presense/section-10-map.png"
                     alt="Service coverage worldwide map"
                     width={1914}
                     height={822}
-                    className="h-[326px] w-full object-cover"
+                    className="h-[360px] w-full object-cover opacity-90"
                     priority={false}
                   />
                 </div>
               </div>
 
-              <div className="rounded-[12px] border border-[#dce5ef] bg-white p-4 shadow-[0_14px_34px_rgba(6,31,73,0.08)]">
-                <h3 className="mb-5 text-center text-[17px] font-black uppercase text-[#061f49]">
+              <div className="rounded-[1rem] border border-slate-100 bg-white p-5 shadow-sm">
+                <h3 className="mb-6 text-center text-lg font-black uppercase text-primary">
                   REGIONAL SUPPORT ZONES
                 </h3>
                 <div className="space-y-3">
@@ -2683,28 +2680,29 @@ export default function GlobalPresencePage() {
                   ].map((zone) => (
                     <div
                       key={zone.region}
-                      className="grid min-h-[58px] grid-cols-[50px_1fr_110px] items-center gap-3 rounded-[7px] border border-[#e2e9f2] bg-white px-3 shadow-[0_5px_16px_rgba(6,31,73,0.04)]"
+                      className="grid min-h-[58px] grid-cols-[50px_1fr_110px] items-center gap-3 rounded-[0.75rem] border border-slate-100 bg-white px-3 shadow-sm"
                     >
-                      <Image
-                        src={`/images/global-presense/global-map-assets/${zone.icon}`}
-                        alt=""
-                        width={50}
-                        height={44}
-                        className="h-11 w-[50px] object-contain"
-                      />
+                      <div className="relative h-11 w-[50px] shrink-0">
+                        <Image
+                          src={`/images/global-presense/global-map-assets/${zone.icon}`}
+                          alt=""
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                       <div>
-                        <h4 className="text-[11px] font-black uppercase leading-tight text-[#061f49]">
+                        <h4 className="text-[11px] font-black uppercase leading-tight text-primary">
                           {zone.region}
                         </h4>
-                        <p className="mt-1 text-[9px] font-bold leading-tight text-[#334762]">
+                        <p className="mt-1 text-[9px] font-bold leading-tight text-slate-500">
                           {zone.countries}
                         </p>
                       </div>
-                      <div className="border-l border-[#d7e0eb] pl-3">
-                        <p className="text-[9px] font-black leading-tight text-[#334762]">
+                      <div className="border-l border-slate-100 pl-3">
+                        <p className="text-[9px] font-black leading-tight text-primary">
                           {zone.serviceA}
                         </p>
-                        <p className="mt-1 text-[9px] font-black leading-tight text-[#334762]">
+                        <p className="mt-1 text-[9px] font-black leading-tight text-primary">
                           {zone.serviceB}
                         </p>
                       </div>
@@ -2714,71 +2712,66 @@ export default function GlobalPresencePage() {
               </div>
             </div>
 
-            <div className="mt-4 grid gap-3 lg:grid-cols-[1.05fr_1fr_1.05fr]">
-              <div className="rounded-[10px] border border-[#dce5ef] bg-white px-7 py-5 shadow-[0_8px_24px_rgba(6,31,73,0.06)]">
-                <h3 className="mb-4 text-center text-[13px] font-black uppercase text-[#061f49]">
+            <div className="mt-6 grid gap-4 lg:grid-cols-3">
+              <div className="rounded-[1rem] border border-slate-100 bg-white px-7 py-6 shadow-sm">
+                <h3 className="mb-6 text-center text-sm font-black uppercase text-primary tracking-wide">
                   OUR SUPPORT STRUCTURE
                 </h3>
-                <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] items-start gap-2">
+                <div className="flex items-start justify-between gap-2">
                   {[
                     {
                       icon: Building2,
                       title: "REGIONAL HUBS",
-                      desc: "Strategic control & coordination",
                     },
                     {
                       icon: Wrench,
                       title: "SERVICE CENTERS",
-                      desc: "Local service & maintenance",
                     },
                     {
                       icon: HardHat,
                       title: "FIELD ENGINEERS",
-                      desc: "On-site support & troubleshooting",
                     },
                     {
                       icon: Settings,
                       title: "CUSTOMER SITE",
-                      desc: "Maximum uptime & performance",
                     },
                   ].map((step, index) => (
                     <React.Fragment key={step.title}>
-                      <div className="text-center">
-                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#dce5ef] bg-[#f7faff]">
-                          <step.icon className="h-7 w-7 stroke-[1.9] text-[#061f49]" />
+                      <div className="flex-1 text-center">
+                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-slate-100 bg-slate-50 text-primary transition-colors hover:bg-secondary/10 hover:text-secondary">
+                          <step.icon className="h-6 w-6 stroke-[1.9]" />
                         </div>
-                        <h4 className="mt-3 text-[9px] font-black uppercase leading-tight text-[#061f49]">
+                        <h4 className="mt-3 text-[9px] font-black uppercase leading-tight">
                           {step.title}
                         </h4>
-                        <p className="mt-1 text-[8px] font-semibold leading-tight text-[#334762]">
-                          {step.desc}
-                        </p>
                       </div>
                       {index < 3 && (
-                        <ArrowRight className="mt-5 h-6 w-6 text-[#061f49]" />
+                        <div className="pt-6">
+                          <ArrowRight className="h-4 w-4 text-slate-300" />
+                        </div>
                       )}
                     </React.Fragment>
                   ))}
                 </div>
               </div>
 
-              <div className="rounded-[10px] border border-[#dce5ef] bg-white px-6 py-5 shadow-[0_8px_24px_rgba(6,31,73,0.06)]">
-                <h3 className="mb-4 text-center text-[13px] font-black uppercase text-[#061f49]">
+              <div className="rounded-[1rem] border border-slate-100 bg-white px-6 py-6 shadow-sm">
+                <h3 className="mb-6 text-center text-sm font-black uppercase text-primary tracking-wide">
                   RESPONSE TIME COMMITMENT
                 </h3>
-                <div className="grid grid-cols-4 divide-x divide-[#dce5ef]">
+                <div className="grid grid-cols-4 divide-x divide-slate-100">
                   {[
-                    ["24/7", "Support Availability"],
-                    ["4-8 HRS", "Initial Response (Major Regions)"],
-                    ["24-48 HRS", "On-site Support (Depending on Region)"],
-                    ["> 95%", "First Time Fix Rate"],
+                    ["24/7", "Support availability"],
+                    ["4-8 HRS", "Initial Response"],
+                    ["24-48 HR", "On-site Support"],
+                    ["> 95%", "First Time Fix"],
                   ].map(([value, label]) => (
-                    <div key={value} className="px-3 text-center">
-                      <Clock className="mx-auto h-8 w-8 stroke-[1.8] text-[#1c67c7]" />
-                      <div className="mt-3 text-[18px] font-black leading-none text-[#061f49]">
+                    <div key={value} className="px-2 text-center">
+                      <Clock className="mx-auto h-7 w-7 stroke-[1.8] text-secondary" />
+                      <div className="mt-3 text-lg font-black leading-none text-primary">
                         {value}
                       </div>
-                      <p className="mx-auto mt-2 max-w-[86px] text-[8.5px] font-semibold leading-tight text-[#334762]">
+                      <p className="mx-auto mt-2 text-[9px] font-bold leading-tight text-slate-500">
                         {label}
                       </p>
                     </div>
@@ -2786,33 +2779,32 @@ export default function GlobalPresencePage() {
                 </div>
               </div>
 
-              <div className="rounded-[10px] border border-[#dce5ef] bg-white px-7 py-5 shadow-[0_8px_24px_rgba(6,31,73,0.06)]">
-                <h3 className="text-center text-[13px] font-black uppercase text-[#061f49]">
+              <div className="rounded-[1rem] border border-slate-100 bg-white px-7 py-6 shadow-sm">
+                <h3 className="mb-6 text-center text-sm font-black uppercase text-primary tracking-wide">
                   FUTURE GROWTH PLAN
                 </h3>
-                <p className="mt-1 text-center text-[10px] font-semibold text-[#334762]">
-                  Expanding our network to be closer to you.
-                </p>
-                <div className="mt-5 grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-2">
+                <div className="flex items-center justify-between gap-2">
                   {[
-                    { icon: MapPin, value: "20+", label: "New Service Centers" },
-                    { icon: Users, value: "150+", label: "New Service Experts" },
-                    { icon: Globe, value: "40+", label: "New Countries by 2030" },
+                    { icon: MapPin, value: "20+", label: "New Centers" },
+                    { icon: Users, value: "150+", label: "New Experts" },
+                    { icon: Globe, value: "40+", label: "New Countries" },
                   ].map((item, index) => (
                     <React.Fragment key={item.label}>
-                      <div className="text-center">
-                        <div className="mx-auto flex h-[52px] w-[52px] items-center justify-center rounded-full border border-[#dce5ef] bg-[#f7faff]">
-                          <item.icon className="h-8 w-8 stroke-[1.9] text-[#55a760]" />
+                      <div className="flex-1 text-center">
+                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-slate-100 bg-slate-50 text-secondary">
+                          <item.icon className="h-6 w-6 stroke-[1.9]" />
                         </div>
-                        <div className="mt-2 text-[21px] font-black leading-none text-[#1c67c7]">
+                        <div className="mt-2 text-xl font-black leading-none text-primary">
                           {item.value}
                         </div>
-                        <p className="mx-auto mt-1 max-w-[78px] text-[8.5px] font-black leading-tight text-[#334762]">
+                        <p className="mt-1 text-[9px] font-black uppercase leading-tight text-slate-500">
                           {item.label}
                         </p>
                       </div>
                       {index < 2 && (
-                        <ArrowRight className="h-5 w-5 text-[#061f49]" />
+                        <div className="pt-6">
+                          <ArrowRight className="h-4 w-4 text-slate-300" />
+                        </div>
                       )}
                     </React.Fragment>
                   ))}
@@ -2820,23 +2812,26 @@ export default function GlobalPresencePage() {
               </div>
             </div>
 
-            <div className="mt-3 grid overflow-hidden rounded-[8px] bg-[#061f49] text-white shadow-[0_10px_28px_rgba(6,31,73,0.16)] lg:grid-cols-[350px_1fr_310px]">
-              <div className="relative flex min-h-[88px] items-center gap-5 px-8">
-                <Image
-                  src="/images/global-presense/section-10-bottombaar.png"
-                  alt=""
-                  fill
-                  sizes="50px"
-                  className="object-cover opacity-35"
-                />
-                <div className="relative h-14 w-14 shrink-0 rounded-full border border-white/20 bg-white/5" />
-                <h3 className="relative headline text-[24px] leading-[0.95] text-white">
+            <div className="mt-6 grid overflow-hidden rounded-[1rem] bg-primary text-white shadow-lg lg:grid-cols-[350px_1fr_310px]">
+              <div className="relative flex min-h-[96px] items-center gap-5 px-8">
+                <div className="absolute inset-0 opacity-20">
+                  <Image
+                    src="/images/global-presense/section-10-bottombaar.png"
+                    alt=""
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative h-12 w-12 shrink-0 rounded-full border-2 border-secondary/30 bg-secondary/10 flex items-center justify-center">
+                  <Globe className="h-6 w-6 text-secondary" />
+                </div>
+                <h3 className="relative text-xl font-black leading-tight text-white uppercase">
                   GLOBAL STRENGTH.
                   <br />
-                  <span className="text-[#fa5902]">LOCAL COMMITMENT.</span>
+                  <span className="text-secondary">LOCAL COMMITMENT.</span>
                 </h3>
               </div>
-              <div className="grid grid-cols-1 divide-y divide-[#fa5902]/35 border-y border-white/10 md:grid-cols-3 md:divide-x md:divide-y-0 md:border-y-0">
+              <div className="grid grid-cols-1 divide-y divide-secondary/20 border-y border-white/10 md:grid-cols-3 md:divide-x md:divide-y-0 md:border-y-0">
                 {[
                   {
                     icon: Globe,
@@ -2851,214 +2846,213 @@ export default function GlobalPresencePage() {
                   {
                     icon: Shield,
                     title: "UNMATCHED SUPPORT",
-                    desc: "Built to support your success, every step of the way.",
+                    desc: "Built to support your success.",
                   },
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="flex min-h-[88px] items-center gap-4 px-7"
+                    className="flex min-h-[96px] items-center gap-4 px-6"
                   >
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/50">
-                      <item.icon className="h-7 w-7 stroke-[1.8] text-white" />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20">
+                      <item.icon className="h-5 w-5 stroke-[1.8] text-white" />
                     </div>
                     <div>
                       <h4 className="text-[11px] font-black uppercase leading-tight text-white">
                         {item.title}
                       </h4>
-                      <p className="mt-1 text-[9px] font-semibold leading-tight text-white/80">
+                      <p className="mt-1 text-[10px] font-medium leading-tight text-slate-300">
                         {item.desc}
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="flex min-h-[88px] items-center border-l border-[#fa5902]/60 px-8">
-                <h3 className="headline text-[22px] leading-[0.95] text-white">
+              <div className="flex min-h-[96px] items-center border-l border-white/10 bg-secondary/10 px-8">
+                <h3 className="text-lg font-black uppercase leading-tight text-white">
                   WE DON&apos;T JUST DELIVER MACHINES.
                   <br />
-                  <span className="text-[#fa5902]">WE DELIVER CONFIDENCE.</span>
+                  <span className="text-secondary">WE DELIVER CONFIDENCE.</span>
                 </h3>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* ══════════════════════════════════════════════════════════════════
             SECTION 11 — CTA
             ══════════════════════════════════════════════════════════════════ */}
-        <section className="bg-[#eef4fb] px-5 py-3 sm:px-7 lg:px-8">
-          <div className="mx-auto max-w-[1400px] overflow-hidden rounded-[10px] bg-white p-3 shadow-[0_18px_45px_rgba(6,31,73,0.10)]">
-            <div className="relative min-h-[430px] overflow-hidden rounded-[8px]">
-              <Image
-                src="/images/global-presense/global-cta.svg"
-                alt=""
-                fill
-                sizes="100vw"
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/78 to-white/0" />
-              <div className="relative z-10 max-w-[560px] px-9 py-11">
-                <div className="mb-10 flex items-center gap-3">
-                  <span className="h-px w-12 bg-[#fa5902]" />
-                  <p className="text-[13px] font-black uppercase tracking-wide text-[#061f49]">
-                    <span className="mr-2 text-[#fa5902]">12.</span>
-                    FINAL GLOBAL CTA
-                  </p>
-                  <span className="h-px w-12 bg-[#fa5902]" />
-                </div>
-                <h2 className="headline text-[clamp(3rem,5vw,5rem)] leading-[0.93] text-[#061f49]">
-                  LET&apos;S BUILD
-                  <br />
-                  <span className="text-[#fa5902]">INDUSTRIAL SUCCESS</span>
-                  <br />
-                  ACROSS BORDERS.
-                </h2>
-                <p className="mt-6 max-w-[455px] text-[18px] font-semibold leading-8 text-[#233654]">
-                  Pithal Machines is ready to collaborate, engineer and deliver
-                  world-class solutions that power industries and build a
-                  stronger future together.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative z-20 mx-6 mt-[-44px] overflow-hidden rounded-[12px] border border-[#dce5ef] bg-white/95 shadow-[0_16px_36px_rgba(6,31,73,0.12)] backdrop-blur">
-              <div className="grid divide-y divide-[#dce5ef] sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-5">
-                {[
-                  {
-                    icon: Globe,
-                    title: "EXPORT",
-                    accent: "CONSULTATION",
-                    desc: "Expert guidance for global market success.",
-                  },
-                  {
-                    icon: Users,
-                    title: "GLOBAL PROJECT",
-                    accent: "DISCUSSION",
-                    desc: "Collaborate on large-scale industrial projects.",
-                  },
-                  {
-                    icon: Settings,
-                    title: "ENGINEERING",
-                    accent: "SUPPORT",
-                    desc: "Technical expertise at every stage of your project.",
-                  },
-                  {
-                    icon: Handshake,
-                    title: "PARTNERSHIP",
-                    accent: "OPPORTUNITIES",
-                    desc: "Build long-term partnerships that create value.",
-                  },
-                  {
-                    icon: Mail,
-                    title: "INTERNATIONAL",
-                    accent: "INQUIRIES",
-                    desc: "We&apos;re here to respond to your global requirements.",
-                  },
-                ].map((card) => (
-                  <div
-                    key={`${card.title}-${card.accent}`}
-                    className="flex min-h-[190px] flex-col items-center justify-center px-7 py-7 text-center"
-                  >
-                    <div className="flex h-[64px] w-[64px] items-center justify-center rounded-full border border-[#d6e4f2] bg-[#edf5ff] shadow-[0_8px_18px_rgba(6,31,73,0.08)]">
-                      <card.icon className="h-9 w-9 stroke-[1.8] text-[#fa5902]" />
-                    </div>
-                    <h3 className="mt-5 text-[13px] font-black uppercase leading-[1.15] text-[#061f49]">
-                      {card.title}
-                      <br />
-                      <span className="text-[#fa5902]">{card.accent}</span>
-                    </h3>
-                    <span className="mt-3 h-[2px] w-6 bg-[#fa5902]" />
-                    <p className="mt-4 max-w-[170px] text-[12px] font-semibold leading-5 text-[#334762]">
-                      {card.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mx-3 mt-3 grid overflow-hidden rounded-[9px] bg-[#061f49] text-white shadow-[0_10px_30px_rgba(6,31,73,0.18)] lg:grid-cols-[355px_1fr_310px]">
-              <div className="relative min-h-[178px] overflow-hidden">
+        <section className="bg-slate-50 py-16">
+          <Container>
+            <div className="overflow-hidden rounded-[2rem] bg-white p-3 shadow-xl">
+              <div className="relative min-h-[480px] overflow-hidden rounded-[1.75rem]">
                 <Image
-                  src="/images/global-presense/section-11-bottombaar.png"
+                  src="/images/global-presense/global-cta.svg"
                   alt=""
                   fill
-                  sizes="355px"
-                  className="object-cover object-left"
+                  className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#061f49]/30 to-[#061f49]" />
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
+                <div className="relative z-10 max-w-[700px] px-10 py-16">
+                  {/* ✅ matching Careers tag style */}
+                  <div className="mb-6 flex items-center gap-3">
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
+                      LET&apos;S BUILD THE FUTURE
+                    </span>
+                    <span className="h-[1.5px] w-12 bg-secondary" />
+                  </div>
+
+                  {/* ✅ Matching Careers H1 size and leading */}
+                  <h2 className="text-4xl sm:text-5xl lg:text-[4.5rem] font-extrabold text-primary leading-[1.05] uppercase mb-8">
+                    LET&apos;S BUILD
+                    <br />
+                    <span className="text-secondary">INDUSTRIAL SUCCESS</span>
+                    <br />
+                    ACROSS BORDERS.
+                  </h2>
+
+                  {/* ✅ Matching Careers paragraph style */}
+                  <p className="mt-6 max-w-[500px] text-lg sm:text-xl font-medium leading-relaxed text-slate-600">
+                    Pithal Machines is ready to collaborate, engineer and deliver
+                    world-class solutions that power industries and build a
+                    stronger future together.
+                  </p>
+                </div>
               </div>
-              <div className="flex min-h-[178px] flex-col justify-center px-7 py-5">
-                <h3 className="headline text-[25px] leading-none text-white">
-                  ONE VISION. ONE WORLD.{" "}
-                  <span className="text-[#fa5902]">ENDLESS POSSIBILITIES.</span>
-                </h3>
-                <p className="mt-3 text-[13px] font-semibold leading-6 text-white/90">
-                  Let&apos;s create impact. Let&apos;s build the future.
-                  <br />
-                  Let&apos;s build <span className="font-black text-[#fa5902]">industrial success</span> across borders.
-                </p>
-                <div className="mt-5 grid gap-3 md:grid-cols-4">
+
+              <div className="relative z-20 mx-10 mt-[-60px] overflow-hidden rounded-2xl border border-slate-100 bg-white/95 shadow-xl backdrop-blur-md">
+                <div className="grid divide-y divide-slate-100 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-5">
                   {[
                     {
                       icon: Globe,
-                      title: "GLOBAL REACH",
-                      desc: "Delivering solutions worldwide.",
-                    },
-                    {
-                      icon: Shield,
-                      title: "TRUST & QUALITY",
-                      desc: "Engineering excellence you can rely on.",
-                    },
-                    {
-                      icon: Settings,
-                      title: "INNOVATIVE SOLUTIONS",
-                      desc: "Technology-driven. Future-ready.",
+                      title: "EXPORT",
+                      accent: "CONSULTATION",
+                      desc: "Expert guidance for global market success.",
                     },
                     {
                       icon: Users,
-                      title: "BUILT TOGETHER",
-                      desc: "Stronger together. Success forever.",
+                      title: "GLOBAL PROJECT",
+                      accent: "DISCUSSION",
+                      desc: "Collaborate on industrial projects.",
                     },
-                  ].map((item) => (
-                    <div key={item.title} className="flex gap-2.5 border-r border-white/15 pr-2.5 last:border-r-0">
-                      <item.icon className="h-7 w-7 shrink-0 stroke-[1.8] text-[#fa5902]" />
-                      <div>
-                        <h4 className="text-[8.5px] font-black uppercase leading-tight text-[#fa5902]">
-                          {item.title}
-                        </h4>
-                        <p className="mt-1 text-[8px] font-semibold leading-tight text-white/80">
-                          {item.desc}
-                        </p>
+                    {
+                      icon: Settings,
+                      title: "ENGINEERING",
+                      accent: "SUPPORT",
+                      desc: "Technical expertise at every stage.",
+                    },
+                    {
+                      icon: Handshake,
+                      title: "PARTNERSHIP",
+                      accent: "OPPORTUNITIES",
+                      desc: "Build value-creating partnerships.",
+                    },
+                    {
+                      icon: Mail,
+                      title: "INTERNATIONAL",
+                      accent: "INQUIRIES",
+                      desc: "Respond to global requirements.",
+                    },
+                  ].map((card) => (
+                    <div
+                      key={`${card.title}-${card.accent}`}
+                      className="flex min-h-[220px] flex-col items-center justify-center px-6 py-8 text-center transition-colors hover:bg-slate-50"
+                    >
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-50 text-secondary mb-5 shadow-inner">
+                        <card.icon className="h-7 w-7 stroke-[1.8]" />
                       </div>
+                      <h3 className="text-sm font-black uppercase leading-tight text-primary">
+                        {card.title}
+                        <br />
+                        <span className="text-secondary">{card.accent}</span>
+                      </h3>
+                      <span className="mt-3 h-[2px] w-6 bg-secondary/30" />
+                      <p className="mt-4 text-xs font-semibold leading-relaxed text-slate-500 max-w-[160px]">
+                        {card.desc}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="relative flex min-h-[178px] flex-col justify-center bg-[#fa5902] px-8 py-6 pl-12 text-white lg:[clip-path:polygon(13%_0,100%_0,100%_100%,0_100%)]">
-                <Image
-                  src="/images/global-presense/final-cta-logo-white.png"
-                  alt="Pithal Machines Pvt. Ltd."
-                  width={230}
-                  height={68}
-                  className="mb-4 h-auto w-[215px] object-contain"
-                />
-                <p className="text-[13px] font-semibold leading-6">
-                  Your Global Engineering Partner.
-                  <br />
-                  Today. Tomorrow. Together.
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-4 flex h-10 max-w-[230px] items-center justify-between rounded-[5px] border border-white/70 px-4 text-[11px] font-black uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-[#fa5902]"
-                >
-                  LET&apos;S BUILD TOGETHER
-                  <span className="ml-3 flex h-10 w-10 items-center justify-center border-l border-white/45">
-                    <ArrowRight className="h-4 w-4" />
-                  </span>
-                </Link>
+
+              <div className="mx-4 mt-6 grid overflow-hidden rounded-2xl bg-primary text-white shadow-lg lg:grid-cols-[350px_1fr_310px]">
+                <div className="relative min-h-[160px] overflow-hidden bg-primary-dark">
+                  <Image
+                    src="/images/global-presense/section-11-bottombaar.png"
+                    alt=""
+                    fill
+                    className="object-cover opacity-30"
+                  />
+                </div>
+                <div className="flex flex-col justify-center px-10 py-8">
+                  <h3 className="text-2xl font-black uppercase text-white leading-tight">
+                    ONE VISION. ONE WORLD.{" "}
+                    <span className="text-secondary">ENDLESS POSSIBILITIES.</span>
+                  </h3>
+                  <p className="mt-3 text-sm font-medium text-slate-300">
+                    Let&apos;s create impact. Let&apos;s build the future together.
+                    <br />
+                    Let&apos;s build <span className="font-black text-secondary uppercase">industrial success</span> across borders.
+                  </p>
+                  <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {[
+                      {
+                        icon: Globe,
+                        title: "GLOBAL REACH",
+                        desc: "Solutions worldwide.",
+                      },
+                      {
+                        icon: Shield,
+                        title: "TRUST & QUALITY",
+                        desc: "Precision engineering.",
+                      },
+                      {
+                        icon: Settings,
+                        title: "INNOVATIVE",
+                        desc: "Future-ready tech.",
+                      },
+                      {
+                        icon: Users,
+                        title: "BUILT TOGETHER",
+                        desc: "Stronger forever.",
+                      },
+                    ].map((item) => (
+                      <div key={item.title} className="flex gap-3">
+                        <item.icon className="h-6 w-6 shrink-0 text-secondary" />
+                        <div>
+                          <h4 className="text-[10px] font-black uppercase text-secondary">
+                            {item.title}
+                          </h4>
+                          <p className="mt-1 text-[9px] font-medium text-slate-400">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="relative flex flex-col justify-center bg-secondary px-10 py-10 text-white lg:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]">
+                  <div className="relative h-12 w-full mb-6">
+                    <Image
+                      src="/images/global-presense/final-cta-logo-white.png"
+                      alt="Pithal Machines Pvt. Ltd."
+                      fill
+                      className="object-contain object-left"
+                    />
+                  </div>
+                  <p className="text-sm font-black uppercase leading-tight mb-6">
+                    YOUR GLOBAL ENGINEERING PARTNER.
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="group flex items-center justify-between rounded-xl bg-white/10 border border-white/20 py-3 px-5 text-sm font-black uppercase text-white transition-all hover:bg-white hover:text-secondary"
+                  >
+                    DISCUSS PROJECT
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
       </main>
       <Footer />

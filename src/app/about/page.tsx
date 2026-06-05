@@ -120,7 +120,7 @@ function HeroSection() {
   const { hero, stats } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-white pb-8 lg:pb-10">
+    <section className="relative min-h-[calc(100svh-4.25rem)] overflow-hidden bg-white sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)]">
       <Image
         alt="Pithal Machines industrial factory floor and quarry application background"
         className="object-cover object-center"
@@ -146,12 +146,11 @@ function HeroSection() {
         className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-dark/70 via-primary-dark/20 to-transparent"
       />
 
-      <div className="relative min-h-[500px] overflow-hidden sm:min-h-[535px] lg:min-h-[590px]">
-        <Container className="relative z-10 flex min-h-[500px] flex-col justify-start pb-28 pt-8 sm:min-h-[535px] lg:min-h-[590px]">
-
+      <Container className="relative z-10 flex min-h-[calc(100svh-4.25rem)] flex-col justify-between gap-6 py-4 sm:min-h-[calc(100svh-4.75rem)] sm:gap-8 sm:py-5 lg:py-6 xl:min-h-[calc(100svh-5.25rem)]">
+        <div>
           <nav
             aria-label="Breadcrumb"
-            className="mb-8 flex items-center gap-3 text-xs font-black text-primary sm:mb-10 sm:text-sm z-10"
+            className="mb-4 flex items-center gap-3 text-xs font-black text-primary sm:mb-6 sm:text-sm lg:mb-7"
           >
             <Link
               className="flex items-center gap-2 transition-colors hover:text-secondary"
@@ -164,8 +163,8 @@ function HeroSection() {
             <span className="text-secondary">About Us</span>
           </nav>
 
-          <div className="max-w-[650px] z-10">
-            <div className="mb-5 flex items-center gap-3 text-secondary">
+          <div className="max-w-[650px]">
+            <div className="mb-3 flex items-center gap-3 text-secondary sm:mb-4">
               <span className="flex items-center gap-[5px]" aria-hidden>
                 {[0, 1, 2].map((index) => (
                   <span
@@ -187,16 +186,16 @@ function HeroSection() {
               </span>
               <span className="hidden h-px w-16 bg-secondary/30 sm:block" />
             </div>
-            <h1 className="headline text-[clamp(2.55rem,6.2vw,4.6rem)] leading-[0.92] text-primary">
+            <h1 className="headline mb-4 text-[clamp(2.2rem,5.6vw,4.3rem)] leading-[1.05] text-primary sm:mb-5">
               {hero.title}
               <span className="block text-secondary">{hero.highlight}</span>
             </h1>
-            <p className="mt-4 max-w-[560px] text-sm font-medium leading-7 text-text-dark sm:text-[17px]">
+            <p className="mt-4 max-w-[560px] text-sm font-medium leading-6 text-text-dark sm:text-[16px] lg:leading-7">
               {hero.subtitle}
             </p>
-            <div className="mt-6 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:mt-7">
               <Button
-                className="min-h-[54px] rounded-md px-6 text-[11px] shadow-[0_14px_28px_rgba(250,89,2,0.24)] sm:text-[12px]"
+                className="min-h-[50px] rounded-md px-5 text-[11px] shadow-[0_14px_28px_rgba(250,89,2,0.24)] sm:min-h-[52px] sm:px-6 sm:text-[12px]"
                 href={hero.ctas[0].href}
                 variant="primary"
               >
@@ -207,7 +206,7 @@ function HeroSection() {
                 <ArrowRight aria-hidden size={19} />
               </Button>
               <Button
-                className="min-h-[54px] rounded-md border-secondary/35 bg-white/95 px-6 text-[11px] shadow-[0_12px_22px_rgba(3,27,64,0.09)] sm:text-[12px]"
+                className="min-h-[50px] rounded-md border-secondary/35 bg-white/95 px-5 text-[11px] shadow-[0_12px_22px_rgba(3,27,64,0.09)] sm:min-h-[52px] sm:px-6 sm:text-[12px]"
                 href={hero.ctas[1].href}
                 variant="outlineNavy"
               >
@@ -217,36 +216,34 @@ function HeroSection() {
               </Button>
             </div>
           </div>
-        </Container>
-      </div>
+        </div>
 
-      <Container className="relative z-20 -mt-20 lg:-mt-24">
-        <div className="overflow-hidden rounded-2xl bg-white shadow-[0_22px_55px_rgba(3,27,64,0.2)]">
-          <div className="grid divide-y divide-border lg:grid-cols-[repeat(5,minmax(0,1fr))_1.75fr] lg:divide-x lg:divide-y-0">
+        <div className="overflow-hidden rounded-xl bg-white shadow-[0_18px_42px_rgba(3,27,64,0.18)] sm:rounded-2xl">
+          <div className="grid grid-cols-2 divide-x divide-y divide-border sm:grid-cols-3 lg:grid-cols-[repeat(5,minmax(0,1fr))_1.75fr] lg:divide-y-0">
             {stats.map((stat) => (
               <article
-                className="flex min-h-[92px] items-center gap-3 px-4 py-4 lg:min-h-[104px]"
+                className="flex min-h-[72px] items-center gap-2.5 px-3 py-3 sm:min-h-[82px] sm:gap-3 sm:px-4 lg:min-h-[92px]"
                 key={stat.label}
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary lg:h-14 lg:w-14">
-                  <Icon name={stat.icon} size={25} />
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary sm:h-11 sm:w-11 lg:h-12 lg:w-12">
+                  <Icon name={stat.icon} size={22} />
                 </span>
                 <div>
-                  <p className="headline text-[27px] leading-none text-primary lg:text-[31px]">
+                  <p className="headline text-[22px] leading-none text-primary sm:text-[25px] lg:text-[28px]">
                     {stat.value}
                   </p>
-                  <p className="mt-1 max-w-[8rem] text-[11px] font-black leading-4 text-primary-dark lg:text-[12px]">
+                  <p className="mt-1 max-w-[8rem] text-[10px] font-black leading-4 text-primary-dark lg:text-[11px]">
                     {stat.label}
                   </p>
                 </div>
               </article>
             ))}
-            <article className="relative min-h-[98px] overflow-hidden bg-primary-dark text-white lg:min-h-[104px]">
+            <article className="relative col-span-2 min-h-[76px] overflow-hidden bg-primary-dark text-white sm:col-span-1 sm:min-h-[82px] lg:min-h-[92px]">
               <div
                 aria-hidden
                 className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(250,89,2,0.18),transparent_35%)]"
               />
-              <div className="relative flex h-full min-h-[98px] items-center gap-4 p-4 lg:min-h-[104px]">
+              <div className="relative flex h-full min-h-[76px] items-center gap-3 p-3 sm:min-h-[82px] sm:p-4 lg:min-h-[92px]">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary text-white shadow-[0_12px_22px_rgba(250,89,2,0.25)]">
                   <Play fill="currentColor" size={17} />
                 </span>

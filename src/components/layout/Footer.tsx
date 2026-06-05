@@ -96,12 +96,12 @@ export function Footer() {
                 <span>
                   <strong className="font-bold">Pithal Machines Ltd.</strong>
                   <br />
-                  GIDC, Mehsana - 384002,
+                  Hawa Magri, Industrial Area, Sukher, 313001
                   <br />
-                  Gujarat, India.
+                  Udaipur, Rajasthan India
                 </span>
               </span>
-              <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919879716000">
+              <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919887537129">
                 <Phone aria-hidden className="shrink-0 text-primary" size={21} />
                 +91 98797 16000
               </a>

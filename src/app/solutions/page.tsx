@@ -455,7 +455,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO & STATS BANNER */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-white h-[calc(100vh-4.25rem)] sm:h-[calc(100vh-4.75rem)] xl:h-[calc(100vh-5.25rem)] text-primary">
+        <section className="relative min-h-[calc(100svh-4.25rem)] overflow-hidden bg-white text-primary sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)]">
           <Image
             alt="Pithal complete crushing and screening plant"
             className="object-cover object-center"
@@ -469,40 +469,40 @@ export default function SolutionsPage() {
             className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_22%,rgba(255,255,255,.88)_38%,rgba(255,255,255,.36)_58%,rgba(255,255,255,0)_78%)]"
           />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
-          <Container className="relative z-10 h-full flex flex-col justify-between pt-3 pb-4 sm:pt-4 sm:pb-5 lg:pt-6 lg:pb-6">
+          <Container className="relative z-10 flex min-h-[calc(100svh-4.25rem)] flex-col justify-between gap-6 py-4 sm:min-h-[calc(100svh-4.75rem)] sm:gap-7 sm:py-5 lg:py-6 xl:min-h-[calc(100svh-5.25rem)]">
             <div>
               {/* Breadcrumb */}
-              <div className="mb-3 flex items-center gap-2 text-xs font-medium text-primary/70">
+              <div className="mb-3 flex items-center gap-2 text-xs font-medium text-primary/70 sm:mb-4">
                 <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
                 <ChevronRight size={10} />
                 <span>Solutions & Applications</span>
               </div>
 
-              <div className="max-w-[650px] py-1 lg:py-3">
-                <div className="flex items-center gap-3 mb-3">
+              <div className="max-w-[650px] py-0 lg:py-2">
+                <div className="mb-3 flex items-center gap-3">
                   <span className="h-[1.5px] w-6 bg-secondary" />
                   <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
                     SOLUTIONS
                   </span>
                 </div>
                 
-                <h1 className="headline text-[clamp(2.35rem,5.5vw,4.2rem)] uppercase leading-[0.92] tracking-tight text-primary">
+                <h1 className="headline mb-4 text-[clamp(2.15rem,5.2vw,4rem)] uppercase leading-[1.05] tracking-tight text-primary sm:mb-5">
                   ENGINEERED SOLUTIONS <br />
                   FOR <span className="text-secondary">EVERY INDUSTRY.</span>
                 </h1>
-                
-                <span aria-hidden className="mt-4 block h-[2px] w-14 bg-secondary" />
 
-                <p className="mt-4 max-w-[560px] text-sm md:text-[17px] leading-relaxed text-primary font-medium">
+                <span aria-hidden className="mt-4 block h-[2px] w-14 bg-secondary sm:mt-5" />
+
+                <p className="mt-4 max-w-[560px] text-sm font-medium leading-6 text-primary md:text-[16px] lg:leading-7">
                   From rugged mining operations to large-scale infrastructure projects, we deliver crushing solutions that maximize performance, minimize downtime, and drive <span className="text-secondary font-bold italic">real results</span>.
                 </p>
                 
-                <div className="mt-5 flex flex-wrap gap-4">
-                  <Button href="#industries" variant="primary" className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5">
+                <div className="mt-5 flex flex-wrap gap-3 lg:mt-6">
+                  <Button href="#industries" variant="primary" className="group flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7">
                     EXPLORE SOLUTIONS
                     <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1.5" />
                   </Button>
-                  <Button href="#contact" variant="outlineNavy" className="flex items-center justify-center gap-2 text-xs font-black tracking-[0.14em] px-8 py-5.5">
+                  <Button href="#contact" variant="outlineNavy" className="flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7">
                     <Download size={14} className="mr-0.5" />
                     DOWNLOAD BROCHURE
                   </Button>
@@ -511,17 +511,17 @@ export default function SolutionsPage() {
             </div>
 
             {/* Stats row below Hero */}
-            <div className="bg-white text-slate-800 rounded-2xl p-4 md:py-5 md:px-6 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-center">
+            <div className="relative z-20 rounded-xl bg-white p-3 text-slate-800 shadow-[0_14px_34px_rgba(3,27,64,0.08)] sm:rounded-2xl sm:p-4 md:px-5 md:py-4">
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4">
                 {stats.map((stat, i) => (
-                  <div key={i} className="flex items-center gap-4.5 group">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-200/80 shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] text-primary">
+                  <div key={i} className="group flex min-w-0 items-center gap-2.5 sm:gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200/80 bg-slate-50 text-primary shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] lg:h-11 lg:w-11">
                       {renderCircleStatsIcon(stat.icon)}
                     </div>
-                    <div>
-                      <h4 className="text-2xl md:text-3xl font-black text-primary leading-none">{stat.value}</h4>
-                      <p className="text-xs md:text-sm font-black text-secondary uppercase tracking-widest mt-1.5">{stat.label}</p>
-                      <p className="text-xs md:text-sm text-slate-500 mt-0.5">{stat.desc}</p>
+                    <div className="min-w-0">
+                      <h4 className="text-[22px] font-black leading-none text-primary md:text-2xl">{stat.value}</h4>
+                      <p className="mt-1 text-[10px] font-black uppercase tracking-wider text-secondary md:text-xs">{stat.label}</p>
+                      <p className="mt-0.5 truncate text-[11px] text-slate-500 md:text-xs">{stat.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -1745,7 +1745,7 @@ export default function SolutionsPage() {
                 </span>
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                Let's Engineer Your <br />
+                Let&apos;s Engineer Your <br />
                 <span className="text-secondary">Next Crushing Solution.</span>
               </h2>
               <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
