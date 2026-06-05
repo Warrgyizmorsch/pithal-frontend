@@ -11,7 +11,7 @@ const labelStyle = "block text-sm font-bold text-primary";
 
 export function ContactCTA() {
   return (
-    <section className="scroll-mt-24 bg-white py-8 sm:py-10 lg:py-12" id="contact">
+    <section className="scroll-mt-24 bg-white i w !pt-0" id="contact">
       <Container>
         <div className="overflow-hidden rounded-[1.15rem] border border-primary/80 lg:grid lg:h-[calc(100vh-8rem)] lg:min-h-[580px] lg:max-h-[750px] lg:grid-cols-[0.95fr_1.05fr] xl:h-[calc(100vh-8.5rem)]">
           <div className="relative min-h-[34rem] overflow-hidden sm:min-h-[39rem] lg:h-full lg:min-h-0">

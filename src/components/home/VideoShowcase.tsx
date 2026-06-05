@@ -6,7 +6,7 @@ import { ArrowRight, Play } from "lucide-react";
 
 export function VideoShowcase() {
   return (
-    <section className="section-space bg-white" id="video">
+    <section className="section-space !pt-0 bg-white" id="video">
       <Container>
         <SectionHeader
           eyebrow="Video Showcase"
