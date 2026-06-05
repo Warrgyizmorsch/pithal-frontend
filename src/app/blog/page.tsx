@@ -955,11 +955,9 @@ export default function BlogPage() {
         <Container>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeader
-            eyebrow="FEATURED INSIGHTS"
+            eyebrow="Explore By Category"
             title=""
-            sub="Curated knowledge from industry experts"
-            linkText="View all insights →"
-            linkHref="#"
+            sub="Find insights across key industries and topics"
           />
             <Button
               variant="outlineNavy"
@@ -1001,14 +999,13 @@ export default function BlogPage() {
       <section id="articles" className="py-10 bg-bg-light">
         <Container>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl">
-              <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-secondary mb-3">
-                Latest Articles
-              </p>
-              <h2 className="headline text-[clamp(1.9rem,4vw,3rem)] text-primary">
-                Stay updated with the latest insights, trends and expert perspectives.
-              </h2>
-            </div>
+            <SectionHeader
+            eyebrow="FEATURED INSIGHTS"
+            title=""
+            sub="Curated knowledge from industry experts"
+            linkText="View all insights →"
+            linkHref="#"
+          />
             <Button
               variant="outlineNavy"
               href="#"
