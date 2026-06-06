@@ -64,7 +64,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
             <div className="mt-7 grid gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
               {data.features.map((feature) => (
                 <article className="px-2.5 first:pl-0" key={feature.title}>
-                  <ProductIcon className="mb-3 text-secondary" name={feature.icon} size={34} strokeWidth={1.45} />
+                  <ProductIcon className="mb-4 text-secondary" name={feature.icon} size={42} strokeWidth={1.45} />
                   <h3 className="text-[11px] font-black uppercase tracking-[0.03em] text-primary">{feature.title}</h3>
                   <p className="mt-1.5 text-[12px] leading-5 text-text-dark">{feature.text}</p>
                 </article>
@@ -73,7 +73,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
 
             <div className="mt-12">
               <div className="flex items-center gap-2.5">
-                <ProductIcon className="text-secondary" name="settings" size={24} />
+                <ProductIcon className="text-secondary" name="settings" size={28} />
                 <div>
                   <h3 className="text-base font-black uppercase tracking-[0.04em] text-primary">{data.applications.eyebrow}</h3>
                   <span className="mt-1.5 block h-[2px] w-9 bg-secondary" />
@@ -84,8 +84,8 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
               </p>
               <div className="mt-6 grid grid-cols-2 overflow-hidden rounded border-t border-l border-border sm:grid-cols-5">
                 {data.applications.items.map((item) => (
-                  <article className="flex min-h-[88px] flex-col items-center justify-center border-b border-r border-border p-3 text-center" key={item.label}>
-                    <ProductIcon className="text-secondary" name={item.icon} size={29} strokeWidth={1.45} />
+                  <article className="flex min-h-[96px] flex-col items-center justify-center border-b border-r border-border p-3 text-center" key={item.label}>
+                    <ProductIcon className="text-secondary" name={item.icon} size={38} strokeWidth={1.45} />
                     <h4 className="mt-2.5 text-[10px] font-black uppercase tracking-[0.03em] text-primary">{item.label}</h4>
                   </article>
                 ))}

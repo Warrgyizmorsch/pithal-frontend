@@ -63,7 +63,7 @@ export function ProcessTimeline() {
                 className={`relative min-w-0 ${isActive ? "flex" : "hidden sm:flex"}`}
               >
                 <article
-                  className={`flex h-full min-w-0 flex-1 flex-col rounded-2xl border-2 bg-white p-3 transition-all duration-300 sm:p-4 xl:p-2 ${
+                  className={`flex h-full min-w-0 flex-1 flex-col rounded-2xl border-2 bg-white px-3 pt-3 pb-2 transition-all duration-300 sm:px-4 sm:pt-4 sm:pb-3 xl:px-2 xl:pt-2 xl:pb-1 ${
                     isActive
                       ? "z-20 border-secondary shadow-xl sm:scale-[1.03]"
                       : "border-primary/20 sm:scale-[0.98] sm:opacity-60"
@@ -71,8 +71,8 @@ export function ProcessTimeline() {
                 >
                   <div className="mb-3 flex items-start gap-2">
                     <div
-                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-lg font-black leading-none text-white transition-colors duration-300 ${
-                        isActive ? "bg-secondary" : "bg-primary"
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-lg font-black leading-none text-secondary transition-colors duration-300 ${
+                        isActive ? "border-2 border-secondary bg-white" : "border-2 border-primary/20 bg-white"
                       }`}
                     >
                       {step.number}
@@ -86,7 +86,7 @@ export function ProcessTimeline() {
                       </p>
                     </div>
                   </div>
-                  <div className="relative mt-auto h-72 w-full overflow-hidden rounded-xl bg-white min-[420px]:h-80 sm:h-80">
+                  <div className="relative mt-auto h-52 w-full overflow-hidden rounded-xl bg-white min-[420px]:h-60 sm:h-64">
                     {mounted ? (
                       <video
                         ref={(el) => {

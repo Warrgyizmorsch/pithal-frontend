@@ -25,7 +25,7 @@ function HeroDescription({ text, highlight }: { text: string; highlight?: string
 
 export function ProductHero({ data }: { data: ProductHeroData }) {
   return (
-    <section className="relative isolate min-h-[720px] overflow-hidden bg-primary-dark text-white lg:min-h-[800px]">
+    <section className="relative isolate min-h-[calc(100svh-4.25rem)] sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)] overflow-hidden bg-primary-dark text-white">
       <Image
         alt={data.image.alt}
         className="object-cover object-center"
@@ -41,7 +41,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
       <div className="absolute left-[48%] top-0 hidden h-[3px] w-[22%] origin-left -rotate-[28deg] bg-secondary lg:block" />
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-secondary/45" />
 
-      <div className="relative z-10 mx-auto flex min-h-[720px] w-full max-w-[1693px] flex-col px-6 pb-7 pt-9 sm:px-10 lg:min-h-[800px] lg:px-[68px]">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-4.25rem)] sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)] w-full max-w-[1693px] flex-col px-6 pb-7 pt-9 sm:px-10 lg:px-[68px]">
         <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-4 text-[15px] font-medium text-white/90">
           {data.breadcrumb.map((item, index) => (
             <span className="flex items-center gap-5" key={item.label}>
@@ -53,39 +53,39 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
           ))}
         </nav>
 
-        <div className="mt-[70px] max-w-[780px] flex flex-col items-center lg:items-start text-center lg:text-left">
-          <div className="mb-6 flex items-center justify-center lg:justify-start gap-4">
+        <div className="mt-6 lg:mt-[45px] max-w-[780px] flex flex-col items-center lg:items-start text-center lg:text-left flex-1 justify-center lg:justify-start">
+          <div className="mb-4 flex items-center justify-center lg:justify-start gap-4">
             <div className="min-w-[260px] sm:min-w-[330px] max-w-full">
-              <p className="text-[18px] font-black uppercase leading-none tracking-[0.03em] text-secondary">{data.eyebrow}</p>
-              <span className="mt-2.5 block h-[2px] w-full bg-secondary" />
+              <p className="text-[16px] font-black uppercase leading-none tracking-[0.03em] text-secondary">{data.eyebrow}</p>
+              <span className="mt-2 block h-[2px] w-full bg-secondary" />
             </div>
-            <ProductIcon className="hidden text-secondary/80 sm:block" name="settings" size={28} strokeWidth={1.3} />
+            <ProductIcon className="hidden text-secondary/80 sm:block" name="settings" size={24} strokeWidth={1.3} />
           </div>
 
-          <h1 className="headline text-[clamp(2.5rem,8vw,7.35rem)] leading-[0.9] text-white lg:whitespace-nowrap">
+          <h1 className="headline text-[clamp(2rem,7vw,5.5rem)] leading-[0.95] text-white lg:whitespace-nowrap">
             {data.title} <span className="text-secondary">{data.highlightedTitle}</span>
           </h1>
-          <p className="mt-3 text-[clamp(1.45rem,2.6vw,1.95rem)] font-black uppercase leading-tight tracking-[0.12em] text-white lg:whitespace-nowrap">
+          <p className="mt-2 text-[clamp(1.2rem,2.2vw,1.6rem)] font-black uppercase leading-tight tracking-[0.12em] text-white lg:whitespace-nowrap">
             {data.subtitle}
           </p>
-          <span className="mt-4 block h-2 w-40 bg-secondary [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)] mx-auto lg:mx-0" />
-          <p className="mt-6 max-w-[610px] text-[18px] font-medium leading-[1.45] text-white mx-auto lg:mx-0">
+          <span className="mt-3 block h-1.5 w-32 bg-secondary [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)] mx-auto lg:mx-0" />
+          <p className="mt-5 max-w-[580px] text-[16px] font-medium leading-[1.45] text-white mx-auto lg:mx-0">
             <HeroDescription highlight={data.descriptionHighlight} text={data.description} />
           </p>
 
-          <div className="mt-10 flex flex-col gap-5 sm:flex-row w-full sm:w-auto items-stretch sm:items-center justify-center lg:justify-start">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row w-full sm:w-auto items-stretch sm:items-center justify-center lg:justify-start">
             {data.ctas.map((cta, index) => (
               <ProductCtaButton
                 className={index === 1 ? secondaryHeroButtonClass : heroButtonClass}
                 cta={cta}
-                iconSize={21}
+                iconSize={19}
                 key={cta.label}
               />
             ))}
           </div>
         </div>
 
-        <div className="mt-auto w-full max-w-[820px] rounded-2xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-7 py-6 shadow-[0_22px_55px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
+        <div className="mt-8 lg:mt-auto w-full max-w-[820px] rounded-xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-white/30">
             {data.quickStats.map((stat) => (
               <article className="flex items-center gap-4 lg:px-6 lg:first:pl-0 lg:last:pr-0" key={stat.label}>

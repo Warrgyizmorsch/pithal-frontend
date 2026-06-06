@@ -41,6 +41,11 @@ import {
   Activity,
   Headphones,
   Building2,
+  Pickaxe,
+  Boxes,
+  Factory,
+  Road,
+  Recycle,
 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
@@ -53,10 +58,25 @@ import { cn } from "@/lib/utils";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const stats = [
-  { value: "500+", label: "INSTALLATIONS", desc: "Across the Globe", icon: "inst" },
-  { value: "50+", label: "COUNTRIES", desc: "Global Presence", icon: "countries" },
+  {
+    value: "500+",
+    label: "INSTALLATIONS",
+    desc: "Across the Globe",
+    icon: "inst",
+  },
+  {
+    value: "50+",
+    label: "COUNTRIES",
+    desc: "Global Presence",
+    icon: "countries",
+  },
   { value: "24/7", label: "SUPPORT", desc: "Always With You", icon: "support" },
-  { value: "CUSTOM", label: "PLANT SOLUTIONS", desc: "Built Around Your Needs", icon: "custom" },
+  {
+    value: "CUSTOM",
+    label: "PLANT SOLUTIONS",
+    desc: "Built Around Your Needs",
+    icon: "custom",
+  },
 ];
 
 const industriesServe = [
@@ -64,43 +84,55 @@ const industriesServe = [
     title: "MINING",
     icon: "mining",
     image: "/solutionspage/mining.jpg",
-    challenge: "High abrasion, tough rock and continuous operation demanding maximum uptime.",
-    solution: "Heavy-duty crushers designed for high capacity, durability & reliability.",
+    challenge:
+      "High abrasion, tough rock and continuous operation demanding maximum uptime.",
+    solution:
+      "Heavy-duty crushers designed for high capacity, durability & reliability.",
   },
   {
     title: "AGGREGATES",
     icon: "aggregate",
     image: "/solutionspage/aggregate.jpg",
-    challenge: "Consistent quality, shape & gradation with high production demands.",
-    solution: "Advanced crushing & screening systems for superior output & efficiency.",
+    challenge:
+      "Consistent quality, shape & gradation with high production demands.",
+    solution:
+      "Advanced crushing & screening systems for superior output & efficiency.",
   },
   {
     title: "CEMENT",
     icon: "cement",
     image: "/solutionspage/cement.jpg",
-    challenge: "Hard limestone, high temperatures and strict quality requirements.",
-    solution: "Robust equipment built for high performance in harsh conditions.",
+    challenge:
+      "Hard limestone, high temperatures and strict quality requirements.",
+    solution:
+      "Robust equipment built for high performance in harsh conditions.",
   },
   {
     title: "INFRASTRUCTURE",
     icon: "infra",
     image: "/solutionspage/infrastructure.jpg",
-    challenge: "Large-scale projects need reliable supply of quality aggregates on time.",
-    solution: "Efficient, high-capacity solutions that ensure timely project completion.",
+    challenge:
+      "Large-scale projects need reliable supply of quality aggregates on time.",
+    solution:
+      "Efficient, high-capacity solutions that ensure timely project completion.",
   },
   {
     title: "CONSTRUCTION",
     icon: "const",
     image: "/solutionspage/construction.jpg",
-    challenge: "Tight deadlines, limited space and need for cost-effective solutions.",
-    solution: "Compact, mobile & efficient crushing systems for every construction need.",
+    challenge:
+      "Tight deadlines, limited space and need for cost-effective solutions.",
+    solution:
+      "Compact, mobile & efficient crushing systems for every construction need.",
   },
   {
     title: "RECYCLING",
     icon: "recycle",
     image: "/solutionspage/7.jpg",
-    challenge: "Processing demolition waste efficiently while maintaining environmental compliance.",
-    solution: "Specialized crushing & screening solutions for maximum recycling.",
+    challenge:
+      "Processing demolition waste efficiently while maintaining environmental compliance.",
+    solution:
+      "Specialized crushing & screening solutions for maximum recycling.",
   },
 ];
 
@@ -109,95 +141,269 @@ const challengesSolve = [
     step: "01",
     image: "/solutionspage/challenges we solve 1.jpg",
     challengeTitle: "High Wear & Frequent Downtime",
-    challengeDesc: "Heavy wear parts lead to breakdowns, production loss, and higher costs.",
+    challengeDesc:
+      "Heavy wear parts lead to breakdowns, production loss, and higher costs.",
     solutionTitle: "Built Tough. Built to Last.",
-    solutionDesc: "Wear-resistant design, premium materials, and robust engineering for long life.",
+    solutionDesc:
+      "Wear-resistant design, premium materials, and robust engineering for long life.",
     icon: Shield,
   },
   {
     step: "02",
     image: "/solutionspage/challenges we solve 2.jpg",
     challengeTitle: "Inconsistent Output Quality",
-    challengeDesc: "Irregular size, shape, and gradation affect final product quality.",
+    challengeDesc:
+      "Irregular size, shape, and gradation affect final product quality.",
     solutionTitle: "Precision Crushing & Screening",
-    solutionDesc: "Advanced technology ensures uniform output with accurate particle shape.",
+    solutionDesc:
+      "Advanced technology ensures uniform output with accurate particle shape.",
     icon: Layers,
   },
   {
     step: "03",
     image: "/solutionspage/challenges we solve 3.jpg",
     challengeTitle: "Low Productivity & High Costs",
-    challengeDesc: "High energy consumption and inefficient processes increase OPEX.",
+    challengeDesc:
+      "High energy consumption and inefficient processes increase OPEX.",
     solutionTitle: "High Efficiency, Lower Operating Cost",
-    solutionDesc: "Energy-efficient machines and optimized designs to maximize productivity.",
+    solutionDesc:
+      "Energy-efficient machines and optimized designs to maximize productivity.",
     icon: TrendingUp,
   },
   {
     step: "04",
     image: "/solutionspage/challenges we solve 14operations.jpg",
     challengeTitle: "Complex Operations & Maintenance",
-    challengeDesc: "Difficult maintenance and complex operations lead to delays.",
+    challengeDesc:
+      "Difficult maintenance and complex operations lead to delays.",
     solutionTitle: "Easy Operation, Hassle-Free Maintenance",
-    solutionDesc: "User-friendly machines with easy access for quick maintenance and minimal downtime.",
+    solutionDesc:
+      "User-friendly machines with easy access for quick maintenance and minimal downtime.",
     icon: Wrench,
   },
 ];
 
 const challengesBottomBar = [
-  { label: "Reduced Downtime", desc: "Maximum uptime, uninterrupted operations.", icon: Shield },
-  { label: "Better Productivity", desc: "Higher output with optimized performance.", icon: TrendingUp },
-  { label: "Lower Operating Cost", desc: "Energy-efficient solutions that save more.", icon: DollarSign },
-  { label: "Reliable Performance", desc: "Engineered for durability and consistent results.", icon: Shield },
-  { label: "Expert Support", desc: "End-to-end support whenever you need.", icon: Headphones },
+  {
+    label: "Reduced Downtime",
+    desc: "Maximum uptime, uninterrupted operations.",
+    icon: Shield,
+  },
+  {
+    label: "Better Productivity",
+    desc: "Higher output with optimized performance.",
+    icon: TrendingUp,
+  },
+  {
+    label: "Lower Operating Cost",
+    desc: "Energy-efficient solutions that save more.",
+    icon: DollarSign,
+  },
+  {
+    label: "Reliable Performance",
+    desc: "Engineered for durability and consistent results.",
+    icon: Shield,
+  },
+  {
+    label: "Expert Support",
+    desc: "End-to-end support whenever you need.",
+    icon: Headphones,
+  },
 ];
 
 const plantWorkflow = [
-  { step: "01", title: "RAW MATERIAL", desc: "Excavated material fed into the system.", icon: "raw", image: "/solutionspage/complete plant processs 1material.jpg" },
-  { step: "02", title: "PRIMARY CRUSHER", desc: "Reduces large rocks into manageable size.", icon: "primary", image: "/solutionspage/complete plant processs 2 1material.jpg" },
-  { step: "03", title: "SECONDARY CRUSHER", desc: "Further reduction for consistent output.", icon: "secondary", image: "/solutionspage/complete plant processs 3.jpg" },
-  { step: "04", title: "SCREENING", desc: "Separates material into required sizes.", icon: "screen", image: "/solutionspage/complete plant processs 4.jpg" },
-  { step: "05", title: "CONVEYOR SYSTEM", desc: "Efficient material transfer across stages.", icon: "conveyor", image: "/solutionspage/complete plant processs 5.jpg" },
-  { step: "06", title: "FINAL OUTPUT", desc: "High-quality, uniform material ready to use.", icon: "final", image: "/solutionspage/complete plant processs 6.jpg" },
+  {
+    step: "01",
+    title: "RAW MATERIAL",
+    desc: "Excavated material fed into the system.",
+    icon: "raw",
+    image: "/solutionspage/complete plant processs 1material.jpg",
+  },
+  {
+    step: "02",
+    title: "PRIMARY CRUSHER",
+    desc: "Reduces large rocks into manageable size.",
+    icon: "primary",
+    image: "/solutionspage/complete plant processs 2 1material.jpg",
+  },
+  {
+    step: "03",
+    title: "SECONDARY CRUSHER",
+    desc: "Further reduction for consistent output.",
+    icon: "secondary",
+    image: "/solutionspage/complete plant processs 3.jpg",
+  },
+  {
+    step: "04",
+    title: "SCREENING",
+    desc: "Separates material into required sizes.",
+    icon: "screen",
+    image: "/solutionspage/complete plant processs 4.jpg",
+  },
+  {
+    step: "05",
+    title: "CONVEYOR SYSTEM",
+    desc: "Efficient material transfer across stages.",
+    icon: "conveyor",
+    image: "/solutionspage/complete plant processs 5.jpg",
+  },
+  {
+    step: "06",
+    title: "FINAL OUTPUT",
+    desc: "High-quality, uniform material ready to use.",
+    icon: "final",
+    image: "/solutionspage/complete plant processs 6.jpg",
+  },
 ];
 
 const workflowBottomPillars = [
-  { label: "OPTIMIZED FLOW", desc: "Maximized efficiency at every stage.", icon: Settings },
-  { label: "CONSISTENT QUALITY", desc: "Uniform output with precise grading.", icon: Shield },
-  { label: "ENERGY EFFICIENT", desc: "Smart systems designed for lower power usage.", icon: Zap },
-  { label: "HIGH PRODUCTIVITY", desc: "Engineered for continuous operation & higher output.", icon: Cpu },
-  { label: "RELIABLE SUPPORT", desc: "End-to-end support for smooth plant performance.", icon: Headphones },
+  {
+    label: "OPTIMIZED FLOW",
+    desc: "Maximized efficiency at every stage.",
+    icon: Settings,
+  },
+  {
+    label: "CONSISTENT QUALITY",
+    desc: "Uniform output with precise grading.",
+    icon: Shield,
+  },
+  {
+    label: "ENERGY EFFICIENT",
+    desc: "Smart systems designed for lower power usage.",
+    icon: Zap,
+  },
+  {
+    label: "HIGH PRODUCTIVITY",
+    desc: "Engineered for continuous operation & higher output.",
+    icon: Cpu,
+  },
+  {
+    label: "RELIABLE SUPPORT",
+    desc: "End-to-end support for smooth plant performance.",
+    icon: Headphones,
+  },
 ];
 
 const operationBullets = [
-  { title: "EXPERT ENGINEERS", desc: "Industry experience you can trust.", icon: HardHat },
-  { title: "TAILORED SOLUTIONS", desc: "Custom designs for maximum efficiency.", icon: FileText },
-  { title: "PROVEN RELIABILITY", desc: "Engineered for durability and performance.", icon: CheckCircle2 },
-  { title: "END-TO-END SUPPORT", desc: "From concept to commissioning.", icon: Headphones },
+  {
+    title: "EXPERT ENGINEERS",
+    desc: "Industry experience you can trust.",
+    icon: HardHat,
+  },
+  {
+    title: "TAILORED SOLUTIONS",
+    desc: "Custom designs for maximum efficiency.",
+    icon: FileText,
+  },
+  {
+    title: "PROVEN RELIABILITY",
+    desc: "Engineered for durability and performance.",
+    icon: CheckCircle2,
+  },
+  {
+    title: "END-TO-END SUPPORT",
+    desc: "From concept to commissioning.",
+    icon: Headphones,
+  },
 ];
 
 const engineeringServices = [
-  { step: "01", title: "PLANT PLANNING", desc: "We plan your entire crushing plant for optimal workflow, safety, and future scalability.", image: "/solutionspage/our services 4 (2).png" },
-  { step: "02", title: "MACHINE SELECTION", desc: "The right machine for the right application — chosen for performance, efficiency & durability.", image: "/solutionspage/our our services (3).png"},
-  { step: "03", title: "LAYOUT OPTIMIZATION", desc: "We design smart layouts that maximize space utilization, material flow & operational efficiency.", image: "/solutionspage/our services 5.png" },
-  { step: "04", title: "CAPACITY PLANNING", desc: "Data-driven capacity calculations to ensure your plant meets today's needs and tomorrow's growth.", image: "/solutionspage/our services , 1.png" },
-  { step: "05", title: "SITE CONSULTATION", desc: "On-site analysis & expert guidance to create solutions tailored to your exact site conditions.", image: "/solutionspage/our services 2.png" },
+  {
+    step: "01",
+    title: "PLANT PLANNING",
+    desc: "We plan your entire crushing plant for optimal workflow, safety, and future scalability.",
+    image: "/solutionspage/our services 4 (2).png",
+  },
+  {
+    step: "02",
+    title: "MACHINE SELECTION",
+    desc: "The right machine for the right application — chosen for performance, efficiency & durability.",
+    image: "/solutionspage/our our services (3).png",
+  },
+  {
+    step: "03",
+    title: "LAYOUT OPTIMIZATION",
+    desc: "We design smart layouts that maximize space utilization, material flow & operational efficiency.",
+    image: "/solutionspage/our services 5.png",
+  },
+  {
+    step: "04",
+    title: "CAPACITY PLANNING",
+    desc: "Data-driven capacity calculations to ensure your plant meets today's needs and tomorrow's growth.",
+    image: "/solutionspage/our services , 1.png",
+  },
+  {
+    step: "05",
+    title: "SITE CONSULTATION",
+    desc: "On-site analysis & expert guidance to create solutions tailored to your exact site conditions.",
+    image: "/solutionspage/our services 2.png",
+  },
 ];
 
 const builtApplications = [
-  { title: "GRANITE CRUSHING", desc: "High-capacity crushing solutions designed for hard rock applications with maximum productivity.", image: "/solutionspage/application we power 1.jpg" },
-  { title: "LIMESTONE PROCESSING", desc: "Efficient processing systems for consistent output and superior material quality.", image: "/solutionspage/application we power 2.jpg" },
-  { title: "SAND MANUFACTURING", desc: "Advanced sand-making solutions for high-quality manufactured sand and controlled grading.", image: "/solutionspage/application we power 3.jpg" },
-  { title: "ROAD CONSTRUCTION", desc: "Reliable crushing and screening solutions for road base, sub-base and asphalt applications.", image: "/solutionspage/application we power 4.jpg" },
-  { title: "QUARRY OPERATIONS", desc: "Complete crushing systems built for demanding quarry environments and continuous use.", image: "/solutionspage/application we power 5.jpg" },
-  { title: "INDUSTRIAL MATERIAL HANDLING", desc: "Robust material handling solutions for bulk operations across various industrial sectors.", image: "/solutionspage/7.jpg" },
+  {
+    title: "GRANITE CRUSHING",
+    desc: "High-capacity crushing solutions designed for hard rock applications with maximum productivity.",
+    image: "/solutionspage/application we power 1.jpg",
+  },
+  {
+    title: "LIMESTONE PROCESSING",
+    desc: "Efficient processing systems for consistent output and superior material quality.",
+    image: "/solutionspage/application we power 2.jpg",
+  },
+  {
+    title: "SAND MANUFACTURING",
+    desc: "Advanced sand-making solutions for high-quality manufactured sand and controlled grading.",
+    image: "/solutionspage/application we power 3.jpg",
+  },
+  {
+    title: "ROAD CONSTRUCTION",
+    desc: "Reliable crushing and screening solutions for road base, sub-base and asphalt applications.",
+    image: "/solutionspage/application we power 4.jpg",
+  },
+  {
+    title: "QUARRY OPERATIONS",
+    desc: "Complete crushing systems built for demanding quarry environments and continuous use.",
+    image: "/solutionspage/application we power 5.jpg",
+  },
+  {
+    title: "INDUSTRIAL MATERIAL HANDLING",
+    desc: "Robust material handling solutions for bulk operations across various industrial sectors.",
+    image: "/solutionspage/7.jpg",
+  },
 ];
 
 const performanceMetrics = [
-  { pct: "92%", label: "HIGH OUTPUT EFFICIENCY", desc: "Engineered for maximum output with consistent performance across all operations.", icon: "gauge" },
-  { pct: "85%", label: "REDUCED DOWOWNTIME", desc: "Robust design and quality components ensure longer uptime and fewer breakdowns.", icon: "clock" },
-  { pct: "30%", label: "LOWER OPERATING COST", desc: "Optimized design reduces wear, energy consumption, and maintenance costs.", icon: "rupee" },
-  { pct: "25%", label: "ENERGY EFFICIENT SYSTEMS", desc: "Advanced engineering for lower power consumption and sustainable operations.", icon: "leaf" },
-  { pct: "40%", label: "HIGH PRODUCTION CAPACITY", desc: "High-capacity systems built to handle demanding operations with ease.", icon: "chart" },
+  {
+    pct: "92%",
+    label: "HIGH OUTPUT EFFICIENCY",
+    desc: "Engineered for maximum output with consistent performance across all operations.",
+    icon: "gauge",
+  },
+  {
+    pct: "85%",
+    label: "REDUCED DOWOWNTIME",
+    desc: "Robust design and quality components ensure longer uptime and fewer breakdowns.",
+    icon: "clock",
+  },
+  {
+    pct: "30%",
+    label: "LOWER OPERATING COST",
+    desc: "Optimized design reduces wear, energy consumption, and maintenance costs.",
+    icon: "rupee",
+  },
+  {
+    pct: "25%",
+    label: "ENERGY EFFICIENT SYSTEMS",
+    desc: "Advanced engineering for lower power consumption and sustainable operations.",
+    icon: "leaf",
+  },
+  {
+    pct: "40%",
+    label: "HIGH PRODUCTION CAPACITY",
+    desc: "High-capacity systems built to handle demanding operations with ease.",
+    icon: "chart",
+  },
 ];
 
 const performanceSliders = [
@@ -215,33 +421,116 @@ const performanceStatsList = [
 ];
 
 const smartProcessSteps = [
-  { step: "01", title: "SITE INSPECTION", desc: "We assess your site conditions, material characteristics, and production goals.", image: "/solutionspage/our smart procss 1.jpg" },
-  { step: "02", title: "PLANNING", desc: "Our engineers create optimized plant layouts and process flows tailored to your requirements.", image: "/solutionspage/our smart procss2.jpg" },
-  { step: "03", title: "MACHINE SELECTION", desc: "We recommend the right equipment for maximum efficiency and long-term value.", image: "/solutionspage/our smart procss3.jpg" },
-  { step: "04", title: "INSTALLATION", desc: "Our team ensures safe, timely, and precise installation with minimal downtime.", image: "/solutionspage/our smart procss 4.jpg" },
-  { step: "05", title: "COMMISSIONING", desc: "We test, optimize, and fine-tune the system for reliable and consistent performance.", image: "/solutionspage/our smart procss 5.jpg" },
-  { step: "06", title: "SUPPORT", desc: "24/7 support, preventive maintenance, and genuine parts for uninterrupted operations.", image: "/solutionspage/our smart procss 6.jpg" },
+  {
+    step: "01",
+    title: "SITE INSPECTION",
+    desc: "We assess your site conditions, material characteristics, and production goals.",
+    image: "/solutionspage/our smart procss 1.jpg",
+  },
+  {
+    step: "02",
+    title: "PLANNING",
+    desc: "Our engineers create optimized plant layouts and process flows tailored to your requirements.",
+    image: "/solutionspage/our smart procss2.jpg",
+  },
+  {
+    step: "03",
+    title: "MACHINE SELECTION",
+    desc: "We recommend the right equipment for maximum efficiency and long-term value.",
+    image: "/solutionspage/our smart procss3.jpg",
+  },
+  {
+    step: "04",
+    title: "INSTALLATION",
+    desc: "Our team ensures safe, timely, and precise installation with minimal downtime.",
+    image: "/solutionspage/our smart procss 4.jpg",
+  },
+  {
+    step: "05",
+    title: "COMMISSIONING",
+    desc: "We test, optimize, and fine-tune the system for reliable and consistent performance.",
+    image: "/solutionspage/our smart procss 5.jpg",
+  },
+  {
+    step: "06",
+    title: "SUPPORT",
+    desc: "24/7 support, preventive maintenance, and genuine parts for uninterrupted operations.",
+    image: "/solutionspage/our smart procss 6.jpg",
+  },
 ];
 
 const smartProcessPillars = [
-  { title: "END-TO-END EXPERTISE", desc: "Complete solutions from concept to continuous support.", icon: Shield },
-  { title: "ENGINEERED FOR EFFICIENCY", desc: "Smart designs that maximize output and reduce costs.", icon: Clock },
-  { title: "QUALITY YOU CAN TRUST", desc: "Built with precision engineering and premium components.", icon: Star },
-  { title: "LIFETIME PARTNERSHIP", desc: "We grow with you through reliable support and service.", icon: Handshake },
+  {
+    title: "END-TO-END EXPERTISE",
+    desc: "Complete solutions from concept to continuous support.",
+    icon: Shield,
+  },
+  {
+    title: "ENGINEERED FOR EFFICIENCY",
+    desc: "Smart designs that maximize output and reduce costs.",
+    icon: Clock,
+  },
+  {
+    title: "QUALITY YOU CAN TRUST",
+    desc: "Built with precision engineering and premium components.",
+    icon: Star,
+  },
+  {
+    title: "LIFETIME PARTNERSHIP",
+    desc: "We grow with you through reliable support and service.",
+    icon: Handshake,
+  },
 ];
 
 const globalReachPoints = [
-  { title: "EXPORT READY", desc: "Built to international standards and certified for global delivery.", icon: Globe },
-  { title: "GLOBAL OPERATIONS", desc: "Trusted by clients in 50+ countries across 6 continents.", icon: Users },
-  { title: "LARGE-SCALE SUPPORT", desc: "End-to-end project support for large-scale installations and long-term operations.", icon: Settings },
+  {
+    title: "EXPORT READY",
+    desc: "Built to international standards and certified for global delivery.",
+    icon: Globe,
+  },
+  {
+    title: "GLOBAL OPERATIONS",
+    desc: "Trusted by clients in 50+ countries across 6 continents.",
+    icon: Users,
+  },
+  {
+    title: "LARGE-SCALE SUPPORT",
+    desc: "End-to-end project support for large-scale installations and long-term operations.",
+    icon: Settings,
+  },
 ];
 
 const globalFlagsCards = [
-  { name: "INDIA", desc: "300 TPH Crushing & Screening Plant", image: "/solutionspage/global capability 1.jpg" },
-  { name: "INDONESIA", desc: "500 TPH Limestone Processing Plant", image: "/solutionspage/global capability 2.jpg" },
-  { name: "UNITED ARAB EMIRATES", desc: "250 TPH Aggregates Plant", image: "/solutionspage/global capability 3.jpg" },
-  { name: "KENYA", desc: "200 TPH Crushing Plant", image: "/solutionspage/global capability 4.jpg" },
-  { name: "PHILIPPINES", desc: "150 TPH Sand Making Plant", image: "/solutionspage/global capability 5.jpg" },
+  {
+    name: "INDIA",
+    flag: "🇮🇳",
+    desc: "300 TPH Crushing & Screening Plant",
+    image: "/solutionspage/global capability 1.jpg",
+  },
+  {
+    name: "INDONESIA",
+    flag: "/images/global-presense/partnership-assets/flags/indonesia.png",
+    desc: "500 TPH Limestone Processing Plant",
+    image: "/solutionspage/global capability 2.jpg",
+  },
+  {
+    name: "UNITED ARAB EMIRATES",
+    flag: "/images/global-presense/partnership-assets/flags/uae.png",
+    desc: "250 TPH Aggregates Plant",
+    image: "/solutionspage/global capability 3.jpg",
+  },
+  {
+    name: "KENYA",
+    flag: "/images/global-presense/partnership-assets/flags/kenya.png",
+    desc: "200 TPH Crushing Plant",
+    image: "/solutionspage/global capability 4.jpg",
+  },
+  {
+    name: "PHILIPPINES",
+    flag: "🇵🇭",
+    desc: "150 TPH Sand Making Plant",
+    image: "/solutionspage/global capability 5.jpg",
+  },
 ];
 
 const globalNavyBarMetrics = [
@@ -261,12 +550,36 @@ const globalBottomValues = [
 ];
 
 const whyChooseCards = [
-  { title: "CUSTOMIZED SOLUTIONS", desc: "Tailored solutions designed around your material, capacity and site requirements.", icon: "puzzle" },
-  { title: "FAST INSTALLATION", desc: "Optimized processes and skilled teams ensure quick and hassle-free installation.", icon: "stopwatch" },
-  { title: "EXPERT ENGINEERING", desc: "Experienced engineers delivering innovative, reliable and field-proven crushing solutions.", icon: "engineer" },
-  { title: "LOW DOWNTIME", desc: "Heavy-duty components and precise engineering keep your plant running longer with minimal downtime.", icon: "gauge" },
-  { title: "END-TO-END SUPPORT", desc: "From planning to commissioning and after-sales support – we are with you at every step.", icon: "handshake" },
-  { title: "SCALABLE PLANT DESIGN", desc: "Flexible, future-ready plant solutions that grow with your business and production demands.", icon: "scalable" },
+  {
+    title: "CUSTOMIZED SOLUTIONS",
+    desc: "Tailored solutions designed around your material, capacity and site requirements.",
+    icon: "puzzle",
+  },
+  {
+    title: "FAST INSTALLATION",
+    desc: "Optimized processes and skilled teams ensure quick and hassle-free installation.",
+    icon: "stopwatch",
+  },
+  {
+    title: "EXPERT ENGINEERING",
+    desc: "Experienced engineers delivering innovative, reliable and field-proven crushing solutions.",
+    icon: "engineer",
+  },
+  {
+    title: "LOW DOWNTIME",
+    desc: "Heavy-duty components and precise engineering keep your plant running longer with minimal downtime.",
+    icon: "gauge",
+  },
+  {
+    title: "END-TO-END SUPPORT",
+    desc: "From planning to commissioning and after-sales support – we are with you at every step.",
+    icon: "handshake",
+  },
+  {
+    title: "SCALABLE PLANT DESIGN",
+    desc: "Flexible, future-ready plant solutions that grow with your business and production demands.",
+    icon: "scalable",
+  },
 ];
 
 const whyChooseBottomStats = [
@@ -288,8 +601,8 @@ const caseStudiesData = [
     metrics: [
       { val: "35%", label: "Higher Productivity" },
       { val: "20%", label: "Lower Downtime" },
-      { val: "98%", label: "Material Consistency" }
-    ]
+      { val: "98%", label: "Material Consistency" },
+    ],
   },
   {
     tag: "SAND PLANT",
@@ -300,8 +613,8 @@ const caseStudiesData = [
     metrics: [
       { val: "30%", label: "Higher Output" },
       { val: "15%", label: "Energy Savings" },
-      { val: "99%", label: "Gradation Accuracy" }
-    ]
+      { val: "99%", label: "Gradation Accuracy" },
+    ],
   },
   {
     tag: "INFRASTRUCTURE PROJECT",
@@ -312,8 +625,8 @@ const caseStudiesData = [
     metrics: [
       { val: "40%", label: "Higher Capacity" },
       { val: "25%", label: "Lower Operating Cost" },
-      { val: "100%", label: "Safe & Reliable Operation" }
-    ]
+      { val: "100%", label: "Safe & Reliable Operation" },
+    ],
   },
   {
     tag: "CEMENT PLANT SOLUTION",
@@ -324,16 +637,32 @@ const caseStudiesData = [
     metrics: [
       { val: "20%", label: "Process Efficiency" },
       { val: "24/7", label: "Continuous Operation" },
-      { val: "Zero", label: "Unplanned Shutdown" }
-    ]
-  }
+      { val: "Zero", label: "Unplanned Shutdown" },
+    ],
+  },
 ];
 
 const ctaPlanningCards = [
-  { title: "Engineering Consultation", desc: "Connect with our experts to discuss your project needs.", icon: Users },
-  { title: "Request a Quote", desc: "Get a detailed, customized quote tailored to your requirements.", icon: FileCheck },
-  { title: "Plant Planning Support", desc: "Optimize your plant layout, capacity, and workflow with our experts.", icon: Settings },
-  { title: "Expert Engineering Help", desc: "End-to-end engineering support for reliable and efficient operations.", icon: Headphones },
+  {
+    title: "Engineering Consultation",
+    desc: "Connect with our experts to discuss your project needs.",
+    icon: Users,
+  },
+  {
+    title: "Request a Quote",
+    desc: "Get a detailed, customized quote tailored to your requirements.",
+    icon: FileCheck,
+  },
+  {
+    title: "Plant Planning Support",
+    desc: "Optimize your plant layout, capacity, and workflow with our experts.",
+    icon: Settings,
+  },
+  {
+    title: "Expert Engineering Help",
+    desc: "End-to-end engineering support for reliable and efficient operations.",
+    icon: Headphones,
+  },
 ];
 
 const ctaNavyOverlayMetrics = [
@@ -347,32 +676,98 @@ const ctaNavyOverlayMetrics = [
 // CUSTOM RENDERING ICONS
 // ─────────────────────────────────────────────────────────────────────────────
 
+function renderIndustryIcon(icon: string) {
+  switch (icon) {
+    case "mining":
+      return <Pickaxe size={18} className="text-white" />;
+    case "aggregate":
+      return <Boxes size={18} className="text-white" />;
+    case "cement":
+      return <Factory size={18} className="text-white" />;
+    case "infra":
+      return <Road size={18} className="text-white" />;
+    case "const":
+      return <HardHat size={18} className="text-white" />;
+    case "recycle":
+      return <Recycle size={18} className="text-white" />;
+    default:
+      return <Settings size={18} className="text-white" />;
+  }
+}
+
 function renderCircleStatsIcon(name: string) {
   switch (name) {
     case "inst":
       return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-primary"
+        >
           <circle cx="12" cy="12" r="10" />
           <circle cx="12" cy="12" r="4" stroke="#ff5a00" />
         </svg>
       );
     case "countries":
       return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-primary"
+        >
           <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#ff5a00" strokeWidth="1" />
+          <path
+            d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+            stroke="#ff5a00"
+            strokeWidth="1"
+          />
         </svg>
       );
     case "support":
       return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-primary"
+        >
           <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" stroke="#ff5a00" />
+          <path
+            d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+            stroke="#ff5a00"
+          />
         </svg>
       );
     case "custom":
       return (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-primary"
+        >
           <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
           <circle cx="12" cy="12" r="3" fill="#ff5a00" stroke="#ff5a00" />
         </svg>
@@ -386,47 +781,108 @@ function renderWhyChooseIcon(icon: string) {
   switch (icon) {
     case "puzzle":
       return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#031b40" strokeWidth="1.5">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#031b40"
+          strokeWidth="1.5"
+        >
           <path d="M11.75 3a2.25 2.25 0 0 1 2.25 2.25v.75H19a2 2 0 0 1 2 2v5a2.25 2.25 0 0 1-2.25 2.25h-.75V19a2 2 0 0 1-2 2h-5a2.25 2.25 0 0 1-2.25-2.25v-.75H5a2 2 0 0 1-2-2v-5H3a2.25 2.25 0 0 1-2.25-2.25v-1.5A2.25 2.25 0 0 1 3 8h.75V5a2 2 0 0 1 2-2h6z" />
           <path d="M12 9v6" stroke="#ff5a00" strokeWidth="2" />
         </svg>
       );
     case "stopwatch":
       return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#031b40" strokeWidth="1.5">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#031b40"
+          strokeWidth="1.5"
+        >
           <circle cx="12" cy="13" r="8" />
           <path d="M12 5V2M9 2h6M12 9v4l3 2" stroke="#ff5a00" strokeWidth="2" />
         </svg>
       );
     case "engineer":
       return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#031b40" strokeWidth="1.5">
-          <path d="M14.7 12.5a4 4 0 0 0-5.4 0M12 2v3M8.5 4.5l2 2M15.5 4.5l-2 2" stroke="#ff5a00" strokeWidth="1.5" />
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#031b40"
+          strokeWidth="1.5"
+        >
+          <path
+            d="M14.7 12.5a4 4 0 0 0-5.4 0M12 2v3M8.5 4.5l2 2M15.5 4.5l-2 2"
+            stroke="#ff5a00"
+            strokeWidth="1.5"
+          />
           <path d="M5 21a7 7 0 0 1 14 0" />
           <circle cx="12" cy="11" r="4" />
         </svg>
       );
     case "gauge":
       return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#031b40" strokeWidth="1.5">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#031b40"
+          strokeWidth="1.5"
+        >
           <path d="M3.34 19a10 10 0 1 1 17.32 0" />
-          <line x1="12" y1="12" x2="19" y2="8" stroke="#ff5a00" strokeWidth="2" />
+          <line
+            x1="12"
+            y1="12"
+            x2="19"
+            y2="8"
+            stroke="#ff5a00"
+            strokeWidth="2"
+          />
           <circle cx="12" cy="12" r="2" fill="#031b40" />
         </svg>
       );
     case "handshake":
       return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#031b40" strokeWidth="1.5">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#031b40"
+          strokeWidth="1.5"
+        >
           <path d="m11 17 2 2c.6.6 1.5.6 2 0l5-5c.6-.6.6-1.5 0-2l-2-2" />
-          <path d="m13 14-2-2-4 4c-.6.6-.6 1.5 0 2l2 2c.6.6 1.5.6 2 0l2-2" stroke="#ff5a00" strokeWidth="2" />
+          <path
+            d="m13 14-2-2-4 4c-.6.6-.6 1.5 0 2l2 2c.6.6 1.5.6 2 0l2-2"
+            stroke="#ff5a00"
+            strokeWidth="2"
+          />
           <path d="m14 8-1.5-1.5c-.8-.8-2-.8-2.8 0L3 13c-.6.6-.6 1.5 0 2l1.5 1.5" />
         </svg>
       );
     case "scalable":
       return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#031b40" strokeWidth="1.5">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#031b40"
+          strokeWidth="1.5"
+        >
           <path d="M3 3v18h18" />
-          <path d="m18.7 8-5.1 5.2-2.8-2.7-4.8 4.8" stroke="#ff5a00" strokeWidth="2" />
+          <path
+            d="m18.7 8-5.1 5.2-2.8-2.7-4.8 4.8"
+            stroke="#ff5a00"
+            strokeWidth="2"
+          />
           <path d="M19 5h-4v4" />
         </svg>
       );
@@ -445,13 +901,16 @@ export default function SolutionsPage() {
   const filteredProjects =
     activeTab === "All Projects"
       ? caseStudiesData
-      : caseStudiesData.filter((p) => p.cat === activeTab || (activeTab === "Quarry & Mining" && p.cat === "Quarry & Mining"));
+      : caseStudiesData.filter(
+          (p) =>
+            p.cat === activeTab ||
+            (activeTab === "Quarry & Mining" && p.cat === "Quarry & Mining"),
+        );
 
   return (
     <>
       <Header />
       <main className="min-h-screen bg-slate-50 text-slate-800">
-        
         {/* ========================================================================= */}
         {/* SECTION 1: HERO & STATS BANNER */}
         {/* ========================================================================= */}
@@ -469,11 +928,16 @@ export default function SolutionsPage() {
             className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_22%,rgba(255,255,255,.88)_38%,rgba(255,255,255,.36)_58%,rgba(255,255,255,0)_78%)]"
           />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
-          <Container className="relative z-10 flex min-h-[calc(100svh-4.25rem)] flex-col justify-between gap-6 py-4 sm:min-h-[calc(100svh-4.75rem)] sm:gap-7 sm:py-5 lg:py-6 xl:min-h-[calc(100svh-5.25rem)]">
+          <Container className="relative z-10 flex min-h-[calc(100svh-4.25rem)] flex-col justify-between gap-6 py-[30px] sm:min-h-[calc(100svh-4.75rem)] sm:gap-7 xl:min-h-[calc(100svh-5.25rem)]">
             <div>
               {/* Breadcrumb */}
               <div className="mb-3 flex items-center gap-2 text-xs font-medium text-primary/70 sm:mb-4">
-                <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
+                <Link
+                  href="/"
+                  className="hover:text-secondary transition-colors"
+                >
+                  Home
+                </Link>
                 <ChevronRight size={10} />
                 <span>Solutions & Applications</span>
               </div>
@@ -485,23 +949,39 @@ export default function SolutionsPage() {
                     SOLUTIONS
                   </span>
                 </div>
-                
+
                 <h1 className="headline mb-4 text-[clamp(2.15rem,5.2vw,4rem)] uppercase leading-[1.05] tracking-tight text-primary sm:mb-6">
                   ENGINEERED SOLUTIONS <br />
                   FOR <span className="text-secondary">EVERY INDUSTRY.</span>
                 </h1>
 
-
                 <p className="mt-8 max-w-[560px] text-sm font-medium leading-6 text-primary md:text-[16px] lg:leading-7">
-                  From rugged mining operations to large-scale infrastructure projects, we deliver crushing solutions that maximize performance, minimize downtime, and drive <span className="text-secondary font-bold italic">real results</span>.
+                  From rugged mining operations to large-scale infrastructure
+                  projects, we deliver crushing solutions that maximize
+                  performance, minimize downtime, and drive{" "}
+                  <span className="text-secondary font-bold italic">
+                    real results
+                  </span>
+                  .
                 </p>
-                
+
                 <div className="mt-5 flex flex-wrap gap-3 lg:mt-8">
-                  <Button href="#industries" variant="primary" className="group flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7">
+                  <Button
+                    href="#industries"
+                    variant="primary"
+                    className="group flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7"
+                  >
                     EXPLORE SOLUTIONS
-                    <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+                    <ArrowRight
+                      size={14}
+                      className="transition-transform duration-300 group-hover:translate-x-1.5"
+                    />
                   </Button>
-                  <Button href="#contact" variant="outlineNavy" className="flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7">
+                  <Button
+                    href="#contact"
+                    variant="outlineNavy"
+                    className="flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7"
+                  >
                     <Download size={14} className="mr-0.5" />
                     DOWNLOAD BROCHURE
                   </Button>
@@ -513,14 +993,23 @@ export default function SolutionsPage() {
             <div className="relative z-20 rounded-xl bg-white p-3 text-slate-800 shadow-[0_14px_34px_rgba(3,27,64,0.08)] sm:rounded-2xl sm:p-4 md:px-5 md:py-4">
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4">
                 {stats.map((stat, i) => (
-                  <div key={i} className="group flex min-w-0 items-center gap-2.5 sm:gap-3">
+                  <div
+                    key={i}
+                    className="group flex min-w-0 items-center gap-2.5 sm:gap-3"
+                  >
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200/80 bg-slate-50 text-primary shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] lg:h-11 lg:w-11">
                       {renderCircleStatsIcon(stat.icon)}
                     </div>
                     <div className="min-w-0">
-                      <h4 className="text-[22px] font-black leading-none text-primary md:text-2xl">{stat.value}</h4>
-                      <p className="mt-1 text-[10px] font-black uppercase tracking-wider text-secondary md:text-xs">{stat.label}</p>
-                      <p className="mt-0.5 truncate text-[11px] text-slate-500 md:text-xs">{stat.desc}</p>
+                      <h4 className="text-[22px] font-black leading-none text-primary md:text-2xl">
+                        {stat.value}
+                      </h4>
+                      <p className="mt-1 text-[10px] font-black uppercase tracking-wider text-secondary md:text-xs">
+                        {stat.label}
+                      </p>
+                      <p className="mt-0.5 truncate text-[11px] text-slate-500 md:text-xs">
+                        {stat.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -532,14 +1021,17 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 2: SOLUTIONS THAT POWER EVERY INDUSTRY */}
         {/* ========================================================================= */}
-        <section className="bg-white py-16 lg:py-24" id="industries">
+        <section className="bg-white py-[30px]" id="industries">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
                 <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
@@ -547,23 +1039,35 @@ export default function SolutionsPage() {
                 </span>
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                SOLUTIONS THAT POWER <span className="text-secondary">EVERY INDUSTRY</span>
+                SOLUTIONS THAT POWER{" "}
+                <span className="text-secondary">EVERY INDUSTRY</span>
               </h2>
-              <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
+              <span
+                aria-hidden
+                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
+              />
               <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                From raw material to final output, our engineered crushing solutions are built to perform in the toughest industrial environments.
+                From raw material to final output, our engineered crushing
+                solutions are built to perform in the toughest industrial
+                environments.
               </p>
             </div>
 
             {/* Grid of 6 cards */}
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {industriesServe.map((item, i) => (
-                <div key={i} className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-slate-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div
+                  key={i}
+                  className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-slate-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
                   {/* Photo container */}
                   <div className="relative aspect-[16/10] w-full bg-slate-900">
                     <Image
@@ -575,7 +1079,7 @@ export default function SolutionsPage() {
                     />
                     {/* Dark blue circle overlay */}
                     <div className="absolute left-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-primary border border-white/10 shadow-lg group-hover:bg-secondary transition-colors">
-                      <Settings size={18} className="text-white" />
+                      {renderIndustryIcon(item.icon)}
                     </div>
 
                     {/* Title inside image */}
@@ -609,7 +1113,10 @@ export default function SolutionsPage() {
                       </div>
                     </div>
 
-                    <Link href="#contact" className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-secondary hover:text-primary transition-colors">
+                    <Link
+                      href="#contact"
+                      className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-secondary hover:text-primary transition-colors"
+                    >
                       EXPLORE {item.title} SOLUTIONS
                       <ArrowRight size={12} />
                     </Link>
@@ -623,14 +1130,17 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 3: CHALLENGES WE SOLVE (Every Challenge. Engineered Solution.) */}
         {/* ========================================================================= */}
-        <section className="bg-white py-16 lg:py-24">
+        <section className="bg-white py-[30px]">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
                 <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
@@ -638,16 +1148,25 @@ export default function SolutionsPage() {
                 </span>
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                Every Challenge. <span className="text-secondary">Engineered Solution.</span>
+                Every Challenge.{" "}
+                <span className="text-secondary">Engineered Solution.</span>
               </h2>
-              <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
+              <span
+                aria-hidden
+                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
+              />
               <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                We understand the real challenges of industrial operations and deliver solutions that improve performance, reduce downtime, and maximize productivity.
+                We understand the real challenges of industrial operations and
+                deliver solutions that improve performance, reduce downtime, and
+                maximize productivity.
               </p>
             </div>
 
@@ -657,7 +1176,10 @@ export default function SolutionsPage() {
                 {challengesSolve.map((row, i) => {
                   const SolIcon = row.icon;
                   return (
-                    <div key={i} className="flex flex-col md:flex-row items-center gap-4">
+                    <div
+                      key={i}
+                      className="flex flex-col md:flex-row items-center gap-4"
+                    >
                       {/* Left: Challenge Card */}
                       <div className="relative flex-1 w-full p-4 bg-orange-50/50 border border-orange-100 rounded-xl flex gap-3.5 items-start">
                         <span className="text-xs font-black uppercase tracking-wider text-secondary mt-0.5">
@@ -675,7 +1197,10 @@ export default function SolutionsPage() {
 
                       {/* Middle Connector */}
                       <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm text-secondary shrink-0">
-                        <ChevronRight size={14} className="rotate-90 md:rotate-0" />
+                        <ChevronRight
+                          size={14}
+                          className="rotate-90 md:rotate-0"
+                        />
                       </div>
 
                       {/* Right: Solution Card */}
@@ -716,7 +1241,10 @@ export default function SolutionsPage() {
                 {challengesBottomBar.map((item, i) => {
                   const BIcon = item.icon;
                   return (
-                    <div key={i} className="text-center px-4 flex flex-col items-center">
+                    <div
+                      key={i}
+                      className="text-center px-4 flex flex-col items-center"
+                    >
                       <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary mb-2.5">
                         <BIcon size={26} />
                       </div>
@@ -737,14 +1265,17 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 4: COMPLETE PLANT SOLUTIONS (Intelligent Systems. Seamless Performance) */}
         {/* ========================================================================= */}
-        <section className="bg-white py-16 lg:py-24">
+        <section className="bg-white py-[30px]">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
                 <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
@@ -752,26 +1283,37 @@ export default function SolutionsPage() {
                 </span>
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                INTELLIGENT SYSTEMS. <span className="text-secondary">SEAMLESS PERFORMANCE.</span>
+                INTELLIGENT SYSTEMS.{" "}
+                <span className="text-secondary">SEAMLESS PERFORMANCE.</span>
               </h2>
-              <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
+              <span
+                aria-hidden
+                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
+              />
               <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                From raw material to final product, our complete plant solutions are engineered for maximum efficiency, reliability, and productivity.
+                From raw material to final product, our complete plant solutions
+                are engineered for maximum efficiency, reliability, and
+                productivity.
               </p>
             </div>
 
             {/* 6 columns */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6 relative">
               {plantWorkflow.map((item, i) => (
-                <div key={i} className="relative flex flex-col items-center text-center p-4 bg-slate-50 border border-slate-200/50 rounded-xl hover:border-slate-300 transition-colors">
-                  
+                <div
+                  key={i}
+                  className="relative flex flex-col items-center text-center p-4 bg-slate-50 border border-slate-200/50 rounded-xl hover:border-slate-300 transition-colors"
+                >
                   {/* Icon badge */}
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white border border-slate-200 text-primary">
                     {i === 0 && <Layers size={26} />}
                     {i === 1 && <Settings size={26} />}
                     {i === 2 && <Settings2 size={26} />}
@@ -783,7 +1325,7 @@ export default function SolutionsPage() {
                   <h3 className="mt-4 text-xs md:text-sm font-black uppercase tracking-wider text-primary leading-tight">
                     {item.title}
                   </h3>
-                  
+
                   <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500 min-h-[44px]">
                     {item.desc}
                   </p>
@@ -800,7 +1342,9 @@ export default function SolutionsPage() {
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center border border-dashed border-slate-600/30 m-1.5 rounded">
-                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">STAGE 0{item.step}</span>
+                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                          STAGE 0{item.step}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -819,7 +1363,10 @@ export default function SolutionsPage() {
             <div className="mt-10 relative flex justify-between px-[8%] items-center">
               <div className="absolute inset-x-0 h-[1.5px] bg-slate-200/80 z-0" />
               {plantWorkflow.map((item, i) => (
-                <div key={i} className="relative z-10 flex flex-col items-center">
+                <div
+                  key={i}
+                  className="relative z-10 flex flex-col items-center"
+                >
                   <div className="h-6 w-6 rounded-full border-2 border-secondary flex items-center justify-center text-[10px] font-black text-secondary shadow-sm bg-white">
                     {item.step}
                   </div>
@@ -828,34 +1375,38 @@ export default function SolutionsPage() {
             </div>
 
             {/* Bottom 5-column banner card */}
-            <div className="mt-14 bg-white border border-slate-200/80 rounded-2xl p-6.5 shadow-sm">
-              <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-5 items-center sm:divide-x sm:divide-slate-100">
+            <div className="mt-14 bg-white border border-slate-200/80 rounded-2xl p-8 shadow-sm">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 items-stretch sm:divide-x sm:divide-slate-100">
                 {workflowBottomPillars.map((item, i) => {
                   const PIcon = item.icon;
                   return (
-                    <div key={i} className="text-center px-4 flex flex-col items-center">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary mb-2.5">
-                        <PIcon size={26} />
+                    <div
+                      key={i}
+                      className="px-6 flex items-center justify-between gap-4 group hover:bg-slate-50 transition-colors py-2 first:pl-0"
+                    >
+                      <div className="text-left flex-1">
+                        <h4 className="text-base font-black uppercase tracking-wider text-primary leading-tight">
+                          {item.label}
+                        </h4>
+                        <p className="mt-2 text-xs md:text-sm text-slate-500 leading-snug font-medium">
+                          {item.desc}
+                        </p>
                       </div>
-                      <h4 className="text-sm font-black uppercase tracking-wider text-primary">
-                        {item.label}
-                      </h4>
-                      <p className="mt-1 text-xs md:text-sm text-slate-500 leading-normal">
-                        {item.desc}
-                      </p>
+                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                        <PIcon size={32} strokeWidth={1.5} />
+                      </div>
                     </div>
                   );
                 })}
               </div>
             </div>
-
           </Container>
         </section>
 
         {/* ========================================================================= */}
         {/* SECTION 5: ENGINEERED AROUND YOUR OPERATION */}
         {/* ========================================================================= */}
-        <section className="bg-white py-16 lg:py-24">
+        <section className="bg-white py-[30px]">
           <Container>
             {/* Top Grid layout */}
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center mb-16">
@@ -867,16 +1418,21 @@ export default function SolutionsPage() {
                     CUSTOM ENGINEERING SOLUTIONS
                   </span>
                 </div>
-                
+
                 <h2 className="headline text-primary text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] uppercase">
                   ENGINEERED AROUND <br />
                   <span className="text-secondary">YOUR OPERATION.</span>
                 </h2>
-                
-                <span aria-hidden className="block h-[2.5px] w-12 bg-secondary my-5" />
-                
+
+                <span
+                  aria-hidden
+                  className="block h-[2.5px] w-12 bg-secondary my-5"
+                />
+
                 <p className="text-sm md:text-base leading-relaxed text-slate-600 max-w-xl font-medium">
-                  Every site is unique. Our engineering experts design and deliver customized crushing solutions that match your goals, site conditions, and production requirements.
+                  Every site is unique. Our engineering experts design and
+                  deliver customized crushing solutions that match your goals,
+                  site conditions, and production requirements.
                 </p>
 
                 {/* Bullets grid layout */}
@@ -911,7 +1467,6 @@ export default function SolutionsPage() {
                   className="object-contain"
                   sizes="(min-width: 1024px) 40vw, 100vw"
                 />
-               
               </div>
             </div>
 
@@ -935,7 +1490,10 @@ export default function SolutionsPage() {
               {/* 5 columns */}
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
                 {engineeringServices.map((item, i) => (
-                  <div key={i} className="group bg-slate-50 border border-slate-200/80 p-5 rounded-xl hover:bg-slate-100/70 transition-all duration-300 flex flex-col justify-between">
+                  <div
+                    key={i}
+                    className="group bg-slate-50 border border-slate-200/80 p-5 rounded-xl hover:bg-slate-100/70 transition-all duration-300 flex flex-col justify-between"
+                  >
                     <div>
                       {item.image && (
                         <div className="relative w-full aspect-[16/10] mb-4 rounded-lg overflow-hidden bg-white border border-slate-100 flex items-center justify-center">
@@ -972,14 +1530,17 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 6: BUILT FOR EVERY APPLICATION */}
         {/* ========================================================================= */}
-        <section className="bg-white py-16 lg:py-24">
+        <section className="bg-white py-[30px]">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
                 <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
@@ -987,24 +1548,35 @@ export default function SolutionsPage() {
                 </span>
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                BUILT FOR <span className="text-secondary">EVERY APPLICATION.</span>
+                BUILT FOR{" "}
+                <span className="text-secondary">EVERY APPLICATION.</span>
               </h2>
-              <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
+              <span
+                aria-hidden
+                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
+              />
               <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                Our crushing solutions are engineered to perform across a wide range of industries and applications — delivering results where it matters most.
+                Our crushing solutions are engineered to perform across a wide
+                range of industries and applications — delivering results where
+                it matters most.
               </p>
             </div>
 
             {/* Grid of 6 cards */}
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {builtApplications.map((item, i) => (
-                <div key={i} className="group relative overflow-hidden rounded-xl bg-slate-900 text-white min-h-[300px] flex flex-col justify-end p-6 border border-slate-800 shadow-md">
-                  
+                <div
+                  key={i}
+                  className="group relative overflow-hidden rounded-xl bg-slate-900 text-white min-h-[300px] flex flex-col justify-end p-6 border border-slate-800 shadow-md"
+                >
                   {/* Photo with dark overlay */}
                   {item.image ? (
                     <Image
@@ -1016,7 +1588,9 @@ export default function SolutionsPage() {
                     />
                   ) : (
                     <div className="absolute inset-0 border border-dashed border-slate-800 m-3 rounded-lg z-0 flex items-center justify-center">
-                      <span className="text-xs uppercase font-black tracking-widest text-slate-800">IMAGE AREA {i + 1}</span>
+                      <span className="text-xs uppercase font-black tracking-widest text-slate-800">
+                        IMAGE AREA {i + 1}
+                      </span>
                     </div>
                   )}
 
@@ -1033,14 +1607,17 @@ export default function SolutionsPage() {
                     <h3 className="text-lg font-black uppercase tracking-wider text-white group-hover:text-secondary transition-colors">
                       {item.title}
                     </h3>
-                    
+
                     <span className="block h-[1.5px] w-6 bg-secondary my-2" />
-                    
+
                     <p className="text-sm text-slate-300 leading-relaxed mb-4">
                       {item.desc}
                     </p>
 
-                    <Link href="#contact" className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-secondary hover:text-white transition-colors">
+                    <Link
+                      href="#contact"
+                      className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-secondary hover:text-white transition-colors"
+                    >
                       EXPLORE SOLUTIONS
                       <ArrowRight size={12} />
                     </Link>
@@ -1060,31 +1637,41 @@ export default function SolutionsPage() {
                     Have a unique application?
                   </h4>
                   <p className="text-xs md:text-sm text-slate-500">
-                    Our engineers will design a solution tailored to your exact needs.
+                    Our engineers will design a solution tailored to your exact
+                    needs.
                   </p>
                 </div>
               </div>
 
-              <Button href="#contact" variant="primary" className="flex items-center gap-2 group text-xs px-6 py-3 shrink-0">
+              <Button
+                href="#contact"
+                variant="primary"
+                className="flex items-center gap-2 group text-xs px-6 py-3 shrink-0"
+              >
                 TALK TO AN EXPERT
-                <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight
+                  size={12}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
               </Button>
             </div>
-
           </Container>
         </section>
 
         {/* ========================================================================= */}
         {/* SECTION 7: MEASURABLE PERFORMANCE. MAXIMUM RESULTS. */}
         {/* ========================================================================= */}
-        <section className="bg-white py-16 lg:py-24">
+        <section className="bg-white py-[30px]">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
                 <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
@@ -1092,23 +1679,35 @@ export default function SolutionsPage() {
                 </span>
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                MEASURABLE PERFORMANCE. <span className="text-secondary">MAXIMUM RESULTS.</span>
+                MEASURABLE PERFORMANCE.{" "}
+                <span className="text-secondary">MAXIMUM RESULTS.</span>
               </h2>
-              <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
+              <span
+                aria-hidden
+                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
+              />
               <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                Our engineered crushing solutions are built to deliver superior performance, reduce operational costs, and maximize your productivity.
+                Our engineered crushing solutions are built to deliver superior
+                performance, reduce operational costs, and maximize your
+                productivity.
               </p>
             </div>
 
             {/* 5-Column Gauges Card Grid */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5 mb-16">
               {performanceMetrics.map((item, i) => (
-                <div key={i} className="bg-white border border-slate-200/80 p-5.5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div
+                  key={i}
+                  className="bg-white border border-slate-200/80 p-5.5 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                >
                   <div className="flex items-center justify-between">
                     {/* Gauge circle or Icon */}
                     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary">
@@ -1121,14 +1720,16 @@ export default function SolutionsPage() {
 
                     <span className="text-xl font-black text-secondary flex items-center gap-0.5">
                       {item.pct}
-                      <span className="text-sm font-bold text-slate-400">↑</span>
+                      <span className="text-sm font-bold text-slate-400">
+                        ↑
+                      </span>
                     </span>
                   </div>
 
                   <h3 className="mt-4 text-sm font-black uppercase tracking-wider text-primary leading-tight">
                     {item.label}
                   </h3>
-                  
+
                   <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500">
                     {item.desc}
                   </p>
@@ -1147,9 +1748,7 @@ export default function SolutionsPage() {
                   className="object-cover "
                   sizes="(min-width: 1024px) 33vw, 100vw"
                 />
-                <div className="relative text-center p-4 z-10">
-                  
-                </div>
+                <div className="relative text-center p-4 z-10"></div>
               </div>
 
               {/* Middle Column Sliders */}
@@ -1161,7 +1760,10 @@ export default function SolutionsPage() {
                       <span className="text-secondary">{slider.value}%</span>
                     </div>
                     <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-secondary rounded-full" style={{ width: `${slider.value}%` }} />
+                      <div
+                        className="h-full bg-secondary rounded-full"
+                        style={{ width: `${slider.value}%` }}
+                      />
                     </div>
                   </div>
                 ))}
@@ -1170,7 +1772,10 @@ export default function SolutionsPage() {
               {/* Right Column Stats */}
               <div className="space-y-6 lg:pl-6">
                 {performanceStatsList.map((item, i) => (
-                  <div key={i} className="flex items-center gap-4.5 bg-white border border-slate-200/80 p-4.5 rounded-xl">
+                  <div
+                    key={i}
+                    className="flex items-center gap-4.5 bg-white border border-slate-200/80 p-4.5 rounded-xl"
+                  >
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary">
                       {i === 0 && <Building2 size={20} />}
                       {i === 1 && <Globe size={20} />}
@@ -1191,21 +1796,23 @@ export default function SolutionsPage() {
                 ))}
               </div>
             </div>
-
           </Container>
         </section>
 
         {/* ========================================================================= */}
         {/* SECTION 8: INTELLIGENT SMART PROCESS WORKFLOW */}
         {/* ========================================================================= */}
-        <section className="bg-white py-16 lg:py-24">
+        <section className="bg-white py-[30px]">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
                 <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
@@ -1213,27 +1820,38 @@ export default function SolutionsPage() {
                 </span>
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                INTELLIGENT WORKFLOW. <span className="text-secondary">SEAMLESS RESULTS.</span>
+                INTELLIGENT WORKFLOW.{" "}
+                <span className="text-secondary">SEAMLESS RESULTS.</span>
               </h2>
-              <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
+              <span
+                aria-hidden
+                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
+              />
               <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                From initial consultation to lifelong support — our structured process ensures efficiency, transparency, and performance at every stage.
+                From initial consultation to lifelong support — our structured
+                process ensures efficiency, transparency, and performance at
+                every stage.
               </p>
             </div>
 
             {/* 6 Step cards */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6 relative mb-14">
-              
               {/* Connecting line */}
               <div className="absolute top-[32px] left-[10%] right-[10%] h-[1.5px] border-t border-dashed border-slate-200 hidden lg:block z-0" />
 
               {smartProcessSteps.map((item, i) => (
-                <div key={i} className="relative flex flex-col items-center text-center z-10 bg-slate-50 border border-slate-200/50 p-4.5 rounded-xl">
+                <div
+                  key={i}
+                  className="relative flex flex-col items-center text-center z-10 bg-slate-50 border border-slate-200/50 p-4.5 rounded-xl"
+                >
                   {/* Photo overlay step */}
                   <div className="w-full aspect-[4/3] rounded-lg overflow-hidden relative mb-4 border border-slate-200">
                     {item.image ? (
@@ -1246,7 +1864,9 @@ export default function SolutionsPage() {
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center border border-dashed border-slate-600/30 m-1.5 rounded bg-slate-800">
-                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">PHASE {item.step}</span>
+                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                          PHASE {item.step}
+                        </span>
                       </div>
                     )}
 
@@ -1268,7 +1888,7 @@ export default function SolutionsPage() {
                   <h3 className="text-sm font-black uppercase tracking-wider text-primary leading-tight">
                     {item.title}
                   </h3>
-                  
+
                   <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500">
                     {item.desc}
                   </p>
@@ -1287,7 +1907,10 @@ export default function SolutionsPage() {
             <div className="relative flex justify-between px-[8%] items-center mb-16">
               <div className="absolute inset-x-0 h-[1.5px] bg-slate-200/80 z-0" />
               {smartProcessSteps.map((item, i) => (
-                <div key={i} className="relative z-10 flex flex-col items-center">
+                <div
+                  key={i}
+                  className="relative z-10 flex flex-col items-center"
+                >
                   <div className="h-2.5 w-2.5 rounded-full bg-secondary shadow-md" />
                 </div>
               ))}
@@ -1316,19 +1939,16 @@ export default function SolutionsPage() {
                 })}
               </div>
             </div>
-
           </Container>
         </section>
 
         {/* ========================================================================= */}
         {/* SECTION 9: GLOBAL CAPABILITY (Engineered to Perform. Delivered Worldwide) */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-slate-50 py-20 lg:py-28">
+        <section className="relative overflow-hidden bg-slate-50 py-[30px]">
           <Container className="relative z-10">
-            
             {/* Top Row: Two Columns */}
             <div className="grid gap-12 lg:grid-cols-2 lg:items-start mb-16">
-              
               {/* Left Column Content */}
               <div>
                 <div className="flex items-center gap-3 mb-6">
@@ -1338,14 +1958,16 @@ export default function SolutionsPage() {
                   </span>
                   <span className="h-[1.5px] w-8 bg-secondary" />
                 </div>
-                
+
                 <h2 className="headline text-[clamp(2.4rem,5.5vw,3.6rem)] font-black leading-[1.0] text-primary">
                   ENGINEERED TO PERFORM. <br />
                   <span className="text-secondary">DELIVERED WORLDWIDE.</span>
                 </h2>
-                
+
                 <p className="mt-6 max-w-xl text-sm md:text-base leading-relaxed text-slate-500 font-medium">
-                  From design to delivery, installation to support – our solutions power industries across the globe with unmatched reliability and performance.
+                  From design to delivery, installation to support – our
+                  solutions power industries across the globe with unmatched
+                  reliability and performance.
                 </p>
 
                 {/* 3 Horizontal Features */}
@@ -1353,7 +1975,10 @@ export default function SolutionsPage() {
                   {globalReachPoints.map((item, i) => {
                     const RIcon = item.icon;
                     return (
-                      <div key={i} className="text-center flex flex-col items-center">
+                      <div
+                        key={i}
+                        className="text-center flex flex-col items-center"
+                      >
                         <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-sm mb-3">
                           <RIcon size={22} className="stroke-[1.8]" />
                         </div>
@@ -1378,55 +2003,82 @@ export default function SolutionsPage() {
                   className="object-cover opacity-60 mix-blend-multiply"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
-                
+
                 {/* Dots / Lines / Labels over Map (Simulated Pin overlays) */}
                 <div className="absolute inset-0 z-10 pointer-events-none">
-                  
                   {/* Pithal (India) Central Pin */}
                   <div className="absolute top-[52%] left-[64%] flex flex-col items-center">
                     <div className="relative flex h-7 w-7 items-center justify-center">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                      <MapPin size={20} className="text-secondary fill-secondary relative z-10" />
+                      <MapPin
+                        size={20}
+                        className="text-secondary fill-secondary relative z-10"
+                      />
                     </div>
-                    <span className="text-[9px] font-black uppercase bg-secondary text-white px-2 py-0.5 rounded shadow leading-none mt-1">PITHAL</span>
+                    <span className="text-[9px] font-black uppercase bg-secondary text-white px-2 py-0.5 rounded shadow leading-none mt-1">
+                      PITHAL
+                    </span>
                   </div>
 
                   {/* NORTH AMERICA */}
                   <div className="absolute top-[32%] left-[15%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">NORTH AMERICA</span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
+                      NORTH AMERICA
+                    </span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
+                      Projects Delivered
+                    </span>
                   </div>
 
                   {/* EUROPE */}
                   <div className="absolute top-[20%] left-[45%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">EUROPE</span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
+                      EUROPE
+                    </span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
+                      Projects Delivered
+                    </span>
                   </div>
 
                   {/* ASIA */}
                   <div className="absolute top-[30%] left-[82%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">ASIA</span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
+                      ASIA
+                    </span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
+                      Projects Delivered
+                    </span>
                   </div>
 
                   {/* SOUTH AMERICA */}
                   <div className="absolute top-[62%] left-[22%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">SOUTH AMERICA</span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
+                      SOUTH AMERICA
+                    </span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
+                      Projects Delivered
+                    </span>
                   </div>
 
                   {/* AFRICA */}
                   <div className="absolute top-[65%] left-[48%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">AFRICA</span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
+                      AFRICA
+                    </span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
+                      Projects Delivered
+                    </span>
                   </div>
 
                   {/* AUSTRALIA */}
                   <div className="absolute top-[72%] left-[80%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">AUSTRALIA</span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">Projects Delivered</span>
+                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
+                      AUSTRALIA
+                    </span>
+                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
+                      Projects Delivered
+                    </span>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -1434,14 +2086,11 @@ export default function SolutionsPage() {
             {/* 5 Flags Cards Row */}
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5 mb-16">
               {globalFlagsCards.map((card, i) => {
-                let flagEmoji = "🇮🇳";
-                if (card.name === "INDONESIA") flagEmoji = "🇮🇩";
-                if (card.name === "UNITED ARAB EMIRATES") flagEmoji = "🇦🇪";
-                if (card.name === "KENYA") flagEmoji = "🇰🇪";
-                if (card.name === "PHILIPPINES") flagEmoji = "🇵🇭";
-
                 return (
-                  <div key={i} className="group relative overflow-hidden rounded-2xl border border-slate-200 shadow-md bg-white flex flex-col">
+                  <div
+                    key={i}
+                    className="group relative overflow-hidden rounded-2xl border border-slate-200 shadow-md bg-white flex flex-col"
+                  >
                     <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900">
                       {card.image && (
                         <Image
@@ -1453,14 +2102,31 @@ export default function SolutionsPage() {
                         />
                       )}
                     </div>
-                    <div className="bg-[#031b40] p-4 text-left border-t border-[#031b40]">
-                      <div className="flex items-center gap-2">
-                        <span className="text-base leading-none">{flagEmoji}</span>
-                        <span className="text-xs font-black uppercase tracking-wider text-white">
+                    <div className="bg-[#031b40] p-6 text-left border-t border-[#031b40] flex-1">
+                      <div className="flex items-center gap-4">
+                        {/* Inline Flag - Increased Size */}
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/10 overflow-hidden shadow-inner group-hover:bg-white/20 transition-all duration-300">
+                          {card.flag.startsWith("/") ? (
+                            <div className="relative w-full h-full flex items-center justify-center p-2">
+                              <Image
+                                src={card.flag}
+                                alt={`${card.name} flag`}
+                                width={32}
+                                height={32}
+                                className="object-contain"
+                              />
+                            </div>
+                          ) : (
+                            <span className="text-2xl leading-none drop-shadow-sm">
+                              {card.flag}
+                            </span>
+                          )}
+                        </div>
+                        <span className="text-base font-black uppercase tracking-wider text-white">
                           {card.name}
                         </span>
                       </div>
-                      <p className="mt-2 text-xs text-slate-300 leading-snug font-medium">
+                      <p className="mt-4 text-sm text-slate-300 leading-snug font-medium">
                         {card.desc}
                       </p>
                     </div>
@@ -1475,18 +2141,52 @@ export default function SolutionsPage() {
               <div className="relative z-10 grid gap-8 sm:grid-cols-3 lg:grid-cols-5 sm:divide-x sm:divide-white/10">
                 {globalNavyBarMetrics.map((item, i) => {
                   return (
-                    <div key={i} className="flex items-center gap-4.5 pl-0 lg:pl-6 first:pl-0">
+                    <div
+                      key={i}
+                      className="flex items-center gap-4.5 pl-0 lg:pl-6 first:pl-0"
+                    >
                       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-secondary">
-                        {i === 0 && <Globe size={26} className="text-secondary stroke-[1.8]" />}
-                        {i === 1 && <Building2 size={26} className="text-secondary stroke-[1.8]" />}
-                        {i === 2 && <Settings size={26} className="text-secondary stroke-[1.8]" />}
-                        {i === 3 && <Users size={26} className="text-secondary stroke-[1.8]" />}
-                        {i === 4 && <Headphones size={26} className="text-secondary stroke-[1.8]" />}
+                        {i === 0 && (
+                          <Globe
+                            size={26}
+                            className="text-secondary stroke-[1.8]"
+                          />
+                        )}
+                        {i === 1 && (
+                          <Building2
+                            size={26}
+                            className="text-secondary stroke-[1.8]"
+                          />
+                        )}
+                        {i === 2 && (
+                          <Settings
+                            size={26}
+                            className="text-secondary stroke-[1.8]"
+                          />
+                        )}
+                        {i === 3 && (
+                          <Users
+                            size={26}
+                            className="text-secondary stroke-[1.8]"
+                          />
+                        )}
+                        {i === 4 && (
+                          <Headphones
+                            size={26}
+                            className="text-secondary stroke-[1.8]"
+                          />
+                        )}
                       </div>
                       <div>
-                        <h4 className="text-3xl font-black text-white leading-none tracking-tight">{item.value}</h4>
-                        <p className="text-[10px] font-black text-white uppercase tracking-widest mt-1.5">{item.label}</p>
-                        <p className="text-[10px] text-slate-400 mt-0.5 leading-snug font-medium">{item.desc}</p>
+                        <h4 className="text-3xl font-black text-white leading-none tracking-tight">
+                          {item.value}
+                        </h4>
+                        <p className="text-[10px] font-black text-white uppercase tracking-widest mt-1.5">
+                          {item.label}
+                        </p>
+                        <p className="text-[10px] text-slate-400 mt-0.5 leading-snug font-medium">
+                          {item.desc}
+                        </p>
                       </div>
                     </div>
                   );
@@ -1508,21 +2208,23 @@ export default function SolutionsPage() {
                 );
               })}
             </div>
-
           </Container>
         </section>
 
         {/* ========================================================================= */}
         {/* SECTION 10: SOLUTIONS BUILT AROUND YOUR SUCCESS */}
         {/* ========================================================================= */}
-        <section className="bg-white py-16 lg:py-24">
+        <section className="bg-white py-[30px]">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
                 <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
@@ -1530,30 +2232,42 @@ export default function SolutionsPage() {
                 </span>
                 <span className="flex gap-1">
                   {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
+                    <span
+                      key={i}
+                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
+                    />
                   ))}
                 </span>
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                Solutions built around <span className="text-secondary">your success.</span>
+                Solutions built around{" "}
+                <span className="text-secondary">your success.</span>
               </h2>
-              <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
+              <span
+                aria-hidden
+                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
+              />
               <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                We combine engineering excellence with practical solutions to deliver maximum performance, reliability, and long-term value.
+                We combine engineering excellence with practical solutions to
+                deliver maximum performance, reliability, and long-term value.
               </p>
             </div>
 
             {/* Grid of 6 cards with orange circular arcs */}
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16">
               {whyChooseCards.map((item, i) => (
-                <div key={i} className="group relative flex flex-col bg-slate-50 border border-slate-200/80 p-6 rounded-xl hover:shadow-lg transition-all duration-300 hover:border-slate-300">
-                  
+                <div
+                  key={i}
+                  className="group relative flex flex-col bg-slate-50 border border-slate-200/80 p-6 rounded-xl hover:shadow-lg transition-all duration-300 hover:border-slate-300"
+                >
                   {/* Left-side circle container with orange crescent */}
                   <div className="flex gap-5 items-start">
-                    
                     <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-md">
                       {/* Orange outer arc segment overlay */}
-                      <svg className="absolute -inset-[1.5px] h-[66px] w-[66px] -rotate-45 pointer-events-none" viewBox="0 0 100 100">
+                      <svg
+                        className="absolute -inset-[1.5px] h-[66px] w-[66px] -rotate-45 pointer-events-none"
+                        viewBox="0 0 100 100"
+                      >
                         <circle
                           cx="50"
                           cy="50"
@@ -1573,16 +2287,14 @@ export default function SolutionsPage() {
                       <h3 className="text-base font-black uppercase tracking-[0.10em] text-primary">
                         {item.title}
                       </h3>
-                      
+
                       <span className="block h-[1.5px] w-6 bg-secondary my-2" />
-                      
+
                       <p className="mt-1 text-sm text-slate-500 leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
-
                   </div>
-
                 </div>
               ))}
             </div>
@@ -1603,14 +2315,13 @@ export default function SolutionsPage() {
                 );
               })}
             </div>
-
           </Container>
         </section>
 
         {/* ========================================================================= */}
         {/* SECTION 11: CASE STUDIES (Proven Solutions. Real Results.) */}
         {/* ========================================================================= */}
-        <section className="bg-white py-16 lg:py-24" id="case-studies">
+        <section className="bg-white py-[30px]" id="case-studies">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-12">
@@ -1628,17 +2339,29 @@ export default function SolutionsPage() {
                 </div>
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                PROVEN SOLUTIONS. <span className="text-secondary">REAL RESULTS.</span>
+                PROVEN SOLUTIONS.{" "}
+                <span className="text-secondary">REAL RESULTS.</span>
               </h2>
-              <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
+              <span
+                aria-hidden
+                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
+              />
               <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                Delivering performance-driven solutions across industries with precision engineering, advanced technology, and reliable support.
+                Delivering performance-driven solutions across industries with
+                precision engineering, advanced technology, and reliable
+                support.
               </p>
             </div>
 
             {/* Category tabs */}
             <div className="flex flex-wrap items-center justify-center gap-2.5 mb-10">
-              {["All Projects", "Quarry & Mining", "Aggregates", "Sand Manufacturing", "Industrial"].map((tab) => (
+              {[
+                "All Projects",
+                "Quarry & Mining",
+                "Aggregates",
+                "Sand Manufacturing",
+                "Industrial",
+              ].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
@@ -1646,7 +2369,7 @@ export default function SolutionsPage() {
                     "px-5 py-2.5 text-xs font-black uppercase tracking-widest rounded-full border transition-all duration-300",
                     activeTab === tab
                       ? "bg-secondary border-secondary text-white shadow-md"
-                      : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
+                      : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50",
                   )}
                 >
                   {tab}
@@ -1657,7 +2380,10 @@ export default function SolutionsPage() {
             {/* 4 Cards Grid */}
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-10">
               {filteredProjects.map((item, idx) => (
-                <div key={idx} className="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                <div
+                  key={idx}
+                  className="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                >
                   <div>
                     {/* Photo box represented with tags */}
                     <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
@@ -1671,7 +2397,9 @@ export default function SolutionsPage() {
                         />
                       ) : (
                         <div className="absolute inset-0 border border-dashed border-slate-700/60 m-2 rounded-lg z-0 flex items-center justify-center">
-                          <span className="text-xs font-black uppercase tracking-widest text-slate-500">Related Plant Visual {idx+1}</span>
+                          <span className="text-xs font-black uppercase tracking-widest text-slate-500">
+                            Related Plant Visual {idx + 1}
+                          </span>
                         </div>
                       )}
                       <div className="absolute inset-0 bg-slate-950/15 z-10" />
@@ -1685,15 +2413,20 @@ export default function SolutionsPage() {
                         {item.title}
                       </h3>
                       <span className="inline-flex gap-1 items-center text-xs font-black text-slate-400 uppercase tracking-wider mt-1.5">
-                        <MapPin size={9} className="text-secondary" /> {item.loc}
+                        <MapPin size={9} className="text-secondary" />{" "}
+                        {item.loc}
                       </span>
 
                       {/* 3 cols metrics */}
                       <div className="mt-4 pt-3.5 border-t border-slate-100 grid grid-cols-3 gap-1.5 text-center">
                         {item.metrics.map((met, i) => (
                           <div key={i} className="px-0.5">
-                            <span className="text-sm font-black text-secondary leading-none block">{met.val}</span>
-                            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block mt-1.5 leading-tight">{met.label}</span>
+                            <span className="text-sm font-black text-secondary leading-none block">
+                              {met.val}
+                            </span>
+                            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block mt-1.5 leading-tight">
+                              {met.label}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -1701,7 +2434,10 @@ export default function SolutionsPage() {
                   </div>
 
                   <div className="p-4.5 pt-0">
-                    <Link href="#contact" className="w-full inline-flex items-center justify-between text-xs font-black uppercase tracking-widest text-secondary group-hover:text-primary transition-colors border-t border-slate-100 pt-3">
+                    <Link
+                      href="#contact"
+                      className="w-full inline-flex items-center justify-between text-xs font-black uppercase tracking-widest text-secondary group-hover:text-primary transition-colors border-t border-slate-100 pt-3"
+                    >
                       <span>VIEW CASE STUDY</span>
                       <ArrowRight size={11} />
                     </Link>
@@ -1717,124 +2453,355 @@ export default function SolutionsPage() {
               <span className="h-2 w-2 rounded-full bg-slate-300" />
               <span className="h-2 w-2 rounded-full bg-slate-300" />
             </div>
-
           </Container>
         </section>
 
         {/* ========================================================================= */}
         {/* SECTION 12: LET'S ENGINEER YOUR NEXT CRUSHING SOLUTION (CTA) */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-white py-16 lg:py-24" id="contact">
-          <Container className="relative z-10">
-            {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
-                  ))}
-                </span>
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                  READY TO BUILD. READY TO PERFORM.
-                </span>
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span key={i} className="h-3 w-1.5 skew-x-[-28deg] bg-secondary" />
-                  ))}
-                </span>
-              </div>
-              <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                Let&apos;s Engineer Your <br />
-                <span className="text-secondary">Next Crushing Solution.</span>
-              </h2>
-              <span aria-hidden className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                From concept to commissioning, we deliver engineering-driven solutions that maximize performance, efficiency, and long-term value.
-              </p>
-            </div>
+        <section
+          className="relative bg-[#f4f7fb] py-16 lg:py-24 overflow-hidden font-sans"
+          id="contact"
+        >
+          {/* Faint blueprint background pattern */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0f172a_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
-            <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-              
-              {/* Left Column Content */}
-              <div>
-                {/* 4 Cards */}
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {ctaPlanningCards.map((card, i) => {
-                    const CIcon = card.icon;
-                    return (
-                      <div key={i} className="bg-slate-50 border border-slate-200/60 p-4.5 rounded-xl flex flex-col justify-between">
-                        <div className="flex h-8 w-8 items-center justify-center rounded bg-white shadow-sm text-secondary mb-3.5">
-                          <CIcon size={16} />
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-black uppercase tracking-wide text-primary leading-tight">
-                            {card.title}
-                          </h4>
-                          <p className="mt-1 text-xs md:text-sm leading-normal text-slate-500">
-                            {card.desc}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Buttons block */}
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Button href="#contact" variant="primary" className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5">
-                    <Calendar size={14} className="mr-0.5" />
-                    Schedule a Consultation
-                    <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1.5" />
-                  </Button>
-                  <Button href="#contact" variant="outlineOrange" className="flex items-center justify-center gap-2 text-xs font-black tracking-[0.14em] px-8 py-5.5 text-secondary border-secondary/20 hover:bg-slate-50">
-                    <FileText size={14} className="mr-0.5" />
-                    Request a Quote
-                    <ArrowRight size={14} />
-                  </Button>
-                </div>
-
-                <div className="mt-8 flex items-center gap-2">
-                  <Shield size={14} className="text-secondary" />
-                  <span className="text-xs md:text-sm text-slate-500 font-medium">
-                    Trusted by industries worldwide for reliable, high-performance crushing solutions.
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-start">
+              {/* LEFT COLUMN: Text, Cards, Buttons */}
+              <div className="lg:w-[55%] flex flex-col pt-4">
+                {/* Tagline */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>
+                    <span className="w-10 h-[2px] bg-[#ea580c]"></span>
+                  </div>
+                  <span className="text-[11px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#ea580c]">
+                    Ready to Build. Ready to Perform.
                   </span>
+                  <div className="flex items-center">
+                    <span className="w-10 h-[2px] bg-[#ea580c]"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Right Column photo with overlay banner */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-md bg-slate-800">
-                <Image
-                  src="/solutionspage/ready to build ready to perform.jpg"
-                  alt="Pithal Engineering Officer"
-                  fill
-                  className="object-cover opacity-60"
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
-                <div className="absolute inset-0 bg-slate-900/10 z-10" />
-                
+                {/* Heading */}
+                <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-black leading-[1.05] text-[#0f172a] tracking-tight mb-6">
+                  Let&apos;s Engineer Your <br />
+                  <span className="text-[#ea580c]">
+                    Next Crushing Solution.
+                  </span>
+                </h2>
 
-                {/* Overlay Navy stats banner on the bottom */}
-                <div className="absolute bottom-0 inset-x-0 bg-[#031b40]/95 text-white p-4.5 z-20 border-t border-white/5 backdrop-blur-sm">
-                  <div className="grid grid-cols-4 gap-2 text-center divide-x divide-white/10">
-                    {ctaNavyOverlayMetrics.map((item, i) => {
-                      const MIcon = item.icon;
-                      return (
-                        <div key={i} className="px-1 flex flex-col items-center justify-center">
-                          <MIcon size={14} className="text-secondary" />
-                          <span className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-300 leading-tight">
-                            {item.title}
-                          </span>
-                        </div>
-                      );
-                    })}
+                {/* Subtitle */}
+                <p className="text-slate-600 text-base sm:text-lg max-w-xl mb-10 leading-relaxed font-medium">
+                  From concept to commissioning, we deliver engineering-driven
+                  solutions that maximize performance, efficiency, and long-term
+                  value.
+                </p>
+
+                {/* 4 Cards Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                  {/* Card 1 */}
+                  <div className="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
+                    <div className="mb-3 text-[#ea580c]">
+                      <svg
+                        className="w-11 h-11"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <h4 className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
+                      Engineering
+                      <br />
+                      Consultation
+                    </h4>
+                    <p className="text-[10px] text-slate-500 leading-relaxed">
+                      Connect with our experts to discuss your project needs.
+                    </p>
+                  </div>
+                  {/* Card 2 */}
+                  <div className="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
+                    <div className="mb-3 text-[#ea580c]">
+                      <svg
+                        className="w-11 h-11"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <h4 className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
+                      Request a<br />
+                      Quote
+                    </h4>
+                    <p className="text-[10px] text-slate-500 leading-relaxed">
+                      Get a detailed, customized quote tailored to your
+                      requirements.
+                    </p>
+                  </div>
+                  {/* Card 3 */}
+                  <div className="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
+                    <div className="mb-3 text-[#ea580c]">
+                      <svg
+                        className="w-11 h-11"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        ></path>
+                      </svg>
+                    </div>
+                    <h4 className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
+                      Plant Planning
+                      <br />
+                      Support
+                    </h4>
+                    <p className="text-[10px] text-slate-500 leading-relaxed">
+                      Optimize your plant layout, capacity, and workflow with
+                      our experts.
+                    </p>
+                  </div>
+                  {/* Card 4 */}
+                  <div className="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
+                    <div className="mb-3 text-[#ea580c]">
+                      <svg
+                        className="w-11 h-11"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414"
+                        ></path>
+                      </svg>
+                    </div>
+                    <h4 className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
+                      Expert Engineering
+                      <br />
+                      Help
+                    </h4>
+                    <p className="text-[10px] text-slate-500 leading-relaxed">
+                      End-to-end engineering support for reliable and efficient
+                      operations.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Buttons & Trust Badge */}
+                <div className="flex flex-col gap-6">
+                  <div className="flex flex-col sm:flex-row items-center gap-4">
+                    {/* Orange Solid Button */}
+                    <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#ea580c] hover:bg-[#d44d0a] text-white px-8 py-4 rounded-xl text-[13px] font-black tracking-wide transition-colors">
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        ></path>
+                      </svg>
+                      Schedule a Consultation
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </button>
+                    {/* Outline Button */}
+                    <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-slate-200 text-[#0f172a] hover:border-[#ea580c] hover:text-[#ea580c] px-8 py-4 rounded-xl text-[13px] font-black tracking-wide transition-colors">
+                      <svg
+                        className="w-4 h-4 text-[#ea580c]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        ></path>
+                      </svg>
+                      Request a Quote
+                      <svg
+                        className="w-4 h-4 text-[#ea580c]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  {/* Trust text */}
+                  <div className="flex items-center gap-3 text-slate-500 mt-2">
+                    <svg
+                      className="w-5 h-5 text-slate-400 shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      ></path>
+                    </svg>
+                    <span className="text-[13px] font-medium">
+                      Trusted by industries worldwide for reliable,
+                      high-performance crushing solutions.
+                    </span>
                   </div>
                 </div>
               </div>
 
+              {/* RIGHT COLUMN: Image */}
+              <div className="lg:w-[45%] relative w-full h-[400px] lg:h-[650px] rounded-tl-[100px] rounded-tr-[20px] rounded-b-[20px] overflow-hidden shadow-xl mt-8 lg:mt-0">
+                <img
+                  src="/solutionspage/ready to build ready to perform.jpg"
+                  alt="Engineering Professional"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
-          </Container>
-        </section>
 
+            {/* NAVY OVERLAY BANNER - Floating exactly like the picture */}
+            <div className="relative lg:absolute lg:bottom-0 lg:right-4 xl:right-12 lg:w-[680px] mt-8 lg:mt-0 z-20 bg-[#0f172a] rounded-2xl shadow-2xl overflow-hidden border border-white/5">
+              <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-700/60 p-2 py-3">
+                <div className="flex flex-col items-center justify-center p-3.5 text-center gap-2.5 hover:bg-slate-800/30 transition-colors">
+                  <svg
+                    className="w-10 h-10 text-[#ea580c]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                    ></path>
+                  </svg>
+                  <span className="text-[12px] font-bold text-slate-100 tracking-wide">
+                    Customized
+                    <br />
+                    Solutions
+                  </span>
+                </div>
+
+                <div className="flex flex-col items-center justify-center p-3.5 text-center gap-2.5 hover:bg-slate-800/30 transition-colors">
+                  <svg
+                    className="w-10 h-10 text-[#ea580c]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                    ></path>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                  <span className="text-[12px] font-bold text-slate-100 tracking-wide">
+                    High Performance
+                    <br />& Reliability
+                  </span>
+                </div>
+
+                <div className="flex flex-col items-center justify-center p-3.5 text-center gap-2.5 hover:bg-slate-800/30 transition-colors">
+                  <svg
+                    className="w-10 h-10 text-[#ea580c]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    ></path>
+                  </svg>
+                  <span className="text-[12px] font-bold text-slate-100 tracking-wide">
+                    Cost Efficient
+                    <br />
+                    Operations
+                  </span>
+                </div>
+
+                <div className="flex flex-col items-center justify-center p-3.5 text-center gap-2.5 hover:bg-slate-800/30 transition-colors">
+                  <svg
+                    className="w-10 h-10 text-[#ea580c]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                  <span className="text-[12px] font-bold text-slate-100 tracking-wide">
+                    End-to-End
+                    <br />
+                    Support
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

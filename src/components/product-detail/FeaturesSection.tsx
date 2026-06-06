@@ -14,27 +14,27 @@ type FeatureInput = Feature | PerformanceFeature;
 
 const defaultFeatures: Feature[] = [
   {
-    icon: <ShieldCheck size={32} strokeWidth={1.8} className="text-secondary" />,
+    icon: <ShieldCheck size={48} strokeWidth={1.8} className="text-blue-600" />,
     title: "High Crushing Ratio",
     description: "Optimized chamber design ensures maximum reduction ratio for higher output.",
   },
   {
-    icon: <Wrench size={32} strokeWidth={1.8} className="text-secondary" />,
+    icon: <Wrench size={48} strokeWidth={1.8} className="text-blue-600" />,
     title: "Low Maintenance",
     description: "Easy access design and fewer moving parts reduce maintenance time and cost.",
   },
   {
-    icon: <Weight size={32} strokeWidth={1.8} className="text-secondary" />,
+    icon: <Weight size={48} strokeWidth={1.8} className="text-blue-600" />,
     title: "Heavy Duty Build",
     description: "Rugged construction with premium materials for longer service life.",
   },
   {
-    icon: <Fuel size={32} strokeWidth={1.8} className="text-secondary" />,
+    icon: <Fuel size={48} strokeWidth={1.8} className="text-blue-600" />,
     title: "Fuel Efficiency",
     description: "Engineered for optimal power utilization and lower operating costs.",
   },
   {
-    icon: <Hexagon size={32} strokeWidth={1.8} className="text-secondary" />,
+    icon: <Hexagon size={48} strokeWidth={1.8} className="text-blue-600" />,
     title: "Wear Resistant Parts",
     description: "High quality manganese steel components for maximum durability.",
   },
@@ -42,7 +42,7 @@ const defaultFeatures: Feature[] = [
 
 function FeatureIcon({ feature }: { feature: FeatureInput }) {
   if (typeof feature.icon === "string") {
-    return <ProductIcon className="text-secondary" name={feature.icon} size={32} strokeWidth={1.8} />;
+    return <ProductIcon className="text-blue-600" name={feature.icon} size={48} strokeWidth={1.8} />;
   }
 
   return feature.icon;
@@ -86,9 +86,7 @@ export function FeaturesSection({
               className="relative overflow-visible rounded-[2rem] border border-border bg-white px-7 py-12 text-center shadow-[0_20px_60px_rgba(30,41,59,0.08)]"
             >
               <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full border-2 border-dashed border-secondary/40 bg-secondary/5">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm">
-                  <FeatureIcon feature={feature} />
-                </div>
+                <FeatureIcon feature={feature} />
               </div>
 
               <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">

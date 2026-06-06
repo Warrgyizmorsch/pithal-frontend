@@ -2,6 +2,19 @@ import { Container } from "@/components/common/Container";
 import type { SpecificationColumn, SpecificationRow, SpecificationsSectionData } from "@/data/products/productDetailTypes";
 import { cn } from "@/lib/utils";
 import { ProductCtaButton } from "./ProductCtaButton";
+import { ProductIcon } from "./iconMap";
+
+const columnIconMap: Record<string, string> = {
+  model: "settings",
+  feedOpening: "feeder",
+  maxFeedSize: "layers",
+  capacity: "gauge",
+  motorPower: "zap",
+  weight: "weight",
+  dimension: "ruler",
+  coneType: "cone",
+  application: "layout",
+};
 
 function getCellClass(column: SpecificationColumn) {
   return cn(
@@ -45,7 +58,15 @@ export function SpecificationTable({
                 <tr>
                   {section.columns.map((column) => (
                     <th className="border-r border-white/15 px-4 py-3.5 text-[10.5px] sm:text-[11.5px] font-bold uppercase tracking-[0.12em] last:border-r-0" key={column.key}>
-                      {column.label}
+                      <div className="flex items-center gap-2">
+                        <ProductIcon
+                          name={columnIconMap[column.key] ?? "circle"}
+                          className="text-secondary"
+                          size={16}
+                          strokeWidth={2}
+                        />
+                        <span>{column.label}</span>
+                      </div>
                     </th>
                   ))}
                 </tr>

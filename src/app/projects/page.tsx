@@ -81,11 +81,11 @@ export default function CaseStudyPage() {
             sizes="(min-width: 1024px) 58vw, 100vw"
             src="/projectimg/rajasthan zinc crushing plant.jpg"
           />
-          <div className="pointer-events-none absolute inset-0 bg-slate-950/70" />
+          <div className="pointer-events-none absolute inset-0 bg-slate-950/20" />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-35" />
           <Container className="relative z-10 w-full h-full flex flex-col justify-between">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 mb-2 text-[11px] font-medium text-slate-400">
+            <div className="flex items-center gap-2 mb-2 text-sm font-medium text-slate-400">
               <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
               <ChevronRight size={10} />
               <Link href="/projects" className="hover:text-secondary transition-colors">Projects & Case Studies</Link>
@@ -98,41 +98,41 @@ export default function CaseStudyPage() {
               <div>
                 <div className="flex items-center gap-2.5 mb-2.5 text-secondary">
                   <CheckCircle2 size={13} className="text-secondary" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
+                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
                     FEATURED PROJECT
                   </span>
                 </div>
                 
-                <h1 className="text-[clamp(2.5rem,6vw,3.75rem)] font-black uppercase leading-[1.02] tracking-tight text-white">
+                <h1 className="text-[clamp(2.5rem,6vw,3.75rem)] font-black uppercase leading-[1.02] tracking-tight text-primary">
                   RAJASTHAN ZINC <br />
                   CRUSHING PLANT
                 </h1>
                 
-                <h2 className="text-sm md:text-base font-black text-secondary uppercase tracking-widest mt-2">
+                <h2 className="text-lg md:text-xl font-black text-secondary uppercase tracking-widest mt-2">
                   500 TPH Crushing & Screening Solution
                 </h2>
                 
-                <p className="mt-3 max-w-xl text-xs md:text-[13px] leading-relaxed text-slate-300 font-medium">
+                <p className="mt-3 max-w-2xl text-base md:text-lg leading-relaxed text-slate-800 font-semibold">
                   A robust and high-performance crushing system designed to deliver consistent output, maximum efficiency, and long-term reliability in demanding mining conditions.
                 </p>
 
                 {/* Quick Specs Blocks */}
-                <div className="mt-4 flex flex-wrap gap-x-6.5 gap-y-3 pt-3 border-t border-white/10">
-                  <div className="flex items-center gap-2 text-[11px] font-bold text-slate-300">
-                    <Building2 size={13} className="text-secondary" />
-                    <span className="uppercase text-slate-400 font-medium">Industry:</span> Mining
+                <div className="mt-4 flex flex-wrap gap-x-8 gap-y-4 pt-4 border-t border-slate-200">
+                  <div className="flex items-center gap-2.5 text-sm font-bold text-primary">
+                    <Building2 size={18} className="text-secondary" />
+                    <span className="uppercase text-primary/70 font-medium">Industry:</span> Mining
                   </div>
-                  <div className="flex items-center gap-2 text-[11px] font-bold text-slate-300">
-                    <MapPin size={13} className="text-secondary" />
-                    <span className="uppercase text-slate-400 font-medium">Location:</span> Rajasthan, India
+                  <div className="flex items-center gap-2.5 text-sm font-bold text-primary">
+                    <MapPin size={18} className="text-secondary" />
+                    <span className="uppercase text-primary/70 font-medium">Location:</span> Rajasthan, India
                   </div>
-                  <div className="flex items-center gap-2 text-[11px] font-bold text-slate-300">
-                    <Activity size={13} className="text-secondary" />
-                    <span className="uppercase text-slate-400 font-medium">Capacity:</span> 500 TPH
+                  <div className="flex items-center gap-2.5 text-sm font-bold text-primary">
+                    <Activity size={18} className="text-secondary" />
+                    <span className="uppercase text-primary/70 font-medium">Capacity:</span> 500 TPH
                   </div>
-                  <div className="flex items-center gap-2 text-[11px] font-bold text-slate-300">
-                    <Layers size={13} className="text-secondary" />
-                    <span className="uppercase text-slate-400 font-medium">Material:</span> Zinc Ore
+                  <div className="flex items-center gap-2.5 text-sm font-bold text-primary">
+                    <Layers size={18} className="text-secondary" />
+                    <span className="uppercase text-primary/70 font-medium">Material:</span> Zinc Ore
                   </div>
                 </div>
                 
@@ -150,37 +150,61 @@ export default function CaseStudyPage() {
             </div>
 
             {/* Bottom Stats row */}
-            <div className="mt-4 bg-white text-slate-800 rounded-2xl p-6 md:p-6 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
-              <div className="grid gap-6 grid-cols-2 md:grid-cols-6 items-center text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-slate-100">
-                <div className="pt-4 md:pt-0 first:pt-0 flex flex-col items-center md:items-start md:px-4 first:pl-0">
-                  <Building2 size={16} className="text-secondary mb-1.5" />
-                  <h4 className="text-xl font-black text-primary leading-none">500 TPH</h4>
-                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mt-1.5">Plant Capacity</p>
+            <div className="mt-4 bg-white text-slate-800 rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
+              <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                <div className="pt-4 md:pt-0 first:pt-0 flex items-center gap-4 md:px-4 first:pl-0 group">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                    <Building2 size={28} strokeWidth={1.5} />
+                  </div>
+                  <div className="text-left">
+                    <h4 className="text-2xl font-black text-primary leading-none">500 TPH</h4>
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">Plant Capacity</p>
+                  </div>
                 </div>
-                <div className="pt-4 md:pt-0 flex flex-col items-center md:items-start md:px-4">
-                  <Shield size={16} className="text-secondary mb-1.5" />
-                  <h4 className="text-xl font-black text-primary leading-none">98%</h4>
-                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mt-1.5">Plant Availability</p>
+                <div className="pt-4 md:pt-0 flex items-center gap-4 md:px-4 group">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                    <Shield size={28} strokeWidth={1.5} />
+                  </div>
+                  <div className="text-left">
+                    <h4 className="text-2xl font-black text-primary leading-none">98%</h4>
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">Plant Availability</p>
+                  </div>
                 </div>
-                <div className="pt-4 md:pt-0 flex flex-col items-center md:items-start md:px-4">
-                  <TrendingUp size={16} className="text-secondary mb-1.5" />
-                  <h4 className="text-xl font-black text-primary leading-none">35%</h4>
-                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mt-1.5">Increase in Productivity</p>
+                <div className="pt-4 md:pt-0 flex items-center gap-4 md:px-4 group">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                    <TrendingUp size={28} strokeWidth={1.5} />
+                  </div>
+                  <div className="text-left">
+                    <h4 className="text-2xl font-black text-primary leading-none">35%</h4>
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">Increase in Productivity</p>
+                  </div>
                 </div>
-                <div className="pt-4 md:pt-0 flex flex-col items-center md:items-start md:px-4">
-                  <Clock size={16} className="text-secondary mb-1.5" />
-                  <h4 className="text-xl font-black text-primary leading-none">24/7</h4>
-                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mt-1.5">Continuous Operation</p>
+                <div className="pt-4 md:pt-0 flex items-center gap-4 md:px-4 group">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                    <Clock size={28} strokeWidth={1.5} />
+                  </div>
+                  <div className="text-left">
+                    <h4 className="text-2xl font-black text-primary leading-none">24/7</h4>
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">Continuous Operation</p>
+                  </div>
                 </div>
-                <div className="pt-4 md:pt-0 flex flex-col items-center md:items-start md:px-4">
-                  <Handshake size={16} className="text-secondary mb-1.5" />
-                  <h4 className="text-xl font-black text-primary leading-none">End-to-End</h4>
-                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mt-1.5">Solution Delivered</p>
+                <div className="pt-4 md:pt-0 flex items-center gap-4 md:px-4 group">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                    <Handshake size={28} strokeWidth={1.5} />
+                  </div>
+                  <div className="text-left">
+                    <h4 className="text-2xl font-black text-primary leading-none">End-to-End</h4>
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">Solution Delivered</p>
+                  </div>
                 </div>
-                <div className="pt-4 md:pt-0 flex flex-col items-center md:items-start md:px-4">
-                  <Headphones size={16} className="text-secondary mb-1.5" />
-                  <h4 className="text-xl font-black text-primary leading-none">Lifetime</h4>
-                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mt-1.5">After-Sales Support</p>
+                <div className="pt-4 md:pt-0 flex items-center gap-4 md:px-4 group">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                    <Headphones size={28} strokeWidth={1.5} />
+                  </div>
+                  <div className="text-left">
+                    <h4 className="text-2xl font-black text-primary leading-none">Lifetime</h4>
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">After-Sales Support</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -205,75 +229,75 @@ export default function CaseStudyPage() {
                   Executive Summary
                 </h2>
                 <span aria-hidden className="mt-4 block h-[2.5px] w-12 bg-secondary" />
-                <p className="mt-5 text-xs md:text-[13px] leading-relaxed text-slate-600 font-medium">
+                <p className="mt-5 text-lg md:text-xl leading-relaxed text-slate-600 font-medium">
                   This project was executed to deliver a high-performance crushing and screening solution for zinc ore processing with maximum efficiency, reliability, and minimal downtime.
                 </p>
 
                 {/* 6 Grid Metrics */}
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4.5 flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Building2 size={16} />
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                      <Building2 size={24} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Client Industry</p>
-                      <h4 className="text-xs font-black uppercase text-primary mt-0.5">Mining Industry</h4>
-                      <p className="text-[10px] text-slate-500 font-medium leading-none mt-0.5">Zinc Ore Processing</p>
+                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Client Industry</p>
+                      <h4 className="text-base font-black uppercase text-primary mt-1">Mining Industry</h4>
+                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">Zinc Ore Processing</p>
                     </div>
                   </div>
 
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4.5 flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <MapPin size={16} />
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                      <MapPin size={24} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Location</p>
-                      <h4 className="text-xs font-black uppercase text-primary mt-0.5">Udaipur, Rajasthan</h4>
-                      <p className="text-[10px] text-slate-500 font-medium leading-none mt-0.5">India</p>
+                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Location</p>
+                      <h4 className="text-base font-black uppercase text-primary mt-1">Udaipur, Rajasthan</h4>
+                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">India</p>
                     </div>
                   </div>
 
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4.5 flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Activity size={16} />
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                      <Activity size={24} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Plant Capacity</p>
-                      <h4 className="text-xs font-black uppercase text-primary mt-0.5">500 TPH</h4>
-                      <p className="text-[10px] text-slate-500 font-medium leading-none mt-0.5">Crushing & Screening Plant</p>
+                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Plant Capacity</p>
+                      <h4 className="text-base font-black uppercase text-primary mt-1">500 TPH</h4>
+                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">Crushing & Screening Plant</p>
                     </div>
                   </div>
 
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4.5 flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Layers size={16} />
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                      <Layers size={24} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Material Type</p>
-                      <h4 className="text-xs font-black uppercase text-primary mt-0.5">Zinc Ore</h4>
-                      <p className="text-[10px] text-slate-500 font-medium leading-none mt-0.5">Up to 400mm Feed Size</p>
+                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Material Type</p>
+                      <h4 className="text-base font-black uppercase text-primary mt-1">Zinc Ore</h4>
+                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">Up to 400mm Feed Size</p>
                     </div>
                   </div>
 
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4.5 flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Calendar size={16} />
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                      <Calendar size={20} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Project Duration</p>
-                      <h4 className="text-xs font-black uppercase text-primary mt-0.5">14 Months</h4>
-                      <p className="text-[10px] text-slate-500 font-medium leading-none mt-0.5">Design to Commissioning</p>
+                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Project Duration</p>
+                      <h4 className="text-base font-black uppercase text-primary mt-1">14 Months</h4>
+                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">Design to Commissioning</p>
                     </div>
                   </div>
 
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4.5 flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Wrench size={16} />
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                      <Wrench size={20} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Machines Supplied</p>
-                      <h4 className="text-xs font-black uppercase text-primary mt-0.5">4 Major Machines</h4>
-                      <p className="text-[10px] text-slate-500 font-medium leading-none mt-0.5">Jaw, Cone, Screen, Conveyors</p>
+                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Machines Supplied</p>
+                      <h4 className="text-base font-black uppercase text-primary mt-1">4 Major Machines</h4>
+                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">Jaw, Cone, Screen, Conveyors</p>
                     </div>
                   </div>
                 </div>
@@ -303,7 +327,7 @@ export default function CaseStudyPage() {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="h-[1.5px] w-6 bg-secondary" />
-                    <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
+                    <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
                       THE CHALLENGE
                     </span>
                   </div>
@@ -311,12 +335,12 @@ export default function CaseStudyPage() {
                     Overcoming Operational Challenges
                   </h2>
                   <span aria-hidden className="mt-4 block h-[2.5px] w-12 bg-secondary" />
-                  <p className="mt-5 text-xs md:text-[13px] leading-relaxed text-slate-600 font-medium">
+                  <p className="mt-5 text-base md:text-lg leading-relaxed text-slate-600 font-medium">
                     The client was facing multiple operational bottlenecks that were impacting productivity, increasing downtime and affecting the overall profitability of the plant.
                   </p>
 
-                  {/* 5 Checklist Items */}
-                  <div className="mt-7 space-y-4">
+                    {/* 5 Checklist Items */}
+                  <div className="mt-7 space-y-6">
                     {[
                       { title: "Low Productivity", desc: "Existing plant configuration was unable to achieve desired output, leading to low production rates." },
                       { title: "High Downtime", desc: "Frequent breakdowns and inefficient equipment resulted in unplanned downtime and revenue loss." },
@@ -324,13 +348,13 @@ export default function CaseStudyPage() {
                       { title: "Inconsistent Output", desc: "Irregular product gradation and low-quality output affected downstream operations." },
                       { title: "Scaling & Future Readiness", desc: "The existing setup lacked scalability to meet future production demands." }
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-4.5 items-start">
-                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white border border-slate-100 text-secondary shadow-sm">
-                          <AlertTriangle size={12} className="text-secondary" />
+                      <div key={i} className="flex gap-5 items-start">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white border border-slate-100 text-secondary shadow-sm">
+                          <AlertTriangle size={18} className="text-secondary" />
                         </div>
                         <div>
-                          <h4 className="text-[11.5px] font-black uppercase tracking-wider text-primary leading-tight">{item.title}</h4>
-                          <p className="text-[10.5px] text-slate-500 font-medium leading-relaxed mt-0.5">{item.desc}</p>
+                          <h4 className="text-base font-black uppercase tracking-wider text-primary leading-tight">{item.title}</h4>
+                          <p className="text-base text-slate-500 font-medium leading-relaxed mt-1.5">{item.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -339,7 +363,7 @@ export default function CaseStudyPage() {
               </div>
 
               {/* Right column representative photo & navy warning block */}
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-8">
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-md flex-1 min-h-[220px]">
                   <Image
                     src="/projectimg/overcoming%20operational%20cahllenges.jpg"
@@ -352,15 +376,15 @@ export default function CaseStudyPage() {
                 </div>
 
                 {/* Warning Card */}
-                <div className="bg-[#031b40] rounded-2xl p-5 md:p-6 text-white border border-white/5 shadow-md flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded bg-white/10 text-secondary shadow">
-                    <AlertTriangle size={20} className="text-secondary animate-pulse" />
+                <div className="bg-[#031b40] rounded-2xl p-8 md:p-10 text-white border border-white/5 shadow-md flex items-start gap-6">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded bg-white/10 text-secondary shadow">
+                    <AlertTriangle size={32} className="text-secondary animate-pulse" />
                   </div>
                   <div>
-                    <h4 className="text-[11.5px] font-black uppercase tracking-widest text-secondary">
+                    <h4 className="text-sm font-black uppercase tracking-widest text-secondary">
                       LIMITING TOTAL POTENTIAL
                     </h4>
-                    <p className="mt-1.5 text-[10.5px] leading-relaxed text-slate-300 font-medium">
+                    <p className="mt-3 text-base leading-relaxed text-slate-300 font-medium">
                       These challenges were limiting the plant&apos;s true potential and impacting overall operational efficiency. Pithal was engaged to deliver a complete end-to-end solution to overcome these issues and ensure maximum performance.
                     </p>
                   </div>
@@ -382,7 +406,7 @@ export default function CaseStudyPage() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="h-[1.5px] w-6 bg-secondary" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
+                  <span className="text-sm font-black uppercase tracking-[0.24em] text-secondary">
                     OUR SOLUTION
                   </span>
                 </div>
@@ -390,12 +414,12 @@ export default function CaseStudyPage() {
                   Pithal Engineering Solution
                 </h2>
                 <span aria-hidden className="mt-4 block h-[2.5px] w-12 bg-secondary" />
-                <p className="mt-5 text-xs md:text-[13px] leading-relaxed text-slate-600 font-medium mb-8">
+                <p className="mt-5 text-lg md:text-xl leading-relaxed text-slate-600 font-medium mb-10">
                   Pithal delivered a customized, high-performance crushing & screening solution engineered for maximum efficiency, consistency and long-term operational reliability.
                 </p>
 
                 {/* 5 List Cards */}
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {[
                     { title: "Strategic Machine Selection", desc: "Selected high-efficiency crushers, screens and conveyors to handle zinc ore with optimal crushing and throughput." },
                     { title: "Optimized Workflow Design", desc: "Engineered a smooth material flow with ideal crushing, screening and conveying sequence to eliminate bottlenecks." },
@@ -403,13 +427,13 @@ export default function CaseStudyPage() {
                     { title: "Performance Optimization Logic", desc: "Fine-tuned equipment settings and system parameters to maximize output while minimizing energy consumption." },
                     { title: "Intelligent Plant Layout Planning", desc: "Designed a compact, future-ready plant layout for efficient operations, easy maintenance and scalability." }
                   ].map((item, i) => (
-                    <div key={i} className="flex gap-4 items-start">
-                      <div className="flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded bg-slate-50 border border-slate-100 text-secondary shadow-sm">
-                        <Check size={14} className="text-secondary stroke-[3]" />
+                    <div key={i} className="flex gap-5 items-start">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-slate-50 border border-slate-100 text-secondary shadow-sm">
+                        <Check size={20} className="text-secondary stroke-[3]" />
                       </div>
                       <div>
-                        <h4 className="text-[11px] font-black uppercase tracking-wider text-primary leading-tight">{item.title}</h4>
-                        <p className="text-[10px] text-slate-500 font-medium leading-relaxed mt-0.5">{item.desc}</p>
+                        <h4 className="text-base font-black uppercase tracking-wider text-primary leading-tight">{item.title}</h4>
+                        <p className="text-base text-slate-500 font-medium leading-relaxed mt-1.5">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -498,62 +522,62 @@ export default function CaseStudyPage() {
 
             {/* Horizontal Timeline Steps (6) */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6 mb-12">
-              {[
-                { number: "01", name: "RAW MATERIAL", desc: "Run-of-mine material dumped into hopper" },
-                { number: "02", name: "PRIMARY CRUSHER", desc: "Jaw crusher reduces material size" },
-                { number: "03", name: "SECONDARY CRUSHER", desc: "Cone crusher further reduces material" },
-                { number: "04", name: "SCREENING", desc: "Vibrating screens separate material by size" },
-                { number: "05", name: "CONVEYOR SYSTEM", desc: "Efficient conveying ensures continuous flow" },
-                { number: "06", name: "FINAL OUTPUT", desc: "High-quality, uniform material ready for use" }
-              ].map((step, idx) => (
-                <div key={idx} className="relative bg-white border border-slate-150 p-5 rounded-2xl flex flex-col justify-between group hover:border-secondary transition-all duration-300">
-                  {idx !== 5 && (
-                    <span className="hidden lg:block absolute top-[28px] left-[calc(100%-8px)] right-[-14px] h-[1px] bg-slate-200 z-10" />
-                  )}
-                  <div>
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-50 text-secondary border border-slate-200 font-black text-[10px] mb-4 group-hover:bg-secondary group-hover:text-white transition-colors">
-                      {step.number}
-                    </span>
-                    <h4 className="text-[10.5px] font-black uppercase tracking-wider text-primary group-hover:text-secondary transition-colors">
-                      {step.name}
-                    </h4>
-                    <p className="mt-2 text-[9.5px] leading-relaxed text-slate-500 font-medium">
-                      {step.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            {[
+            { number: "01", name: "RAW MATERIAL", desc: "Run-of-mine material dumped into hopper" },
+            { number: "02", name: "PRIMARY CRUSHER", desc: "Jaw crusher reduces material size" },
+            { number: "03", name: "SECONDARY CRUSHER", desc: "Cone crusher further reduces material" },
+            { number: "04", name: "SCREENING", desc: "Vibrating screens separate material by size" },
+            { number: "05", name: "CONVEYOR SYSTEM", desc: "Efficient conveying ensures continuous flow" },
+            { number: "06", name: "FINAL OUTPUT", desc: "High-quality, uniform material ready for use" }
+            ].map((step, idx) => (
+            <div key={idx} className="relative bg-white border border-slate-150 p-6 rounded-2xl flex flex-col justify-between group hover:border-secondary transition-all duration-300">
+              {idx !== 5 && (
+                <span className="hidden lg:block absolute top-[28px] left-[calc(100%-8px)] right-[-14px] h-[1px] bg-slate-200 z-10" />
+              )}
+              <div>
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 text-secondary border border-slate-200 font-black text-sm mb-4 group-hover:bg-secondary group-hover:text-white transition-colors">
+                  {step.number}
+                </span>
+                <h4 className="text-sm font-black uppercase tracking-wider text-primary group-hover:text-secondary transition-colors">
+                  {step.name}
+                </h4>
+                <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500 font-medium">
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+            ))}
             </div>
 
             {/* Plant Workflow Wide Image Box */}
             <div className="relative aspect-[4/1] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-md mb-12 flex items-center justify-center">
-              <Image
-                alt="Engineered flow"
-                src="/projectimg/engineered flow.jpg"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-slate-950/10 z-10" />
+            <Image
+            alt="Engineered flow"
+            src="/projectimg/engineered flow.jpg"
+            fill
+            className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-slate-950/10 z-10" />
             </div>
 
             {/* Bottom 4 Stats Pills */}
             <div className="grid gap-4.5 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { title: "OPTIMIZED FLOW", desc: "Smooth material flow at every stage" },
-                { title: "HIGHER EFFICIENCY", desc: "Maximized throughput with minimal downtime" },
-                { title: "CONSISTENT QUALITY", desc: "Uniform output with precise screening" },
-                { title: "LOWER OPERATING COST", desc: "Reduced wear, energy & maintenance" }
-              ].map((pill, i) => (
-                <div key={i} className="bg-white border border-slate-150 p-4.5 rounded-xl flex gap-3.5 items-start">
-                  <div className="flex h-8.5 w-8.5 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary">
-                    <CheckCircle2 size={14} />
-                  </div>
-                  <div>
-                    <h4 className="text-[10.5px] font-black uppercase tracking-wider text-primary leading-tight">{pill.title}</h4>
-                    <p className="mt-1 text-[9.5px] leading-normal text-slate-500 font-medium">{pill.desc}</p>
-                  </div>
-                </div>
-              ))}
+            {[
+            { title: "OPTIMIZED FLOW", desc: "Smooth material flow at every stage" },
+            { title: "HIGHER EFFICIENCY", desc: "Maximized throughput with minimal downtime" },
+            { title: "CONSISTENT QUALITY", desc: "Uniform output with precise screening" },
+            { title: "LOWER OPERATING COST", desc: "Reduced wear, energy & maintenance" }
+            ].map((pill, i) => (
+            <div key={i} className="bg-white border border-slate-150 p-6 rounded-xl flex gap-4 items-start">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary">
+                <CheckCircle2 size={18} />
+              </div>
+              <div>
+                <h4 className="text-sm font-black uppercase tracking-wider text-primary leading-tight">{pill.title}</h4>
+                <p className="mt-1 text-sm leading-normal text-slate-500 font-medium">{pill.desc}</p>
+              </div>
+            </div>
+            ))}
             </div>
 
           </Container>
@@ -644,21 +668,21 @@ export default function CaseStudyPage() {
                   ]
                 }
               ].map((card, idx) => (
-                <div key={idx} className="group bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-slate-200/80 rounded-xl p-5 flex flex-col justify-between hover:shadow-md transition-all duration-300">
+                <div key={idx} className="group bg-slate-50/50 hover:bg-white border border-slate-100 hover:border-slate-200/80 rounded-xl p-6 flex flex-col justify-between hover:shadow-md transition-all duration-300">
                   <div>
                     {/* Circle counter */}
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="flex h-6.5 w-6.5 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary font-black text-[9px] shadow-sm">
+                    <div className="flex justify-between items-center mb-5">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary font-black text-xs shadow-sm">
                         {card.number}
                       </span>
-                      <Workflow size={13} className="text-slate-300" />
+                      <Workflow size={16} className="text-slate-300" />
                     </div>
 
-                    <h4 className="text-[11.5px] font-black uppercase text-primary leading-tight">{card.name}</h4>
-                    <p className="text-[9.5px] text-slate-400 font-bold uppercase tracking-wider leading-none mt-0.5">{card.model}</p>
+                    <h4 className="text-sm md:text-base font-black uppercase text-primary leading-tight">{card.name}</h4>
+                    <p className="text-xs text-slate-400 font-bold uppercase tracking-wider leading-none mt-1">{card.model}</p>
 
                     {/* Machine image */}
-                    <div className="relative aspect-[1.1/1] w-full rounded overflow-hidden border border-slate-100 my-4">
+                    <div className="relative aspect-[1.1/1] w-full rounded overflow-hidden border border-slate-100 my-5">
                       <Image
                         src={card.img}
                         alt={card.name}
@@ -667,16 +691,16 @@ export default function CaseStudyPage() {
                       />
                     </div>
 
-                    <div className="mt-3.5 border-t border-slate-100 pt-3">
-                      <p className="text-[8.5px] font-bold text-slate-400 uppercase tracking-widest leading-none">Role In Plant:</p>
-                      <p className="mt-1 text-[9.5px] leading-normal text-slate-600 font-medium">{card.role}</p>
+                    <div className="mt-4 border-t border-slate-100 pt-4">
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest leading-none">Role In Plant:</p>
+                      <p className="mt-2 text-sm leading-normal text-slate-600 font-medium">{card.role}</p>
                     </div>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
-                    <p className="text-[8.5px] font-bold text-slate-400 uppercase tracking-widest leading-none">Key Specifications:</p>
+                  <div className="mt-5 pt-4 border-t border-slate-100 space-y-2.5">
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest leading-none">Key Specifications:</p>
                     {card.specs.map((sp, i) => (
-                      <div key={i} className="flex justify-between text-[9px] font-bold uppercase leading-none mt-1">
+                      <div key={i} className="flex justify-between text-xs font-bold uppercase leading-none mt-1.5">
                         <span className="text-slate-400 font-medium">{sp.label}</span>
                         <span className="text-primary font-black">{sp.val}</span>
                       </div>
@@ -1007,20 +1031,20 @@ export default function CaseStudyPage() {
               </div>
 
               {/* Right col: 4 cards list */}
-              <div className="grid gap-4.5 sm:grid-cols-2">
+              <div className="grid gap-6 sm:grid-cols-2">
                 {[
                   { title: "EXPORT READINESS", desc: ["Equipment designed to global quality standards", "Compliant with international safety & performance norms", "Exported to 35+ countries across 6 continents", "End-to-end documentation & logistics support"] },
                   { title: "AFTER-SALES SUPPORT", desc: ["24/7 dedicated support team", "Quick response & on-site assistance", "Genuine spare parts availability", "AMC & service contracts for worry-free operations"] },
                   { title: "ENGINEERING ASSISTANCE", desc: ["Process optimization & plant performance review", "Upgradation & capacity enhancement support", "Custom solutions tailored to your needs", "Expert guidance from concept to commissioning"] },
                   { title: "OPERATIONAL GUIDANCE", desc: ["Operational training for better efficiency", "Preventive maintenance guidance", "Troubleshooting & performance monitoring", "Continuous support for maximum uptime"] }
                 ].map((card, i) => (
-                  <div key={i} className="bg-slate-50 border border-slate-150 p-4.5 rounded-xl flex flex-col justify-between">
+                  <div key={i} className="bg-slate-50 border border-slate-150 p-6 rounded-xl flex flex-col justify-between">
                     <div>
-                      <h4 className="text-[11px] font-black uppercase text-primary mb-3 leading-tight">{card.title}</h4>
-                      <ul className="space-y-1.5">
+                      <h4 className="text-sm font-black uppercase text-primary mb-4 leading-tight">{card.title}</h4>
+                      <ul className="space-y-2.5">
                         {card.desc.map((bullet, idx) => (
-                          <li key={idx} className="flex gap-2 text-[9.5px] leading-normal text-slate-500 font-medium items-start">
-                            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-secondary mt-1.5" />
+                          <li key={idx} className="flex gap-3 text-sm leading-normal text-slate-500 font-medium items-start">
+                            <span className="h-2 w-2 shrink-0 rounded-full bg-secondary mt-1.5" />
                             {bullet}
                           </li>
                         ))}
@@ -1032,8 +1056,8 @@ export default function CaseStudyPage() {
             </div>
 
             {/* Bottom 5 stats bar */}
-            <div className="bg-[#031b40] rounded-2xl p-6.5 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="grid gap-6 grid-cols-2 md:grid-cols-5 text-center divide-y md:divide-y-0 md:divide-x divide-white/10 items-center flex-1">
+            <div className="bg-[#031b40] rounded-2xl p-8 lg:p-12 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-10">
+              <div className="grid gap-8 grid-cols-2 md:grid-cols-5 text-center divide-y md:divide-y-0 md:divide-x divide-white/10 items-center flex-1">
                 {[
                   { val: "35+", label: "COUNTRIES", desc: "Global Presence" },
                   { val: "1500+", label: "INSTALLATIONS", desc: "Proven Worldwide" },
@@ -1041,21 +1065,21 @@ export default function CaseStudyPage() {
                   { val: "100+", label: "EXPERTS", desc: "Engineering Excellence" },
                   { val: "48 HRS", label: "RESPONSE TIME", desc: "Quick & Reliable" }
                 ].map((item, i) => (
-                  <div key={i} className="pt-3 md:pt-0 flex flex-col items-center justify-center first:pt-0">
-                    <span className="text-xl font-black text-secondary leading-none block">{item.val}</span>
-                    <span className="mt-1 text-[8.5px] font-black uppercase tracking-widest text-white leading-tight">{item.label}</span>
-                    <span className="text-[8.5px] text-slate-400 font-medium mt-0.5 leading-tight">{item.desc}</span>
+                  <div key={i} className="pt-4 md:pt-0 flex flex-col items-center justify-center first:pt-0">
+                    <span className="text-2xl font-black text-secondary leading-none block">{item.val}</span>
+                    <span className="mt-2 text-xs font-black uppercase tracking-widest text-white leading-tight">{item.label}</span>
+                    <span className="text-xs text-slate-400 font-medium mt-1 leading-tight">{item.desc}</span>
                   </div>
                 ))}
               </div>
 
               {/* Action card beside stats */}
-              <div className="bg-white/5 border border-white/10 rounded-xl p-4.5 flex flex-col justify-between max-w-xs text-center md:text-left">
-                <p className="text-[9.5px] leading-relaxed text-slate-300 font-medium">
-                  <strong>PARTNER WITH PITHAL ENGINEERING</strong> — From engineering excellence to lifetime support, we ensure your success at every step.
+              <div className="bg-white/5 border border-white/10 rounded-xl p-7 flex flex-col justify-between max-w-sm text-center md:text-left">
+                <p className="text-sm leading-relaxed text-slate-300 font-medium">
+                  <strong className="text-white">PARTNER WITH PITHAL ENGINEERING</strong> — From engineering excellence to lifetime support, we ensure your success at every step.
                 </p>
-                <Button href="#contact" variant="primary" className="mt-3.5 flex items-center justify-center gap-1.5 text-[8.5px] font-black uppercase tracking-widest py-3 px-5">
-                  LET&apos;S BUILD YOUR SUCCESS STORY <ArrowRight size={11} />
+                <Button href="#contact" variant="primary" className="mt-6 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-widest py-4 px-6">
+                  LET&apos;S BUILD YOUR SUCCESS STORY <ArrowRight size={14} />
                 </Button>
               </div>
             </div>
@@ -1075,7 +1099,7 @@ export default function CaseStudyPage() {
             />
 
             {/* 4 Cards Grid */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-12">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-16">
               {[
                 {
                   tag: "LIMESTONE PLANT",
@@ -1134,35 +1158,35 @@ export default function CaseStudyPage() {
                         className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-slate-950/15 z-10" />
-                      <span className="absolute left-3 top-3 z-20 text-[8px] font-black uppercase tracking-widest bg-white text-secondary px-2 py-0.5 rounded border border-slate-100 leading-none">
+                      <span className="absolute left-4 top-4 z-20 text-[10px] font-black uppercase tracking-widest bg-white text-secondary px-3 py-1 rounded border border-slate-100 leading-none shadow-sm">
                         {card.tag}
                       </span>
                     </div>
 
-                    <div className="p-4.5">
-                      <h3 className="text-[12.5px] font-black uppercase text-primary leading-tight group-hover:text-secondary transition-colors">
+                    <div className="p-6">
+                      <h3 className="text-base font-black uppercase text-primary leading-tight group-hover:text-secondary transition-colors">
                         {card.title}
                       </h3>
-                      <span className="inline-flex gap-1 items-center text-[9px] font-black text-slate-400 uppercase tracking-wider mt-1.5">
-                        <MapPin size={9} className="text-secondary" /> {card.loc}
+                      <span className="inline-flex gap-2 items-center text-xs font-black text-slate-400 uppercase tracking-wider mt-2.5">
+                        <MapPin size={12} className="text-secondary" /> {card.loc}
                       </span>
 
                       {/* 3 cols metrics */}
-                      <div className="mt-4 pt-3.5 border-t border-slate-100 grid grid-cols-3 gap-1.5 text-center">
+                      <div className="mt-6 pt-5 border-t border-slate-100 grid grid-cols-3 gap-2 text-center">
                         {card.metrics.map((met, i) => (
-                          <div key={i} className="px-0.5">
-                            <span className="text-[11px] font-black text-secondary leading-none block">{met.val}</span>
-                            <span className="text-[8px] text-slate-400 font-bold uppercase tracking-wider block mt-1.5 leading-tight">{met.text}</span>
+                          <div key={i} className="px-1">
+                            <span className="text-sm font-black text-secondary leading-none block">{met.val}</span>
+                            <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider block mt-2 leading-tight">{met.text}</span>
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4.5 pt-0">
-                    <Link href="#contact" className="w-full inline-flex items-center justify-between text-[9px] font-black uppercase tracking-widest text-secondary group-hover:text-primary transition-colors border-t border-slate-100 pt-3">
+                  <div className="p-6 pt-0">
+                    <Link href="#contact" className="w-full inline-flex items-center justify-between text-xs font-black uppercase tracking-widest text-secondary group-hover:text-primary transition-colors border-t border-slate-100 pt-5">
                       <span>VIEW CASE STUDY</span>
-                      <ArrowRight size={11} />
+                      <ArrowRight size={14} />
                     </Link>
                   </div>
                 </div>
@@ -1170,31 +1194,33 @@ export default function CaseStudyPage() {
             </div>
 
             {/* Bottom contact help banner */}
-            <div className="bg-white border border-slate-200/80 rounded-2xl p-5 md:p-6.5 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="flex items-center gap-3.5 text-center md:text-left">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary shadow-sm">
-                  <FileText size={18} />
+            <div className="bg-white border border-slate-200/80 rounded-2xl p-8 md:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-10">
+              <div className="flex items-center gap-6 text-center md:text-left">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary shadow-sm">
+                  <FileText size={24} />
                 </div>
                 <div>
-                  <h4 className="text-[11.5px] font-black uppercase tracking-wider text-primary">
+                  <h4 className="text-lg font-black uppercase tracking-wider text-primary">
                     HAVE A SIMILAR PROJECT IN MIND?
                   </h4>
-                  <p className="text-[10px] text-slate-500 font-medium mt-1">
+                  <p className="text-base text-slate-500 font-medium mt-2">
                     Let our experts design a customized solution tailored to your operational needs.
                   </p>
                 </div>
               </div>
 
               {/* horizontal capabilities and button */}
-              <div className="flex flex-wrap items-center justify-center gap-6.5">
-                {["Expert Engineering Support", "Tailored Solutions for Your Needs", "End-to-End Project Execution"].map((val, i) => (
-                  <div key={i} className="flex items-center gap-1.5 text-[9.5px] font-black uppercase tracking-widest text-slate-400">
-                    <CheckCircle2 size={12} className="text-secondary" />
-                    {val}
-                  </div>
-                ))}
-                <Button href="#contact" variant="primary" className="flex items-center justify-center gap-1.5 text-[9px] font-black uppercase tracking-widest py-3 px-6 leading-none">
-                  DISCUSS YOUR PROJECT <ArrowRight size={11} />
+              <div className="flex flex-wrap items-center justify-center gap-10">
+                <div className="flex flex-col gap-3">
+                  {["Expert Engineering Support", "Tailored Solutions for Your Needs", "End-to-End Project Execution"].map((val, i) => (
+                    <div key={i} className="flex items-center gap-3 text-xs font-black uppercase tracking-widest text-slate-400">
+                      <CheckCircle2 size={16} className="text-secondary" />
+                      {val}
+                    </div>
+                  ))}
+                </div>
+                <Button href="#contact" variant="primary" className="flex items-center justify-center gap-2 text-xs font-black uppercase tracking-widest py-5 px-10 leading-none">
+                  DISCUSS YOUR PROJECT <ArrowRight size={16} />
                 </Button>
               </div>
             </div>
@@ -1205,70 +1231,70 @@ export default function CaseStudyPage() {
         {/* ========================================================================= */}
         {/* SECTION 12: LET'S BUILD YOUR NEXT INDUSTRIAL SUCCESS STORY (CTA) */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-[#031b40] py-20 lg:py-24 text-white" id="contact">
+        <section className="relative overflow-hidden bg-[#031b40] py-24 text-white" id="contact">
           <Container className="relative z-10">
             {/* Header Block */}
-            <div className="max-w-3xl mb-16 text-center md:text-left">
-              <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
+            <div className="max-w-4xl mb-20 text-center md:text-left">
+              <span className="text-sm font-black uppercase tracking-[0.24em] text-secondary">
                 YOUR VISION. OUR ENGINEERING.
               </span>
-              <h2 className="text-[clamp(2.2rem,6vw,3.5rem)] font-black uppercase leading-[1.05] tracking-tight mt-4 text-white">
+              <h2 className="text-[clamp(2.5rem,7vw,4rem)] font-black uppercase leading-[1.05] tracking-tight mt-6 text-white">
                 Let&apos;s Build Your Next <br />
                 <span className="text-secondary">Industrial Success Story.</span>
               </h2>
-              <span aria-hidden className="mt-5 block h-[2.5px] w-12 bg-secondary" />
-              <p className="mt-5 max-w-xl text-xs md:text-[13px] leading-relaxed text-slate-350 font-medium">
+              <span aria-hidden className="mt-6 block h-[3px] w-16 bg-secondary" />
+              <p className="mt-8 max-w-2xl text-base md:text-lg leading-relaxed text-slate-350 font-medium">
                 From concept to commissioning, we deliver engineered solutions that drive efficiency, reliability and long-term value for your business.
               </p>
             </div>
 
             {/* 4 Horizontal values */}
-            <div className="grid gap-6 grid-cols-2 md:grid-cols-4 mb-12 border-b border-white/10 pb-8">
+            <div className="grid gap-10 grid-cols-2 md:grid-cols-4 mb-16 border-b border-white/10 pb-12">
               {[
                 { title: "Proven Expertise", text: "Decades of experience in heavy engineering" },
                 { title: "Tailored Solutions", text: "Custom-built for your operational needs" },
                 { title: "Maximum ROI", text: "Optimized performance that delivers results" },
                 { title: "End-to-End Support", text: "We partner with you at every stage" }
               ].map((val, i) => (
-                <div key={i} className="flex items-start gap-3 group">
-                  <div className="flex h-8.5 w-8.5 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-secondary">
-                    <CheckCircle2 size={13} />
+                <div key={i} className="flex items-start gap-4 group">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-secondary">
+                    <CheckCircle2 size={16} />
                   </div>
                   <div>
-                    <h4 className="text-[11px] font-black uppercase tracking-wider text-white leading-tight">{val.title}</h4>
-                    <p className="mt-1 text-[9.5px] leading-normal text-slate-400 font-medium">{val.text}</p>
+                    <h4 className="text-sm font-black uppercase tracking-wider text-white leading-tight">{val.title}</h4>
+                    <p className="mt-2 text-xs leading-normal text-slate-400 font-medium">{val.text}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* 4 Big navy cards */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-12">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-16">
               {[
                 { title: "Engineering Consultation", desc: "Talk to our experts and get the right solution for your goals.", btn: "SCHEDULE CONSULTATION" },
                 { title: "Project Planning", desc: "We plan every detail to ensure smooth execution and delivery.", btn: "PLAN YOUR PROJECT" },
                 { title: "Plant Optimization", desc: "Improve efficiency, reduce downtime and cut operating costs.", btn: "OPTIMIZE YOUR PLANT" },
                 { title: "Request Proposal", desc: "Share your requirements and we'll prepare a tailored proposal.", btn: "REQUEST PROPOSAL" }
               ].map((card, idx) => (
-                <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-6.5 flex flex-col justify-between hover:border-secondary transition-all">
+                <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-8 lg:p-10 flex flex-col justify-between hover:border-secondary transition-all">
                   <div>
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-secondary mb-5">
-                      <Workflow size={16} />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 text-secondary mb-6">
+                      <Workflow size={20} />
                     </div>
-                    <h3 className="text-[13px] font-black uppercase tracking-wider text-white leading-tight">{card.title}</h3>
-                    <p className="mt-2.5 text-[10.5px] leading-relaxed text-slate-400 font-medium">{card.desc}</p>
+                    <h3 className="text-base font-black uppercase tracking-wider text-white leading-tight">{card.title}</h3>
+                    <p className="mt-4 text-sm leading-relaxed text-slate-400 font-medium">{card.desc}</p>
                   </div>
-                  <Button href="#contact" variant="outlineOrange" className="mt-6 flex items-center justify-center gap-1.5 text-[9px] font-black uppercase tracking-widest py-3 px-5 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all">
-                    {card.btn} <ArrowRight size={11} />
+                  <Button href="#contact" variant="outlineOrange" className="mt-10 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-widest py-4 px-6 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all">
+                    {card.btn} <ArrowRight size={14} />
                   </Button>
                 </div>
               ))}
             </div>
 
             {/* 5 bottom validation badges */}
-            <div className="flex flex-wrap items-center justify-center gap-6.5 border-t border-white/10 pt-8 opacity-60">
+            <div className="flex flex-wrap items-center justify-center gap-10 border-t border-white/10 pt-12 opacity-60">
               {["Trusted by Industry Leaders Worldwide", "35+ Countries", "1500+ Installations", "24/7 Support", "Safety. Quality. Reliability."].map((badge, i) => (
-                <span key={i} className="text-[9.5px] font-black uppercase tracking-widest text-slate-350">{badge}</span>
+                <span key={i} className="text-xs font-black uppercase tracking-widest text-slate-350">{badge}</span>
               ))}
             </div>
 

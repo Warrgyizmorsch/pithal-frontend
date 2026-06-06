@@ -73,29 +73,38 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
               {data.description}
             </p>
 
-            <ul className="mt-8 space-y-6">
+            <ul className="mt-10 space-y-8">
               {data.features?.map((feature) => (
-                <li key={feature.title} className="flex items-start gap-4">
+                <li key={feature.title} className="flex items-start gap-5">
                   {/* Icon Box */}
                   <div 
                     className="flex shrink-0 items-center justify-center rounded-xl bg-[#fa5902]/[0.03]"
                     style={{
-                      width: 48,
-                      height: 48,
+                      width: 60,
+                      height: 60,
                       border: "1.5px solid rgba(250, 89, 2, 0.15)",
                       color: "#fa5902"
                     }}
                   >
-                    {renderIcon(feature.icon)}
+                    {(() => {
+                      const props = { size: 30, strokeWidth: 2.2 };
+                      switch (feature.icon) {
+                        case "shield": return <Shield {...props} />;
+                        case "settings": return <Settings {...props} />;
+                        case "wrench": return <Wrench {...props} />;
+                        case "trending": return <TrendingUp {...props} />;
+                        default: return <CheckCircle2 {...props} />;
+                      }
+                    })()}
                   </div>
                   
                   {/* Text Block */}
-                  <div className="flex-1 min-w-0" style={{ paddingTop: "2px" }}>
+                  <div className="flex-1 min-w-0" style={{ paddingTop: "4px" }}>
                     <h4 
                       className="text-primary uppercase" 
                       style={{ 
-                        fontSize: "0.78rem", 
-                        fontWeight: 800, 
+                        fontSize: "0.95rem", 
+                        fontWeight: 900, 
                         letterSpacing: "0.1em",
                         lineHeight: "1.2"
                       }}
@@ -103,10 +112,10 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
                       {feature.title}
                     </h4>
                     <p 
-                      className="mt-1 text-text-muted" 
+                      className="mt-1.5 text-text-muted" 
                       style={{ 
-                        fontSize: "0.8rem", 
-                        lineHeight: "1.5"
+                        fontSize: "0.9rem", 
+                        lineHeight: "1.6"
                       }}
                     >
                       {feature.description}

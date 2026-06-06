@@ -1159,7 +1159,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 6: POWERED BY PEOPLE ── */}
         <section className="py-10 bg-[#f8f9fa]">
-          <div className="max-w-[1400px] mx-auto px-6">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             {/* Section Header */}
             <div className="text-center mb-10">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -1415,7 +1415,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 7: EMPLOYEE BENEFITS ── */}
         <section className="py-10 bg-[#f8f9fa]">
-          <div className="max-w-[1400px] mx-auto px-6">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             {/* Header Section */}
             <div className="text-center mb-14">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -1652,7 +1652,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 8: GROW YOUR SKILLS ── */}
         <section className="py-0 bg-white relative w-full overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center min-h-[460px]">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 relative z-10 flex flex-col lg:flex-row items-center min-h-[460px]">
             {/* Left Column - Content */}
             <div className="w-full lg:w-[48%] py-12 lg:py-16 text-left">
               {/* Tag */}
@@ -1714,7 +1714,7 @@ export default function CareersPage() {
         </section>
 
         <section className="py-10 bg-white relative">
-          <div className="max-w-[1400px] mx-auto px-6">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
 
             {/* 5-Column Cards Section */}
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 relative z-20 mb-12">
@@ -1983,7 +1983,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 9: YOUR JOURNEY ── */}
         <section className="py-10 bg-[#fafbfd]">
-          <div className="max-w-[1400px] mx-auto px-6">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             {/* Section Header */}
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -2224,7 +2224,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 10: BUILD WITH RIGHT FOUNDATION ── */}
         <section className="py-10 bg-[#f8f9fa]">
-          <div className="max-w-[1400px] mx-auto px-6">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             {/* Section Header */}
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -2580,7 +2580,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 11: TESTIMONIALS ── */}
         <section className="py-10 bg-[#fafbfd]">
-          <div className="max-w-[1400px] mx-auto px-6">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             {/* Section Header */}
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -2714,7 +2714,7 @@ export default function CareersPage() {
           <div className="bg-white border-y border-[#e2e8f0] shadow-[0_16px_48px_rgba(15,23,42,0.04)] rounded-none overflow-hidden w-full">
             
             {/* Top Main Section */}
-            <div className="max-w-[1400px] mx-auto px-6 py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-2">
+            <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-2">
               
               {/* Left Side: Logo & Text */}
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:w-[42%] w-full shrink-0">
@@ -2866,7 +2866,7 @@ export default function CareersPage() {
 
             {/* Bottom Bar Section */}
             <div className="bg-[#f8f9fa] border-t border-[#e2e8f0] py-5">
-              <div className="max-w-[1400px] mx-auto px-6 flex flex-col lg:flex-row justify-between items-center gap-4 lg:divide-x lg:divide-slate-200/80">
+              <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-4 lg:divide-x lg:divide-slate-200/80">
                 {[
                   {
                     text: "300+ Professionals",

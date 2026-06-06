@@ -7,7 +7,7 @@ import { Container } from "@/components/common/Container";
 import type { RelatedMachine, SectionCopy } from "@/data/products/productDetailTypes";
 
 const coneIcon = (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M5 20l7-15 7 15H5z" />
     <path d="M8 14h8" />
     <path d="M10 9h4" />
@@ -15,7 +15,7 @@ const coneIcon = (
 );
 
 const vsiIcon = (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="9" />
     <circle cx="12" cy="12" r="3" />
     <path d="M12 3v6M12 15v6M3 12h6M15 12h6" />
@@ -23,14 +23,14 @@ const vsiIcon = (
 );
 
 const feederIcon = (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M3 6h18v4l-4 6H7l-4-6V6z" />
     <path d="M7 16l-2 5M17 16l2 5" />
   </svg>
 );
 
 const screenIcon = (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="3" y="4" width="18" height="16" rx="2" />
     <path d="M3 9h18M3 14h18" />
     <path d="M9 4v16M15 4v16" />
@@ -38,7 +38,7 @@ const screenIcon = (
 );
 
 const conveyorIcon = (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="3" y="9" width="18" height="6" rx="3" />
     <circle cx="6" cy="12" r="1" fill="currentColor" />
     <circle cx="12" cy="12" r="1" fill="currentColor" />
@@ -48,7 +48,7 @@ const conveyorIcon = (
 );
 
 const jawIcon = (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M6 3v18" />
     <path d="M18 3l-8 18" />
     <path d="M6 8h6M6 14h4" />
@@ -95,13 +95,13 @@ export function RelatedMachines({
             
             {/* Cogwheel icon */}
             <span style={{ display: "inline-flex", alignItems: "center", color: "#fa5902" }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="3" />
                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
               </svg>
             </span>
 
-            <span style={{ fontSize: "11px", fontWeight: 900, color: "#fa5902", letterSpacing: "0.26em", textTransform: "uppercase", fontFamily: "var(--font-heading), sans-serif", marginLeft: "4px" }}>
+            <span style={{ fontSize: "13px", fontWeight: 900, color: "#fa5902", letterSpacing: "0.26em", textTransform: "uppercase", fontFamily: "var(--font-heading), sans-serif", marginLeft: "4px" }}>
               {section.eyebrow}
             </span>
 
@@ -114,11 +114,11 @@ export function RelatedMachines({
         </div>
 
         {/* Section Headline & Description */}
-        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <div style={{ textAlign: "center", marginBottom: "56px" }}>
           <h2 
             className="headline text-primary" 
             style={{ 
-              fontSize: "clamp(2rem, 5vw, 3.25rem)", 
+              fontSize: "clamp(2.25rem, 6vw, 3.75rem)", 
               lineHeight: "1.1", 
               fontWeight: 900,
               letterSpacing: "0.035em",
@@ -129,7 +129,7 @@ export function RelatedMachines({
             <span className="text-secondary">{section.highlight}</span>
           </h2>
           {section.subtitle && (
-            <p className="mx-auto mt-4 max-w-3xl text-sm sm:text-base leading-7 text-text-muted">
+            <p className="mx-auto mt-5 max-w-3xl text-base sm:text-lg leading-7 text-text-muted">
               {section.subtitle}
             </p>
           )}
@@ -201,8 +201,8 @@ export function RelatedMachines({
                   <div 
                     className="flex items-center justify-center rounded-lg bg-[#fa5902]/[0.03]"
                     style={{
-                      width: 40,
-                      height: 40,
+                      width: 56,
+                      height: 56,
                       border: "1.5px solid rgba(250, 89, 2, 0.15)",
                       color: "#fa5902",
                       marginTop: "20px",
@@ -216,8 +216,8 @@ export function RelatedMachines({
                   <h3 
                     className="text-primary uppercase"
                     style={{
-                      fontSize: "0.78rem",
-                      fontWeight: 800,
+                      fontSize: "1rem",
+                      fontWeight: 900,
                       letterSpacing: "0.08em",
                       lineHeight: "1.2"
                     }}
@@ -229,9 +229,9 @@ export function RelatedMachines({
                   <p 
                     className="mt-2 text-text-muted"
                     style={{
-                      fontSize: "0.78rem",
-                      lineHeight: "1.5",
-                      minHeight: "48px"
+                      fontSize: "0.9rem",
+                      lineHeight: "1.6",
+                      minHeight: "56px"
                     }}
                   >
                     {machine.description}
@@ -245,9 +245,9 @@ export function RelatedMachines({
                     className="inline-flex items-center gap-1.5 font-bold uppercase transition-colors"
                     style={{
                       color: "#fa5902",
-                      fontSize: "0.7rem",
+                      fontSize: "0.85rem",
                       letterSpacing: "0.08em",
-                      marginTop: "16px"
+                      marginTop: "20px"
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.color = "#ff7a30";

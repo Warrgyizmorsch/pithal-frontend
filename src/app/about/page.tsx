@@ -107,7 +107,7 @@ function Eyebrow({
   return (
     <p
       className={cn(
-        "accent-bars text-[10px] font-black uppercase tracking-[0.24em] text-secondary",
+        "accent-bars text-[12px] font-black uppercase tracking-[0.24em] text-secondary",
         className,
       )}
     >
@@ -159,7 +159,7 @@ function HeroSection() {
               <Home aria-hidden size={16} />
               Home
             </Link>
-            <ChevronRight aria-hidden size={16} />
+            <ChevronRight aria-hidden size={18} />
             <span className="text-secondary">About Us</span>
           </nav>
 
@@ -229,7 +229,7 @@ function HeroSection() {
                   <Icon name={stat.icon} size={22} />
                 </span>
                 <div>
-                  <p className="headline text-[22px] leading-none text-primary sm:text-[25px] lg:text-[28px]">
+                  <p className="headline text-[22px] leading-none text-primary sm:text-[35px] lg:text-[28px]">
                     {stat.value}
                   </p>
                   <p className="mt-1 max-w-[8rem] text-[10px] font-black leading-4 text-primary-dark lg:text-[11px]">
@@ -284,7 +284,7 @@ function WhoWeAreSection() {
   const { experience } = aboutPageData;
 
   return (
-    <section className="bg-white py-12 lg:py-16">
+    <section className="bg-white py-[35px]">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
           {/* ── Left Column ── */}
@@ -300,7 +300,7 @@ function WhoWeAreSection() {
                   />
                 ))}
               </span>
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-secondary whitespace-nowrap">
+              <p className="text-[12px] font-black uppercase tracking-[0.22em] text-secondary whitespace-nowrap">
                 {experience.eyebrow}
               </p>
               <span className="flex items-center gap-[4px]">
@@ -418,7 +418,7 @@ function VisionMissionSection() {
   const mission = visionMission.items[1];
 
   return (
-    <section className="relative overflow-hidden bg-[#f1f4f8] py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-[#f1f4f8] py-[35px]">
       {/* Blueprint grid overlay */}
 
       <Container className="relative overflow-hidden">
@@ -449,7 +449,7 @@ function VisionMissionSection() {
                 />
               ))}
             </span>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
+            <p className="text-[12px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
               {visionMission.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -472,7 +472,7 @@ function VisionMissionSection() {
         </div>
 
         {/* ── Cards Container with relative positioning for the bottom tab ── */}
-        <div className="relative mx-auto max-w-6xl overflow-hidden">
+        <div className="relative mx-auto max-w-[1520px] overflow-hidden">
           <div className="grid md:grid-cols-2 gap-5 items-stretch">
             
             {/* ▌ Vision Card (Dark Navy) */}
@@ -587,7 +587,7 @@ function WhyChooseSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-white py-[35px]">
       {/* Industrial grid background */}
       <div
         aria-hidden
@@ -635,7 +635,7 @@ function WhyChooseSection() {
                 />
               ))}
             </span>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
+            <p className="text-[12px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
               {whyChoose.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -659,7 +659,7 @@ function WhyChooseSection() {
         </div>
 
         {/* ── Cards 3×2 Grid ── */}
-        <div className="mx-auto mt-9 grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-9 grid max-w-[1520px] gap-6 md:grid-cols-2 lg:grid-cols-3">
           {whyChoose.cards.map((card) => (
             <article
               className="group relative flex items-start gap-5 rounded-xl border border-slate-100 bg-white p-6 shadow-[0_12px_38px_rgba(3,27,64,0.04)] transition-all duration-300 hover:shadow-[0_16px_44px_rgba(3,27,64,0.08)] border-b-[4px] border-b-[#fa5902]"
@@ -679,8 +679,8 @@ function WhyChooseSection() {
                   <Image
                     src={flaticonMap[card.icon] ?? "/icons/high-efficiency.png"}
                     alt={card.title}
-                    width={38}
-                    height={38}
+                    width={57}
+                    height={57}
                     className="object-contain"
                   />
                 </div>
@@ -761,7 +761,7 @@ function ManufacturingSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-white py-[35px]">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 industrial-grid opacity-30"
@@ -796,7 +796,7 @@ function ManufacturingSection() {
                 />
               ))}
             </span>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
+            <p className="text-[12px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
               {manufacturing.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -823,7 +823,7 @@ function ManufacturingSection() {
         </div>
 
         {/* ── Steps Horizontal Block ── */}
-        <div className="mx-auto mt-8 grid grid-cols-2 md:grid-cols-5 border border-slate-100 bg-white shadow-[0_8px_30px_rgba(3,27,64,0.03)] rounded-xl py-6 divide-y md:divide-y-0 md:divide-x divide-slate-100 max-w-6xl">
+        <div className="mx-auto mt-8 grid grid-cols-2 md:grid-cols-5 border border-slate-100 bg-white shadow-[0_8px_30px_rgba(3,27,64,0.03)] rounded-xl py-6 divide-y md:divide-y-0 md:divide-x divide-slate-100 max-w-[1520px]">
           {manufacturing.steps.map((step) => (
             <div
               className="flex flex-col items-center gap-4 px-3 py-3 text-center"
@@ -833,8 +833,8 @@ function ManufacturingSection() {
                 <Image
                   src={stepFlaticons[step.icon] ?? "/icons/reliable-performace.png"}
                   alt={step.title}
-                  width={64}
-                  height={64}
+                  width={96}
+                  height={96}
                   className="object-contain"
                 />
               </span>
@@ -846,7 +846,7 @@ function ManufacturingSection() {
         </div>
 
         {/* ── Cards Row ── */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 max-w-7xl mx-auto">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 max-w-[1520px] mx-auto">
           {manufacturing.cards.map((card) => (
             <article
               className="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_12px_38px_rgba(3,27,64,0.03)] hover:shadow-[0_16px_44px_rgba(3,27,64,0.06)] transition-all duration-300 border-b-[4px] border-b-[#fa5902] flex flex-col h-full"
@@ -885,7 +885,7 @@ function GlobalSection() {
   const { global: globalData } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-white py-[35px]">
       {/* Faint grid background */}
       <div
         aria-hidden
@@ -920,7 +920,7 @@ function GlobalSection() {
                 />
               ))}
             </span>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-secondary">
+            <p className="text-[12px] font-black uppercase tracking-[0.22em] text-secondary">
               {globalData.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -1013,7 +1013,7 @@ function IndustriesSection() {
   const { industries } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f9fc] py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-[35px]">
       {/* Faint grid */}
       <div
         aria-hidden
@@ -1060,7 +1060,7 @@ function IndustriesSection() {
                 />
               ))}
             </span>
-            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-secondary">
+            <p className="text-[12px] font-black uppercase tracking-[0.22em] text-secondary">
               {industries.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -1137,7 +1137,7 @@ function ValuesSection() {
   const { values } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f9fc] pt-12 lg:pt-16">
+    <section className="relative overflow-hidden bg-[#f7f9fc] pt-[35px]">
       {/* Decorative dot grid top-right */}
       <div
         aria-hidden
@@ -1186,7 +1186,7 @@ function ValuesSection() {
         </svg>
       </div>
 
-      <Container className="relative z-10 pb-12 lg:pb-16">
+      <Container className="relative z-10 pb-[35px]">
         {/* We wrap the whole grid in relative to place the connecting lines absolute on desktop */}
         <div className="relative grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           {/* Left Column */}
@@ -1390,7 +1390,7 @@ function ImpactSection() {
 
   return (
     <section className="overflow-hidden bg-white">
-      <div className="relative flex min-h-[230px] items-center overflow-hidden bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f7f9fc_55%,#eef2f7_100%)] py-8 sm:min-h-[250px] lg:min-h-[270px]">
+      <div className="relative flex min-h-[230px] items-center overflow-hidden bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f7f9fc_55%,#eef2f7_100%)] py-[35px] sm:min-h-[250px] lg:min-h-[270px]">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 industrial-grid opacity-35"
@@ -1595,7 +1595,7 @@ function CertificationsSection() {
       className="relative scroll-mt-[6.25rem] overflow-hidden bg-[#edf2f7]"
       id="certifications"
     >
-      <div className="relative overflow-hidden bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f9fbfd_56%,#edf2f7_100%)] pb-5 pt-10 sm:pt-12 lg:pb-6">
+      <div className="relative overflow-hidden bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f9fbfd_56%,#edf2f7_100%)] py-[35px]">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 industrial-grid opacity-35"
@@ -1676,7 +1676,7 @@ function CertificationsSection() {
                   />
                 ))}
               </span>
-              <p className="text-sm font-black uppercase tracking-[0.05em] sm:text-base">
+              <p className="text-[12px] font-black uppercase tracking-[0.05em] sm:text-base">
                 Our Standards
               </p>
               <span className="flex items-center gap-[5px]" aria-hidden>
@@ -1705,7 +1705,7 @@ function CertificationsSection() {
         </Container>
       </div>
 
-      <div className="relative border-y border-white/70 bg-[#edf2f7] pb-6 shadow-[inset_0_18px_38px_rgba(3,27,64,0.08)]">
+      <div className="relative border-y border-white/70 bg-[#edf2f7] pb-[35px] shadow-[inset_0_18px_38px_rgba(3,27,64,0.08)]">
         <Container className="relative z-10">
           <div className="relative mx-auto flex w-full max-w-[820px] items-center justify-center py-3">
             <span className="absolute inset-x-0 top-1/2 h-px bg-primary/10" />
@@ -1808,7 +1808,7 @@ function FinalCtaSection() {
   const { cta } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f8fafc_52%,#edf2f7_100%)] py-8 lg:py-10">
+    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f8fafc_52%,#edf2f7_100%)] py-[35px]">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 industrial-grid opacity-25"
@@ -1850,7 +1850,7 @@ function FinalCtaSection() {
           <div>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-[2px] w-5 bg-secondary" />
-              <span className="text-xs font-black uppercase tracking-[0.08em] text-secondary">
+              <span className="text-[12px] font-black uppercase tracking-[0.08em] text-secondary">
                 LET&apos;S BUILD
               </span>
             </div>

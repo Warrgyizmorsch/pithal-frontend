@@ -89,8 +89,8 @@ export function ProductStats({
         <div className="relative grid gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {stats.map((stat, index) => (
             <Card className="relative min-h-[210px] overflow-visible rounded-xl border-border bg-white px-3 py-4 text-center shadow-[0_6px_16px_rgba(3,27,64,0.1)]" key={stat.label}>
-              <div className="mx-auto mb-3 flex h-[60px] w-[60px] items-center justify-center rounded-full border border-dashed border-secondary bg-white text-primary">
-                <ProductIcon name={stat.icon} size={30} strokeWidth={1.55} />
+              <div className="mx-auto mb-4 flex h-[80px] w-[80px] items-center justify-center rounded-full border border-dashed border-secondary bg-white text-primary">
+                <ProductIcon name={stat.icon} size={42} strokeWidth={1.55} />
               </div>
               <h3 className="text-[13px] font-black uppercase tracking-[0.02em] text-primary sm:text-sm">{stat.label}</h3>
               <span className="mx-auto mt-3 block h-[2px] w-7 bg-secondary" />

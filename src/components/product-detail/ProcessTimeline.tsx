@@ -72,16 +72,16 @@ export function ProcessTimeline({
                     />
                   </div>
                   <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-full border border-secondary/20 bg-white text-secondary shadow-[0_12px_30px_rgba(15,23,42,0.12)]">
+                    <span className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-secondary/20 bg-white text-secondary shadow-[0_12px_30px_rgba(15,23,42,0.12)]">
                       {step.iconFile ? (
                         /* eslint-disable-next-line @next/next/no-img-element */
                         <img
                           alt={`${step.title} icon`}
                           src={`/icons/${step.iconFile}`}
-                          style={{ width: 34, height: 34, objectFit: "contain", maxWidth: "none" }}
+                          style={{ width: 44, height: 44, objectFit: "contain", maxWidth: "none" }}
                         />
                       ) : (
-                        <ProductIcon name={step.icon ?? "target"} size={20} strokeWidth={2} />
+                        <ProductIcon name={step.icon ?? "target"} size={28} strokeWidth={2} />
                       )}
                     </span>
                   </div>
@@ -136,10 +136,10 @@ export function ProcessTimeline({
               <span
                 className="flex shrink-0 items-center justify-center rounded-full bg-white"
                 style={{
-                  width: 48,
-                  height: 48,
-                  minWidth: 48,
-                  minHeight: 48,
+                  width: 82,
+                  height: 82,
+                  minWidth: 82,
+                  minHeight: 82,
                   border: "1.5px solid var(--border)",
                 }}
               >
@@ -147,7 +147,7 @@ export function ProcessTimeline({
                 <img
                   alt=""
                   src={benefitIcons[benefit.icon] ?? ""}
-                  style={{ width: 28, height: 28, objectFit: "contain", maxWidth: "none" }}
+                  style={{ width: 52, height: 52, objectFit: "contain", maxWidth: "none" }}
                 />
               </span>
               <div>

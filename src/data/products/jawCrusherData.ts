@@ -61,8 +61,8 @@ export const jawCrusherData: ProductDetailData = {
     ],
     features: [
       { title: "High Durability", text: "Heavy-duty structure for long service life", icon: "shield" },
-      { title: "High Efficiency", text: "Optimized chamber design for more output", icon: "settings" },
-      { title: "Low Maintenance", text: "Easy access design reduces downtime", icon: "trending" },
+      { title: "High Efficiency", text: "Optimized chamber design for more output", icon: "gauge" },
+      { title: "Low Maintenance", text: "Easy access design reduces downtime", icon: "wrench" },
       { title: "Cost Effective", text: "Low operating cost high return on investment", icon: "handCoins" },
     ],
     callouts: [
@@ -77,9 +77,9 @@ export const jawCrusherData: ProductDetailData = {
       description:
         "Ideal for primary crushing of hard, abrasive and large size materials. Widely used in a variety of industries and applications.",
       items: [
-        { label: "Mining", icon: "basket" },
+        { label: "Mining", icon: "pickaxe" },
         { label: "Aggregates", icon: "mountain" },
-        { label: "Construction", icon: "building" },
+        { label: "Construction", icon: "construction" },
         { label: "Cement", icon: "factory" },
         { label: "Recycling", icon: "recycle" },
       ],

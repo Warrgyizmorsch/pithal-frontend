@@ -779,7 +779,7 @@ export default function GlobalPresencePage() {
               </div>
             </div>
 
-            <div className="mx-auto max-w-[1376px] bg-white px-4 pb-7 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-[1520px] bg-white px-4 pb-7 sm:px-8 lg:px-10">
               <div className="relative overflow-hidden rounded-[10px] bg-[#061f49] px-5 py-4 text-white shadow-[0_18px_35px_rgba(9,31,66,0.18)] sm:px-8 lg:grid lg:min-h-[156px] lg:grid-cols-[1.36fr_repeat(4,1fr)] lg:items-center lg:px-9">
                 <div className="relative mb-5 min-h-[124px] overflow-hidden lg:mb-0 lg:h-[128px] lg:min-h-0 lg:pr-8">
                   <Image

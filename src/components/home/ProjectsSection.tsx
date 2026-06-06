@@ -32,7 +32,7 @@ export function ProjectsSection() {
       <Container className="relative">
         <div className="mb-8 grid items-end gap-8 lg:grid-cols-[0.86fr_1.32fr]">
           <header>
-            <p className="mb-4 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary sm:mb-5 sm:text-[11px] sm:tracking-[0.25em]">
+            <p className="mb-4 flex items-center gap-3 text-[14px] font-bold uppercase tracking-[0.2em] text-primary sm:mb-5 sm:text-[14px] sm:tracking-[0.25em]">
               <span aria-hidden className="flex gap-1">
                 <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
                 <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
