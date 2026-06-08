@@ -125,16 +125,6 @@ export default function WhyChoosePithal() {
           </div>
         </div>
 
-        {/* Mobile Image Fallback inside the container */}
-        <div className="relative z-0 mt-5 aspect-[1672/941] w-full max-h-[17rem] overflow-hidden sm:mt-7 sm:max-h-[22rem] lg:hidden rounded-[1.5rem] border border-secondary/10">
-          <Image
-            alt="Pithal engineered mobile crushing machine"
-            className="object-cover"
-            fill
-            sizes="100vw"
-            src="/images/hero/engineered-machine.png"
-          />
-        </div>
       </Container>
     </section>
   );

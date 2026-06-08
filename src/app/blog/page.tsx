@@ -2477,9 +2477,9 @@ export default function BlogPage() {
               <div className="border-t border-slate-200/60 my-8" />
 
               {/* Horizontal Pills list */}
-              <div className="flex flex-wrap items-center justify-center gap-y-3 gap-x-4">
+              <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-y-3 sm:gap-x-4">
                 {/* Pill 1 */}
-                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
+                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
                   <svg
                     className="w-8 h-8 stroke-secondary"
                     viewBox="0 0 64 64"
@@ -2495,10 +2495,10 @@ export default function BlogPage() {
                   <span>Crushing Systems</span>
                 </div>
 
-                <span className="text-secondary font-black">•</span>
+                <span className="hidden sm:inline text-secondary font-black">•</span>
 
                 {/* Pill 2 */}
-                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
+                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
                   <svg
                     className="w-10 h-10 stroke-secondary"
                     viewBox="0 0 64 64"
@@ -2514,10 +2514,10 @@ export default function BlogPage() {
                   <span>Screening Plants</span>
                 </div>
 
-                <span className="text-secondary font-black">•</span>
+                <span className="hidden sm:inline text-secondary font-black">•</span>
 
                 {/* Pill 3 */}
-                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
+                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
                   <svg
                     className="w-10 h-10 stroke-secondary"
                     viewBox="0 0 64 64"
@@ -2532,10 +2532,10 @@ export default function BlogPage() {
                   <span>Plant Design</span>
                 </div>
 
-                <span className="text-secondary font-black">•</span>
+                <span className="hidden sm:inline text-secondary font-black">•</span>
 
                 {/* Pill 4 */}
-                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
+                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
                   <svg
                     className="w-10 h-10 stroke-secondary"
                     viewBox="0 0 64 64"
@@ -2558,7 +2558,7 @@ export default function BlogPage() {
           POPUP STRIP — LET'S ENGINEER
       ══════════════════════════════════════════ */}
         <section
-          className={`fixed inset-x-0 bottom-0 z-50 px-4 pb-4 sm:px-6 lg:px-8 transition-all duration-500 ease-out ${
+          className={`fixed inset-x-0 bottom-14 sm:bottom-0 z-50 px-4 pb-4 sm:px-6 lg:px-8 transition-all duration-500 ease-out ${
             showPopup
               ? "translate-y-0 opacity-100"
               : "translate-y-8 opacity-0 pointer-events-none"

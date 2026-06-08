@@ -72,7 +72,7 @@ export default function CaseStudyPage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO (Rajasthan Zinc Crushing Plant) */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden h-[calc(100vh-4.25rem)] sm:h-[calc(100vh-4.75rem)] xl:h-[calc(100vh-5.25rem)] min-h-[600px] flex items-center py-4 lg:py-6 text-white">
+        <section className="relative overflow-hidden flex items-center py-8 lg:py-6 text-white min-h-[calc(100vh-4.25rem)] sm:min-h-[calc(100vh-4.75rem)] lg:h-[calc(100vh-4.25rem)] xl:h-[calc(100vh-5.25rem)]">
           <Image
             alt="Rajasthan Zinc Crushing Plant"
             className="object-cover object-center"
@@ -81,67 +81,67 @@ export default function CaseStudyPage() {
             sizes="(min-width: 1024px) 58vw, 100vw"
             src="/projectimg/rajasthan zinc crushing plant.jpg"
           />
-          <div className="pointer-events-none absolute inset-0 bg-slate-950/20" />
+          <div className="pointer-events-none absolute inset-0 bg-black/55" />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-35" />
-          <Container className="relative z-10 w-full h-full flex flex-col justify-between">
+          <Container className="relative z-10 w-full flex flex-col justify-between gap-8 lg:gap-2.5 py-4 lg:py-2 lg:h-full">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 mb-2 text-sm font-medium text-slate-400">
-              <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
-              <ChevronRight size={10} />
-              <Link href="/projects" className="hover:text-secondary transition-colors">Projects & Case Studies</Link>
-              <ChevronRight size={10} />
-              <span className="text-slate-300">Rajasthan Zinc Crushing Plant</span>
+            <div className="flex items-center flex-wrap gap-2 mb-4 lg:mb-1.5 text-xs sm:text-sm font-semibold text-white/60">
+              <Link href="/" className="text-white/80 hover:text-secondary transition-colors">Home</Link>
+              <ChevronRight size={10} className="text-white/40" />
+              <Link href="/projects" className="text-white/80 hover:text-secondary transition-colors">Projects & Case Studies</Link>
+              <ChevronRight size={10} className="text-white/40" />
+              <span className="text-white">Rajasthan Zinc Crushing Plant</span>
             </div>
 
-            <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="grid gap-12 lg:gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               {/* Left Column Text */}
               <div>
                 <div className="flex items-center gap-2.5 mb-2.5 text-secondary">
-                  <CheckCircle2 size={13} className="text-secondary" />
-                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                  <CheckCircle2 size={24} className="text-secondary" />
+                  <span className="text-xl font-black uppercase tracking-[0.24em] text-secondary">
                     FEATURED PROJECT
                   </span>
                 </div>
                 
-                <h1 className="text-[clamp(2.5rem,6vw,3.75rem)] font-black uppercase leading-[1.02] tracking-tight text-primary">
+                <h1 className="text-[clamp(2.5rem,6vw,3.75rem)] lg:text-[clamp(2.5rem,4vw,3.3rem)] font-black uppercase leading-[1.02] tracking-tight text-white">
                   RAJASTHAN ZINC <br />
                   CRUSHING PLANT
                 </h1>
                 
-                <h2 className="text-lg md:text-xl font-black text-secondary uppercase tracking-widest mt-2">
+                <h2 className="text-lg md:text-xl lg:text-base font-black text-secondary uppercase tracking-widest mt-2">
                   500 TPH Crushing & Screening Solution
                 </h2>
                 
-                <p className="mt-3 max-w-2xl text-base md:text-lg leading-relaxed text-slate-800 font-semibold">
+                <p className="mt-3 max-w-2xl text-base md:text-lg lg:text-sm leading-relaxed text-slate-200 font-medium">
                   A robust and high-performance crushing system designed to deliver consistent output, maximum efficiency, and long-term reliability in demanding mining conditions.
                 </p>
 
                 {/* Quick Specs Blocks */}
-                <div className="mt-4 flex flex-wrap gap-x-8 gap-y-4 pt-4 border-t border-slate-200">
-                  <div className="flex items-center gap-2.5 text-sm font-bold text-primary">
-                    <Building2 size={18} className="text-secondary" />
-                    <span className="uppercase text-primary/70 font-medium">Industry:</span> Mining
+                <div className="mt-4 lg:mt-2.5 flex flex-wrap gap-x-8 lg:gap-x-6 gap-y-4 lg:gap-y-2 pt-4 lg:pt-2.5 border-t border-white/20">
+                  <div className="flex items-center gap-2.5 text-sm lg:text-xs font-bold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                    <Building2 size={24} className="text-secondary lg:w-6 lg:h-6" />
+                    <span className="uppercase text-white/70 font-medium">Industry:</span> Mining
                   </div>
-                  <div className="flex items-center gap-2.5 text-sm font-bold text-primary">
-                    <MapPin size={18} className="text-secondary" />
-                    <span className="uppercase text-primary/70 font-medium">Location:</span> Rajasthan, India
+                  <div className="flex items-center gap-2.5 text-sm lg:text-xs font-bold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                    <MapPin size={24} className="text-secondary lg:w-6 lg:h-6" />
+                    <span className="uppercase text-white/70 font-medium">Location:</span> Rajasthan, India
                   </div>
-                  <div className="flex items-center gap-2.5 text-sm font-bold text-primary">
-                    <Activity size={18} className="text-secondary" />
-                    <span className="uppercase text-primary/70 font-medium">Capacity:</span> 500 TPH
+                  <div className="flex items-center gap-2.5 text-sm lg:text-xs font-bold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                    <Activity size={24} className="text-secondary lg:w-6 lg:h-6" />
+                    <span className="uppercase text-white/70 font-medium">Capacity:</span> 500 TPH
                   </div>
-                  <div className="flex items-center gap-2.5 text-sm font-bold text-primary">
-                    <Layers size={18} className="text-secondary" />
-                    <span className="uppercase text-primary/70 font-medium">Material:</span> Zinc Ore
+                  <div className="flex items-center gap-2.5 text-sm lg:text-xs font-bold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                    <Layers size={24} className="text-secondary lg:w-6 lg:h-6" />
+                    <span className="uppercase text-white/70 font-medium">Material:</span> Zinc Ore
                   </div>
                 </div>
                 
-                <div className="mt-4.5 flex flex-wrap gap-4">
-                  <Button href="#overview" variant="primary" className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5">
+                <div className="mt-4.5 lg:mt-3 flex flex-wrap gap-4">
+                  <Button href="#overview" variant="primary" className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5 lg:py-4">
                     EXPLORE PROJECT
                     <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1.5" />
                   </Button>
-                  <Button href="#contact" variant="outlineOrange" className="flex items-center justify-center gap-2 text-xs font-black tracking-[0.14em] px-8 py-5.5 text-white border-white/20 hover:bg-white/5">
+                  <Button href="#contact" variant="outlineOrange" className="flex items-center justify-center gap-2 text-xs font-black tracking-[0.14em] px-8 py-5.5 lg:py-4 text-white border-white/20 hover:bg-white/5">
                     <Download size={14} className="mr-0.5" />
                     DOWNLOAD CASE STUDY
                   </Button>
@@ -150,60 +150,60 @@ export default function CaseStudyPage() {
             </div>
 
             {/* Bottom Stats row */}
-            <div className="mt-4 bg-white text-slate-800 rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
-              <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
-                <div className="pt-4 md:pt-0 first:pt-0 flex items-center gap-4 md:px-4 first:pl-0 group">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                    <Building2 size={28} strokeWidth={1.5} />
+            <div className="mt-4 lg:mt-2 bg-white text-slate-800 rounded-2xl p-4 sm:p-6 md:p-8 lg:py-6 lg:px-6 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
+              <div className="grid gap-x-4 gap-y-6 lg:gap-y-0 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-start lg:divide-x lg:divide-slate-100">
+                <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-2 group">
+                  <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
+                    <Building2 size={40} strokeWidth={1.5} />
                   </div>
-                  <div className="text-left">
-                    <h4 className="text-2xl font-black text-primary leading-none">500 TPH</h4>
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">Plant Capacity</p>
-                  </div>
-                </div>
-                <div className="pt-4 md:pt-0 flex items-center gap-4 md:px-4 group">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                    <Shield size={28} strokeWidth={1.5} />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-2xl font-black text-primary leading-none">98%</h4>
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">Plant Availability</p>
+                  <div className="min-w-0">
+                    <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">500 TPH</h4>
+                    <p className="text-[9px] sm:text-[10px] lg:text-[8px] font-black text-slate-400 uppercase tracking-wider mt-1 sm:mt-1.5 lg:mt-1 leading-tight">Plant Capacity</p>
                   </div>
                 </div>
-                <div className="pt-4 md:pt-0 flex items-center gap-4 md:px-4 group">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                    <TrendingUp size={28} strokeWidth={1.5} />
+                <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-4 group">
+                  <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
+                    <Shield size={40} strokeWidth={1.5} />
                   </div>
-                  <div className="text-left">
-                    <h4 className="text-2xl font-black text-primary leading-none">35%</h4>
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">Increase in Productivity</p>
-                  </div>
-                </div>
-                <div className="pt-4 md:pt-0 flex items-center gap-4 md:px-4 group">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                    <Clock size={28} strokeWidth={1.5} />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-2xl font-black text-primary leading-none">24/7</h4>
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">Continuous Operation</p>
+                  <div className="min-w-0">
+                    <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">98%</h4>
+                    <p className="text-[9px] sm:text-[10px] lg:text-[8px] font-black text-slate-400 uppercase tracking-wider mt-1 sm:mt-1.5 lg:mt-1 leading-tight">Plant Availability</p>
                   </div>
                 </div>
-                <div className="pt-4 md:pt-0 flex items-center gap-4 md:px-4 group">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                    <Handshake size={28} strokeWidth={1.5} />
+                <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-4 group">
+                  <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
+                    <TrendingUp size={40} strokeWidth={1.5} />
                   </div>
-                  <div className="text-left">
-                    <h4 className="text-2xl font-black text-primary leading-none">End-to-End</h4>
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">Solution Delivered</p>
+                  <div className="min-w-0">
+                    <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">35%</h4>
+                    <p className="text-[9px] sm:text-[10px] lg:text-[8px] font-black text-slate-400 uppercase tracking-wider mt-1 sm:mt-1.5 lg:mt-1 leading-tight">Increase in Productivity</p>
                   </div>
                 </div>
-                <div className="pt-4 md:pt-0 flex items-center gap-4 md:px-4 group">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                    <Headphones size={28} strokeWidth={1.5} />
+                <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-4 group">
+                  <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
+                    <Clock size={40} strokeWidth={1.5} />
                   </div>
-                  <div className="text-left">
-                    <h4 className="text-2xl font-black text-primary leading-none">Lifetime</h4>
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1.5 leading-tight">After-Sales Support</p>
+                  <div className="min-w-0">
+                    <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">24/7</h4>
+                    <p className="text-[9px] sm:text-[10px] lg:text-[8px] font-black text-slate-400 uppercase tracking-wider mt-1 sm:mt-1.5 lg:mt-1 leading-tight">Continuous Operation</p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-4 group">
+                  <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
+                    <Handshake size={40} strokeWidth={1.5} />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">End-to-End</h4>
+                    <p className="text-[9px] sm:text-[10px] lg:text-[8px] font-black text-slate-400 uppercase tracking-wider mt-1 sm:mt-1.5 lg:mt-1 leading-tight">Solution Delivered</p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-4 group">
+                  <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
+                    <Headphones size={40} strokeWidth={1.5} />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">Lifetime</h4>
+                    <p className="text-[9px] sm:text-[10px] lg:text-[8px] font-black text-slate-400 uppercase tracking-wider mt-1 sm:mt-1.5 lg:mt-1 leading-tight">After-Sales Support</p>
                   </div>
                 </div>
               </div>
@@ -234,70 +234,70 @@ export default function CaseStudyPage() {
                 </p>
 
                 {/* 6 Grid Metrics */}
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Building2 size={24} />
+                <div className="mt-8 grid gap-3 grid-cols-2">
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                      <Building2 size={20} className="sm:w-6 sm:h-6" />
                     </div>
-                    <div>
-                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Client Industry</p>
-                      <h4 className="text-base font-black uppercase text-primary mt-1">Mining Industry</h4>
-                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">Zinc Ore Processing</p>
-                    </div>
-                  </div>
-
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <MapPin size={24} />
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Location</p>
-                      <h4 className="text-base font-black uppercase text-primary mt-1">Udaipur, Rajasthan</h4>
-                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">India</p>
+                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
+                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Client Industry</p>
+                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">Mining Industry</h4>
+                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">Zinc Ore Processing</p>
                     </div>
                   </div>
 
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Activity size={24} />
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                      <MapPin size={20} className="sm:w-6 sm:h-6" />
                     </div>
-                    <div>
-                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Plant Capacity</p>
-                      <h4 className="text-base font-black uppercase text-primary mt-1">500 TPH</h4>
-                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">Crushing & Screening Plant</p>
-                    </div>
-                  </div>
-
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Layers size={24} />
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Material Type</p>
-                      <h4 className="text-base font-black uppercase text-primary mt-1">Zinc Ore</h4>
-                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">Up to 400mm Feed Size</p>
+                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
+                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Location</p>
+                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">Udaipur, Rajasthan</h4>
+                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">India</p>
                     </div>
                   </div>
 
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                      <Activity size={20} className="sm:w-6 sm:h-6" />
+                    </div>
+                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
+                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Plant Capacity</p>
+                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">500 TPH</h4>
+                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">Crushing & Screening Plant</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                      <Layers size={20} className="sm:w-6 sm:h-6" />
+                    </div>
+                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
+                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Material Type</p>
+                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">Zinc Ore</h4>
+                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">Up to 400mm Feed Size</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
                       <Calendar size={20} />
                     </div>
-                    <div>
-                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Project Duration</p>
-                      <h4 className="text-base font-black uppercase text-primary mt-1">14 Months</h4>
-                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">Design to Commissioning</p>
+                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
+                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Project Duration</p>
+                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">14 Months</h4>
+                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">Design to Commissioning</p>
                     </div>
                   </div>
 
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-8 flex items-start gap-5">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
+                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
                       <Wrench size={20} />
                     </div>
-                    <div>
-                      <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Machines Supplied</p>
-                      <h4 className="text-base font-black uppercase text-primary mt-1">4 Major Machines</h4>
-                      <p className="text-sm text-slate-500 font-medium leading-none mt-1">Jaw, Cone, Screen, Conveyors</p>
+                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
+                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Machines Supplied</p>
+                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">4 Major Machines</h4>
+                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">Jaw, Cone, Screen, Conveyors</p>
                     </div>
                   </div>
                 </div>

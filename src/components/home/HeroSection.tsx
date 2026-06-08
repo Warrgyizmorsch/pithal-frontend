@@ -9,11 +9,11 @@ const heroMachinePoster = "/images/hero/hero-machine-photo.png";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-white h-[calc(100vh-4.25rem)] sm:h-[calc(100vh-4.75rem)] xl:h-[calc(100vh-5.25rem)]" id="home">
+    <section className="relative overflow-hidden bg-white flex flex-col lg:h-[calc(100vh-4.25rem)] xl:h-[calc(100vh-5.25rem)]" id="home">
       {/* Desktop Crushing Machine Video */}
       
 
-      <Container className="relative flex h-full flex-col gap-3 pt-7 pb-6 sm:pt-10 sm:pb-8 lg:pt-[2.25rem] lg:pb-8">
+      <Container className="relative flex flex-1 flex-col gap-3 pt-7 pb-6 sm:pt-10 sm:pb-8 lg:pt-[2.25rem] lg:pb-8">
         <div className="pointer-events-none absolute right-0 top-[50%] hidden h-[min(36rem,95%)] w-[75vw] -translate-y-1/2 lg:block xl:h-[min(50rem,100%)] xl:w-full">
         <video
           aria-label="Mobile crushing machine operating in a quarry"
@@ -62,12 +62,12 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
-        {/* Mobile/Tablet Inline Video */}
-        <div className="relative z-0 mt-5 aspect-[1672/941] w-full max-h-[17rem] overflow-hidden sm:mt-7 sm:max-h-[22rem] lg:hidden">
+        {/* Mobile/Tablet Background Video */}
+        <div className="pointer-events-none absolute inset-0 z-0 lg:hidden opacity-60">
           <video
             aria-label="Mobile crushing machine operating in a quarry"
             autoPlay
-            className="h-full w-full object-contain object-center"
+            className="h-full w-full object-cover object-center"
             loop
             muted
             playsInline

@@ -914,7 +914,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO & STATS BANNER */}
         {/* ========================================================================= */}
-        <section className="relative min-h-[calc(100svh-4.25rem)] overflow-hidden bg-white text-primary sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)]">
+        <section className="relative overflow-hidden bg-white text-primary lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">
           <Image
             alt="Pithal complete crushing and screening plant"
             className="object-cover object-center"
@@ -928,7 +928,7 @@ export default function SolutionsPage() {
             className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_22%,rgba(255,255,255,.88)_38%,rgba(255,255,255,.36)_58%,rgba(255,255,255,0)_78%)]"
           />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
-          <Container className="relative z-10 flex min-h-[calc(100svh-4.25rem)] flex-col justify-between gap-6 py-[30px] sm:min-h-[calc(100svh-4.75rem)] sm:gap-7 xl:min-h-[calc(100svh-5.25rem)]">
+          <Container className="relative z-10 flex flex-col gap-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
             <div>
               {/* Breadcrumb */}
               <div className="mb-3 flex items-center gap-2 text-xs font-medium text-primary/70 sm:mb-4">

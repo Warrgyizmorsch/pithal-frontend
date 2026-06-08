@@ -284,7 +284,7 @@ export default function GlobalPresencePage() {
         {/* ══════════════════════════════════════════════════════════════════
     SECTION 1 — HERO
     ══════════════════════════════════════════════════════════════════ */}
-        <section className="relative isolate overflow-hidden bg-[#f4f8fc] h-[calc(100vh-4.25rem)] sm:h-[calc(100vh-4.75rem)] xl:h-[calc(100vh-5.25rem)] min-h-[600px] flex items-center py-4 lg:py-6">
+        <section className="relative isolate overflow-hidden bg-[#f4f8fc] flex items-center py-8 lg:py-6 min-h-[calc(100vh-4.25rem)] sm:min-h-[calc(100vh-4.75rem)] lg:h-[calc(100vh-4.25rem)] xl:h-[calc(100vh-5.25rem)]">
           <div className="absolute inset-0 z-0 overflow-hidden">
             <Image
               src="/images/global-presense/hero.png"
@@ -299,7 +299,7 @@ export default function GlobalPresencePage() {
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f4f8fc] via-[#f4f8fc]/50 to-transparent" />
           </div>
 
-          <Container className="relative z-10 max-w-[1520px] px-5 sm:px-8 lg:px-10 w-full h-full flex flex-col justify-between">
+          <Container className="relative z-10 max-w-[1520px] px-5 sm:px-8 lg:px-10 w-full flex flex-col justify-between gap-8 py-4 lg:h-full">
             {/* Breadcrumb */}
             <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-slate-500">
               <Link href="/" className="hover:text-secondary transition-colors flex items-center gap-1.5">
@@ -631,7 +631,7 @@ export default function GlobalPresencePage() {
                     STRENGTH
                   </h4>
                 </div>
-                <div className="grid w-full gap-4 sm:grid-cols-2 xl:grid-cols-5 justify-items-center">
+                <div className="grid w-full gap-3 grid-cols-2 sm:grid-cols-2 xl:grid-cols-5">
                   {[
                     {
                       icon: MapPin,
@@ -661,21 +661,23 @@ export default function GlobalPresencePage() {
                   ].map((it, i) => (
                     <div
                       key={i}
-                      className="w-full max-w-[15rem] rounded-[1.75rem] border border-slate-200 bg-white px-3 py-3 shadow-sm transition-shadow hover:shadow-md"
+                      className="w-full rounded-[1.25rem] border border-slate-200 bg-white p-3 sm:p-4 shadow-sm transition-shadow hover:shadow-md flex flex-col justify-between last:col-span-2 last:sm:col-span-1 last:xl:col-span-1"
                     >
-                      <div className="flex items-start gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#FFECE0] text-[#FA5902]">
-                          <it.icon className="w-4.5 h-4.5 stroke-[1.7]" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="text-[0.68rem] font-black text-slate-950 uppercase tracking-[0.28em] leading-tight">
-                            {it.title}
+                      <div>
+                        <div className="flex items-start gap-2.5 sm:gap-3">
+                          <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFECE0] text-[#FA5902]">
+                            <it.icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.7]" />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <div className="text-[10px] sm:text-[11px] font-black text-slate-950 uppercase tracking-wider leading-tight">
+                              {it.title}
+                            </div>
                           </div>
                         </div>
+                        <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-500">
+                          {it.desc}
+                        </p>
                       </div>
-                      <p className="mt-2 text-sm leading-5 text-slate-500">
-                        {it.desc}
-                      </p>
                     </div>
                   ))}
                 </div>
@@ -698,21 +700,21 @@ export default function GlobalPresencePage() {
                 className="object-cover object-[72%_center]"
                 priority
               />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,#fff_33%,rgba(255,255,255,0.92)_45%,rgba(255,255,255,0.22)_64%,rgba(255,255,255,0)_100%)]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/50 to-white/20 lg:bg-[linear-gradient(90deg,#fff_0%,#fff_33%,rgba(255,255,255,0.92)_45%,rgba(255,255,255,0.22)_64%,rgba(255,255,255,0)_100%)]" />
               <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white via-white/80 to-transparent" />
 
               <div className="relative z-10 flex min-h-[590px] flex-col justify-between px-5 pb-7 pt-8 sm:px-8 lg:min-h-[425px] lg:px-11 lg:pt-9 max-w-[1520px] mx-auto">
                 <div className="max-w-[750px]">
                   {/* ✅ matching Careers tag style */}
                   <div className="mb-4 flex items-center gap-3">
-                    <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary max-lg:drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
                       OUR EXPORT CAPABILITY
                     </span>
                     <span className="h-[1.5px] w-12 bg-secondary" />
                   </div>
 
                   {/* ✅ Matching Careers H2 size and leading */}
-                  <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
+                  <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4 max-lg:drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]">
                     BUILT TO MEET WORLDWIDE
                     <span className="block text-secondary">
                       STANDARDS. DELIVERED WITH CARE.
@@ -720,7 +722,7 @@ export default function GlobalPresencePage() {
                   </h2>
                   
                   {/* ✅ Matching Careers paragraph style */}
-                  <p className="mt-5 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg mb-8">
+                  <p className="mt-5 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg mb-8 max-lg:drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]">
                     From engineering to export logistics, we ensure our
                     solutions reach you safely, compliantly and on time -
                     anywhere in the world.
@@ -757,10 +759,10 @@ export default function GlobalPresencePage() {
                   ].map((c, i) => (
                     <div key={i} className="px-3 text-center">
                       <c.icon className="mx-auto mb-3 h-10 w-10 stroke-[1.65] text-[#fa5902]" />
-                      <div className="mx-auto max-w-[112px] text-[12px] font-black leading-[1.25] text-[#061f49]">
+                      <div className="mx-auto max-w-[112px] text-[12px] font-black leading-[1.25] text-[#061f49] max-lg:drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
                         {c.title}
                       </div>
-                      <div className="mx-auto mt-3 max-w-[120px] text-[12px] font-semibold leading-5 text-[#40516d]">
+                      <div className="mx-auto mt-3 max-w-[120px] text-[12px] font-semibold leading-5 text-[#40516d] max-lg:drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
                         {c.desc}
                       </div>
                     </div>
@@ -2189,7 +2191,7 @@ export default function GlobalPresencePage() {
             SECTION 9 — PARTNERSHIPS
             ══════════════════════════════════════════════════════════════════ */}
         <section className="relative overflow-hidden bg-white py-16">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1520px] h-[220px] pointer-events-none opacity-90">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1520px] h-[220px] pointer-events-none opacity-90 hidden lg:block">
             <Image
               src="/images/global-presense/partnership-assets/background-section-9.png"
               alt=""
@@ -2223,7 +2225,7 @@ export default function GlobalPresencePage() {
               </p>
             </div>
 
-            <div className="grid items-start gap-6 lg:grid-cols-4">
+            <div className="grid items-start gap-6 gap-y-12 lg:grid-cols-4">
               <div className="relative rounded-[12px] border border-slate-100 bg-white px-3 pb-3 pt-9 shadow-sm">
                 <div className="absolute left-1/2 top-[-23px] flex h-[34px] w-[220px] -translate-x-1/2 items-center justify-center gap-2 rounded-[4px] bg-primary text-white shadow-md">
                   <Factory className="h-4 w-4 text-white" />
@@ -2814,7 +2816,7 @@ export default function GlobalPresencePage() {
 
             <div className="mt-6 grid overflow-hidden rounded-[1rem] bg-primary text-white shadow-lg lg:grid-cols-[350px_1fr_310px]">
               <div className="relative flex min-h-[96px] items-center gap-5 px-8">
-                <div className="absolute inset-0 opacity-20">
+                <div className="absolute inset-0 opacity-45">
                   <Image
                     src="/images/global-presense/section-10-bottombaar.png"
                     alt=""
@@ -2881,20 +2883,20 @@ export default function GlobalPresencePage() {
         {/* ══════════════════════════════════════════════════════════════════
             SECTION 11 — CTA
             ══════════════════════════════════════════════════════════════════ */}
-        <section className="bg-slate-50 py-16">
+        <section className="bg-slate-50 py-8 sm:py-16">
           <Container>
-            <div className="overflow-hidden rounded-[2rem] bg-white p-3 shadow-xl">
-              <div className="relative min-h-[480px] overflow-hidden rounded-[1.75rem]">
+            <div className="overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-white p-2 sm:p-3 shadow-xl">
+              <div className="relative min-h-[330px] sm:min-h-[480px] overflow-hidden rounded-[1.25rem] sm:rounded-[1.75rem]">
                 <Image
                   src="/images/global-presense/global-cta.svg"
                   alt=""
                   fill
                   className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
-                <div className="relative z-10 max-w-[700px] px-10 py-16">
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent max-md:bg-white/95" />
+                <div className="relative z-10 max-w-[700px] px-5 py-10 sm:px-10 sm:py-16">
                   {/* ✅ matching Careers tag style */}
-                  <div className="mb-6 flex items-center gap-3">
+                  <div className="mb-4 sm:mb-6 flex items-center gap-3">
                     <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
                       LET&apos;S BUILD THE FUTURE
                     </span>
@@ -2902,7 +2904,7 @@ export default function GlobalPresencePage() {
                   </div>
 
                   {/* ✅ Matching Careers H1 size and leading */}
-                  <h2 className="text-4xl sm:text-5xl lg:text-[4.5rem] font-extrabold text-primary leading-[1.05] uppercase mb-8">
+                  <h2 className="text-3xl sm:text-5xl lg:text-[4.5rem] font-extrabold text-primary leading-[1.1] sm:leading-[1.05] uppercase mb-6 sm:mb-8">
                     LET&apos;S BUILD
                     <br />
                     <span className="text-secondary">INDUSTRIAL SUCCESS</span>
@@ -2911,7 +2913,7 @@ export default function GlobalPresencePage() {
                   </h2>
 
                   {/* ✅ Matching Careers paragraph style */}
-                  <p className="mt-6 max-w-[500px] text-lg sm:text-xl font-medium leading-relaxed text-slate-600">
+                  <p className="mt-4 sm:mt-6 max-w-[500px] text-base sm:text-xl font-medium leading-relaxed text-slate-600">
                     Pithal Machines is ready to collaborate, engineer and deliver
                     world-class solutions that power industries and build a
                     stronger future together.
@@ -2919,8 +2921,8 @@ export default function GlobalPresencePage() {
                 </div>
               </div>
 
-              <div className="relative z-20 mx-10 mt-[-60px] overflow-hidden rounded-2xl border border-slate-100 bg-white/95 shadow-xl backdrop-blur-md">
-                <div className="grid divide-y divide-slate-100 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-5">
+              <div className="relative z-20 mx-3 sm:mx-10 mt-[-40px] sm:mt-[-60px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-xl">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-slate-200">
                   {[
                     {
                       icon: Globe,
@@ -2955,18 +2957,18 @@ export default function GlobalPresencePage() {
                   ].map((card) => (
                     <div
                       key={`${card.title}-${card.accent}`}
-                      className="flex min-h-[220px] flex-col items-center justify-center px-6 py-8 text-center transition-colors hover:bg-slate-50"
+                      className="flex min-h-[190px] flex-col items-center justify-center px-4 py-6 text-center transition-colors bg-white hover:bg-slate-50 last:col-span-2 last:sm:col-span-1 last:lg:col-span-1"
                     >
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-50 text-secondary mb-5 shadow-inner">
-                        <card.icon className="h-7 w-7 stroke-[1.8]" />
+                      <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-slate-50 text-secondary mb-4 sm:mb-5 shadow-inner">
+                        <card.icon className="h-6 w-6 sm:h-7 sm:w-7 stroke-[1.8]" />
                       </div>
-                      <h3 className="text-sm font-black uppercase leading-tight text-primary">
+                      <h3 className="text-xs sm:text-sm font-black uppercase leading-tight text-primary">
                         {card.title}
                         <br />
                         <span className="text-secondary">{card.accent}</span>
                       </h3>
-                      <span className="mt-3 h-[2px] w-6 bg-secondary/30" />
-                      <p className="mt-4 text-xs font-semibold leading-relaxed text-slate-500 max-w-[160px]">
+                      <span className="mt-2.5 h-[2px] w-6 bg-secondary/30" />
+                      <p className="mt-3 text-[10px] sm:text-xs font-semibold leading-relaxed text-slate-500 max-w-[160px]">
                         {card.desc}
                       </p>
                     </div>
@@ -2974,16 +2976,18 @@ export default function GlobalPresencePage() {
                 </div>
               </div>
 
-              <div className="mx-4 mt-6 grid overflow-hidden rounded-2xl bg-primary text-white shadow-lg lg:grid-cols-[350px_1fr_310px]">
-                <div className="relative min-h-[160px] overflow-hidden bg-primary-dark">
+              <div className="relative mx-4 mt-6 grid overflow-hidden rounded-2xl bg-primary text-white shadow-lg lg:grid-cols-[1fr_310px]">
+                {/* Background Image behind the words */}
+                <div className="absolute inset-0 z-0 pointer-events-none opacity-45">
                   <Image
                     src="/images/global-presense/section-11-bottombaar.png"
                     alt=""
                     fill
-                    className="object-cover opacity-30"
+                    className="object-cover object-center"
                   />
                 </div>
-                <div className="flex flex-col justify-center px-10 py-8">
+
+                <div className="relative z-10 flex flex-col justify-center px-6 py-8 sm:px-10">
                   <h3 className="text-2xl font-black uppercase text-white leading-tight">
                     ONE VISION. ONE WORLD.{" "}
                     <span className="text-secondary">ENDLESS POSSIBILITIES.</span>
@@ -3030,7 +3034,7 @@ export default function GlobalPresencePage() {
                     ))}
                   </div>
                 </div>
-                <div className="relative flex flex-col justify-center bg-secondary px-10 py-10 text-white lg:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]">
+                <div className="relative z-10 flex flex-col justify-center bg-secondary px-6 py-10 sm:px-10 text-white lg:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]">
                   <div className="relative h-12 w-full mb-6">
                     <Image
                       src="/images/global-presense/final-cta-logo-white.png"

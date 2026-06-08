@@ -120,7 +120,7 @@ function HeroSection() {
   const { hero, stats } = aboutPageData;
 
   return (
-    <section className="relative min-h-[calc(100svh-4.25rem)] overflow-hidden bg-white sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)]">
+    <section className="relative overflow-hidden bg-white lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">
       <Image
         alt="Pithal Machines industrial factory floor and quarry application background"
         className="object-cover object-center"
@@ -146,7 +146,7 @@ function HeroSection() {
         className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-dark/70 via-primary-dark/20 to-transparent"
       />
 
-      <Container className="relative z-10 flex min-h-[calc(100svh-4.25rem)] flex-col justify-between gap-6 py-4 sm:min-h-[calc(100svh-4.75rem)] sm:gap-8 sm:py-5 lg:py-6 xl:min-h-[calc(100svh-5.25rem)]">
+      <Container className="relative z-10 flex flex-col gap-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
         <div>
           <nav
             aria-label="Breadcrumb"
@@ -238,7 +238,7 @@ function HeroSection() {
                 </div>
               </article>
             ))}
-            <article className="relative col-span-2 min-h-[76px] overflow-hidden bg-primary-dark text-white sm:col-span-1 sm:min-h-[82px] lg:min-h-[92px]">
+            <article className="relative col-span-1 min-h-[76px] overflow-hidden bg-primary-dark text-white sm:col-span-1 sm:min-h-[82px] lg:min-h-[92px]">
               <div
                 aria-hidden
                 className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(250,89,2,0.18),transparent_35%)]"
@@ -253,7 +253,7 @@ function HeroSection() {
                   </p>
                   <ArrowRight
                     aria-hidden
-                    className="mt-2 text-secondary"
+                    className="mt-2 text-secondary animate-slide-right"
                     size={16}
                   />
                 </div>
@@ -567,6 +567,13 @@ function VisionMissionSection() {
           .md\\:clip-mission-card {
             clip-path: polygon(28px 0, 100% 0, 100% 100%, 0 100%, 0 28px);
           }
+        }
+        @keyframes slide-right {
+          0%, 100% { transform: translateX(0); }
+          50% { transform: translateX(5px); }
+        }
+        .animate-slide-right {
+          animation: slide-right 1.2s ease-in-out infinite;
         }
       `}</style>
       </Container>

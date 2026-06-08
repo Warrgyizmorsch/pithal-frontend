@@ -481,23 +481,25 @@ export default function CareersPage() {
 
           {/* Stats Card Banner */}
           <div className="relative z-20 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 pb-0 pt-4 mt-auto">
-            <div className="grid gap-0 rounded-2xl bg-[#031b40] p-6 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] md:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-slate-700/50">
+            <div className="grid gap-x-4 gap-y-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 rounded-2xl bg-[#031b40] p-4 sm:p-6 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] lg:divide-x lg:divide-slate-700/50">
               {heroStats.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-4 lg:px-6 first:pl-0 last:pr-0"
+                  className="flex flex-col min-[420px]:flex-row items-center min-[420px]:items-start text-center min-[420px]:text-left gap-3 sm:gap-4 p-2 sm:p-4 lg:px-6"
                 >
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center">
-                    {item.icon}
+                  <div className="flex h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 shrink-0 items-center justify-center">
+                    <div className="scale-75 sm:scale-90 lg:scale-100">
+                      {item.icon}
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-3xl sm:text-[2.2rem] font-extrabold tracking-tight text-white leading-none">
+                  <div className="min-w-0">
+                    <div className="text-2xl sm:text-3xl lg:text-[2.2rem] font-extrabold tracking-tight text-white leading-none">
                       {item.value}
                     </div>
-                    <p className="mt-1.5 text-xs sm:text-[13px] font-extrabold uppercase tracking-wider text-[#fa5902]">
+                    <p className="mt-1.5 text-[10px] sm:text-xs lg:text-[13px] font-extrabold uppercase tracking-wider text-[#fa5902] truncate">
                       {item.title}
                     </p>
-                    <p className="mt-2 text-[13px] sm:text-sm leading-relaxed text-slate-300 font-medium">
+                    <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-slate-300 font-medium line-clamp-2 lg:line-clamp-none">
                       {item.desc}
                     </p>
                   </div>
@@ -1181,7 +1183,7 @@ export default function CareersPage() {
             </div>
 
             {/* Top Stats */}
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-6 mb-12 max-w-[1200px] mx-auto w-full">
               {[
                 {
                   value: "150,000+",
@@ -1244,10 +1246,10 @@ export default function CareersPage() {
                   ),
                 },
               ].map((stat, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full border-2 border-primary/20 text-primary flex items-center justify-center shrink-0">
+                <div key={i} className="flex items-center gap-3.5 px-2 justify-center min-[420px]:justify-start last:col-span-2 last:md:col-span-1 last:lg:col-span-1 last:flex">
+                  <div className="w-11 h-11 rounded-full border-2 border-primary/20 text-primary flex items-center justify-center shrink-0">
                     <svg
-                      className="w-6 h-6"
+                      className="w-5.5 h-5.5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -1255,11 +1257,11 @@ export default function CareersPage() {
                       {stat.icon}
                     </svg>
                   </div>
-                  <div>
-                    <div className="text-[22px] font-extrabold text-secondary leading-none">
+                  <div className="text-left min-w-0">
+                    <div className="text-xl sm:text-[22px] font-extrabold text-secondary leading-none">
                       {stat.value}
                     </div>
-                    <div className="text-[11px] font-bold text-gray-500 uppercase tracking-wide mt-1">
+                    <div className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-wider mt-1.5 leading-tight">
                       {stat.label}
                     </div>
                   </div>
@@ -1633,7 +1635,7 @@ export default function CareersPage() {
               </div>
 
               {/* Right Side Image */}
-              <div className="w-full lg:w-[45%] xl:w-[40%] relative min-h-[300px] lg:min-h-full">
+              <div className="hidden lg:block lg:w-[45%] xl:w-[40%] relative lg:min-h-full">
                 {/* Gradient overlay to smoothly blend dark section and image on large screens if needed, otherwise distinct line */}
                 <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-primary-dark to-transparent z-10"></div>
                 <img
@@ -1652,7 +1654,7 @@ export default function CareersPage() {
 
         {/* ── SECTION 8: GROW YOUR SKILLS ── */}
         <section className="py-0 bg-white relative w-full overflow-hidden">
-          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 relative z-10 flex flex-col lg:flex-row items-center min-h-[460px]">
+          <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 relative z-10 flex flex-col lg:flex-row items-center min-h-0 lg:min-h-[460px]">
             {/* Left Column - Content */}
             <div className="w-full lg:w-[48%] py-12 lg:py-16 text-left">
               {/* Tag */}
@@ -1688,13 +1690,10 @@ export default function CareersPage() {
               {/* Smooth Fade Transition from Left */}
               <div className="absolute inset-y-0 left-0 w-[120px] bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
               <img
-                src="/careerimg/training%20%26%20upskilling.jpg"
+                src="/careerimg/training-and-upskilling.jpg"
                 alt="Training and Growth"
                 className="w-full h-full object-cover object-center"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80";
-                }}
+                
               />
             </div>
           </div>
@@ -1702,7 +1701,7 @@ export default function CareersPage() {
           {/* Fallback image for mobile/tablet where absolute column is hidden */}
           <div className="w-full h-[300px] sm:h-[380px] relative lg:hidden z-0">
             <img
-              src="/careerimg/training%20%26%2520upskilling.jpg"
+              src="/careerimg/training-and-upskilling.jpg"
               alt="Training and Growth"
               className="w-full h-full object-cover object-center"
               onError={(e) => {
@@ -2008,10 +2007,10 @@ export default function CareersPage() {
             {/* Journey Steps (6 Columns) */}
             <div className="relative mb-12">
               {/* Background Connecting Dotted Line (Desktop Only) */}
-              <div className="hidden lg:block absolute top-[27px] left-[8.33%] right-[8.33%] border-t-2 border-dotted border-slate-300 z-0 opacity-80"></div>
+              <div className="hidden lg:block absolute top-[48px] left-[8.33%] right-[8.33%] border-t-2 border-dotted border-slate-300 z-0 opacity-80"></div>
               
               {/* Orange Midpoint Dots (Desktop Only) */}
-              <div className="hidden lg:block absolute top-[27px] left-0 right-0 z-0 pointer-events-none">
+              <div className="hidden lg:block absolute top-[48px] left-0 right-0 z-0 pointer-events-none">
                 <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '16.66%' }} />
                 <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '33.33%' }} />
                 <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '50%' }} />
@@ -2432,13 +2431,9 @@ export default function CareersPage() {
               {/* Left side: Image */}
               <div className="w-full lg:w-[28%] relative min-h-[250px] lg:min-h-[auto]">
                 <img
-                  src="/placeholder-banner-worker.jpg"
+                  src="careerimg/32.jpg"
                   alt="Worker"
-                  className="absolute inset-0 w-full h-full object-cover object-top"
-                  onError={(e) => {
-                    e.currentTarget.src =
-                      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80";
-                  }}
+                  className="absolute inset-0 w-full h-full object-cover object-[2%_top]"
                 />
                 {/* Subtle gradient to blend into the dark blue on desktop */}
                 <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-primary-dark to-transparent"></div>
