@@ -10,6 +10,7 @@ import {
   Shield,
   CheckCircle2,
   TrendingUp,
+  TrendingDown,
   FileText,
   Workflow,
   Wrench,
@@ -25,6 +26,9 @@ import {
   Layers,
   Clock,
   Check,
+  Ban,
+  Shuffle,
+  Maximize2,
 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
@@ -104,7 +108,8 @@ export default function CaseStudyPage() {
                 </div>
                 
                 <h1 className="text-[clamp(2.5rem,6vw,3.75rem)] lg:text-[clamp(2.5rem,4vw,3.3rem)] font-black uppercase leading-[1.02] tracking-tight text-white">
-                  RAJASTHAN ZINC <br />
+                  RAJASTHAN<span className="mx-3">ZINC</span>
+                  <br />
                   CRUSHING PLANT
                 </h1>
                 
@@ -154,7 +159,7 @@ export default function CaseStudyPage() {
               <div className="grid gap-x-4 gap-y-6 lg:gap-y-0 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-start lg:divide-x lg:divide-slate-100">
                 <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-2 group">
                   <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
-                    <Building2 size={40} strokeWidth={1.5} />
+                    <Building2 size={60} strokeWidth={1.5} />
                   </div>
                   <div className="min-w-0">
                     <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">500 TPH</h4>
@@ -163,7 +168,7 @@ export default function CaseStudyPage() {
                 </div>
                 <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-4 group">
                   <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
-                    <Shield size={40} strokeWidth={1.5} />
+                    <Shield size={60} strokeWidth={1.5} />
                   </div>
                   <div className="min-w-0">
                     <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">98%</h4>
@@ -172,7 +177,7 @@ export default function CaseStudyPage() {
                 </div>
                 <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-4 group">
                   <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
-                    <TrendingUp size={40} strokeWidth={1.5} />
+                    <TrendingUp size={60} strokeWidth={1.5} />
                   </div>
                   <div className="min-w-0">
                     <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">35%</h4>
@@ -181,7 +186,7 @@ export default function CaseStudyPage() {
                 </div>
                 <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-4 group">
                   <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
-                    <Clock size={40} strokeWidth={1.5} />
+                    <Clock size={60} strokeWidth={1.5} />
                   </div>
                   <div className="min-w-0">
                     <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">24/7</h4>
@@ -190,7 +195,7 @@ export default function CaseStudyPage() {
                 </div>
                 <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-4 group">
                   <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
-                    <Handshake size={40} strokeWidth={1.5} />
+                    <Handshake size={60} strokeWidth={1.5} />
                   </div>
                   <div className="min-w-0">
                     <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">End-to-End</h4>
@@ -199,7 +204,7 @@ export default function CaseStudyPage() {
                 </div>
                 <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-4 group">
                   <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
-                    <Headphones size={40} strokeWidth={1.5} />
+                    <Headphones size={60} strokeWidth={1.5} />
                   </div>
                   <div className="min-w-0">
                     <h4 className="text-xl sm:text-2xl lg:text-lg font-black text-primary leading-none">Lifetime</h4>
@@ -214,14 +219,14 @@ export default function CaseStudyPage() {
         {/* ========================================================================= */}
         {/* SECTION 2: EXECUTIVE SUMMARY */}
         {/* ========================================================================= */}
-        <section className="py-16 lg:py-24 bg-white" id="overview">
+        <section className="py-10 lg:py-16 bg-white" id="overview">
           <Container>
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
               {/* Left text column */}
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="h-[1.5px] w-6 bg-secondary" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.24em] text-secondary">
+                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
                     PROJECT OVERVIEW
                   </span>
                 </div>
@@ -232,83 +237,79 @@ export default function CaseStudyPage() {
                 <p className="mt-5 text-lg md:text-xl leading-relaxed text-slate-600 font-medium">
                   This project was executed to deliver a high-performance crushing and screening solution for zinc ore processing with maximum efficiency, reliability, and minimal downtime.
                 </p>
+              </div>
 
-                {/* 6 Grid Metrics */}
-                <div className="mt-8 grid gap-3 grid-cols-2">
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Building2 size={20} className="sm:w-6 sm:h-6" />
-                    </div>
-                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
-                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Client Industry</p>
-                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">Mining Industry</h4>
-                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">Zinc Ore Processing</p>
-                    </div>
-                  </div>
+              {/* Right: reduced height image */}
+              <div className="relative aspect-[16/7] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-md bg-[url('/projectimg/overview.jpg')] bg-cover bg-center">
+                <div className="absolute inset-0 bg-slate-950/10 z-10" />
+              </div>
+            </div>
 
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <MapPin size={20} className="sm:w-6 sm:h-6" />
-                    </div>
-                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
-                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Location</p>
-                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">Udaipur, Rajasthan</h4>
-                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">India</p>
-                    </div>
-                  </div>
-
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Activity size={20} className="sm:w-6 sm:h-6" />
-                    </div>
-                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
-                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Plant Capacity</p>
-                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">500 TPH</h4>
-                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">Crushing & Screening Plant</p>
-                    </div>
-                  </div>
-
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Layers size={20} className="sm:w-6 sm:h-6" />
-                    </div>
-                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
-                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Material Type</p>
-                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">Zinc Ore</h4>
-                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">Up to 400mm Feed Size</p>
-                    </div>
-                  </div>
-
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Calendar size={20} />
-                    </div>
-                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
-                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Project Duration</p>
-                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">14 Months</h4>
-                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">Design to Commissioning</p>
-                    </div>
-                  </div>
-
-                  <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-3 sm:p-5 lg:p-6 flex flex-col min-[480px]:flex-row items-center min-[480px]:items-start gap-2.5 min-[480px]:gap-4">
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                      <Wrench size={20} />
-                    </div>
-                    <div className="text-center min-[480px]:text-left min-w-0 w-full">
-                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Machines Supplied</p>
-                      <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1 truncate">4 Major Machines</h4>
-                      <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1 truncate">Jaw, Cone, Screen, Conveyors</p>
-                    </div>
-                  </div>
+            {/* 6 Metric Cards — 3 columns, below both columns */}
+            <div className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4 sm:p-5 flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-sm">
+                  <Building2 size={30} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Client Industry</p>
+                  <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1">Mining Industry</h4>
+                  <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1">Zinc Ore Processing</p>
                 </div>
               </div>
 
-              {/* Right column representative photo */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-md bg-[url('/projectimg/overview.jpg')] bg-cover bg-center">
-                <div className="absolute inset-0 bg-slate-950/10 z-10" />
-                <div className="absolute inset-0 border border-dashed border-slate-700/60 m-4 rounded-xl flex items-center justify-center">
-                  <div className="text-center p-4">
-                   </div>
+              <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4 sm:p-5 flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-sm">
+                  <MapPin size={30} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Location</p>
+                  <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1">Udaipur, Rajasthan</h4>
+                  <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1">India</p>
+                </div>
+              </div>
+
+              <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4 sm:p-5 flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-sm">
+                  <Activity size={30} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Plant Capacity</p>
+                  <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1">500 TPH</h4>
+                  <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1">Crushing & Screening Plant</p>
+                </div>
+              </div>
+
+              <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4 sm:p-5 flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-sm">
+                  <Layers size={30} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Material Type</p>
+                  <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1">Zinc Ore</h4>
+                  <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1">Up to 400mm Feed Size</p>
+                </div>
+              </div>
+
+              <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4 sm:p-5 flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-sm">
+                  <Calendar size={30} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Project Duration</p>
+                  <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1">14 Months</h4>
+                  <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1">Design to Commissioning</p>
+                </div>
+              </div>
+
+              <div className="bg-slate-50/70 border border-slate-100 rounded-xl p-4 sm:p-5 flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-sm">
+                  <Wrench size={30} />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Machines Supplied</p>
+                  <h4 className="text-xs sm:text-sm lg:text-base font-black uppercase text-primary mt-1">4 Major Machines</h4>
+                  <p className="text-[9px] sm:text-xs text-slate-500 font-medium leading-none mt-1">Jaw, Cone, Screen, Conveyors</p>
                 </div>
               </div>
             </div>
@@ -339,22 +340,22 @@ export default function CaseStudyPage() {
                     The client was facing multiple operational bottlenecks that were impacting productivity, increasing downtime and affecting the overall profitability of the plant.
                   </p>
 
-                    {/* 5 Checklist Items */}
-                  <div className="mt-7 space-y-6">
+                    {/* 5 Challenge Cards */}
+                  <div className="mt-7 grid gap-3">
                     {[
-                      { title: "Low Productivity", desc: "Existing plant configuration was unable to achieve desired output, leading to low production rates." },
-                      { title: "High Downtime", desc: "Frequent breakdowns and inefficient equipment resulted in unplanned downtime and revenue loss." },
-                      { title: "Material Blockage", desc: "High moisture content and improper material flow caused blockages and frequent stoppages." },
-                      { title: "Inconsistent Output", desc: "Irregular product gradation and low-quality output affected downstream operations." },
-                      { title: "Scaling & Future Readiness", desc: "The existing setup lacked scalability to meet future production demands." }
+                      { icon: TrendingDown, title: "Low Productivity", desc: "Existing plant configuration was unable to achieve desired output, leading to low production rates." },
+                      { icon: Clock, title: "High Downtime", desc: "Frequent breakdowns and inefficient equipment resulted in unplanned downtime and revenue loss." },
+                      { icon: Ban, title: "Material Blockage", desc: "High moisture content and improper material flow caused blockages and frequent stoppages." },
+                      { icon: Shuffle, title: "Inconsistent Output", desc: "Irregular product gradation and low-quality output affected downstream operations." },
+                      { icon: Maximize2, title: "Scaling & Future Readiness", desc: "The existing setup lacked scalability to meet future production demands." }
                     ].map((item, i) => (
-                      <div key={i} className="flex gap-5 items-start">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white border border-slate-100 text-secondary shadow-sm">
-                          <AlertTriangle size={18} className="text-secondary" />
+                      <div key={i} className="flex gap-4 items-start bg-white border border-slate-100 rounded-xl p-4 shadow-sm">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary shadow-sm">
+                          <item.icon size={26} className="text-secondary" />
                         </div>
                         <div>
                           <h4 className="text-base font-black uppercase tracking-wider text-primary leading-tight">{item.title}</h4>
-                          <p className="text-base text-slate-500 font-medium leading-relaxed mt-1.5">{item.desc}</p>
+                          <p className="text-sm text-slate-500 font-medium leading-relaxed mt-1">{item.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -376,10 +377,9 @@ export default function CaseStudyPage() {
                 </div>
 
                 {/* Warning Card */}
-                <div className="bg-[#031b40] rounded-2xl p-8 md:p-10 text-white border border-white/5 shadow-md flex items-start gap-6">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded bg-white/10 text-secondary shadow">
-                    <AlertTriangle size={32} className="text-secondary animate-pulse" />
-                  </div>
+                <div className="bg-[#031b40] rounded-2xl p-8 md:p-10 text-white border border-white/5 shadow-md flex items-center gap-6">
+                  <AlertTriangle size={96} className="text-secondary animate-pulse shrink-0" />
+                  <span className="w-[1.5px] self-stretch bg-white/20 shrink-0 rounded-full" />
                   <div>
                     <h4 className="text-sm font-black uppercase tracking-widest text-secondary">
                       LIMITING TOTAL POTENTIAL

@@ -503,9 +503,9 @@ const globalReachPoints = [
 const globalFlagsCards = [
   {
     name: "INDIA",
-    flag: "🇮🇳",
+    flag: "/images/global-presense/partnership-assets/flags/india.png",
     desc: "300 TPH Crushing & Screening Plant",
-    image: "/solutionspage/global capability 1.jpg",
+    image: "/solutionspage/our smart procss 4.jpg",
   },
   {
     name: "INDONESIA",
@@ -527,7 +527,7 @@ const globalFlagsCards = [
   },
   {
     name: "PHILIPPINES",
-    flag: "🇵🇭",
+    flag: "/images/global-presense/partnership-assets/flags/philipines.mhtml",
     desc: "150 TPH Sand Making Plant",
     image: "/solutionspage/global capability 5.jpg",
   },
@@ -546,7 +546,7 @@ const globalBottomValues = [
   { title: "Timely Delivery & Installation", icon: Clock },
   { title: "Custom Solutions for Every Region", icon: Settings },
   { title: "Trusted by Global Industry Leaders", icon: Handshake },
-  { title: "Sustainable & Future-Ready Engineering", icon: Zap },
+  
 ];
 
 const whyChooseCards = [
@@ -593,52 +593,44 @@ const whyChooseBottomStats = [
 
 const caseStudiesData = [
   {
-    tag: "LIMESTONE PLANT",
-    title: "250 TPH Limestone Crushing Plant",
+    tag: "QUARRY & MINING",
+    title: "StoneVera Aggregates Plant",
+    cat: "Quarry & Mining",
+    loc: "Rajasthan, India",
+    image: "/solutionspage/case study 1.jpg",
+    capacity: "500 TPH",
+    machines: "Jaw Crusher, Cone Crusher, VSI, Screens",
+    result: "Increased output by 35% with improved product quality",
+  },
+  {
+    tag: "INFRASTRUCTURE",
+    title: "UltraBuild Infrastructure Project",
     cat: "Quarry & Mining",
     loc: "Madhya Pradesh, India",
-    image: "/solutionspage/case study 1.jpg",
-    metrics: [
-      { val: "35%", label: "Higher Productivity" },
-      { val: "20%", label: "Lower Downtime" },
-      { val: "98%", label: "Material Consistency" },
-    ],
-  },
-  {
-    tag: "SAND PLANT",
-    title: "200 TPH Sand Manufacturing Plant",
-    cat: "Sand Manufacturing",
-    loc: "Rajasthan, India",
     image: "/solutionspage/case study 2.jpg",
-    metrics: [
-      { val: "30%", label: "Higher Output" },
-      { val: "15%", label: "Energy Savings" },
-      { val: "99%", label: "Gradation Accuracy" },
-    ],
+    capacity: "350 TPH",
+    machines: "Primary Crusher, Cone Crusher, Vibrating Screen, Conveyor System",
+    result: "Reduced operating cost by 20% and ensured consistent output",
   },
   {
-    tag: "INFRASTRUCTURE PROJECT",
-    title: "300 TPH Infrastructure Crushing Project",
+    tag: "SAND MANUFACTURING",
+    title: "Desert Sand Solutions",
+    cat: "Sand Manufacturing",
+    loc: "Gujarat, India",
+    image: "/solutionspage/case study 3.jpg",
+    capacity: "300 TPH",
+    machines: "VSI Sand Maker, Washing System, Dewatering Screen",
+    result: "Achieved 30% higher sand recovery with superior quality",
+  },
+  {
+    tag: "ROAD CONSTRUCTION",
+    title: "MegaRoad Construction Project",
     cat: "Aggregates",
     loc: "Maharashtra, India",
-    image: "/solutionspage/case study 3.jpg",
-    metrics: [
-      { val: "40%", label: "Higher Capacity" },
-      { val: "25%", label: "Lower Operating Cost" },
-      { val: "100%", label: "Safe & Reliable Operation" },
-    ],
-  },
-  {
-    tag: "CEMENT PLANT SOLUTION",
-    title: "Complete Crushing Solution for Cement Plant",
-    cat: "Industrial",
-    loc: "Gujarat, India",
     image: "/solutionspage/case study 4.jpg",
-    metrics: [
-      { val: "20%", label: "Process Efficiency" },
-      { val: "24/7", label: "Continuous Operation" },
-      { val: "Zero", label: "Unplanned Shutdown" },
-    ],
+    capacity: "600 TPH",
+    machines: "Jaw Crusher, Impact Crusher, Screens, Belt Conveyors",
+    result: "Completed project ahead of schedule with high efficiency",
   },
 ];
 
@@ -679,19 +671,19 @@ const ctaNavyOverlayMetrics = [
 function renderIndustryIcon(icon: string) {
   switch (icon) {
     case "mining":
-      return <Pickaxe size={18} className="text-white" />;
+      return <Pickaxe size={32} className="text-white" strokeWidth={1.5} />;
     case "aggregate":
-      return <Boxes size={18} className="text-white" />;
+      return <Boxes size={32} className="text-white" strokeWidth={1.5} />;
     case "cement":
-      return <Factory size={18} className="text-white" />;
+      return <Factory size={32} className="text-white" strokeWidth={1.5} />;
     case "infra":
-      return <Road size={18} className="text-white" />;
+      return <Road size={32} className="text-white" strokeWidth={1.5} />;
     case "const":
-      return <HardHat size={18} className="text-white" />;
+      return <HardHat size={32} className="text-white" strokeWidth={1.5} />;
     case "recycle":
-      return <Recycle size={18} className="text-white" />;
+      return <Recycle size={32} className="text-white" strokeWidth={1.5} />;
     default:
-      return <Settings size={18} className="text-white" />;
+      return <Settings size={32} className="text-white" strokeWidth={1.5} />;
   }
 }
 
@@ -700,8 +692,8 @@ function renderCircleStatsIcon(name: string) {
     case "inst":
       return (
         <svg
-          width="36"
-          height="36"
+          width="72"
+          height="72"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -717,8 +709,8 @@ function renderCircleStatsIcon(name: string) {
     case "countries":
       return (
         <svg
-          width="36"
-          height="36"
+          width="72"
+          height="72"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -738,8 +730,8 @@ function renderCircleStatsIcon(name: string) {
     case "support":
       return (
         <svg
-          width="36"
-          height="36"
+          width="72"
+          height="72"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -758,8 +750,8 @@ function renderCircleStatsIcon(name: string) {
     case "custom":
       return (
         <svg
-          width="36"
-          height="36"
+          width="72"
+          height="72"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -782,8 +774,8 @@ function renderWhyChooseIcon(icon: string) {
     case "puzzle":
       return (
         <svg
-          width="28"
-          height="28"
+          width="38"
+          height="38"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -796,8 +788,8 @@ function renderWhyChooseIcon(icon: string) {
     case "stopwatch":
       return (
         <svg
-          width="28"
-          height="28"
+          width="38"
+          height="38"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -810,8 +802,8 @@ function renderWhyChooseIcon(icon: string) {
     case "engineer":
       return (
         <svg
-          width="28"
-          height="28"
+          width="38"
+          height="38"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -829,8 +821,8 @@ function renderWhyChooseIcon(icon: string) {
     case "gauge":
       return (
         <svg
-          width="28"
-          height="28"
+          width="38"
+          height="38"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -851,8 +843,8 @@ function renderWhyChooseIcon(icon: string) {
     case "handshake":
       return (
         <svg
-          width="28"
-          height="28"
+          width="38"
+          height="38"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -870,8 +862,8 @@ function renderWhyChooseIcon(icon: string) {
     case "scalable":
       return (
         <svg
-          width="28"
-          height="28"
+          width="38"
+          height="38"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -888,6 +880,25 @@ function renderWhyChooseIcon(icon: string) {
       );
     default:
       return null;
+  }
+}
+
+function renderApplicationIcon(title: string) {
+  switch (title) {
+    case "GRANITE CRUSHING":
+      return <Gem size={26} className="text-white" strokeWidth={1.5} />;
+    case "LIMESTONE PROCESSING":
+      return <Layers size={26} className="text-white" strokeWidth={1.5} />;
+    case "SAND MANUFACTURING":
+      return <Sparkles size={26} className="text-white" strokeWidth={1.5} />;
+    case "ROAD CONSTRUCTION":
+      return <Road size={26} className="text-white" strokeWidth={1.5} />;
+    case "QUARRY OPERATIONS":
+      return <Pickaxe size={26} className="text-white" strokeWidth={1.5} />;
+    case "INDUSTRIAL MATERIAL HANDLING":
+      return <Boxes size={26} className="text-white" strokeWidth={1.5} />;
+    default:
+      return <Settings size={26} className="text-white" strokeWidth={1.5} />;
   }
 }
 
@@ -997,7 +1008,7 @@ export default function SolutionsPage() {
                     key={i}
                     className="group flex min-w-0 items-center gap-2.5 sm:gap-3"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200/80 bg-slate-50 text-primary shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] lg:h-11 lg:w-11">
+                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-slate-200/80 bg-slate-50 text-primary shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] lg:h-22 lg:w-22">
                       {renderCircleStatsIcon(stat.icon)}
                     </div>
                     <div className="min-w-0">
@@ -1021,55 +1032,84 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 2: SOLUTIONS THAT POWER EVERY INDUSTRY */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[30px]" id="industries">
-          <Container>
+        <section className="relative overflow-hidden bg-white py-[60px]" id="industries">
+          {/* Faint Gears Blueprint Schematic on Left */}
+          <div className="absolute -left-20 top-8 h-96 w-96 text-slate-200/40 pointer-events-none select-none opacity-45">
+            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8" className="w-full h-full">
+              <circle cx="80" cy="100" r="60" strokeDasharray="6 4" />
+              <circle cx="80" cy="100" r="45" />
+              <circle cx="80" cy="100" r="30" strokeWidth="0.4" />
+              <circle cx="80" cy="100" r="15" />
+              {[...Array(12)].map((_, i) => {
+                const angle = (i * 30 * Math.PI) / 180;
+                const x1 = (80 + 45 * Math.cos(angle)).toFixed(2);
+                const y1 = (100 + 45 * Math.sin(angle)).toFixed(2);
+                const x2 = (80 + 65 * Math.cos(angle)).toFixed(2);
+                const y2 = (100 + 65 * Math.sin(angle)).toFixed(2);
+                return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} strokeWidth="1.2" />;
+              })}
+              <circle cx="155" cy="150" r="40" strokeDasharray="4 3" />
+              <circle cx="155" cy="150" r="30" />
+              <circle cx="155" cy="150" r="10" />
+              {[...Array(8)].map((_, i) => {
+                const angle = (i * 45 * Math.PI) / 180;
+                const x1 = (155 + 30 * Math.cos(angle)).toFixed(2);
+                const y1 = (150 + 30 * Math.sin(angle)).toFixed(2);
+                const x2 = (155 + 45 * Math.cos(angle)).toFixed(2);
+                const y2 = (155 + 45 * Math.sin(angle)).toFixed(2);
+                return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} strokeWidth="1.2" />;
+              })}
+            </svg>
+          </div>
+
+          {/* Faint Crushing Plant Schematic on Right */}
+          <div className="absolute -right-20 top-12 h-96 w-96 text-slate-200/40 pointer-events-none select-none opacity-45">
+            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8" className="w-full h-full">
+              <line x1="20" y1="180" x2="180" y2="180" strokeWidth="1.5" />
+              <rect x="40" y="100" width="30" height="80" />
+              <line x1="40" y1="100" x2="70" y2="180" />
+              <line x1="70" y1="100" x2="40" y2="180" />
+              <rect x="110" y="60" width="40" height="120" />
+              <line x1="110" y1="60" x2="150" y2="120" />
+              <line x1="150" y1="60" x2="110" y2="120" />
+              <line x1="110" y1="120" x2="150" y2="180" />
+              <line x1="150" y1="120" x2="110" y2="180" />
+              <line x1="70" y1="120" x2="110" y2="80" strokeWidth="2" />
+              <circle cx="70" cy="120" r="3" fill="currentColor" />
+              <circle cx="110" cy="80" r="3" fill="currentColor" />
+              <line x1="150" y1="90" x2="190" y2="160" strokeWidth="2" />
+              <polygon points="30,60 80,60 70,100 40,100" />
+            </svg>
+          </div>
+
+          <Container className="relative z-10">
             {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                  INDUSTRIES WE SERVE
-                </span>
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
+            <div className="mx-auto max-w-3xl text-center mb-12">
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span>INDUSTRIES WE SERVE</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                SOLUTIONS THAT POWER{" "}
-                <span className="text-secondary">EVERY INDUSTRY</span>
+                SOLUTIONS THAT POWER <span className="text-secondary">EVERY INDUSTRY</span>
               </h2>
-              <span
-                aria-hidden
-                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
-              />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                From raw material to final output, our engineered crushing
-                solutions are built to perform in the toughest industrial
-                environments.
+              <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
+                From raw material to final output, our engineered crushing solutions are
+                built to perform in the toughest industrial environments.
               </p>
             </div>
 
             {/* Grid of 6 cards */}
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {industriesServe.map((item, i) => (
                 <div
                   key={i}
-                  className="group relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-slate-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/70 bg-white transition-all duration-300 shadow-md hover:-translate-y-1 hover:shadow-xl"
                 >
                   {/* Photo container */}
-                  <div className="relative aspect-[16/10] w-full bg-slate-900">
+                  <div className="relative aspect-[16/10] w-full bg-slate-900 overflow-hidden">
                     <Image
                       alt={`${item.title.toLowerCase()} crushing solution`}
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1077,49 +1117,66 @@ export default function SolutionsPage() {
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       src={item.image}
                     />
-                    {/* Dark blue circle overlay */}
-                    <div className="absolute left-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-primary border border-white/10 shadow-lg group-hover:bg-secondary transition-colors">
+                    
+                    {/* Dark bottom gradient overlay for title legibility */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent z-10" />
+
+                    {/* Dark blue square/rounded box with orange/white icon */}
+                    <div className="absolute left-4 top-4 z-20 flex h-16 w-16 items-center justify-center rounded-xl bg-[#092a5c] border border-white/10 shadow-lg group-hover:bg-secondary transition-all duration-350">
                       {renderIndustryIcon(item.icon)}
                     </div>
 
-                    {/* Title inside image */}
-                    <div className="absolute bottom-4 left-4 z-20">
-                      <h3 className="text-lg font-black uppercase tracking-wider text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    {/* Title inside image at bottom left */}
+                    <div className="absolute bottom-4 left-5 z-20">
+                      <h3 className="text-2xl font-extrabold uppercase tracking-wide text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
                         {item.title}
                       </h3>
                     </div>
                   </div>
 
                   {/* Body elements */}
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div className="space-y-4 mb-6">
-                      <div>
-                        <span className="inline-flex gap-1.5 items-center text-xs font-black uppercase text-secondary tracking-wider">
-                          <HelpCircle size={11} />
+                  <div className="p-6 flex-1 flex flex-col justify-between bg-white">
+                    <div className="grid grid-cols-2 gap-4 pb-5">
+                      {/* Left: Challenge */}
+                      <div className="pr-2">
+                        <span className="inline-flex gap-1.5 items-center text-[11px] font-black uppercase text-slate-800 tracking-wider">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3.5 w-3.5 text-secondary shrink-0">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                            <line x1="12" y1="9" x2="12" y2="13" />
+                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                          </svg>
                           CHALLENGE
                         </span>
-                        <p className="mt-1 text-sm text-slate-600 leading-relaxed">
+                        <p className="mt-2 text-xs text-slate-600 leading-relaxed font-medium">
                           {item.challenge}
                         </p>
                       </div>
-                      <div>
-                        <span className="inline-flex gap-1.5 items-center text-xs font-black uppercase text-primary tracking-wider">
-                          <CheckCircle2 size={11} />
+
+                      {/* Right: Our Solution */}
+                      <div className="pl-4 border-l border-slate-100">
+                        <span className="inline-flex gap-1.5 items-center text-[11px] font-black uppercase text-slate-800 tracking-wider">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-3.5 w-3.5 text-primary shrink-0">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M9 12l2 2 4-4" />
+                          </svg>
                           OUR SOLUTION
                         </span>
-                        <p className="mt-1 text-sm text-slate-600 leading-relaxed">
+                        <p className="mt-2 text-xs text-slate-600 leading-relaxed font-medium">
                           {item.solution}
                         </p>
                       </div>
                     </div>
 
-                    <Link
-                      href="#contact"
-                      className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-secondary hover:text-primary transition-colors"
-                    >
-                      EXPLORE {item.title} SOLUTIONS
-                      <ArrowRight size={12} />
-                    </Link>
+                    {/* Explore solutions bottom bar */}
+                    <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                      <Link
+                        href="#contact"
+                        className="text-xs font-bold uppercase tracking-wider text-secondary transition-colors group-hover:text-primary"
+                      >
+                        EXPLORE {item.title} SOLUTIONS
+                      </Link>
+                      <ArrowRight size={14} className="text-secondary transition-transform duration-300 group-hover:translate-x-1.5" />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -1130,89 +1187,125 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 3: CHALLENGES WE SOLVE (Every Challenge. Engineered Solution.) */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[30px]">
-          <Container>
+        <section className="relative overflow-hidden bg-white py-[60px]" id="challenges">
+          {/* Faint Gears Blueprint Schematic on Left */}
+          <div className="absolute -left-16 top-6 h-64 w-64 text-slate-200/40 pointer-events-none select-none opacity-40">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.8" className="w-full h-full">
+              <circle cx="40" cy="40" r="25" strokeDasharray="3 2" />
+              <circle cx="40" cy="40" r="18" />
+              <circle cx="40" cy="40" r="5" />
+              {[...Array(8)].map((_, i) => {
+                const angle = (i * 45 * Math.PI) / 180;
+                const x1 = (40 + 18 * Math.cos(angle)).toFixed(2);
+                const y1 = (40 + 18 * Math.sin(angle)).toFixed(2);
+                const x2 = (40 + 27 * Math.cos(angle)).toFixed(2);
+                const y2 = (40 + 27 * Math.sin(angle)).toFixed(2);
+                return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} strokeWidth="1" />;
+              })}
+            </svg>
+          </div>
+
+          {/* Faint Gears Blueprint Schematic on Right */}
+          <div className="absolute -right-16 top-6 h-64 w-64 text-slate-200/40 pointer-events-none select-none opacity-40">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.8" className="w-full h-full">
+              <circle cx="60" cy="40" r="25" strokeDasharray="3 2" />
+              <circle cx="60" cy="40" r="18" />
+              <circle cx="60" cy="40" r="5" />
+              {[...Array(8)].map((_, i) => {
+                const angle = (i * 45 * Math.PI) / 180;
+                const x1 = (60 + 18 * Math.cos(angle)).toFixed(2);
+                const y1 = (40 + 18 * Math.sin(angle)).toFixed(2);
+                const x2 = (60 + 27 * Math.cos(angle)).toFixed(2);
+                const y2 = (60 + 27 * Math.sin(angle)).toFixed(2);
+                return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} strokeWidth="1" />;
+              })}
+            </svg>
+          </div>
+
+          <Container className="relative z-10">
             {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                  CHALLENGES WE SOLVE
-                </span>
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
+            <div className="mx-auto max-w-3xl text-center mb-12">
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span>CHALLENGES WE SOLVE</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                Every Challenge.{" "}
-                <span className="text-secondary">Engineered Solution.</span>
+                Every Challenge. <span className="text-secondary relative inline-block">Engineered<span className="absolute left-0 bottom-0.5 w-full h-[2.5px] bg-secondary" /></span> Solution.
               </h2>
-              <span
-                aria-hidden
-                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
-              />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                We understand the real challenges of industrial operations and
-                deliver solutions that improve performance, reduce downtime, and
-                maximize productivity.
+              <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
+                We understand the real challenges of industrial operations and deliver solutions that
+                improve performance, reduce downtime, and maximize productivity.
               </p>
             </div>
 
-            <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-              {/* Left Column comparison rows */}
-              <div className="space-y-6">
+            <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-stretch">
+              {/* Left Column: Challenge Cards */}
+              <div className="flex flex-col gap-4 justify-between">
                 {challengesSolve.map((row, i) => {
                   const SolIcon = row.icon;
                   return (
                     <div
                       key={i}
-                      className="flex flex-col md:flex-row items-center gap-4"
+                      className="group relative flex flex-col md:flex-row items-stretch rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
                     >
-                      {/* Left: Challenge Card */}
-                      <div className="relative flex-1 w-full p-4 bg-orange-50/50 border border-orange-100 rounded-xl flex gap-3.5 items-start">
-                        <span className="text-xs font-black uppercase tracking-wider text-secondary mt-0.5">
-                          {row.step}
+                      {/* Left: Thumbnail Image Box */}
+                      <div className="p-3 shrink-0 flex items-center justify-center bg-white">
+                        <div className="relative w-full md:w-[170px] aspect-[16/10] md:h-[110px] overflow-hidden rounded-xl border border-slate-200/60 shadow-sm bg-slate-100">
+                          <Image
+                            src={row.image}
+                            alt={row.challengeTitle}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            sizes="170px"
+                          />
+                          {/* Step Badge */}
+                          <div className="absolute top-2 left-2 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-[#031b40] text-[10px] font-black text-white border border-white/20">
+                            {row.step}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Middle: Challenge Box */}
+                      <div className="relative flex-1 bg-[#fdfaf7] p-5 flex flex-col justify-center border-b md:border-b-0 md:border-r border-slate-100">
+                        <span className="inline-flex gap-1.5 items-center text-[10px] font-black uppercase text-secondary tracking-wider">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-3 w-3 text-secondary shrink-0">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                            <line x1="12" y1="9" x2="12" y2="13" />
+                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                          </svg>
+                          INDUSTRY CHALLENGE
                         </span>
-                        <div>
-                          <h4 className="text-xs md:text-sm font-black uppercase text-secondary tracking-wider">
-                            INDUSTRY CHALLENGE: {row.challengeTitle}
-                          </h4>
-                          <p className="mt-1 text-xs md:text-sm leading-relaxed text-slate-600">
-                            {row.challengeDesc}
-                          </p>
+                        <h4 className="mt-1 text-sm md:text-base font-extrabold text-slate-800 leading-tight uppercase tracking-wide">
+                          {row.challengeTitle}
+                        </h4>
+                        <p className="mt-1 text-xs text-slate-500 leading-relaxed font-medium">
+                          {row.challengeDesc}
+                        </p>
+
+                        {/* Overlapping connector arrow */}
+                        <div className="hidden md:flex absolute right-[-16px] top-1/2 -translate-y-1/2 z-20 h-8 w-8 items-center justify-center rounded-full bg-white border border-slate-200 shadow text-secondary group-hover:scale-110 transition-all duration-300">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="h-3.5 w-3.5 text-secondary">
+                            <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
                         </div>
                       </div>
 
-                      {/* Middle Connector */}
-                      <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm text-secondary shrink-0">
-                        <ChevronRight
-                          size={14}
-                          className="rotate-90 md:rotate-0"
-                        />
-                      </div>
-
-                      {/* Right: Solution Card */}
-                      <div className="flex-1 w-full p-4 bg-slate-50 border border-slate-200/80 rounded-xl flex gap-3.5 items-start">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-white shrink-0 mt-0.5">
-                          <SolIcon size={12} />
+                      {/* Right: Solution Box */}
+                      <div className="flex-1 bg-slate-50/50 p-5 md:pl-8 flex gap-4 items-center">
+                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[#092a5c] border border-white/10 shadow text-white">
+                          <SolIcon size={32} className="text-white" strokeWidth={1.5} />
                         </div>
                         <div>
-                          <h4 className="text-xs md:text-sm font-black uppercase text-primary tracking-wider">
-                            PITHAL SOLUTION: {row.solutionTitle}
+                          <span className="text-[10px] font-black uppercase text-primary tracking-wider block">
+                            PITHAL SOLUTION
+                          </span>
+                          <h4 className="mt-0.5 text-sm md:text-base font-extrabold text-primary leading-tight uppercase tracking-wide">
+                            {row.solutionTitle}
                           </h4>
-                          <p className="mt-1 text-xs md:text-sm leading-relaxed text-slate-600">
+                          <p className="mt-1 text-xs text-slate-500 leading-relaxed font-medium">
                             {row.solutionDesc}
                           </p>
                         </div>
@@ -1222,38 +1315,37 @@ export default function SolutionsPage() {
                 })}
               </div>
 
-              {/* Right Column visual with premium overlay */}
-              <div className="relative aspect-[4/4] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-lg bg-slate-800">
+              {/* Right Column: Large plant visual */}
+              <div className="relative hidden lg:block w-full min-h-[450px] overflow-hidden rounded-2xl border border-slate-200/60 shadow-md">
                 <Image
                   src="/solutionspage/challenges we solve 5.jpg"
-                  alt="Complete Assembly System"
+                  alt="Pithal Machines Crushing Plant"
                   fill
-                  className="object-cover opacity-80"
-                  sizes="(min-width: 1024px) 35vw, 100vw"
+                  className="object-cover"
+                  sizes="25vw"
+                  priority
                 />
-                <div className="absolute inset-0 z-10" />
               </div>
             </div>
 
-            {/* Bottom 5-column values banner */}
-            <div className="mt-16 bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm">
-              <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-5 items-center sm:divide-x sm:divide-slate-100">
+            {/* Bottom horizontal banner */}
+            <div className="mt-12 bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm">
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5 items-center">
                 {challengesBottomBar.map((item, i) => {
                   const BIcon = item.icon;
                   return (
-                    <div
-                      key={i}
-                      className="text-center px-4 flex flex-col items-center"
-                    >
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary mb-2.5">
-                        <BIcon size={26} />
+                    <div key={i} className="flex items-center gap-3.5">
+                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-orange-100 bg-[#fdfbf9] text-secondary shadow-[inset_0_1.5px_3px_rgba(250,89,2,0.04)]">
+                        <BIcon size={28} className="text-secondary" strokeWidth={1.8} />
                       </div>
-                      <h4 className="text-sm font-black uppercase tracking-wider text-primary">
-                        {item.label}
-                      </h4>
-                      <p className="mt-1 text-xs md:text-sm text-slate-500 leading-normal">
-                        {item.desc}
-                      </p>
+                      <div className="min-w-0">
+                        <h4 className="text-xs md:text-sm font-black uppercase tracking-wider text-slate-800 leading-tight">
+                          {item.label}
+                        </h4>
+                        <p className="mt-1 text-xs text-slate-500 leading-normal font-medium truncate">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
                   );
                 })}
@@ -1351,27 +1443,33 @@ export default function SolutionsPage() {
 
                   {/* Process Connect Arrow */}
                   {i < 5 && (
-                    <div className="absolute right-[-14px] top-1/3 -translate-y-1/2 hidden lg:block z-20 bg-primary text-white rounded-full p-1 border border-slate-200">
-                      <ChevronRight size={10} />
+                    <div className="absolute right-[-28px] top-1/2 -translate-y-1/2 hidden lg:flex h-8 w-8 items-center justify-center rounded-full bg-white border border-slate-200/80 shadow-md text-secondary z-20">
+                      <ChevronRight size={16} strokeWidth={3} className="text-secondary" />
                     </div>
                   )}
                 </div>
               ))}
             </div>
 
-            {/* Timeline dots overlay */}
-            <div className="mt-10 relative flex justify-between px-[8%] items-center">
-              <div className="absolute inset-x-0 h-[1.5px] bg-slate-200/80 z-0" />
-              {plantWorkflow.map((item, i) => (
-                <div
-                  key={i}
-                  className="relative z-10 flex flex-col items-center"
-                >
-                  <div className="h-6 w-6 rounded-full border-2 border-secondary flex items-center justify-center text-[10px] font-black text-secondary shadow-sm bg-white">
-                    {item.step}
-                  </div>
-                </div>
-              ))}
+            {/* Glowing moving line separator */}
+            <div className="mt-6 relative w-full h-[3px] bg-transparent rounded-full">
+              <style>{`
+                @keyframes glow-flow {
+                  0% {
+                    left: -35%;
+                  }
+                  100% {
+                    left: 105%;
+                  }
+                }
+              `}</style>
+              <div 
+                className="absolute top-0 h-full w-1/3 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-95"
+                style={{
+                  animation: "glow-flow 3s linear infinite",
+                  filter: "drop-shadow(0 0 8px #fa5902) drop-shadow(0 0 2px #fa5902)",
+                }}
+              />
             </div>
 
             {/* Bottom 5-column banner card */}
@@ -1406,17 +1504,33 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 5: ENGINEERED AROUND YOUR OPERATION */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[30px]">
-          <Container>
+        <section className="relative overflow-hidden bg-white pt-[60px] pb-[10px]" id="engineering">
+          {/* Blueprint Image Background (Aligned to the Right) */}
+          <div 
+            className="absolute right-0 top-0 h-full w-full lg:w-[55%] pointer-events-none select-none opacity-20 lg:opacity-100 z-0"
+            style={{
+              maskImage: "radial-gradient(ellipse at center, black 25%, transparent 85%)",
+              WebkitMaskImage: "radial-gradient(ellipse at center, black 25%, transparent 85%)",
+            }}
+          >
+            <Image
+              src="/solutionspage/blueprint_1440x780.png"
+              alt="Engineering Blueprint Background"
+              fill
+              className="object-contain object-right"
+              priority
+            />
+          </div>
+
+          <Container className="relative z-10">
             {/* Top Grid layout */}
-            <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center mb-16">
+            <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center mb-4">
               {/* Left Column info */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="h-[1.5px] w-6 bg-secondary" />
-                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
-                    CUSTOM ENGINEERING SOLUTIONS
-                  </span>
+              <div className="max-w-2xl relative z-10">
+                <div className="flex items-center gap-2 mb-4 text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                  <span className="h-[1.5px] w-6 bg-secondary rounded-full" />
+                  <span>CUSTOM ENGINEERING SOLUTIONS</span>
+                  <span className="h-[1.5px] w-6 bg-secondary rounded-full" />
                 </div>
 
                 <h2 className="headline text-primary text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] uppercase">
@@ -1424,66 +1538,55 @@ export default function SolutionsPage() {
                   <span className="text-secondary">YOUR OPERATION.</span>
                 </h2>
 
-                <span
-                  aria-hidden
-                  className="block h-[2.5px] w-12 bg-secondary my-5"
-                />
-
-                <p className="text-sm md:text-base leading-relaxed text-slate-600 max-w-xl font-medium">
+                <p className="mt-6 text-sm md:text-base leading-relaxed text-slate-600 font-medium">
                   Every site is unique. Our engineering experts design and
                   deliver customized crushing solutions that match your goals,
                   site conditions, and production requirements.
                 </p>
 
-                {/* Bullets grid layout */}
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {/* Bullets horizontal row layout */}
+                <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6">
                   {operationBullets.map((item, i) => {
                     const BIcon = item.icon;
                     return (
-                      <div key={i} className="flex gap-3.5 items-start">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-200 text-secondary">
-                          <BIcon size={18} />
+                      <div key={i} className="text-center flex flex-col items-center">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-full border border-slate-200/80 bg-white text-secondary mb-3 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-secondary transition-all duration-300">
+                          <BIcon size={28} className="text-secondary" />
                         </div>
-                        <div>
-                          <h4 className="text-sm font-black uppercase tracking-wide text-primary">
-                            {item.title}
-                          </h4>
-                          <p className="mt-0.5 text-xs md:text-sm text-text-muted">
-                            {item.desc}
-                          </p>
-                        </div>
+                        <h4 className="text-[13px] md:text-sm font-black uppercase tracking-wide text-primary leading-tight">
+                          {item.title}
+                        </h4>
+                        <p className="mt-2 text-xs leading-relaxed text-slate-500 font-medium">
+                          {item.desc}
+                        </p>
                       </div>
                     );
                   })}
                 </div>
               </div>
 
-              {/* Right Column CAD Drawing representation */}
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden flex items-center justify-center ">
-                <Image
-                  src="/solutionspage/blueprint_1440x780.png"
-                  alt="CAD Engineering Blueprint"
-                  fill
-                  className="object-contain"
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
-              </div>
+              {/* Right Column (Empty to let background blueprint show clearly on desktop) */}
+              <div className="hidden lg:block h-[280px]" />
             </div>
 
+          </Container>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* SECTION 5B: OUR ENGINEERING SERVICES */}
+        {/* ========================================================================= */}
+        <section className="bg-white pt-[20px] pb-[60px]">
+          <Container>
             {/* Bottom block: Our Engineering Services */}
-            <div className="border-t border-slate-200 pt-14">
+            <div className="pt-0">
               {/* Bracketed Title Header */}
-              <div className="relative flex justify-center items-center mb-10 w-full max-w-4xl mx-auto">
-                <div className="absolute left-[8%] right-[50%] top-0 h-[1.5px] bg-secondary flex items-start">
-                  <div className="h-3 w-[1.5px] bg-secondary" />
-                </div>
-                <div className="absolute left-[50%] right-[8%] top-0 h-[1.5px] bg-secondary flex items-start justify-end">
-                  <div className="h-3 w-[1.5px] bg-secondary" />
-                </div>
-                <div className="relative bg-white px-6">
-                  <span className="text-sm font-black uppercase tracking-[0.24em] text-primary">
-                    OUR ENGINEERING SERVICES
-                  </span>
+              <div className="flex justify-center items-center mb-10 w-full max-w-4xl mx-auto">
+                <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+                  <span className="h-[2px] w-8 bg-secondary rounded-full" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                  <span className="text-primary font-black">OUR ENGINEERING SERVICES</span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                  <span className="h-[2px] w-8 bg-secondary rounded-full" />
                 </div>
               </div>
 
@@ -1492,33 +1595,40 @@ export default function SolutionsPage() {
                 {engineeringServices.map((item, i) => (
                   <div
                     key={i}
-                    className="group bg-slate-50 border border-slate-200/80 p-5 rounded-xl hover:bg-slate-100/70 transition-all duration-300 flex flex-col justify-between"
+                    className="group bg-white border border-slate-200/60 p-5 pt-12 rounded-2xl flex flex-col justify-between relative shadow-sm hover:shadow-md transition-all duration-300"
                   >
+                    {/* Step Badge on Top Left */}
+                    <div className="absolute top-4 left-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-[#e6effc] text-xs font-black text-[#092a5c]">
+                      {item.step}
+                    </div>
+
                     <div>
                       {item.image && (
-                        <div className="relative w-full aspect-[16/10] mb-4 rounded-lg overflow-hidden bg-white border border-slate-100 flex items-center justify-center">
+                        <div className="relative w-full aspect-[16/10] mb-4 flex items-center justify-center">
                           <Image
                             src={item.image}
                             alt={item.title}
                             fill
-                            className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                            className={cn(
+                              "object-contain p-1 transition-transform duration-500",
+                              (i === 2 || i === 4)
+                                ? "scale-[1.4] -translate-x-12 group-hover:scale-[1.45]"
+                                : "group-hover:scale-105"
+                            )}
                             sizes="(min-width: 1024px) 15vw, 30vw"
                           />
                         </div>
                       )}
-                      <span className="text-xs font-black uppercase tracking-wider text-secondary">
-                        {item.step}
-                      </span>
                       <h4 className="mt-2 text-sm font-black uppercase tracking-wide text-primary leading-tight">
                         {item.title}
                       </h4>
-                      <p className="mt-2 text-xs md:text-sm leading-relaxed text-text-muted">
+                      <p className="mt-2 text-xs md:text-sm leading-relaxed text-text-muted font-medium">
                         {item.desc}
                       </p>
                     </div>
 
                     <div className="mt-5 pt-3 flex justify-end">
-                      <ChevronRight size={14} className="text-secondary" />
+                      <ArrowRight size={20} className="text-secondary group-hover:translate-x-1.5 transition-transform duration-300" />
                     </div>
                   </div>
                 ))}
@@ -1598,8 +1708,8 @@ export default function SolutionsPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent z-10" />
 
                   {/* Top orange circular badge */}
-                  <div className="absolute left-6 top-6 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-secondary border border-white/10 shadow-lg">
-                    <CheckCircle2 size={18} className="text-white" />
+                  <div className="absolute left-6 top-6 z-20 flex h-16 w-16 items-center justify-center rounded-full bg-secondary border border-white/10 shadow-lg">
+                    {renderApplicationIcon(item.title)}
                   </div>
 
                   {/* Text body */}
@@ -1661,139 +1771,314 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 7: MEASURABLE PERFORMANCE. MAXIMUM RESULTS. */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[30px]">
-          <Container>
+        <section className="bg-white py-[60px] relative overflow-hidden">
+          {/* Blueprint gears background motif */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none z-0">
+            {/* Left Gear */}
+            <svg
+              className="absolute left-[-100px] top-[10%] w-[350px] h-[350px] animate-[spin_60s_linear_infinite]"
+              viewBox="0 0 100 100"
+              fill="none"
+              stroke="#092a5c"
+              strokeWidth="0.5"
+            >
+              <circle cx="50" cy="50" r="30" />
+              <circle cx="50" cy="50" r="15" />
+              {[...Array(12)].map((_, i) => (
+                <path
+                  key={i}
+                  d="M 50 12 L 50 20 M 47 12 L 53 12"
+                  transform={`rotate(${i * 30} 50 50)`}
+                />
+              ))}
+            </svg>
+            {/* Right Factory/Gears */}
+            <svg
+              className="absolute right-[-120px] top-[5%] w-[450px] h-[450px]"
+              viewBox="0 0 200 200"
+              fill="none"
+              stroke="#092a5c"
+              strokeWidth="0.5"
+            >
+              {/* Gear 1 */}
+              <circle cx="150" cy="70" r="45" />
+              <circle cx="150" cy="70" r="20" />
+              {[...Array(18)].map((_, i) => (
+                <path
+                  key={i}
+                  d="M 150 15 L 150 25"
+                  transform={`rotate(${i * 20} 150 70)`}
+                />
+              ))}
+              {/* Gear 2 meshing */}
+              <circle cx="80" cy="130" r="35" />
+              <circle cx="80" cy="130" r="15" />
+              {[...Array(14)].map((_, i) => (
+                <path
+                  key={i}
+                  d="M 80 85 L 80 95"
+                  transform={`rotate(${i * 25.7} 80 130)`}
+                />
+              ))}
+            </svg>
+          </div>
+
+          <Container className="relative z-10">
             {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+            <div className="mx-auto max-w-4xl text-center mb-12">
+              <div className="flex items-center justify-center gap-3.5 mb-3">
+                <span className="w-8 h-[1.5px] bg-[#fa5902]" />
+                <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-[#fa5902]">
                   OUR PERFORMANCE. YOUR ADVANTAGE.
                 </span>
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
+                <span className="w-8 h-[1.5px] bg-[#fa5902]" />
               </div>
-              <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                MEASURABLE PERFORMANCE.{" "}
-                <span className="text-secondary">MAXIMUM RESULTS.</span>
+              <h2 className="text-center text-[clamp(1.8rem,4.5vw,2.75rem)] font-extrabold leading-[1.1] text-[#092a5c] tracking-tight">
+                MEASURABLE PERFORMANCE. <span className="text-[#fa5902]">MAXIMUM RESULTS.</span>
               </h2>
-              <span
-                aria-hidden
-                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
-              />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                Our engineered crushing solutions are built to deliver superior
-                performance, reduce operational costs, and maximize your
-                productivity.
+              <p className="mx-auto mt-4 max-w-3xl text-center text-sm md:text-[14.5px] leading-relaxed text-slate-500 font-medium">
+                Our engineered crushing solutions are built to deliver superior performance,
+                reduce operational costs, and maximize your productivity.
               </p>
             </div>
 
             {/* 5-Column Gauges Card Grid */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5 mb-16">
+            <div className="grid gap-4.5 sm:grid-cols-2 lg:grid-cols-5 mb-10">
               {performanceMetrics.map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white border border-slate-200/80 p-5.5 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-[#f8faff] border border-slate-100 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
                 >
-                  <div className="flex items-center justify-between">
-                    {/* Gauge circle or Icon */}
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary">
-                      {i === 0 && <Cpu size={16} />}
-                      {i === 1 && <Clock size={16} />}
-                      {i === 2 && <DollarSign size={16} />}
-                      {i === 3 && <Zap size={16} />}
-                      {i === 4 && <TrendingUp size={16} />}
+                  <div>
+                    {/* Header alignment: Icon Left, Pct Right */}
+                    <div className="flex items-center justify-between gap-3 mb-4.5">
+                      <div className="shrink-0">
+                        {i === 0 && (
+                          <svg className="w-13 h-13" viewBox="0 0 54 54" fill="none">
+                            <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
+                            {/* Speedometer arc */}
+                            <path d="M15 35 A 16 16 0 1 1 39 35" fill="none" stroke="#b2c6e6" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="3 3" />
+                            <path d="M15 35 A 16 16 0 1 1 34 20" fill="none" stroke="#fa5902" strokeWidth="3" strokeLinecap="round" />
+                            {/* Needle */}
+                            <path d="M27 27 L 33 21" stroke="#092a5c" strokeWidth="2.5" strokeLinecap="round" />
+                            <circle cx="27" cy="27" r="3" fill="#092a5c" />
+                            {/* Gear bottom right */}
+                            <circle cx="39" cy="35" r="4.5" fill="#fff" stroke="#fa5902" strokeWidth="1.5" />
+                            <circle cx="39" cy="35" r="1.5" fill="#fa5902" />
+                          </svg>
+                        )}
+                        {i === 1 && (
+                          <svg className="w-13 h-13" viewBox="0 0 54 54" fill="none">
+                            <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
+                            {/* Clock Face */}
+                            <circle cx="27" cy="25" r="13" stroke="#092a5c" strokeWidth="2.2" fill="none" />
+                            {/* Ticks */}
+                            <path d="M27 12 L27 14 M27 36 L27 38 M14 25 L16 25 M38 25 L40 25" stroke="#092a5c" strokeWidth="1.5" />
+                            {/* Hands */}
+                            <path d="M27 25 L27 18 M27 25 L32 25" stroke="#092a5c" strokeWidth="2" strokeLinecap="round" />
+                            {/* Down arrow inside bottom right */}
+                            <path d="M37 28 L37 36 M34 33 L37 36 L40 33" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                        {i === 2 && (
+                          <svg className="w-13 h-13" viewBox="0 0 54 54" fill="none">
+                            <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
+                            {/* Gear */}
+                            <circle cx="25" cy="25" r="11" stroke="#092a5c" strokeWidth="2" fill="none" />
+                            {[...Array(8)].map((_, idx) => (
+                              <path
+                                key={idx}
+                                d="M 25 11 L 25 14"
+                                stroke="#092a5c"
+                                strokeWidth="2.2"
+                                strokeLinecap="round"
+                                transform={`rotate(${idx * 45} 25 25)`}
+                              />
+                            ))}
+                            <circle cx="25" cy="25" r="6" fill="#fff" />
+                            {/* Rupee symbol */}
+                            <path d="M22 20 H28 M22 23 H28 M25 20 C28 20 28 25 25 25 H22 M24 25 L28 30" stroke="#fa5902" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                            {/* Up arrow right */}
+                            <path d="M36 26 L36 34 M33 31 L36 34 L39 31" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                        {i === 3 && (
+                          <svg className="w-13 h-13" viewBox="0 0 54 54" fill="none">
+                            <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
+                            {/* Energy circular gauge */}
+                            <path d="M17 33 A 12 12 0 1 1 37 33" stroke="#b2c6e6" strokeWidth="2" fill="none" strokeDasharray="2 2" />
+                            <path d="M17 33 A 12 12 0 1 1 35 24" stroke="#fa5902" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                            {/* Leaf or energy symbol */}
+                            <path d="M24 28 C24 22 28 20 30 20 C30 24 26 28 24 28 Z" fill="#fa5902" opacity="0.8" />
+                            <path d="M22 30 C22 25 25 23 27 23 C27 27 24 30 22 30 Z" fill="#092a5c" />
+                            {/* Up arrow */}
+                            <path d="M37 26 L37 33 M34 30 L37 33 L40 30" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                        {i === 4 && (
+                          <svg className="w-13 h-13" viewBox="0 0 54 54" fill="none">
+                            <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
+                            {/* Bar Chart */}
+                            <rect x="18" y="28" width="3.5" height="8" rx="1" fill="#092a5c" />
+                            <rect x="24" y="24" width="3.5" height="12" rx="1" fill="#092a5c" />
+                            <rect x="30" y="20" width="3.5" height="16" rx="1" fill="#092a5c" />
+                            <rect x="36" y="15" width="3.5" height="21" rx="1" fill="#fa5902" />
+                            {/* Up arrow diagonal */}
+                            <path d="M41 14 L41 22 M37 18 L41 14 L45 18" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </div>
+
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-[28px] font-extrabold text-[#fa5902] leading-none tracking-tight">
+                          {item.pct}
+                        </span>
+                        <span className="text-[18px] font-bold text-[#fa5902]">
+                          ↑
+                        </span>
+                      </div>
                     </div>
 
-                    <span className="text-xl font-black text-secondary flex items-center gap-0.5">
-                      {item.pct}
-                      <span className="text-sm font-bold text-slate-400">
-                        ↑
-                      </span>
-                    </span>
+                    <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-[#092a5c]">
+                      {item.label}
+                    </h3>
+                    
+                    {/* Thin horizontal separator line */}
+                    <div className="w-8 h-[2px] bg-[#fa5902] my-3.5 group-hover:w-16 transition-all duration-300" />
+
+                    <p className="text-[12px] leading-relaxed text-slate-500 font-medium">
+                      {item.desc}
+                    </p>
                   </div>
-
-                  <h3 className="mt-4 text-sm font-black uppercase tracking-wider text-primary leading-tight">
-                    {item.label}
-                  </h3>
-
-                  <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500">
-                    {item.desc}
-                  </p>
                 </div>
               ))}
             </div>
 
             {/* Lower layout stats with sliders */}
-            <div className="grid gap-12 lg:grid-cols-3 lg:items-center border-t border-slate-200/80 pt-16">
-              {/* Left Column Image Box */}
-              <div className="relative aspect-square w-full bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center">
-                <Image
-                  src="/solutionspage/our performance your advantage.jpg"
-                  alt="Factory Floor"
-                  fill
-                  className="object-cover "
-                  sizes="(min-width: 1024px) 33vw, 100vw"
-                />
-                <div className="relative text-center p-4 z-10"></div>
-              </div>
-
-              {/* Middle Column Sliders */}
-              <div className="space-y-5">
-                {performanceSliders.map((slider, i) => (
-                  <div key={i}>
-                    <div className="flex justify-between items-center text-xs md:text-sm font-bold text-slate-700 uppercase tracking-wide mb-1.5">
-                      <span>{slider.label}</span>
-                      <span className="text-secondary">{slider.value}%</span>
-                    </div>
-                    <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-secondary rounded-full"
-                        style={{ width: `${slider.value}%` }}
-                      />
-                    </div>
+            <div className="bg-[#f8faff] border border-slate-100 rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm relative overflow-hidden">
+              <div className="grid gap-8 lg:grid-cols-12 lg:items-center relative z-10">
+                {/* Left Column Text and Image Box (5 cols) */}
+                <div className="lg:col-span-5 relative aspect-[16/11] w-full rounded-2xl border border-slate-200/60 overflow-hidden shadow-sm">
+                  {/* Background Image - positioned properly to prevent cutting off */}
+                  <Image
+                    src="/solutionspage/our performance your advantage.jpg"
+                    alt="Crushing Plant Equipment"
+                    fill
+                    className="object-cover object-right-bottom"
+                    sizes="(min-width: 1024px) 35vw, 100vw"
+                  />
+                  {/* Text Overlay Box (aligned to the left) */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/98 via-white/85 to-transparent flex flex-col justify-center p-6 md:p-8 max-w-[70%] z-10">
+                    <h3 className="text-[20px] md:text-[22px] font-extrabold uppercase tracking-wide text-[#092a5c] leading-tight">
+                      PERFORMANCE THAT
+                      <br />
+                      <span className="text-[#fa5902]">DRIVES YOUR SUCCESS</span>
+                    </h3>
+                    <div className="w-10 h-[2px] bg-[#fa5902] my-3" />
+                    <p className="text-[12px] md:text-[13px] leading-relaxed text-slate-600 font-medium">
+                      Our solutions are designed <br /> to maximize every aspect of <br /> your operations – from efficiency <br /> and productivity to cost savings <br /> and sustainability.
+                    </p>
                   </div>
-                ))}
-              </div>
+                </div>
 
-              {/* Right Column Stats */}
-              <div className="space-y-6 lg:pl-6">
-                {performanceStatsList.map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-4.5 bg-white border border-slate-200/80 p-4.5 rounded-xl"
-                  >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-50 border border-slate-100 text-secondary">
-                      {i === 0 && <Building2 size={20} />}
-                      {i === 1 && <Globe size={20} />}
-                      {i === 2 && <Headphones size={20} />}
+                {/* Middle Column Sliders (4 cols) */}
+                <div className="lg:col-span-4 space-y-6 lg:px-2">
+                  {performanceSliders.map((slider, i) => (
+                    <div key={i} className="flex items-center gap-4.5">
+                      {/* Metric Icon */}
+                      <div className="shrink-0">
+                        {i === 0 && (
+                          <svg className="w-13 h-13" viewBox="0 0 52 52" fill="none">
+                            <circle cx="26" cy="26" r="25" fill="#fff" stroke="#e6eefc" strokeWidth="1.5" />
+                            <path d="M15 34 A 14 14 0 1 1 37 34" stroke="#fa5902" strokeWidth="2.8" strokeLinecap="round" fill="none" />
+                            <path d="M26 26 L 33 19" stroke="#092a5c" strokeWidth="2.5" strokeLinecap="round" />
+                            <circle cx="26" cy="26" r="3" fill="#092a5c" />
+                          </svg>
+                        )}
+                        {i === 1 && (
+                          <svg className="w-13 h-13" viewBox="0 0 52 52" fill="none">
+                            <circle cx="26" cy="26" r="25" fill="#fff" stroke="#e6eefc" strokeWidth="1.5" />
+                            <circle cx="26" cy="25" r="11" stroke="#092a5c" strokeWidth="2.5" fill="none" />
+                            <path d="M26 25 L 26 19 M26 25 L 30 25" stroke="#092a5c" strokeWidth="2" strokeLinecap="round" />
+                            <path d="M35 29 L35 36 M32 33 L35 36 L38 33" stroke="#fa5902" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                        {i === 2 && (
+                          <svg className="w-13 h-13" viewBox="0 0 52 52" fill="none">
+                            <circle cx="26" cy="26" r="25" fill="#fff" stroke="#e6eefc" strokeWidth="1.5" />
+                            <circle cx="23" cy="23" r="10" stroke="#092a5c" strokeWidth="2.2" fill="none" />
+                            <path d="M20 19 H26 M20 23 H26 M23 19 C26 19 26 23 23 23 M22 23 L26 28" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" />
+                            <path d="M34 26 L34 34 M31 31 L34 34 L37 31" stroke="#fa5902" strokeWidth="2.2" strokeLinecap="round" />
+                          </svg>
+                        )}
+                        {i === 3 && (
+                          <svg className="w-13 h-13" viewBox="0 0 52 52" fill="none">
+                            <circle cx="26" cy="26" r="25" fill="#fff" stroke="#e6eefc" strokeWidth="1.5" />
+                            <path d="M23 31 C23 24 28 22 30 22 C30 26 26 31 23 31 Z" fill="#fa5902" opacity="0.8" />
+                            <path d="M20 33 C20 28 24 25 25 25 C25 29 22 33 20 33 Z" fill="#092a5c" />
+                          </svg>
+                        )}
+                        {i === 4 && (
+                          <svg className="w-13 h-13" viewBox="0 0 52 52" fill="none">
+                            <circle cx="26" cy="26" r="25" fill="#fff" stroke="#e6eefc" strokeWidth="1.5" />
+                            <rect x="18" y="28" width="3" height="8" rx="0.5" fill="#092a5c" />
+                            <rect x="23" y="24" width="3" height="12" rx="0.5" fill="#092a5c" />
+                            <rect x="28" y="20" width="3" height="16" rx="0.5" fill="#fa5902" />
+                            <path d="M33 19 L33 26 M30 22 L33 19 L36 22" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" />
+                          </svg>
+                        )}
+                      </div>
+
+                      {/* Title, Progress Bar, and Percent */}
+                      <div className="flex-1">
+                        <div className="flex justify-between items-center text-[12.5px] font-extrabold text-[#092a5c] tracking-wide mb-1.5">
+                          <span>{slider.label}</span>
+                        </div>
+                        <div className="flex items-center gap-3.5">
+                          <div className="h-3 flex-1 bg-slate-200/70 rounded-full relative overflow-visible">
+                            {/* Inner progress bar */}
+                            <div
+                              className="h-full bg-gradient-to-r from-[#fa5902] to-[#fa5902] rounded-full relative"
+                              style={{ width: `${slider.value}%` }}
+                            >
+                              {/* Glowing/Border Circle Point Handle */}
+                              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4.5 h-4.5 bg-white border-[4px] border-[#092a5c] rounded-full shadow-md z-10" />
+                            </div>
+                          </div>
+                          <span className="text-[13.5px] font-black text-[#092a5c] w-9 text-right shrink-0">{slider.value}%</span>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-2xl md:text-3xl font-black text-primary leading-none">
-                        {item.value}
-                      </h4>
-                      <p className="text-xs font-black text-secondary uppercase tracking-widest mt-1.5">
-                        {item.label}
-                      </p>
-                      <p className="text-xs md:text-sm text-slate-500 mt-0.5">
-                        {item.desc}
-                      </p>
+                  ))}
+                </div>
+
+                {/* Right Column Stats Cards (3 cols) */}
+                <div className="lg:col-span-3 space-y-5 lg:pl-4">
+                  {performanceStatsList.map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-4.5 bg-white border border-slate-100 p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                    >
+                      {/* Round icon badge */}
+                      <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-full bg-[#fdf2eb]">
+                        {i === 0 && <Building2 size={26} className="text-[#fa5902]" />}
+                        {i === 1 && <Globe size={26} className="text-[#fa5902]" />}
+                        {i === 2 && <Headphones size={26} className="text-[#fa5902]" />}
+                      </div>
+                      <div className="leading-tight">
+                        <h4 className="text-[28px] font-extrabold text-[#fa5902] tracking-tight">
+                          {item.value}
+                        </h4>
+                        <p className="text-[12.5px] font-extrabold text-[#092a5c] uppercase tracking-wider mt-0.5">
+                          {item.label}
+                        </p>
+                        <p className="text-[12px] text-slate-500 font-medium mt-0.5">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </Container>
@@ -1852,37 +2137,42 @@ export default function SolutionsPage() {
                   key={i}
                   className="relative flex flex-col items-center text-center z-10 bg-slate-50 border border-slate-200/50 p-4.5 rounded-xl"
                 >
-                  {/* Photo overlay step */}
-                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden relative mb-4 border border-slate-200">
-                    {item.image ? (
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-cover"
-                        sizes="(min-width: 1024px) 15vw, (min-width: 640px) 30vw, 100vw"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center border border-dashed border-slate-600/30 m-1.5 rounded bg-slate-800">
-                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                          PHASE {item.step}
-                        </span>
-                      </div>
-                    )}
+                  {/* Photo wrapper step */}
+                  <div className="w-full aspect-[4/3] relative mb-4">
+                    <div className="absolute inset-0 rounded-lg overflow-hidden border border-slate-200">
+                      {item.image ? (
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover"
+                          sizes="(min-width: 1024px) 15vw, (min-width: 640px) 30vw, 100vw"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center border border-dashed border-slate-600/30 m-1.5 rounded bg-slate-800">
+                          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                            PHASE {item.step}
+                          </span>
+                        </div>
+                      )}
+                    </div>
 
-                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white text-primary text-[10px] font-black uppercase px-2.5 py-0.5 rounded shadow z-10">
+                    <div className="absolute bottom-[-16px] left-1/2 -translate-x-1/2 bg-white border-2 border-[#fa5902] text-[#fa5902] text-[13.5px] font-black uppercase w-8 h-8 flex items-center justify-center rounded-full shadow-md z-30">
                       {item.step}
                     </div>
                   </div>
 
-                  {/* Icon badge */}
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary mb-3 shadow-sm">
-                    {i === 0 && <HardHat size={16} />}
-                    {i === 1 && <FileText size={16} />}
-                    {i === 2 && <Settings size={16} />}
-                    {i === 3 && <Construction size={16} />}
-                    {i === 4 && <FileCheck size={16} />}
-                    {i === 5 && <Headphones size={16} />}
+                  {/* Spacer to handle the overlapping circle and provide layout room */}
+                  <div className="h-4" />
+
+                  {/* Icon badge without background circle */}
+                  <div className="flex items-center justify-center text-secondary mb-4">
+                    {i === 0 && <HardHat size={36} />}
+                    {i === 1 && <FileText size={36} />}
+                    {i === 2 && <Settings size={36} />}
+                    {i === 3 && <Construction size={36} />}
+                    {i === 4 && <FileCheck size={36} />}
+                    {i === 5 && <Headphones size={36} />}
                   </div>
 
                   <h3 className="text-sm font-black uppercase tracking-wider text-primary leading-tight">
@@ -1903,15 +2193,19 @@ export default function SolutionsPage() {
               ))}
             </div>
 
-            {/* Dots timeline */}
+            {/* Dots timeline with glowing pin locator effect */}
             <div className="relative flex justify-between px-[8%] items-center mb-16">
-              <div className="absolute inset-x-0 h-[1.5px] bg-slate-200/80 z-0" />
+              <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-slate-200 via-secondary to-slate-200 z-0" />
               {smartProcessSteps.map((item, i) => (
                 <div
                   key={i}
-                  className="relative z-10 flex flex-col items-center"
+                  className="relative z-10 flex flex-col items-center justify-center w-8 h-8"
                 >
-                  <div className="h-2.5 w-2.5 rounded-full bg-secondary shadow-md" />
+                  {/* Outer animated ripple pulse */}
+                  <span className="absolute inline-flex h-6 w-6 rounded-full bg-secondary/30 animate-ping" />
+                  
+                  {/* Core Pin Dot */}
+                  <div className="relative h-3 w-3 rounded-full bg-[#fa5902] shadow-md border-2 border-white" />
                 </div>
               ))}
             </div>
@@ -1923,14 +2217,14 @@ export default function SolutionsPage() {
                   const PIcon = item.icon;
                   return (
                     <div key={i} className="px-5 flex gap-4 items-start">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary">
-                        <PIcon size={18} />
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-sm">
+                        <PIcon size={27} />
                       </div>
                       <div>
-                        <h4 className="text-sm font-black uppercase text-primary tracking-wide leading-tight">
+                        <h4 className="text-[13px] font-black uppercase text-primary tracking-wide leading-tight">
                           {item.title}
                         </h4>
-                        <p className="mt-1 text-xs md:text-sm text-slate-500 leading-normal">
+                        <p className="mt-1.5 text-xs text-slate-500 leading-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1945,47 +2239,46 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 9: GLOBAL CAPABILITY (Engineered to Perform. Delivered Worldwide) */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-slate-50 py-[30px]">
+        <section className="relative overflow-hidden bg-[#f8faff] py-[60px]">
           <Container className="relative z-10">
             {/* Top Row: Two Columns */}
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-start mb-16">
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-center mb-12">
               {/* Left Column Content */}
               <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="h-[1.5px] w-8 bg-secondary" />
-                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <div className="flex items-center gap-3.5 mb-3">
+                  <span className="w-8 h-[1.5px] bg-[#fa5902]" />
+                  <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-[#fa5902]">
                     GLOBAL CAPABILITY
                   </span>
-                  <span className="h-[1.5px] w-8 bg-secondary" />
+                  <span className="w-8 h-[1.5px] bg-[#fa5902]" />
                 </div>
 
-                <h2 className="headline text-[clamp(2.4rem,5.5vw,3.6rem)] font-black leading-[1.0] text-primary">
+                <h2 className="text-[clamp(2.2rem,5vw,2.9rem)] font-extrabold leading-[1.05] text-[#092a5c] tracking-tight">
                   ENGINEERED TO PERFORM. <br />
-                  <span className="text-secondary">DELIVERED WORLDWIDE.</span>
+                  <span className="text-[#fa5902]">DELIVERED WORLDWIDE.</span>
                 </h2>
 
-                <p className="mt-6 max-w-xl text-sm md:text-base leading-relaxed text-slate-500 font-medium">
-                  From design to delivery, installation to support – our
-                  solutions power industries across the globe with unmatched
-                  reliability and performance.
+                <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-500 font-medium">
+                  From design to delivery, installation to support – our solutions power industries across the globe with unmatched reliability and performance.
                 </p>
 
                 {/* 3 Horizontal Features */}
-                <div className="grid grid-cols-3 gap-4 mt-10 pt-8 border-t border-slate-200">
+                <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-slate-200/80">
                   {globalReachPoints.map((item, i) => {
                     const RIcon = item.icon;
                     return (
                       <div
                         key={i}
-                        className="text-center flex flex-col items-center"
+                        className="text-center flex flex-col items-center group"
                       >
-                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-sm mb-3">
-                          <RIcon size={22} className="stroke-[1.8]" />
+                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white border border-slate-200/80 text-[#fa5902] shadow-sm mb-3.5 group-hover:scale-105 transition-transform duration-300">
+                          <RIcon size={24} className="stroke-[2]" />
                         </div>
-                        <h4 className="text-[11px] font-black uppercase tracking-wider text-primary mb-1">
+                        <h4 className="text-[12px] font-extrabold uppercase tracking-wide text-[#092a5c] mb-1">
                           {item.title}
                         </h4>
-                        <p className="text-[10px] leading-relaxed text-slate-500 font-medium">
+                        <span className="block w-6 h-[1.5px] bg-[#fa5902] mb-1.5 mx-auto" />
+                        <p className="text-[11px] leading-relaxed text-slate-500 font-medium">
                           {item.desc}
                         </p>
                       </div>
@@ -1995,138 +2288,63 @@ export default function SolutionsPage() {
               </div>
 
               {/* Right Column Map Representation */}
-              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden flex items-center justify-center bg-slate-50">
+              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-visible flex items-center justify-center">
                 <Image
-                  src="/images/projects/world-map.jpg"
+                  src="/solutionspage/global capability 1.jpg"
                   alt="Supply Locations Network"
                   fill
-                  className="object-cover opacity-60 mix-blend-multiply"
+                  className="object-contain  select-none pointer-events-none"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
 
-                {/* Dots / Lines / Labels over Map (Simulated Pin overlays) */}
-                <div className="absolute inset-0 z-10 pointer-events-none">
-                  {/* Pithal (India) Central Pin */}
-                  <div className="absolute top-[52%] left-[64%] flex flex-col items-center">
-                    <div className="relative flex h-7 w-7 items-center justify-center">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                      <MapPin
-                        size={20}
-                        className="text-secondary fill-secondary relative z-10"
-                      />
-                    </div>
-                    <span className="text-[9px] font-black uppercase bg-secondary text-white px-2 py-0.5 rounded shadow leading-none mt-1">
-                      PITHAL
-                    </span>
-                  </div>
-
-                  {/* NORTH AMERICA */}
-                  <div className="absolute top-[32%] left-[15%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
-                      NORTH AMERICA
-                    </span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
-                      Projects Delivered
-                    </span>
-                  </div>
-
-                  {/* EUROPE */}
-                  <div className="absolute top-[20%] left-[45%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
-                      EUROPE
-                    </span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
-                      Projects Delivered
-                    </span>
-                  </div>
-
-                  {/* ASIA */}
-                  <div className="absolute top-[30%] left-[82%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
-                      ASIA
-                    </span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
-                      Projects Delivered
-                    </span>
-                  </div>
-
-                  {/* SOUTH AMERICA */}
-                  <div className="absolute top-[62%] left-[22%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
-                      SOUTH AMERICA
-                    </span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
-                      Projects Delivered
-                    </span>
-                  </div>
-
-                  {/* AFRICA */}
-                  <div className="absolute top-[65%] left-[48%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
-                      AFRICA
-                    </span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
-                      Projects Delivered
-                    </span>
-                  </div>
-
-                  {/* AUSTRALIA */}
-                  <div className="absolute top-[72%] left-[80%] bg-white border border-slate-100 rounded-lg px-2 py-1 shadow-sm text-center">
-                    <span className="text-[8px] font-black uppercase text-primary leading-none block">
-                      AUSTRALIA
-                    </span>
-                    <span className="text-[7px] text-slate-400 font-bold uppercase mt-0.5 leading-none block">
-                      Projects Delivered
-                    </span>
-                  </div>
-                </div>
+                
               </div>
             </div>
 
             {/* 5 Flags Cards Row */}
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5 mb-16">
+            <div className="grid gap-4.5 sm:grid-cols-2 lg:grid-cols-5 mb-12">
               {globalFlagsCards.map((card, i) => {
                 return (
                   <div
                     key={i}
-                    className="group relative overflow-hidden rounded-2xl border border-slate-200 shadow-md bg-white flex flex-col"
+                    className="group relative overflow-hidden rounded-2xl border border-slate-200/60 shadow-sm bg-white flex flex-col justify-between"
                   >
-                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
                       {card.image && (
                         <Image
                           src={card.image}
                           alt={card.name}
                           fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover scale-110 group-hover:scale-125 transition-transform duration-700"
                           sizes="(min-width: 1024px) 20vw, 50vw"
                         />
                       )}
                     </div>
-                    <div className="bg-[#031b40] p-6 text-left border-t border-[#031b40] flex-1">
-                      <div className="flex items-center gap-4">
-                        {/* Inline Flag - Increased Size */}
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/10 overflow-hidden shadow-inner group-hover:bg-white/20 transition-all duration-300">
+                    {/* Mockup matching deep navy footer badge */}
+                    <div className="bg-[#092a5c] p-4 text-left flex-1 flex flex-col justify-between">
+                      <div className="flex items-center gap-3">
+                        {/* Circle Flag Box */}
+                        <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-white border border-white/20 shadow-inner group-hover:scale-105 transition-all duration-300">
                           {card.flag.startsWith("/") ? (
-                            <div className="relative w-full h-full flex items-center justify-center p-2">
-                              <Image
-                                src={card.flag}
-                                alt={`${card.name} flag`}
-                                width={32}
-                                height={32}
-                                className="object-contain"
-                              />
-                            </div>
+                            <Image
+                              src={card.flag}
+                              alt={`${card.name} flag`}
+                              fill
+                              className="object-cover"
+                            />
                           ) : (
-                            <span className="text-2xl leading-none drop-shadow-sm">
-                              {card.flag}
-                            </span>
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <span className="text-xl leading-none drop-shadow-sm">
+                                {card.flag}
+                              </span>
+                            </div>
                           )}
                         </div>
-                        <span className="text-base font-black uppercase tracking-wider text-white">
+                        <span className="text-[13px] font-extrabold uppercase tracking-wide text-white">
                           {card.name}
                         </span>
                       </div>
-                      <p className="mt-4 text-sm text-slate-300 leading-snug font-medium">
+                      <p className="mt-3 text-[11.5px] text-slate-200 leading-snug font-medium">
                         {card.desc}
                       </p>
                     </div>
@@ -2136,55 +2354,55 @@ export default function SolutionsPage() {
             </div>
 
             {/* Navy Stats Banner */}
-            <div className="bg-[#031b40] rounded-3xl p-8 shadow-xl mb-6 text-white relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#092a5c] to-[#041630] border border-white/10 p-6 sm:p-8 md:p-10 shadow-[0_20px_50px_rgba(3,27,64,0.3)] mb-8 text-white relative overflow-hidden">
               <div className="absolute inset-0 pointer-events-none opacity-5 industrial-grid" />
-              <div className="relative z-10 grid gap-8 sm:grid-cols-3 lg:grid-cols-5 sm:divide-x sm:divide-white/10">
+              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-0 lg:divide-x lg:divide-white/10">
                 {globalNavyBarMetrics.map((item, i) => {
                   return (
                     <div
                       key={i}
-                      className="flex items-center gap-4.5 pl-0 lg:pl-6 first:pl-0"
+                      className="group/stat flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-4 pl-0 lg:pl-6 first:pl-0"
                     >
-                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-secondary">
+                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-[#fa5902] group-hover/stat:border-[#fa5902]/30 group-hover/stat:bg-[#fa5902]/10 transition-all duration-300">
                         {i === 0 && (
                           <Globe
-                            size={26}
-                            className="text-secondary stroke-[1.8]"
+                            size={30}
+                            className="text-[#fa5902] stroke-[1.8]"
                           />
                         )}
                         {i === 1 && (
                           <Building2
-                            size={26}
-                            className="text-secondary stroke-[1.8]"
+                            size={30}
+                            className="text-[#fa5902] stroke-[1.8]"
                           />
                         )}
                         {i === 2 && (
                           <Settings
-                            size={26}
-                            className="text-secondary stroke-[1.8]"
+                            size={30}
+                            className="text-[#fa5902] stroke-[1.8]"
                           />
                         )}
                         {i === 3 && (
                           <Users
-                            size={26}
-                            className="text-secondary stroke-[1.8]"
+                            size={30}
+                            className="text-[#fa5902] stroke-[1.8]"
                           />
                         )}
                         {i === 4 && (
                           <Headphones
-                            size={26}
-                            className="text-secondary stroke-[1.8]"
+                            size={30}
+                            className="text-[#fa5902] stroke-[1.8]"
                           />
                         )}
                       </div>
-                      <div>
-                        <h4 className="text-3xl font-black text-white leading-none tracking-tight">
+                      <div className="text-center sm:text-left">
+                        <h4 className="text-3xl font-black text-[#fa5902] leading-none tracking-tight group-hover/stat:translate-x-0.5 transition-transform duration-300">
                           {item.value}
                         </h4>
-                        <p className="text-[10px] font-black text-white uppercase tracking-widest mt-1.5">
+                        <p className="text-[11px] font-black text-white uppercase tracking-widest mt-2">
                           {item.label}
                         </p>
-                        <p className="text-[10px] text-slate-400 mt-0.5 leading-snug font-medium">
+                        <p className="text-[11px] text-slate-300 mt-1 leading-snug font-medium">
                           {item.desc}
                         </p>
                       </div>
@@ -2192,22 +2410,25 @@ export default function SolutionsPage() {
                   );
                 })}
               </div>
-            </div>
-
-            {/* Bottom White Card Row */}
-            <div className="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm flex flex-wrap items-center justify-between gap-6 px-8 mt-6">
+              {/* Bottom White Card Row */}
+            <div className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm flex flex-wrap items-center justify-between gap-6 px-8 mt-10">
               {globalBottomValues.map((item, i) => {
                 const VIcon = item.icon;
                 return (
                   <div key={i} className="flex items-center gap-3">
-                    <VIcon size={20} className="text-secondary stroke-[1.8]" />
-                    <span className="text-xs font-black uppercase tracking-wide text-primary">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#fdf2eb]">
+                      <VIcon size={18} className="text-[#fa5902] stroke-[2]" />
+                    </div>
+                    <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#092a5c]">
                       {item.title}
                     </span>
                   </div>
                 );
               })}
             </div>
+            </div>
+
+            
           </Container>
         </section>
 
@@ -2254,21 +2475,31 @@ export default function SolutionsPage() {
             </div>
 
             {/* Grid of 6 cards with orange circular arcs */}
+            <style>{`
+              @keyframes arc-spin {
+                0%   { stroke-dashoffset: 0;    filter: drop-shadow(0 0 4px #ff5a00); }
+                100% { stroke-dashoffset: -370; filter: drop-shadow(0 0 4px #ff5a00); }
+              }
+              .why-card:hover .arc-circle {
+                animation: arc-spin 0.7s cubic-bezier(0.4,0,0.2,1) forwards;
+              }
+            `}</style>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16">
               {whyChooseCards.map((item, i) => (
                 <div
                   key={i}
-                  className="group relative flex flex-col bg-slate-50 border border-slate-200/80 p-6 rounded-xl hover:shadow-lg transition-all duration-300 hover:border-slate-300"
+                  className="why-card group relative flex flex-col bg-slate-50 border border-slate-200/80 p-6 rounded-xl hover:shadow-lg transition-all duration-300 hover:border-slate-300"
                 >
                   {/* Left-side circle container with orange crescent */}
                   <div className="flex gap-5 items-start">
-                    <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-md">
-                      {/* Orange outer arc segment overlay */}
+                    <div className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-md">
+                      {/* Orange outer arc — partial by default, full circle + glow on hover */}
                       <svg
-                        className="absolute -inset-[1.5px] h-[66px] w-[66px] -rotate-45 pointer-events-none"
+                        className="absolute -inset-[1.5px] h-[82px] w-[82px] -rotate-45 pointer-events-none"
                         viewBox="0 0 100 100"
                       >
                         <circle
+                          className="arc-circle"
                           cx="50"
                           cy="50"
                           r="47"
@@ -2305,8 +2536,8 @@ export default function SolutionsPage() {
                 const SIcon = item.icon;
                 return (
                   <div key={i} className="flex items-center gap-2">
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm text-secondary">
-                      <SIcon size={12} />
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm text-secondary">
+                      <SIcon size={18} />
                     </div>
                     <span className="text-sm font-black uppercase tracking-wide text-primary">
                       {item.label}
@@ -2378,68 +2609,70 @@ export default function SolutionsPage() {
             </div>
 
             {/* 4 Cards Grid */}
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-10">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-10">
               {filteredProjects.map((item, idx) => (
                 <div
                   key={idx}
-                  className="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                  className="group bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
                 >
-                  <div>
-                    {/* Photo box represented with tags */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
-                      {item.image ? (
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                        />
-                      ) : (
-                        <div className="absolute inset-0 border border-dashed border-slate-700/60 m-2 rounded-lg z-0 flex items-center justify-center">
-                          <span className="text-xs font-black uppercase tracking-widest text-slate-500">
-                            Related Plant Visual {idx + 1}
-                          </span>
-                        </div>
-                      )}
-                      <div className="absolute inset-0 bg-slate-950/15 z-10" />
-                      <span className="absolute left-3 top-3 z-20 text-[10px] font-black uppercase tracking-widest bg-white text-secondary px-2 py-0.5 rounded border border-slate-100 leading-none">
-                        {item.tag}
-                      </span>
-                    </div>
-
-                    <div className="p-4.5">
-                      <h3 className="text-sm md:text-base font-black uppercase text-primary leading-tight group-hover:text-secondary transition-colors">
-                        {item.title}
-                      </h3>
-                      <span className="inline-flex gap-1 items-center text-xs font-black text-slate-400 uppercase tracking-wider mt-1.5">
-                        <MapPin size={9} className="text-secondary" />{" "}
-                        {item.loc}
-                      </span>
-
-                      {/* 3 cols metrics */}
-                      <div className="mt-4 pt-3.5 border-t border-slate-100 grid grid-cols-3 gap-1.5 text-center">
-                        {item.metrics.map((met, i) => (
-                          <div key={i} className="px-0.5">
-                            <span className="text-sm font-black text-secondary leading-none block">
-                              {met.val}
-                            </span>
-                            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block mt-1.5 leading-tight">
-                              {met.label}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
+                  {/* Image */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                    {item.image ? (
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      />
+                    ) : null}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10" />
+                    {/* Category icon badge bottom-left */}
+                    <div className="absolute bottom-3 left-3 z-20 flex h-10 w-10 items-center justify-center rounded-xl bg-white/90 border border-slate-100 shadow">
+                      {idx === 0 && <Pickaxe size={20} className="text-secondary" strokeWidth={1.8} />}
+                      {idx === 1 && <Construction size={20} className="text-secondary" strokeWidth={1.8} />}
+                      {idx === 2 && <Sparkles size={20} className="text-secondary" strokeWidth={1.8} />}
+                      {idx === 3 && <Road size={20} className="text-secondary" strokeWidth={1.8} />}
                     </div>
                   </div>
 
-                  <div className="p-4.5 pt-0">
+                  {/* Body */}
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3 className="text-[15px] font-black text-primary leading-tight group-hover:text-secondary transition-colors mb-1">
+                      {item.title}
+                    </h3>
+                    <span className="inline-flex gap-1.5 items-center text-[11px] font-bold text-secondary uppercase tracking-wider mb-4">
+                      <MapPin size={10} className="text-secondary" />
+                      {item.cat}
+                    </span>
+
+                    {/* Info rows */}
+                    <div className="flex-1 space-y-0 divide-y divide-slate-100 border-t border-slate-100">
+                      <div className="flex items-start justify-between py-3 gap-2">
+                        <span className="text-[13px] text-slate-400 font-medium shrink-0">Capacity</span>
+                        <span className="text-[13px] font-black text-primary text-right">{item.capacity}</span>
+                      </div>
+                      <div className="flex items-start justify-between py-3 gap-2">
+                        <span className="text-[13px] text-slate-400 font-medium shrink-0">Location</span>
+                        <span className="text-[13px] font-black text-primary text-right">{item.loc}</span>
+                      </div>
+                      <div className="flex items-start justify-between py-3 gap-2">
+                        <span className="text-[13px] text-slate-400 font-medium shrink-0 mt-0.5">Machines Used</span>
+                        <span className="text-[13px] font-bold text-slate-600 text-right leading-snug">{item.machines}</span>
+                      </div>
+                      <div className="flex items-start justify-between py-3 gap-2">
+                        <span className="text-[13px] text-slate-400 font-medium shrink-0 mt-0.5">Result Achieved</span>
+                        <span className="text-[13px] font-black text-primary text-right leading-snug">{item.result}</span>
+                      </div>
+                    </div>
+
+                    {/* View Details link */}
                     <Link
                       href="#contact"
-                      className="w-full inline-flex items-center justify-between text-xs font-black uppercase tracking-widest text-secondary group-hover:text-primary transition-colors border-t border-slate-100 pt-3"
+                      className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-center gap-2 text-[13px] font-black uppercase tracking-widest text-secondary hover:text-primary transition-colors"
                     >
-                      <span>VIEW CASE STUDY</span>
-                      <ArrowRight size={11} />
+                      View Details
+                      <ArrowRight size={13} />
                     </Link>
                   </div>
                 </div>
@@ -2447,8 +2680,8 @@ export default function SolutionsPage() {
             </div>
 
             {/* Carousel navigation dots */}
-            <div className="flex justify-center items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-secondary" />
+            <div className="flex justify-center items-center gap-2 mt-4">
+              <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
               <span className="h-2 w-2 rounded-full bg-slate-300" />
               <span className="h-2 w-2 rounded-full bg-slate-300" />
               <span className="h-2 w-2 rounded-full bg-slate-300" />
