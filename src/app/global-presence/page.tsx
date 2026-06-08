@@ -284,7 +284,7 @@ export default function GlobalPresencePage() {
         {/* ══════════════════════════════════════════════════════════════════
     SECTION 1 — HERO
     ══════════════════════════════════════════════════════════════════ */}
-        <section className="relative isolate overflow-hidden bg-[#f4f8fc] flex items-center py-8 lg:py-6 min-h-[calc(100vh-4.25rem)] sm:min-h-[calc(100vh-4.75rem)] lg:h-[calc(100vh-4.25rem)] xl:h-[calc(100vh-5.25rem)]">
+        <section className="relative isolate overflow-hidden bg-[#f4f8fc] flex items-center py-8 lg:py-6 lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">
           <div className="absolute inset-0 z-0 overflow-hidden">
             <Image
               src="/images/global-presense/hero.png"
@@ -294,91 +294,81 @@ export default function GlobalPresencePage() {
               sizes="100vw"
               className="object-cover object-[95%_center]"
             />
-            {/* ✅ gradient pushes white further left, opens up more of the image */}
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,#fff_30%,rgba(255,255,255,0.88)_42%,rgba(255,255,255,0.25)_60%,rgba(255,255,255,0)_100%)]" />
+            {/* ✅ gradient pushes background color further left, opens up more of the image */}
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,#f4f8fc_0%,#f4f8fc_30%,rgba(244,248,252,0.88)_42%,rgba(244,248,252,0.25)_60%,rgba(244,248,252,0)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f4f8fc] via-[#f4f8fc]/50 to-transparent" />
           </div>
 
-          <Container className="relative z-10 max-w-[1520px] px-5 sm:px-8 lg:px-10 w-full flex flex-col justify-between gap-8 py-4 lg:h-full">
+          <Container className="relative z-10 max-w-[1520px] px-5 sm:px-8 lg:px-10 w-full flex flex-col justify-between gap-4 py-6 lg:py-8">
             {/* Breadcrumb */}
-            <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-slate-500">
+            <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-slate-500">
               <Link href="/" className="hover:text-secondary transition-colors flex items-center gap-1.5">
                 <Home size={14} className="stroke-[2]" />
                 Home
               </Link>
               <ChevronRight className="w-3.5 h-3.5 text-slate-400 stroke-[2.5]" />
-              <span className="text-slate-500">Global Presence</span>
+              <span className="text-slate-500 font-medium">Global Presence</span>
             </div>
 
             <div className="max-w-[800px]">
-              {/* ✅ Badge — matching Careers tag style */}
               <div className="mb-4 flex items-center gap-3">
-                <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-secondary">
+                <span className="h-[1.5px] w-8 bg-secondary" />
+                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
                   GLOBAL PRESENCE
                 </span>
-                <span className="h-[1.5px] w-12 bg-secondary" />
               </div>
 
-              {/* ✅ Headline — matching Careers H1 size and leading */}
-              <h1 className="font-extrabold text-[2.5rem] sm:text-[3.25rem] lg:text-[3.5rem] leading-[1.1] tracking-tight text-primary uppercase mb-6">
-                <span className="block">
-                  ENGINEERING EXCELLENCE.
-                </span>
-                <span className="block text-secondary">
-                  DELIVERED WORLDWIDE.
-                </span>
+              <h1 className="headline mb-4 text-[clamp(2.2rem,5vw,3.8rem)] font-black uppercase leading-[1.05] tracking-tight text-primary">
+                ENGINEERING EXCELLENCE. <br />
+                <span className="text-secondary">DELIVERED WORLDWIDE.</span>
               </h1>
 
-              {/* ✅ Description — matching Careers paragraph style */}
-              <p className="mt-6 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg mb-8">
-                Pithal Engineering delivers advanced crushing &amp; screening
+              <p className="mt-6 max-w-lg text-sm md:text-base leading-relaxed text-slate-600 font-medium">
+                Pithal Engineering delivers advanced crushing & screening
                 solutions across the globe with precision, reliability and
                 unmatched support. From engineering to installation — we&apos;re
                 with you at every step.
               </p>
 
-              <div className="flex flex-col gap-4 sm:flex-row">
+              <div className="mt-6 flex flex-wrap gap-4">
                 <Button
                   variant="primary"
                   href="#network"
-                  className="group h-12 px-7 text-sm font-black tracking-wide"
+                  className="group h-12 px-8 text-xs font-black tracking-widest uppercase"
                 >
                   EXPLORE GLOBAL REACH
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1.5" />
                 </Button>
                 <Button
                   variant="outlineNavy"
                   href="/contact"
-                  className="group h-12 px-7 text-sm font-black tracking-wide border-2 border-primary bg-white"
+                  className="group h-12 px-8 text-xs font-black tracking-widest uppercase border-2 bg-white/50 backdrop-blur-sm"
                 >
                   DISCUSS YOUR PROJECT
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1.5" />
                 </Button>
               </div>
             </div>
 
             {/* Stats bar */}
-            <div className="mt-4 rounded-2xl border border-white/80 bg-white/95 px-4 py-4 shadow-[0_18px_45px_rgba(10,35,70,0.12)] backdrop-blur-sm sm:px-6 lg:mt-6 lg:px-10">
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+            <div className="mt-4 rounded-2xl border border-white/60 bg-white/90 p-0.5 shadow-[0_20px_50px_rgba(3,27,64,0.1)] backdrop-blur-md">
+              <div className="grid grid-cols-1 divide-y divide-slate-100 sm:grid-cols-2 sm:divide-y-0 sm:divide-x lg:grid-cols-4">
                 {heroStats.map((s, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-4 lg:border-r lg:border-slate-200 lg:px-6 first:lg:pl-0 last:lg:border-r-0 last:lg:pr-0"
+                    className="flex items-center gap-4 p-4 lg:p-5"
                   >
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
-                      <s.icon className="h-7 w-7 stroke-[1.6]" />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#fdf2eb] text-secondary">
+                      <s.icon className="h-6 w-6 stroke-[1.8]" />
                     </div>
                     <div>
-                      <div className="text-[clamp(1.6rem,2.2vw,2rem)] font-black leading-none text-secondary">
+                      <div className="text-xl font-black leading-none text-primary">
                         {s.value}
                       </div>
-                      {/* ✅ Last stat label in orange, others in navy */}
-                      <div
-                        className={`mt-1 text-sm font-black uppercase tracking-wide ${i === heroStats.length - 1 ? "text-secondary" : "text-primary"}`}
-                      >
+                      <div className="mt-0.5 text-[10px] font-black uppercase tracking-wider text-secondary">
                         {s.label}
                       </div>
-                      <div className="mt-1 max-w-[180px] text-sm font-medium leading-snug text-[#54647b]">
+                      <div className="mt-0.5 line-clamp-1 text-[10px] font-medium leading-tight text-slate-500">
                         {s.desc}
                       </div>
                     </div>
@@ -388,13 +378,12 @@ export default function GlobalPresencePage() {
             </div>
 
             {/* Trust bar */}
-            <div className="mx-auto mt-4 flex max-w-[1000px] flex-col items-center justify-center gap-4 text-center text-sm font-semibold text-[#4a5b72] md:flex-row md:gap-10 md:text-left">
-              <span className="flex items-center gap-3">
-                <Shield className="h-5 w-5 text-secondary" />
-                Engineered for global standards. Delivered with trust. Built for
-                performance.
+            <div className="mx-auto mt-2 flex max-w-4xl flex-col items-center justify-center gap-3 text-center text-[11px] font-bold text-slate-500 md:flex-row md:gap-6 md:text-left">
+              <span className="flex items-center gap-2">
+                <Shield className="h-4 w-4 text-secondary" />
+                Engineered for global standards. Delivered with trust.
               </span>
-              <span className="hidden h-8 w-px bg-slate-300 md:block" />
+              <span className="hidden h-4 w-px bg-slate-200 md:block" />
               <span>
                 Manufactured in India. Trusted by industries worldwide.
               </span>
@@ -545,27 +534,7 @@ export default function GlobalPresencePage() {
                   />
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 bg-primary/95 text-white px-6 py-5 border-t border-secondary/30 backdrop-blur-sm">
-                  <div className="text-[0.65rem] font-black text-secondary uppercase tracking-[0.35em] mb-1">
-                    REGIONAL HUB
-                  </div>
-                  <h4 className="text-sm font-black uppercase tracking-wider mb-2">
-                    {activeRegionObj.name}
-                  </h4>
-                  <p className="text-xs text-slate-300 leading-relaxed mb-3">
-                    {activeRegionObj.desc}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {activeRegionObj.countries.map((c, i) => (
-                      <span
-                        key={i}
-                        className="text-[0.65rem] font-black uppercase px-2 py-1 bg-white/10 rounded-full"
-                      >
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                
               </div>
 
               {/* ✅ Global Highlights — orange icons (not numbered circles) */}

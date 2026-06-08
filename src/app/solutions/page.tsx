@@ -1361,36 +1361,17 @@ export default function SolutionsPage() {
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                  COMPLETE PLANT SOLUTIONS
-                </span>
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span>COMPLETE PLANT SOLUTIONS</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                INTELLIGENT SYSTEMS.{" "}
-                <span className="text-secondary">SEAMLESS PERFORMANCE.</span>
+                INTELLIGENT SYSTEMS. <span className="text-secondary">SEAMLESS PERFORMANCE.</span>
               </h2>
-              <span
-                aria-hidden
-                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
-              />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
+              <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 From raw material to final product, our complete plant solutions
                 are engineered for maximum efficiency, reliability, and
                 productivity.
@@ -1644,36 +1625,17 @@ export default function SolutionsPage() {
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                  APPLICATIONS WE POWER
-                </span>
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span>APPLICATIONS WE POWER</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                BUILT FOR{" "}
-                <span className="text-secondary">EVERY APPLICATION.</span>
+                BUILT FOR <span className="text-secondary">EVERY APPLICATION.</span>
               </h2>
-              <span
-                aria-hidden
-                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
-              />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
+              <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 Our crushing solutions are engineered to perform across a wide
                 range of industries and applications — delivering results where
                 it matters most.
@@ -1826,17 +1788,17 @@ export default function SolutionsPage() {
           <Container className="relative z-10">
             {/* Header Block */}
             <div className="mx-auto max-w-4xl text-center mb-12">
-              <div className="flex items-center justify-center gap-3.5 mb-3">
-                <span className="w-8 h-[1.5px] bg-[#fa5902]" />
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-[#fa5902]">
-                  OUR PERFORMANCE. YOUR ADVANTAGE.
-                </span>
-                <span className="w-8 h-[1.5px] bg-[#fa5902]" />
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span>OUR PERFORMANCE. YOUR ADVANTAGE.</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
-              <h2 className="text-center text-[clamp(1.8rem,4.5vw,2.75rem)] font-extrabold leading-[1.1] text-[#092a5c] tracking-tight">
-                MEASURABLE PERFORMANCE. <span className="text-[#fa5902]">MAXIMUM RESULTS.</span>
+              <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary uppercase">
+                MEASURABLE PERFORMANCE. <span className="text-secondary">MAXIMUM RESULTS.</span>
               </h2>
-              <p className="mx-auto mt-4 max-w-3xl text-center text-sm md:text-[14.5px] leading-relaxed text-slate-500 font-medium">
+              <p className="mx-auto mt-4 max-w-3xl text-center text-sm md:text-base leading-relaxed text-text-muted font-medium">
                 Our engineered crushing solutions are built to deliver superior performance,
                 reduce operational costs, and maximize your productivity.
               </p>
@@ -1858,7 +1820,7 @@ export default function SolutionsPage() {
                             <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
                             {/* Speedometer arc */}
                             <path d="M15 35 A 16 16 0 1 1 39 35" fill="none" stroke="#b2c6e6" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="3 3" />
-                            <path d="M15 35 A 16 16 0 1 1 34 20" fill="none" stroke="#fa5902" strokeWidth="3" strokeLinecap="round" />
+                            
                             {/* Needle */}
                             <path d="M27 27 L 33 21" stroke="#092a5c" strokeWidth="2.5" strokeLinecap="round" />
                             <circle cx="27" cy="27" r="3" fill="#092a5c" />
@@ -2087,40 +2049,21 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 8: INTELLIGENT SMART PROCESS WORKFLOW */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[30px]">
+        <section className="bg-white py-[60px]">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                  OUR SMART PROCESS
-                </span>
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span>OUR SMART PROCESS</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                INTELLIGENT WORKFLOW.{" "}
-                <span className="text-secondary">SEAMLESS RESULTS.</span>
+                INTELLIGENT WORKFLOW. <span className="text-secondary">SEAMLESS RESULTS.</span>
               </h2>
-              <span
-                aria-hidden
-                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
-              />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
+              <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 From initial consultation to lifelong support — our structured
                 process ensures efficiency, transparency, and performance at
                 every stage.
@@ -2245,17 +2188,17 @@ export default function SolutionsPage() {
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center mb-12">
               {/* Left Column Content */}
               <div>
-                <div className="flex items-center gap-3.5 mb-3">
-                  <span className="w-8 h-[1.5px] bg-[#fa5902]" />
-                  <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-[#fa5902]">
-                    GLOBAL CAPABILITY
-                  </span>
-                  <span className="w-8 h-[1.5px] bg-[#fa5902]" />
+                <div className="flex items-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+                  <span className="h-[2px] w-8 bg-secondary rounded-full" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                  <span>GLOBAL CAPABILITY</span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                  <span className="h-[2px] w-8 bg-secondary rounded-full" />
                 </div>
 
-                <h2 className="text-[clamp(2.2rem,5vw,2.9rem)] font-extrabold leading-[1.05] text-[#092a5c] tracking-tight">
+                <h2 className="headline text-primary text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] uppercase">
                   ENGINEERED TO PERFORM. <br />
-                  <span className="text-[#fa5902]">DELIVERED WORLDWIDE.</span>
+                  <span className="text-secondary">DELIVERED WORLDWIDE.</span>
                 </h2>
 
                 <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-500 font-medium">
@@ -2435,40 +2378,21 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 10: SOLUTIONS BUILT AROUND YOUR SUCCESS */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[30px]">
+        <section className="bg-white py-[60px]">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                  WHY CHOOSE PITHAL SOLUTIONS
-                </span>
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span>WHY CHOOSE PITHAL SOLUTIONS</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                Solutions built around{" "}
-                <span className="text-secondary">your success.</span>
+                SOLUTIONS BUILT AROUND <span className="text-secondary">YOUR SUCCESS.</span>
               </h2>
-              <span
-                aria-hidden
-                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
-              />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
+              <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 We combine engineering excellence with practical solutions to
                 deliver maximum performance, reliability, and long-term value.
               </p>
@@ -2536,8 +2460,8 @@ export default function SolutionsPage() {
                 const SIcon = item.icon;
                 return (
                   <div key={i} className="flex items-center gap-2">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm text-secondary">
-                      <SIcon size={18} />
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm text-secondary">
+                      <SIcon size={27} />
                     </div>
                     <span className="text-sm font-black uppercase tracking-wide text-primary">
                       {item.label}
@@ -2552,32 +2476,21 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 11: CASE STUDIES (Proven Solutions. Real Results.) */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[30px]" id="case-studies">
+        <section className="bg-bg-light section-space" id="case-studies">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-12">
-              <div className="relative flex justify-center items-center mb-4 w-full max-w-4xl mx-auto">
-                <div className="absolute left-[20%] right-[50%] top-2 h-[1px] bg-secondary flex items-start">
-                  <div className="h-1.5 w-1.5 rounded-full bg-secondary -mt-[0.5px]" />
-                </div>
-                <div className="absolute left-[50%] right-[20%] top-2 h-[1px] bg-secondary flex items-start justify-end">
-                  <div className="h-1.5 w-1.5 rounded-full bg-secondary -mt-[0.5px]" />
-                </div>
-                <div className="relative bg-slate-100 px-6 z-10">
-                  <span className="text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                    CASE STUDIES
-                  </span>
-                </div>
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span>CASE STUDIES</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                PROVEN SOLUTIONS.{" "}
-                <span className="text-secondary">REAL RESULTS.</span>
+                PROVEN SOLUTIONS. <span className="text-secondary">REAL RESULTS.</span>
               </h2>
-              <span
-                aria-hidden
-                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
-              />
-              <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
+              <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 Delivering performance-driven solutions across industries with
                 precision engineering, advanced technology, and reliable
                 support.
@@ -2628,11 +2541,11 @@ export default function SolutionsPage() {
                     ) : null}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10" />
                     {/* Category icon badge bottom-left */}
-                    <div className="absolute bottom-3 left-3 z-20 flex h-10 w-10 items-center justify-center rounded-xl bg-white/90 border border-slate-100 shadow">
-                      {idx === 0 && <Pickaxe size={20} className="text-secondary" strokeWidth={1.8} />}
-                      {idx === 1 && <Construction size={20} className="text-secondary" strokeWidth={1.8} />}
-                      {idx === 2 && <Sparkles size={20} className="text-secondary" strokeWidth={1.8} />}
-                      {idx === 3 && <Road size={20} className="text-secondary" strokeWidth={1.8} />}
+                    <div className="absolute bottom-3 left-3 z-20 flex h-13 w-13 items-center justify-center rounded-full bg-white/90 border border-slate-100 shadow">
+                      {idx === 0 && <Pickaxe size={30} className="text-secondary" strokeWidth={1.8} />}
+                      {idx === 1 && <Construction size={30} className="text-secondary" strokeWidth={1.8} />}
+                      {idx === 2 && <Sparkles size={30} className="text-secondary" strokeWidth={1.8} />}
+                      {idx === 3 && <Road size={30} className="text-secondary" strokeWidth={1.8} />}
                     </div>
                   </div>
 
@@ -2669,10 +2582,10 @@ export default function SolutionsPage() {
                     {/* View Details link */}
                     <Link
                       href="#contact"
-                      className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-center gap-2 text-[13px] font-black uppercase tracking-widest text-secondary hover:text-primary transition-colors"
+                      className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-center gap-2 text-sm md:text-base font-black uppercase tracking-widest text-primary hover:text-secondary transition-colors"
                     >
                       View Details
-                      <ArrowRight size={13} />
+                      <ArrowRight size={14} />
                     </Link>
                   </div>
                 </div>
