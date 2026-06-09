@@ -4,7 +4,7 @@ export const navigation = [
   { label: "Products", href: "/products" },
   { label: "Solutions", href: "/solutions" },
   { label: "Projects", href: "/projects" },
-  { label: "Global Presence", href: "/global-presence" },
+  // { label: "Global Presence", href: "/global-presence" },
   { label: "Careers", href: "/careers" },
   { label: "Blog", href: "/blog" },
 ];

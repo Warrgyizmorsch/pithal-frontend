@@ -164,7 +164,7 @@ export function Footer() {
             );
           })}
 
-          <div>
+          {/* <div>
             <FooterHeading>Certifications</FooterHeading>
             <div className="divide-y divide-primary/15">
               {certifications.map((certification) => (
@@ -184,7 +184,7 @@ export function Footer() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="grid gap-8 pt-6 xl:grid-cols-[1fr_2.08fr_1.23fr] xl:divide-x xl:divide-primary/20">
@@ -204,7 +204,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid items-center gap-2 md:grid-cols-[0.85fr_1.35fr] xl:px-10">
+          {/* <div className="grid items-center gap-2 md:grid-cols-[0.85fr_1.35fr] xl:px-10">
             <div>
               <FooterHeading>Global Presence</FooterHeading>
               <p className="text-[1rem] leading-[1.65] text-text-dark">
@@ -218,7 +218,7 @@ export function Footer() {
               src="/images/footer/footer-world-map.png"
               width={1996}
             />
-          </div>
+          </div> */}
 
           <div className="xl:pl-14">
             <FooterHeading>Get In Touch</FooterHeading>

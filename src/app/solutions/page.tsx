@@ -978,7 +978,7 @@ export default function SolutionsPage() {
 
                 <div className="mt-5 flex flex-wrap gap-3 lg:mt-8">
                   <Button
-                    href="#industries"
+                    href="#contact"
                     variant="primary"
                     className="group flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7"
                   >
