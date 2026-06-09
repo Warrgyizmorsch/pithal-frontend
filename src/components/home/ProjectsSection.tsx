@@ -49,8 +49,14 @@ export function ProjectsSection() {
             <div className="mt-4 max-w-[28rem] text-sm leading-7 text-text-dark sm:text-base">
               Our machines are at the heart of some of the world&apos;s most demanding operations. Delivering unmatched
               performance, day in and day out.
-              <p className="mt-4 text-sm leading-7 text-red-600 sm:text-base">Note: These are the Sample Projects</p>
-            </div>
+<p className="inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/5 px-4 py-2 text-sm text-red-300">
+  <span className="relative flex h-3 w-3">
+    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+    <span className="relative inline-flex h-3 w-3 rounded-full bg-red-400"></span>
+  </span>
+
+  Note: These are sample projects for demonstration purposes only.
+</p>            </div>
           </header>
           <div className="mb-2 grid gap-4 overflow-hidden rounded-lg border border-primary/20 bg-white/92 p-4 md:grid-cols-3 md:gap-0 md:p-5 lg:mb-10">
             {proofPoints.map(({ icon: Icon, title, text }, index) => (

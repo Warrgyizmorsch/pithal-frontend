@@ -52,6 +52,7 @@ import { Container } from "@/components/common/Container";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
+import { CrushingProcessTimeline } from "@/components/common/CrushingProcessTimeline";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // DATA CONFIGURATION (MATCHING SCREENSHOTS EXACTLY)
@@ -59,15 +60,15 @@ import { cn } from "@/lib/utils";
 
 const stats = [
   {
-    value: "500+",
-    label: "INSTALLATIONS",
-    desc: "Across the Globe",
+    value: "100%",
+    label: "Quality Commencement",
+    desc: "For Everyone",
     icon: "inst",
   },
   {
     value: "75,000 sqft",
     label: "Plant Capacity",
-    desc: "Global Presence",
+    desc: "All India Presence",
     icon: "countries",
   },
   { value: "24/7", label: "SUPPORT", desc: "Always With You", icon: "support" },
@@ -415,9 +416,9 @@ const performanceSliders = [
 ];
 
 const performanceStatsList = [
-  { value: "500+", label: "Installations", desc: "Worldwide" },
-  { value: "50+", label: "Countries", desc: "Served" },
-  { value: "24/7", label: "Support & Service", desc: "Excellence" },
+  { value: "100%", label: "Quality Commitment", desc: "Excellence" },
+  { value: "Performance", label: "Accurate & Reliable ", desc: "Served" },
+  { value: "24/7", label: "Support & Service", desc: "Worldwide" },
 ];
 
 const smartProcessSteps = [
@@ -534,18 +535,18 @@ const globalFlagsCards = [
 ];
 
 const globalNavyBarMetrics = [
-  { value: "50+", label: "COUNTRIES", desc: "Global Presence" },
-  { value: "1000+", label: "PROJECTS", desc: "Successfully Delivered" },
-  { value: "15M+ TPH", label: "Installed Capacity", desc: "Worldwide" },
-  { value: "500+", label: "EXPERTS", desc: "Across the Globe" },
-  { value: "24/7", label: "GLOBAL SUPPORT", desc: "Always On. Always Ready." },
+  { value: "End-to-End", label: "Solutions", desc: "Best in the industry" },
+  { value: "Made In", label: "India", desc: "Successfull Machines" },
+  { value: "Smart", label: "Engineering", desc: "All India" },
+  { value: "50+", label: "EXPERTS", desc: "Always there for you" },
+  { value: "24/7", label: "SUPPORT", desc: "Always On. Always Ready." },
 ];
 
 const globalBottomValues = [
   { title: "International Quality Standards", icon: Shield },
   { title: "Timely Delivery & Installation", icon: Clock },
   { title: "Custom Solutions for Every Region", icon: Settings },
-  { title: "Trusted by Global Industry Leaders", icon: Handshake },
+  { title: "Trusted by Industry Leaders", icon: Handshake },
   
 ];
 
@@ -1357,130 +1358,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 4: COMPLETE PLANT SOLUTIONS (Intelligent Systems. Seamless Performance) */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[30px]">
-          <Container>
-            {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                <span className="h-[2px] w-8 bg-secondary rounded-full" />
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                <span>COMPLETE PLANT SOLUTIONS</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                <span className="h-[2px] w-8 bg-secondary rounded-full" />
-              </div>
-              <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                INTELLIGENT SYSTEMS. <span className="text-secondary">SEAMLESS PERFORMANCE.</span>
-              </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                From raw material to final product, our complete plant solutions
-                are engineered for maximum efficiency, reliability, and
-                productivity.
-              </p>
-            </div>
-
-            {/* 6 columns */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6 relative">
-              {plantWorkflow.map((item, i) => (
-                <div
-                  key={i}
-                  className="relative flex flex-col items-center text-center p-4 bg-slate-50 border border-slate-200/50 rounded-xl hover:border-slate-300 transition-colors"
-                >
-                  {/* Icon badge */}
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white border border-slate-200 text-primary">
-                    {i === 0 && <Layers size={26} />}
-                    {i === 1 && <Settings size={26} />}
-                    {i === 2 && <Settings2 size={26} />}
-                    {i === 3 && <Activity size={26} />}
-                    {i === 4 && <TrendingUp size={26} />}
-                    {i === 5 && <Award size={26} />}
-                  </div>
-
-                  <h3 className="mt-4 text-xs md:text-sm font-black uppercase tracking-wider text-primary leading-tight">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500 min-h-[44px]">
-                    {item.desc}
-                  </p>
-
-                  {/* Arched Photo representer */}
-                  <div className="mt-4 w-full aspect-[4/3] rounded-lg overflow-hidden relative border border-slate-200 bg-slate-800">
-                    {item.image ? (
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-cover"
-                        sizes="(min-width: 1024px) 15vw, (min-width: 640px) 30vw, 100vw"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center border border-dashed border-slate-600/30 m-1.5 rounded">
-                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                          STAGE 0{item.step}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Process Connect Arrow */}
-                  {i < 5 && (
-                    <div className="absolute right-[-28px] top-1/2 -translate-y-1/2 hidden lg:flex h-8 w-8 items-center justify-center rounded-full bg-white border border-slate-200/80 shadow-md text-secondary z-20">
-                      <ChevronRight size={16} strokeWidth={3} className="text-secondary" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Glowing moving line separator */}
-            <div className="mt-6 relative w-full h-[3px] bg-transparent rounded-full">
-              <style>{`
-                @keyframes glow-flow {
-                  0% {
-                    left: -35%;
-                  }
-                  100% {
-                    left: 105%;
-                  }
-                }
-              `}</style>
-              <div 
-                className="absolute top-0 h-full w-1/3 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-95"
-                style={{
-                  animation: "glow-flow 3s linear infinite",
-                  filter: "drop-shadow(0 0 8px #fa5902) drop-shadow(0 0 2px #fa5902)",
-                }}
-              />
-            </div>
-
-            {/* Bottom 5-column banner card */}
-            <div className="mt-14 bg-white border border-slate-200/80 rounded-2xl p-8 shadow-sm">
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 items-stretch sm:divide-x sm:divide-slate-100">
-                {workflowBottomPillars.map((item, i) => {
-                  const PIcon = item.icon;
-                  return (
-                    <div
-                      key={i}
-                      className="px-6 flex items-center justify-between gap-4 group hover:bg-slate-50 transition-colors py-2 first:pl-0"
-                    >
-                      <div className="text-left flex-1">
-                        <h4 className="text-base font-black uppercase tracking-wider text-primary leading-tight">
-                          {item.label}
-                        </h4>
-                        <p className="mt-2 text-xs md:text-sm text-slate-500 leading-snug font-medium">
-                          {item.desc}
-                        </p>
-                      </div>
-                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-secondary group-hover:bg-white group-hover:scale-110 transition-all duration-300">
-                        <PIcon size={32} strokeWidth={1.5} />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </Container>
-        </section>
+        <CrushingProcessTimeline />
 
         {/* ========================================================================= */}
         {/* SECTION 5: ENGINEERED AROUND YOUR OPERATION */}
@@ -2182,11 +2060,9 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 9: GLOBAL CAPABILITY (Engineered to Perform. Delivered Worldwide) */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-[#f8faff] py-[60px]">
+        {/* <section className="relative overflow-hidden bg-[#f8faff] py-[60px]">
           <Container className="relative z-10">
-            {/* Top Row: Two Columns */}
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center mb-12">
-              {/* Left Column Content */}
               <div>
                 <div className="flex items-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   <span className="h-[2px] w-8 bg-secondary rounded-full" />
@@ -2205,7 +2081,6 @@ export default function SolutionsPage() {
                   From design to delivery, installation to support – our solutions power industries across the globe with unmatched reliability and performance.
                 </p>
 
-                {/* 3 Horizontal Features */}
                 <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-slate-200/80">
                   {globalReachPoints.map((item, i) => {
                     const RIcon = item.icon;
@@ -2230,7 +2105,6 @@ export default function SolutionsPage() {
                 </div>
               </div>
 
-              {/* Right Column Map Representation */}
               <div className="relative aspect-[16/10] w-full rounded-2xl overflow-visible flex items-center justify-center">
                 <Image
                   src="/solutionspage/global capability 1.jpg"
@@ -2244,7 +2118,6 @@ export default function SolutionsPage() {
               </div>
             </div>
 
-            {/* 5 Flags Cards Row */}
             <div className="grid gap-4.5 sm:grid-cols-2 lg:grid-cols-5 mb-12">
               {globalFlagsCards.map((card, i) => {
                 return (
@@ -2263,10 +2136,8 @@ export default function SolutionsPage() {
                         />
                       )}
                     </div>
-                    {/* Mockup matching deep navy footer badge */}
                     <div className="bg-[#092a5c] p-4 text-left flex-1 flex flex-col justify-between">
                       <div className="flex items-center gap-3">
-                        {/* Circle Flag Box */}
                         <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-white border border-white/20 shadow-inner group-hover:scale-105 transition-all duration-300">
                           {card.flag.startsWith("/") ? (
                             <Image
@@ -2296,7 +2167,6 @@ export default function SolutionsPage() {
               })}
             </div>
 
-            {/* Navy Stats Banner */}
             <div className="bg-gradient-to-br from-[#092a5c] to-[#041630] border border-white/10 p-6 sm:p-8 md:p-10 shadow-[0_20px_50px_rgba(3,27,64,0.3)] mb-8 text-white relative overflow-hidden">
               <div className="absolute inset-0 pointer-events-none opacity-5 industrial-grid" />
               <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-0 lg:divide-x lg:divide-white/10">
@@ -2353,7 +2223,6 @@ export default function SolutionsPage() {
                   );
                 })}
               </div>
-              {/* Bottom White Card Row */}
             <div className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm flex flex-wrap items-center justify-between gap-6 px-8 mt-10">
               {globalBottomValues.map((item, i) => {
                 const VIcon = item.icon;
@@ -2373,7 +2242,7 @@ export default function SolutionsPage() {
 
             
           </Container>
-        </section>
+        </section> */}
 
         {/* ========================================================================= */}
         {/* SECTION 10: SOLUTIONS BUILT AROUND YOUR SUCCESS */}
@@ -2476,9 +2345,8 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 11: CASE STUDIES (Proven Solutions. Real Results.) */}
         {/* ========================================================================= */}
-        <section className="bg-bg-light section-space" id="case-studies">
+        {/* <section className="bg-bg-light section-space" id="case-studies">
           <Container>
-            {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-12">
               <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
@@ -2497,7 +2365,6 @@ export default function SolutionsPage() {
               </p>
             </div>
 
-            {/* Category tabs */}
             <div className="flex flex-wrap items-center justify-center gap-2.5 mb-10">
               {[
                 "All Projects",
@@ -2521,14 +2388,12 @@ export default function SolutionsPage() {
               ))}
             </div>
 
-            {/* 4 Cards Grid */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-10">
               {filteredProjects.map((item, idx) => (
                 <div
                   key={idx}
                   className="group bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
                 >
-                  {/* Image */}
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
                     {item.image ? (
                       <Image
@@ -2540,7 +2405,6 @@ export default function SolutionsPage() {
                       />
                     ) : null}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10" />
-                    {/* Category icon badge bottom-left */}
                     <div className="absolute bottom-3 left-3 z-20 flex h-13 w-13 items-center justify-center rounded-full bg-white/90 border border-slate-100 shadow">
                       {idx === 0 && <Pickaxe size={30} className="text-secondary" strokeWidth={1.8} />}
                       {idx === 1 && <Construction size={30} className="text-secondary" strokeWidth={1.8} />}
@@ -2549,7 +2413,6 @@ export default function SolutionsPage() {
                     </div>
                   </div>
 
-                  {/* Body */}
                   <div className="p-5 flex flex-col flex-1">
                     <h3 className="text-[15px] font-black text-primary leading-tight group-hover:text-secondary transition-colors mb-1">
                       {item.title}
@@ -2559,7 +2422,6 @@ export default function SolutionsPage() {
                       {item.cat}
                     </span>
 
-                    {/* Info rows */}
                     <div className="flex-1 space-y-0 divide-y divide-slate-100 border-t border-slate-100">
                       <div className="flex items-start justify-between py-3 gap-2">
                         <span className="text-[13px] text-slate-400 font-medium shrink-0">Capacity</span>
@@ -2579,7 +2441,6 @@ export default function SolutionsPage() {
                       </div>
                     </div>
 
-                    {/* View Details link */}
                     <Link
                       href="#contact"
                       className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-center gap-2 text-sm md:text-base font-black uppercase tracking-widest text-primary hover:text-secondary transition-colors"
@@ -2592,7 +2453,6 @@ export default function SolutionsPage() {
               ))}
             </div>
 
-            {/* Carousel navigation dots */}
             <div className="flex justify-center items-center gap-2 mt-4">
               <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
               <span className="h-2 w-2 rounded-full bg-slate-300" />
@@ -2600,7 +2460,7 @@ export default function SolutionsPage() {
               <span className="h-2 w-2 rounded-full bg-slate-300" />
             </div>
           </Container>
-        </section>
+        </section> */}
 
         {/* ========================================================================= */}
         {/* SECTION 12: LET'S ENGINEER YOUR NEXT CRUSHING SOLUTION (CTA) */}

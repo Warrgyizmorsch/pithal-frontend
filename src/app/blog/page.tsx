@@ -199,15 +199,15 @@ const heroSectionStats: {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }[] = [
   {
-    value:"960+",
-    label: "Order Delivered",
-    desc: "All Over India",
+    value:"100%",
+    label: "Quality Commitment",
+    desc: "Over the Expectation",
     icon: Globe,
   },
   {
-    value: "1500+",
-    label: "INSTALLATIONS",
-    desc: "Successful installations worldwide",
+    value: "Custom",
+    label: "SOlutions",
+    desc: "Perfect Solutions for Everyone",
     icon: Building2,
   },
   {

@@ -1815,19 +1815,13 @@ function FinalCtaSection() {
   const { cta } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_50%_0%,#ffffff_0%,#f8fafc_52%,#edf2f7_100%)] py-[35px]">
+<section className="relative overflow-hidden bg-white py-[35px]">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 industrial-grid opacity-25"
       />
       <div className="pointer-events-none absolute bottom-0 right-0 hidden h-[86%] w-[470px] opacity-[0.1] lg:block">
-        <Image
-          alt=""
-          className="object-contain object-bottom grayscale"
-          fill
-          sizes="470px"
-          src="/images/about/our-foundation-1.png"
-        />
+        
       </div>
       <div
         aria-hidden
@@ -1918,11 +1912,11 @@ export default function AboutPage() {
         <VisionMissionSection />
         <WhyChooseSection />
         <ManufacturingSection />
-        <GlobalSection />
+        {/* <GlobalSection /> */}
         <IndustriesSection />
         <ValuesSection />
-        <ImpactSection />
-        <CertificationsSection />
+        {/* <ImpactSection /> */}
+        {/* <CertificationsSection /> */}
         <FinalCtaSection />
       </main>
       <Footer />

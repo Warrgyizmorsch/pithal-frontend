@@ -154,7 +154,9 @@ export function Footer() {
               <div key={column.title}>
                 <FooterHeading>{column.title}</FooterHeading>
                 <ul className="space-y-[1.3rem]">
-                  {column.links.map((link) => (
+                  {column.links
+                    .filter((link) => link !== "Projects")
+                    .map((link) => (
                     <FooterLink key={link} href={linkMap[column.title]?.[link] || "#"}>
                       {link}
                     </FooterLink>

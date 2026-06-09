@@ -10,10 +10,10 @@ export const navigation = [
 ];
 
 export const stats = [
-  { value: "50+", label: "Trusted Customers", icon: "globe" },
-  { value: "1000+", label: "Machines Installed", icon: "gear" },
+  { value: "100%", label: "Quality Commitment", icon: "globe" },
+  { value: "Skilled", label: " Engineering Team", icon: "gear" },
   { value: "24x7", label: "Support & Reliability", icon: "headset" },
-  { value: "500+", label: "Skilled Professionals", icon: "partners" },
+  { value: "Innovative", label: "MAchine Design", icon: "partners" },
 ];
 
 export const products = [

@@ -20,9 +20,9 @@ export const aboutPageData = {
   },
   stats: [
     { value: "85%", label: "Repeat Business Rate", icon: "settings" },
-    { value: "500+", label: "Projects Completed", icon: "factory" },
-    { value: "97%+", label: "Satisfaction Score", icon: "globe" },
-    { value: "1000+", label: "Happy Clients", icon: "users" },
+    { value: "Custom", label: "Machine Design", icon: "factory" },
+    { value: "99.9%", label: "Satisfaction Score", icon: "globe" },
+    { value: "Advanced", label: "Manufacturing", icon: "users" },
     { value: "24/7", label: "Support & Service", icon: "headphones" },
   ],
   experience: {
@@ -85,7 +85,7 @@ export const aboutPageData = {
       { title: "Robust Manufacturing", text: "Built with strong, durable materials and advanced manufacturing processes for long-lasting reliability.", icon: "factory" },
       { title: "Low Maintenance Solutions", text: "Designed for easy maintenance, reduced downtime, and lower total cost of ownership.", icon: "wrench" },
       { title: "Experienced Team", text: "A team of skilled professionals with deep industry knowledge and hands-on expertise.", icon: "users" },
-      { title: "Global Service Support", text: "Worldwide presence with prompt support, fast spare parts delivery, and dedicated after-sales service.", icon: "globe" },
+      { title: "Precision", text: "We design and manufacture machines with a strong focus on accuracy, durability, and consistent performance, ensuring reliable solutions for modern industrial needs.", icon: "globe" },
       { title: "Precision Quality Standards", text: "Manufactured under strict quality controls to ensure precision, consistency, and safety.", icon: "shield" },
     ],
   },
