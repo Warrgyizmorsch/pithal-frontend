@@ -217,7 +217,7 @@ const heroSectionStats: {
     icon: Clock,
   },
   {
-    value: "GLOBAL",
+    value: "All India",
     label: "ENGINEERING ASSISTANCE",
     desc: "Expert engineering support wherever you are",
     icon: Settings,
@@ -1226,7 +1226,7 @@ export default function BlogPage() {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Button variant="primary" className="group" href="#network">
-                    EXPLORE GLOBAL REACH{" "}
+                    EXPLORE REACH{" "}
                     <ArrowRight cls="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </Button>
                   <Button
