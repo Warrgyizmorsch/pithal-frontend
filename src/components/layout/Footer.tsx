@@ -146,7 +146,7 @@ export function Footer() {
                 "Careers": "/careers",
                 "News & Events": "/blog",
                 "Sustainability": "/about",
-                "Contact Us": "#contact",
+                "Contact Us": "/contact",
               },
             };
 
@@ -229,7 +229,7 @@ export function Footer() {
               <br />
               Our experts are ready to help.
             </p>
-            <Button className="w-full max-w-[16.2rem] justify-between text-sm" href="#contact">
+            <Button className="w-full max-w-[16.2rem] justify-between text-sm" href="/contact">
               Contact Us
               <ArrowRight aria-hidden size={19} />
             </Button>
