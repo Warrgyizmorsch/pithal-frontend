@@ -19,11 +19,11 @@ export const aboutPageData = {
     },
   },
   stats: [
-    { value: "25+", label: "Years of Experience", icon: "settings" },
+    { value: "85%", label: "Repeat Business Rate", icon: "settings" },
     { value: "500+", label: "Projects Completed", icon: "factory" },
-    { value: "50+", label: "Countries Served", icon: "globe" },
+    { value: "97%+", label: "Satisfaction Score", icon: "globe" },
     { value: "1000+", label: "Happy Clients", icon: "users" },
-    { value: "24/7", label: "Support & After Sales Service", icon: "headphones" },
+    { value: "24/7", label: "Support & Service", icon: "headphones" },
   ],
   experience: {
     eyebrow: "Who We Are",

@@ -65,8 +65,8 @@ const stats = [
     icon: "inst",
   },
   {
-    value: "50+",
-    label: "COUNTRIES",
+    value: "75,000 sqft",
+    label: "Plant Capacity",
     desc: "Global Presence",
     icon: "countries",
   },

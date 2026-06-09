@@ -199,9 +199,9 @@ const heroSectionStats: {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }[] = [
   {
-    value: "35+",
-    label: "COUNTRIES",
-    desc: "Global presence across 5 continents",
+    value:"960+",
+    label: "Order Delivered",
+    desc: "All Over India",
     icon: Globe,
   },
   {

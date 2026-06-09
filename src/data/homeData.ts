@@ -10,9 +10,9 @@ export const navigation = [
 ];
 
 export const stats = [
-  { value: "50+", label: "Countries Global Presence", icon: "globe" },
+  { value: "50+", label: "Trusted Customers", icon: "globe" },
   { value: "1000+", label: "Machines Installed", icon: "gear" },
-  { value: "25+", label: "Years of Engineering Excellence", icon: "factory" },
+  { value: "24x7", label: "Support & Reliability", icon: "headset" },
   { value: "500+", label: "Skilled Professionals", icon: "partners" },
 ];
 
@@ -112,37 +112,37 @@ export const industries = [
 
 export const projects = [
   {
-    location: "Rajasthan, India",
+    location: "",
     plant: "250 TPH Crushing Plant",
     capacity: "250 TPH",
     image: "/images/projects/rajasthan.jpg",
   },
   {
-    location: "Madhya Pradesh, India",
+    location: "",
     plant: "350 TPH Crushing Plant",
     capacity: "350 TPH",
     image: "/images/projects/madhya-pradesh.jpg",
   },
   {
-    location: "Karnataka, India",
+    location: "",
     plant: "500 TPH Crushing Plant",
     capacity: "500 TPH",
     image: "/images/projects/karnataka.jpg",
   },
   {
-    location: "Oman",
+    location: "",
     plant: "600 TPH Crushing Plant",
     capacity: "600 TPH",
     image: "/images/projects/oman.jpg",
   },
   {
-    location: "South Africa",
+    location: "",
     plant: "400 TPH Crushing Plant",
     capacity: "400 TPH",
     image: "/images/projects/south-africa.jpg",
   },
   {
-    location: "Indonesia",
+    location: "",
     plant: "300 TPH Crushing Plant",
     capacity: "300 TPH",
     image: "/images/projects/indonesia.jpg",

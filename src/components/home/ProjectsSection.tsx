@@ -43,11 +43,13 @@ export function ProjectsSection() {
             <h2 className="headline text-[clamp(2rem,11vw,2.5rem)] text-primary sm:text-[clamp(2.5rem,4.7vw,4rem)]">
               Real Projects.
               <span className="mt-1 block text-secondary">Real Results.</span>
+              
             </h2>
             <span aria-hidden className="mt-4 block h-[3px] w-20 bg-secondary" />
             <p className="mt-4 max-w-[28rem] text-sm leading-7 text-text-dark sm:text-base">
               Our machines are at the heart of some of the world&apos;s most demanding operations. Delivering unmatched
               performance, day in and day out.
+              <p className="mt-4 text-sm leading-7 text-red-600 sm:text-base">Note: These are the Sample Projects</p>
             </p>
           </header>
           <div className="mb-2 grid gap-4 overflow-hidden rounded-lg border border-primary/20 bg-white/92 p-4 md:grid-cols-3 md:gap-0 md:p-5 lg:mb-10">
