@@ -144,6 +144,7 @@ export function Footer() {
                 "Projects": "/projects",
                 "Blog": "/blog",
                 "Careers": "/careers",
+                "Become a Dealer": "/become-a-dealer",
                 "News & Events": "/blog",
                 "Sustainability": "/about",
                 "Contact Us": "#contact",

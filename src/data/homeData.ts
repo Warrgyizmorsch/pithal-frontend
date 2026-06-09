@@ -6,6 +6,7 @@ export const navigation = [
   // { label: "Projects", href: "/projects" },
   // { label: "Global Presence", href: "/global-presence" },
   { label: "Careers", href: "/careers" },
+  { label: "Become a Dealer", href: "/become-a-dealer" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -169,7 +170,7 @@ export const processFeatures = [
 export const footerColumns = [
   { title: "Products", links: ["Jaw Crushers", "Cone Crushers", "Impact Crushers", "Vibrating Feeders", "Vibrating Screens", "Mobile Crushing Plants", "Spare Parts", "Wear Parts"] },
   { title: "Solutions", links: ["Aggregate Production", "Mining & Quarrying", "Construction & Demolition", "Sand & Gravel", "Metallurgy", "Recycling Solutions", "Custom Solutions", "Turnkey Projects"] },
-  { title: "Quick Links", links: ["About Us", "Our Process", "Projects", "Blog", "Careers", "News & Events", "Sustainability", "Contact Us"] },
+  { title: "Quick Links", links: ["About Us", "Our Process", "Projects", "Blog", "Careers", "Become a Dealer", "News & Events", "Sustainability", "Contact Us"] },
   { title: "Downloads", links: ["Product Brochures", "Technical Catalogues", "User Manuals", "Case Studies", "Product Videos", "Installation Guides"] },
   { title: "Certifications", links: ["ISO 9001:2015", "CE Certified", "ISO 14001:2015", "ISO 45001:2018"] },
 ];
