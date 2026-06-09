@@ -1193,7 +1193,7 @@ export default function ContactUsPage() {
               <div className="flex flex-wrap items-center gap-4 lg:gap-8">
                 <a href="tel:+912812387373" className="flex items-center gap-2.5 text-xs font-black uppercase tracking-wider text-slate-700 hover:text-secondary transition-colors">
                   <Phone size={13} className="text-secondary" />
-                  <span>CALL US: +91 281 238 7373</span>
+                  <span>CALL US: +91 98797 16000</span>
                 </a>
                 <a href="mailto:info@pithalindia.com" className="flex items-center gap-2.5 text-xs font-black uppercase tracking-wider text-slate-700 hover:text-secondary transition-colors">
                   <Mail size={13} className="text-secondary" />
@@ -1299,7 +1299,7 @@ export default function ContactUsPage() {
                       <div>
                         <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 block">Phone</span>
                         <a href="tel:+912812387373" className="mt-1 text-xs md:text-sm text-slate-200 block font-semibold hover:text-secondary">
-                          +91 281 238 7373
+                          +91 98797 16000
                         </a>
                       </div>
                     </div>

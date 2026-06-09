@@ -261,7 +261,7 @@ export const jawCrusherData: ProductDetailData = {
       { title: "END TO END SUPPORT", text: "From selection to after-sales service.", icon: "headphones" },
     ],
     contactStrip: {
-      phone: "+91 +91 98797 16000",
+      phone: "+91 98765 43210",
       email: "info@pithalmachines.com",
     },
     form: {

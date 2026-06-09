@@ -265,7 +265,7 @@ export const coneCrusherData: ProductDetailData = {
       { title: "AFTER-SALES SUPPORT", text: "Get spares, liner, service, and technical assistance.", icon: "headphones" },
     ],
     contactStrip: {
-      phone: "+91 +91 98797 16000",
+      phone: "+91 98765 43210",
       email: "info@pithalmachines.com",
     },
     form: {
