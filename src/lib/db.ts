@@ -30,8 +30,22 @@ async function initDb() {
         date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     `);
+
+    // Create dealers table
+    await connection.query(`
+      CREATE TABLE IF NOT EXISTS dealers (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        company VARCHAR(255) NOT NULL,
+        country VARCHAR(255) NOT NULL,
+        business_type VARCHAR(255) NOT NULL,
+        experience TEXT NOT NULL,
+        status VARCHAR(50) DEFAULT 'pending',
+        date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    `);
     
-    console.log("Database table 'leads' verified/created.");
+    console.log("Database tables 'leads' and 'dealers' verified/created.");
     connection.release();
   } catch (error) {
     console.error("Error setting up database table:", error);
