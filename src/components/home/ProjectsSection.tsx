@@ -26,8 +26,8 @@ const proofPoints = [
 export function ProjectsSection() {
   return (
     <section className="relative overflow-hidden bg-white py-10 sm:py-14 lg:py-1" id="projects">
-      <div aria-hidden className="pointer-events-none absolute right-12 top-[-20px] hidden h-[400px] w-[55%] opacity-100 lg:block">
-        <Image alt="World map background" className="object-contain object-center" fill priority sizes="50vw" src="/images/projects/world-map.jpg" />
+      <div aria-hidden className="pointer-events-none absolute right-6 top-[-40px] hidden h-[520px] w-[65%] opacity-100 lg:block">
+        <Image alt="World map background" className="object-contain object-center" fill priority sizes="60vw" src="/images/projects/world-map.jpg" />
       </div>
       <Container className="relative">
         <div className="mb-8 grid items-end gap-8 lg:grid-cols-[0.86fr_1.32fr]">
@@ -46,11 +46,11 @@ export function ProjectsSection() {
               
             </h2>
             <span aria-hidden className="mt-4 block h-[3px] w-20 bg-secondary" />
-            <p className="mt-4 max-w-[28rem] text-sm leading-7 text-text-dark sm:text-base">
+            <div className="mt-4 max-w-[28rem] text-sm leading-7 text-text-dark sm:text-base">
               Our machines are at the heart of some of the world&apos;s most demanding operations. Delivering unmatched
               performance, day in and day out.
               <p className="mt-4 text-sm leading-7 text-red-600 sm:text-base">Note: These are the Sample Projects</p>
-            </p>
+            </div>
           </header>
           <div className="mb-2 grid gap-4 overflow-hidden rounded-lg border border-primary/20 bg-white/92 p-4 md:grid-cols-3 md:gap-0 md:p-5 lg:mb-10">
             {proofPoints.map(({ icon: Icon, title, text }, index) => (

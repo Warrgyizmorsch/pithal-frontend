@@ -9,25 +9,27 @@ const heroMachinePoster = "/images/hero/hero-machine-photo.png";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-white flex flex-col lg:h-[calc(100vh-4.25rem)] xl:h-[calc(100vh-5.25rem)]" id="home">
+    <section
+      className="relative overflow-hidden bg-white flex flex-col lg:h-[calc(100vh-4.25rem)] xl:h-[calc(100vh-5.25rem)]"
+      id="home"
+    >
       {/* Desktop Crushing Machine Video */}
-      
 
       <Container className="relative flex flex-1 flex-col gap-3 pt-7 pb-6 sm:pt-10 sm:pb-8 lg:pt-[2.25rem] lg:pb-8">
         <div className="pointer-events-none absolute right-0 top-[50%] hidden h-[min(36rem,95%)] w-[75vw] -translate-y-1/2 lg:block xl:h-[min(50rem,100%)] xl:w-full">
-        <video
-          aria-label="Mobile crushing machine operating in a quarry"
-          autoPlay
-          className="h-full w-full object-cover object-right"
-          loop
-          muted
-          playsInline
-          poster={heroMachinePoster}
-          preload="metadata"
-        >
-          <source src={heroMachineVideo} type="video/mp4" />
-        </video>
-      </div>
+          <video
+            aria-label="Mobile crushing machine operating in a quarry"
+            autoPlay
+            className="h-full w-full object-cover object-right"
+            loop
+            muted
+            playsInline
+            poster={heroMachinePoster}
+            preload="metadata"
+          >
+            <source src={heroMachineVideo} type="video/mp4" />
+          </video>
+        </div>
         <div className="relative z-10 max-w-[32rem] xl:max-w-[35rem]">
           <p className="mb-3 flex items-center gap-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary sm:mb-4 sm:gap-3 sm:text-[13px] sm:tracking-[0.2em]">
             <span className="h-[2px] w-6 bg-secondary" /> Built strong. Built to

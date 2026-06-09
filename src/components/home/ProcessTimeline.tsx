@@ -10,7 +10,8 @@ import { ArrowRight } from "lucide-react";
 export function ProcessTimeline() {
   const [mounted, setMounted] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState<number>(0);
-  const videoRefs = React.useRef<(HTMLVideoElement | null)[]>([]);
+  const desktopVideoRefs = React.useRef<(HTMLVideoElement | null)[]>([]);
+  const mobileVideoRefs = React.useRef<(HTMLVideoElement | null)[]>([]);
   const [touchStart, setTouchStart] = React.useState<number | null>(null);
   const [touchEnd, setTouchEnd] = React.useState<number | null>(null);
 
@@ -58,13 +59,26 @@ export function ProcessTimeline() {
   // Synchronize playing and pausing based on the active index
   React.useEffect(() => {
     if (!mounted) return;
-    videoRefs.current.forEach((video, idx) => {
+    
+    // Play/Pause desktop videos
+    desktopVideoRefs.current.forEach((video, idx) => {
       if (!video) return;
       if (idx === activeIndex) {
         video.play().catch(() => {});
       } else {
         video.pause();
-        video.currentTime = 0; // reset non-active videos to start
+        video.currentTime = 0;
+      }
+    });
+
+    // Play/Pause mobile videos
+    mobileVideoRefs.current.forEach((video, idx) => {
+      if (!video) return;
+      if (idx === activeIndex) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+        video.currentTime = 0;
       }
     });
   }, [activeIndex, mounted]);
@@ -88,6 +102,7 @@ export function ProcessTimeline() {
               <div
                 key={step.number}
                 className="relative min-w-0 flex"
+                // onMouseEnter={() => setActiveIndex(index)}
               >
                 <article
                   className={`flex h-full min-w-0 flex-1 flex-col rounded-2xl border-2 bg-white px-3 pt-3 pb-2 transition-all duration-300 sm:px-4 sm:pt-4 sm:pb-3 xl:px-2 xl:pt-2 xl:pb-1 ${
@@ -117,11 +132,12 @@ export function ProcessTimeline() {
                     {mounted ? (
                       <video
                         ref={(el) => {
-                          videoRefs.current[index] = el;
+                          desktopVideoRefs.current[index] = el;
                         }}
                         className="h-full w-full object-contain"
                         muted
                         playsInline
+                        loop
                       >
                         <source
                           src={
@@ -188,7 +204,7 @@ export function ProcessTimeline() {
                     {mounted ? (
                       <video
                         ref={(el) => {
-                          videoRefs.current[index] = el;
+                          mobileVideoRefs.current[index] = el;
                         }}
                         className="h-full w-full object-cover"
                         muted

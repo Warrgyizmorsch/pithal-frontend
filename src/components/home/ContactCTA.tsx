@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
@@ -10,17 +13,77 @@ const fieldStyle =
 const labelStyle = "block text-sm font-bold text-primary";
 
 export function ContactCTA() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    country: "",
+    capacity: "",
+    requirement: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(null);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSuccess(
+          "Thank you! Your quote request has been submitted successfully.",
+        );
+        setFormData({
+          name: "",
+          company: "",
+          country: "",
+          capacity: "",
+          requirement: "",
+        });
+      } else {
+        setError(data.error || "Failed to submit request. Please try again.");
+      }
+    } catch (err) {
+      setError(
+        "Something went wrong. Please check your connection and try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <section className="scroll-mt-24 bg-white i w !pt-0" id="contact">
+    <section className="scroll-mt-24 bg-white !pt-0" id="contact">
       <Container>
-        <div className="overflow-hidden rounded-[1.15rem] border border-primary/80 lg:grid lg:h-[calc(100vh-8rem)] lg:min-h-[580px] lg:max-h-[750px] lg:grid-cols-[0.95fr_1.05fr] xl:h-[calc(100vh-8.5rem)]">
-          <div className="relative min-h-[34rem] overflow-hidden sm:min-h-[39rem] lg:h-full lg:min-h-0">
+        <div className="overflow-hidden rounded-[1.15rem] border border-primary/80 lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:max-h-[620px]">
+          <div className="relative min-h-[16rem] sm:min-h-[22rem] overflow-hidden lg:h-full lg:min-h-0">
             <Image
               alt="Crushing plant processing aggregates at a quarry"
-              className="object-cover object-bottom"
+              className="object-cover object-center"
               fill
               sizes="(max-width: 1024px) 100vw, 48vw"
-              src="/images/contact/crushing-plant-contact.jpg"
+              src="/images/contact/crushing-plant-contact1.jpg"
             />
             <div
               aria-hidden
@@ -30,7 +93,7 @@ export function ContactCTA() {
               aria-hidden
               className="absolute inset-0 hidden bg-[linear-gradient(90deg,transparent_55%,#fff_98%)] lg:block"
             />
-            <div className="relative px-5 pb-8 pt-7 min-[380px]:px-7 sm:px-10 sm:pt-10 lg:px-[clamp(2.3rem,3.3vw,4rem)] lg:pt-[clamp(2.3rem,3vw,3.4rem)]">
+            <div className="relative px-5 pb-8 pt-7 min-[380px]:px-7 sm:px-10 sm:pt-10 lg:px-10 lg:pt-10">
               <p className="mb-4 flex items-center gap-2.5 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-primary min-[380px]:gap-3 min-[380px]:tracking-[0.2em] sm:text-[0.76rem]">
                 <span aria-hidden className="flex gap-1">
                   <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
@@ -46,60 +109,95 @@ export function ContactCTA() {
               </p>
               <h2 className="headline text-[clamp(2.05rem,11.6vw,2.85rem)] text-primary sm:text-[clamp(2.55rem,3.5vw,3.7rem)]">
                 Looking for the
-                <span className="mt-1 block text-secondary">Right Crushing</span>
+                <span className="mt-1 block text-secondary">
+                  Right Crushing
+                </span>
                 <span className="mt-1 block text-secondary">Solution?</span>
               </h2>
-              <span aria-hidden className="mt-4 block h-[3px] w-20 bg-gradient-to-r from-secondary via-secondary to-primary" />
-              <p className="mt-4 max-w-[27rem] text-sm leading-7 text-text-dark sm:text-base">
-                Share your requirements with us and our experts will help you find the perfect crushing solution for
-                your business.
+              <p className="mt-4 max-w-[27rem] text-sm leading-7 text-text-dark sm:text-base pt-2">
+                Share your requirements with us and our experts will help you
+                find the perfect crushing solution for your business.
               </p>
             </div>
           </div>
 
-          <form className="m-3 rounded-2xl border border-primary/20 bg-white px-4 py-6 min-[380px]:m-4 min-[380px]:px-5 sm:m-6 sm:px-7 sm:py-7 lg:m-[clamp(1.45rem,2.1vw,2.25rem)] lg:ml-0 lg:px-[clamp(1.65rem,2vw,2.1rem)] lg:h-[calc(100%-2*clamp(1.45rem,2.1vw,2.25rem))] lg:flex lg:flex-col lg:justify-between">
+          <form
+            onSubmit={handleSubmit}
+            className="m-3 rounded-2xl border border-primary/20 bg-white px-4 py-6 min-[380px]:m-4 min-[380px]:px-5 sm:m-6 sm:px-7 sm:py-7 lg:m-6 lg:ml-0 lg:px-8 lg:py-6 lg:flex lg:flex-col lg:justify-between"
+          >
             <div className="grid gap-4 lg:grid-cols-2 lg:gap-x-4 lg:gap-y-3">
               <label className={labelStyle}>
                 Name
-                <input className={fieldStyle} name="name" placeholder="Your full name" type="text" />
+                <input
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={fieldStyle}
+                  name="name"
+                  placeholder="Your full name"
+                  type="text"
+                />
               </label>
 
               <label className={labelStyle}>
                 Company
-                <input className={fieldStyle} name="company" placeholder="Your company name" type="text" />
+                <input
+                  required
+                  value={formData.company}
+                  onChange={handleChange}
+                  className={fieldStyle}
+                  name="company"
+                  placeholder="Your company name"
+                  type="text"
+                />
               </label>
 
               <label className={labelStyle}>
                 Country
-                <select className={`${fieldStyle} cursor-pointer text-text-muted`} defaultValue="" name="country">
+                <select
+                  required
+                  value={formData.country}
+                  onChange={handleChange}
+                  className={`${fieldStyle} cursor-pointer text-text-muted`}
+                  name="country"
+                >
                   <option disabled value="">
                     Select your country
                   </option>
-                  <option>India</option>
-                  <option>UAE</option>
-                  <option>Saudi Arabia</option>
-                  <option>USA</option>
-                  <option>Other</option>
+                  <option value="India">India</option>
+                  <option value="UAE">UAE</option>
+                  <option value="Saudi Arabia">Saudi Arabia</option>
+                  <option value="USA">USA</option>
+                  <option value="Other">Other</option>
                 </select>
               </label>
 
               <label className={labelStyle}>
                 Capacity Needed
-                <select className={`${fieldStyle} cursor-pointer text-text-muted`} defaultValue="" name="capacity">
+                <select
+                  required
+                  value={formData.capacity}
+                  onChange={handleChange}
+                  className={`${fieldStyle} cursor-pointer text-text-muted`}
+                  name="capacity"
+                >
                   <option disabled value="">
                     Enter required capacity (e.g. 100 TPH)
                   </option>
-                  <option>Up to 50 TPH</option>
-                  <option>50 - 100 TPH</option>
-                  <option>100 - 200 TPH</option>
-                  <option>200 - 300 TPH</option>
-                  <option>300+ TPH</option>
+                  <option value="Up to 50 TPH">Up to 50 TPH</option>
+                  <option value="50 - 100 TPH">50 - 100 TPH</option>
+                  <option value="100 - 200 TPH">100 - 200 TPH</option>
+                  <option value="200 - 300 TPH">200 - 300 TPH</option>
+                  <option value="300+ TPH">300+ TPH</option>
                 </select>
               </label>
 
               <label className={`${labelStyle} lg:col-span-2`}>
                 Requirement
                 <textarea
+                  required
+                  value={formData.requirement}
+                  onChange={handleChange}
                   className={`${fieldStyle} h-[5.75rem] lg:h-[4.25rem] resize-none py-3`}
                   name="requirement"
                   placeholder="Briefly describe your requirement"
@@ -107,13 +205,25 @@ export function ContactCTA() {
               </label>
             </div>
 
+            {success && (
+              <div className="mt-4 p-3 bg-green-50 border border-green-200 text-green-700 rounded-lg text-xs font-semibold">
+                {success}
+              </div>
+            )}
+            {error && (
+              <div className="mt-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-xs font-semibold">
+                {error}
+              </div>
+            )}
+
             <div className="mt-6 lg:mt-4 grid gap-3 lg:grid-cols-2 lg:gap-4">
               <Button
                 className="min-h-[3.4rem] w-full rounded-lg px-3 text-sm tracking-[0.03em] sm:min-h-[3.7rem] sm:px-4"
                 type="submit"
+                disabled={loading}
               >
                 <FileText aria-hidden size={23} strokeWidth={2} />
-                Request Quote
+                {loading ? "Submitting..." : "Request Quote"}
               </Button>
               <Button
                 className="min-h-[3.4rem] w-full rounded-lg px-3 text-sm tracking-[0.02em] sm:min-h-[3.7rem] sm:px-4"
