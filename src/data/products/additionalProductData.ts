@@ -260,7 +260,7 @@ function createProductData(config: ProductConfig): ProductDetailData {
         { title: "END TO END SUPPORT", text: "From selection to after-sales service.", icon: "headphones" },
       ],
       contactStrip: {
-        phone: "+91 98765 43210",
+        phone: "+91 98797 16000",
         email: "info@pithalmachines.com",
       },
       form: {
