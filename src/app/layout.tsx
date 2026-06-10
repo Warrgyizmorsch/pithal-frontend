@@ -19,12 +19,17 @@ export const metadata: Metadata = {
     "Pithal Machine Pvt. delivers high-performance crushing, screening, mining, and industrial machinery solutions.",
 };
 
+import { ContactModal } from "@/components/common/ContactModal";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ContactModal />
+      </body>
     </html>
   );
 }

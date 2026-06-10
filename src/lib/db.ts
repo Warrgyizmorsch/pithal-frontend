@@ -27,9 +27,21 @@ async function initDb() {
         capacity VARCHAR(255) NOT NULL,
         requirement TEXT NOT NULL,
         status VARCHAR(50) DEFAULT 'pending',
+        source VARCHAR(255) DEFAULT 'Quick Inquiry',
         date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     `);
+
+    // Alter table to add source if it does not exist
+    try {
+      await connection.query("ALTER TABLE leads ADD COLUMN source VARCHAR(255) DEFAULT 'Quick Inquiry'");
+      console.log("Added 'source' column to 'leads' table.");
+    } catch (err: any) {
+      // Column might already exist, ignore duplicate column error (1060)
+      if (err && err.errno !== 1060) {
+        console.error("Error adding source column:", err);
+      }
+    }
 
     // Create dealers table
     await connection.query(`

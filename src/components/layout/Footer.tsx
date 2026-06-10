@@ -207,23 +207,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* <div className="grid items-center gap-2 md:grid-cols-[0.85fr_1.35fr] xl:px-10">
-            <div>
-              <FooterHeading>Global Presence</FooterHeading>
-              <p className="text-[1rem] leading-[1.65] text-text-dark">
-                Delivering solutions in 50+ countries across 6 continents.
-              </p>
-            </div>
-            <Image
-              alt="Pithal Machines global presence map"
-              className="mx-auto h-auto w-full max-w-[31rem] object-contain opacity-100 md:mx-0 md:max-w-[38rem] md:justify-self-end"
-              height={930}
-              src="/images/footer/footer-world-map.png"
-              width={1996}
-            />
-          </div> */}
-
-          <div className="xl:pl-14">
+          <div className="xl:px-10">
             <FooterHeading>Get In Touch</FooterHeading>
             <p className="mb-4 text-[1rem] leading-[1.65] text-text-dark">
               Have a project in mind?
@@ -234,6 +218,16 @@ export function Footer() {
               Contact Us
               <ArrowRight aria-hidden size={19} />
             </Button>
+          </div>
+
+          <div className="flex flex-col justify-center items-start xl:pl-4">
+            <h2 className="text-[2rem] sm:text-[2.2rem] font-black leading-[1.15] text-primary uppercase tracking-tight font-sans">
+              Crushing Strength,
+              <br />
+              <span className="text-secondary block mt-1 ml-12">
+                Delivering Results.
+              </span>
+            </h2>
           </div>
         </div>
       </Container>

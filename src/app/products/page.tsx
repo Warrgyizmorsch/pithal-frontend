@@ -11,13 +11,24 @@ export default function ProductsPage() {
       <Header />
       <main className="min-h-screen bg-white">
         <Container>
-          <div className="py-20">
-            <SectionHeader
-              eyebrow="Our Range"
-              title="Product Categories"
-              highlight="Comprehensive"
-              subtitle="Explore our complete range of crushing and screening equipment"
-            />
+          <div className="pt-8 pb-20">
+            <div className="relative mb-6">
+              {/* Backdrop Tagline Watermark */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 opacity-30 sm:opacity-50 overflow-hidden translate-y-[120px]">
+                <span className="text-[3.2vw] font-black uppercase tracking-[0.2em] text-slate-200 whitespace-nowrap">
+                  Crushing Strength, Delivering Results.
+                </span>
+              </div>
+
+              <div className="relative z-10">
+                <SectionHeader
+                  eyebrow="Our Range"
+                  title="Product Categories"
+                  highlight="Comprehensive"
+                  subtitle="Explore our complete range of crushing and screening equipment"
+                />
+              </div>
+            </div>
 
             <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {products.map((product) => (

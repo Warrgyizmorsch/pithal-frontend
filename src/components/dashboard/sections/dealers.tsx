@@ -11,26 +11,32 @@ import {
   XCircle,
   MoreHorizontal,
   ChevronDown,
+  Briefcase,
 } from "lucide-react";
 
-interface Lead {
+interface Dealer {
   id: string;
   name: string;
   company: string;
   country: string;
-  capacity: string;
-  requirement: string;
-  status: "won" | "pending" | "lost";
-  source?: string;
+  business_type: string;
+  experience: string;
+  status: "approved" | "pending" | "rejected" | "won" | "lost";
   date: string;
 }
 
 const statusConfig = {
+  approved: {
+    icon: CheckCircle2,
+    color: "text-success",
+    bg: "bg-success/10",
+    label: "Approved",
+  },
   won: {
     icon: CheckCircle2,
     color: "text-success",
     bg: "bg-success/10",
-    label: "Won",
+    label: "Approved",
   },
   pending: {
     icon: Clock,
@@ -38,45 +44,62 @@ const statusConfig = {
     bg: "bg-warning/10",
     label: "Pending",
   },
+  rejected: {
+    icon: XCircle,
+    color: "text-destructive",
+    bg: "bg-destructive/10",
+    label: "Rejected",
+  },
   lost: {
     icon: XCircle,
     color: "text-destructive",
     bg: "bg-destructive/10",
-    label: "Lost",
+    label: "Rejected",
   },
 };
 
-export function LeadsSection() {
+export function DealersSection() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
-  const [leads, setLeads] = useState<Lead[]>([]);
+  const [dealers, setDealers] = useState<Dealer[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchLeads() {
+    async function fetchDealers() {
       try {
-        const response = await fetch("/api/leads");
+        const response = await fetch("/api/dealers");
         const data = await response.json();
         if (data.success) {
-          setLeads(data.leads);
+          setDealers(data.dealers);
         }
       } catch (error) {
-        console.error("Failed to load leads:", error);
+        console.error("Failed to load dealers:", error);
       } finally {
         setLoading(false);
       }
     }
-    fetchLeads();
+    fetchDealers();
   }, []);
 
-  const filteredLeads = leads.filter((lead) => {
+  const filteredDealers = dealers.filter((dealer) => {
     const matchesSearch =
-      lead.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      lead.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      lead.requirement.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      lead.country.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesFilter =
-      selectedFilter === "all" || lead.status === selectedFilter;
+      dealer.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      dealer.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      dealer.business_type.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      dealer.country.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    // Normalize status filter mapping
+    let matchesFilter = false;
+    if (selectedFilter === "all") {
+      matchesFilter = true;
+    } else if (selectedFilter === "approved") {
+      matchesFilter = dealer.status === "approved" || dealer.status === "won";
+    } else if (selectedFilter === "pending") {
+      matchesFilter = dealer.status === "pending";
+    } else if (selectedFilter === "rejected") {
+      matchesFilter = dealer.status === "rejected" || dealer.status === "lost";
+    }
+
     return matchesSearch && matchesFilter;
   });
 
@@ -85,7 +108,7 @@ export function LeadsSection() {
       {/* Header */}
       <div>
         <p className="text-sm text-muted-foreground">
-          View and manage all your Leads in one place
+          View and manage all Dealer Applications in one place
         </p>
       </div>
 
@@ -96,14 +119,14 @@ export function LeadsSection() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search Leads..."
+              placeholder="Search Dealers..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-64 h-9 pl-9 pr-4 rounded-lg bg-secondary border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/20 focus:border-accent transition-all duration-200"
             />
           </div>
           <div className="flex items-center gap-2">
-            {["all", "won", "pending", "lost"].map((filter) => (
+            {["all", "approved", "pending", "rejected"].map((filter) => (
               <button
                 key={filter}
                 onClick={() => setSelectedFilter(filter)}
@@ -111,7 +134,7 @@ export function LeadsSection() {
                   "px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200",
                   selectedFilter === filter
                     ? "bg-accent text-accent-foreground"
-                    : "bg-secondary text-muted-foreground hover:text-foreground",
+                    : "bg-secondary text-muted-foreground hover:text-foreground"
                 )}
               >
                 {filter.charAt(0).toUpperCase() + filter.slice(1)}
@@ -142,13 +165,10 @@ export function LeadsSection() {
                   Country
                 </th>
                 <th className="text-left py-3 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  Capacity Needed
+                  Business Type
                 </th>
                 <th className="text-left py-3 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  Requirement
-                </th>
-                <th className="text-left py-3 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  Source
+                  Experience
                 </th>
                 <th className="text-left py-3 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   Status
@@ -162,86 +182,82 @@ export function LeadsSection() {
             <tbody>
               {loading ? (
                 <tr>
-                  <td colSpan={8} className="py-8 text-center text-sm text-muted-foreground">
-                    Loading leads...
+                  <td colSpan={7} className="py-8 text-center text-sm text-muted-foreground">
+                    Loading dealer applications...
                   </td>
                 </tr>
-              ) : filteredLeads.length === 0 ? (
+              ) : filteredDealers.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="py-8 text-center text-sm text-muted-foreground">
-                    No leads found.
+                  <td colSpan={7} className="py-8 text-center text-sm text-muted-foreground">
+                    No dealer applications found.
                   </td>
                 </tr>
               ) : (
-                filteredLeads.map((lead, index) => {
-                  const status = statusConfig[lead.status];
+                filteredDealers.map((dealer, index) => {
+                  const status = statusConfig[dealer.status] || statusConfig.pending;
                   const StatusIcon = status.icon;
 
                   return (
-                  <tr
-                    key={lead.id}
-                    className="border-b border-border last:border-0 hover:bg-secondary/30 transition-colors duration-150 cursor-pointer animate-in fade-in slide-in-from-left-2"
-                    style={{
-                      animationDelay: `${index * 50}ms`,
-                      animationFillMode: "both",
-                    }}
-                  >
-                    <td className="py-4 px-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-md bg-secondary flex items-center justify-center text-xs font-semibold text-muted-foreground">
-                          {lead.name.charAt(0)}
+                    <tr
+                      key={dealer.id}
+                      className="border-b border-border last:border-0 hover:bg-secondary/30 transition-colors duration-150 cursor-pointer animate-in fade-in slide-in-from-left-2"
+                      style={{
+                        animationDelay: `${index * 50}ms`,
+                        animationFillMode: "both",
+                      }}
+                    >
+                      <td className="py-4 px-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 rounded-md bg-secondary flex items-center justify-center text-xs font-semibold text-muted-foreground">
+                            {dealer.name.charAt(0)}
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-foreground">
+                              {dealer.name}
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                              {dealer.company}
+                            </p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="text-sm font-medium text-foreground">
-                            {lead.name}
-                          </p>
-                          <p className="text-xs text-muted-foreground">
-                            {lead.company}
-                          </p>
+                      </td>
+                      <td className="py-4 px-4 text-sm text-foreground">
+                        {dealer.country}
+                      </td>
+                      <td className="py-4 px-4">
+                        <span className="px-2.5 py-1 rounded-md bg-secondary text-xs font-medium text-foreground">
+                          {dealer.business_type}
+                        </span>
+                      </td>
+                      <td className="py-4 px-4 max-w-[240px]">
+                        <p className="text-xs text-muted-foreground truncate" title={dealer.experience}>
+                          {dealer.experience}
+                        </p>
+                      </td>
+                      <td className="py-4 px-4">
+                        <div
+                          className={cn(
+                            "inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium",
+                            status.bg,
+                            status.color
+                          )}
+                        >
+                          <StatusIcon className="w-3 h-3" />
+                          {status.label}
                         </div>
-                      </div>
-                    </td>
-                    <td className="py-4 px-4 text-sm text-foreground">
-                      {lead.country}
-                    </td>
-                    <td className="py-4 px-4">
-                      <span className="px-2.5 py-1 rounded-md bg-secondary text-xs font-medium text-foreground">
-                        {lead.capacity}
-                      </span>
-                    </td>
-                    <td className="py-4 px-4 max-w-[240px]">
-                      <p className="text-xs text-muted-foreground truncate" title={lead.requirement}>
-                        {lead.requirement}
-                      </p>
-                    </td>
-                    <td className="py-4 px-4 text-xs text-muted-foreground font-semibold">
-                      <span className="px-2 py-0.5 rounded bg-accent/10 text-accent">
-                        {lead.source || "Quick Inquiry"}
-                      </span>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div
-                        className={cn(
-                          "inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium",
-                          status.bg,
-                          status.color,
-                        )}
-                      >
-                        <StatusIcon className="w-3 h-3" />
-                        {status.label}
-                      </div>
-                    </td>
-                    <td className="py-4 px-4 text-sm text-muted-foreground">
-                      {lead.date}
-                    </td>
-                    <td className="py-4 px-4">
-                      <button className="w-8 h-8 flex items-center justify-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-200">
-                        <MoreHorizontal className="w-4 h-4" />
-                      </button>
-                    </td>
-                  </tr>
-                );
-              }))}
+                      </td>
+                      <td className="py-4 px-4 text-sm text-muted-foreground">
+                        {dealer.date}
+                      </td>
+                      <td className="py-4 px-4">
+                        <button className="w-8 h-8 flex items-center justify-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-200">
+                          <MoreHorizontal className="w-4 h-4" />
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })
+              )}
             </tbody>
           </table>
         </div>
@@ -249,7 +265,7 @@ export function LeadsSection() {
         {/* Pagination */}
         <div className="flex items-center justify-between px-4 py-3 border-t border-border bg-secondary/30">
           <span className="text-sm text-muted-foreground">
-            Showing {filteredLeads.length} of {leads.length} Leads
+            Showing {filteredDealers.length} of {dealers.length} Dealer Applications
           </span>
           <div className="flex items-center gap-2">
             <button className="px-3 py-1.5 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors duration-200">

@@ -20,19 +20,23 @@ export function IndustryApplications({
         <SectionHeader eyebrow={section.eyebrow} highlight={section.highlight} subtitle={section.subtitle} title={section.title} />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {industries.map((industry) => (
-            <article className="group relative min-h-[360px] overflow-hidden rounded-2xl bg-slate-950 text-white shadow-sm" key={industry.title}>
+            <article className="group relative min-h-[360px] overflow-hidden rounded-2xl bg-slate-950 text-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_rgba(3,27,64,0.35)]" key={industry.title}>
               <Image
                 alt={industry.image.alt}
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 fill
                 sizes="(max-width: 1023px) 100vw, 20vw"
                 src={industry.image.src}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/30 to-transparent" />
-              <div className="absolute inset-y-0 left-0 w-1 bg-secondary scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              {/* Reduced darkness from top 50% */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/98 from-0% via-slate-950/70 via-40% to-transparent to-[75%]" />
               <div className="relative z-10 flex h-full flex-col justify-end p-5 sm:p-6">
-                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-white text-secondary shadow-sm">
-                  <ProductIcon name={industry.icon} size={20} />
+                {/* Spinning dashed circle around steady icon */}
+                <span className="relative mb-4 flex h-11 w-11 items-center justify-center shrink-0">
+                  <span className="absolute inset-0 rounded-full border border-dashed border-secondary bg-white animate-[spin_8s_linear_infinite] group-hover:animate-[spin_2s_linear_infinite]" />
+                  <span className="relative z-10 text-secondary flex items-center justify-center">
+                    <ProductIcon name={industry.icon} size={20} />
+                  </span>
                 </span>
                 <h3 className="text-lg font-bold uppercase tracking-[0.18em] text-white">{industry.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-white/75">{industry.description}</p>

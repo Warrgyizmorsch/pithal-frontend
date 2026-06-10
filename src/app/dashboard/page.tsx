@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Sidebar, type Section } from "@/components/dashboard/sidebar";
 import { Header } from "@/components/dashboard/header";
 import { LeadsSection } from "@/components/dashboard/sections/leads";
+import { DealersSection } from "@/components/dashboard/sections/dealers";
 
 export default function DashboardPage() {
   const [activeSection, setActiveSection] = useState<Section>("Leads");
@@ -35,7 +36,7 @@ export default function DashboardPage() {
             key={activeSection}
             className="animate-in fade-in slide-in-from-bottom-4 duration-500"
           >
-            <LeadsSection />
+            {activeSection === "Leads" ? <LeadsSection /> : <DealersSection />}
           </div>
         </main>
       </div>

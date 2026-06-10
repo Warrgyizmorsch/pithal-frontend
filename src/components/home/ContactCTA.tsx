@@ -40,12 +40,21 @@ export function ContactCTA() {
     setError(null);
 
     try {
+      const pageSource = typeof window !== "undefined"
+        ? (window.location.pathname === "/"
+          ? "Home Page"
+          : `Page: ${window.location.pathname}`)
+        : "Home Page";
+
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          source: pageSource,
+        }),
       });
 
       const data = await response.json();

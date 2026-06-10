@@ -140,6 +140,447 @@ textarea {
   transform: scale(1.055);
 }
 
+@keyframes moving-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes bar-glow {
+  0%, 100% { 
+    box-shadow: 0 0 8px rgba(250, 89, 2, 0.4), 0 0 15px rgba(250, 89, 2, 0.2); 
+    filter: brightness(1);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(250, 89, 2, 0.8), 0 0 32px rgba(250, 89, 2, 0.4); 
+    filter: brightness(1.15);
+  }
+}
+
+.animate-moving-glow {
+  background: linear-gradient(
+    90deg, 
+    #fa5902 0%, 
+    #fa5902 35%, 
+    #ffe6d9 50%, 
+    #fa5902 65%, 
+    #fa5902 100%
+  );
+  background-size: 200% 100%;
+  animation: moving-shimmer 2s infinite linear, bar-glow 1.8s infinite ease-in-out;
+}
+
+.performance-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.performance-card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(250, 89, 2, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(9, 42, 92, 0.12), 0 0 20px rgba(250, 89, 2, 0.1);
+}
+
+.performance-card-hover:hover .icon-badge-inner {
+  transform: scale(1.1) rotate(5deg);
+  background-color: #fa5902;
+  color: white;
+}
+
+.performance-card-hover:hover .icon-badge-inner svg {
+  color: white !important;
+}
+
+.process-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-card-hover:hover {
+  background-color: white !important;
+  transform: translateY(-8px);
+  border-color: rgba(250, 89, 2, 0.3) !important;
+  box-shadow: 0 20px 40px -15px rgba(9, 42, 92, 0.1);
+}
+
+.process-card-hover:hover .step-badge {
+  background-color: #fa5902 !important;
+  color: white !important;
+  transform: translateX(-50%) scale(1.15);
+  box-shadow: 0 0 15px rgba(250, 89, 2, 0.4);
+}
+
+.process-card-hover:hover .process-icon {
+  transform: scale(1.1) translateY(-2px);
+  color: #fa5902;
+}
+
+.career-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.career-card-hover:hover {
+  transform: translateY(-8px);
+  border-color: #fa5902 !important;
+  background-color: #fffaf5 !important; /* Very light orange background */
+  box-shadow: 0 30px 60px -15px rgba(250, 89, 2, 0.2);
+}
+
+.career-card-hover:hover .icon-box {
+  background-color: #fa5902 !important;
+  transform: scale(1.1) rotate(8deg);
+  box-shadow: 0 0 20px rgba(250, 89, 2, 0.3);
+}
+
+.career-card-hover:hover .icon-box svg {
+  stroke: white !important;
+}
+
+.career-card-hover:hover h3 {
+  color: #fa5902;
+}
+
+.icon-box, .benefit-icon-wrapper .w-28, .training-icon-box, .step-icon-box {
+  position: relative;
+  border-radius: 50% !important;
+  z-index: 10;
+}
+
+.icon-box::after, .benefit-icon-wrapper .w-28::after, .training-icon-box::after, .step-icon-box::after {
+  content: "";
+  position: absolute;
+  inset: -6px; /* Slightly larger area for the rotating border */
+  border: 3px solid transparent;
+  border-right-color: var(--accent-color, #fa5902);
+  border-radius: 50% !important;
+  transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: transparent !important;
+}
+
+.career-card-hover:hover .icon-box::after,
+.benefit-card-premium:hover .benefit-icon-wrapper .w-28::after,
+.training-card-hover:hover .training-icon-box::after,
+.process-step-hover:hover .step-icon-box::after {
+  opacity: 1;
+  transform: rotate(360deg);
+  border-color: var(--accent-color, #fa5902);
+}
+
+.process-step-hover {
+  transition: all 0.4s ease;
+}
+
+.process-step-hover:hover .step-icon-box {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.process-step-hover .step-icon-box {
+  position: relative;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.process-step-hover .step-icon-box::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 3px solid transparent;
+  border-right-color: var(--accent-color, #fa5902);
+  border-radius: 50% !important;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.process-card-content {
+  position: relative;
+  /* overflow: hidden removed to prevent clipping the top badge */
+}
+
+.process-card-content .expanding-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 5px;
+  background-color: var(--accent-color, #fa5902);
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 12px; /* Match card rounding */
+  border-bottom-right-radius: 12px;
+}
+
+.process-step-hover:hover .process-card-content .expanding-line {
+  width: 100%;
+}
+
+/* CONTACT PROCESS CARD EFFECTS */
+.contact-process-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-process-hover:hover {
+  transform: translateY(-8px);
+  border-color: rgba(250, 89, 2, 0.4) !important;
+  box-shadow: 0 20px 40px -15px rgba(9, 42, 92, 0.12);
+}
+
+.contact-icon-box {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-icon-box::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 3px solid transparent;
+  border-right-color: #fa5902;
+  border-radius: 50% !important;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contact-process-hover:hover .contact-icon-box {
+  transform: scale(1.1);
+  background-color: #fdf2e9 !important;
+}
+
+.contact-process-hover:hover .contact-icon-box::after {
+  opacity: 1;
+  transform: rotate(360deg);
+  border-color: #fa5902;
+}
+
+.contact-process-hover:hover .expanding-line-contact {
+  width: 100%;
+}
+
+.expanding-line-contact {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background-color: #fa5902;
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 11px;
+  border-bottom-right-radius: 11px;
+}
+
+.testimonial-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card-hover:hover {
+  transform: translateY(-10px);
+  border-color: rgba(250, 89, 2, 0.4);
+  box-shadow: 0 30px 60px -15px rgba(9, 42, 92, 0.15), 0 0 20px rgba(250, 89, 2, 0.05);
+}
+
+.testimonial-card-hover:hover .quote-icon {
+  transform: scale(1.2) rotate(-10deg);
+  color: #fa5902 !important;
+  opacity: 1;
+}
+
+.testimonial-card-hover:hover .profile-img-container {
+  transform: scale(1.05);
+  border-color: #fa5902 !important;
+  box-shadow: 0 0 15px rgba(250, 89, 2, 0.2);
+}
+
+.testimonial-card-hover:hover h4 {
+  color: #fa5902;
+}
+
+.training-card-hover:hover {
+  transform: translateY(-10px);
+  border-color: rgba(250, 89, 2, 0.3) !important;
+  box-shadow: 0 30px 60px -15px rgba(9, 42, 92, 0.18);
+}
+
+.training-card-hover:hover .training-icon-box {
+  background-color: #fa5902 !important;
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(250, 89, 2, 0.3);
+}
+
+.training-card-hover:hover .training-icon-box svg {
+  color: white !important;
+  stroke: white !important;
+}
+
+.training-card-hover:hover .training-image-box {
+  transform: scale(1.05);
+}
+
+.qualification-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.qualification-card-hover:hover {
+  transform: translateY(-8px);
+  border-color: rgba(250, 89, 2, 0.3) !important;
+  box-shadow: 0 25px 50px -12px rgba(9, 42, 92, 0.15);
+}
+
+.qualification-card-hover:hover .qual-icon-box {
+  background-color: #092a5c !important;
+  color: white !important;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.qualification-card-hover:hover img {
+  transform: scale(1.1);
+}
+
+.job-card-hover {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.job-card-hover:hover {
+  transform: translateX(8px);
+  border-color: rgba(250, 89, 2, 0.4) !important;
+  background-color: #fff !important;
+  box-shadow: 0 15px 35px -10px rgba(9, 42, 92, 0.12), 0 0 15px rgba(250, 89, 2, 0.05);
+}
+
+.job-card-hover:hover .job-icon-container {
+  transform: scale(1.1);
+  background-color: #fa5902 !important;
+  color: white !important;
+  box-shadow: 0 0 15px rgba(250, 89, 2, 0.3);
+}
+
+.job-card-hover:hover .job-icon-container svg {
+  color: white !important;
+}
+
+.job-card-hover:hover .apply-btn {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(250, 89, 2, 0.2);
+}
+
+.strength-stat-hover {
+  transition: all 0.3s ease;
+}
+
+.strength-stat-hover:hover {
+  transform: scale(1.05);
+}
+
+.strength-stat-hover:hover .stat-icon-circle {
+  background-color: #fa5902;
+  border-color: #fa5902;
+  color: white !important;
+  box-shadow: 0 0 15px rgba(250, 89, 2, 0.4);
+}
+
+.strength-stat-hover:hover .stat-icon-circle svg {
+  color: white !important;
+}
+
+.feature-banner-hover {
+  transition: all 0.4s ease;
+}
+
+.feature-icon-wrapper {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+/* Partial border effect */
+.feature-icon-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border: 3px solid transparent;
+  border-right-color: #fa5902; /* Right border as requested */
+  border-radius: 50%;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.6;
+}
+
+.feature-banner-hover:hover .feature-icon-wrapper {
+  transform: scale(1.1);
+  background-color: #092a5c !important;
+  color: white !important;
+}
+
+.feature-banner-hover:hover .feature-icon-wrapper svg {
+  color: white !important;
+}
+
+.feature-banner-hover:hover .feature-icon-wrapper::after {
+  transform: rotate(360deg);
+  border-color: #fa5902;
+  opacity: 1;
+}
+
+/* PREMIUM BENEFIT CARD EFFECTS */
+.benefit-card-premium {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card-premium:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 30px 60px -12px rgba(9, 42, 92, 0.15), 0 0 30px rgba(250, 89, 2, 0.1);
+}
+
+.benefit-card-premium::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(250, 89, 2, 0.05) 0%, transparent 70%);
+  transition: all 0.6s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.benefit-card-premium:hover::before {
+  top: -50%;
+  left: -50%;
+  opacity: 1;
+}
+
+.benefit-card-premium .shine-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.benefit-card-premium:hover .shine-effect {
+  left: 100%;
+}
+
+.benefit-card-premium:hover .benefit-icon-wrapper {
+  transform: scale(1.15) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(250, 89, 2, 0.2);
+}
+
+.benefit-icon-wrapper {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 .lift {
   transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
 }

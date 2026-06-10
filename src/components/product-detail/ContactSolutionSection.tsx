@@ -1,6 +1,7 @@
 "use client";
 
-import { User, Building, Globe, Clipboard, Gauge, ShieldCheck, Phone, ArrowRight, Settings, ClipboardList, TrendingUp, Headphones } from "lucide-react";
+import { useState } from "react";
+import { User, Building, Globe, Clipboard, Gauge, ShieldCheck, Phone, ArrowRight, Settings, ClipboardList, TrendingUp, Headphones, CheckCircle2, AlertCircle } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 import type { ContactSectionData } from "@/data/products/productDetailTypes";
@@ -9,6 +10,68 @@ const CONTACT_SECTION_BACKGROUND =
   "/images/products-images/universal-quarry-plant-background.png";
 
 export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    country: "",
+    capacity: "",
+    requirement: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(null);
+    setError(null);
+
+    const pageSource = typeof window !== "undefined"
+      ? (window.location.pathname === "/"
+        ? "Home Page"
+        : `Page: ${window.location.pathname}`)
+      : "Product Page Form";
+
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: pageSource,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSuccess("Thank you! Your quote request has been submitted successfully.");
+        setFormData({
+          name: "",
+          company: "",
+          country: "",
+          capacity: "",
+          requirement: "",
+        });
+      } else {
+        setError(data.error || "Failed to submit request. Please try again.");
+      }
+    } catch (err) {
+      setError("Something went wrong. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
   const renderBenefitIcon = (iconName: string) => {
     const props = { size: 20, strokeWidth: 2.2 };
     switch (iconName.toLowerCase()) {
@@ -114,7 +177,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
               boxShadow: "0 15px 35px rgba(3, 27, 64, 0.05)",
               backgroundImage: `url(${CONTACT_SECTION_BACKGROUND})`,
               backgroundSize: "cover",
-              backgroundPosition: "center bottom",
+              backgroundPosition: "center 25%",
               backgroundRepeat: "no-repeat"
             }}
           >
@@ -257,7 +320,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
           <div style={{ width: "100%", height: "1px", backgroundColor: "#fa5902", opacity: 0.15, marginTop: "16px", marginBottom: "20px" }} />
 
           {/* Form */}
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             {/* Full Name Input */}
             <div 
               className="flex items-stretch"
@@ -284,8 +347,11 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   FULL NAME <span style={{ color: "#fa5902" }}>*</span>
                 </label>
                 <input 
+                  required
                   type="text" 
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder={data.form.fields[0].placeholder}
                   className="w-full bg-transparent border-none outline-none text-base sm:text-[13px] text-primary"
                   style={{ padding: "2px 0 0 0" }}
@@ -319,8 +385,11 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   COMPANY NAME <span style={{ color: "#fa5902" }}>*</span>
                 </label>
                 <input 
+                  required
                   type="text" 
                   name="company"
+                  value={formData.company}
+                  onChange={handleChange}
                   placeholder={data.form.fields[1].placeholder}
                   className="w-full bg-transparent border-none outline-none text-base sm:text-[13px] text-primary"
                   style={{ padding: "2px 0 0 0" }}
@@ -354,10 +423,12 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   COUNTRY <span style={{ color: "#fa5902" }}>*</span>
                 </label>
                 <select 
+                  required
                   name="country"
+                  value={formData.country}
+                  onChange={handleChange}
                   className="w-full bg-transparent border-none outline-none text-base sm:text-[13px] text-primary appearance-none cursor-pointer"
                   style={{ padding: "2px 24px 0 0" }}
-                  defaultValue=""
                 >
                   <option value="" disabled>{data.form.fields[2].placeholder}</option>
                   <option value="India">India</option>
@@ -403,7 +474,10 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   {data.form.dropdown.label} <span style={{ color: "#fa5902" }}>*</span>
                 </label>
                 <textarea 
+                  required
                   name="requirement"
+                  value={formData.requirement}
+                  onChange={handleChange}
                   placeholder={data.form.dropdown.options[0]}
                   className="w-full bg-transparent border-none outline-none text-base sm:text-[13px] text-primary resize-none flex-1"
                   style={{ padding: "4px 0 0 0", marginTop: "2px" }}
@@ -437,8 +511,11 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   {data.form.textarea.label} <span style={{ color: "#fa5902" }}>*</span>
                 </label>
                 <input 
+                  required
                   type="text" 
                   name="capacity"
+                  value={formData.capacity}
+                  onChange={handleChange}
                   placeholder="Enter required capacity (TPH)"
                   className="w-full bg-transparent border-none outline-none text-base sm:text-[13px] text-primary"
                   style={{ padding: "2px 0 0 0" }}
@@ -467,10 +544,25 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
               </p>
             </div>
 
+            {/* Alert messages */}
+            {success && (
+              <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 text-green-700 rounded-lg text-xs font-semibold">
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
+                <span>{success}</span>
+              </div>
+            )}
+            {error && (
+              <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-xs font-semibold">
+                <AlertCircle className="w-4 h-4 shrink-0" />
+                <span>{error}</span>
+              </div>
+            )}
+
             {/* Submit Button */}
             <Button 
               type="submit"
-              className="w-full min-h-[3.6rem] rounded-lg px-5 flex items-center justify-start gap-4"
+              disabled={loading}
+              className="w-full min-h-[3.6rem] rounded-lg px-5 flex items-center justify-start gap-4 disabled:opacity-50"
               variant="primary"
             >
               <div 
@@ -482,7 +574,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
               
               <div style={{ textAlign: "left", textTransform: "none", letterSpacing: "normal" }}>
                 <div className="font-extrabold uppercase text-white" style={{ fontSize: "0.9rem", letterSpacing: "0.08em", lineHeight: 1.2 }}>
-                  {data.form.button}
+                  {loading ? "Submitting..." : data.form.button}
                 </div>
                 <div className="text-white/90" style={{ fontSize: "10px", marginTop: "2px", fontWeight: "normal" }}>
                   Get expert advice for the right crushing solution

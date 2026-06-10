@@ -26,6 +26,7 @@ import {
   Ruler,
   Scale,
   Settings2,
+  Nut,
   ShieldCheck,
   Sparkles,
   Target,
@@ -65,7 +66,7 @@ const icons: Record<string, LucideIcon> = {
   recycle: Recycle,
   ruler: Ruler,
   scale: Scale,
-  settings: Settings2,
+  settings: Nut,
   shield: ShieldCheck,
   spark: Sparkles,
   target: Target,
@@ -222,7 +223,7 @@ function HeroSection() {
           <div className="grid grid-cols-2 divide-x divide-y divide-border sm:grid-cols-3 lg:grid-cols-[repeat(5,minmax(0,1fr))_1.75fr] lg:divide-y-0">
             {stats.map((stat) => (
               <article
-                className="flex min-h-[72px] items-center gap-2.5 px-3 py-3 sm:min-h-[82px] sm:gap-3 sm:px-4 lg:min-h-[92px]"
+                className="flex min-h-[72px] items-center gap-2.5 px-3 py-3 sm:min-h-[82px] sm:gap-3 sm:px-4 lg:min-h-[92px] transition-transform duration-300 hover:scale-[1.03] hover:bg-slate-50/30 cursor-default"
                 key={stat.label}
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary sm:h-11 sm:w-11 lg:h-12 lg:w-12">
@@ -334,8 +335,13 @@ function WhoWeAreSection() {
             {/* Philosophy / Capability callout items */}
             <div className="mt-8 space-y-5">
               {experience.philosophy.map((item) => (
-                <div className="flex gap-4" key={item.title}>
-                  <span className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-dashed border-secondary/55 bg-secondary/5 text-secondary">
+                <div className="group/phil flex gap-4 transition-transform duration-300 hover:translate-x-1.5" key={item.title}>
+                  <span className={cn(
+                    "mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-dashed border-secondary/55 bg-secondary/5 text-secondary transition-all duration-300",
+                    item.title === "Advanced Manufacturing"
+                      ? "animate-[spin_8s_linear_infinite] group-hover/phil:animate-[spin_1.5s_linear_infinite]"
+                      : "group-hover/phil:rotate-12"
+                  )}>
                     <Icon name={item.icon} size={20} />
                   </span>
                   <div>
@@ -354,10 +360,10 @@ function WhoWeAreSection() {
           {/* ── Right Column: Image Grid ── */}
           <div className="flex flex-col gap-4">
             {/* Top wide image */}
-            <div className="image-hover relative h-[270px] overflow-hidden rounded-2xl shadow-[0_16px_36px_rgba(3,27,64,0.12)] sm:h-[310px]">
+            <div className="image-hover relative h-[270px] overflow-hidden rounded-2xl shadow-[0_16px_36px_rgba(3,27,64,0.12)] sm:h-[310px] group/img1">
               <Image
                 alt="Pithal Machines manufacturing floor with crushing equipment"
-                className="object-cover"
+                className="object-cover transition-transform duration-700 group-hover/img1:scale-[1.03]"
                 fill
                 sizes="(max-width: 1023px) 100vw, 46vw"
                 src="/images/about/our-foundation-1.png"
@@ -365,19 +371,19 @@ function WhoWeAreSection() {
             </div>
             {/* Bottom row: two images side-by-side */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="image-hover relative h-[155px] overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[175px]">
+              <div className="image-hover relative h-[155px] overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[175px] group/img2">
                 <Image
                   alt="Pithal Machines facility exterior"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 group-hover/img2:scale-[1.04]"
                   fill
                   sizes="(max-width: 1023px) 50vw, 23vw"
                   src="/images/about/our-foundation-2.png"
                 />
               </div>
-              <div className="image-hover relative h-[155px] overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[175px]">
+              <div className="image-hover relative h-[155px] overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[175px] group/img3">
                 <Image
                   alt="Pithal engineers reviewing technical blueprints"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 group-hover/img3:scale-[1.04]"
                   fill
                   sizes="(max-width: 1023px) 50vw, 23vw"
                   src="/images/about/our-foundation-3.png"
@@ -478,7 +484,7 @@ function VisionMissionSection() {
             {/* ▌ Vision Card (Dark Navy) */}
             <div className="relative z-[2] flex">
               <div 
-                className="w-full bg-[#031b40] text-white border-l-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pr-16 shadow-lg md:clip-vision"
+                className="w-full bg-[#031b40] text-white border-l-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pr-16 shadow-lg md:clip-vision transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl group/vision"
               >
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 w-full">
                   {/* Custom Double Ring Icon Container */}
@@ -492,7 +498,7 @@ function VisionMissionSection() {
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="w-10 h-10 text-white"
+                        className="w-10 h-10 text-white transition-transform duration-500 group-hover/vision:rotate-12"
                       >
                         <line x1="12" y1="3" x2="12" y2="12" />
                         <path d="M12 3l6 2.5-6 2.5V3z" fill="#fa5902" stroke="#fa5902" />
@@ -507,7 +513,7 @@ function VisionMissionSection() {
                     <h3 className="text-2xl font-black tracking-wider text-white uppercase">
                       {vision.title}
                     </h3>
-                    <span className="block w-8 h-[3px] bg-[#fa5902] mt-2 mb-4 mx-auto sm:mx-0" />
+                    <span className="block w-8 h-[3px] bg-[#fa5902] mt-2 mb-4 mx-auto sm:mx-0 transition-all duration-300 group-hover/vision:w-16" />
                     <p className="text-[14px] sm:text-[15px] leading-[1.65] text-white/80 font-medium">
                       {vision.text}
                     </p>
@@ -519,13 +525,13 @@ function VisionMissionSection() {
             {/* ▌ Mission Card (White) */}
             <div className="relative z-[1] flex">
               <div 
-                className="w-full bg-white text-[#031b40] border-r-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pl-16 shadow-lg md:clip-mission-card"
+                className="w-full bg-white text-[#031b40] border-r-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pl-16 shadow-lg md:clip-mission-card transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl group/mission"
               >
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 w-full">
                   {/* Custom Double Ring Icon Container */}
                   <div className="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-dashed border-[#fa5902]/30 p-2">
                     <div className="w-full h-full rounded-full border border-[#031b40]/10 flex items-center justify-center bg-gray-50/50">
-                      <Cog className="w-10 h-10 text-[#031b40]" strokeWidth={1.5} />
+                      <Cog className="w-10 h-10 text-[#031b40] animate-[spin_8s_linear_infinite] group-hover/mission:animate-[spin_1.5s_linear_infinite]" strokeWidth={1.5} />
                     </div>
                   </div>
                   
@@ -534,7 +540,7 @@ function VisionMissionSection() {
                     <h3 className="text-2xl font-black tracking-wider text-[#031b40] uppercase">
                       {mission.title}
                     </h3>
-                    <span className="block w-8 h-[3px] bg-[#fa5902] mt-2 mb-4 mx-auto sm:mx-0" />
+                    <span className="block w-8 h-[3px] bg-[#fa5902] mt-2 mb-4 mx-auto sm:mx-0 transition-all duration-300 group-hover/mission:w-16" />
                     <p className="text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/70 font-medium">
                       {mission.text}
                     </p>
@@ -669,9 +675,13 @@ function WhyChooseSection() {
         <div className="mx-auto mt-9 grid max-w-[1520px] gap-6 md:grid-cols-2 lg:grid-cols-3">
           {whyChoose.cards.map((card) => (
             <article
-              className="group relative flex items-start gap-5 rounded-xl border border-slate-100 bg-white p-6 shadow-[0_12px_38px_rgba(3,27,64,0.04)] transition-all duration-300 hover:shadow-[0_16px_44px_rgba(3,27,64,0.08)] border-b-[4px] border-b-[#fa5902]"
+              className="group relative flex items-start gap-5 rounded-xl border border-slate-100 bg-white p-6 shadow-[0_12px_38px_rgba(3,27,64,0.04)] transition-all duration-300 hover:shadow-[0_16px_44px_rgba(3,27,64,0.08)] hover:-translate-y-1.5 overflow-hidden"
               key={card.title}
             >
+              {/* Bottom sliding train line */}
+              <div className="absolute bottom-0 inset-x-0 h-[4px] bg-[#fa5902] overflow-hidden">
+                <span className="absolute inset-0 bg-primary translate-x-[-100%] transition-transform duration-500 ease-out group-hover:translate-x-0" />
+              </div>
               {/* Hexagon Container */}
               <div className="relative shrink-0 w-20 h-20 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full text-[#031b40]/5 fill-[#f8fafc] transition-colors duration-300 group-hover:text-[#fa5902]/10">
@@ -833,16 +843,24 @@ function ManufacturingSection() {
         <div className="mx-auto mt-8 grid grid-cols-2 md:grid-cols-5 border border-slate-100 bg-white shadow-[0_8px_30px_rgba(3,27,64,0.03)] rounded-xl py-6 divide-y md:divide-y-0 md:divide-x divide-slate-100 max-w-[1520px]">
           {manufacturing.steps.map((step) => (
             <div
-              className="flex flex-col items-center gap-4 px-3 py-3 text-center"
+              className="group/step flex flex-col items-center gap-4 px-3 py-3 text-center transition-all duration-300 hover:bg-slate-50/30 cursor-default"
               key={step.title}
             >
-              <span className="flex h-24 w-24 items-center justify-center rounded-full bg-slate-50/50">
+              <span className={cn(
+                "flex h-24 w-24 items-center justify-center rounded-full bg-slate-50/50 transition-all duration-300",
+                step.title === "Advanced Manufacturing"
+                  ? "animate-[spin_8s_linear_infinite] group-hover/step:animate-[spin_1.5s_linear_infinite]"
+                  : "group-hover/step:scale-105"
+              )}>
                 <Image
                   src={stepFlaticons[step.icon] ?? "/icons/reliable-performace.png"}
                   alt={step.title}
                   width={96}
                   height={96}
-                  className="object-contain"
+                  className={cn(
+                    "object-contain",
+                    step.title === "Rigorous Quality Checks" && "animate-[vibrate_3.5s_ease-in-out_infinite]"
+                  )}
                 />
               </span>
               <p className="text-[11px] font-black uppercase tracking-wider text-[#031b40] leading-[1.3] px-2">
@@ -856,9 +874,13 @@ function ManufacturingSection() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 max-w-[1520px] mx-auto">
           {manufacturing.cards.map((card) => (
             <article
-              className="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_12px_38px_rgba(3,27,64,0.03)] hover:shadow-[0_16px_44px_rgba(3,27,64,0.06)] transition-all duration-300 border-b-[4px] border-b-[#fa5902] flex flex-col h-full"
+              className="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_12px_38px_rgba(3,27,64,0.03)] hover:shadow-[0_16px_44px_rgba(3,27,64,0.06)] transition-all duration-300 hover:-translate-y-1 relative flex flex-col h-full"
               key={card.title}
             >
+              {/* Bottom sliding train line */}
+              <div className="absolute bottom-0 inset-x-0 h-[4px] bg-[#fa5902] overflow-hidden">
+                <span className="absolute inset-0 bg-primary translate-x-[-100%] transition-transform duration-500 ease-out group-hover:translate-x-0" />
+              </div>
               <div className="image-hover relative h-[155px] overflow-hidden shrink-0">
                 <Image
                   alt={card.title}
@@ -884,6 +906,19 @@ function ManufacturingSection() {
           ))}
         </div>
       </Container>
+      <style>{`
+        @keyframes vibrate {
+          0%, 82%, 100% { transform: translate(0, 0) rotate(0deg); }
+          84% { transform: translate(-1.5px, 1px) rotate(-1.5deg); }
+          86% { transform: translate(1.5px, -1px) rotate(1.5deg); }
+          88% { transform: translate(-2px, -1.5px) rotate(-2deg); }
+          90% { transform: translate(2px, 2px) rotate(2deg); }
+          92% { transform: translate(-1.5px, 1.5px) rotate(-1.5deg); }
+          94% { transform: translate(1.5px, -1px) rotate(1deg); }
+          96% { transform: translate(-1px, 1px) rotate(-0.5deg); }
+          98% { transform: translate(0.5px, -0.5px) rotate(0.5deg); }
+        }
+      `}</style>
     </section>
   );
 }
@@ -1324,7 +1359,7 @@ function ValuesSection() {
                 <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200/80 shadow-[0_6px_16px_rgba(3,27,64,0.04)]">
                   {/* Rotating decorative orange arc segment */}
                   <svg
-                    className="absolute -inset-[1px] h-[66px] w-[66px] -rotate-[120deg] pointer-events-none"
+                    className="absolute -inset-[1px] h-[66px] w-[66px] -rotate-[120deg] pointer-events-none animate-[spin_4.5s_linear_infinite]"
                     viewBox="0 0 36 36"
                   >
                     <path

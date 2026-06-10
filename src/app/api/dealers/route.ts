@@ -5,7 +5,7 @@ import pool from "@/lib/db";
 export async function GET() {
   try {
     const [rows] = await pool.query(
-      "SELECT id, name, company, country, business_type, experience, status, DATE_FORMAT(date, '%Y-%m-%d') as date FROM dealers ORDER BY date DESC"
+      "SELECT id, name, company, country, business_type, experience, status, DATE_FORMAT(date, '%Y-%m-%d') as date FROM dealers ORDER BY id DESC"
     );
     return NextResponse.json({ success: true, dealers: rows });
   } catch (error) {

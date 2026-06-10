@@ -1878,7 +1878,7 @@ export default function SolutionsPage() {
                           <div className="h-3 flex-1 bg-slate-200/70 rounded-full relative overflow-visible">
                             {/* Inner progress bar */}
                             <div
-                              className="h-full bg-gradient-to-r from-[#fa5902] to-[#fa5902] rounded-full relative"
+                              className="h-full rounded-full relative animate-moving-glow"
                               style={{ width: `${slider.value}%` }}
                             >
                               {/* Glowing/Border Circle Point Handle */}
@@ -1897,10 +1897,10 @@ export default function SolutionsPage() {
                   {performanceStatsList.map((item, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-4.5 bg-white border border-slate-100 p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                      className="flex items-center gap-4.5 bg-white border border-slate-100 p-5 rounded-2xl shadow-sm performance-card-hover"
                     >
                       {/* Round icon badge */}
-                      <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-full bg-[#fdf2eb]">
+                      <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-full bg-[#fdf2eb] transition-all duration-300 icon-badge-inner">
                         {i === 0 && <Building2 size={26} className="text-[#fa5902]" />}
                         {i === 1 && <Globe size={26} className="text-[#fa5902]" />}
                         {i === 2 && <Headphones size={26} className="text-[#fa5902]" />}
@@ -1956,7 +1956,7 @@ export default function SolutionsPage() {
               {smartProcessSteps.map((item, i) => (
                 <div
                   key={i}
-                  className="relative flex flex-col items-center text-center z-10 bg-slate-50 border border-slate-200/50 p-4.5 rounded-xl"
+                  className="relative flex flex-col items-center text-center z-10 bg-slate-50 border border-slate-200/50 p-4.5 rounded-xl process-card-hover"
                 >
                   {/* Photo wrapper step */}
                   <div className="w-full aspect-[4/3] relative mb-4">
@@ -1978,7 +1978,7 @@ export default function SolutionsPage() {
                       )}
                     </div>
 
-                    <div className="absolute bottom-[-16px] left-1/2 -translate-x-1/2 bg-white border-2 border-[#fa5902] text-[#fa5902] text-[13.5px] font-black uppercase w-8 h-8 flex items-center justify-center rounded-full shadow-md z-30">
+                    <div className="absolute bottom-[-16px] left-1/2 -translate-x-1/2 bg-white border-2 border-[#fa5902] text-[#fa5902] text-[13.5px] font-black uppercase w-8 h-8 flex items-center justify-center rounded-full shadow-md z-30 transition-all duration-300 step-badge">
                       {item.step}
                     </div>
                   </div>
@@ -1987,7 +1987,7 @@ export default function SolutionsPage() {
                   <div className="h-4" />
 
                   {/* Icon badge without background circle */}
-                  <div className="flex items-center justify-center text-secondary mb-4">
+                  <div className="flex items-center justify-center text-secondary mb-4 transition-all duration-300 process-icon">
                     {i === 0 && <HardHat size={36} />}
                     {i === 1 && <FileText size={36} />}
                     {i === 2 && <Settings size={36} />}

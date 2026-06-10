@@ -1,8 +1,8 @@
 "use client";
 
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { ChevronRight, Users, Settings, BookOpen, ShieldCheck, Home, Trophy, Lightbulb, Globe, Briefcase, Award, Megaphone, TrendingUp, FileText, Cpu, Wrench, ArrowRight, Search, MapPin, RotateCcw, Wallet, UserCheck, Upload, Mail } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Footer } from "@/components/layout/Footer";
@@ -76,20 +76,10 @@ const heroStats = [
 const advantages = [
   {
     icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-9 h-9">
-        <path
-          d="M10 22L16 16L24 24L30 18"
-          stroke="var(--secondary)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M7 28H33"
-          stroke="var(--secondary)"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 20V10" />
+        <path d="M18 20V4" />
+        <path d="M6 20v-4" />
       </svg>
     ),
     title: "Career Growth",
@@ -97,7 +87,7 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         <path d="M9 11l2 2 4-4" />
       </svg>
@@ -107,7 +97,7 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
         <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
       </svg>
@@ -117,7 +107,7 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 10l-4 3V4l-8 6v10h20v-7l-8-3z" />
       </svg>
     ),
@@ -126,7 +116,7 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
       </svg>
     ),
@@ -135,7 +125,7 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
         <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -531,20 +521,24 @@ export default function CareersPage() {
               {advantages.map((a, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border border-slate-200 bg-white p-8 shadow-[0_24px_70px_rgba(15,23,42,0.14)] transition hover:-translate-y-1 flex flex-col items-center text-center"
+                  className="rounded-lg border border-slate-200 bg-white p-8 shadow-[0_24px_70px_rgba(15,23,42,0.14)] flex flex-col items-center text-center career-card-hover"
+                  style={{ "--accent-color": "#fa5902" } as React.CSSProperties}
                 >
-                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-secondary/10 text-secondary">
+                  <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary transition-all duration-300 icon-box">
                     {a.icon}
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-950 mb-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-950 mb-3 transition-colors duration-300">
                     {a.title}
                   </h3>
                   <p className="text-[15px] sm:text-base leading-relaxed text-slate-500">{a.desc}</p>
                 </div>
               ))}
             </div>
+          </div>
 
-            <div className="mt-14 rounded-xl bg-[#ebf1fd] px-6 py-8 shadow-[0_16px_50px_rgba(3,27,64,0.06)] border border-slate-200/50">
+          {/* Full-width flat banner - screen touching */}
+          <div className="w-full bg-[#ebf1fd] border-y border-slate-200 py-8 sm:py-10 mt-14 shadow-sm">
+            <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
               <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr] items-center">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                   <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#092a5c] text-white animate-pulse">
@@ -875,8 +869,11 @@ export default function CareersPage() {
                 );
               })}
             </div>
+          </div>
 
-            <div className="mt-8 rounded-lg bg-white border border-slate-100 shadow-[0_22px_55px_rgba(15,23,42,0.12)] px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          {/* Full-width flat banner - screen touching */}
+          <div className="w-full bg-white border-y border-slate-200 py-6 mt-8 shadow-sm">
+            <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <div className="h-12 w-12 rounded-full bg-slate-50 flex items-center justify-center">
                   <svg
@@ -1040,11 +1037,11 @@ export default function CareersPage() {
                   return (
                     <div
                       key={i}
-                      className="bg-white border border-slate-100 rounded-2xl p-6 shadow-[0_8px_30px_rgba(3,27,64,0.03)] hover:shadow-[0_15px_40px_rgba(3,27,64,0.06)] transition-all flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6"
+                      className="bg-white border border-slate-100 rounded-2xl p-6 shadow-[0_8px_30px_rgba(3,27,64,0.03)] flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 job-card-hover"
                     >
                       {/* 1. Role & Department Info */}
                       <div className="flex items-center gap-4 lg:w-1/3">
-                        <div className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 ${badgeBg}`}>
+                        <div className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 job-icon-container ${badgeBg}`}>
                           {deptIcon}
                         </div>
                         <div>
@@ -1103,7 +1100,7 @@ export default function CareersPage() {
                       <div className="flex flex-col items-center justify-center shrink-0 lg:w-40 gap-2">
                         <Link
                           href="#"
-                          className={`w-full h-10 rounded-xl ${btnBg} text-white flex items-center justify-center gap-2 text-xs font-black tracking-wider transition-colors`}
+                          className={`w-full h-10 rounded-xl ${btnBg} text-white flex items-center justify-center gap-2 text-xs font-black tracking-wider transition-all duration-300 apply-btn shadow-sm`}
                         >
                           Apply Now
                           <ArrowRight size={14} className="stroke-[2.5]" />
@@ -1119,9 +1116,11 @@ export default function CareersPage() {
                   );
                 })}
             </div>
+          </div>
 
-            {/* Bottom upload notice */}
-            <div className="mt-8 rounded-2xl bg-[#ebf1fd] p-6 shadow-[0_8px_30px_rgba(3,27,64,0.03)] border border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Full-width flat banner - screen touching */}
+          <div className="w-full bg-[#ebf1fd] border-y border-slate-200/60 py-6 mt-8 shadow-sm">
+            <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
                 <div className="h-14 w-14 rounded-full bg-[#092a5c] text-white flex items-center justify-center shrink-0 shadow-md">
                   <FileText size={26} className="stroke-[1.8]" />
@@ -1145,7 +1144,7 @@ export default function CareersPage() {
                   <Upload size={16} className="stroke-[2.2]" />
                 </Link>
                 
-                <div className="h-8 w-[1px] bg-slate-300 hidden md:block" />
+                <div className="h-8 w-[1px] bg-slate-350 hidden md:block" />
 
                 <Link
                   href="mailto:careers@pithalmachines.com"
@@ -1246,8 +1245,8 @@ export default function CareersPage() {
                   ),
                 },
               ].map((stat, i) => (
-                <div key={i} className="flex items-center gap-3.5 px-2 justify-center min-[420px]:justify-start last:col-span-2 last:md:col-span-1 last:lg:col-span-1 last:flex">
-                  <div className="w-11 h-11 rounded-full border-2 border-primary/20 text-primary flex items-center justify-center shrink-0">
+                <div key={i} className="flex items-center gap-3.5 px-2 justify-center min-[420px]:justify-start last:col-span-2 last:md:col-span-1 last:lg:col-span-1 last:flex strength-stat-hover cursor-default">
+                  <div className="w-11 h-11 rounded-full border-2 border-primary/20 text-primary flex items-center justify-center shrink-0 transition-all duration-300 stat-icon-circle">
                     <svg
                       className="w-5.5 h-5.5"
                       fill="none"
@@ -1325,9 +1324,11 @@ export default function CareersPage() {
                 </div>
               ))}
             </div>
+          </div>
 
-            {/* Bottom Features Banner */}
-            <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-[0_12px_40px_rgba(3,27,64,0.04)] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-center lg:divide-x lg:divide-blue-100">
+          {/* Bottom Features Banner - Full width, flat corners, screen touching */}
+          <div className="w-full bg-white border-y border-slate-200 py-10 mt-12 shadow-sm">
+            <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-center lg:divide-x lg:divide-blue-100">
               {[
                 {
                   title: "Advanced Machinery",
@@ -1390,10 +1391,10 @@ export default function CareersPage() {
                   ),
                 },
               ].map((feature, i) => (
-                <div key={i} className="flex items-center gap-4 lg:pl-6 first:pl-0">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-[#092a5c]/20 bg-[#ebf1fd]/40 text-[#092a5c]">
+                <div key={i} className="flex items-center justify-start gap-3 lg:pl-2 lg:pr-1 first:pl-0 text-left feature-banner-hover cursor-default">
+                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-2 border-[#092a5c]/20 bg-[#ebf1fd]/40 text-[#092a5c] feature-icon-wrapper">
                     <svg
-                      className="w-7 h-7"
+                      className="w-10 h-10"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -1402,10 +1403,10 @@ export default function CareersPage() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-[14px] font-bold text-primary leading-tight mb-1">
+                    <h4 className="text-[21px] font-black text-primary leading-tight mb-2 uppercase">
                       {feature.title}
                     </h4>
-                    <p className="text-[12px] text-gray-500 leading-snug">
+                    <p className="text-[17px] text-gray-500 leading-snug font-medium">
                       {feature.desc}
                     </p>
                   </div>
@@ -1447,138 +1448,126 @@ export default function CareersPage() {
                   title: "Competitive Salary",
                   desc: "Attractive pay packages and performance-based incentives.",
                   borderColor: "border-[#fa5902]",
-                  accentColor: "bg-[#fa5902]",
+                  accentColor: "#fa5902",
                   icon: (
-                    <div className="w-28 h-28 rounded-full bg-[#fdf2e9] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
-                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                        {/* Blue Hand */}
-                        <path d="M12 40h12l14 8h16a4 4 0 000-8H36l-8-4-10-8H12" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-                        {/* Orange Rupee Coin */}
-                        <circle cx="42" cy="22" r="10" fill="#fa5902" />
-                        <path d="M39 19h6M39 22h6M42 19c-2 0-3 1-3 3s1 2 3 2 3 1 3 3-1 3-3 3M42 16v12" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
-                      </svg>
-                    </div>
+                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                      {/* Wallet/Money Bag Icon */}
+                      <path d="M12 40h12l14 8h16a4 4 0 000-8H36l-8-4-10-8H12" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle cx="42" cy="22" r="10" fill="#fa5902" />
+                      <path d="M39 19h6M39 22h6M42 19c-2 0-3 1-3 3s1 2 3 2 3 1 3 3-1 3-3 3M42 16v12" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
+                    </svg>
                   ),
                 },
                 {
                   title: "Career Growth",
                   desc: "Clear career paths with continuous growth opportunities.",
                   borderColor: "border-blue-600",
-                  accentColor: "bg-blue-600",
+                  accentColor: "#2563eb",
                   icon: (
-                    <div className="w-28 h-28 rounded-full bg-[#eef4ff] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
-                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                        {/* Bars */}
-                        <rect x="14" y="38" width="6" height="12" rx="1.5" fill="#092a5c" />
-                        <rect x="24" y="28" width="6" height="22" rx="1.5" fill="#092a5c" />
-                        <rect x="34" y="20" width="6" height="30" rx="1.5" fill="#092a5c" />
-                        <rect x="44" y="12" width="6" height="38" rx="1.5" fill="#092a5c" />
-                        {/* Orange Curved Arrow */}
-                        <path d="M14 34c8-10 18-12 28-8" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" />
-                        <path d="M38 26h6v6" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
+                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                      {/* Stairs/Climbing Icon */}
+                      <path d="M10 50h10V40h10V30h10V20h10" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M40 12l10 8-10 8" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle cx="10" cy="50" r="3" fill="#092a5c" />
+                    </svg>
                   ),
                 },
                 {
                   title: "Stable Organization",
                   desc: "Be a part of a financially strong and trusted multinational company.",
                   borderColor: "border-emerald-500",
-                  accentColor: "bg-emerald-500",
+                  accentColor: "#10b981",
                   icon: (
-                    <div className="w-28 h-28 rounded-full bg-[#e8f8f0] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
-                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                        {/* Shield */}
-                        <path d="M32 10c12 0 16 4 16 16 0 10-6 18-16 22C22 44 16 36 16 26c0-12 4-16 16-16z" fill="#092a5c" />
-                        {/* Orange Check */}
-                        <path d="M25 28l5 5 10-10" stroke="#fa5902" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
+                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                      {/* Building/Shield Icon */}
+                      <path d="M16 50V20l16-8 16 8v30" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M12 50h40" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
+                      <path d="M32 25v15" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" />
+                      <path d="M26 31l6-6 6 6" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   ),
                 },
                 {
                   title: "Skill Development",
                   desc: "Regular training, workshops and upskilling to keep you ahead.",
                   borderColor: "border-purple-600",
-                  accentColor: "bg-purple-600",
+                  accentColor: "#9333ea",
                   icon: (
-                    <div className="w-28 h-28 rounded-full bg-[#f3eefc] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
-                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                        {/* Cap Diamond */}
-                        <path d="M32 14L50 24L32 34L14 24L32 14z" fill="#092a5c" />
-                        {/* Cap Under */}
-                        <path d="M20 27.5v8c0 4 6 6.5 12 6.5s12-2.5 12-6.5v-8" fill="#092a5c" />
-                        {/* Orange Tassel */}
-                        <path d="M32 24l16 4v10" stroke="#fa5902" strokeWidth="2.5" strokeLinecap="round" />
-                        <circle cx="48" cy="39" r="2.5" fill="#fa5902" />
-                      </svg>
-                    </div>
+                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                      {/* Book/Gear Icon */}
+                      <path d="M18 12h28v40H18z" stroke="#092a5c" strokeWidth="3.5" />
+                      <path d="M18 20h28" stroke="#092a5c" strokeWidth="2" />
+                      <circle cx="32" cy="38" r="8" stroke="#fa5902" strokeWidth="3" />
+                      <path d="M32 34v8M28 38h8" stroke="#fa5902" strokeWidth="2" />
+                    </svg>
                   ),
                 },
                 {
                   title: "Modern Infrastructure",
                   desc: "Work with advanced machines and world-class facilities.",
                   borderColor: "border-[#fa5902]",
-                  accentColor: "bg-[#fa5902]",
+                  accentColor: "#fa5902",
                   icon: (
-                    <div className="w-28 h-28 rounded-full bg-[#fdf2e9] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
-                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                        {/* Factory */}
-                        <path d="M14 48V26l10 8V26l10 8V20l12 10v18H14z" fill="#092a5c" />
-                        {/* Gear */}
-                        <circle cx="44" cy="42" r="7" fill="#fa5902" />
-                        {/* Gear teeth */}
-                        <path d="M44 32v2M44 50v2M34 42h2M52 42h2" stroke="#fa5902" strokeWidth="2.5" strokeLinecap="round" />
-                      </svg>
-                    </div>
+                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                      {/* Factory/Technology Icon */}
+                      <path d="M10 50V20l10 10V20l10 10V15l14 10v25H10z" fill="#092a5c" />
+                      <rect x="18" y="38" width="6" height="6" fill="white" opacity="0.4" />
+                      <rect x="28" y="38" width="6" height="6" fill="white" opacity="0.4" />
+                      <circle cx="44" cy="42" r="6" fill="#fa5902" />
+                    </svg>
                   ),
                 },
                 {
                   title: "Professional Environment",
                   desc: "Collaborative culture focused on respect, integrity and teamwork.",
                   borderColor: "border-blue-600",
-                  accentColor: "bg-blue-600",
+                  accentColor: "#2563eb",
                   icon: (
-                    <div className="w-28 h-28 rounded-full bg-[#eef4ff] flex items-center justify-center mb-4 mx-auto relative group-hover:scale-105 transition-transform duration-300">
-                      <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                        {/* Left User */}
-                        <circle cx="20" cy="24" r="5" fill="#092a5c" />
-                        <path d="M12 42c0-5 4-8 8-8s8 3 8 8" fill="#092a5c" />
-                        {/* Right User */}
-                        <circle cx="44" cy="24" r="5" fill="#092a5c" />
-                        <path d="M36 42c0-5 4-8 8-8s8 3 8 8" fill="#092a5c" />
-                        {/* Center User */}
-                        <circle cx="32" cy="22" r="6" fill="#092a5c" />
-                        <path d="M22 42c0-6 5-10 10-10s10 4 10 10" fill="#092a5c" />
-                        {/* Orange Tie */}
-                        <path d="M32 32l1.5 5-1.5 3-1.5-3z" fill="#fa5902" />
-                      </svg>
-                    </div>
+                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
+                      {/* People/Handshake Icon */}
+                      <circle cx="22" cy="24" r="5" fill="#092a5c" />
+                      <circle cx="42" cy="24" r="5" fill="#092a5c" />
+                      <path d="M14 44c0-5 4-8 8-8s8 3 8 8M34 44c0-5 4-8 8-8s8 3 8 8" fill="#092a5c" />
+                      <path d="M28 30l4 4 4-4" stroke="#fa5902" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   ),
                 },
               ].map((b, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-[28px] pt-6 pb-4 px-4 shadow-[0_12px_45px_rgba(3,27,64,0.06)] relative overflow-hidden text-center flex flex-col items-center group transition-all duration-300 hover:shadow-[0_20px_55px_rgba(3,27,64,0.1)] hover:-translate-y-1"
+                  className="bg-white rounded-[28px] pt-8 pb-6 px-5 shadow-[0_12px_45px_rgba(3,27,64,0.06)] relative overflow-hidden text-center flex flex-col items-center benefit-card-premium group"
+                  style={{ "--accent-color": b.accentColor } as React.CSSProperties}
                 >
-                  {b.icon}
-                  <h3 className="font-black text-[#092a5c] text-[18px] sm:text-[19px] leading-tight text-center">
+                  {/* Shimmer Effect Div */}
+                  <div className="shine-effect" />
+                  
+                  {/* Icon Wrapper */}
+                  <div className="benefit-icon-wrapper mb-6 relative z-10">
+                    <div className="w-28 h-28 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100">
+                      {b.icon}
+                    </div>
+                  </div>
+
+                  <h3 className="font-black text-[#092a5c] text-[18px] sm:text-[19px] leading-tight text-center relative z-10">
                     {b.title}
                   </h3>
-                  <div className={`h-[2.5px] w-8 ${b.accentColor} mx-auto mt-1.5 rounded-full`} />
-                  <p className="text-[13px] text-slate-500 leading-relaxed font-medium mt-2.5 text-center">
+                  <div className={`h-[3px] w-10 mx-auto mt-2 rounded-full relative z-10`} style={{ backgroundColor: b.accentColor }} />
+                  <p className="text-[13px] text-slate-500 leading-relaxed font-medium mt-3 text-center relative z-10">
                     {b.desc}
                   </p>
-                  {/* Expanding line on hover from center to corners */}
-                  <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[5px] w-0 group-hover:w-full transition-all duration-300 ease-out ${b.accentColor}`} />
+                  
+                  {/* Expanding line on hover */}
+                  <div className={`absolute bottom-0 left-0 h-[6px] w-0 group-hover:w-full transition-all duration-500 ease-out`} style={{ backgroundColor: b.accentColor }} />
                 </div>
               ))}
             </div>
+          </div>
 
-            {/* Bottom Growth Banner */}
-            <div className="bg-primary-dark rounded-xl shadow-xl flex flex-col lg:flex-row relative overflow-hidden border-l-[12px] border-secondary">
+          {/* Bottom Growth Banner - Full width, flat corners, screen touching */}
+          <div className="w-full bg-primary-dark shadow-xl border-l-[12px] border-secondary border-y border-border">
+            <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row relative overflow-hidden">
               {/* Text & List Section */}
-              <div className="flex-1 flex flex-col md:flex-row items-center p-8 md:p-12 lg:pr-6 z-10">
+              <div className="flex-1 flex flex-col md:flex-row items-center py-8 md:py-12 z-10">
                 {/* Quote & Title */}
                 <div className="w-full md:w-auto md:pr-10 mb-8 md:mb-0">
                   <div className="text-secondary text-6xl md:text-7xl font-heading leading-none h-10 mb-2">
@@ -1636,16 +1625,12 @@ export default function CareersPage() {
 
               {/* Right Side Image */}
               <div className="hidden lg:block lg:w-[45%] xl:w-[40%] relative lg:min-h-full">
-                {/* Gradient overlay to smoothly blend dark section and image on large screens if needed, otherwise distinct line */}
-                <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-primary-dark to-transparent z-10"></div>
+                {/* Gradient overlay to smoothly blend dark section and image on both sides */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-transparent to-primary-dark z-10"></div>
                 <img
-                  src="/placeholder-workers.jpg"
-                  alt="Happy Workers"
+                  src="/careerimg/skilled%20workforce.jpg"
+                  alt="Skilled workforce at Pithal Machines"
                   className="absolute inset-0 w-full h-full object-cover object-center"
-                  onError={(e) => {
-                    e.currentTarget.src =
-                      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80";
-                  }}
                 />
               </div>
             </div>
@@ -1791,11 +1776,11 @@ export default function CareersPage() {
               ].map((card, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-lg shadow-[0_18px_45px_rgba(15,23,42,0.12)] border border-gray-100 p-5 flex flex-col items-center text-center transition-transform hover:-translate-y-1"
+                  className="bg-white rounded-lg shadow-[0_18px_45px_rgba(15,23,42,0.12)] border border-gray-100 p-5 flex flex-col items-center text-center training-card-hover"
                 >
                   {/* Icon */}
                   <div
-                    className={`w-14 h-14 rounded-full ${card.iconBg === "bg-orange-50" ? "bg-secondary/10" : card.iconBg === "bg-blue-50" ? "bg-primary/5" : card.iconBg} text-primary flex items-center justify-center mb-4`}
+                    className={`w-14 h-14 rounded-full ${card.iconBg === "bg-orange-50" ? "bg-secondary/10" : card.iconBg === "bg-blue-50" ? "bg-primary/5" : card.iconBg} text-primary flex items-center justify-center mb-4 transition-all duration-300 training-icon-box`}
                   >
                     <svg
                       className="w-7 h-7"
@@ -1818,7 +1803,7 @@ export default function CareersPage() {
                     <img
                       src={card.img}
                       alt={card.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-500 training-image-box"
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
                       }}
@@ -1832,9 +1817,11 @@ export default function CareersPage() {
                 </div>
               ))}
             </div>
+          </div>
 
-            {/* Bottom Stats Banner */}
-            <div className="bg-primary-dark rounded-xl shadow-xl p-6 lg:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 relative z-20">
+          {/* Bottom Stats Banner - Full width, flat corners, screen touching */}
+          <div className="w-full bg-primary-dark shadow-xl py-6 lg:py-8 border-y border-border">
+            <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-8 relative z-20">
               {/* Left Intro text */}
               <div className="flex items-center gap-5 w-full lg:w-auto shrink-0">
                 <div className="w-16 h-16 rounded-full border-2 border-secondary/30 flex items-center justify-center relative bg-secondary/10">
@@ -2025,6 +2012,7 @@ export default function CareersPage() {
                     title: "Application",
                     desc: "Submit your application through our careers portal with your updated details.",
                     borderColor: "border-[#fa5902]",
+                    accentColor: "#fa5902",
                     icon: (
                       <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
                         <rect x="18" y="10" width="28" height="44" rx="3" stroke="#092a5c" strokeWidth="3.5" fill="none" />
@@ -2038,6 +2026,7 @@ export default function CareersPage() {
                     title: "Screening",
                     desc: "Our HR team reviews your application and shortlists suitable profiles.",
                     borderColor: "border-[#092a5c]",
+                    accentColor: "#092a5c",
                     icon: (
                       <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
                         <rect x="18" y="14" width="28" height="38" rx="3" stroke="#092a5c" strokeWidth="3.5" fill="none" />
@@ -2053,6 +2042,7 @@ export default function CareersPage() {
                     title: "Interview",
                     desc: "Initial HR interview to understand your experience, skills and career aspirations.",
                     borderColor: "border-[#10b981]",
+                    accentColor: "#10b981",
                     icon: (
                       <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
                         <circle cx="20" cy="26" r="4.5" stroke="#092a5c" strokeWidth="3.5" />
@@ -2072,6 +2062,7 @@ export default function CareersPage() {
                     title: "Technical Round",
                     desc: "Role-specific technical assessment or practical test to evaluate your expertise.",
                     borderColor: "border-[#8b5cf6]",
+                    accentColor: "#8b5cf6",
                     icon: (
                       <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
                         <rect x="14" y="16" width="36" height="24" rx="2" stroke="#092a5c" strokeWidth="3.5" fill="none" />
@@ -2086,6 +2077,7 @@ export default function CareersPage() {
                     title: "Selection",
                     desc: "Final evaluation by the panel and confirmation of your selection.",
                     borderColor: "border-[#fa5902]",
+                    accentColor: "#fa5902",
                     icon: (
                       <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
                         <circle cx="28" cy="22" r="7.5" stroke="#092a5c" strokeWidth="3.5" fill="none" />
@@ -2100,6 +2092,7 @@ export default function CareersPage() {
                     title: "Onboarding",
                     desc: "Welcome to Pithal Machines! Get onboarded and begin your journey with us.",
                     borderColor: "border-[#3b82f6]",
+                    accentColor: "#3b82f6",
                     icon: (
                       <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
                         <path d="M22 38l6 6c1.5 1.5 4 1.5 5.5 0l15-15c1.5-1.5 1.5-4 0-5.5s-4-1.5-5.5 0L28 38l-3-3" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -2111,20 +2104,22 @@ export default function CareersPage() {
                 ].map((step, i) => (
                   <div
                     key={i}
-                    className="flex flex-col items-center relative group"
+                    className="flex flex-col items-center relative group process-step-hover"
+                    style={{ "--accent-color": step.accentColor } as React.CSSProperties}
                   >
                     {/* Top Icon Circle */}
-                    <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_-3px_rgba(0,0,0,0.08)] border border-gray-100 relative mb-12 z-10 transition-transform group-hover:scale-105">
+                    <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_-3px_rgba(0,0,0,0.08)] border border-gray-100 relative mb-12 z-30 step-icon-box">
                       {step.icon}
                     </div>
 
                     {/* Content Card */}
                     <div
-                      className={`bg-white rounded-xl pt-7 pb-4 px-4 shadow-[0_16px_45px_rgba(15,23,42,0.12)] border-b-[5px] ${step.borderColor} text-center w-full h-[170px] transition-shadow group-hover:shadow-xl flex flex-col justify-center relative`}
+                      className={`bg-white rounded-xl pt-7 pb-4 px-4 shadow-[0_16px_45px_rgba(15,23,42,0.12)] border-b-[1px] border-slate-100 text-center w-full h-[170px] transition-shadow group-hover:shadow-xl flex flex-col justify-center relative process-card-content z-10`}
                     >
                       {/* Overlapping Number Badge */}
                       <div
-                        className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#fa5902] text-white text-[12px] font-black rounded-full flex items-center justify-center border-[3px] border-white shadow-md z-20"
+                        className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-[#fa5902] text-white text-[12px] font-black rounded-full flex items-center justify-center border-[3px] border-white shadow-md z-50"
+                        style={{ backgroundColor: step.accentColor }}
                       >
                         {step.num}
                       </div>
@@ -2132,91 +2127,94 @@ export default function CareersPage() {
                       <h4 className="font-extrabold text-primary text-[18px] sm:text-[19px] mb-1">
                         {step.title}
                       </h4>
-                      <div className="w-8 h-[2px] bg-secondary mx-auto mb-2.5 rounded-full" />
+                      <div className="w-8 h-[2px] mx-auto mb-2.5 rounded-full" style={{ backgroundColor: step.accentColor }} />
                       <p className="text-[14px] sm:text-[14.5px] text-gray-500 leading-relaxed font-medium">
                         {step.desc}
                       </p>
+                      
+                      {/* Center-expanding bottom line */}
+                      <div className="expanding-line" />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* Bottom Features Banner */}
-            <div className="bg-[#f0f4f8] rounded-xl border border-[#e2e8f0] p-6 lg:p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                {[
-                  {
-                    title: "Timely Updates",
-                    desc: "We keep you informed at every step of the process.",
-                    icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    ),
-                  },
-                  {
-                    title: "Fair & Transparent",
-                    desc: "Merit-based evaluation with a transparent approach.",
-                    icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                      />
-                    ),
-                  },
-                  {
-                    title: "Equal Opportunity",
-                    desc: "We value diversity and provide equal opportunities for all.",
-                    icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
-                    ),
-                  },
-                  {
-                    title: "People First",
-                    desc: "We look for talent, attitude and a passion to grow.",
-                    icon: (
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-                      />
-                    ),
-                  },
-                ].map((feature, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-full bg-slate-100 border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-sm">
-                      <svg
-                        className="w-7 h-7"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        {feature.icon}
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-extrabold text-primary text-[15px] mb-1">
-                        {feature.title}
-                      </h4>
-                      <p className="text-[13px] text-gray-500 leading-snug font-medium">
-                        {feature.desc}
-                      </p>
-                    </div>
+          {/* Bottom Features Banner - Full width, flat corners, screen touching */}
+          <div className="w-full bg-[#f0f4f8] border-y border-[#e2e8f0] py-10 mt-12 shadow-sm">
+            <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-center">
+              {[
+                {
+                  title: "Timely Updates",
+                  desc: "We keep you informed at every step of the process.",
+                  icon: (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  ),
+                },
+                {
+                  title: "Fair & Transparent",
+                  desc: "Merit-based evaluation with a transparent approach.",
+                  icon: (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  ),
+                },
+                {
+                  title: "Equal Opportunity",
+                  desc: "We value diversity and provide equal opportunities for all.",
+                  icon: (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  ),
+                },
+                {
+                  title: "People First",
+                  desc: "We look for talent, attitude and a passion to grow.",
+                  icon: (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                    />
+                  ),
+                },
+              ].map((feature, i) => (
+                <div key={i} className="flex items-center justify-start gap-4 lg:pl-2 lg:pr-1 first:pl-0 text-left">
+                  <div className="w-20 h-20 rounded-full bg-white border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-sm">
+                    <svg
+                      className="w-10 h-10"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      {feature.icon}
+                    </svg>
                   </div>
-                ))}
-              </div>
+                  <div>
+                    <h4 className="font-extrabold text-primary text-[15px] mb-1">
+                      {feature.title}
+                    </h4>
+                    <p className="text-[13px] text-gray-500 leading-snug font-medium">
+                      {feature.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -2359,11 +2357,11 @@ export default function CareersPage() {
               ].map((card, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-lg shadow-[0_16px_42px_rgba(15,23,42,0.12)] border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-shadow group"
+                  className="bg-white rounded-lg shadow-[0_16px_42px_rgba(15,23,42,0.12)] border border-gray-100 overflow-hidden flex flex-col qualification-card-hover group"
                 >
                   {/* Top Icon & Title Area */}
                   <div className="pt-6 pb-4 px-4 flex flex-col items-center justify-center">
-                    <div className="w-[52px] h-[52px] rounded-full border-2 border-primary/10 flex items-center justify-center text-primary mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <div className="w-[52px] h-[52px] rounded-full border-2 border-primary/10 flex items-center justify-center text-primary mb-3 transition-all duration-300 qual-icon-box">
                       <svg
                         className="w-6 h-6"
                         fill="none"
@@ -2425,22 +2423,25 @@ export default function CareersPage() {
                 </div>
               ))}
             </div>
+          </div>
 
-            {/* Bottom Banner */}
-            <div className="bg-primary-dark rounded-xl overflow-hidden flex flex-col lg:flex-row shadow-xl">
-              {/* Left side: Image */}
-              <div className="w-full lg:w-[28%] relative min-h-[250px] lg:min-h-[auto]">
-                <img
-                  src="careerimg/32.jpg"
-                  alt="Worker"
-                  className="absolute inset-0 w-full h-full object-cover object-[2%_top]"
-                />
-                {/* Subtle gradient to blend into the dark blue on desktop */}
-                <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-primary-dark to-transparent"></div>
-              </div>
+          {/* Bottom Banner - Full width, flat corners, screen touching */}
+          <div className="w-full bg-primary-dark overflow-hidden flex flex-col lg:flex-row shadow-xl border-y border-border">
+            {/* Left side: Image */}
+            <div className="w-full lg:w-[28%] relative min-h-[250px] lg:min-h-[auto]">
+              <img
+                src="careerimg/32.jpg"
+                alt="Worker"
+                className="absolute inset-0 w-full h-full object-cover object-[2%_top]"
+              />
+              {/* Double-sided gradient fade */}
+              <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-primary-dark via-transparent to-primary-dark z-10"></div>
+            </div>
 
+            {/* Content columns aligned with container bounds */}
+            <div className="flex-1 flex flex-col lg:flex-row lg:pr-[max(1.25rem,calc((100vw-1520px)/2+1.25rem))]">
               {/* Middle side: Quote */}
-              <div className="w-full lg:w-[32%] p-8 lg:py-12 lg:px-10 flex flex-col justify-center relative z-10">
+              <div className="w-full lg:w-[45%] p-8 lg:py-12 lg:px-10 flex flex-col justify-center relative z-10">
                 <div className="text-secondary text-6xl lg:text-7xl font-heading leading-none h-8 lg:h-10 mb-2">
                   “
                 </div>
@@ -2454,7 +2455,7 @@ export default function CareersPage() {
               </div>
 
               {/* Right side: 4 Traits Grid */}
-              <div className="w-full lg:w-[40%] p-8 lg:py-12 lg:pr-12 lg:pl-0 flex flex-col justify-center">
+              <div className="w-full lg:w-[55%] p-8 lg:py-12 lg:pr-12 lg:pl-0 flex flex-col justify-center">
                 <div className="flex flex-col divide-y divide-slate-700/40">
                   {/* Row 1 */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 sm:divide-x sm:divide-slate-700/40 pb-6 lg:pb-8">
@@ -2640,10 +2641,10 @@ export default function CareersPage() {
               ].map((t, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-[20px] p-8 shadow-[0_16px_40px_rgba(15,23,42,0.08)] border border-slate-100 flex flex-col h-full relative hover:shadow-[0_20px_50px_rgba(15,23,42,0.12)] transition-shadow duration-300"
+                  className="bg-white rounded-[20px] p-8 shadow-[0_16px_40px_rgba(15,23,42,0.08)] border border-slate-100 flex flex-col h-full relative transition-all duration-300 testimonial-card-hover"
                 >
                   {/* Top Quotes Icon */}
-                  <div className="absolute top-8 right-8 text-[#fa5902] font-heading text-5xl leading-none opacity-80">
+                  <div className="absolute top-8 right-8 text-[#fa5902] font-heading text-5xl leading-none opacity-80 transition-all duration-500 quote-icon">
                     “
                   </div>
 
@@ -2657,7 +2658,7 @@ export default function CareersPage() {
 
                   {/* Author Profile */}
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-slate-100 rounded-[14px] overflow-hidden shrink-0 border border-slate-100">
+                    <div className="w-16 h-16 bg-slate-100 rounded-[14px] overflow-hidden shrink-0 border-2 border-slate-100 transition-all duration-300 profile-img-container">
                       <img
                         src={t.img}
                         alt={t.name}
@@ -2674,7 +2675,7 @@ export default function CareersPage() {
                       />
                     </div>
                     <div className="flex flex-col justify-center">
-                      <h4 className="font-black text-[#092a5c] text-[16px] sm:text-[17px] leading-tight mb-1">
+                      <h4 className="font-black text-[#092a5c] text-[16px] sm:text-[17px] leading-tight mb-1 transition-colors duration-300">
                         {t.name}
                       </h4>
                       <p className="text-slate-500 text-[13px] font-semibold leading-none mb-1">

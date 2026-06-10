@@ -79,28 +79,32 @@ export function FeaturesSection({
           subtitle={sectionSubtitle}
         />
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))] xl:gap-10">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))] xl:gap-8">
           {features.map((feature, idx) => (
             <div
               key={feature.title}
-              className="relative overflow-visible rounded-[2rem] border border-border bg-white px-7 py-12 text-center shadow-[0_20px_60px_rgba(30,41,59,0.08)]"
+              className="group relative overflow-visible rounded-[2rem] border border-border bg-white px-5 py-8 text-center shadow-[0_15px_45px_rgba(30,41,59,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_60px_rgba(30,41,59,0.12)] hover:border-secondary/20"
             >
-              <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full border-2 border-dashed border-secondary/40 bg-secondary/5">
-                <FeatureIcon feature={feature} />
+              {/* Spinning dashed border container around the icon */}
+              <div className="relative mx-auto mb-4 flex h-20 w-20 items-center justify-center">
+                <div className="absolute inset-0 rounded-full border-2 border-dashed border-secondary/40 bg-secondary/5 animate-[spin_8s_linear_infinite] group-hover:animate-[spin_2s_linear_infinite]" />
+                <div className="relative z-10 flex items-center justify-center scale-90 transition-transform duration-300 group-hover:scale-105">
+                  <FeatureIcon feature={feature} />
+                </div>
               </div>
 
-              <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-primary min-h-[2.5rem] flex items-center justify-center">
                 {feature.title}
               </h3>
 
-              <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-secondary"></div>
+              <div className="mx-auto mt-2.5 h-1 w-10 rounded-full bg-secondary"></div>
 
-              <p className="mx-auto mt-5 max-w-[18rem] text-sm leading-6 text-text-muted">
+              <p className="mx-auto mt-4 max-w-[18rem] text-xs leading-5 text-text-muted">
                 {feature.description}
               </p>
 
               {idx !== features.length - 1 && (
-                <span aria-hidden className="hidden xl:block absolute left-[calc(100%+20px)] top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 h-3 w-3 border-y-[14px] border-y-transparent border-l-[18px] border-l-secondary shadow-[0_10px_30px_rgba(15,23,42,0.08)]" />
+                <span aria-hidden className="hidden xl:block absolute left-[calc(100%+16px)] top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 h-3 w-3 border-y-[12px] border-y-transparent border-l-[16px] border-l-secondary shadow-[0_10px_30px_rgba(15,23,42,0.08)]" />
               )}
             </div>
           ))}

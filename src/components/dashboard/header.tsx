@@ -13,6 +13,7 @@ interface HeaderProps {
 
 const sectionTitles: Record<Section, string> = {
   Leads: "Leads",
+  Dealers: "Dealer Applications",
 };
 
 export function Header({ activeSection, theme, onThemeChange }: HeaderProps) {

@@ -1170,6 +1170,111 @@ export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [showPopup, setShowPopup] = useState(false);
 
+  // Custom Guide Form states
+  const [guideName, setGuideName] = useState("");
+  const [guideEmail, setGuideEmail] = useState("");
+  const [guideCompany, setGuideCompany] = useState("");
+  const [guideLoading, setGuideLoading] = useState(false);
+  const [guideSuccess, setGuideSuccess] = useState<string | null>(null);
+  const [guideError, setGuideError] = useState<string | null>(null);
+
+  // Newsletter Form states
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
+  const [newsletterSuccess, setNewsletterSuccess] = useState<string | null>(null);
+  const [newsletterError, setNewsletterError] = useState<string | null>(null);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) {
+      setNewsletterError("Email is required.");
+      return;
+    }
+    setNewsletterLoading(true);
+    setNewsletterSuccess(null);
+    setNewsletterError(null);
+
+    try {
+      const pageSource = typeof window !== "undefined"
+        ? `Blog Page Newsletter: ${window.location.pathname}`
+        : "Blog Page Newsletter";
+
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: "Newsletter Subscriber",
+          company: "N/A",
+          country: "N/A",
+          capacity: "N/A",
+          requirement: `Newsletter Subscription Request. Email: ${email}`,
+          source: pageSource,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setNewsletterSuccess("Thank you! You have subscribed to our insights newsletter successfully.");
+        setEmail("");
+      } else {
+        setNewsletterError(data.error || "Failed to subscribe. Please try again.");
+      }
+    } catch (err) {
+      setNewsletterError("Something went wrong. Please check your connection and try again.");
+    } finally {
+      setNewsletterLoading(false);
+    }
+  };
+
+  const handleGuideSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!guideName || !guideCompany || !guideEmail) {
+      setGuideError("Name, Company, and Email are required.");
+      return;
+    }
+    setGuideLoading(true);
+    setGuideSuccess(null);
+    setGuideError(null);
+
+    try {
+      const pageSource = typeof window !== "undefined"
+        ? `Blog Page: ${window.location.pathname}`
+        : "Blog Page Custom Guide";
+
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: guideName,
+          company: guideCompany,
+          country: "N/A",
+          capacity: "N/A",
+          requirement: `Custom Guide Request. Email: ${guideEmail}`,
+          source: pageSource,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setGuideSuccess("Thank you! Your custom guide request has been submitted successfully.");
+        setGuideName("");
+        setGuideEmail("");
+        setGuideCompany("");
+      } else {
+        setGuideError(data.error || "Failed to submit request. Please try again.");
+      }
+    } catch (err) {
+      setGuideError("Something went wrong. Please check your connection and try again.");
+    } finally {
+      setGuideLoading(false);
+    }
+  };
+
   useEffect(() => {
     const popupTimer = window.setTimeout(() => {
       setShowPopup(true);
@@ -1268,7 +1373,7 @@ export default function BlogPage() {
         {/* ══════════════════════════════════════════
           SECTION 3 — FEATURED INSIGHTS
       ══════════════════════════════════════════ */}
-        <section className="py-10 bg-white">
+        <section className="py-6 bg-white">
           <Container>
             <SectionHeader
               eyebrow="FEATURED INSIGHTS"
@@ -1278,9 +1383,9 @@ export default function BlogPage() {
               linkHref="#"
             />
 
-            <div className="grid md:grid-cols-2 gap-6 min-h-0 md:min-h-[500px]">
+            <div className="grid md:grid-cols-2 gap-6 min-h-0 md:min-h-[320px]">
               {/* Large featured card */}
-              <div className="relative rounded-xl overflow-hidden group cursor-pointer min-h-[350px] sm:min-h-[400px] shadow-[0_24px_70px_rgba(3,27,64,0.18)]">
+              <div className="relative rounded-xl overflow-hidden group cursor-pointer min-h-[240px] sm:min-h-[300px] shadow-[0_24px_70px_rgba(3,27,64,0.18)]">
                 <ImgBox
                   src={featuredPosts[0].img}
                   alt={featuredPosts[0].title}
@@ -1295,17 +1400,17 @@ export default function BlogPage() {
                   </span>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
-                  <span className="text-secondary text-xs font-bold uppercase tracking-wider mb-3 block">
+                  <span className="text-secondary text-xs font-bold uppercase tracking-wider mb-2 block">
                     {featuredPosts[0].tag}
                   </span>
-                  <h3 className="text-white text-2xl font-extrabold leading-tight mb-3">
+                  <h3 className="text-white text-xl font-extrabold leading-tight mb-2">
                     {featuredPosts[0].title}
                   </h3>
-                  <p className="text-gray-300 text-xs leading-relaxed mb-5 max-w-md">
+                  <p className="text-gray-300 text-[11px] leading-relaxed mb-4 max-w-md line-clamp-2">
                     {featuredPosts[0].desc}
                   </p>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-gray-400 text-xs">
+                    <div className="flex items-center gap-4 text-gray-400 text-[10px]">
                       <span>
                         <CalendarIcon />
                         {featuredPosts[0].date}
@@ -1318,11 +1423,11 @@ export default function BlogPage() {
                     <Button
                       variant="primary"
                       href="#"
-                      className="h-10 min-h-0 text-xs px-4 py-2 flex items-center gap-2"
+                      className="h-8 min-h-0 text-[10px] px-3 py-1.5 flex items-center gap-2"
                     >
                       Read More{" "}
-                      <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
-                        <ArrowRight cls="w-3 h-3" />
+                      <div className="w-4.5 h-4.5 bg-white/20 rounded-full flex items-center justify-center">
+                        <ArrowRight cls="w-2.5 h-2.5" />
                       </div>
                     </Button>
                   </div>
@@ -1334,7 +1439,7 @@ export default function BlogPage() {
                 {featuredPosts.slice(1).map((post, i) => (
                   <div
                     key={i}
-                    className="relative rounded-xl overflow-hidden group cursor-pointer flex-1 min-h-[200px] sm:min-h-[185px] shadow-[0_18px_45px_rgba(3,27,64,0.14)]"
+                    className="relative rounded-xl overflow-hidden group cursor-pointer flex-1 min-h-[110px] sm:min-h-[140px] shadow-[0_18px_45px_rgba(3,27,64,0.14)]"
                   >
                     <ImgBox
                       src={post.img}
@@ -1343,14 +1448,14 @@ export default function BlogPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary/55 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
-                      <span className="text-secondary text-[10px] font-bold uppercase tracking-wider mb-2 block">
+                      <span className="text-secondary text-[9px] font-bold uppercase tracking-wider mb-1 block">
                         {post.tag}
                       </span>
-                      <h3 className="text-white text-base font-extrabold leading-tight mb-3">
+                      <h3 className="text-white text-sm font-extrabold leading-tight mb-2 line-clamp-1">
                         {post.title}
                       </h3>
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3 text-gray-400 text-[10px]">
+                        <div className="flex items-center gap-3 text-gray-400 text-[9px]">
                           <span>
                             <CalendarIcon />
                             {post.date}
@@ -1363,11 +1468,11 @@ export default function BlogPage() {
                         <Button
                           variant="ghost"
                           href="#"
-                          className="text-white text-[10px] font-bold flex items-center gap-1 hover:text-secondary p-0 min-h-0 border-0"
+                          className="text-white text-[9px] font-bold flex items-center gap-1 hover:text-secondary p-0 min-h-0 border-0"
                         >
                           Read More{" "}
-                          <div className="w-5 h-5 bg-secondary rounded-full flex items-center justify-center">
-                            <ArrowRight cls="w-3 h-3" />
+                          <div className="w-4.5 h-4.5 bg-secondary rounded-full flex items-center justify-center">
+                            <ArrowRight cls="w-2.5 h-2.5" />
                           </div>
                         </Button>
                       </div>
@@ -1734,8 +1839,11 @@ export default function BlogPage() {
               </div>
             </div>
 
-            {/* Unified Bottom stats banner */}
-            <div className="mt-12 bg-white rounded-xl border border-border p-5 sm:p-8 shadow-[0_18px_45px_rgba(3,27,64,0.08)]">
+          </Container>
+
+          {/* Unified Bottom stats banner (Full Width, Flat Corners) */}
+          <div className="mt-12 bg-white border-y border-border p-5 sm:py-8 shadow-[0_8px_30px_rgba(3,27,64,0.04)] w-full">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-slate-100">
                 {hubStats.map((s, i) => (
                   <div
@@ -1760,7 +1868,7 @@ export default function BlogPage() {
                 ))}
               </div>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ══════════════════════════════════════════
@@ -1957,51 +2065,76 @@ export default function BlogPage() {
                 );
               })}
             </div>
+          </Container>
 
-            {/* Custom guide form */}
-            <div className="bg-white rounded-xl border border-border p-6 sm:p-8 flex flex-col gap-6 shadow-[0_18px_45px_rgba(3,27,64,0.08)]">
-              <div className="flex flex-col lg:flex-row items-center gap-8 justify-between">
-                <div className="flex items-center gap-5">
-                  <FileText className="w-12 h-12 text-primary flex-shrink-0" />
-                  <div>
-                    <p className="font-black text-primary text-lg sm:text-xl uppercase tracking-wider">
-                      NEED A CUSTOM GUIDE?
-                    </p>
-                    <p className="text-text-muted text-sm sm:text-base mt-1">
-                      Tell us your industry needs and we will send you the
-                      relevant resources.
-                    </p>
+          {/* Custom guide form - Full width, flat corners, screen touching */}
+          <div className="w-full bg-white border-y border-border py-8 sm:py-10 mt-12 shadow-[0_8px_30px_rgba(3,27,64,0.04)]">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+              <form onSubmit={handleGuideSubmit} className="flex flex-col gap-6">
+                <div className="flex flex-col lg:flex-row items-center gap-8 justify-between">
+                  <div className="flex items-center gap-5">
+                    <FileText className="w-12 h-12 text-primary flex-shrink-0" />
+                    <div>
+                      <p className="font-black text-primary text-lg sm:text-xl uppercase tracking-wider">
+                        NEED A CUSTOM GUIDE?
+                      </p>
+                      <p className="text-text-muted text-sm sm:text-base mt-1">
+                        Tell us your industry needs and we will send you the
+                        relevant resources.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-1 flex-col sm:flex-row flex-wrap gap-3 w-full lg:max-w-3xl">
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      value={guideName}
+                      onChange={(e) => setGuideName(e.target.value)}
+                      required
+                      className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary text-primary"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Work Email"
+                      value={guideEmail}
+                      onChange={(e) => setGuideEmail(e.target.value)}
+                      required
+                      className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary text-primary"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Company Name"
+                      value={guideCompany}
+                      onChange={(e) => setGuideCompany(e.target.value)}
+                      required
+                      className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary text-primary"
+                    />
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      disabled={guideLoading}
+                      className="w-full sm:w-auto whitespace-nowrap"
+                    >
+                      {guideLoading ? "SUBMITTING..." : "GET RESOURCES →"}
+                    </Button>
                   </div>
                 </div>
-                <div className="flex flex-1 flex-col sm:flex-row flex-wrap gap-3 w-full lg:max-w-3xl">
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Work Email"
-                    className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Company Name"
-                    className="border border-border rounded px-4 py-2.5 text-sm w-full sm:flex-1 sm:min-w-36 focus:outline-none focus:border-secondary"
-                  />
-                  <Button
-                    variant="primary"
-                    className="w-full sm:w-auto whitespace-nowrap"
-                  >
-                    GET RESOURCES →
-                  </Button>
-                </div>
-              </div>
-              <p className="text-center text-xs text-slate-500">
-                We respect your privacy. No spam, ever.
-              </p>
+                {guideSuccess && (
+                  <p className="text-center text-sm text-green-600 font-semibold">
+                    {guideSuccess}
+                  </p>
+                )}
+                {guideError && (
+                  <p className="text-center text-sm text-red-600 font-semibold">
+                    {guideError}
+                  </p>
+                )}
+                <p className="text-center text-xs text-slate-500">
+                  We respect your privacy. No spam, ever.
+                </p>
+              </form>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ══════════════════════════════════════════
@@ -2097,187 +2230,193 @@ export default function BlogPage() {
         {/* ══════════════════════════════════════════
           SECTION 10 — NEWSLETTER
       ══════════════════════════════════════════ */}
-        <section className="py-10 bg-bg-light">
-          <Container>
-            <div className="rounded-xl border border-border bg-white overflow-hidden shadow-xl lg:grid lg:grid-cols-12 min-h-[580px]">
-              {/* Left Column */}
-              <div className="lg:col-span-7 p-5 sm:p-12 lg:p-14 xl:p-16 flex flex-col justify-center bg-white">
-                {/* Badge */}
-                <div className="flex items-center gap-3.5 mb-6">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-secondary/30 bg-secondary/5 text-secondary shadow-sm">
-                    <Mail className="w-5 h-5 stroke-[1.8]" />
+        <section className="bg-white border-y border-border overflow-hidden">
+          <div className="w-full lg:grid lg:grid-cols-12 min-h-[580px]">
+            {/* Left Column */}
+            <div className="lg:col-span-7 p-6 sm:p-12 lg:p-14 xl:p-16 flex flex-col justify-center bg-white lg:pl-[max(1.5rem,calc((100vw-1400px)/2+1.5rem))]">
+              {/* Badge */}
+              <div className="flex items-center gap-3.5 mb-6">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-secondary/30 bg-secondary/5 text-secondary shadow-sm">
+                  <Mail className="w-5 h-5 stroke-[1.8]" />
+                </div>
+                <div>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-primary">
+                    STAY INFORMED. STAY AHEAD.
+                  </p>
+                </div>
+              </div>
+
+              {/* Headline */}
+              <h2 className="text-[2.25rem] sm:text-[3rem] font-bold text-primary leading-[1.1] tracking-tight mb-5 font-sans">
+                Insights that power
+                <br />
+                better <span className="text-secondary">decisions.</span>
+              </h2>
+
+              {/* Subtitle */}
+              <p className="text-sm text-text-muted leading-relaxed max-w-[500px] mb-8">
+                Subscribe to our insights newsletter and get expert knowledge,
+                industry updates and practical engineering solutions delivered
+                to your inbox.
+              </p>
+
+              {/* Pillars/Features */}
+              <div className="grid gap-6 sm:grid-cols-3 mb-10">
+                {[
+                  {
+                    icon: (
+                      <TrendingUp className="w-6 h-6 text-secondary stroke-[1.8]" />
+                    ),
+                    title: "Engineering Trends",
+                    subtitle:
+                      "Stay updated with the latest industry trends and developments.",
+                  },
+                  {
+                    icon: (
+                      <Cog className="w-6 h-6 text-secondary stroke-[1.8]" />
+                    ),
+                    title: "Plant Optimization Tips",
+                    subtitle:
+                      "Actionable tips to improve efficiency, performance and productivity.",
+                  },
+                  {
+                    icon: (
+                      <Lightbulb className="w-6 h-6 text-secondary stroke-[1.8]" />
+                    ),
+                    title: "Industrial Innovations",
+                    subtitle:
+                      "Discover new technologies and innovations shaping the future.",
+                  },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex flex-col gap-3">
+                    <div>{item.icon}</div>
+                    <div>
+                      <p className="text-[14px] font-bold text-primary mb-1">
+                        {item.title}
+                      </p>
+                      <p className="text-[11px] leading-relaxed text-text-muted">
+                        {item.subtitle}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-primary">
-                      STAY INFORMED. STAY AHEAD.
-                    </p>
+                ))}
+              </div>
+
+              {/* Subscription Form */}
+              <form
+                onSubmit={handleNewsletterSubmit}
+                className="flex flex-col sm:flex-row gap-3 items-stretch max-w-[520px] mb-4"
+              >
+                <div className="relative flex-1">
+                  <span className="absolute inset-y-0 left-4 flex items-center text-text-muted">
+                    <Mail className="w-4 h-4 stroke-[1.8]" />
+                  </span>
+                  <input
+                    type="email"
+                    placeholder="Enter your work email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full h-12 rounded-lg border border-border bg-white pl-11 pr-4 text-sm text-text-dark outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/15 transition-all placeholder:text-text-muted text-primary"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  variant="primary"
+                  disabled={newsletterLoading}
+                  className="h-12 min-h-0 rounded-lg px-6 flex items-center justify-center gap-2 whitespace-nowrap"
+                >
+                  {newsletterLoading ? "SUBSCRIBING..." : "SUBSCRIBE TO INSIGHTS"}{" "}
+                  <ArrowRight cls="w-4 h-4 text-white" />
+                </Button>
+              </form>
+
+              {newsletterSuccess && (
+                <p className="text-sm text-green-600 font-semibold mb-4">
+                  {newsletterSuccess}
+                </p>
+              )}
+              {newsletterError && (
+                <p className="text-sm text-red-600 font-semibold mb-4">
+                  {newsletterError}
+                </p>
+              )}
+
+              {/* Privacy Note */}
+              <p className="flex items-center gap-2 text-[11px] text-text-muted tracking-wide mt-2">
+                <Lock className="w-3.5 h-3.5" />
+                <span>
+                  We respect your privacy. No spam, ever. Unsubscribe anytime.
+                </span>
+              </p>
+            </div>
+
+            {/* Right Column (Image + Overlay Card) */}
+            <div className="lg:col-span-5 relative min-h-[450px] lg:min-h-full overflow-hidden bg-slate-100 lg:pr-[max(1.5rem,calc((100vw-1400px)/2+1.5rem))]">
+              <Image
+                src="/blogpageimg/plantoptimization2.jpg"
+                alt="Crushing plant in operation"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
+              />
+              {/* Desktop mask */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/10 to-transparent pointer-events-none hidden lg:block" />
+              {/* Mobile mask */}
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none lg:hidden" />
+
+              {/* Overlaid Card */}
+              <div className="absolute bottom-6 right-6 lg:right-[calc(1.5rem+max(0px,calc((100vw-1400px)/2)))] left-6 sm:left-auto sm:w-[310px] bg-white rounded-lg border border-slate-100 p-5 shadow-2xl z-10">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-1">
+                  <div className="text-[11px] font-black uppercase tracking-[0.2em] text-primary">
+                    PITHAL <span className="text-secondary">INSIGHTS</span>
                   </div>
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white shadow-sm">
+                    <Mail className="w-3.5 h-3.5 stroke-[1.8]" />
+                  </div>
+                </div>
+
+                {/* Sub-header */}
+                <p className="text-[10px] text-text-muted font-semibold mb-3">
+                  Expert knowledge. Practical solutions.
+                </p>
+
+                {/* Thumbnail */}
+                <div className="relative h-20 w-full overflow-hidden rounded-lg mb-3 bg-slate-50">
+                  <Image
+                    src="/blogpageimg/plantoptimization2.jpg"
+                    alt="Maximizing Plant Efficiency thumbnail"
+                    fill
+                    className="object-cover"
+                    sizes="300px"
+                  />
                 </div>
 
                 {/* Headline */}
-                <h2 className="text-[2.25rem] sm:text-[3rem] font-bold text-primary leading-[1.1] tracking-tight mb-5 font-sans">
-                  Insights that power
-                  <br />
-                  better <span className="text-secondary">decisions.</span>
-                </h2>
+                <h3 className="text-sm font-extrabold text-primary leading-tight mb-1.5">
+                  Maximizing Plant Efficiency: Key Strategies That Work
+                </h3>
 
-                {/* Subtitle */}
-                <p className="text-sm text-text-muted leading-relaxed max-w-[500px] mb-8">
-                  Subscribe to our insights newsletter and get expert knowledge,
-                  industry updates and practical engineering solutions delivered
-                  to your inbox.
+                {/* Subtext */}
+                <p className="text-[11px] leading-relaxed text-text-muted mb-3.5">
+                  Explore proven strategies to improve throughput, reduce
+                  costs and enhance overall performance.
                 </p>
 
-                {/* Pillars/Features */}
-                <div className="grid gap-6 sm:grid-cols-3 mb-10">
-                  {[
-                    {
-                      icon: (
-                        <TrendingUp className="w-6 h-6 text-secondary stroke-[1.8]" />
-                      ),
-                      title: "Engineering Trends",
-                      subtitle:
-                        "Stay updated with the latest industry trends and developments.",
-                    },
-                    {
-                      icon: (
-                        <Cog className="w-6 h-6 text-secondary stroke-[1.8]" />
-                      ),
-                      title: "Plant Optimization Tips",
-                      subtitle:
-                        "Actionable tips to improve efficiency, performance and productivity.",
-                    },
-                    {
-                      icon: (
-                        <Lightbulb className="w-6 h-6 text-secondary stroke-[1.8]" />
-                      ),
-                      title: "Industrial Innovations",
-                      subtitle:
-                        "Discover new technologies and innovations shaping the future.",
-                    },
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex flex-col gap-3">
-                      <div>{item.icon}</div>
-                      <div>
-                        <p className="text-[14px] font-bold text-primary mb-1">
-                          {item.title}
-                        </p>
-                        <p className="text-[11px] leading-relaxed text-text-muted">
-                          {item.subtitle}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Subscription Form */}
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    alert(`Subscribed: ${email}`);
-                    setEmail("");
-                  }}
-                  className="flex flex-col sm:flex-row gap-3 items-stretch max-w-[520px] mb-4"
+                {/* Link */}
+                <Button
+                  variant="ghost"
+                  href="#"
+                  className="inline-flex items-center gap-1 text-[11px] font-bold text-secondary hover:text-secondary/80 p-0 min-h-0 border-0"
                 >
-                  <div className="relative flex-1">
-                    <span className="absolute inset-y-0 left-4 flex items-center text-text-muted">
-                      <Mail className="w-4 h-4 stroke-[1.8]" />
-                    </span>
-                    <input
-                      type="email"
-                      placeholder="Enter your work email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      className="w-full h-12 rounded-lg border border-border bg-white pl-11 pr-4 text-sm text-text-dark outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/15 transition-all placeholder:text-text-muted"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    className="h-12 min-h-0 rounded-lg px-6 flex items-center justify-center gap-2 whitespace-nowrap"
-                  >
-                    SUBSCRIBE TO INSIGHTS{" "}
-                    <ArrowRight cls="w-4 h-4 text-white" />
-                  </Button>
-                </form>
-
-                {/* Privacy Note */}
-                <p className="flex items-center gap-2 text-[11px] text-text-muted tracking-wide mt-2">
-                  <Lock className="w-3.5 h-3.5" />
-                  <span>
-                    We respect your privacy. No spam, ever. Unsubscribe anytime.
-                  </span>
-                </p>
-              </div>
-
-              {/* Right Column (Image + Overlay Card) */}
-              <div className="lg:col-span-5 relative min-h-[450px] lg:min-h-full overflow-hidden bg-slate-100">
-                <Image
-                  src="/blogpageimg/plantoptimization2.jpg"
-                  alt="Crushing plant in operation"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  priority
-                />
-                {/* Desktop mask */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/10 to-transparent pointer-events-none hidden lg:block" />
-                {/* Mobile mask */}
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none lg:hidden" />
-
-                {/* Overlaid Card */}
-                <div className="absolute bottom-6 right-6 left-6 sm:left-auto sm:w-[310px] bg-white rounded-lg border border-slate-100 p-5 shadow-2xl z-10">
-                  {/* Header */}
-                  <div className="flex items-center justify-between mb-1">
-                    <div className="text-[11px] font-black uppercase tracking-[0.2em] text-primary">
-                      PITHAL <span className="text-secondary">INSIGHTS</span>
-                    </div>
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white shadow-sm">
-                      <Mail className="w-3.5 h-3.5 stroke-[1.8]" />
-                    </div>
-                  </div>
-
-                  {/* Sub-header */}
-                  <p className="text-[10px] text-text-muted font-semibold mb-3">
-                    Expert knowledge. Practical solutions.
-                  </p>
-
-                  {/* Thumbnail */}
-                  <div className="relative h-20 w-full overflow-hidden rounded-lg mb-3 bg-slate-50">
-                    <Image
-                      src="/blogpageimg/plantoptimization2.jpg"
-                      alt="Maximizing Plant Efficiency thumbnail"
-                      fill
-                      className="object-cover"
-                      sizes="300px"
-                    />
-                  </div>
-
-                  {/* Headline */}
-                  <h3 className="text-sm font-extrabold text-primary leading-tight mb-1.5">
-                    Maximizing Plant Efficiency: Key Strategies That Work
-                  </h3>
-
-                  {/* Subtext */}
-                  <p className="text-[11px] leading-relaxed text-text-muted mb-3.5">
-                    Explore proven strategies to improve throughput, reduce
-                    costs and enhance overall performance.
-                  </p>
-
-                  {/* Link */}
-                  <Button
-                    variant="ghost"
-                    href="#"
-                    className="inline-flex items-center gap-1 text-[11px] font-bold text-secondary hover:text-secondary/80 p-0 min-h-0 border-0"
-                  >
-                    <span>Read more</span>
-                    <span className="text-xs">→</span>
-                  </Button>
-                </div>
+                  <span>Read more</span>
+                  <span className="text-xs">→</span>
+                </Button>
               </div>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ══════════════════════════════════════════
@@ -2370,9 +2509,11 @@ export default function BlogPage() {
                 </div>
               ))}
             </div>
+          </Container>
 
-            {/* Dark Bottom Banner */}
-            <div className="bg-primary-dark rounded-xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-5 mt-12 shadow-md">
+          {/* Dark Bottom Banner - Full width, flat corners, screen touching */}
+          <div className="w-full bg-primary-dark py-8 mt-12 shadow-md border-y border-border">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-5">
               <div className="flex items-center gap-4">
                 {/* Circle with Book icon */}
                 <div className="flex h-11 w-11 items-center justify-center rounded-full border border-secondary/30 bg-secondary/5 text-secondary flex-shrink-0 shadow-sm">
@@ -2407,7 +2548,7 @@ export default function BlogPage() {
                 <span className="text-xl">→</span>
               </Button>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ══════════════════════════════════════════
@@ -2415,104 +2556,122 @@ export default function BlogPage() {
       ══════════════════════════════════════════ */}
         <section className="py-10 bg-white">
           <Container>
-            <div className="rounded-xl border border-border bg-[#fafafa]/50 p-8 sm:p-12 shadow-sm">
-              <div className="flex flex-col lg:grid lg:grid-cols-12 lg:items-center justify-between gap-8">
-                {/* Left Column */}
-                <div className="lg:col-span-7">
-                  {/* Badge Row */}
-                  <div className="flex items-center gap-3.5 mb-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-secondary/20 bg-secondary/5 text-secondary shadow-sm">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        className="w-5.5 h-5.5 stroke-secondary"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
-                      </svg>
-                    </div>
-                    <span className="text-secondary text-[11px] font-extrabold uppercase tracking-[0.2em]">
-                      FROM INSIGHTS TO SOLUTIONS
-                    </span>
-                  </div>
-
-                  {/* Headline */}
-                  <h2 className="text-[2.25rem] sm:text-[2.75rem] font-bold text-primary leading-[1.1] tracking-tight font-sans">
-                    Learned About
-                    <br />
-                    Plant Optimization?
-                  </h2>
-
-                  {/* Description */}
-                  <p className="text-text-muted text-sm mt-4 leading-relaxed max-w-[500px]">
-                    Turn engineering insights into real-world performance with
-                    our crushing solutions.
-                  </p>
-                </div>
-
-                {/* Right Column Buttons */}
-                <div className="lg:col-span-5 flex flex-wrap items-center justify-start lg:justify-end gap-4">
-                  <Button
-                    variant="primary"
-                    href="/solutions"
-                    className="px-7 py-3.5 rounded-lg flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg whitespace-nowrap cursor-pointer min-h-0 h-12"
-                  >
-                    <span>View Solutions</span>
-                    <span className="text-sm">→</span>
-                  </Button>
-                  <Button
-                    variant="outlineNavy"
-                    href="/contact"
-                    className="px-7 py-3.5 rounded-lg flex items-center justify-center gap-2.5 shadow-sm hover:shadow-md whitespace-nowrap cursor-pointer min-h-0 h-12"
-                  >
-                    <span>Talk To Experts</span>
-                    <span className="text-sm">→</span>
-                  </Button>
-                </div>
+            <div className="rounded-xl border border-border bg-[#fafafa]/50 p-8 sm:p-12 shadow-sm relative overflow-hidden">
+              {/* Background Image on Right */}
+              <div 
+                className="absolute right-0 top-0 h-full w-full lg:w-[48%] pointer-events-none select-none opacity-20 lg:opacity-100 z-0"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black 35%)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black 35%)",
+                }}
+              >
+                <Image
+                  src="/solutionspage/challenges we solve 5.jpg"
+                  alt="Crushing Plant Optimization"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                />
               </div>
 
-              {/* Divider */}
-              <div className="border-t border-slate-200/60 my-8" />
+              <div className="relative z-10">
+                <div className="flex flex-col lg:grid lg:grid-cols-12 lg:items-center justify-between gap-8">
+                  {/* Left Column */}
+                  <div className="lg:col-span-7">
+                    {/* Badge Row */}
+                    <div className="flex items-center gap-3.5 mb-4">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-secondary/20 bg-secondary/5 text-secondary shadow-sm">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          className="w-5.5 h-5.5 stroke-secondary"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+                        </svg>
+                      </div>
+                      <span className="text-secondary text-[11px] font-extrabold uppercase tracking-[0.2em]">
+                        FROM INSIGHTS TO SOLUTIONS
+                      </span>
+                    </div>
 
-              {/* Horizontal Pills list */}
-              <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-y-3 sm:gap-x-4">
-                {/* Pill 1 */}
-                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
-                  <svg
-                    className="w-8 h-8 stroke-secondary"
-                    viewBox="0 0 64 64"
-                    fill="none"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M12 14h40l-8 14H20L12 14z" />
-                    <path d="M20 28l-2 18h28l-2-18" />
-                    <path d="M32 20l6 20H26l6-20z" />
-                  </svg>
-                  <span>Crushing Systems</span>
+                    {/* Headline */}
+                    <h2 className="text-[2.25rem] sm:text-[2.75rem] font-bold text-primary leading-[1.1] tracking-tight font-sans">
+                      Learned About
+                      <br />
+                      Plant Optimization?
+                    </h2>
+
+                    {/* Description */}
+                    <p className="text-text-muted text-sm mt-4 leading-relaxed max-w-[500px]">
+                      Turn engineering insights into real-world performance with
+                      our crushing solutions.
+                    </p>
+                  </div>
+
+                  {/* Right Column Buttons */}
+                  <div className="lg:col-span-5 flex flex-wrap items-center justify-start lg:justify-end gap-4">
+                    <Button
+                      variant="primary"
+                      href="/solutions"
+                      className="px-7 py-3.5 rounded-lg flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg whitespace-nowrap cursor-pointer min-h-0 h-12"
+                    >
+                      <span>View Solutions</span>
+                      <span className="text-sm">→</span>
+                    </Button>
+                    <Button
+                      variant="outlineNavy"
+                      href="/contact"
+                      className="px-7 py-3.5 rounded-lg flex items-center justify-center gap-2.5 shadow-sm hover:shadow-md whitespace-nowrap cursor-pointer min-h-0 h-12"
+                    >
+                      <span>Talk To Experts</span>
+                      <span className="text-sm">→</span>
+                    </Button>
+                  </div>
                 </div>
 
-                <span className="hidden sm:inline text-secondary font-black">•</span>
+                {/* Divider */}
+                <div className="border-t border-slate-200/60 my-8" />
 
-                {/* Pill 2 */}
-                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
-                  <svg
-                    className="w-10 h-10 stroke-secondary"
-                    viewBox="0 0 64 64"
-                    fill="none"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M10 20l36 12" />
-                    <path d="M14 30l36 12" strokeDasharray="2 2" />
-                    <circle cx="28" cy="26" r="6" />
-                  </svg>
-                  <span>Screening Plants</span>
-                </div>
+                {/* Horizontal Pills list */}
+                <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-y-3 sm:gap-x-4">
+                  {/* Pill 1 */}
+                  <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
+                    <svg
+                      className="w-8 h-8 stroke-secondary"
+                      viewBox="0 0 64 64"
+                      fill="none"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M12 14h40l-8 14H20L12 14z" />
+                      <path d="M20 28l-2 18h28l-2-18" />
+                      <path d="M32 20l6 20H26l6-20z" />
+                    </svg>
+                    <span>Crushing Systems</span>
+                  </div>
+
+                  <span className="hidden sm:inline text-secondary font-black">•</span>
+
+                  {/* Pill 2 */}
+                  <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
+                    <svg
+                      className="w-10 h-10 stroke-secondary"
+                      viewBox="0 0 64 64"
+                      fill="none"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M10 20l36 12" />
+                      <path d="M14 30l36 12" strokeDasharray="2 2" />
+                      <circle cx="28" cy="26" r="6" />
+                    </svg>
+                    <span>Screening Plants</span>
+                  </div>
 
                 <span className="hidden sm:inline text-secondary font-black">•</span>
 
@@ -2551,112 +2710,111 @@ export default function BlogPage() {
                 </div>
               </div>
             </div>
-          </Container>
+          </div>
+        </Container>
         </section>
 
         {/* ══════════════════════════════════════════
           POPUP STRIP — LET'S ENGINEER
       ══════════════════════════════════════════ */}
         <section
-          className={`fixed inset-x-0 bottom-14 sm:bottom-0 z-50 px-4 pb-4 sm:px-6 lg:px-8 transition-all duration-500 ease-out ${
+          className={`fixed inset-x-0 bottom-0 z-50 transition-all duration-500 ease-out ${
             showPopup
               ? "translate-y-0 opacity-100"
-              : "translate-y-8 opacity-0 pointer-events-none"
+              : "translate-y-full opacity-0 pointer-events-none"
           }`}
           aria-hidden={!showPopup}
         >
-          <Container>
-            <div className="relative rounded-xl border border-border bg-white/95 p-5 pr-12 shadow-[0_24px_80px_rgba(15,23,42,0.22)] backdrop-blur-md sm:p-10 sm:pr-16 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-              <button
-                type="button"
-                aria-label="Close popup"
-                onClick={() => setShowPopup(false)}
-                className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-primary shadow-sm transition hover:border-secondary hover:text-secondary"
-              >
-                <X className="h-4 w-4" />
-              </button>
-              {/* Left side text */}
-              <div className="flex flex-col gap-3">
-                {/* Orange accent line */}
-                <div className="w-8 h-1 bg-secondary rounded" />
-                <h3 className="text-[1.75rem] sm:text-[2.25rem] font-bold text-primary leading-tight font-sans uppercase">
-                  LET&apos;S ENGINEER
-                  <br />
-                  <span className="text-secondary">BETTER</span> INDUSTRIAL
-                  OUTCOMES.
-                </h3>
-              </div>
-
-              {/* Right side buttons */}
-              <div className="flex flex-col sm:flex-row sm:flex-wrap items-center gap-4 lg:justify-end w-full lg:w-auto">
-                {/* Button 1: Explore Solutions */}
-                <Button
-                  variant="primary"
-                  href="/solutions"
-                  className="px-5 py-3.5 rounded-lg flex items-center justify-between gap-3 text-[11px] font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer min-h-0 h-[46px] w-full sm:w-auto"
-                >
-                  {/* Factory outline icon */}
-                  <svg
-                    className="w-5 h-5 stroke-white"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M2 20h20M5 17V7l5 3v7M10 17v-5l5 2v3M15 17v-3l5 1v2" />
-                  </svg>
-                  <span>Explore Solutions</span>
-                  <span className="text-sm">→</span>
-                </Button>
-
-                {/* Button 2: Discuss Your Project */}
-                <Button
-                  variant="outlineNavy"
-                  href="/contact"
-                  className="px-5 py-3.5 rounded-lg flex items-center justify-between gap-3 text-[11px] font-bold uppercase tracking-wider transition-all shadow-sm cursor-pointer min-h-0 h-[46px] w-full sm:w-auto"
-                >
-                  {/* Chat icon */}
-                  <svg
-                    className="w-5 h-5 stroke-primary"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-                  </svg>
-                  <span>Discuss Your Project</span>
-                  <span className="text-sm">→</span>
-                </Button>
-
-                {/* Button 3: Speak With Experts */}
-                <Button
-                  variant="ghost"
-                  href="/contact"
-                  className="border border-slate-300 text-primary hover:bg-bg-light px-5 py-3.5 rounded-lg flex items-center justify-between gap-3 text-[11px] font-bold uppercase tracking-wider transition-all shadow-sm cursor-pointer min-h-0 h-[46px] w-full sm:w-auto"
-                >
-                  {/* Users icon */}
-                  <svg
-                    className="w-5 h-5 stroke-primary"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M23 21v-2a4 4 0 00-3-3.87" />
-                    <path d="M16 3.13a4 4 0 010 7.75" />
-                  </svg>
-                  <span>Speak With Experts</span>
-                  <span className="text-sm">→</span>
-                </Button>
-              </div>
+          <div className="relative border-t border-border bg-white/95 p-5 pr-12 shadow-[0_-8px_30px_rgba(15,23,42,0.12)] backdrop-blur-md sm:p-6 sm:px-8 sm:pr-16 flex flex-col lg:flex-row lg:items-center justify-between gap-6 w-full">
+            <button
+              type="button"
+              aria-label="Close popup"
+              onClick={() => setShowPopup(false)}
+              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-primary shadow-sm transition hover:border-secondary hover:text-secondary"
+            >
+              <X className="h-4 w-4" />
+            </button>
+            {/* Left side text */}
+            <div className="flex flex-col gap-2">
+              {/* Orange accent line */}
+              <div className="w-8 h-1 bg-secondary rounded" />
+              <h3 className="text-[1.35rem] sm:text-[1.8rem] font-bold text-primary leading-tight font-sans uppercase">
+                LET&apos;S ENGINEER
+                <br />
+                <span className="text-secondary">BETTER</span> INDUSTRIAL
+                OUTCOMES.
+              </h3>
             </div>
-          </Container>
+
+            {/* Right side buttons */}
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-center gap-4 lg:justify-end w-full lg:w-auto">
+              {/* Button 1: Explore Solutions */}
+              <Button
+                variant="primary"
+                href="/solutions"
+                className="px-5 py-3.5 rounded-lg flex items-center justify-between gap-3 text-[11px] font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer min-h-0 h-[46px] w-full sm:w-auto"
+              >
+                {/* Factory outline icon */}
+                <svg
+                  className="w-5 h-5 stroke-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M2 20h20M5 17V7l5 3v7M10 17v-5l5 2v3M15 17v-3l5 1v2" />
+                </svg>
+                <span>Explore Solutions</span>
+                <span className="text-sm">→</span>
+              </Button>
+
+              {/* Button 2: Discuss Your Project */}
+              <Button
+                variant="outlineNavy"
+                href="/contact"
+                className="px-5 py-3.5 rounded-lg flex items-center justify-between gap-3 text-[11px] font-bold uppercase tracking-wider transition-all shadow-sm cursor-pointer min-h-0 h-[46px] w-full sm:w-auto"
+              >
+                {/* Chat icon */}
+                <svg
+                  className="w-5 h-5 stroke-primary"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                </svg>
+                <span>Discuss Your Project</span>
+                <span className="text-sm">→</span>
+              </Button>
+
+              {/* Button 3: Speak With Experts */}
+              <Button
+                variant="ghost"
+                href="/contact"
+                className="border border-slate-300 text-primary hover:bg-bg-light px-5 py-3.5 rounded-lg flex items-center justify-between gap-3 text-[11px] font-bold uppercase tracking-wider transition-all shadow-sm cursor-pointer min-h-0 h-[46px] w-full sm:w-auto"
+              >
+                {/* Users icon */}
+                <svg
+                  className="w-5 h-5 stroke-primary"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                  <path d="M16 3.13a4 4 0 010 7.75" />
+                </svg>
+                <span>Speak With Experts</span>
+                <span className="text-sm">→</span>
+              </Button>
+            </div>
+          </div>
         </section>
       </main>
       <Footer />

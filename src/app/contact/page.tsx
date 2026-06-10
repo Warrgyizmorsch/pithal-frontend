@@ -295,22 +295,71 @@ export default function ContactUsPage() {
     requirement: ""
   });
 
+  const [loading, setLoading] = useState(false);
+  const [statusMsg, setStatusMsg] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Thank you ${formData.fullName}. Your inquiry has been logged successfully!`);
-    setFormData({
-      fullName: "",
-      companyName: "",
-      email: "",
-      phone: "",
-      industry: "",
-      requirement: ""
-    });
+    setLoading(true);
+    setStatusMsg(null);
+
+    const formattedRequirement = `Industry/Sector: ${formData.industry}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Message: ${formData.requirement}`;
+
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          company: formData.companyName,
+          requirement: formattedRequirement,
+          source: typeof window !== "undefined"
+            ? (window.location.pathname === "/"
+              ? "Home Page"
+              : `Page: ${window.location.pathname}`)
+            : "Contact Us Page",
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatusMsg({
+          type: "success",
+          text: `Thank you ${formData.fullName}. Your inquiry has been submitted successfully!`,
+        });
+        setFormData({
+          fullName: "",
+          companyName: "",
+          email: "",
+          phone: "",
+          industry: "",
+          requirement: ""
+        });
+      } else {
+        setStatusMsg({
+          type: "error",
+          text: data.error || "Failed to submit inquiry. Please try again."
+        });
+      }
+    } catch (err) {
+      setStatusMsg({
+        type: "error",
+        text: "Something went wrong. Please check your connection and try again."
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -608,9 +657,26 @@ export default function ContactUsPage() {
                     </div>
                   </div>
 
+                  {statusMsg && (
+                    <div
+                      className={cn(
+                        "p-3.5 rounded-lg text-xs font-semibold border",
+                        statusMsg.type === "success"
+                          ? "bg-green-50 border-green-200 text-green-700"
+                          : "bg-red-50 border-red-200 text-red-700"
+                      )}
+                    >
+                      {statusMsg.text}
+                    </div>
+                  )}
+
                   <div className="pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <button type="submit" className="bg-secondary text-white font-black uppercase text-xs tracking-widest px-8 py-4.5 rounded-lg flex items-center justify-center gap-2 hover:bg-primary transition-colors duration-300">
-                      SUBMIT ENQUIRY
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="bg-secondary text-white font-black uppercase text-xs tracking-widest px-8 py-4.5 rounded-lg flex items-center justify-center gap-2 hover:bg-primary transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {loading ? "SUBMITTING..." : "SUBMIT ENQUIRY"}
                       <ArrowRight size={14} />
                     </button>
                     <div className="flex items-center gap-2 text-slate-400 text-xs">
@@ -833,114 +899,12 @@ export default function ContactUsPage() {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 6: SUPPORTING INDUSTRIES & WORLDWIDE REACH */}
-        {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-primary-dark py-12 lg:py-16" id="worldwide-reach">
-          {/* Background image */}
-          <Image
-            src="/contactus/map.jpg"
-            alt="Worldwide Operations Background"
-            fill
-            className="object-cover object-center opacity-50"
-            sizes="100vw"
-          />
-          {/* Dark overlay */}
-          
-          <Container className="relative z-10">
-            {/* Top row: left text + right map */}
-            <div className="grid gap-10 lg:grid-cols-[1fr_1.35fr] lg:items-start"></div>
-
-              {/* Left Column */}
-              <div>
-                <span className="text-xs font-black uppercase tracking-widest text-secondary block mb-3">
-                  GLOBAL SUPPORT NETWORK
-                </span>
-                <h2 className="headline text-[clamp(2rem,4vw,3rem)] font-black text-white uppercase leading-[1.0]">
-                  SUPPORTING INDUSTRIES.<br />
-                  <span className="text-secondary">AROUND THE WORLD.</span>
-                </h2>
-                <p className="text-sm text-slate-300 leading-relaxed max-w-sm mt-4">
-                  Pithal Machinery is trusted in 35+ countries across 6 continents. Our global support network ensures you get the right solutions and timely support, wherever you operate.
-                </p>
-
-                {/* Vertical stacked metric list — icon left, bold title + desc right */}
-                <div className="mt-8 space-y-6">
-                  {globalReachPoints.map((item, i) => (
-                    <div key={i} className="flex gap-4 items-start">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-secondary/50 bg-secondary/10 text-secondary">
-                        {i === 0 && <Globe size={18} />}
-                        {i === 1 && <Headphones size={18} />}
-                        {i === 2 && <Shield size={18} />}
-                        {i === 3 && <Layers size={18} />}
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-black text-white uppercase tracking-wide leading-tight">
-                          {item.value}
-                        </h4>
-                        <p className="text-xs text-slate-300 mt-1 leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-
-            {/* Bottom: OUR PRESENCE BY REGION bordered box */}
-            <div className="mt-12 border border-white/10 rounded-xl overflow-hidden">
-              {/* Title row */}
-              <div className="py-4 px-6 border-b border-white/10 bg-white/5 text-center">
-                <h3 className="text-xs font-black tracking-[0.22em] text-white uppercase inline-flex items-center gap-3">
-                  <span className="h-px w-10 bg-secondary inline-block" />
-                  OUR PRESENCE BY REGION
-                  <span className="h-px w-10 bg-secondary inline-block" />
-                </h3>
-              </div>
-              {/* 6 Region columns */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-x divide-y lg:divide-y-0 divide-white/10">
-                {[
-                  { name: "EUROPE",       countries: "Countries: 8+",  desc: "Strong presence in key European markets with reliable partners.",               colorClass: "text-primary" },
-                  { name: "MIDDLE EAST",  countries: "Countries: 10+", desc: "Serving the core industries with advanced crushing solutions.",                  colorClass: "text-secondary" },
-                  { name: "ASIA",         countries: "Countries: 12+", desc: "Expanding rapidly across emerging and industrial economies.",                    colorClass: "text-primary" },
-                  { name: "AFRICA",       countries: "Countries: 12+", desc: "Empowering mining and construction industries across Africa.",                   colorClass: "text-primary" },
-                  { name: "SOUTH AMERICA",countries: "Countries: 6+",  desc: "Delivering performance and reliability across growing markets.",                 colorClass: "text-secondary" },
-                  { name: "GLOBAL REACH", countries: "35+ Countries",  desc: "A global network built on trust, quality and expertise.",                        colorClass: "text-primary" },
-                ].map((region, i) => (
-                  <div key={i} className="p-4 flex flex-col gap-2 bg-white/5 hover:bg-white/10 transition-colors">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 shrink-0">
-                      <Globe size={13} className={region.colorClass} />
-                    </div>
-                    <span className={`text-[10px] font-black uppercase tracking-wider leading-tight ${region.colorClass}`}>
-                      {region.name}
-                    </span>
-                    <p className="text-[10px] text-slate-300 leading-snug flex-1">
-                      {region.desc}
-                    </p>
-                    <span className="text-[9px] font-black text-white/40 uppercase tracking-widest mt-1 border-t border-white/10 pt-2">
-                      {region.countries}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom features strip */}
-            <div className="mt-6 border border-white/10 rounded-xl bg-white/5 px-6 py-4 flex flex-wrap items-center justify-center gap-x-0 gap-y-3 divide-x divide-white/15">
-              <div className="flex items-center gap-2 px-5 text-xs font-black uppercase tracking-wide text-primary">
-                <Globe size={14} className="text-secondary shrink-0" />
-                <span>Global Footprint. Local Commitment.</span>
-              </div>
-              <div className="flex items-center gap-2 px-5 text-xs font-black uppercase tracking-wide text-white">
-                <Headphones size={14} className="text-secondary shrink-0" />
-                <span>24/7 Support Availability</span>
-              </div>
-              <span className="px-5 text-xs font-black uppercase tracking-wide text-white">Spare Parts Support</span>
-              <span className="px-5 text-xs font-black uppercase tracking-wide text-white">On-site Assistance</span>
-              <span className="px-5 text-xs font-black uppercase tracking-wide text-white">Technical Expertise</span>
-            </div>
-          </Container>
+        {/* SECTION 6: SUPPORTING INDUSTRIES & WORLDWIDE REACH (HIDDEN) */}
+        {/* ========================================================================= 
+        <section className="relative overflow-hidden bg-primary-dark py-8 lg:py-12" id="worldwide-reach">
+          ... (content hidden) ...
         </section>
+        */}
 
         {/* ========================================================================= */}
         {/* SECTION 7: SOLUTIONS TAILORED TO YOUR INDUSTRY NEEDS */}
@@ -1038,36 +1002,27 @@ export default function ContactUsPage() {
               {processSteps.map((step, i) => {
                 const SIcon = step.icon;
                 return (
-                  <div key={i} className="relative flex flex-col items-center text-center p-5 bg-white border border-slate-200/80 rounded-xl shadow-xs">
+                  <div key={i} className="relative flex flex-col items-center text-center p-5 bg-white border border-slate-200/80 rounded-xl shadow-xs contact-process-hover group overflow-hidden">
                     
-                    {/* Circle icon with crescent arc outline */}
-                    <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-md">
-                      <svg className="absolute -inset-[1.5px] h-[66px] w-[66px] -rotate-45 pointer-events-none" viewBox="0 0 100 100">
-                        <circle
-                          cx="50"
-                          cy="50"
-                          r="47"
-                          stroke="var(--secondary)"
-                          strokeWidth="2.5"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeDasharray="70 300"
-                        />
-                      </svg>
-                      <SIcon size={20} className="text-primary" />
+                    {/* Circle icon box with rotating border effect */}
+                    <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white border border-slate-100 shadow-sm contact-icon-box z-10">
+                      <SIcon size={24} className="text-primary transition-colors duration-300 group-hover:text-secondary" />
                     </div>
 
-                    <span className="mt-4 bg-secondary text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded shadow z-10">
+                    <span className="mt-4 bg-secondary text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded shadow z-10 transition-transform duration-300 group-hover:scale-110">
                       {step.step}
                     </span>
 
-                    <h3 className="mt-3 text-sm font-black uppercase tracking-wider text-primary leading-tight">
+                    <h3 className="mt-3 text-sm font-black uppercase tracking-wider text-primary leading-tight relative z-10 transition-colors duration-300 group-hover:text-secondary">
                       {step.title}
                     </h3>
                     
-                    <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500 min-h-[50px] font-medium">
+                    <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500 min-h-[50px] font-medium relative z-10">
                       {step.desc}
                     </p>
+
+                    {/* Center-expanding bottom line */}
+                    <div className="expanding-line-contact" />
 
                     {/* Timeline connector circle node */}
                     {i < 4 && (

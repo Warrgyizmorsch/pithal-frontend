@@ -3,9 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Handshake, ChevronLeft, ChevronRight } from "lucide-react";
+import { Handshake, ChevronLeft, ChevronRight, Briefcase } from "lucide-react";
 
-export type Section = "Leads";
+export type Section = "Leads" | "Dealers";
 
 interface SidebarProps {
   activeSection: Section;
@@ -16,6 +16,7 @@ interface SidebarProps {
 
 const navItems: { id: Section; label: string; icon: React.ElementType }[] = [
   { id: "Leads", label: "Leads", icon: Handshake },
+  { id: "Dealers", label: "Dealer Applications", icon: Briefcase },
 ];
 
 export function Sidebar({

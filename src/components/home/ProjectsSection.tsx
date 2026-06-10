@@ -49,10 +49,10 @@ export function ProjectsSection() {
             <div className="mt-4 max-w-[28rem] text-sm leading-7 text-text-dark sm:text-base">
               Our machines are at the heart of some of the world&apos;s most demanding operations. Delivering unmatched
               performance, day in and day out.
-<p className="inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/5 px-4 py-2 text-sm text-red-300">
+<p className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/5 px-4 py-2 text-[15px] font-bold text-red-600 whitespace-nowrap mt-3">
   <span className="relative flex h-3 w-3">
-    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
-    <span className="relative inline-flex h-3 w-3 rounded-full bg-red-400"></span>
+    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75"></span>
+    <span className="relative inline-flex h-3 w-3 rounded-full bg-red-500"></span>
   </span>
 
   Note: These are sample projects for demonstration purposes only.
