@@ -11,7 +11,7 @@ export const navigation = [
 ];
 
 export const stats = [
-  { value: "100%", label: "Quality Commitment", icon: "globe" },
+  { value: "BEST", label: "Quality Commitment", icon: "globe" },
   { value: "Skilled", label: " Engineering Team", icon: "gear" },
   { value: "24x7", label: "Support & Reliability", icon: "headset" },
   { value: "Innovative", label: "MAchine Design", icon: "partners" },

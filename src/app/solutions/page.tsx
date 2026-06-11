@@ -416,7 +416,7 @@ const performanceSliders = [
 ];
 
 const performanceStatsList = [
-  { value: "100%", label: "Quality Commitment", desc: "Excellence" },
+  { value: "Best", label: "Quality Commitment", desc: "Excellence in Technology" },
   { value: "Performance", label: "Accurate & Reliable ", desc: "Served" },
   { value: "24/7", label: "Support & Service", desc: "Worldwide" },
 ];
