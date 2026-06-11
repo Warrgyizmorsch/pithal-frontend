@@ -73,7 +73,7 @@ export function ProjectsSection() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => <ProjectCard key={project.plant + project.location} {...project} />)}
         </div>
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
+        {/* <div className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
           <Button className="w-full min-[420px]:w-auto min-[420px]:min-w-[15rem]" href="#contact" variant="outlineNavy">
             View All Projects <ArrowRight aria-hidden size={16} />
           </Button>
@@ -83,7 +83,7 @@ export function ProjectsSection() {
           <button aria-label="Next projects" className="flex h-12 w-12 items-center justify-center rounded-full border border-secondary/60 text-secondary transition-colors hover:bg-secondary hover:text-white" type="button">
             <ArrowRight aria-hidden size={16} />
           </button>
-        </div>
+        </div> */}
       </Container>
     </section>
   );

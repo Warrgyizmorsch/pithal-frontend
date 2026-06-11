@@ -306,7 +306,7 @@ export function ProcessTimeline() {
         <div className="mt-9 flex justify-center sm:mt-12">
           <Button
             className="w-full min-h-12 px-5 text-xs font-bold uppercase tracking-widest min-[420px]:w-auto sm:min-h-14 sm:px-10 sm:text-sm"
-            href="#contact"
+            href="/solutions"
           >
             Explore Our Plant Solutions <ArrowRight aria-hidden size={18} />
           </Button>

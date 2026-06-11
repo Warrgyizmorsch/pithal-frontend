@@ -1910,9 +1910,9 @@ function FinalCtaSection() {
               {cta.primary.label}
               <ArrowRight aria-hidden size={15} />
             </Button>
-            <Button
+            {/* <Button
               className="min-h-[46px] justify-center rounded-md border-primary/45 bg-white/70 px-5 text-[10px]"
-              href={cta.secondary.href}
+              // href={cta.secondary.href}
               variant="outlineNavy"
             >
               <svg
@@ -1928,8 +1928,8 @@ function FinalCtaSection() {
                 <line x1="22" x2="11" y1="2" y2="13" />
                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
               </svg>
-              {cta.secondary.label}
-            </Button>
+              {/* {cta.secondary.label}
+            </Button> */}
           </div>
         </div>
       </Container>

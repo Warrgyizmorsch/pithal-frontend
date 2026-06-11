@@ -47,7 +47,7 @@ import { cn } from "@/lib/utils";
 
 const heroStats = [
   { value: "35+", label: "COUNTRIES", desc: "Global presence across 5 continents", icon: Globe },
-  { value: "1500+", label: "INSTALLATIONS", desc: "Successful installations worldwide", icon: Building2 },
+  { value: "TRUSTED", label: "INSTALLATIONS", desc: "Successful installations worldwide", icon: Building2 },
   { value: "24/7", label: "SUPPORT", desc: "Round-the-clock support across time zones", icon: Clock },
   { value: "GLOBAL", label: "ENGINEERING ASSISTANCE", desc: "Expert engineering support wherever you are", icon: Settings },
 ];
@@ -62,7 +62,7 @@ const regionsData = [
 
 const topStats = [
   { value: "35+", label: "COUNTRIES", desc: "Global presence across 5 continents", icon: Globe },
-  { value: "1500+", label: "PROJECTS DELIVERED", desc: "Successful installations worldwide", icon: Building2 },
+  { value: "TRUSTED", label: "PROJECTS DELIVERED", desc: "Successful installations worldwide", icon: Building2 },
   { value: "20+", label: "INDUSTRIES SERVED", desc: "Diverse industrial applications", icon: Settings2 },
   { value: "100%", label: "EXPORT CAPABILITY", desc: "End-to-end export ready solutions", icon: Shield },
 ];
@@ -328,7 +328,7 @@ export default function GlobalPresencePage() {
                 {[
                   { val: "5", label: "CONTINENTS", desc: "Strong global footprint" },
                   { val: "35+", label: "COUNTRIES", desc: "Expanding every year" },
-                  { val: "1500+", label: "INSTALLATIONS", desc: "Proven performance worldwide" },
+                  { val: "TRUSTED", label: "INSTALLATIONS", desc: "Proven performance worldwide" },
                   { val: "24/7", label: "SUPPORT", desc: "Always here, wherever you are" },
                 ].map((h, i) => (
                   <div key={i} className="flex gap-2.5 items-center">
@@ -408,7 +408,7 @@ export default function GlobalPresencePage() {
             <div className="rounded-lg bg-primary text-white p-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               {[
                 { value: "35+", label: "COUNTRIES EXPORTED TO", desc: "Expanding globally every year", icon: Globe },
-                { value: "1500+", label: "SHIPMENTS DELIVERED", desc: "Safe & on-time deliveries", icon: Truck },
+                { value: "TRUSTED", label: "SHIPMENTS DELIVERED", desc: "Safe & on-time deliveries", icon: Truck },
                 { value: "100%", label: "EXPORT-READY EQUIPMENT", desc: "Built to global standards", icon: Box },
                 { value: "24/7", label: "LOGISTICS SUPPORT", desc: "End-to-end coordination", icon: Headphones },
               ].map((s, i) => (

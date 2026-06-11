@@ -83,7 +83,7 @@ export function ContactCTA() {
   };
 
   return (
-    <section className="scroll-mt-24 bg-white !pt-0" id="contact">
+    <section className="scroll-mt-24 bg-white !pt-0" id="contact1">
       <Container>
         <div className="overflow-hidden rounded-[1.15rem] border border-primary/80 lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:max-h-[620px]">
           <div className="relative min-h-[16rem] sm:min-h-[22rem] overflow-hidden lg:h-full lg:min-h-0">

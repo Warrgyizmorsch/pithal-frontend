@@ -52,7 +52,7 @@ const heroStats = [
     icon: Globe,
   },
   {
-    value: "1500+",
+    value: "TRUSTED",
     label: "INSTALLATIONS",
     desc: "Successful installations worldwide",
     icon: Building2,
@@ -142,7 +142,7 @@ const topStats = [
   },
   {
     icon: Building2,
-    value: "1500+",
+    value: "TRUSTED",
     label: "PROJECTS DELIVERED",
     desc: "Successful installations worldwide",
   },
@@ -302,12 +302,17 @@ export default function GlobalPresencePage() {
           <Container className="relative z-10 max-w-[1520px] px-5 sm:px-8 lg:px-10 w-full flex flex-col justify-between gap-4 py-6 lg:py-8">
             {/* Breadcrumb */}
             <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-slate-500">
-              <Link href="/" className="hover:text-secondary transition-colors flex items-center gap-1.5">
+              <Link
+                href="/"
+                className="hover:text-secondary transition-colors flex items-center gap-1.5"
+              >
                 <Home size={14} className="stroke-[2]" />
                 Home
               </Link>
               <ChevronRight className="w-3.5 h-3.5 text-slate-400 stroke-[2.5]" />
-              <span className="text-slate-500 font-medium">Global Presence</span>
+              <span className="text-slate-500 font-medium">
+                Global Presence
+              </span>
             </div>
 
             <div className="max-w-[800px]">
@@ -354,10 +359,7 @@ export default function GlobalPresencePage() {
             <div className="mt-4 rounded-2xl border border-white/60 bg-white/90 p-0.5 shadow-[0_20px_50px_rgba(3,27,64,0.1)] backdrop-blur-md">
               <div className="grid grid-cols-1 divide-y divide-slate-100 sm:grid-cols-2 sm:divide-y-0 sm:divide-x lg:grid-cols-4">
                 {heroStats.map((s, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-4 p-4 lg:p-5"
-                  >
+                  <div key={i} className="flex items-center gap-4 p-4 lg:p-5">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#fdf2eb] text-secondary">
                       <s.icon className="h-6 w-6 stroke-[1.8]" />
                     </div>
@@ -413,9 +415,7 @@ export default function GlobalPresencePage() {
 
                 {/* ✅ Matching Careers H2 size and leading */}
                 <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
-                  <span className="block">
-                    A WORLDWIDE NETWORK.
-                  </span>
+                  <span className="block">A WORLDWIDE NETWORK.</span>
                   <span className="block text-secondary">
                     DELIVERING INDUSTRIAL EXCELLENCE.
                   </span>
@@ -533,8 +533,6 @@ export default function GlobalPresencePage() {
                     className="object-cover object-center"
                   />
                 </div>
-
-                
               </div>
 
               {/* ✅ Global Highlights — orange icons (not numbered circles) */}
@@ -558,7 +556,7 @@ export default function GlobalPresencePage() {
                     },
                     {
                       icon: Factory,
-                      val: "1500+",
+                      val: "TRUSTED",
                       label: "INSTALLATIONS",
                       desc: "Proven performance worldwide",
                     },
@@ -689,7 +687,7 @@ export default function GlobalPresencePage() {
                       STANDARDS. DELIVERED WITH CARE.
                     </span>
                   </h2>
-                  
+
                   {/* ✅ Matching Careers paragraph style */}
                   <p className="mt-5 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg mb-8 max-lg:drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]">
                     From engineering to export logistics, we ensure our
@@ -771,7 +769,7 @@ export default function GlobalPresencePage() {
                     icon: Globe,
                   },
                   {
-                    value: "1500+",
+                    value: "TRUSTED",
                     label: "SHIPMENTS DELIVERED",
                     desc: "Safe & on-time deliveries",
                     icon: Ship,
@@ -1024,7 +1022,7 @@ export default function GlobalPresencePage() {
                   },
                   {
                     icon: Factory,
-                    value: "1500+",
+                    value: "TRUSTED",
                     label: "INSTALLATIONS",
                     desc: "Successful installations worldwide",
                   },
@@ -1285,7 +1283,7 @@ export default function GlobalPresencePage() {
                   },
                   {
                     icon: Clipboard,
-                    value: "1500+",
+                    value: "TRUSTED",
                     label: "PROJECTS",
                   },
                   {
@@ -1377,10 +1375,7 @@ export default function GlobalPresencePage() {
                             value: p.machines,
                           },
                         ].map((row) => (
-                          <div
-                            key={row.label}
-                            className="flex flex-col gap-1"
-                          >
+                          <div key={row.label} className="flex flex-col gap-1">
                             <div className="flex items-center gap-2 text-[10px] font-black uppercase text-slate-400">
                               <row.icon className="h-3.5 w-3.5 text-secondary" />
                               {row.label}
@@ -1444,11 +1439,13 @@ export default function GlobalPresencePage() {
             <div className="mt-10 grid items-center gap-6 rounded-[2.5rem] bg-primary p-8 lg:grid-cols-[1fr_auto]">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-black uppercase text-white leading-tight mb-3">
-                  GLOBAL FOOTPRINT. <span className="text-secondary">LOCAL COMMITMENT.</span>
+                  GLOBAL FOOTPRINT.{" "}
+                  <span className="text-secondary">LOCAL COMMITMENT.</span>
                 </h3>
                 <p className="text-sm sm:text-base font-medium text-slate-300 max-w-2xl">
                   Delivering world-class crushing &amp; screening solutions that
-                  drive industries forward. Let&apos;s discuss how we can power your next project.
+                  drive industries forward. Let&apos;s discuss how we can power
+                  your next project.
                 </p>
               </div>
               <Button
@@ -1483,7 +1480,9 @@ export default function GlobalPresencePage() {
                 {/* ✅ Matching Careers H2 size and leading */}
                 <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight uppercase mb-4">
                   BUILT FOR PERFORMANCE.
-                  <span className="block text-secondary">SUPPORTED FOR LIFE.</span>
+                  <span className="block text-secondary">
+                    SUPPORTED FOR LIFE.
+                  </span>
                 </h2>
 
                 {/* ✅ Matching Careers paragraph style */}
@@ -2072,13 +2071,16 @@ export default function GlobalPresencePage() {
               <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight uppercase mb-4">
                 BUILT ON STANDARDS.
                 <br />
-                <span className="text-secondary">DELIVERED WITH CONFIDENCE.</span>
+                <span className="text-secondary">
+                  DELIVERED WITH CONFIDENCE.
+                </span>
               </h2>
 
               {/* ✅ Matching Careers paragraph style */}
               <p className="mx-auto mt-4 max-w-[700px] text-sm sm:text-[15px] leading-relaxed text-white/90">
-                Our commitment to international quality, safety and compliance ensures that
-                every Pithal solution meets global benchmarks and exceeds expectations.
+                Our commitment to international quality, safety and compliance
+                ensures that every Pithal solution meets global benchmarks and
+                exceeds expectations.
               </p>
             </div>
 
@@ -2114,14 +2116,16 @@ export default function GlobalPresencePage() {
                     imageClass: "h-[82px] w-[108px]",
                   },
                   {
-                    image: "/images/global-presense/certifications/bureau-veritas.png",
+                    image:
+                      "/images/global-presense/certifications/bureau-veritas.png",
                     alt: "Bureau Veritas",
                     title: "THIRD PARTY INSPECTION CERTIFIED",
                     desc: "Verified. Validated. Trusted globally.",
                     imageClass: "h-[98px] w-[112px]",
                   },
                   {
-                    image: "/images/global-presense/certifications/make-in-india.png",
+                    image:
+                      "/images/global-presense/certifications/make-in-india.png",
                     alt: "Proudly made in India",
                     title: "PROUDLY MADE IN INDIA",
                     desc: "Engineering excellence. Global standards. Indian strength.",
@@ -2190,7 +2194,8 @@ export default function GlobalPresencePage() {
               {/* ✅ Matching Careers paragraph style */}
               <p className="mx-auto mt-4 max-w-[640px] text-sm sm:text-[15px] leading-relaxed text-slate-600">
                 Across continents and industries, we build more than machines -
-                we build long-term partnerships grounded in trust, performance and support.
+                we build long-term partnerships grounded in trust, performance
+                and support.
               </p>
             </div>
 
@@ -2381,20 +2386,42 @@ export default function GlobalPresencePage() {
                 <h3 className="text-2xl font-black leading-tight text-white mb-3">
                   BEYOND EQUIPMENT.
                   <br />
-                  <span className="text-secondary">A PARTNERSHIP THAT LASTS.</span>
+                  <span className="text-secondary">
+                    A PARTNERSHIP THAT LASTS.
+                  </span>
                 </h3>
                 <p className="text-sm font-semibold leading-relaxed text-slate-300">
-                  We stand with you at every step - from concept to commissioning and beyond.
-                  Your success is our priority.
+                  We stand with you at every step - from concept to
+                  commissioning and beyond. Your success is our priority.
                 </p>
               </div>
               <div className="grid grid-cols-2 divide-y divide-secondary/45 border-y border-white/10 md:grid-cols-5 md:divide-x md:divide-y-0 md:border-y-0">
                 {[
-                  { icon: Globe, title: "GLOBAL SUPPORT", desc: "Local teams. Global strength." },
-                  { icon: Users, title: "EXPERT ENGINEERING", desc: "Custom solutions. Proven expertise." },
-                  { icon: Clock, title: "FAST RESPONSE", desc: "Quick action. Minimal downtime." },
-                  { icon: Box, title: "SPARE PARTS", desc: "Readily available. Reliable supply." },
-                  { icon: TrendingUp, title: "PERFORMANCE FOCUS", desc: "Maximizing uptime. Maximizing value." },
+                  {
+                    icon: Globe,
+                    title: "GLOBAL SUPPORT",
+                    desc: "Local teams. Global strength.",
+                  },
+                  {
+                    icon: Users,
+                    title: "EXPERT ENGINEERING",
+                    desc: "Custom solutions. Proven expertise.",
+                  },
+                  {
+                    icon: Clock,
+                    title: "FAST RESPONSE",
+                    desc: "Quick action. Minimal downtime.",
+                  },
+                  {
+                    icon: Box,
+                    title: "SPARE PARTS",
+                    desc: "Readily available. Reliable supply.",
+                  },
+                  {
+                    icon: TrendingUp,
+                    title: "PERFORMANCE FOCUS",
+                    desc: "Maximizing uptime. Maximizing value.",
+                  },
                 ].map((item) => (
                   <div
                     key={item.title}
@@ -2430,12 +2457,14 @@ export default function GlobalPresencePage() {
                   <h3 className="text-2xl font-black leading-tight text-primary mb-3">
                     BUILT ON RELIABILITY.
                     <br />
-                    <span className="text-secondary">DRIVEN BY PARTNERSHIP.</span>
+                    <span className="text-secondary">
+                      DRIVEN BY PARTNERSHIP.
+                    </span>
                   </h3>
                   <p className="max-w-[310px] text-sm font-medium leading-relaxed text-slate-600">
                     In a world that demands more, we deliver what matters most -
-                    reliability, consistency and unwavering support across every border.
-                    Our machines are built in India, trusted worldwide.
+                    reliability, consistency and unwavering support across every
+                    border. Our machines are built in India, trusted worldwide.
                   </p>
                   <p className="mt-4 text-sm font-black text-primary">
                     - Pithal Machines Ltd.
@@ -2446,10 +2475,30 @@ export default function GlobalPresencePage() {
                 {[
                   ["KENYA", "Mining", "kenya-300hp.svg", "kenya.png"],
                   ["UAE", "Cement", "uae-cement.svg", "uae.png"],
-                  ["AUSTRALIA", "Aggregates", "australia-aggrigates.svg", "australia.png"],
-                  ["TANZANIA", "Construction", "tanzania-contruction.svg", "tanzania.png"],
-                  ["INDONESIA", "Infrastructure", "indonsaia-insfrastucture.svg", "indonesia.png"],
-                  ["SAUDI ARABIA", "Recycling", "soudi-arabia.svg", "saudi-arabia.png"],
+                  [
+                    "AUSTRALIA",
+                    "Aggregates",
+                    "australia-aggrigates.svg",
+                    "australia.png",
+                  ],
+                  [
+                    "TANZANIA",
+                    "Construction",
+                    "tanzania-contruction.svg",
+                    "tanzania.png",
+                  ],
+                  [
+                    "INDONESIA",
+                    "Infrastructure",
+                    "indonsaia-insfrastucture.svg",
+                    "indonesia.png",
+                  ],
+                  [
+                    "SAUDI ARABIA",
+                    "Recycling",
+                    "soudi-arabia.svg",
+                    "saudi-arabia.png",
+                  ],
                 ].map(([country, type, image, flag]) => (
                   <div
                     key={country}
@@ -2496,7 +2545,8 @@ export default function GlobalPresencePage() {
               </div>
               <div className="hidden h-8 w-px bg-white/20 md:block" />
               <p className="text-center text-xs font-semibold text-slate-300 md:text-left">
-                We don&apos;t just build machines. We build trust that powers progress worldwide.
+                We don&apos;t just build machines. We build trust that powers
+                progress worldwide.
               </p>
               <h3 className="text-base font-black uppercase tracking-wide text-secondary">
                 LET&apos;S BUILD THE FUTURE TOGETHER.
@@ -2883,9 +2933,9 @@ export default function GlobalPresencePage() {
 
                   {/* ✅ Matching Careers paragraph style */}
                   <p className="mt-4 sm:mt-6 max-w-[500px] text-base sm:text-xl font-medium leading-relaxed text-slate-600">
-                    Pithal Machines is ready to collaborate, engineer and deliver
-                    world-class solutions that power industries and build a
-                    stronger future together.
+                    Pithal Machines is ready to collaborate, engineer and
+                    deliver world-class solutions that power industries and
+                    build a stronger future together.
                   </p>
                 </div>
               </div>
@@ -2959,12 +3009,19 @@ export default function GlobalPresencePage() {
                 <div className="relative z-10 flex flex-col justify-center px-6 py-8 sm:px-10">
                   <h3 className="text-2xl font-black uppercase text-white leading-tight">
                     ONE VISION. ONE WORLD.{" "}
-                    <span className="text-secondary">ENDLESS POSSIBILITIES.</span>
+                    <span className="text-secondary">
+                      ENDLESS POSSIBILITIES.
+                    </span>
                   </h3>
                   <p className="mt-3 text-sm font-medium text-slate-300">
-                    Let&apos;s create impact. Let&apos;s build the future together.
+                    Let&apos;s create impact. Let&apos;s build the future
+                    together.
                     <br />
-                    Let&apos;s build <span className="font-black text-secondary uppercase">industrial success</span> across borders.
+                    Let&apos;s build{" "}
+                    <span className="font-black text-secondary uppercase">
+                      industrial success
+                    </span>{" "}
+                    across borders.
                   </p>
                   <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
                     {[

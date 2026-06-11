@@ -297,7 +297,7 @@ function createProductData(config: ProductConfig): ProductDetailData {
       title: "PRODUCT BROCHURE",
       description: "Comprehensive overview of features, benefits and applications.",
         image: { src: `${folderPath}/product-brochure.svg`, alt: "PRODUCT BROCHURE" },
-      href: "#",
+      href: "",
       actionLabel: "DOWNLOAD PDF",
     },
       {
@@ -305,7 +305,7 @@ function createProductData(config: ProductConfig): ProductDetailData {
       title: "TECHNICAL DATASHEET",
       description: "Detailed technical specifications and performance data.",
         image: { src: `${folderPath}/technical-datasheet.svg`, alt: "TECHNICAL DATASHEET" },
-      href: "#",
+      href: "",
       actionLabel: "DOWNLOAD PDF",
     },
       {
@@ -313,7 +313,7 @@ function createProductData(config: ProductConfig): ProductDetailData {
       title: "OPERATION & MAINTENANCE MANUAL",
       description: "Step-by-step guide for safe operation, maintenance and best practices.",
         image: { src: `${folderPath}/operation-maintenance-manual.svg`, alt: "OPERATION & MAINTENANCE MANUAL" },
-      href: "#",
+      href: "",
       actionLabel: "DOWNLOAD PDF",
     },
     ],

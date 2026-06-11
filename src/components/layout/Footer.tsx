@@ -121,7 +121,7 @@ export function Footer() {
               "Products": {
                 "Jaw Crushers": "/products/jaw-crushers",
                 "Cone Crushers": "/products/cone-crushers",
-                "Impact Crushers": "/products/vsi-crushers",
+                "VSI Crushers": "/products/vsi-crushers",
                 "Vibrating Feeders": "/products/feeders",
                 "Vibrating Screens": "/products/screening-solutions",
                 "Mobile Crushing Plants": "/products/complete-plants",
@@ -147,7 +147,7 @@ export function Footer() {
                 "Become a Dealer": "/become-a-dealer",
                 "News & Events": "/blog",
                 "Sustainability": "/about",
-                "Contact Us": "#contact",
+                "Contact Us": "/contact",
               },
             };
 
@@ -214,7 +214,7 @@ export function Footer() {
               <br />
               Our experts are ready to help.
             </p>
-            <Button className="w-full max-w-[16.2rem] justify-between text-sm" href="#contact">
+            <Button className="w-full max-w-[16.2rem] justify-between text-sm" href="/contact">
               Contact Us
               <ArrowRight aria-hidden size={19} />
             </Button>

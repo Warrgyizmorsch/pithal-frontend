@@ -11,7 +11,7 @@ export const aboutPageData = {
     },
     ctas: [
       { label: "Explore Products", href: "/products" },
-      { label: "Request Consultation", href: "#contact" },
+      { label: "Request Consultation", href: "#contact1" },
     ],
     video: {
       image: "/images/about/impact-plant.png",
@@ -19,9 +19,9 @@ export const aboutPageData = {
     },
   },
   stats: [
-    { value: "85%", label: "Repeat Business Rate", icon: "settings" },
+    { value: "Best", label: "In the Industry", icon: "settings" },
     { value: "Custom", label: "Machine Design", icon: "factory" },
-    { value: "99.9%", label: "Satisfaction Score", icon: "globe" },
+    { value: "Top", label: "Satisfaction Score", icon: "globe" },
     { value: "Advanced", label: "Manufacturing", icon: "users" },
     { value: "24/7", label: "Support & Service", icon: "headphones" },
   ],
@@ -193,8 +193,8 @@ export const aboutPageData = {
     title: "Let's Build Industrial Solutions",
     highlight: "Together.",
     text: "Whether it's a new project, a complex challenge, or a long-term partnership, we're ready to engineer solutions that drive real impact.",
-    primary: { label: "Let's Work Together", href: "#contact" },
-    secondary: { label: "Get In Touch", href: "/global-presence" },
+    primary: { label: "Let's Work Together", href: "#contact1" },
+    // secondary: { label: "Get In Touch", href: "#" },
   },
 };
 

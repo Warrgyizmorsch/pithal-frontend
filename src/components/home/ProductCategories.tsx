@@ -118,9 +118,9 @@ export function ProductCategories() {
           </div>
         </div>
 
-        <div className="mt-9 text-center">
+        {/* <div className="mt-9 text-center">
           <Button href="#contact" variant="outlineNavy">View All Products <ArrowRight aria-hidden size={14} /></Button>
-        </div>
+        </div> */}
       </Container>
     </section>
   );

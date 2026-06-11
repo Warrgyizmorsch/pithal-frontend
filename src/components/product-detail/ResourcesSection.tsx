@@ -223,7 +223,7 @@ export function ResourcesSection({
           </div>
           
           <Button 
-            type="button" 
+            href={"#contact1"}
             className="flex items-center gap-2 rounded-lg bg-secondary text-white border-none py-3 px-6 h-12 text-[12px] font-extrabold tracking-[0.06em] shrink-0"
             variant="primary"
           >

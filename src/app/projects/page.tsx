@@ -2707,7 +2707,7 @@ export default function CaseStudyPage() {
                     <path d="M9 22V12h6v10M8 6h2M14 6h2M8 10h2M14 10h2" />
                   </svg>
                   <span className="text-[22px] font-black text-[#092a5c] leading-none block">
-                    1500+
+                    TRUSTED
                   </span>
                   <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#092a5c] leading-tight">
                     INSTALLATIONS
@@ -3315,7 +3315,7 @@ export default function CaseStudyPage() {
                   ),
                 },
                 {
-                  text: "1500+ Installations",
+                  text: "TRUSTED Installations",
                   icon: (
                     <svg
                       className="w-4 h-4 text-[#fa5902]"

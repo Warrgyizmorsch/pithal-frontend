@@ -57,7 +57,7 @@ export function HeroSection() {
             </Button>
             <Button
               className="w-full min-h-[3.1rem] px-5 text-[12px] rounded-[0.3rem] min-[460px]:w-auto sm:px-7 sm:text-[13px]"
-              href="#contact"
+              href="#contact1"
               variant="outlineNavy"
             >
               Request A Quote <ChevronRight aria-hidden size={16} />

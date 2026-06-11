@@ -33,6 +33,12 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
+import {
+  blogPosts,
+  getFeaturedPosts,
+  getLatestArticles,
+  getTrendingPosts,
+} from "@/data/blogData";
 
 // ─── ICONS ───────────────────────────────────────────────────────────────────
 
@@ -199,7 +205,7 @@ const heroSectionStats: {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }[] = [
   {
-    value:"100%",
+    value: "Trusted",
     label: "Quality Commitment",
     desc: "Over the Expectation",
     icon: Globe,
@@ -276,38 +282,11 @@ const heroFloatingCards = [
   },
 ];
 
-const featuredPosts = [
-  {
-    tag: "CRUSHING SOLUTIONS",
-    title: "How to Choose the Right Crusher for Your Application",
-    desc: "A complete guide to selecting the right crusher based on material type, capacity, operating conditions and total cost of ownership.",
-    date: "May 20, 2024",
-    read: "8 min read",
-    img: "/blogpageimg/crusherguide.jpg",
-    featured: true,
-    large: true,
-  },
-  {
-    tag: "PLANT OPTIMIZATION",
-    title: "Maximizing Plant Efficiency: Key Strategies That Work",
-    desc: "Explore proven strategies to improve throughput, reduce operational costs and enhance overall plant performance.",
-    date: "May 15, 2024",
-    read: "6 min read",
-    img: "/blogpageimg/crushersection.jpg",
-    featured: false,
-    large: false,
-  },
-  {
-    tag: "MINING OPERATIONS",
-    title: "Reducing Downtime in Mining Operations",
-    desc: "Understand the common causes of equipment downtime and how proactive maintenance can minimize disruptions.",
-    date: "May 10, 2024",
-    read: "7 min read",
-    img: "/blogpageimg/miningoperation.jpg",
-    featured: false,
-    large: false,
-  },
-];
+const featuredPosts = getFeaturedPosts();
+
+const latestArticles = getLatestArticles();
+
+const trendingPosts = getTrendingPosts();
 
 const categories = [
   {
@@ -359,126 +338,6 @@ const categories = [
     icon: <TrendingUp className="h-[60px] w-[60px] stroke-[1.5]" />,
     name: "INDUSTRY TRENDS",
     desc: "Latest trends, innovations and market perspectives.",
-  },
-];
-
-const latestArticles = [
-  {
-    tag: "CRUSHING SOLUTIONS",
-    tagIcon: (
-      <svg viewBox="0 0 20 20" fill="none" className="w-6 h-6">
-        <circle cx="10" cy="10" r="7" stroke="#E8762C" strokeWidth="1.5" />
-        <path
-          d="M7 10l2 2 4-4"
-          stroke="#E8762C"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    title: "How to Choose the Right Crusher for Your Application",
-    desc: "A complete guide to selecting the right crusher based on material type, capacity, operating conditions and total cost of ownership.",
-    date: "May 20, 2024",
-    read: "8 min read",
-    img: "/blogpageimg/crushingsolution3.jpg",
-  },
-  {
-    tag: "PLANT OPTIMIZATION",
-    tagIcon: (
-      <svg viewBox="0 0 20 20" fill="none" className="w-6 h-6">
-        <path
-          d="M4 14V8l6-5 6 5v6H4z"
-          stroke="#E8762C"
-          strokeWidth="1.5"
-          fill="none"
-        />
-        <path d="M8 14v-4h4v4" stroke="#E8762C" strokeWidth="1.3" />
-      </svg>
-    ),
-    title: "Maximizing Plant Efficiency: Key Strategies That Work",
-    desc: "Explore proven strategies to improve throughput, reduce operational costs and enhance overall plant performance.",
-    date: "May 15, 2024",
-    read: "6 min read",
-    img: "/blogpageimg/operationaloptimization.jpg",
-  },
-  {
-    tag: "MINING OPERATIONS",
-    tagIcon: (
-      <svg viewBox="0 0 20 20" fill="none" className="w-6 h-6">
-        <path
-          d="M10 18V8M6 12l4-4 4 4"
-          stroke="#E8762C"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M4 18h12"
-          stroke="#E8762C"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-    title: "Reducing Downtime in Mining Operations",
-    desc: "Understand the common causes of equipment downtime and how proactive maintenance can minimize disruptions.",
-    date: "May 10, 2024",
-    read: "7 min read",
-    img: "/blogpageimg/miningoperation.jpg",
-  },
-];
-
-const trendingPosts = [
-  {
-    num: "01",
-    tag: "CRUSHING SOLUTIONS",
-    title: "How to Choose the Right Crusher for Your Application",
-    desc: "A comprehensive guide to selecting the right crusher based on material type, capacity and operational goals.",
-    views: "12.4K",
-    read: "8",
-    category: "Crushing Solutions",
-    img: "/blogpageimg/crushingsolution.jpg",
-  },
-  {
-    num: "02",
-    tag: "PLANT OPTIMIZATION",
-    title: "Maximizing Plant Efficiency: Key Strategies That Work",
-    desc: "Explore proven strategies to improve throughput, reduce operational costs and enhance overall plant performance.",
-    views: "9.8K",
-    read: "6",
-    category: "Plant Optimization",
-    img: "/blogpageimg/plantoptimization3.jpg",
-  },
-  {
-    num: "03",
-    tag: "MINING OPERATIONS",
-    title: "Reducing Downtime in Mining Operations",
-    desc: "Essential maintenance checklist to maximize equipment uptime, efficiency and reliability.",
-    views: "8.4K",
-    read: "7",
-    category: "Mining Operations",
-    img: "/blogpageimg/miningoperation.jpg",
-  },
-  {
-    num: "04",
-    tag: "MATERIAL HANDLING",
-    title: "Conveyor System Optimization for Better Performance",
-    desc: "Learn proper conveyor design, maintenance and monitoring to improve efficiency and reduce downtime.",
-    views: "7.1K",
-    read: "5",
-    category: "Material Handling",
-    img: "/blogpageimg/materialhandling.jpg",
-  },
-  {
-    num: "05",
-    tag: "MAINTENANCE",
-    title: "Essential Maintenance Practices for Longer Equipment Life",
-    desc: "Follow these proven maintenance routines to extend equipment lifespan, reduce costs and ensure reliable operations.",
-    views: "6.2K",
-    read: "9",
-    category: "Maintenance",
-    img: "/blogpageimg/maintenancechecklist.jpg",
   },
 ];
 
@@ -1180,7 +1039,9 @@ export default function BlogPage() {
 
   // Newsletter Form states
   const [newsletterLoading, setNewsletterLoading] = useState(false);
-  const [newsletterSuccess, setNewsletterSuccess] = useState<string | null>(null);
+  const [newsletterSuccess, setNewsletterSuccess] = useState<string | null>(
+    null,
+  );
   const [newsletterError, setNewsletterError] = useState<string | null>(null);
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
@@ -1194,9 +1055,10 @@ export default function BlogPage() {
     setNewsletterError(null);
 
     try {
-      const pageSource = typeof window !== "undefined"
-        ? `Blog Page Newsletter: ${window.location.pathname}`
-        : "Blog Page Newsletter";
+      const pageSource =
+        typeof window !== "undefined"
+          ? `Blog Page Newsletter: ${window.location.pathname}`
+          : "Blog Page Newsletter";
 
       const response = await fetch("/api/leads", {
         method: "POST",
@@ -1216,13 +1078,19 @@ export default function BlogPage() {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setNewsletterSuccess("Thank you! You have subscribed to our insights newsletter successfully.");
+        setNewsletterSuccess(
+          "Thank you! You have subscribed to our insights newsletter successfully.",
+        );
         setEmail("");
       } else {
-        setNewsletterError(data.error || "Failed to subscribe. Please try again.");
+        setNewsletterError(
+          data.error || "Failed to subscribe. Please try again.",
+        );
       }
     } catch (err) {
-      setNewsletterError("Something went wrong. Please check your connection and try again.");
+      setNewsletterError(
+        "Something went wrong. Please check your connection and try again.",
+      );
     } finally {
       setNewsletterLoading(false);
     }
@@ -1239,9 +1107,10 @@ export default function BlogPage() {
     setGuideError(null);
 
     try {
-      const pageSource = typeof window !== "undefined"
-        ? `Blog Page: ${window.location.pathname}`
-        : "Blog Page Custom Guide";
+      const pageSource =
+        typeof window !== "undefined"
+          ? `Blog Page: ${window.location.pathname}`
+          : "Blog Page Custom Guide";
 
       const response = await fetch("/api/leads", {
         method: "POST",
@@ -1261,15 +1130,21 @@ export default function BlogPage() {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setGuideSuccess("Thank you! Your custom guide request has been submitted successfully.");
+        setGuideSuccess(
+          "Thank you! Your custom guide request has been submitted successfully.",
+        );
         setGuideName("");
         setGuideEmail("");
         setGuideCompany("");
       } else {
-        setGuideError(data.error || "Failed to submit request. Please try again.");
+        setGuideError(
+          data.error || "Failed to submit request. Please try again.",
+        );
       }
     } catch (err) {
-      setGuideError("Something went wrong. Please check your connection and try again.");
+      setGuideError(
+        "Something went wrong. Please check your connection and try again.",
+      );
     } finally {
       setGuideLoading(false);
     }
@@ -1330,8 +1205,8 @@ export default function BlogPage() {
                   we&apos;re with you at every step.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <Button variant="primary" className="group" href="#network">
-                    EXPLORE REACH{" "}
+                  <Button variant="primary" className="group" href="#contact1">
+                    CONTACT US{" "}
                     <ArrowRight cls="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </Button>
                   <Button
@@ -1422,7 +1297,7 @@ export default function BlogPage() {
                     </div>
                     <Button
                       variant="primary"
-                      href="#"
+                      href={`/blog/${featuredPosts[0].slug}`}
                       className="h-8 min-h-0 text-[10px] px-3 py-1.5 flex items-center gap-2"
                     >
                       Read More{" "}
@@ -1467,7 +1342,7 @@ export default function BlogPage() {
                         </div>
                         <Button
                           variant="ghost"
-                          href="#"
+                          href={`/blog/${post.slug}`}
                           className="text-white text-[9px] font-bold flex items-center gap-1 hover:text-secondary p-0 min-h-0 border-0"
                         >
                           Read More{" "}
@@ -1487,7 +1362,7 @@ export default function BlogPage() {
         {/* ══════════════════════════════════════════
           SECTION 4 — EXPLORE BY CATEGORY
       ══════════════════════════════════════════ */}
-        <section className="py-10 bg-bg-light">
+        <section id="categories" className="py-10 bg-bg-light">
           <Container>
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <SectionHeader
@@ -1497,7 +1372,7 @@ export default function BlogPage() {
               />
               <Button
                 variant="outlineNavy"
-                href="#"
+                href="#categories"
                 className="h-11 min-h-0 rounded-lg px-5"
               >
                 View all categories <ArrowRight cls="w-4 h-4" />
@@ -1566,7 +1441,6 @@ export default function BlogPage() {
                   </div>
                   <div className="p-4 sm:p-6 flex flex-col flex-grow">
                     <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.22em] text-secondary self-start">
-                      {art.tagIcon}
                       {art.tag}
                     </div>
                     <h3 className="text-2xl font-extrabold text-primary leading-tight mb-4 group-hover:text-secondary transition-colors">
@@ -1588,7 +1462,7 @@ export default function BlogPage() {
                       </div>
                       <Button
                         variant="ghost"
-                        href="#"
+                        href={`/blog/${art.slug}`}
                         className="inline-flex items-center gap-2 text-sm font-bold text-secondary hover:text-secondary/80 p-0 min-h-0 border-0"
                       >
                         Read More <ArrowRight cls="w-4 h-4" />
@@ -1838,7 +1712,6 @@ export default function BlogPage() {
                 ))}
               </div>
             </div>
-
           </Container>
 
           {/* Unified Bottom stats banner (Full Width, Flat Corners) */}
@@ -1931,9 +1804,11 @@ export default function BlogPage() {
                     <span className="text-[12px] font-black uppercase tracking-[0.2em] text-secondary mb-2 block">
                       {post.tag}
                     </span>
-                    <h3 className="text-primary font-black text-lg sm:text-xl leading-snug mb-2 hover:text-secondary transition-colors cursor-pointer">
-                      {post.title}
-                    </h3>
+                    <Link href={`/blog/${post.slug}`}>
+                      <h3 className="text-primary font-black text-lg sm:text-xl leading-snug mb-2 hover:text-secondary transition-colors cursor-pointer">
+                        {post.title}
+                      </h3>
+                    </Link>
                     <p className="text-[14px] sm:text-[15px] leading-relaxed text-slate-500 font-medium">
                       {post.desc}
                     </p>
@@ -2070,7 +1945,10 @@ export default function BlogPage() {
           {/* Custom guide form - Full width, flat corners, screen touching */}
           <div className="w-full bg-white border-y border-border py-8 sm:py-10 mt-12 shadow-[0_8px_30px_rgba(3,27,64,0.04)]">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-              <form onSubmit={handleGuideSubmit} className="flex flex-col gap-6">
+              <form
+                onSubmit={handleGuideSubmit}
+                className="flex flex-col gap-6"
+              >
                 <div className="flex flex-col lg:flex-row items-center gap-8 justify-between">
                   <div className="flex items-center gap-5">
                     <FileText className="w-12 h-12 text-primary flex-shrink-0" />
@@ -2326,7 +2204,9 @@ export default function BlogPage() {
                   disabled={newsletterLoading}
                   className="h-12 min-h-0 rounded-lg px-6 flex items-center justify-center gap-2 whitespace-nowrap"
                 >
-                  {newsletterLoading ? "SUBSCRIBING..." : "SUBSCRIBE TO INSIGHTS"}{" "}
+                  {newsletterLoading
+                    ? "SUBSCRIBING..."
+                    : "SUBSCRIBE TO INSIGHTS"}{" "}
                   <ArrowRight cls="w-4 h-4 text-white" />
                 </Button>
               </form>
@@ -2401,8 +2281,8 @@ export default function BlogPage() {
 
                 {/* Subtext */}
                 <p className="text-[11px] leading-relaxed text-text-muted mb-3.5">
-                  Explore proven strategies to improve throughput, reduce
-                  costs and enhance overall performance.
+                  Explore proven strategies to improve throughput, reduce costs
+                  and enhance overall performance.
                 </p>
 
                 {/* Link */}
@@ -2541,7 +2421,7 @@ export default function BlogPage() {
               </div>
               <Button
                 variant="ghost"
-                href="#"
+                href="#categories"
                 className="border border-secondary/60 text-secondary hover:bg-secondary hover:text-white rounded-lg px-6 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-2.5 transition-all whitespace-nowrap cursor-pointer min-h-0 h-10"
               >
                 <span>VIEW ALL TOPICS</span>
@@ -2558,11 +2438,13 @@ export default function BlogPage() {
           <Container>
             <div className="rounded-xl border border-border bg-[#fafafa]/50 p-8 sm:p-12 shadow-sm relative overflow-hidden">
               {/* Background Image on Right */}
-              <div 
+              <div
                 className="absolute right-0 top-0 h-full w-full lg:w-[48%] pointer-events-none select-none opacity-20 lg:opacity-100 z-0"
                 style={{
-                  maskImage: "linear-gradient(to right, transparent, black 35%)",
-                  WebkitMaskImage: "linear-gradient(to right, transparent, black 35%)",
+                  maskImage:
+                    "linear-gradient(to right, transparent, black 35%)",
+                  WebkitMaskImage:
+                    "linear-gradient(to right, transparent, black 35%)",
                 }}
               >
                 <Image
@@ -2623,7 +2505,7 @@ export default function BlogPage() {
                     </Button>
                     <Button
                       variant="outlineNavy"
-                      href="/contact"
+                      href="#contact1"
                       className="px-7 py-3.5 rounded-lg flex items-center justify-center gap-2.5 shadow-sm hover:shadow-md whitespace-nowrap cursor-pointer min-h-0 h-12"
                     >
                       <span>Talk To Experts</span>
@@ -2654,7 +2536,9 @@ export default function BlogPage() {
                     <span>Crushing Systems</span>
                   </div>
 
-                  <span className="hidden sm:inline text-secondary font-black">•</span>
+                  <span className="hidden sm:inline text-secondary font-black">
+                    •
+                  </span>
 
                   {/* Pill 2 */}
                   <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
@@ -2673,45 +2557,49 @@ export default function BlogPage() {
                     <span>Screening Plants</span>
                   </div>
 
-                <span className="hidden sm:inline text-secondary font-black">•</span>
+                  <span className="hidden sm:inline text-secondary font-black">
+                    •
+                  </span>
 
-                {/* Pill 3 */}
-                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
-                  <svg
-                    className="w-10 h-10 stroke-secondary"
-                    viewBox="0 0 64 64"
-                    fill="none"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M12 44V12l32 32H12z" />
-                    <path d="M40 14L32 36M40 14l8 22" />
-                  </svg>
-                  <span>Plant Design</span>
-                </div>
+                  {/* Pill 3 */}
+                  <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
+                    <svg
+                      className="w-10 h-10 stroke-secondary"
+                      viewBox="0 0 64 64"
+                      fill="none"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M12 44V12l32 32H12z" />
+                      <path d="M40 14L32 36M40 14l8 22" />
+                    </svg>
+                    <span>Plant Design</span>
+                  </div>
 
-                <span className="hidden sm:inline text-secondary font-black">•</span>
+                  <span className="hidden sm:inline text-secondary font-black">
+                    •
+                  </span>
 
-                {/* Pill 4 */}
-                <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
-                  <svg
-                    className="w-10 h-10 stroke-secondary"
-                    viewBox="0 0 64 64"
-                    fill="none"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M14 12h36l-10 20H24L14 12z" />
-                    <path d="M20 38h24l-6 8H26l-6-8z" />
-                  </svg>
-                  <span>Material Processing</span>
+                  {/* Pill 4 */}
+                  <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
+                    <svg
+                      className="w-10 h-10 stroke-secondary"
+                      viewBox="0 0 64 64"
+                      fill="none"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M14 12h36l-10 20H24L14 12z" />
+                      <path d="M20 38h24l-6 8H26l-6-8z" />
+                    </svg>
+                    <span>Material Processing</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </Container>
+          </Container>
         </section>
 
         {/* ══════════════════════════════════════════
@@ -2793,7 +2681,7 @@ export default function BlogPage() {
               {/* Button 3: Speak With Experts */}
               <Button
                 variant="ghost"
-                href="/contact"
+                href="#contact1"
                 className="border border-slate-300 text-primary hover:bg-bg-light px-5 py-3.5 rounded-lg flex items-center justify-between gap-3 text-[11px] font-bold uppercase tracking-wider transition-all shadow-sm cursor-pointer min-h-0 h-[46px] w-full sm:w-auto"
               >
                 {/* Users icon */}

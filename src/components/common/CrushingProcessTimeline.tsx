@@ -321,12 +321,12 @@ export function CrushingProcessTimeline() {
         </div>
 
         <div className="mt-9 flex justify-center sm:mt-12">
-          <Button
+          {/* <Button
             className="w-full min-h-12 px-5 text-xs font-bold uppercase tracking-widest min-[420px]:w-auto sm:min-h-14 sm:px-10 sm:text-sm"
             href="#contact"
           >
             Explore Our Plant Solutions <ArrowRight aria-hidden size={18} />
-          </Button>
+          </Button> */}
         </div>
       </Container>
     </section>

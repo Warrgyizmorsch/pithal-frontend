@@ -30,7 +30,7 @@ export function ContactModal() {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest("a");
-      if (anchor && anchor.getAttribute("href") === "#contact") {
+      if (anchor && anchor.getAttribute("href") === "#contact1") {
         e.preventDefault();
         setIsOpen(true);
         setTimeout(() => {
@@ -39,9 +39,9 @@ export function ContactModal() {
       }
     };
 
-    document.addEventListener("click", handleAnchorClick);
+    document.addEventListener("click", handleAnchorClick, { capture: true });
     return () => {
-      document.removeEventListener("click", handleAnchorClick);
+      document.removeEventListener("click", handleAnchorClick, { capture: true });
     };
   }, []);
 

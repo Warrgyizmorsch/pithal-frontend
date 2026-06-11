@@ -61,12 +61,12 @@ import { CrushingProcessTimeline } from "@/components/common/CrushingProcessTime
 const stats = [
   {
     value: "100%",
-    label: "Quality Commencement",
+    label: "Trusted",
     desc: "For Everyone",
     icon: "inst",
   },
   {
-    value: "75,000 sqft",
+    value: "Large",
     label: "Plant Capacity",
     desc: "All India Presence",
     icon: "countries",
@@ -547,7 +547,6 @@ const globalBottomValues = [
   { title: "Timely Delivery & Installation", icon: Clock },
   { title: "Custom Solutions for Every Region", icon: Settings },
   { title: "Trusted by Industry Leaders", icon: Handshake },
-  
 ];
 
 const whyChooseCards = [
@@ -610,7 +609,8 @@ const caseStudiesData = [
     loc: "Madhya Pradesh, India",
     image: "/solutionspage/case study 2.jpg",
     capacity: "350 TPH",
-    machines: "Primary Crusher, Cone Crusher, Vibrating Screen, Conveyor System",
+    machines:
+      "Primary Crusher, Cone Crusher, Vibrating Screen, Conveyor System",
     result: "Reduced operating cost by 20% and ensured consistent output",
   },
   {
@@ -990,7 +990,7 @@ export default function SolutionsPage() {
                     />
                   </Button>
                   <Button
-                    href="#contact"
+                    href=""
                     variant="outlineNavy"
                     className="flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7"
                   >
@@ -1033,10 +1033,19 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 2: SOLUTIONS THAT POWER EVERY INDUSTRY */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-white py-[60px]" id="industries">
+        <section
+          className="relative overflow-hidden bg-white py-[60px]"
+          id="industries"
+        >
           {/* Faint Gears Blueprint Schematic on Left */}
           <div className="absolute -left-20 top-8 h-96 w-96 text-slate-200/40 pointer-events-none select-none opacity-45">
-            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8" className="w-full h-full">
+            <svg
+              viewBox="0 0 200 200"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.8"
+              className="w-full h-full"
+            >
               <circle cx="80" cy="100" r="60" strokeDasharray="6 4" />
               <circle cx="80" cy="100" r="45" />
               <circle cx="80" cy="100" r="30" strokeWidth="0.4" />
@@ -1047,7 +1056,16 @@ export default function SolutionsPage() {
                 const y1 = (100 + 45 * Math.sin(angle)).toFixed(2);
                 const x2 = (80 + 65 * Math.cos(angle)).toFixed(2);
                 const y2 = (100 + 65 * Math.sin(angle)).toFixed(2);
-                return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} strokeWidth="1.2" />;
+                return (
+                  <line
+                    key={i}
+                    x1={x1}
+                    y1={y1}
+                    x2={x2}
+                    y2={y2}
+                    strokeWidth="1.2"
+                  />
+                );
               })}
               <circle cx="155" cy="150" r="40" strokeDasharray="4 3" />
               <circle cx="155" cy="150" r="30" />
@@ -1058,14 +1076,29 @@ export default function SolutionsPage() {
                 const y1 = (150 + 30 * Math.sin(angle)).toFixed(2);
                 const x2 = (155 + 45 * Math.cos(angle)).toFixed(2);
                 const y2 = (155 + 45 * Math.sin(angle)).toFixed(2);
-                return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} strokeWidth="1.2" />;
+                return (
+                  <line
+                    key={i}
+                    x1={x1}
+                    y1={y1}
+                    x2={x2}
+                    y2={y2}
+                    strokeWidth="1.2"
+                  />
+                );
               })}
             </svg>
           </div>
 
           {/* Faint Crushing Plant Schematic on Right */}
           <div className="absolute -right-20 top-12 h-96 w-96 text-slate-200/40 pointer-events-none select-none opacity-45">
-            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.8" className="w-full h-full">
+            <svg
+              viewBox="0 0 200 200"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.8"
+              className="w-full h-full"
+            >
               <line x1="20" y1="180" x2="180" y2="180" strokeWidth="1.5" />
               <rect x="40" y="100" width="30" height="80" />
               <line x1="40" y1="100" x2="70" y2="180" />
@@ -1094,11 +1127,13 @@ export default function SolutionsPage() {
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                SOLUTIONS THAT POWER <span className="text-secondary">EVERY INDUSTRY</span>
+                SOLUTIONS THAT POWER{" "}
+                <span className="text-secondary">EVERY INDUSTRY</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                From raw material to final output, our engineered crushing solutions are
-                built to perform in the toughest industrial environments.
+                From raw material to final output, our engineered crushing
+                solutions are built to perform in the toughest industrial
+                environments.
               </p>
             </div>
 
@@ -1118,7 +1153,7 @@ export default function SolutionsPage() {
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       src={item.image}
                     />
-                    
+
                     {/* Dark bottom gradient overlay for title legibility */}
                     <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent z-10" />
 
@@ -1141,7 +1176,13 @@ export default function SolutionsPage() {
                       {/* Left: Challenge */}
                       <div className="pr-2">
                         <span className="inline-flex gap-1.5 items-center text-[11px] font-black uppercase text-slate-800 tracking-wider">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3.5 w-3.5 text-secondary shrink-0">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            className="h-3.5 w-3.5 text-secondary shrink-0"
+                          >
                             <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
                             <line x1="12" y1="9" x2="12" y2="13" />
                             <line x1="12" y1="17" x2="12.01" y2="17" />
@@ -1156,7 +1197,13 @@ export default function SolutionsPage() {
                       {/* Right: Our Solution */}
                       <div className="pl-4 border-l border-slate-100">
                         <span className="inline-flex gap-1.5 items-center text-[11px] font-black uppercase text-slate-800 tracking-wider">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-3.5 w-3.5 text-primary shrink-0">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            className="h-3.5 w-3.5 text-primary shrink-0"
+                          >
                             <circle cx="12" cy="12" r="10" />
                             <path d="M9 12l2 2 4-4" />
                           </svg>
@@ -1176,7 +1223,10 @@ export default function SolutionsPage() {
                       >
                         EXPLORE {item.title} SOLUTIONS
                       </Link>
-                      <ArrowRight size={14} className="text-secondary transition-transform duration-300 group-hover:translate-x-1.5" />
+                      <ArrowRight
+                        size={14}
+                        className="text-secondary transition-transform duration-300 group-hover:translate-x-1.5"
+                      />
                     </div>
                   </div>
                 </div>
@@ -1188,10 +1238,19 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 3: CHALLENGES WE SOLVE (Every Challenge. Engineered Solution.) */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-white py-[60px]" id="challenges">
+        <section
+          className="relative overflow-hidden bg-white py-[60px]"
+          id="challenges"
+        >
           {/* Faint Gears Blueprint Schematic on Left */}
           <div className="absolute -left-16 top-6 h-64 w-64 text-slate-200/40 pointer-events-none select-none opacity-40">
-            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.8" className="w-full h-full">
+            <svg
+              viewBox="0 0 100 100"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.8"
+              className="w-full h-full"
+            >
               <circle cx="40" cy="40" r="25" strokeDasharray="3 2" />
               <circle cx="40" cy="40" r="18" />
               <circle cx="40" cy="40" r="5" />
@@ -1201,14 +1260,29 @@ export default function SolutionsPage() {
                 const y1 = (40 + 18 * Math.sin(angle)).toFixed(2);
                 const x2 = (40 + 27 * Math.cos(angle)).toFixed(2);
                 const y2 = (40 + 27 * Math.sin(angle)).toFixed(2);
-                return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} strokeWidth="1" />;
+                return (
+                  <line
+                    key={i}
+                    x1={x1}
+                    y1={y1}
+                    x2={x2}
+                    y2={y2}
+                    strokeWidth="1"
+                  />
+                );
               })}
             </svg>
           </div>
 
           {/* Faint Gears Blueprint Schematic on Right */}
           <div className="absolute -right-16 top-6 h-64 w-64 text-slate-200/40 pointer-events-none select-none opacity-40">
-            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.8" className="w-full h-full">
+            <svg
+              viewBox="0 0 100 100"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.8"
+              className="w-full h-full"
+            >
               <circle cx="60" cy="40" r="25" strokeDasharray="3 2" />
               <circle cx="60" cy="40" r="18" />
               <circle cx="60" cy="40" r="5" />
@@ -1218,7 +1292,16 @@ export default function SolutionsPage() {
                 const y1 = (40 + 18 * Math.sin(angle)).toFixed(2);
                 const x2 = (60 + 27 * Math.cos(angle)).toFixed(2);
                 const y2 = (60 + 27 * Math.sin(angle)).toFixed(2);
-                return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} strokeWidth="1" />;
+                return (
+                  <line
+                    key={i}
+                    x1={x1}
+                    y1={y1}
+                    x2={x2}
+                    y2={y2}
+                    strokeWidth="1"
+                  />
+                );
               })}
             </svg>
           </div>
@@ -1234,11 +1317,17 @@ export default function SolutionsPage() {
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                Every Challenge. <span className="text-secondary relative inline-block">Engineered<span className="absolute left-0 bottom-0.5 w-full h-[2.5px] bg-secondary" /></span> Solution.
+                Every Challenge.{" "}
+                <span className="text-secondary relative inline-block">
+                  Engineered
+                  <span className="absolute left-0 bottom-0.5 w-full h-[2.5px] bg-secondary" />
+                </span>{" "}
+                Solution.
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                We understand the real challenges of industrial operations and deliver solutions that
-                improve performance, reduce downtime, and maximize productivity.
+                We understand the real challenges of industrial operations and
+                deliver solutions that improve performance, reduce downtime, and
+                maximize productivity.
               </p>
             </div>
 
@@ -1272,7 +1361,13 @@ export default function SolutionsPage() {
                       {/* Middle: Challenge Box */}
                       <div className="relative flex-1 bg-[#fdfaf7] p-5 flex flex-col justify-center border-b md:border-b-0 md:border-r border-slate-100">
                         <span className="inline-flex gap-1.5 items-center text-[10px] font-black uppercase text-secondary tracking-wider">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-3 w-3 text-secondary shrink-0">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            className="h-3 w-3 text-secondary shrink-0"
+                          >
                             <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
                             <line x1="12" y1="9" x2="12" y2="13" />
                             <line x1="12" y1="17" x2="12.01" y2="17" />
@@ -1288,8 +1383,18 @@ export default function SolutionsPage() {
 
                         {/* Overlapping connector arrow */}
                         <div className="hidden md:flex absolute right-[-16px] top-1/2 -translate-y-1/2 z-20 h-8 w-8 items-center justify-center rounded-full bg-white border border-slate-200 shadow text-secondary group-hover:scale-110 transition-all duration-300">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="h-3.5 w-3.5 text-secondary">
-                            <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            className="h-3.5 w-3.5 text-secondary"
+                          >
+                            <path
+                              d="M5 12h14M12 5l7 7-7 7"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
                         </div>
                       </div>
@@ -1297,7 +1402,11 @@ export default function SolutionsPage() {
                       {/* Right: Solution Box */}
                       <div className="flex-1 bg-slate-50/50 p-5 md:pl-8 flex gap-4 items-center">
                         <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[#092a5c] border border-white/10 shadow text-white">
-                          <SolIcon size={32} className="text-white" strokeWidth={1.5} />
+                          <SolIcon
+                            size={32}
+                            className="text-white"
+                            strokeWidth={1.5}
+                          />
                         </div>
                         <div>
                           <span className="text-[10px] font-black uppercase text-primary tracking-wider block">
@@ -1337,7 +1446,11 @@ export default function SolutionsPage() {
                   return (
                     <div key={i} className="flex items-center gap-3.5">
                       <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-orange-100 bg-[#fdfbf9] text-secondary shadow-[inset_0_1.5px_3px_rgba(250,89,2,0.04)]">
-                        <BIcon size={28} className="text-secondary" strokeWidth={1.8} />
+                        <BIcon
+                          size={28}
+                          className="text-secondary"
+                          strokeWidth={1.8}
+                        />
                       </div>
                       <div className="min-w-0">
                         <h4 className="text-xs md:text-sm font-black uppercase tracking-wider text-slate-800 leading-tight">
@@ -1363,13 +1476,18 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 5: ENGINEERED AROUND YOUR OPERATION */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-white pt-[60px] pb-[10px]" id="engineering">
+        <section
+          className="relative overflow-hidden bg-white pt-[60px] pb-[10px]"
+          id="engineering"
+        >
           {/* Blueprint Image Background (Aligned to the Right) */}
-          <div 
+          <div
             className="absolute right-0 top-0 h-full w-full lg:w-[55%] pointer-events-none select-none opacity-20 lg:opacity-100 z-0"
             style={{
-              maskImage: "radial-gradient(ellipse at center, black 25%, transparent 85%)",
-              WebkitMaskImage: "radial-gradient(ellipse at center, black 25%, transparent 85%)",
+              maskImage:
+                "radial-gradient(ellipse at center, black 25%, transparent 85%)",
+              WebkitMaskImage:
+                "radial-gradient(ellipse at center, black 25%, transparent 85%)",
             }}
           >
             <Image
@@ -1408,7 +1526,10 @@ export default function SolutionsPage() {
                   {operationBullets.map((item, i) => {
                     const BIcon = item.icon;
                     return (
-                      <div key={i} className="text-center flex flex-col items-center">
+                      <div
+                        key={i}
+                        className="text-center flex flex-col items-center"
+                      >
                         <div className="flex h-16 w-16 items-center justify-center rounded-full border border-slate-200/80 bg-white text-secondary mb-3 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-secondary transition-all duration-300">
                           <BIcon size={28} className="text-secondary" />
                         </div>
@@ -1427,7 +1548,6 @@ export default function SolutionsPage() {
               {/* Right Column (Empty to let background blueprint show clearly on desktop) */}
               <div className="hidden lg:block h-[280px]" />
             </div>
-
           </Container>
         </section>
 
@@ -1443,7 +1563,9 @@ export default function SolutionsPage() {
                 <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                   <span className="h-[2px] w-8 bg-secondary rounded-full" />
                   <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                  <span className="text-primary font-black">OUR ENGINEERING SERVICES</span>
+                  <span className="text-primary font-black">
+                    OUR ENGINEERING SERVICES
+                  </span>
                   <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
                   <span className="h-[2px] w-8 bg-secondary rounded-full" />
                 </div>
@@ -1470,9 +1592,9 @@ export default function SolutionsPage() {
                             fill
                             className={cn(
                               "object-contain p-1 transition-transform duration-500",
-                              (i === 2 || i === 4)
+                              i === 2 || i === 4
                                 ? "scale-[1.4] -translate-x-12 group-hover:scale-[1.45]"
-                                : "group-hover:scale-105"
+                                : "group-hover:scale-105",
                             )}
                             sizes="(min-width: 1024px) 15vw, 30vw"
                           />
@@ -1486,9 +1608,12 @@ export default function SolutionsPage() {
                       </p>
                     </div>
 
-                    <div className="mt-5 pt-3 flex justify-end">
-                      <ArrowRight size={20} className="text-secondary group-hover:translate-x-1.5 transition-transform duration-300" />
-                    </div>
+                    {/* <div className="mt-5 pt-3 flex justify-end">
+                      <ArrowRight
+                        size={20}
+                        className="text-secondary group-hover:translate-x-1.5 transition-transform duration-300"
+                      />
+                    </div> */}
                   </div>
                 ))}
               </div>
@@ -1511,7 +1636,8 @@ export default function SolutionsPage() {
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                BUILT FOR <span className="text-secondary">EVERY APPLICATION.</span>
+                BUILT FOR{" "}
+                <span className="text-secondary">EVERY APPLICATION.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 Our crushing solutions are engineered to perform across a wide
@@ -1545,7 +1671,7 @@ export default function SolutionsPage() {
                   )}
 
                   {/* Bottom shadow fade for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent z-10" />
 
                   {/* Top orange circular badge */}
                   <div className="absolute left-6 top-6 z-20 flex h-16 w-16 items-center justify-center rounded-full bg-secondary border border-white/10 shadow-lg">
@@ -1553,24 +1679,24 @@ export default function SolutionsPage() {
                   </div>
 
                   {/* Text body */}
-                  <div className="relative z-20">
+                  <div className="relative z-20 pt-30">
                     <h3 className="text-lg font-black uppercase tracking-wider text-white group-hover:text-secondary transition-colors">
                       {item.title}
                     </h3>
 
                     <span className="block h-[1.5px] w-6 bg-secondary my-2" />
 
-                    <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                    <p className="text-sm text-slate-300 leading-relaxed mb-1">
                       {item.desc}
                     </p>
 
-                    <Link
+                    {/* <Link
                       href="#contact"
                       className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-secondary hover:text-white transition-colors"
                     >
                       EXPLORE SOLUTIONS
                       <ArrowRight size={12} />
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               ))}
@@ -1594,7 +1720,7 @@ export default function SolutionsPage() {
               </div>
 
               <Button
-                href="#contact"
+                href="#contact1"
                 variant="primary"
                 className="flex items-center gap-2 group text-xs px-6 py-3 shrink-0"
               >
@@ -1674,11 +1800,13 @@ export default function SolutionsPage() {
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary uppercase">
-                MEASURABLE PERFORMANCE. <span className="text-secondary">MAXIMUM RESULTS.</span>
+                MEASURABLE PERFORMANCE.{" "}
+                <span className="text-secondary">MAXIMUM RESULTS.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-center text-sm md:text-base leading-relaxed text-text-muted font-medium">
-                Our engineered crushing solutions are built to deliver superior performance,
-                reduce operational costs, and maximize your productivity.
+                Our engineered crushing solutions are built to deliver superior
+                performance, reduce operational costs, and maximize your
+                productivity.
               </p>
             </div>
 
@@ -1694,37 +1822,118 @@ export default function SolutionsPage() {
                     <div className="flex items-center justify-between gap-3 mb-4.5">
                       <div className="shrink-0">
                         {i === 0 && (
-                          <svg className="w-13 h-13" viewBox="0 0 54 54" fill="none">
-                            <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
+                          <svg
+                            className="w-13 h-13"
+                            viewBox="0 0 54 54"
+                            fill="none"
+                          >
+                            <circle
+                              cx="27"
+                              cy="27"
+                              r="26"
+                              fill="#fff"
+                              stroke="#e6eefc"
+                              strokeWidth="1"
+                            />
                             {/* Speedometer arc */}
-                            <path d="M15 35 A 16 16 0 1 1 39 35" fill="none" stroke="#b2c6e6" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="3 3" />
-                            
+                            <path
+                              d="M15 35 A 16 16 0 1 1 39 35"
+                              fill="none"
+                              stroke="#b2c6e6"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                              strokeDasharray="3 3"
+                            />
+
                             {/* Needle */}
-                            <path d="M27 27 L 33 21" stroke="#092a5c" strokeWidth="2.5" strokeLinecap="round" />
+                            <path
+                              d="M27 27 L 33 21"
+                              stroke="#092a5c"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                            />
                             <circle cx="27" cy="27" r="3" fill="#092a5c" />
                             {/* Gear bottom right */}
-                            <circle cx="39" cy="35" r="4.5" fill="#fff" stroke="#fa5902" strokeWidth="1.5" />
+                            <circle
+                              cx="39"
+                              cy="35"
+                              r="4.5"
+                              fill="#fff"
+                              stroke="#fa5902"
+                              strokeWidth="1.5"
+                            />
                             <circle cx="39" cy="35" r="1.5" fill="#fa5902" />
                           </svg>
                         )}
                         {i === 1 && (
-                          <svg className="w-13 h-13" viewBox="0 0 54 54" fill="none">
-                            <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
+                          <svg
+                            className="w-13 h-13"
+                            viewBox="0 0 54 54"
+                            fill="none"
+                          >
+                            <circle
+                              cx="27"
+                              cy="27"
+                              r="26"
+                              fill="#fff"
+                              stroke="#e6eefc"
+                              strokeWidth="1"
+                            />
                             {/* Clock Face */}
-                            <circle cx="27" cy="25" r="13" stroke="#092a5c" strokeWidth="2.2" fill="none" />
+                            <circle
+                              cx="27"
+                              cy="25"
+                              r="13"
+                              stroke="#092a5c"
+                              strokeWidth="2.2"
+                              fill="none"
+                            />
                             {/* Ticks */}
-                            <path d="M27 12 L27 14 M27 36 L27 38 M14 25 L16 25 M38 25 L40 25" stroke="#092a5c" strokeWidth="1.5" />
+                            <path
+                              d="M27 12 L27 14 M27 36 L27 38 M14 25 L16 25 M38 25 L40 25"
+                              stroke="#092a5c"
+                              strokeWidth="1.5"
+                            />
                             {/* Hands */}
-                            <path d="M27 25 L27 18 M27 25 L32 25" stroke="#092a5c" strokeWidth="2" strokeLinecap="round" />
+                            <path
+                              d="M27 25 L27 18 M27 25 L32 25"
+                              stroke="#092a5c"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
                             {/* Down arrow inside bottom right */}
-                            <path d="M37 28 L37 36 M34 33 L37 36 L40 33" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path
+                              d="M37 28 L37 36 M34 33 L37 36 L40 33"
+                              stroke="#fa5902"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
                         )}
                         {i === 2 && (
-                          <svg className="w-13 h-13" viewBox="0 0 54 54" fill="none">
-                            <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
+                          <svg
+                            className="w-13 h-13"
+                            viewBox="0 0 54 54"
+                            fill="none"
+                          >
+                            <circle
+                              cx="27"
+                              cy="27"
+                              r="26"
+                              fill="#fff"
+                              stroke="#e6eefc"
+                              strokeWidth="1"
+                            />
                             {/* Gear */}
-                            <circle cx="25" cy="25" r="11" stroke="#092a5c" strokeWidth="2" fill="none" />
+                            <circle
+                              cx="25"
+                              cy="25"
+                              r="11"
+                              stroke="#092a5c"
+                              strokeWidth="2"
+                              fill="none"
+                            />
                             {[...Array(8)].map((_, idx) => (
                               <path
                                 key={idx}
@@ -1737,34 +1946,127 @@ export default function SolutionsPage() {
                             ))}
                             <circle cx="25" cy="25" r="6" fill="#fff" />
                             {/* Rupee symbol */}
-                            <path d="M22 20 H28 M22 23 H28 M25 20 C28 20 28 25 25 25 H22 M24 25 L28 30" stroke="#fa5902" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                            <path
+                              d="M22 20 H28 M22 23 H28 M25 20 C28 20 28 25 25 25 H22 M24 25 L28 30"
+                              stroke="#fa5902"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                             {/* Up arrow right */}
-                            <path d="M36 26 L36 34 M33 31 L36 34 L39 31" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path
+                              d="M36 26 L36 34 M33 31 L36 34 L39 31"
+                              stroke="#fa5902"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
                         )}
                         {i === 3 && (
-                          <svg className="w-13 h-13" viewBox="0 0 54 54" fill="none">
-                            <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
+                          <svg
+                            className="w-13 h-13"
+                            viewBox="0 0 54 54"
+                            fill="none"
+                          >
+                            <circle
+                              cx="27"
+                              cy="27"
+                              r="26"
+                              fill="#fff"
+                              stroke="#e6eefc"
+                              strokeWidth="1"
+                            />
                             {/* Energy circular gauge */}
-                            <path d="M17 33 A 12 12 0 1 1 37 33" stroke="#b2c6e6" strokeWidth="2" fill="none" strokeDasharray="2 2" />
-                            <path d="M17 33 A 12 12 0 1 1 35 24" stroke="#fa5902" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                            <path
+                              d="M17 33 A 12 12 0 1 1 37 33"
+                              stroke="#b2c6e6"
+                              strokeWidth="2"
+                              fill="none"
+                              strokeDasharray="2 2"
+                            />
+                            <path
+                              d="M17 33 A 12 12 0 1 1 35 24"
+                              stroke="#fa5902"
+                              strokeWidth="2.5"
+                              fill="none"
+                              strokeLinecap="round"
+                            />
                             {/* Leaf or energy symbol */}
-                            <path d="M24 28 C24 22 28 20 30 20 C30 24 26 28 24 28 Z" fill="#fa5902" opacity="0.8" />
-                            <path d="M22 30 C22 25 25 23 27 23 C27 27 24 30 22 30 Z" fill="#092a5c" />
+                            <path
+                              d="M24 28 C24 22 28 20 30 20 C30 24 26 28 24 28 Z"
+                              fill="#fa5902"
+                              opacity="0.8"
+                            />
+                            <path
+                              d="M22 30 C22 25 25 23 27 23 C27 27 24 30 22 30 Z"
+                              fill="#092a5c"
+                            />
                             {/* Up arrow */}
-                            <path d="M37 26 L37 33 M34 30 L37 33 L40 30" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path
+                              d="M37 26 L37 33 M34 30 L37 33 L40 30"
+                              stroke="#fa5902"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
                         )}
                         {i === 4 && (
-                          <svg className="w-13 h-13" viewBox="0 0 54 54" fill="none">
-                            <circle cx="27" cy="27" r="26" fill="#fff" stroke="#e6eefc" strokeWidth="1" />
+                          <svg
+                            className="w-13 h-13"
+                            viewBox="0 0 54 54"
+                            fill="none"
+                          >
+                            <circle
+                              cx="27"
+                              cy="27"
+                              r="26"
+                              fill="#fff"
+                              stroke="#e6eefc"
+                              strokeWidth="1"
+                            />
                             {/* Bar Chart */}
-                            <rect x="18" y="28" width="3.5" height="8" rx="1" fill="#092a5c" />
-                            <rect x="24" y="24" width="3.5" height="12" rx="1" fill="#092a5c" />
-                            <rect x="30" y="20" width="3.5" height="16" rx="1" fill="#092a5c" />
-                            <rect x="36" y="15" width="3.5" height="21" rx="1" fill="#fa5902" />
+                            <rect
+                              x="18"
+                              y="28"
+                              width="3.5"
+                              height="8"
+                              rx="1"
+                              fill="#092a5c"
+                            />
+                            <rect
+                              x="24"
+                              y="24"
+                              width="3.5"
+                              height="12"
+                              rx="1"
+                              fill="#092a5c"
+                            />
+                            <rect
+                              x="30"
+                              y="20"
+                              width="3.5"
+                              height="16"
+                              rx="1"
+                              fill="#092a5c"
+                            />
+                            <rect
+                              x="36"
+                              y="15"
+                              width="3.5"
+                              height="21"
+                              rx="1"
+                              fill="#fa5902"
+                            />
                             {/* Up arrow diagonal */}
-                            <path d="M41 14 L41 22 M37 18 L41 14 L45 18" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path
+                              d="M41 14 L41 22 M37 18 L41 14 L45 18"
+                              stroke="#fa5902"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
                         )}
                       </div>
@@ -1782,7 +2084,7 @@ export default function SolutionsPage() {
                     <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-[#092a5c]">
                       {item.label}
                     </h3>
-                    
+
                     {/* Thin horizontal separator line */}
                     <div className="w-8 h-[2px] bg-[#fa5902] my-3.5 group-hover:w-16 transition-all duration-300" />
 
@@ -1812,11 +2114,15 @@ export default function SolutionsPage() {
                     <h3 className="text-[20px] md:text-[22px] font-extrabold uppercase tracking-wide text-[#092a5c] leading-tight">
                       PERFORMANCE THAT
                       <br />
-                      <span className="text-[#fa5902]">DRIVES YOUR SUCCESS</span>
+                      <span className="text-[#fa5902]">
+                        DRIVES YOUR SUCCESS
+                      </span>
                     </h3>
                     <div className="w-10 h-[2px] bg-[#fa5902] my-3" />
                     <p className="text-[12px] md:text-[13px] leading-relaxed text-slate-600 font-medium">
-                      Our solutions are designed <br /> to maximize every aspect of <br /> your operations – from efficiency <br /> and productivity to cost savings <br /> and sustainability.
+                      Our solutions are designed <br /> to maximize every aspect
+                      of <br /> your operations – from efficiency <br /> and
+                      productivity to cost savings <br /> and sustainability.
                     </p>
                   </div>
                 </div>
@@ -1828,43 +2134,177 @@ export default function SolutionsPage() {
                       {/* Metric Icon */}
                       <div className="shrink-0">
                         {i === 0 && (
-                          <svg className="w-13 h-13" viewBox="0 0 52 52" fill="none">
-                            <circle cx="26" cy="26" r="25" fill="#fff" stroke="#e6eefc" strokeWidth="1.5" />
-                            <path d="M15 34 A 14 14 0 1 1 37 34" stroke="#fa5902" strokeWidth="2.8" strokeLinecap="round" fill="none" />
-                            <path d="M26 26 L 33 19" stroke="#092a5c" strokeWidth="2.5" strokeLinecap="round" />
+                          <svg
+                            className="w-13 h-13"
+                            viewBox="0 0 52 52"
+                            fill="none"
+                          >
+                            <circle
+                              cx="26"
+                              cy="26"
+                              r="25"
+                              fill="#fff"
+                              stroke="#e6eefc"
+                              strokeWidth="1.5"
+                            />
+                            <path
+                              d="M15 34 A 14 14 0 1 1 37 34"
+                              stroke="#fa5902"
+                              strokeWidth="2.8"
+                              strokeLinecap="round"
+                              fill="none"
+                            />
+                            <path
+                              d="M26 26 L 33 19"
+                              stroke="#092a5c"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                            />
                             <circle cx="26" cy="26" r="3" fill="#092a5c" />
                           </svg>
                         )}
                         {i === 1 && (
-                          <svg className="w-13 h-13" viewBox="0 0 52 52" fill="none">
-                            <circle cx="26" cy="26" r="25" fill="#fff" stroke="#e6eefc" strokeWidth="1.5" />
-                            <circle cx="26" cy="25" r="11" stroke="#092a5c" strokeWidth="2.5" fill="none" />
-                            <path d="M26 25 L 26 19 M26 25 L 30 25" stroke="#092a5c" strokeWidth="2" strokeLinecap="round" />
-                            <path d="M35 29 L35 36 M32 33 L35 36 L38 33" stroke="#fa5902" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                          <svg
+                            className="w-13 h-13"
+                            viewBox="0 0 52 52"
+                            fill="none"
+                          >
+                            <circle
+                              cx="26"
+                              cy="26"
+                              r="25"
+                              fill="#fff"
+                              stroke="#e6eefc"
+                              strokeWidth="1.5"
+                            />
+                            <circle
+                              cx="26"
+                              cy="25"
+                              r="11"
+                              stroke="#092a5c"
+                              strokeWidth="2.5"
+                              fill="none"
+                            />
+                            <path
+                              d="M26 25 L 26 19 M26 25 L 30 25"
+                              stroke="#092a5c"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                            <path
+                              d="M35 29 L35 36 M32 33 L35 36 L38 33"
+                              stroke="#fa5902"
+                              strokeWidth="2.2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
                           </svg>
                         )}
                         {i === 2 && (
-                          <svg className="w-13 h-13" viewBox="0 0 52 52" fill="none">
-                            <circle cx="26" cy="26" r="25" fill="#fff" stroke="#e6eefc" strokeWidth="1.5" />
-                            <circle cx="23" cy="23" r="10" stroke="#092a5c" strokeWidth="2.2" fill="none" />
-                            <path d="M20 19 H26 M20 23 H26 M23 19 C26 19 26 23 23 23 M22 23 L26 28" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" />
-                            <path d="M34 26 L34 34 M31 31 L34 34 L37 31" stroke="#fa5902" strokeWidth="2.2" strokeLinecap="round" />
+                          <svg
+                            className="w-13 h-13"
+                            viewBox="0 0 52 52"
+                            fill="none"
+                          >
+                            <circle
+                              cx="26"
+                              cy="26"
+                              r="25"
+                              fill="#fff"
+                              stroke="#e6eefc"
+                              strokeWidth="1.5"
+                            />
+                            <circle
+                              cx="23"
+                              cy="23"
+                              r="10"
+                              stroke="#092a5c"
+                              strokeWidth="2.2"
+                              fill="none"
+                            />
+                            <path
+                              d="M20 19 H26 M20 23 H26 M23 19 C26 19 26 23 23 23 M22 23 L26 28"
+                              stroke="#fa5902"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                            <path
+                              d="M34 26 L34 34 M31 31 L34 34 L37 31"
+                              stroke="#fa5902"
+                              strokeWidth="2.2"
+                              strokeLinecap="round"
+                            />
                           </svg>
                         )}
                         {i === 3 && (
-                          <svg className="w-13 h-13" viewBox="0 0 52 52" fill="none">
-                            <circle cx="26" cy="26" r="25" fill="#fff" stroke="#e6eefc" strokeWidth="1.5" />
-                            <path d="M23 31 C23 24 28 22 30 22 C30 26 26 31 23 31 Z" fill="#fa5902" opacity="0.8" />
-                            <path d="M20 33 C20 28 24 25 25 25 C25 29 22 33 20 33 Z" fill="#092a5c" />
+                          <svg
+                            className="w-13 h-13"
+                            viewBox="0 0 52 52"
+                            fill="none"
+                          >
+                            <circle
+                              cx="26"
+                              cy="26"
+                              r="25"
+                              fill="#fff"
+                              stroke="#e6eefc"
+                              strokeWidth="1.5"
+                            />
+                            <path
+                              d="M23 31 C23 24 28 22 30 22 C30 26 26 31 23 31 Z"
+                              fill="#fa5902"
+                              opacity="0.8"
+                            />
+                            <path
+                              d="M20 33 C20 28 24 25 25 25 C25 29 22 33 20 33 Z"
+                              fill="#092a5c"
+                            />
                           </svg>
                         )}
                         {i === 4 && (
-                          <svg className="w-13 h-13" viewBox="0 0 52 52" fill="none">
-                            <circle cx="26" cy="26" r="25" fill="#fff" stroke="#e6eefc" strokeWidth="1.5" />
-                            <rect x="18" y="28" width="3" height="8" rx="0.5" fill="#092a5c" />
-                            <rect x="23" y="24" width="3" height="12" rx="0.5" fill="#092a5c" />
-                            <rect x="28" y="20" width="3" height="16" rx="0.5" fill="#fa5902" />
-                            <path d="M33 19 L33 26 M30 22 L33 19 L36 22" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" />
+                          <svg
+                            className="w-13 h-13"
+                            viewBox="0 0 52 52"
+                            fill="none"
+                          >
+                            <circle
+                              cx="26"
+                              cy="26"
+                              r="25"
+                              fill="#fff"
+                              stroke="#e6eefc"
+                              strokeWidth="1.5"
+                            />
+                            <rect
+                              x="18"
+                              y="28"
+                              width="3"
+                              height="8"
+                              rx="0.5"
+                              fill="#092a5c"
+                            />
+                            <rect
+                              x="23"
+                              y="24"
+                              width="3"
+                              height="12"
+                              rx="0.5"
+                              fill="#092a5c"
+                            />
+                            <rect
+                              x="28"
+                              y="20"
+                              width="3"
+                              height="16"
+                              rx="0.5"
+                              fill="#fa5902"
+                            />
+                            <path
+                              d="M33 19 L33 26 M30 22 L33 19 L36 22"
+                              stroke="#fa5902"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
                           </svg>
                         )}
                       </div>
@@ -1885,7 +2325,9 @@ export default function SolutionsPage() {
                               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4.5 h-4.5 bg-white border-[4px] border-[#092a5c] rounded-full shadow-md z-10" />
                             </div>
                           </div>
-                          <span className="text-[13.5px] font-black text-[#092a5c] w-9 text-right shrink-0">{slider.value}%</span>
+                          <span className="text-[13.5px] font-black text-[#092a5c] w-9 text-right shrink-0">
+                            {slider.value}%
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -1901,9 +2343,15 @@ export default function SolutionsPage() {
                     >
                       {/* Round icon badge */}
                       <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-full bg-[#fdf2eb] transition-all duration-300 icon-badge-inner">
-                        {i === 0 && <Building2 size={26} className="text-[#fa5902]" />}
-                        {i === 1 && <Globe size={26} className="text-[#fa5902]" />}
-                        {i === 2 && <Headphones size={26} className="text-[#fa5902]" />}
+                        {i === 0 && (
+                          <Building2 size={26} className="text-[#fa5902]" />
+                        )}
+                        {i === 1 && (
+                          <Globe size={26} className="text-[#fa5902]" />
+                        )}
+                        {i === 2 && (
+                          <Headphones size={26} className="text-[#fa5902]" />
+                        )}
                       </div>
                       <div className="leading-tight">
                         <h4 className="text-[28px] font-extrabold text-[#fa5902] tracking-tight">
@@ -1939,7 +2387,8 @@ export default function SolutionsPage() {
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                INTELLIGENT WORKFLOW. <span className="text-secondary">SEAMLESS RESULTS.</span>
+                INTELLIGENT WORKFLOW.{" "}
+                <span className="text-secondary">SEAMLESS RESULTS.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 From initial consultation to lifelong support — our structured
@@ -2024,7 +2473,7 @@ export default function SolutionsPage() {
                 >
                   {/* Outer animated ripple pulse */}
                   <span className="absolute inline-flex h-6 w-6 rounded-full bg-secondary/30 animate-ping" />
-                  
+
                   {/* Core Pin Dot */}
                   <div className="relative h-3 w-3 rounded-full bg-[#fa5902] shadow-md border-2 border-white" />
                 </div>
@@ -2259,7 +2708,8 @@ export default function SolutionsPage() {
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
-                SOLUTIONS BUILT AROUND <span className="text-secondary">YOUR SUCCESS.</span>
+                SOLUTIONS BUILT AROUND{" "}
+                <span className="text-secondary">YOUR SUCCESS.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 We combine engineering excellence with practical solutions to
@@ -2620,7 +3070,10 @@ export default function SolutionsPage() {
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col sm:flex-row items-center gap-4">
                     {/* Orange Solid Button */}
-                    <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#ea580c] hover:bg-[#d44d0a] text-white px-8 py-4 rounded-xl text-[13px] font-black tracking-wide transition-colors">
+                    <a
+                      href="#contact1"
+                      className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#ea580c] hover:bg-[#d44d0a] text-white px-8 py-4 rounded-xl text-[13px] font-black tracking-wide transition-colors"
+                    >
                       <svg
                         className="w-4 h-4"
                         fill="none"
@@ -2648,37 +3101,23 @@ export default function SolutionsPage() {
                           d="M14 5l7 7m0 0l-7 7m7-7H3"
                         ></path>
                       </svg>
-                    </button>
-                    {/* Outline Button */}
-                    <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-slate-200 text-[#0f172a] hover:border-[#ea580c] hover:text-[#ea580c] px-8 py-4 rounded-xl text-[13px] font-black tracking-wide transition-colors">
+                    </a>
+                    {/* WhatsApp Button */}
+                    <a
+                      href="https://wa.me/919887537129"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white px-8 py-4 rounded-xl text-[13px] font-black tracking-wide transition-colors"
+                    >
                       <svg
-                        className="w-4 h-4 text-[#ea580c]"
-                        fill="none"
-                        stroke="currentColor"
+                        className="w-5 h-5"
                         viewBox="0 0 24 24"
+                        fill="currentColor"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                        ></path>
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                       </svg>
-                      Request a Quote
-                      <svg
-                        className="w-4 h-4 text-[#ea580c]"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        ></path>
-                      </svg>
-                    </button>
+                      WhatsApp Consultation
+                    </a>
                   </div>
                   {/* Trust text */}
                   <div className="flex items-center gap-3 text-slate-500 mt-2">

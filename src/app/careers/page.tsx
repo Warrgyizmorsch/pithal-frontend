@@ -3,7 +3,32 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, Users, Settings, BookOpen, ShieldCheck, Home, Trophy, Lightbulb, Globe, Briefcase, Award, Megaphone, TrendingUp, FileText, Cpu, Wrench, ArrowRight, Search, MapPin, RotateCcw, Wallet, UserCheck, Upload, Mail } from "lucide-react";
+import {
+  ChevronRight,
+  Users,
+  Settings,
+  BookOpen,
+  ShieldCheck,
+  Home,
+  Trophy,
+  Lightbulb,
+  Globe,
+  Briefcase,
+  Award,
+  Megaphone,
+  TrendingUp,
+  FileText,
+  Cpu,
+  Wrench,
+  ArrowRight,
+  Search,
+  MapPin,
+  RotateCcw,
+  Wallet,
+  UserCheck,
+  Upload,
+  Mail,
+} from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -11,7 +36,7 @@ import { Header } from "@/components/layout/Header";
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const stats = [
-  { value: "300+", label: "Team Members Worldwide" },
+  { value: "Excellent", label: "Team Members Worldwide" },
   { value: "24/7", label: "Operational Support" },
   { value: "MULTIPLE", label: "Departments & Roles" },
   { value: "Growth", label: "Career Development Programs" },
@@ -20,20 +45,36 @@ const stats = [
 const heroStats = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.0" className="h-14 w-14 text-[#fa5902] stroke-[1.0]" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.0"
+        className="h-14 w-14 text-[#fa5902] stroke-[1.0]"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
         <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
-    value: "300+",
+    value: "Excellent",
     title: "EMPLOYEES",
     desc: "Driven by skill. United by purpose.",
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.0" className="h-14 w-14 text-[#fa5902] stroke-[1.0]" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.0"
+        className="h-14 w-14 text-[#fa5902] stroke-[1.0]"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <circle cx="12" cy="12" r="10" />
         <polyline points="12 6 12 12 16 14" />
       </svg>
@@ -44,7 +85,15 @@ const heroStats = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.0" className="h-14 w-14 text-[#fa5902] stroke-[1.0]" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.0"
+        className="h-14 w-14 text-[#fa5902] stroke-[1.0]"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
         <line x1="9" y1="22" x2="9" y2="16" />
         <line x1="15" y1="22" x2="15" y2="16" />
@@ -58,7 +107,15 @@ const heroStats = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.0" className="h-14 w-14 text-[#fa5902] stroke-[1.0]" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.0"
+        className="h-14 w-14 text-[#fa5902] stroke-[1.0]"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M3 3v18h18" />
         <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
         <path d="M17 8h3v3" />
@@ -76,7 +133,15 @@ const heroStats = [
 const advantages = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        className="w-11 h-11"
+        stroke="var(--secondary)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M12 20V10" />
         <path d="M18 20V4" />
         <path d="M6 20v-4" />
@@ -87,7 +152,15 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        className="w-11 h-11"
+        stroke="var(--secondary)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         <path d="M9 11l2 2 4-4" />
       </svg>
@@ -97,7 +170,15 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        className="w-11 h-11"
+        stroke="var(--secondary)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <circle cx="12" cy="12" r="10" />
         <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
       </svg>
@@ -107,7 +188,15 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        className="w-11 h-11"
+        stroke="var(--secondary)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M14 10l-4 3V4l-8 6v10h20v-7l-8-3z" />
       </svg>
     ),
@@ -116,7 +205,15 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        className="w-11 h-11"
+        stroke="var(--secondary)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
       </svg>
     ),
@@ -125,7 +222,15 @@ const advantages = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11" stroke="var(--secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        className="w-11 h-11"
+        stroke="var(--secondary)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
         <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -246,7 +351,7 @@ const poweredImages = [
 ];
 
 const poweredStats = [
-  { value: "300+", label: "Team Members" },
+  { value: "Excellent", label: "Team Members" },
   { value: "98%", label: "Retention Rate" },
   { value: "25+", label: "Yrs Experience" },
   { value: "40+", label: "Countries Served" },
@@ -394,9 +499,7 @@ export default function CareersPage() {
     <>
       <Header />
       <main className="careers-page bg-white text-gray-900 font-sans overflow-x-hidden">
-        
         <section className="relative overflow-hidden bg-white text-primary lg:h-[calc(100vh-90px)] lg:min-h-[600px] flex flex-col justify-between pt-4 pb-4 lg:pt-6 lg:pb-6">
-          
           {/* Full Background Image covering the entire section */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -413,7 +516,10 @@ export default function CareersPage() {
           <div className="relative z-20 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex-grow flex flex-col justify-center">
             {/* Breadcrumbs */}
             <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-slate-500">
-              <Link href="/" className="hover:text-[#fa5902] transition-colors flex items-center gap-1.5">
+              <Link
+                href="/"
+                className="hover:text-[#fa5902] transition-colors flex items-center gap-1.5"
+              >
                 <Home size={14} className="stroke-[2]" />
                 Home
               </Link>
@@ -432,7 +538,8 @@ export default function CareersPage() {
                 </div>
 
                 <h1 className="font-extrabold text-[2.5rem] sm:text-[3.25rem] lg:text-[3.5rem] leading-[1.05] tracking-tight text-[#092a5c] uppercase">
-                  BUILD MACHINES.<br />
+                  BUILD MACHINES.
+                  <br />
                   <span className="text-[#fa5902]">BUILD YOUR FUTURE.</span>
                 </h1>
 
@@ -448,8 +555,18 @@ export default function CareersPage() {
                     className="inline-flex items-center justify-center gap-3.5 bg-[#fa5902] text-white px-7 py-4 rounded-lg text-xs font-black tracking-[0.14em] hover:bg-[#e04f02] transition-colors"
                   >
                     EXPLORE OPPORTUNITIES
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
-                      <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        d="M5 12h14M12 5l7 7-7 7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </Link>
                   <Link
@@ -457,8 +574,18 @@ export default function CareersPage() {
                     className="inline-flex items-center justify-center gap-3.5 border border-[#092a5c] text-[#092a5c] px-7 py-4 rounded-lg text-xs font-black tracking-[0.14em] hover:bg-slate-50 transition-colors"
                   >
                     LIFE AT PITHAL
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
-                      <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        d="M5 12h14M12 5l7 7-7 7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </Link>
                 </div>
@@ -530,7 +657,9 @@ export default function CareersPage() {
                   <h3 className="text-lg sm:text-xl font-bold text-slate-950 mb-3 transition-colors duration-300">
                     {a.title}
                   </h3>
-                  <p className="text-[15px] sm:text-base leading-relaxed text-slate-500">{a.desc}</p>
+                  <p className="text-[15px] sm:text-base leading-relaxed text-slate-500">
+                    {a.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -558,13 +687,30 @@ export default function CareersPage() {
 
                 <div className="grid grid-cols-2 gap-y-6 gap-x-2 sm:grid-cols-4 pt-5 lg:pt-0 border-t border-slate-200/60 lg:border-t-0 lg:border-l lg:border-slate-300 lg:pl-6 lg:divide-x lg:divide-slate-300">
                   {[
-                    { icon: <Users size={30} className="stroke-[1.8]" />, label: "Employee Focused" },
-                    { icon: <Trophy size={30} className="stroke-[1.8]" />, label: "Excellence Driven" },
-                    { icon: <Lightbulb size={30} className="stroke-[1.8]" />, label: "Innovation Led" },
-                    { icon: <Globe size={30} className="stroke-[1.8]" />, label: "Global Opportunities" },
+                    {
+                      icon: <Users size={30} className="stroke-[1.8]" />,
+                      label: "Employee Focused",
+                    },
+                    {
+                      icon: <Trophy size={30} className="stroke-[1.8]" />,
+                      label: "Excellence Driven",
+                    },
+                    {
+                      icon: <Lightbulb size={30} className="stroke-[1.8]" />,
+                      label: "Innovation Led",
+                    },
+                    {
+                      icon: <Globe size={30} className="stroke-[1.8]" />,
+                      label: "Global Opportunities",
+                    },
                   ].map((item, idx) => (
-                    <div key={idx} className="flex flex-col items-center justify-center text-center px-1 sm:px-2 first:pl-0">
-                      <div className="text-secondary mb-2 shrink-0">{item.icon}</div>
+                    <div
+                      key={idx}
+                      className="flex flex-col items-center justify-center text-center px-1 sm:px-2 first:pl-0"
+                    >
+                      <div className="text-secondary mb-2 shrink-0">
+                        {item.icon}
+                      </div>
                       <p className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-[#092a5c] leading-tight text-center">
                         {item.label}
                       </p>
@@ -590,14 +736,14 @@ export default function CareersPage() {
                 </div>
                 <h2 className="text-4xl sm:text-[3.25rem] font-black text-primary leading-[1.08] tracking-tight uppercase mb-6">
                   A PLACE TO GROW.
-                  <br />
-                  A TEAM <span className="text-secondary">TO INSPIRE.</span>
+                  <br />A TEAM{" "}
+                  <span className="text-secondary">TO INSPIRE.</span>
                 </h2>
                 <p className="text-gray-500 leading-relaxed mb-8 text-sm sm:text-base font-medium max-w-xl">
                   At Pithal Machines, we foster a culture of collaboration,
-                  innovation and continuous improvement. Here, every
-                  individual plays a part in building world-class solutions
-                  that power industries worldwide.
+                  innovation and continuous improvement. Here, every individual
+                  plays a part in building world-class solutions that power
+                  industries worldwide.
                 </p>
 
                 {/* Stat pills (Redesigned as Feature Cards from image) */}
@@ -631,7 +777,10 @@ export default function CareersPage() {
                         className="flex flex-col items-center text-center px-4 first:pl-0"
                       >
                         <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white shadow-[0_10px_25px_rgba(0,0,0,0.05)] border border-slate-100 mb-4">
-                          <Icon size={40} className="text-secondary stroke-[1.8]" />
+                          <Icon
+                            size={40}
+                            className="text-secondary stroke-[1.8]"
+                          />
                         </div>
                         <h4 className="text-xs sm:text-[13px] font-black uppercase tracking-wider text-primary leading-tight max-w-[150px]">
                           {card.title}
@@ -763,8 +912,8 @@ export default function CareersPage() {
                   footer: {
                     icon: Award,
                     line1: "Lead teams. Drive strategy.",
-                    line2: "Create impact at the highest level."
-                  }
+                    line2: "Create impact at the highest level.",
+                  },
                 },
                 {
                   title: "Office & Coordination Roles",
@@ -779,8 +928,8 @@ export default function CareersPage() {
                   footer: {
                     icon: Award,
                     line1: "Support operations. Drive coordination.",
-                    line2: "Be the force behind our success."
-                  }
+                    line2: "Be the force behind our success.",
+                  },
                 },
                 {
                   title: "Production & Technical Roles",
@@ -794,9 +943,9 @@ export default function CareersPage() {
                   footer: {
                     icon: Award,
                     line1: "Build with precision. Operate with excellence.",
-                    line2: "Power the machines that power industries."
-                  }
-                }
+                    line2: "Power the machines that power industries.",
+                  },
+                },
               ].map((dept, i) => {
                 const DeptIcon = dept.icon;
                 const FooterIcon = dept.footer.icon;
@@ -807,8 +956,13 @@ export default function CareersPage() {
                   >
                     {/* Top Section: Icon & Title */}
                     <div className="text-center px-6 mb-6">
-                      <div className={`mx-auto mb-3 inline-flex h-16 w-16 items-center justify-center rounded-full ${i === 1 ? 'bg-[#f6e6d3]' : i === 2 ? 'bg-[#ecf5ef]' : 'bg-[#eef4ff]'} text-primary border border-blue-50/50`}>
-                        <DeptIcon size={28} className="text-[#092a5c] stroke-[1.8]" />
+                      <div
+                        className={`mx-auto mb-3 inline-flex h-16 w-16 items-center justify-center rounded-full ${i === 1 ? "bg-[#f6e6d3]" : i === 2 ? "bg-[#ecf5ef]" : "bg-[#eef4ff]"} text-primary border border-blue-50/50`}
+                      >
+                        <DeptIcon
+                          size={28}
+                          className="text-[#092a5c] stroke-[1.8]"
+                        />
                       </div>
                       <h3 className="text-base font-black tracking-wider text-[#092a5c] uppercase">
                         {dept.title}
@@ -839,14 +993,22 @@ export default function CareersPage() {
                               className="flex items-center justify-between pb-4 border-b border-slate-100 last:border-0 last:pb-0"
                             >
                               <div className="flex items-center gap-4">
-                                <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${i === 1 ? 'bg-[#f6e6d3]' : i === 2 ? 'bg-[#ecf5ef]' : 'bg-[#eef4ff]'} text-[#092a5c]`}>
-                                  <RoleIcon size={20} className="text-[#092a5c] stroke-[1.8]" />
+                                <div
+                                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${i === 1 ? "bg-[#f6e6d3]" : i === 2 ? "bg-[#ecf5ef]" : "bg-[#eef4ff]"} text-[#092a5c]`}
+                                >
+                                  <RoleIcon
+                                    size={20}
+                                    className="text-[#092a5c] stroke-[1.8]"
+                                  />
                                 </div>
                                 <span className="text-[14px] sm:text-base font-bold text-[#092a5c] leading-tight">
                                   {role.title}
                                 </span>
                               </div>
-                              <ArrowRight size={18} className="text-secondary hover:translate-x-1 transition-transform cursor-pointer" />
+                              <ArrowRight
+                                size={18}
+                                className="text-secondary hover:translate-x-1 transition-transform cursor-pointer"
+                              />
                             </div>
                           );
                         })}
@@ -854,8 +1016,13 @@ export default function CareersPage() {
                     </div>
 
                     {/* Bottom Bar */}
-                    <div className={`${i === 1 ? 'bg-[#f6e6d3]' : i === 2 ? 'bg-[#ecf5ef]' : 'bg-[#f4f7fe]'} px-6 py-4 flex items-center gap-4 border-t border-slate-100 mt-auto`}>
-                      <FooterIcon size={38} className="text-[#092a5c] stroke-[1.8] shrink-0" />
+                    <div
+                      className={`${i === 1 ? "bg-[#f6e6d3]" : i === 2 ? "bg-[#ecf5ef]" : "bg-[#f4f7fe]"} px-6 py-4 flex items-center gap-4 border-t border-slate-100 mt-auto`}
+                    >
+                      <FooterIcon
+                        size={38}
+                        className="text-[#092a5c] stroke-[1.8] shrink-0"
+                      />
                       <div className="text-left">
                         <p className="text-[13px] sm:text-sm text-slate-600 font-semibold">
                           {dept.footer.line1}
@@ -934,7 +1101,8 @@ export default function CareersPage() {
                 CURRENT OPENINGS
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-slate-500 text-sm sm:text-base font-medium">
-                Explore exciting career opportunities at Pithal Machines. Filter by department,
+                Explore exciting career opportunities at Pithal Machines. Filter
+                by department,
                 <br className="hidden sm:block" />
                 experience or location to find the right role for you.
               </p>
@@ -966,8 +1134,12 @@ export default function CareersPage() {
                   >
                     <option value="">All Departments</option>
                     <option value="Management">Management</option>
-                    <option value="Office & Coordination">Office & Coordination</option>
-                    <option value="Production & Technical">Production & Technical</option>
+                    <option value="Office & Coordination">
+                      Office & Coordination
+                    </option>
+                    <option value="Production & Technical">
+                      Production & Technical
+                    </option>
                   </select>
 
                   <select className="border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold text-slate-600 bg-white focus:outline-none cursor-pointer min-w-[140px]">
@@ -991,7 +1163,10 @@ export default function CareersPage() {
                     className="flex items-center justify-center gap-2 text-sm font-bold text-slate-600 hover:text-secondary transition-colors px-2 py-3"
                   >
                     Clear Filters
-                    <RotateCcw size={16} className="stroke-[2.2] text-[#092a5c]" />
+                    <RotateCcw
+                      size={16}
+                      className="stroke-[2.2] text-[#092a5c]"
+                    />
                   </button>
                 </div>
               </div>
@@ -1001,8 +1176,12 @@ export default function CareersPage() {
             <div className="space-y-4">
               {openings
                 .filter((o) => {
-                  const matchSearch = o.title.toLowerCase().includes(searchTerm.toLowerCase());
-                  const matchDept = filterDept ? o.department === filterDept : true;
+                  const matchSearch = o.title
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase());
+                  const matchDept = filterDept
+                    ? o.department === filterDept
+                    : true;
                   return matchSearch && matchDept;
                 })
                 .map((job, i) => {
@@ -1030,7 +1209,9 @@ export default function CareersPage() {
                   } else if (job.title === "Marketing Manager") {
                     badgeBg = "bg-blue-50/70 text-[#092a5c]";
                     badgeText = "text-blue-600";
-                    deptIcon = <TrendingUp size={28} className="stroke-[1.8]" />;
+                    deptIcon = (
+                      <TrendingUp size={28} className="stroke-[1.8]" />
+                    );
                     btnBg = "bg-[#092a5c] hover:bg-[#031b40]";
                   }
 
@@ -1041,7 +1222,9 @@ export default function CareersPage() {
                     >
                       {/* 1. Role & Department Info */}
                       <div className="flex items-center gap-4 lg:w-1/3">
-                        <div className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 job-icon-container ${badgeBg}`}>
+                        <div
+                          className={`w-16 h-16 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 job-icon-container ${badgeBg}`}
+                        >
                           {deptIcon}
                         </div>
                         <div>
@@ -1050,7 +1233,9 @@ export default function CareersPage() {
                           </h4>
                           <div className="flex items-center gap-1.5 mt-1.5">
                             <Briefcase size={15} className={badgeText} />
-                            <span className={`text-sm font-black uppercase tracking-wide ${badgeText}`}>
+                            <span
+                              className={`text-sm font-black uppercase tracking-wide ${badgeText}`}
+                            >
                               {job.department}
                             </span>
                           </div>
@@ -1059,7 +1244,10 @@ export default function CareersPage() {
 
                       {/* 2. Experience Column */}
                       <div className="flex items-center gap-3 lg:w-[15%]">
-                        <Award size={26} className="stroke-[1.8] text-slate-500 shrink-0" />
+                        <Award
+                          size={26}
+                          className="stroke-[1.8] text-slate-500 shrink-0"
+                        />
                         <div>
                           <div className="text-[12px] font-extrabold text-slate-400 uppercase tracking-wide leading-none mb-1">
                             Experience
@@ -1072,7 +1260,10 @@ export default function CareersPage() {
 
                       {/* 3. Salary Range Column */}
                       <div className="flex items-center gap-3 lg:w-[18%]">
-                        <Wallet size={26} className="stroke-[1.8] text-slate-500 shrink-0" />
+                        <Wallet
+                          size={26}
+                          className="stroke-[1.8] text-slate-500 shrink-0"
+                        />
                         <div>
                           <div className="text-[12px] font-extrabold text-slate-400 uppercase tracking-wide leading-none mb-1">
                             Salary Range
@@ -1085,7 +1276,10 @@ export default function CareersPage() {
 
                       {/* 4. Openings Column */}
                       <div className="flex items-center gap-3 lg:w-[15%]">
-                        <Users size={26} className="stroke-[1.8] text-slate-500 shrink-0" />
+                        <Users
+                          size={26}
+                          className="stroke-[1.8] text-slate-500 shrink-0"
+                        />
                         <div>
                           <div className="text-[12px] font-extrabold text-slate-400 uppercase tracking-wide leading-none mb-1">
                             Openings
@@ -1130,7 +1324,8 @@ export default function CareersPage() {
                     Don&apos;t see the right role?
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-500 font-semibold mt-1">
-                    Send us your CV and we&apos;ll reach out when a suitable opportunity opens up.
+                    Send us your CV and we&apos;ll reach out when a suitable
+                    opportunity opens up.
                   </p>
                 </div>
               </div>
@@ -1143,7 +1338,7 @@ export default function CareersPage() {
                   Upload Your CV
                   <Upload size={16} className="stroke-[2.2]" />
                 </Link>
-                
+
                 <div className="h-8 w-[1px] bg-slate-350 hidden md:block" />
 
                 <Link
@@ -1209,7 +1404,7 @@ export default function CareersPage() {
                   ),
                 },
                 {
-                  value: "300+",
+                  value: "Excellent",
                   label: "SKILLED PROFESSIONALS",
                   icon: (
                     <path
@@ -1245,7 +1440,10 @@ export default function CareersPage() {
                   ),
                 },
               ].map((stat, i) => (
-                <div key={i} className="flex items-center gap-3.5 px-2 justify-center min-[420px]:justify-start last:col-span-2 last:md:col-span-1 last:lg:col-span-1 last:flex strength-stat-hover cursor-default">
+                <div
+                  key={i}
+                  className="flex items-center gap-3.5 px-2 justify-center min-[420px]:justify-start last:col-span-2 last:md:col-span-1 last:lg:col-span-1 last:flex strength-stat-hover cursor-default"
+                >
                   <div className="w-11 h-11 rounded-full border-2 border-primary/20 text-primary flex items-center justify-center shrink-0 transition-all duration-300 stat-icon-circle">
                     <svg
                       className="w-5.5 h-5.5"
@@ -1272,9 +1470,15 @@ export default function CareersPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
               {[
                 { title: "FABRICATION", img: "/careerimg/fabrication.jpg" },
-                { title: "CNC OPERATIONS", img: "/careerimg/cnc operation.jpg" },
+                {
+                  title: "CNC OPERATIONS",
+                  img: "/careerimg/cnc operation.jpg",
+                },
                 { title: "WELDING", img: "/careerimg/welding.jpg" },
-                { title: "ASSEMBLY", img: "/careerimg/manufacturing experience.jpg" },
+                {
+                  title: "ASSEMBLY",
+                  img: "/careerimg/manufacturing experience.jpg",
+                },
 
                 {
                   title: "STATE-OF-THE-ART PLANT",
@@ -1391,7 +1595,10 @@ export default function CareersPage() {
                   ),
                 },
               ].map((feature, i) => (
-                <div key={i} className="flex items-center justify-start gap-3 lg:pl-2 lg:pr-1 first:pl-0 text-left feature-banner-hover cursor-default">
+                <div
+                  key={i}
+                  className="flex items-center justify-start gap-3 lg:pl-2 lg:pr-1 first:pl-0 text-left feature-banner-hover cursor-default"
+                >
                   <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-2 border-[#092a5c]/20 bg-[#ebf1fd]/40 text-[#092a5c] feature-icon-wrapper">
                     <svg
                       className="w-10 h-10"
@@ -1452,9 +1659,20 @@ export default function CareersPage() {
                   icon: (
                     <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
                       {/* Wallet/Money Bag Icon */}
-                      <path d="M12 40h12l14 8h16a4 4 0 000-8H36l-8-4-10-8H12" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path
+                        d="M12 40h12l14 8h16a4 4 0 000-8H36l-8-4-10-8H12"
+                        stroke="#092a5c"
+                        strokeWidth="3.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                       <circle cx="42" cy="22" r="10" fill="#fa5902" />
-                      <path d="M39 19h6M39 22h6M42 19c-2 0-3 1-3 3s1 2 3 2 3 1 3 3-1 3-3 3M42 16v12" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
+                      <path
+                        d="M39 19h6M39 22h6M42 19c-2 0-3 1-3 3s1 2 3 2 3 1 3 3-1 3-3 3M42 16v12"
+                        stroke="white"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                      />
                     </svg>
                   ),
                 },
@@ -1466,8 +1684,20 @@ export default function CareersPage() {
                   icon: (
                     <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
                       {/* Stairs/Climbing Icon */}
-                      <path d="M10 50h10V40h10V30h10V20h10" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M40 12l10 8-10 8" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path
+                        d="M10 50h10V40h10V30h10V20h10"
+                        stroke="#092a5c"
+                        strokeWidth="3.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M40 12l10 8-10 8"
+                        stroke="#fa5902"
+                        strokeWidth="3.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                       <circle cx="10" cy="50" r="3" fill="#092a5c" />
                     </svg>
                   ),
@@ -1480,10 +1710,32 @@ export default function CareersPage() {
                   icon: (
                     <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
                       {/* Building/Shield Icon */}
-                      <path d="M16 50V20l16-8 16 8v30" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M12 50h40" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
-                      <path d="M32 25v15" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" />
-                      <path d="M26 31l6-6 6 6" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path
+                        d="M16 50V20l16-8 16 8v30"
+                        stroke="#092a5c"
+                        strokeWidth="3.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12 50h40"
+                        stroke="#092a5c"
+                        strokeWidth="3.5"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M32 25v15"
+                        stroke="#fa5902"
+                        strokeWidth="3.5"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M26 31l6-6 6 6"
+                        stroke="#fa5902"
+                        strokeWidth="3.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   ),
                 },
@@ -1495,10 +1747,24 @@ export default function CareersPage() {
                   icon: (
                     <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
                       {/* Book/Gear Icon */}
-                      <path d="M18 12h28v40H18z" stroke="#092a5c" strokeWidth="3.5" />
+                      <path
+                        d="M18 12h28v40H18z"
+                        stroke="#092a5c"
+                        strokeWidth="3.5"
+                      />
                       <path d="M18 20h28" stroke="#092a5c" strokeWidth="2" />
-                      <circle cx="32" cy="38" r="8" stroke="#fa5902" strokeWidth="3" />
-                      <path d="M32 34v8M28 38h8" stroke="#fa5902" strokeWidth="2" />
+                      <circle
+                        cx="32"
+                        cy="38"
+                        r="8"
+                        stroke="#fa5902"
+                        strokeWidth="3"
+                      />
+                      <path
+                        d="M32 34v8M28 38h8"
+                        stroke="#fa5902"
+                        strokeWidth="2"
+                      />
                     </svg>
                   ),
                 },
@@ -1510,9 +1776,26 @@ export default function CareersPage() {
                   icon: (
                     <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
                       {/* Factory/Technology Icon */}
-                      <path d="M10 50V20l10 10V20l10 10V15l14 10v25H10z" fill="#092a5c" />
-                      <rect x="18" y="38" width="6" height="6" fill="white" opacity="0.4" />
-                      <rect x="28" y="38" width="6" height="6" fill="white" opacity="0.4" />
+                      <path
+                        d="M10 50V20l10 10V20l10 10V15l14 10v25H10z"
+                        fill="#092a5c"
+                      />
+                      <rect
+                        x="18"
+                        y="38"
+                        width="6"
+                        height="6"
+                        fill="white"
+                        opacity="0.4"
+                      />
+                      <rect
+                        x="28"
+                        y="38"
+                        width="6"
+                        height="6"
+                        fill="white"
+                        opacity="0.4"
+                      />
                       <circle cx="44" cy="42" r="6" fill="#fa5902" />
                     </svg>
                   ),
@@ -1527,8 +1810,17 @@ export default function CareersPage() {
                       {/* People/Handshake Icon */}
                       <circle cx="22" cy="24" r="5" fill="#092a5c" />
                       <circle cx="42" cy="24" r="5" fill="#092a5c" />
-                      <path d="M14 44c0-5 4-8 8-8s8 3 8 8M34 44c0-5 4-8 8-8s8 3 8 8" fill="#092a5c" />
-                      <path d="M28 30l4 4 4-4" stroke="#fa5902" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      <path
+                        d="M14 44c0-5 4-8 8-8s8 3 8 8M34 44c0-5 4-8 8-8s8 3 8 8"
+                        fill="#092a5c"
+                      />
+                      <path
+                        d="M28 30l4 4 4-4"
+                        stroke="#fa5902"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   ),
                 },
@@ -1536,11 +1828,13 @@ export default function CareersPage() {
                 <div
                   key={i}
                   className="bg-white rounded-[28px] pt-8 pb-6 px-5 shadow-[0_12px_45px_rgba(3,27,64,0.06)] relative overflow-hidden text-center flex flex-col items-center benefit-card-premium group"
-                  style={{ "--accent-color": b.accentColor } as React.CSSProperties}
+                  style={
+                    { "--accent-color": b.accentColor } as React.CSSProperties
+                  }
                 >
                   {/* Shimmer Effect Div */}
                   <div className="shine-effect" />
-                  
+
                   {/* Icon Wrapper */}
                   <div className="benefit-icon-wrapper mb-6 relative z-10">
                     <div className="w-28 h-28 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100">
@@ -1551,13 +1845,19 @@ export default function CareersPage() {
                   <h3 className="font-black text-[#092a5c] text-[18px] sm:text-[19px] leading-tight text-center relative z-10">
                     {b.title}
                   </h3>
-                  <div className={`h-[3px] w-10 mx-auto mt-2 rounded-full relative z-10`} style={{ backgroundColor: b.accentColor }} />
+                  <div
+                    className={`h-[3px] w-10 mx-auto mt-2 rounded-full relative z-10`}
+                    style={{ backgroundColor: b.accentColor }}
+                  />
                   <p className="text-[13px] text-slate-500 leading-relaxed font-medium mt-3 text-center relative z-10">
                     {b.desc}
                   </p>
-                  
+
                   {/* Expanding line on hover */}
-                  <div className={`absolute bottom-0 left-0 h-[6px] w-0 group-hover:w-full transition-all duration-500 ease-out`} style={{ backgroundColor: b.accentColor }} />
+                  <div
+                    className={`absolute bottom-0 left-0 h-[6px] w-0 group-hover:w-full transition-all duration-500 ease-out`}
+                    style={{ backgroundColor: b.accentColor }}
+                  />
                 </div>
               ))}
             </div>
@@ -1678,11 +1978,10 @@ export default function CareersPage() {
                 src="/careerimg/training-and-upskilling.jpg"
                 alt="Training and Growth"
                 className="w-full h-full object-cover object-center"
-                
               />
             </div>
           </div>
-          
+
           {/* Fallback image for mobile/tablet where absolute column is hidden */}
           <div className="w-full h-[300px] sm:h-[380px] relative lg:hidden z-0">
             <img
@@ -1699,7 +1998,6 @@ export default function CareersPage() {
 
         <section className="py-10 bg-white relative">
           <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
-
             {/* 5-Column Cards Section */}
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 relative z-20 mb-12">
               {[
@@ -1930,7 +2228,10 @@ export default function CareersPage() {
                     ),
                   },
                 ].map((stat, i) => (
-                  <div key={i} className="flex flex-col items-center text-center gap-2 lg:pl-6 lg:first:pl-0 w-full">
+                  <div
+                    key={i}
+                    className="flex flex-col items-center text-center gap-2 lg:pl-6 lg:first:pl-0 w-full"
+                  >
                     <div className="flex items-center justify-center gap-3">
                       <div
                         className={`w-10 h-10 rounded-full ${stat.iconBg} text-white flex items-center justify-center shrink-0`}
@@ -1995,14 +2296,29 @@ export default function CareersPage() {
             <div className="relative mb-12">
               {/* Background Connecting Dotted Line (Desktop Only) */}
               <div className="hidden lg:block absolute top-[48px] left-[8.33%] right-[8.33%] border-t-2 border-dotted border-slate-300 z-0 opacity-80"></div>
-              
+
               {/* Orange Midpoint Dots (Desktop Only) */}
               <div className="hidden lg:block absolute top-[48px] left-0 right-0 z-0 pointer-events-none">
-                <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '16.66%' }} />
-                <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '33.33%' }} />
-                <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '50%' }} />
-                <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '66.66%' }} />
-                <div className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md" style={{ left: '83.33%' }} />
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md"
+                  style={{ left: "16.66%" }}
+                />
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md"
+                  style={{ left: "33.33%" }}
+                />
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md"
+                  style={{ left: "50%" }}
+                />
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md"
+                  style={{ left: "66.66%" }}
+                />
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#fa5902] border-2 border-white shadow-md"
+                  style={{ left: "83.33%" }}
+                />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative z-10">
@@ -2014,10 +2330,34 @@ export default function CareersPage() {
                     borderColor: "border-[#fa5902]",
                     accentColor: "#fa5902",
                     icon: (
-                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
-                        <rect x="18" y="10" width="28" height="44" rx="3" stroke="#092a5c" strokeWidth="3.5" fill="none" />
-                        <path d="M24 20h16M24 28h16M24 36h10" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
-                        <path d="M38 48l8-8 3 3-8 8h-3v-3z" fill="#fa5902" stroke="#092a5c" strokeWidth="2" strokeLinejoin="round" />
+                      <svg
+                        viewBox="0 0 64 64"
+                        className="w-14 h-14"
+                        fill="none"
+                      >
+                        <rect
+                          x="18"
+                          y="10"
+                          width="28"
+                          height="44"
+                          rx="3"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          fill="none"
+                        />
+                        <path
+                          d="M24 20h16M24 28h16M24 36h10"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M38 48l8-8 3 3-8 8h-3v-3z"
+                          fill="#fa5902"
+                          stroke="#092a5c"
+                          strokeWidth="2"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     ),
                   },
@@ -2028,12 +2368,48 @@ export default function CareersPage() {
                     borderColor: "border-[#092a5c]",
                     accentColor: "#092a5c",
                     icon: (
-                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
-                        <rect x="18" y="14" width="28" height="38" rx="3" stroke="#092a5c" strokeWidth="3.5" fill="none" />
-                        <path d="M26 14v-4h12v4" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-                        <circle cx="32" cy="26" r="5" stroke="#092a5c" strokeWidth="3.5" fill="none" />
-                        <path d="M24 38c0-3.5 3.5-6 8-6s8 2.5 8 6" stroke="#fa5902" strokeWidth="3.5" strokeLinecap="round" />
-                        <path d="M24 44h16" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
+                      <svg
+                        viewBox="0 0 64 64"
+                        className="w-14 h-14"
+                        fill="none"
+                      >
+                        <rect
+                          x="18"
+                          y="14"
+                          width="28"
+                          height="38"
+                          rx="3"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          fill="none"
+                        />
+                        <path
+                          d="M26 14v-4h12v4"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <circle
+                          cx="32"
+                          cy="26"
+                          r="5"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          fill="none"
+                        />
+                        <path
+                          d="M24 38c0-3.5 3.5-6 8-6s8 2.5 8 6"
+                          stroke="#fa5902"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M24 44h16"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                        />
                       </svg>
                     ),
                   },
@@ -2044,13 +2420,50 @@ export default function CareersPage() {
                     borderColor: "border-[#10b981]",
                     accentColor: "#10b981",
                     icon: (
-                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
-                        <circle cx="20" cy="26" r="4.5" stroke="#092a5c" strokeWidth="3.5" />
-                        <path d="M13 39c0-3.5 3-5.5 7-5.5s7 2 7 5.5" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
-                        <circle cx="44" cy="26" r="4.5" stroke="#092a5c" strokeWidth="3.5" />
-                        <path d="M37 39c0-3.5 3-5.5 7-5.5s7 2 7 5.5" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
-                        <path d="M12 45h40M18 45v7M46 45v7" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
-                        <path d="M24 14h16a4 4 0 014 4v4a4 4 0 01-4 4h-4l-4 4v-4h-4a4 4 0 01-4-4v-4a4 4 0 014-4z" fill="none" stroke="#fa5902" strokeWidth="2.5" strokeLinejoin="round" />
+                      <svg
+                        viewBox="0 0 64 64"
+                        className="w-14 h-14"
+                        fill="none"
+                      >
+                        <circle
+                          cx="20"
+                          cy="26"
+                          r="4.5"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                        />
+                        <path
+                          d="M13 39c0-3.5 3-5.5 7-5.5s7 2 7 5.5"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                        />
+                        <circle
+                          cx="44"
+                          cy="26"
+                          r="4.5"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                        />
+                        <path
+                          d="M37 39c0-3.5 3-5.5 7-5.5s7 2 7 5.5"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M12 45h40M18 45v7M46 45v7"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M24 14h16a4 4 0 014 4v4a4 4 0 01-4 4h-4l-4 4v-4h-4a4 4 0 01-4-4v-4a4 4 0 014-4z"
+                          fill="none"
+                          stroke="#fa5902"
+                          strokeWidth="2.5"
+                          strokeLinejoin="round"
+                        />
                         <circle cx="29" cy="19" r="1.5" fill="#fa5902" />
                         <circle cx="32" cy="19" r="1.5" fill="#fa5902" />
                         <circle cx="35" cy="19" r="1.5" fill="#fa5902" />
@@ -2064,11 +2477,41 @@ export default function CareersPage() {
                     borderColor: "border-[#8b5cf6]",
                     accentColor: "#8b5cf6",
                     icon: (
-                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
-                        <rect x="14" y="16" width="36" height="24" rx="2" stroke="#092a5c" strokeWidth="3.5" fill="none" />
-                        <path d="M8 40h48c2 0 4 2 4 4v1H4v-1c0-2 2-2 4-4z" stroke="#092a5c" strokeWidth="3.5" fill="none" strokeLinejoin="round" />
-                        <path d="M29 44h6" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
-                        <path d="M23 25l-4 3 4 3M41 25l4 3-4 3M34 23l-4 10" stroke="#fa5902" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      <svg
+                        viewBox="0 0 64 64"
+                        className="w-14 h-14"
+                        fill="none"
+                      >
+                        <rect
+                          x="14"
+                          y="16"
+                          width="36"
+                          height="24"
+                          rx="2"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          fill="none"
+                        />
+                        <path
+                          d="M8 40h48c2 0 4 2 4 4v1H4v-1c0-2 2-2 4-4z"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          fill="none"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M29 44h6"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M23 25l-4 3 4 3M41 25l4 3-4 3M34 23l-4 10"
+                          stroke="#fa5902"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     ),
                   },
@@ -2079,11 +2522,40 @@ export default function CareersPage() {
                     borderColor: "border-[#fa5902]",
                     accentColor: "#fa5902",
                     icon: (
-                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
-                        <circle cx="28" cy="22" r="7.5" stroke="#092a5c" strokeWidth="3.5" fill="none" />
-                        <path d="M12 43c0-6.5 6.5-11 16-11s16 4.5 16 11" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" />
-                        <circle cx="46" cy="38" r="8" fill="white" stroke="#fa5902" strokeWidth="3" />
-                        <path d="M42 38l3 3 5-5" stroke="#fa5902" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <svg
+                        viewBox="0 0 64 64"
+                        className="w-14 h-14"
+                        fill="none"
+                      >
+                        <circle
+                          cx="28"
+                          cy="22"
+                          r="7.5"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          fill="none"
+                        />
+                        <path
+                          d="M12 43c0-6.5 6.5-11 16-11s16 4.5 16 11"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                        />
+                        <circle
+                          cx="46"
+                          cy="38"
+                          r="8"
+                          fill="white"
+                          stroke="#fa5902"
+                          strokeWidth="3"
+                        />
+                        <path
+                          d="M42 38l3 3 5-5"
+                          stroke="#fa5902"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     ),
                   },
@@ -2094,10 +2566,31 @@ export default function CareersPage() {
                     borderColor: "border-[#3b82f6]",
                     accentColor: "#3b82f6",
                     icon: (
-                      <svg viewBox="0 0 64 64" className="w-14 h-14" fill="none">
-                        <path d="M22 38l6 6c1.5 1.5 4 1.5 5.5 0l15-15c1.5-1.5 1.5-4 0-5.5s-4-1.5-5.5 0L28 38l-3-3" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M34 26l-3-3c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5l3 3" stroke="#092a5c" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M32 12v-4M23 16l-3-3M41 16l3-3" stroke="#fa5902" strokeWidth="2.5" strokeLinecap="round" />
+                      <svg
+                        viewBox="0 0 64 64"
+                        className="w-14 h-14"
+                        fill="none"
+                      >
+                        <path
+                          d="M22 38l6 6c1.5 1.5 4 1.5 5.5 0l15-15c1.5-1.5 1.5-4 0-5.5s-4-1.5-5.5 0L28 38l-3-3"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M34 26l-3-3c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5l3 3"
+                          stroke="#092a5c"
+                          strokeWidth="3.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M32 12v-4M23 16l-3-3M41 16l3-3"
+                          stroke="#fa5902"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                        />
                       </svg>
                     ),
                   },
@@ -2105,7 +2598,11 @@ export default function CareersPage() {
                   <div
                     key={i}
                     className="flex flex-col items-center relative group process-step-hover"
-                    style={{ "--accent-color": step.accentColor } as React.CSSProperties}
+                    style={
+                      {
+                        "--accent-color": step.accentColor,
+                      } as React.CSSProperties
+                    }
                   >
                     {/* Top Icon Circle */}
                     <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_-3px_rgba(0,0,0,0.08)] border border-gray-100 relative mb-12 z-30 step-icon-box">
@@ -2127,11 +2624,14 @@ export default function CareersPage() {
                       <h4 className="font-extrabold text-primary text-[18px] sm:text-[19px] mb-1">
                         {step.title}
                       </h4>
-                      <div className="w-8 h-[2px] mx-auto mb-2.5 rounded-full" style={{ backgroundColor: step.accentColor }} />
+                      <div
+                        className="w-8 h-[2px] mx-auto mb-2.5 rounded-full"
+                        style={{ backgroundColor: step.accentColor }}
+                      />
                       <p className="text-[14px] sm:text-[14.5px] text-gray-500 leading-relaxed font-medium">
                         {step.desc}
                       </p>
-                      
+
                       {/* Center-expanding bottom line */}
                       <div className="expanding-line" />
                     </div>
@@ -2194,7 +2694,10 @@ export default function CareersPage() {
                   ),
                 },
               ].map((feature, i) => (
-                <div key={i} className="flex items-center justify-start gap-4 lg:pl-2 lg:pr-1 first:pl-0 text-left">
+                <div
+                  key={i}
+                  className="flex items-center justify-start gap-4 lg:pl-2 lg:pr-1 first:pl-0 text-left"
+                >
                   <div className="w-20 h-20 rounded-full bg-white border border-slate-200 text-primary flex items-center justify-center shrink-0 shadow-sm">
                     <svg
                       className="w-10 h-10"
@@ -2537,7 +3040,8 @@ export default function CareersPage() {
                           Positive Attitude
                         </h4>
                         <p className="text-[13px] sm:text-[14px] text-gray-400 leading-relaxed">
-                          A can-do attitude and willingness to take on challenges.
+                          A can-do attitude and willingness to take on
+                          challenges.
                         </p>
                       </div>
                     </div>
@@ -2563,7 +3067,8 @@ export default function CareersPage() {
                           Commitment to Excellence
                         </h4>
                         <p className="text-[13px] sm:text-[14px] text-gray-400 leading-relaxed">
-                          Deliver quality and strive for excellence in all you do.
+                          Deliver quality and strive for excellence in all you
+                          do.
                         </p>
                       </div>
                     </div>
@@ -2588,8 +3093,8 @@ export default function CareersPage() {
               </div>
 
               <h2 className="text-4xl sm:text-5xl font-extrabold text-primary tracking-tight mb-4 font-sans">
-                Real People<span className="text-secondary">.</span> Real
-                Growth<span className="text-secondary">.</span> Real Impact
+                Real People<span className="text-secondary">.</span> Real Growth
+                <span className="text-secondary">.</span> Real Impact
                 <span className="text-secondary">.</span>
               </h2>
 
@@ -2597,8 +3102,8 @@ export default function CareersPage() {
                 Our people are at the heart of everything we do.
                 <br />
                 <span className="text-gray-500">
-                  Here&apos;s what they have to say about their journey at Pithal
-                  Machines.
+                  Here&apos;s what they have to say about their journey at
+                  Pithal Machines.
                 </span>
               </p>
             </div>
@@ -2708,31 +3213,18 @@ export default function CareersPage() {
         {/* ── SECTION 12: FINAL CTA ── */}
         <section className="pt-10 pb-0 bg-[#f8f9fa] w-full">
           <div className="bg-white border-y border-[#e2e8f0] shadow-[0_16px_48px_rgba(15,23,42,0.04)] rounded-none overflow-hidden w-full">
-            
             {/* Top Main Section */}
             <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-2">
-              
               {/* Left Side: Logo & Text */}
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:w-[42%] w-full shrink-0">
                 {/* Circular Logo */}
-                <div className="w-[105px] h-[105px] bg-white rounded-full flex items-center justify-center shrink-0 border border-slate-100 shadow-[0_10px_30px_rgba(9,42,92,0.06)] relative p-3">
-                  <svg viewBox="0 0 100 100" className="w-[72px] h-[72px]" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Orange Gear Part */}
-                    <path d="M 44 24 A 26 26 0 0 0 44 76 A 26 26 0 0 0 44 24" stroke="#fa5902" strokeWidth="6.5" strokeLinecap="round" />
-                    {/* Teeth around the gear */}
-                    <path d="M 26 32 L 19 26" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
-                    <path d="M 18 50 L 9 50" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
-                    <path d="M 26 68 L 19 74" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
-                    <path d="M 44 76 L 44 84" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
-                    <path d="M 44 24 L 44 16" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
-                    <path d="M 33 17 L 30 24" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
-                    <path d="M 33 83 L 30 76" stroke="#fa5902" strokeWidth="6" strokeLinecap="round" />
-                    
-                    {/* Dark Blue stylized P */}
-                    <path d="M 49 31 H 63 C 70 31 75 36 75 44 C 75 52 70 57 63 57 H 56 V 73" stroke="#092a5c" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                    <path d="M 56 31 V 73" stroke="#092a5c" strokeWidth="8" strokeLinecap="round" />
-                  </svg>
-                </div>
+                <Image
+                  src="/images/brand/pithal-logo.png"
+                  alt="Pithal Machines Logo"
+                  width={220}
+                  height={94}
+                  className="object-contain shrink-0"
+                />
 
                 <div className="text-center sm:text-left">
                   <h2 className="text-[28px] lg:text-[31px] font-extrabold text-[#092a5c] tracking-tight leading-[1.1] font-sans uppercase">
@@ -2742,7 +3234,8 @@ export default function CareersPage() {
                     With Pithal Machines.
                   </h2>
                   <p className="text-[#5a6e85] text-[13px] md:text-[14px] font-medium leading-relaxed max-w-sm">
-                    Join a team that builds innovative solutions, drives industrial progress and creates long-term impact.
+                    Join a team that builds innovative solutions, drives
+                    industrial progress and creates long-term impact.
                   </p>
                 </div>
               </div>
@@ -2756,22 +3249,81 @@ export default function CareersPage() {
                   {
                     title: "CAREER\nGROWTH",
                     icon: (
-                      <svg className="w-[38px] h-[38px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="14" width="3" height="6" rx="1" fill="#092a5c" />
-                        <rect x="9" y="10" width="3" height="10" rx="1" fill="#092a5c" />
-                        <rect x="15" y="5" width="3" height="15" rx="1" fill="#092a5c" />
-                        <path d="M 3 15 L 9 9 L 14 11 L 21 3" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M 17 3 H 21 V 7" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <svg
+                        className="w-[38px] h-[38px]"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          x="3"
+                          y="14"
+                          width="3"
+                          height="6"
+                          rx="1"
+                          fill="#092a5c"
+                        />
+                        <rect
+                          x="9"
+                          y="10"
+                          width="3"
+                          height="10"
+                          rx="1"
+                          fill="#092a5c"
+                        />
+                        <rect
+                          x="15"
+                          y="5"
+                          width="3"
+                          height="15"
+                          rx="1"
+                          fill="#092a5c"
+                        />
+                        <path
+                          d="M 3 15 L 9 9 L 14 11 L 21 3"
+                          stroke="#fa5902"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M 17 3 H 21 V 7"
+                          stroke="#fa5902"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     ),
                   },
                   {
                     title: "CONTINUOUS\nLEARNING",
                     icon: (
-                      <svg className="w-[38px] h-[38px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 3L2 8L12 13L22 8L12 3Z" stroke="#092a5c" strokeWidth="2" strokeLinejoin="round" />
-                        <path d="M6 10.5V16.5C6 16.5 8.5 19.5 12 19.5C15.5 19.5 18 16.5 18 16.5V10.5" stroke="#092a5c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M20 9.5V15.5" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" />
+                      <svg
+                        className="w-[38px] h-[38px]"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 3L2 8L12 13L22 8L12 3Z"
+                          stroke="#092a5c"
+                          strokeWidth="2"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M6 10.5V16.5C6 16.5 8.5 19.5 12 19.5C15.5 19.5 18 16.5 18 16.5V10.5"
+                          stroke="#092a5c"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M20 9.5V15.5"
+                          stroke="#fa5902"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
                         <circle cx="20" cy="16.5" r="1.5" fill="#fa5902" />
                       </svg>
                     ),
@@ -2779,10 +3331,33 @@ export default function CareersPage() {
                   {
                     title: "INDUSTRIAL\nEXPOSURE",
                     icon: (
-                      <svg className="w-[38px] h-[38px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 21V9L14 6V11L9 8V13L4 10V21H19Z" stroke="#092a5c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <rect x="6" y="15" width="2" height="3" fill="#fa5902" />
-                        <rect x="11" y="15" width="2" height="3" fill="#fa5902" />
+                      <svg
+                        className="w-[38px] h-[38px]"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M19 21V9L14 6V11L9 8V13L4 10V21H19Z"
+                          stroke="#092a5c"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <rect
+                          x="6"
+                          y="15"
+                          width="2"
+                          height="3"
+                          fill="#fa5902"
+                        />
+                        <rect
+                          x="11"
+                          y="15"
+                          width="2"
+                          height="3"
+                          fill="#fa5902"
+                        />
                         <circle cx="16.5" cy="13.5" r="1" fill="#fa5902" />
                       </svg>
                     ),
@@ -2790,11 +3365,38 @@ export default function CareersPage() {
                   {
                     title: "FUTURE\nOPPORTUNITIES",
                     icon: (
-                      <svg className="w-[38px] h-[38px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="8" cy="7" r="4" stroke="#092a5c" strokeWidth="2" />
-                        <path d="M2 18C2 14.5 5 13 8 13C11 13 14 14.5 14 18V20H2V18Z" stroke="#092a5c" strokeWidth="2" strokeLinejoin="round" />
-                        <circle cx="16" cy="7" r="3.5" stroke="#fa5902" strokeWidth="2" />
-                        <path d="M12.5 13.5C13.5 12.8 14.8 12.5 16 12.5C18.5 12.5 21.5 13.5 21.5 16.5V18.5" stroke="#fa5902" strokeWidth="2" strokeLinecap="round" />
+                      <svg
+                        className="w-[38px] h-[38px]"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="8"
+                          cy="7"
+                          r="4"
+                          stroke="#092a5c"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M2 18C2 14.5 5 13 8 13C11 13 14 14.5 14 18V20H2V18Z"
+                          stroke="#092a5c"
+                          strokeWidth="2"
+                          strokeLinejoin="round"
+                        />
+                        <circle
+                          cx="16"
+                          cy="7"
+                          r="3.5"
+                          stroke="#fa5902"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M12.5 13.5C13.5 12.8 14.8 12.5 16 12.5C18.5 12.5 21.5 13.5 21.5 16.5V18.5"
+                          stroke="#fa5902"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
                       </svg>
                     ),
                   },
@@ -2823,8 +3425,18 @@ export default function CareersPage() {
                   className="w-full flex items-center justify-between h-[52px] bg-[#fa5902] text-white rounded-xl font-bold uppercase tracking-wider text-[12px] px-6 transition-all hover:bg-[#e04f02] shadow-[0_4px_15px_rgba(250,89,2,0.15)] group"
                 >
                   <div className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    <svg
+                      className="w-5 h-5 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
                     </svg>
                     <span>Upload Your CV</span>
                   </div>
@@ -2834,17 +3446,32 @@ export default function CareersPage() {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </a>
 
                 <a
-                  href="#"
+                  href="#openings"
                   className="w-full flex items-center justify-between h-[52px] bg-white text-[#092a5c] border-2 border-[#092a5c] rounded-xl font-bold uppercase tracking-wider text-[12px] px-6 transition-all hover:bg-slate-50 group"
                 >
                   <div className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-[#092a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <svg
+                      className="w-5 h-5 text-[#092a5c]"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
                     </svg>
                     <span>Explore Open Positions</span>
                   </div>
@@ -2854,7 +3481,12 @@ export default function CareersPage() {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </a>
               </div>
@@ -2865,41 +3497,81 @@ export default function CareersPage() {
               <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-4 lg:divide-x lg:divide-slate-200/80">
                 {[
                   {
-                    text: "300+ Professionals",
+                    text: "Excellent Professionals",
                     icon: (
-                      <svg className="w-5 h-5 text-[#092a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      <svg
+                        className="w-5 h-5 text-[#092a5c]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.75}
+                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
                       </svg>
                     ),
                   },
                   {
                     text: "Advanced Manufacturing Environment",
                     icon: (
-                      <svg className="w-5 h-5 text-[#092a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <svg
+                        className="w-5 h-5 text-[#092a5c]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.75}
+                          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
                       </svg>
                     ),
                   },
                   {
                     text: "Continuous Learning Culture",
                     icon: (
-                      <svg className="w-5 h-5 text-[#092a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      <svg
+                        className="w-5 h-5 text-[#092a5c]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.75}
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        />
                       </svg>
                     ),
                   },
                   {
                     text: "Growth-Focused Opportunities",
                     icon: (
-                      <svg className="w-5 h-5 text-[#092a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6 M4 12v8m4-5v5m4-8v8" />
+                      <svg
+                        className="w-5 h-5 text-[#092a5c]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.75}
+                          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6 M4 12v8m4-5v5m4-8v8"
+                        />
                       </svg>
                     ),
                   },
                 ].map((feature, idx) => (
                   <div
                     key={idx}
-                    className={`flex items-center gap-3 justify-center w-full lg:w-auto ${idx !== 0 ? 'lg:pl-6' : ''}`}
+                    className={`flex items-center gap-3 justify-center w-full lg:w-auto ${idx !== 0 ? "lg:pl-6" : ""}`}
                   >
                     <div className="flex items-center justify-center shrink-0">
                       {feature.icon}
@@ -2911,7 +3583,6 @@ export default function CareersPage() {
                 ))}
               </div>
             </div>
-
           </div>
         </section>
 
