@@ -15,7 +15,7 @@ import { Header } from "@/components/layout/Header";
 import { primeBucketData } from "@/data/products/primeBucketData";
 
 export const metadata: Metadata = {
-  title: "PrimeBucket | Pithal Machine Pvt.",
+  title: "Prime Bucket Crusher | Pithal Machine Pvt.",
   description:
     "Heavy-duty bucket systems designed for maximum capacity and durability in material handling.",
 };
@@ -26,20 +26,39 @@ export default function PrimeBucketProductPage() {
       <Header />
       <main>
         <ProductHero data={primeBucketData.hero} />
-        <ProductStats section={primeBucketData.statsSection} stats={primeBucketData.stats} />
+        <ProductStats
+          section={primeBucketData.statsSection}
+          stats={primeBucketData.stats}
+        />
         <ProductIntro data={primeBucketData.intro} />
-        <FeaturesSection 
+        <FeaturesSection
           heading="Engineered For"
           highlightText="Maximum Efficiency"
           subtitle="Our PrimeBucket systems are built with advanced engineering and premium quality components to deliver unmatched material handling performance."
         />
-        <SpecificationTable rows={primeBucketData.specifications} section={primeBucketData.specificationsSection} />
-        <IndustryApplications industries={primeBucketData.industries} section={primeBucketData.industriesSection} />
-        <ProcessTimeline section={primeBucketData.processSection} steps={primeBucketData.processSteps} />
+        <SpecificationTable
+          rows={primeBucketData.specifications}
+          section={primeBucketData.specificationsSection}
+        />
+        <IndustryApplications
+          industries={primeBucketData.industries}
+          section={primeBucketData.industriesSection}
+        />
+        <ProcessTimeline
+          section={primeBucketData.processSection}
+          steps={primeBucketData.processSteps}
+        />
         <VideoSection data={primeBucketData.videoSection} />
-        <RelatedMachines machines={primeBucketData.relatedMachines} section={primeBucketData.relatedSection} />
+        <RelatedMachines
+          machines={primeBucketData.relatedMachines}
+          section={primeBucketData.relatedSection}
+        />
         <ContactSolutionSection data={primeBucketData.contactSection} />
-        <ResourcesSection resources={primeBucketData.resources} section={primeBucketData.resourcesSection} supportFeatures={primeBucketData.supportFeatures} />
+        <ResourcesSection
+          resources={primeBucketData.resources}
+          section={primeBucketData.resourcesSection}
+          supportFeatures={primeBucketData.supportFeatures}
+        />
       </main>
       <Footer />
     </>

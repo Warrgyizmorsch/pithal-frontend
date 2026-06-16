@@ -16,8 +16,8 @@ export const primeBucketData: ProductDetailData = {
       "Excavator-mounted jaw crusher bucket designed to crush demolition waste, concrete, and natural rock directly on site, reducing transportation and fuel costs.",
     descriptionHighlight: "crush directly on site",
     image: {
-      src: "/primebucket/banner.png",
-      alt: "Pithal PrimeBucket™ operating on a demolition site",
+      src: "/Prime Bucket Crusher/banner.png",
+      alt: "Pithal Prime Bucket Crusher™ operating on a demolition site",
     },
     ctas: [
       { label: "Request Quote", href: "#contact", variant: "primary", icon: "file" },
@@ -35,7 +35,7 @@ export const primeBucketData: ProductDetailData = {
     title: "EFFICIENCY AT",
     highlight: "THE SOURCE",
     subtitle:
-      "Transform your excavator into a high-performance mobile crushing plant with PrimeBucket™ technology.",
+      "Transform your excavator into a high-performance mobile crushing plant with Prime Bucket Crusher™ technology.",
     ctaText: "Crush On Site. Save Costs. Build Faster.",
   },
   stats: [
@@ -50,10 +50,10 @@ export const primeBucketData: ProductDetailData = {
     title: "CRUSH ON SITE.",
     highlight: "REDUCE WASTE.",
     description:
-      "Pithal PrimeBucket™ is an excavator-mounted jaw crusher bucket that processes concrete, asphalt, and natural rock on-site. It eliminates the need for material transport to a central plant, significantly reducing fuel and handling costs.",
+      "Pithal Prime Bucket Crusher™ is an excavator-mounted jaw crusher bucket that processes concrete, asphalt, and natural rock on-site. It eliminates the need for material transport to a central plant, significantly reducing fuel and handling costs.",
     image: {
-      src: "/primebucket/overview1.png",
-      alt: "PrimeBucket™ excavator attachment system",
+      src: "/Prime Bucket Crusher/overview1.png",
+      alt: "Prime Bucket Crusher™ excavator attachment system",
     },
     ctas: [
       { label: "Request Quote", href: "#contact", variant: "primary", icon: "file" },
@@ -185,7 +185,7 @@ export const primeBucketData: ProductDetailData = {
     title: "SITE CRUSHING.",
     highlight: "SIMPLIFIED.",
     description:
-      "Watch PrimeBucket™ transform demolition waste into valuable aggregates in seconds.",
+      "Watch Prime Bucket Crusher™ transform demolition waste into valuable aggregates in seconds.",
     points: [
       "No Transport Needed",
       "Hydraulic Reverse Function",
@@ -215,8 +215,8 @@ export const primeBucketData: ProductDetailData = {
       },
     ],
     thumbnail: {
-      src: "/primebucket/video-showcase.png",
-      alt: "PrimeBucket™ performance video thumbnail",
+      src: "/Prime Bucket Crusher/video-showcase.png",
+      alt: "Prime Bucket Crusher™ performance video thumbnail",
     },
     caption: "DEMOLITION SITE RECYCLING",
     subCaption: "Crush, recycle, and reuse on the spot.",
@@ -243,7 +243,7 @@ export const primeBucketData: ProductDetailData = {
     title: "REDUCE COSTS ON",
     highlight: "YOUR NEXT SITE.",
     description:
-      "Tell us your excavator model and site requirements, and we'll recommend the best PrimeBucket™ for you.",
+      "Tell us your excavator model and site requirements, and we'll recommend the best Prime Bucket Crusher™ for you.",
     image: {
       src: "/images/products/jaw-crusher/contact-us.png",
       alt: "On-site crushing consultation",
@@ -282,7 +282,7 @@ export const primeBucketData: ProductDetailData = {
     id: "resources",
     eyebrow: "Downloads",
     title: "LEARN MORE",
-    highlight: "ABOUT PRIMEBUCKET™.",
+    highlight: "ABOUT Prime Bucket Crusher™.",
     subtitle:
       "Download our brochures and technical guides to start saving on your project today.",
     supportCta: { label: "REQUEST BROCHURE", href: "#", variant: "primary", icon: "arrow" },

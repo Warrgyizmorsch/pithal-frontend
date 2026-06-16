@@ -31,7 +31,7 @@ export const products = [
     href: "/products/prime-ultrarock",
   },
   {
-    title: "PrimeBucket",
+    title: "Prime Bucket Crusher",
     description: "Heavy-duty bucket systems for high-capacity material handling.",
     image: "/images/products/crushers.png",
     href: "/products/prime-bucket",
@@ -180,7 +180,7 @@ export const processFeatures = [
 ];
 
 export const footerColumns = [
-  { title: "Products", links: ["Jaw Crushers", "Prime UltraRock", "PrimeBucket", "Cone Crushers", "VSI Crushers", "Vibrating Feeders", "Vibrating Screens", "Mobile Crushing Plants"] },
+  { title: "Products", links: ["Jaw Crushers", "Prime UltraRock", "Prime Bucket Crusher", "Cone Crushers", "VSI Crushers", "Vibrating Feeders", "Vibrating Screens", "Mobile Crushing Plants"] },
   // { title: "Solutions", links: ["Aggregate Production", "Mining & Quarrying", "Construction & Demolition", "Sand & Gravel", "Metallurgy", "Recycling Solutions", "Custom Solutions", "Turnkey Projects"] },
   { title: "Quick Links", links: ["About Us", "Blog", "Careers", "Become a Dealer",  "Contact Us"] },
   { title: "Downloads", links: ["Product Brochures", "Technical Catalogues", "User Manuals", "Case Studies", "Product Videos", "Installation Guides"] },
