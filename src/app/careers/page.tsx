@@ -531,7 +531,7 @@ export default function CareersPage() {
               <div className="py-2">
                 {/* Careers Tag with line */}
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#fa5902]">
+                  <span className="text-lg font-extrabold uppercase tracking-[0.08em] text-[#fa5902]">
                     CAREERS
                   </span>
                   <span className="h-[1.5px] w-12 bg-[#fa5902]" />
@@ -630,7 +630,7 @@ export default function CareersPage() {
         <section className="py-10 bg-white">
           <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             <div className="text-center mb-14">
-              <p className="text-secondary text-sm sm:text-base font-bold uppercase tracking-[0.35em] mb-3">
+              <p className="text-secondary text-lg font-bold uppercase tracking-[0.08em] mb-3">
                 WHY JOIN PITHAL MACHINES
               </p>
               <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight font-sans">
@@ -675,7 +675,7 @@ export default function CareersPage() {
                     <Trophy className="h-9 w-9 stroke-[1.8]" />
                   </div>
                   <div className="border-l-4 border-solid border-secondary pl-4">
-                    <p className="text-sm sm:text-base uppercase tracking-[0.35em] font-extrabold text-[#092a5c] mb-1">
+                    <p className="text-lg uppercase tracking-[0.08em] font-extrabold text-[#092a5c] mb-1">
                       We don&apos;t just build machines.
                     </p>
                     <p className="text-lg sm:text-xl lg:text-2xl font-black text-secondary leading-tight">
@@ -730,7 +730,7 @@ export default function CareersPage() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="h-[3px] w-8 bg-secondary rounded-full" />
-                  <span className="text-sm sm:text-base font-black uppercase tracking-[0.24em] text-secondary">
+                  <span className="text-lg font-black uppercase tracking-[0.08em] text-secondary">
                     LIFE AT PITHAL
                   </span>
                 </div>
@@ -885,7 +885,7 @@ export default function CareersPage() {
         <section className="py-10 bg-white">
           <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
             <div className="text-center mb-12">
-              <p className="text-secondary text-sm sm:text-base font-bold uppercase tracking-[0.35em] mb-2">
+              <p className="text-secondary text-lg font-bold uppercase tracking-[0.08em] mb-2">
                 DEPARTMENTS & OPPORTUNITIES
               </p>
               <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight font-sans">
@@ -1092,7 +1092,7 @@ export default function CareersPage() {
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-3 mb-2">
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
-                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
+                <span className="text-[#092a5c] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
                   OPEN POSITIONS
                 </span>
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
@@ -1360,7 +1360,7 @@ export default function CareersPage() {
             <div className="text-center mb-10">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
-                <p className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
+                <p className="text-[#092a5c] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
                   Our Manufacturing Strength
                 </p>
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
@@ -1630,7 +1630,7 @@ export default function CareersPage() {
             <div className="text-center mb-14">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
-                <p className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
+                <p className="text-[#092a5c] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
                   Employee Benefits
                 </p>
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
@@ -1945,7 +1945,7 @@ export default function CareersPage() {
               {/* Tag */}
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-6 h-[2px] bg-[#fa5902]"></span>
-                <span className="text-[#fa5902] text-xs sm:text-sm font-black uppercase tracking-[0.2em]">
+                <span className="text-[#fa5902] text-lg font-black uppercase tracking-[0.08em]">
                   Training & Growth
                 </span>
                 <span className="w-6 h-[2px] bg-[#fa5902]"></span>
@@ -2275,7 +2275,7 @@ export default function CareersPage() {
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
-                <p className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
+                <p className="text-[#092a5c] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
                   Hiring Process
                 </p>
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
@@ -2729,7 +2729,7 @@ export default function CareersPage() {
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
-                <p className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
+                <p className="text-[#092a5c] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
                   Eligibility & Qualifications
                 </p>
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
@@ -3086,7 +3086,7 @@ export default function CareersPage() {
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
-                <p className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
+                <p className="text-[#092a5c] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
                   Employee Testimonials
                 </p>
                 <span className="w-12 h-0.5 bg-secondary inline-block" />

@@ -144,7 +144,7 @@ export default function BecomeADealerPage() {
                     <span key={i} aria-hidden className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-secondary" />
                   ))}
                 </span>
-                <p className="text-[12px] font-black uppercase tracking-[0.22em] text-secondary">Simple Process</p>
+                <p className="text-lg sm:text-xl font-black uppercase tracking-[0.08em] text-secondary">Simple Process</p>
                 <span className="flex items-center gap-[4px]">
                   {[0, 1, 2].map((i) => (
                     <span key={i} aria-hidden className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-secondary" />
@@ -198,7 +198,7 @@ export default function BecomeADealerPage() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="h-[2px] w-8 bg-secondary" />
-                  <span className="text-secondary font-black uppercase tracking-[0.2em] text-xs">Your Growth. Our Commitment.</span>
+                  <span className="text-secondary font-black uppercase tracking-[0.08em] text-lg sm:text-xl">Your Growth. Our Commitment.</span>
                 </div>
                 <h2 className="headline text-[clamp(1.9rem,4vw,2.8rem)] leading-[1.1] text-white font-black uppercase mb-5">
                   A Partnership Built on <span className="text-secondary">Engineering Legacy</span>

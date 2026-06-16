@@ -943,7 +943,7 @@ function SectionHeader({
           <div className="flex items-center gap-3 mb-3">
             <span className="w-8 h-0.5 bg-secondary inline-block" />
             <span
-              className={`text-lg sm:text-xl font-black uppercase tracking-[0.22em] ${dark ? "text-secondary" : "text-[#092a5c]"}`}
+              className={`text-lg sm:text-xl font-black uppercase tracking-[0.06em] ${dark ? "text-secondary" : "text-[#092a5c]"}`}
             >
               {eyebrow}
             </span>
@@ -1225,8 +1225,8 @@ export default function BlogPage() {
             <div className="mt-12 grid gap-6 rounded-xl border border-border bg-white/90 p-6 shadow-[0_24px_70px_rgba(3,27,64,0.12)] backdrop-blur-sm sm:grid-cols-2 lg:grid-cols-4">
               {heroSectionStats.map((s, i) => (
                 <div key={i} className="flex gap-3 items-start">
-                  <div className="w-10 h-10 rounded-full border border-secondary/20 bg-secondary/5 flex items-center justify-center text-secondary flex-shrink-0">
-                    <s.icon className="w-4 h-4" />
+                  <div className="w-14 h-14 rounded-full border border-secondary/20 bg-secondary/5 flex items-center justify-center text-secondary flex-shrink-0">
+                    <s.icon className="w-7 h-7" />
                   </div>
                   <div>
                     <div className="text-2xl font-black text-secondary">
@@ -1260,6 +1260,54 @@ export default function BlogPage() {
 
             <div className="grid md:grid-cols-2 gap-6 min-h-0 md:min-h-[320px]">
               {/* Large featured card */}
+              <div className="relative rounded-xl overflow-hidden group cursor-pointer min-h-[240px] sm:min-h-[300px] shadow-[0_24px_70px_rgba(3,27,64,0.18)]">
+                <ImgBox
+                  src={featuredPosts[0].img}
+                  alt={featuredPosts[0].title}
+                  fill
+                  label=""
+                  className="group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary/50 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-primary text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider">
+                    FEATURED
+                  </span>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
+                  <span className="text-secondary text-xs font-bold uppercase tracking-wider mb-2 block">
+                    {featuredPosts[0].tag}
+                  </span>
+                  <h3 className="text-white text-xl font-extrabold leading-tight mb-2">
+                    {featuredPosts[0].title}
+                  </h3>
+                  <p className="text-gray-300 text-[11px] leading-relaxed mb-4 max-w-md line-clamp-2">
+                    {featuredPosts[0].desc}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4 text-gray-400 text-[10px]">
+                      <span>
+                        <CalendarIcon />
+                        {featuredPosts[0].date}
+                      </span>
+                      <span>
+                        <ClockIcon />
+                        {featuredPosts[0].read}
+                      </span>
+                    </div>
+                    <Button
+                      variant="primary"
+                      href={`/blog/${featuredPosts[0].slug}`}
+                      className="h-8 min-h-0 text-[10px] px-3 py-1.5 flex items-center gap-2"
+                    >
+                      Read More{" "}
+                      <div className="w-4.5 h-4.5 bg-white/20 rounded-full flex items-center justify-center">
+                        <ArrowRight cls="w-2.5 h-2.5" />
+                      </div>
+                    </Button>
+                  </div>
+                </div>
+              </div>
               <div className="relative rounded-xl overflow-hidden group cursor-pointer min-h-[240px] sm:min-h-[300px] shadow-[0_24px_70px_rgba(3,27,64,0.18)]">
                 <ImgBox
                   src={featuredPosts[0].img}
@@ -1484,7 +1532,7 @@ export default function BlogPage() {
             <div className="text-center mb-10">
               <div className="flex items-center justify-center gap-3.5 mb-4">
                 <span className="w-10 h-0.5 bg-secondary" />
-                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
+                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.06em]">
                   INDUSTRIAL KNOWLEDGE HUB
                 </span>
                 <span className="w-10 h-0.5 bg-secondary" />
@@ -1754,7 +1802,7 @@ export default function BlogPage() {
               <div>
                 <div className="flex items-center gap-3 mb-2.5">
                   <span className="w-8 h-0.5 bg-secondary" />
-                  <h2 className="text-xl sm:text-2xl font-black uppercase tracking-[0.22em] text-[#092a5c]">
+                  <h2 className="text-xl sm:text-2xl font-black uppercase tracking-[0.06em] text-[#092a5c]">
                     TRENDING INSIGHTS
                   </h2>
                   <span className="w-8 h-0.5 bg-secondary" />
@@ -2023,7 +2071,7 @@ export default function BlogPage() {
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="w-8 h-0.5 bg-secondary inline-block" />
-                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
+                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.06em]">
                   EXPERT INSIGHTS
                 </span>
                 <span className="w-12 h-0.5 bg-secondary" />
@@ -2308,7 +2356,7 @@ export default function BlogPage() {
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-3 mb-3">
                 <span className="w-8 h-0.5 bg-secondary inline-block" />
-                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.22em]">
+                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.06em]">
                   INDUSTRY TOPICS
                 </span>
                 <span className="w-8 h-0.5 bg-secondary inline-block" />

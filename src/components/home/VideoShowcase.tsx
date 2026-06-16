@@ -13,6 +13,7 @@ export function VideoShowcase() {
           highlight="Proven Performance."
           subtitle="See our crushing solutions in action. Built for the toughest challenges, engineered for unmatched results."
           title="Powerful Machines."
+          className="!max-w-none [&_h2]:whitespace-nowrap [&_h2]:!text-[clamp(0.85rem,3.8vw,3.25rem)] w-full"
         />
 
         <div className="group relative aspect-[1.48] overflow-hidden rounded-xl border-2 border-primary/60 min-[480px]:aspect-[1.9] md:aspect-[2079/756] md:rounded-3xl">

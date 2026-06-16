@@ -82,38 +82,46 @@ export function Footer() {
   return (
     <footer className="border-t border-primary/20 bg-white" id="global">
       <Container className="py-8 sm:py-10 xl:py-12">
-        <div className="grid gap-x-8 gap-y-8 border-b border-primary/20 pb-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.7fr_1.02fr_1.25fr_1fr_1.18fr_1.42fr] xl:gap-y-10 xl:pb-[2.8rem]">
+        <div className="grid gap-x-8 gap-y-8 border-b border-primary/20 pb-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[2.8fr_1.02fr_1.25fr_1fr] xl:gap-y-10 xl:pb-[2.8rem]">
           <div className="md:col-span-2 lg:col-span-1">
-            <BrandMark />
-            <p className="mt-4 max-w-[18rem] text-[0.95rem] leading-[1.72] text-text-dark sm:mt-6 sm:text-[1rem]">
-              Engineering world-class crushing solutions and equipment that power
-              industries, build infrastructure and shape a stronger tomorrow.
-            </p>
-            <span aria-hidden className="mt-7 block h-[3px] w-[7.1rem] bg-gradient-to-r from-primary to-secondary" />
-            <address className="mt-8 space-y-4 not-italic text-[0.97rem] leading-[1.62] text-text-dark">
-              <span className="flex items-start gap-4">
-                <MapPin aria-hidden className="mt-1 shrink-0 text-primary" size={23} />
-                <span>
-                  <strong className="font-bold">Pithal Machines Ltd.</strong>
-                  <br />
-                  Hawa Magri, Industrial Area, Sukher, 313001
-                  <br />
-                  Udaipur, Rajasthan India
+            {/* Inner 2-col: brand left, contact right */}
+            <div className="grid gap-8 sm:grid-cols-2">
+              {/* Brand + tagline */}
+              <div>
+                <BrandMark />
+                <p className="mt-4 max-w-[18rem] text-[0.95rem] leading-[1.72] text-text-dark sm:mt-6 sm:text-[1rem]">
+                  Engineering world-class crushing solutions and equipment that power
+                  industries, build infrastructure and shape a stronger tomorrow.
+                </p>
+                <span aria-hidden className="mt-7 block h-[3px] w-[7.1rem] bg-gradient-to-r from-primary to-secondary" />
+              </div>
+
+              {/* Contact info */}
+              <address className="mt-2 space-y-4 not-italic text-[0.95rem] leading-[1.62] text-text-dark sm:mt-0">
+                <span className="flex items-start gap-4">
+                  <MapPin aria-hidden className="mt-1 shrink-0 text-primary" size={22} />
+                  <span>
+                    <strong className="font-bold">Pithal Machines Ltd.</strong>
+                    <br />
+                    Hawa Magri, Industrial Area, Sukher, 313001
+                    <br />
+                    Udaipur, Rajasthan India
+                  </span>
                 </span>
-              </span>
-              <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919887537129">
-                <Phone aria-hidden className="shrink-0 text-primary" size={21} />
-                +91 98797 16000
-              </a>
-              <a className="flex items-center gap-4 break-all hover:text-secondary" href="mailto:info@pithalmachines.com">
-                <Mail aria-hidden className="shrink-0 text-primary" size={22} />
-                info@pithalmachines.com
-              </a>
-              <a className="flex items-center gap-4 break-all hover:text-secondary" href="https://www.pithalmachines.com">
-                <Globe aria-hidden className="shrink-0 text-primary" size={22} />
-                www.pithalmachines.com
-              </a>
-            </address>
+                <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919879716000">
+                  <Phone aria-hidden className="shrink-0 text-primary" size={21} />
+                  +91 98797 16000
+                </a>
+                <a className="flex items-center gap-4 break-all hover:text-secondary" href="mailto:info@pithalmachines.com">
+                  <Mail aria-hidden className="shrink-0 text-primary" size={22} />
+                  info@pithalmachines.com
+                </a>
+                <a className="flex items-center gap-4 break-all hover:text-secondary" href="https://www.pithalmachines.com">
+                  <Globe aria-hidden className="shrink-0 text-primary" size={22} />
+                  www.pithalmachines.com
+                </a>
+              </address>
+            </div>
           </div>
 
           {navColumns.map((column) => {
@@ -209,15 +217,17 @@ export function Footer() {
 
           <div className="xl:px-10">
             <FooterHeading>Get In Touch</FooterHeading>
-            <p className="mb-4 text-[1rem] leading-[1.65] text-text-dark">
-              Have a project in mind?
-              <br />
-              Our experts are ready to help.
-            </p>
-            <Button className="w-full max-w-[16.2rem] justify-between text-sm" href="/contact">
-              Contact Us
-              <ArrowRight aria-hidden size={19} />
-            </Button>
+            <div className="flex items-end justify-between gap-4">
+              <p className="text-[1rem] leading-[1.65] text-text-dark">
+                Have a project in mind?
+                <br />
+                Our experts are ready to help.
+              </p>
+              <Button className="shrink-0 justify-between text-sm px-5" href="/contact">
+                Contact Us
+                <ArrowRight aria-hidden size={19} />
+              </Button>
+            </div>
           </div>
 
           <div className="flex flex-col justify-center items-start xl:pl-4">

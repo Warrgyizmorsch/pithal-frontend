@@ -31,7 +31,7 @@ export function Button({
   const isAnimatedButton = ["primary", "outlineNavy", "outlineOrange", "outlineNavySwap"].includes(variant);
   
   const styles = cn(
-    "inline-flex min-h-12 items-center justify-center gap-2 border px-6 text-[11px] font-bold uppercase tracking-[0.16em] rounded",
+    "inline-flex min-h-12 items-center justify-center gap-2 border px-6 text-[11px] font-bold uppercase tracking-[0.05em] rounded",
     !isAnimatedButton && "transition-colors",
     buttonVariant,
     className,

@@ -108,7 +108,7 @@ function Eyebrow({
   return (
     <p
       className={cn(
-        "accent-bars text-[12px] font-black uppercase tracking-[0.24em] text-secondary",
+        "accent-bars text-lg font-black uppercase tracking-[0.24em] text-secondary",
         className,
       )}
     >
@@ -287,7 +287,7 @@ function WhoWeAreSection() {
   return (
     <section className="bg-white py-[35px]">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-start">
           {/* ── Left Column ── */}
           <div>
             {/* Eyebrow: /// WHO WE ARE /// ——————— */}
@@ -301,7 +301,7 @@ function WhoWeAreSection() {
                   />
                 ))}
               </span>
-              <p className="text-[12px] font-black uppercase tracking-[0.22em] text-secondary whitespace-nowrap">
+              <p className="text-lg font-black uppercase tracking-[0.22em] text-secondary whitespace-nowrap">
                 {experience.eyebrow}
               </p>
               <span className="flex items-center gap-[4px]">
@@ -325,30 +325,25 @@ function WhoWeAreSection() {
             </h2>
 
             {/* Description paragraphs */}
-            <p className="mt-6 max-w-[520px] text-sm leading-7 text-text-muted sm:text-[15px]">
+            <p className="mt-6 max-w-[520px] text-base leading-7 text-text-muted sm:text-[17px]">
               {experience.description1}
             </p>
-            <p className="mt-3 max-w-[520px] text-sm leading-7 text-text-muted sm:text-[15px]">
+            <p className="mt-3 max-w-[520px] text-base leading-7 text-text-muted sm:text-[17px]">
               {experience.description2}
             </p>
 
             {/* Philosophy / Capability callout items */}
             <div className="mt-8 space-y-5">
               {experience.philosophy.map((item) => (
-                <div className="group/phil flex gap-4 transition-transform duration-300 hover:translate-x-1.5" key={item.title}>
-                  <span className={cn(
-                    "mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-dashed border-secondary/55 bg-secondary/5 text-secondary transition-all duration-300",
-                    item.title === "Advanced Manufacturing"
-                      ? "animate-[spin_8s_linear_infinite] group-hover/phil:animate-[spin_1.5s_linear_infinite]"
-                      : "group-hover/phil:rotate-12"
-                  )}>
+                <div className="flex gap-4" key={item.title}>
+                  <span className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-dashed border-secondary/55 bg-secondary/5 text-secondary">
                     <Icon name={item.icon} size={20} />
                   </span>
                   <div>
-                    <h3 className="text-[13px] font-black uppercase tracking-[0.07em] text-primary">
+                    <h3 className="text-[15px] font-black uppercase tracking-[0.07em] text-primary">
                       {item.title}
                     </h3>
-                    <p className="mt-1.5 max-w-[430px] text-[13px] leading-6 text-text-muted">
+                    <p className="mt-1.5 max-w-[430px] text-[15px] leading-6 text-text-muted">
                       {item.text}
                     </p>
                   </div>
@@ -360,7 +355,7 @@ function WhoWeAreSection() {
           {/* ── Right Column: Image Grid ── */}
           <div className="flex flex-col gap-4">
             {/* Top wide image */}
-            <div className="image-hover relative h-[270px] overflow-hidden rounded-2xl shadow-[0_16px_36px_rgba(3,27,64,0.12)] sm:h-[310px] group/img1">
+            <div className="image-hover relative h-[320px] overflow-hidden rounded-2xl shadow-[0_16px_36px_rgba(3,27,64,0.12)] sm:h-[380px] group/img1">
               <Image
                 alt="Pithal Machines manufacturing floor with crushing equipment"
                 className="object-cover transition-transform duration-700 group-hover/img1:scale-[1.03]"
@@ -371,7 +366,7 @@ function WhoWeAreSection() {
             </div>
             {/* Bottom row: two images side-by-side */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="image-hover relative h-[155px] overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[175px] group/img2">
+              <div className="image-hover relative h-[190px] overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[220px] group/img2">
                 <Image
                   alt="Pithal Machines facility exterior"
                   className="object-cover transition-transform duration-700 group-hover/img2:scale-[1.04]"
@@ -380,7 +375,7 @@ function WhoWeAreSection() {
                   src="/images/about/our-foundation-2.png"
                 />
               </div>
-              <div className="image-hover relative h-[155px] overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[175px] group/img3">
+              <div className="image-hover relative h-[190px] overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[220px] group/img3">
                 <Image
                   alt="Pithal engineers reviewing technical blueprints"
                   className="object-cover transition-transform duration-700 group-hover/img3:scale-[1.04]"
@@ -402,10 +397,10 @@ function WhoWeAreSection() {
                   <Icon name={metric.icon} size={22} />
                 </span>
                 <div>
-                  <h3 className="text-[12px] font-black uppercase tracking-[0.07em] text-primary">
+                  <h3 className="text-[14px] font-black uppercase tracking-[0.07em] text-primary">
                     {metric.title}
                   </h3>
-                  <p className="mt-2 text-[12px] leading-5 text-text-muted">
+                  <p className="mt-2 text-[14px] leading-5 text-text-muted">
                     {metric.text}
                   </p>
                 </div>
@@ -424,24 +419,29 @@ function VisionMissionSection() {
   const mission = visionMission.items[1];
 
   return (
-    <section className="relative overflow-hidden bg-[#f1f4f8] py-[35px]">
+    <section className="relative overflow-hidden bg-[#f1f4f8] py-[35px] lg:py-[50px]">
       {/* Blueprint grid overlay */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #092a5c 1px, transparent 1px), linear-gradient(to bottom, #092a5c 1px, transparent 1px)",
+          backgroundSize: "44px 44px",
+        }}
+      />
+      {/* Faint industrial image overlay */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[url('/images/about/our-foundation-1.png')] bg-cover bg-center opacity-20 mix-blend-multiply [mask-image:linear-gradient(to_right,transparent_0%,black_50%)]"
+      />
+      {/* White gradient overlay on the left */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-0 w-[90%] bg-[linear-gradient(90deg,#fff_0%,#fff_40%,rgba(255,255,255,0.8)_70%,transparent_100%)]"
+      />
 
-      <Container className="relative overflow-hidden">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #092a5c 1px, transparent 1px), linear-gradient(to bottom, #092a5c 1px, transparent 1px)",
-            backgroundSize: "44px 44px",
-          }}
-        />
-        {/* Faint industrial image overlay */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-[url('/images/about/our-foundation-1.png')] bg-cover bg-center opacity-[0.03]"
-        />
+      <Container className="relative z-10">
         {/* ── Header ── */}
         <div className="mx-auto max-w-2xl text-center mb-12">
           {/* Eyebrow: /// OUR DIRECTION /// */}
@@ -455,7 +455,7 @@ function VisionMissionSection() {
                 />
               ))}
             </span>
-            <p className="text-[12px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
+            <p className="text-lg font-black uppercase tracking-[0.22em] text-[#fa5902]">
               {visionMission.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -480,12 +480,9 @@ function VisionMissionSection() {
         {/* ── Cards Container with relative positioning for the bottom tab ── */}
         <div className="relative mx-auto max-w-[1520px] overflow-hidden">
           <div className="grid md:grid-cols-2 gap-5 items-stretch">
-            
             {/* ▌ Vision Card (Dark Navy) */}
             <div className="relative z-[2] flex">
-              <div 
-                className="w-full bg-[#031b40] text-white border-l-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pr-16 shadow-lg md:clip-vision transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl group/vision"
-              >
+              <div className="w-full bg-[#031b40] text-white border-l-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pr-16 shadow-lg md:clip-vision transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl group/vision">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 w-full">
                   {/* Custom Double Ring Icon Container */}
                   <div className="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-[#fa5902]/40 p-2">
@@ -501,13 +498,17 @@ function VisionMissionSection() {
                         className="w-10 h-10 text-white transition-transform duration-500 group-hover/vision:rotate-12"
                       >
                         <line x1="12" y1="3" x2="12" y2="12" />
-                        <path d="M12 3l6 2.5-6 2.5V3z" fill="#fa5902" stroke="#fa5902" />
+                        <path
+                          d="M12 3l6 2.5-6 2.5V3z"
+                          fill="#fa5902"
+                          stroke="#fa5902"
+                        />
                         <path d="M3 20l7-9 5 5 2-2 4 6" />
                         <path d="M2 20h20" />
                       </svg>
                     </div>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="text-center sm:text-left flex-1">
                     <h3 className="text-2xl font-black tracking-wider text-white uppercase">
@@ -524,17 +525,18 @@ function VisionMissionSection() {
 
             {/* ▌ Mission Card (White) */}
             <div className="relative z-[1] flex">
-              <div 
-                className="w-full bg-white text-[#031b40] border-r-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pl-16 shadow-lg md:clip-mission-card transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl group/mission"
-              >
+              <div className="w-full bg-white text-[#031b40] border-r-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pl-16 shadow-lg md:clip-mission-card transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl group/mission">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 w-full">
                   {/* Custom Double Ring Icon Container */}
                   <div className="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-dashed border-[#fa5902]/30 p-2">
                     <div className="w-full h-full rounded-full border border-[#031b40]/10 flex items-center justify-center bg-gray-50/50">
-                      <Cog className="w-10 h-10 text-[#031b40] animate-[spin_8s_linear_infinite] group-hover/mission:animate-[spin_1.5s_linear_infinite]" strokeWidth={1.5} />
+                      <Cog
+                        className="w-10 h-10 text-[#031b40] animate-[spin_8s_linear_infinite] group-hover/mission:animate-[spin_1.5s_linear_infinite]"
+                        strokeWidth={1.5}
+                      />
                     </div>
                   </div>
-                  
+
                   {/* Content */}
                   <div className="text-center sm:text-left flex-1">
                     <h3 className="text-2xl font-black tracking-wider text-[#031b40] uppercase">
@@ -548,7 +550,6 @@ function VisionMissionSection() {
                 </div>
               </div>
             </div>
-
           </div>
 
           {/* ▌ Center Bottom Skewed Navy Tab with Orange Slashes */}
@@ -562,10 +563,9 @@ function VisionMissionSection() {
               ))}
             </div>
           </div>
-
         </div>
-      {/* Clip path styles for desktop visual slide alignment */}
-      <style>{`
+        {/* Clip path styles for desktop visual slide alignment */}
+        <style>{`
         @media (min-width: 768px) {
           .md\\:clip-vision {
             clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
@@ -611,7 +611,7 @@ function WhyChooseSection() {
           backgroundSize: "40px 40px",
         }}
       />
-      
+
       {/* Faint gear watermark top-right */}
       <div
         aria-hidden
@@ -648,7 +648,7 @@ function WhyChooseSection() {
                 />
               ))}
             </span>
-            <p className="text-[12px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
+            <p className="text-lg font-black uppercase tracking-[0.22em] text-[#fa5902]">
               {whyChoose.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -664,7 +664,8 @@ function WhyChooseSection() {
 
           {/* Headline */}
           <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] font-black uppercase tracking-tight text-[#031b40]">
-            {whyChoose.title} <span className="text-[#fa5902]">{whyChoose.highlight}</span>
+            {whyChoose.title}{" "}
+            <span className="text-[#fa5902]">{whyChoose.highlight}</span>
           </h2>
           <p className="mt-5 max-w-2xl mx-auto text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/75 font-medium">
             {whyChoose.subtitle}
@@ -675,7 +676,7 @@ function WhyChooseSection() {
         <div className="mx-auto mt-9 grid max-w-[1520px] gap-6 md:grid-cols-2 lg:grid-cols-3">
           {whyChoose.cards.map((card) => (
             <article
-              className="group relative flex items-start gap-5 rounded-xl border border-slate-100 bg-white p-6 shadow-[0_12px_38px_rgba(3,27,64,0.04)] transition-all duration-300 hover:shadow-[0_16px_44px_rgba(3,27,64,0.08)] hover:-translate-y-1.5 overflow-hidden"
+              className="group relative flex items-start gap-6 rounded-xl border border-slate-100 bg-white p-8 md:p-9 shadow-[0_12px_38px_rgba(3,27,64,0.04)] transition-all duration-300 hover:shadow-[0_16px_44px_rgba(3,27,64,0.08)] hover:-translate-y-1.5 overflow-hidden"
               key={card.title}
             >
               {/* Bottom sliding train line */}
@@ -683,8 +684,11 @@ function WhyChooseSection() {
                 <span className="absolute inset-0 bg-primary translate-x-[-100%] transition-transform duration-500 ease-out group-hover:translate-x-0" />
               </div>
               {/* Hexagon Container */}
-              <div className="relative shrink-0 w-20 h-20 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full text-[#031b40]/5 fill-[#f8fafc] transition-colors duration-300 group-hover:text-[#fa5902]/10">
+              <div className="relative shrink-0 w-28 h-28 flex items-center justify-center">
+                <svg
+                  viewBox="0 0 100 100"
+                  className="absolute inset-0 w-full h-full text-[#031b40]/5 fill-[#f8fafc] transition-colors duration-300 group-hover:text-[#fa5902]/10"
+                >
                   <polygon
                     points="50,3 97,27 97,73 50,97 3,73 3,27"
                     stroke="currentColor"
@@ -696,8 +700,8 @@ function WhyChooseSection() {
                   <Image
                     src={flaticonMap[card.icon] ?? "/icons/high-efficiency.png"}
                     alt={card.title}
-                    width={57}
-                    height={57}
+                    width={80}
+                    height={80}
                     className="object-contain"
                   />
                 </div>
@@ -705,14 +709,14 @@ function WhyChooseSection() {
 
               {/* Content */}
               <div className="min-w-0 flex-1">
-                <h3 className="text-[15px] font-black uppercase tracking-wider text-[#031b40] leading-[1.3]">
+                <h3 className="text-lg font-black uppercase tracking-wider text-[#031b40] leading-[1.3]">
                   {card.title}
                 </h3>
                 <span
                   aria-hidden
                   className="mt-2 block h-[3px] w-6 bg-[#fa5902]"
                 />
-                <p className="mt-3 text-[13px] leading-[1.6] text-slate-500 font-medium">
+                <p className="mt-3 text-[15px] leading-[1.65] text-slate-500 font-medium">
                   {card.text}
                 </p>
               </div>
@@ -722,43 +726,51 @@ function WhyChooseSection() {
       </Container>
 
       {/* ── Bottom Dark Bar ── */}
-      <div className="relative mt-16 bg-[#031b40] text-white py-6 overflow-hidden">
-        {/* Slanted overlay on the right */}
-        <div 
-          className="absolute inset-y-0 right-0 w-[45%] bg-[#062454]/60 skew-x-[-28deg] translate-x-[15%] pointer-events-none border-l border-white/10 hidden md:block"
-        />
-        
-        <Container className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
+      <div className="relative mt-20 h-[96px] w-full">
+        {/* Right Base / Image Container (Shorter) */}
+        <div className="absolute bottom-0 inset-x-0 h-[76px] bg-[#08152b] border-y border-white/5 overflow-hidden z-0">
+          <div className="absolute inset-0 bg-[url('/images/about/our-foundation-1.png')] bg-cover bg-center opacity-30 mix-blend-luminosity" />
+        </div>
+
+        {/* 2. Left Solid Color (Taller, sticking out top) */}
+        <div className="absolute bottom-0 left-[-20%] w-[68%] lg:w-[62%] h-[96px] bg-[#08152b] skew-x-[-28deg] z-[1] shadow-[15px_0_30px_rgba(0,0,0,0.6)]" />
+
+        {/* 3. The layered translucent cut edge (Also taller) */}
+        <div className="absolute bottom-0 left-[47.5%] lg:left-[41.5%] w-[5%] lg:w-[4%] h-[96px] bg-[#08152b]/50 skew-x-[-28deg] z-[1] border-r-[2px] border-white backdrop-blur-sm" />
+
+        {/* 4. Content */}
+        <Container className="relative z-10 flex w-full h-full justify-between">
+          {/* Left Side Content */}
+          <div className="flex items-center gap-6 h-[96px]">
             {/* Left orange slashes */}
             <span className="flex shrink-0 items-center gap-[5px]">
               {[0, 1, 2].map((i) => (
                 <span
                   key={i}
                   aria-hidden
-                  className="inline-block h-[20px] w-[5.5px] skew-x-[-28deg] bg-[#fa5902]"
+                  className="inline-block h-[34px] w-[9px] skew-x-[-22deg] bg-[#fa5902]"
                 />
               ))}
             </span>
             {/* Text */}
-            <div className="text-[11px] md:text-[12px] font-black uppercase tracking-[0.2em] leading-[1.5]">
+            <div className="text-[12px] md:text-[13px] font-black uppercase tracking-[0.06em] leading-[1.6]">
+              <p className="text-white">ENGINEERED FOR PERFORMANCE.</p>
               <p className="text-white">
-                ENGINEERED FOR PERFORMANCE.
-              </p>
-              <p className="text-slate-300">
                 BUILT FOR RELIABILITY. DELIVERED WORLDWIDE.
               </p>
             </div>
           </div>
-          
+
           {/* Right dot pattern */}
-          <div className="hidden sm:grid grid-cols-8 gap-[6px] opacity-40">
-            {Array.from({ length: 24 }).map((_, i) => (
-              <span
-                key={i}
-                className="inline-block h-[4px] w-[4px] rounded-full bg-[#fa5902]"
-              />
-            ))}
+          <div className="hidden md:flex items-center h-[76px] mt-auto opacity-90 pr-2">
+            <div className="grid grid-cols-[repeat(12,1fr)] gap-x-[16px] gap-y-[10px]">
+              {Array.from({ length: 36 }).map((_, i) => (
+                <span
+                  key={i}
+                  className="inline-block h-[3px] w-[3px] rounded-full bg-[#fa5902]"
+                />
+              ))}
+            </div>
           </div>
         </Container>
       </div>
@@ -813,7 +825,7 @@ function ManufacturingSection() {
                 />
               ))}
             </span>
-            <p className="text-[12px] font-black uppercase tracking-[0.22em] text-[#fa5902]">
+            <p className="text-lg font-black uppercase tracking-[0.22em] text-[#fa5902]">
               {manufacturing.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -828,7 +840,8 @@ function ManufacturingSection() {
           </div>
 
           <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] font-black uppercase tracking-tight text-[#031b40]">
-            {manufacturing.title} <span className="text-[#fa5902]">{manufacturing.highlight}</span>
+            {manufacturing.title}{" "}
+            <span className="text-[#fa5902]">{manufacturing.highlight}</span>
           </h2>
           <span
             aria-hidden
@@ -846,24 +859,18 @@ function ManufacturingSection() {
               className="group/step flex flex-col items-center gap-4 px-3 py-3 text-center transition-all duration-300 hover:bg-slate-50/30 cursor-default"
               key={step.title}
             >
-              <span className={cn(
-                "flex h-24 w-24 items-center justify-center rounded-full bg-slate-50/50 transition-all duration-300",
-                step.title === "Advanced Manufacturing"
-                  ? "animate-[spin_8s_linear_infinite] group-hover/step:animate-[spin_1.5s_linear_infinite]"
-                  : "group-hover/step:scale-105"
-              )}>
+              <span className="flex h-24 w-24 items-center justify-center rounded-full bg-slate-50/50 transition-all duration-300 group-hover/step:-translate-y-1.5 group-hover/step:shadow-sm group-hover/step:bg-[#fa5902]/5">
                 <Image
-                  src={stepFlaticons[step.icon] ?? "/icons/reliable-performace.png"}
+                  src={
+                    stepFlaticons[step.icon] ?? "/icons/reliable-performace.png"
+                  }
                   alt={step.title}
                   width={96}
                   height={96}
-                  className={cn(
-                    "object-contain",
-                    step.title === "Rigorous Quality Checks" && "animate-[vibrate_3.5s_ease-in-out_infinite]"
-                  )}
+                  className="object-contain transition-transform duration-300 group-hover/step:scale-110"
                 />
               </span>
-              <p className="text-[11px] font-black uppercase tracking-wider text-[#031b40] leading-[1.3] px-2">
+              <p className="text-[11px] font-black uppercase tracking-wider text-[#031b40] leading-[1.3] px-2 transition-colors duration-300 group-hover/step:text-[#fa5902]">
                 {step.title}
               </p>
             </div>
@@ -881,7 +888,7 @@ function ManufacturingSection() {
               <div className="absolute bottom-0 inset-x-0 h-[4px] bg-[#fa5902] overflow-hidden">
                 <span className="absolute inset-0 bg-primary translate-x-[-100%] transition-transform duration-500 ease-out group-hover:translate-x-0" />
               </div>
-              <div className="image-hover relative h-[155px] overflow-hidden shrink-0">
+              <div className="image-hover relative aspect-square w-full overflow-hidden shrink-0">
                 <Image
                   alt={card.title}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -962,7 +969,7 @@ function GlobalSection() {
                 />
               ))}
             </span>
-            <p className="text-[12px] font-black uppercase tracking-[0.22em] text-secondary">
+            <p className="text-lg font-black uppercase tracking-[0.22em] text-secondary">
               {globalData.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -1102,7 +1109,7 @@ function IndustriesSection() {
                 />
               ))}
             </span>
-            <p className="text-[12px] font-black uppercase tracking-[0.22em] text-secondary">
+            <p className="text-lg font-black uppercase tracking-[0.22em] text-secondary">
               {industries.eyebrow}
             </p>
             <span className="flex items-center gap-[4px]">
@@ -1459,46 +1466,48 @@ function ImpactSection() {
             viewBox="0 0 360 300"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {[{ cx: 165, cy: 72, r: 48 }, { cx: 238, cy: 190, r: 63 }, { cx: 314, cy: 68, r: 73 }].map(
-              (gear) => (
-                <g key={`${gear.cx}-${gear.cy}`}>
-                  {Array.from({ length: 16 }).map((_, index) => (
-                    <rect
-                      height={gear.r * 0.28}
-                      key={index}
-                      rx="2"
-                      stroke="currentColor"
-                      strokeWidth="1"
-                      transform={`rotate(${index * 22.5} ${gear.cx} ${gear.cy})`}
-                      width={gear.r * 0.12}
-                      x={gear.cx - gear.r * 0.06}
-                      y={gear.cy - gear.r * 1.12}
-                    />
-                  ))}
-                  <circle
-                    cx={gear.cx}
-                    cy={gear.cy}
-                    r={gear.r}
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                  />
-                  <circle
-                    cx={gear.cx}
-                    cy={gear.cy}
-                    r={gear.r * 0.62}
+            {[
+              { cx: 165, cy: 72, r: 48 },
+              { cx: 238, cy: 190, r: 63 },
+              { cx: 314, cy: 68, r: 73 },
+            ].map((gear) => (
+              <g key={`${gear.cx}-${gear.cy}`}>
+                {Array.from({ length: 16 }).map((_, index) => (
+                  <rect
+                    height={gear.r * 0.28}
+                    key={index}
+                    rx="2"
                     stroke="currentColor"
                     strokeWidth="1"
+                    transform={`rotate(${index * 22.5} ${gear.cx} ${gear.cy})`}
+                    width={gear.r * 0.12}
+                    x={gear.cx - gear.r * 0.06}
+                    y={gear.cy - gear.r * 1.12}
                   />
-                  <circle
-                    cx={gear.cx}
-                    cy={gear.cy}
-                    r={gear.r * 0.24}
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  />
-                </g>
-              ),
-            )}
+                ))}
+                <circle
+                  cx={gear.cx}
+                  cy={gear.cy}
+                  r={gear.r}
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                />
+                <circle
+                  cx={gear.cx}
+                  cy={gear.cy}
+                  r={gear.r * 0.62}
+                  stroke="currentColor"
+                  strokeWidth="1"
+                />
+                <circle
+                  cx={gear.cx}
+                  cy={gear.cy}
+                  r={gear.r * 0.24}
+                  stroke="currentColor"
+                  strokeWidth="1"
+                />
+              </g>
+            ))}
           </svg>
         </div>
 
@@ -1562,67 +1571,237 @@ function renderCertIcon(iconName: string) {
   switch (iconName.toLowerCase()) {
     case "iso":
       return (
-        <svg className="h-12 w-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          className="h-12 w-12"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <circle cx="32" cy="32" r="26" fill="#f8fafc" />
           <circle cx="32" cy="32" r="22" stroke="#071c3b" strokeWidth="2.5" />
-          <path d="M10 32h44M32 10c7 7 10.5 14.4 10.5 22S39 47 32 54M32 10C25 17 21.5 24.4 21.5 32S25 47 32 54M14 20.5h36M14 43.5h36" stroke="#071c3b" strokeLinecap="round" strokeWidth="1.8" />
-          <rect x="12.5" y="22.5" width="39" height="19" rx="2.5" fill="#071c3b" />
-          <text x="32" y="37" fill="white" fontSize="17" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" textAnchor="middle" letterSpacing="-1">ISO</text>
+          <path
+            d="M10 32h44M32 10c7 7 10.5 14.4 10.5 22S39 47 32 54M32 10C25 17 21.5 24.4 21.5 32S25 47 32 54M14 20.5h36M14 43.5h36"
+            stroke="#071c3b"
+            strokeLinecap="round"
+            strokeWidth="1.8"
+          />
+          <rect
+            x="12.5"
+            y="22.5"
+            width="39"
+            height="19"
+            rx="2.5"
+            fill="#071c3b"
+          />
+          <text
+            x="32"
+            y="37"
+            fill="white"
+            fontSize="17"
+            fontFamily="Arial Black, Arial, sans-serif"
+            fontWeight="900"
+            textAnchor="middle"
+            letterSpacing="-1"
+          >
+            ISO
+          </text>
         </svg>
       );
     case "award":
       return (
-        <svg className="h-12 w-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="m21 39.5-4.7 16.8L32 48l15.7 8.3L43 39.5" fill="#fa5902" stroke="#071c3b" strokeWidth="2.4" strokeLinejoin="round" />
+        <svg
+          className="h-12 w-12"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m21 39.5-4.7 16.8L32 48l15.7 8.3L43 39.5"
+            fill="#fa5902"
+            stroke="#071c3b"
+            strokeWidth="2.4"
+            strokeLinejoin="round"
+          />
           <path d="m26.8 42.3-2 7 7.2-3.8 7.2 3.8-2-7" fill="#071c3b" />
           <circle cx="32" cy="27" r="20" fill="#071c3b" />
-          <circle cx="32" cy="27" r="15.2" stroke="#fa5902" strokeDasharray="3 3" strokeWidth="2" />
+          <circle
+            cx="32"
+            cy="27"
+            r="15.2"
+            stroke="#fa5902"
+            strokeDasharray="3 3"
+            strokeWidth="2"
+          />
           <circle cx="32" cy="27" r="8.5" fill="#fa5902" />
-          <path d="m27.7 26.8 3 3.2 6.5-6.8" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+          <path
+            d="m27.7 26.8 3 3.2 6.5-6.8"
+            stroke="white"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="3"
+          />
         </svg>
       );
     case "shield":
       return (
-        <svg className="h-12 w-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 29C14.8 16 25 9.5 32 9.5S49.2 16 51 29H13Z" fill="#fa5902" stroke="#071c3b" strokeLinejoin="round" strokeWidth="2.3" />
-          <path d="M26 10.8c3.8-1.2 8.2-1.2 12 0v10H26v-10Z" fill="white" stroke="#071c3b" strokeWidth="2" />
-          <path d="M32 9v12" stroke="#fa5902" strokeLinecap="round" strokeWidth="2" />
-          <path d="M10 29h44v5H10v-5Z" fill="white" stroke="#071c3b" strokeLinejoin="round" strokeWidth="2.3" />
+        <svg
+          className="h-12 w-12"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13 29C14.8 16 25 9.5 32 9.5S49.2 16 51 29H13Z"
+            fill="#fa5902"
+            stroke="#071c3b"
+            strokeLinejoin="round"
+            strokeWidth="2.3"
+          />
+          <path
+            d="M26 10.8c3.8-1.2 8.2-1.2 12 0v10H26v-10Z"
+            fill="white"
+            stroke="#071c3b"
+            strokeWidth="2"
+          />
+          <path
+            d="M32 9v12"
+            stroke="#fa5902"
+            strokeLinecap="round"
+            strokeWidth="2"
+          />
+          <path
+            d="M10 29h44v5H10v-5Z"
+            fill="white"
+            stroke="#071c3b"
+            strokeLinejoin="round"
+            strokeWidth="2.3"
+          />
           <rect x="16" y="36" width="32" height="13" rx="6.5" fill="#071c3b" />
           <circle cx="25" cy="42.5" r="3.2" fill="white" />
           <circle cx="39" cy="42.5" r="3.2" fill="white" />
-          <path d="M28.5 42.5h7" stroke="white" strokeLinecap="round" strokeWidth="2" />
+          <path
+            d="M28.5 42.5h7"
+            stroke="white"
+            strokeLinecap="round"
+            strokeWidth="2"
+          />
         </svg>
       );
     case "clipboard":
       return (
-        <svg className="h-12 w-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          className="h-12 w-12"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <circle cx="25" cy="36" r="15" fill="#071c3b" />
           {Array.from({ length: 10 }).map((_, index) => (
-            <path d="M25 16v6" key={index} stroke="#071c3b" strokeLinecap="round" strokeWidth="4" transform={`rotate(${index * 36} 25 36)`} />
+            <path
+              d="M25 16v6"
+              key={index}
+              stroke="#071c3b"
+              strokeLinecap="round"
+              strokeWidth="4"
+              transform={`rotate(${index * 36} 25 36)`}
+            />
           ))}
           <circle cx="25" cy="36" r="6" fill="#eef3f8" />
-          <path d="M25 27v9l7 4" stroke="#fa5902" strokeLinecap="round" strokeWidth="2.4" />
-          <rect x="31" y="12" width="27" height="38" rx="3.5" fill="white" stroke="#071c3b" strokeWidth="2.2" />
-          <path d="M39 22h12M39 30h12M39 38h7" stroke="#071c3b" strokeLinecap="round" strokeWidth="2" />
-          <path d="M39 22h8M39 38h5" stroke="#fa5902" strokeLinecap="round" strokeWidth="2.5" />
+          <path
+            d="M25 27v9l7 4"
+            stroke="#fa5902"
+            strokeLinecap="round"
+            strokeWidth="2.4"
+          />
+          <rect
+            x="31"
+            y="12"
+            width="27"
+            height="38"
+            rx="3.5"
+            fill="white"
+            stroke="#071c3b"
+            strokeWidth="2.2"
+          />
+          <path
+            d="M39 22h12M39 30h12M39 38h7"
+            stroke="#071c3b"
+            strokeLinecap="round"
+            strokeWidth="2"
+          />
+          <path
+            d="M39 22h8M39 38h5"
+            stroke="#fa5902"
+            strokeLinecap="round"
+            strokeWidth="2.5"
+          />
           <circle cx="53" cy="46" r="7" fill="#fa5902" />
-          <path d="m49.7 45.8 2.3 2.3 4-4.4" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+          <path
+            d="m49.7 45.8 2.3 2.3 4-4.4"
+            stroke="white"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+          />
         </svg>
       );
     case "leaf":
       return (
-        <svg className="h-12 w-12" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="32" cy="32" r="24" fill="white" stroke="#fa5902" strokeWidth="3" />
-          <path d="M14 46c11-4.5 18-15.5 22-31 3 13.5 8.5 23.5 15.5 30" stroke="#071c3b" strokeLinecap="round" strokeWidth="2.4" />
-          <path d="M35 20c-8.6-6.7-18.2-8.4-29-5.2 1.2 10.2 6.2 17.6 15 22.2 4.2-6.5 8.9-12 14-17Z" fill="#59b83f" stroke="#071c3b" strokeLinejoin="round" strokeWidth="2" />
-          <path d="M35 20c7.2-4.2 14.8-5 23-2.5-1.1 8.3-5.1 14.3-12 18-3.2-5.5-6.9-10.7-11-15.5Z" fill="#7ed957" stroke="#071c3b" strokeLinejoin="round" strokeWidth="2" />
-          <path d="M19 23c5.5.7 11.6 3.4 18.5 8M43 24c-3.5 1.2-6.9 3.3-10 6.2" stroke="white" strokeLinecap="round" strokeWidth="2" />
+        <svg
+          className="h-12 w-12"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="32"
+            cy="32"
+            r="24"
+            fill="white"
+            stroke="#fa5902"
+            strokeWidth="3"
+          />
+          <path
+            d="M14 46c11-4.5 18-15.5 22-31 3 13.5 8.5 23.5 15.5 30"
+            stroke="#071c3b"
+            strokeLinecap="round"
+            strokeWidth="2.4"
+          />
+          <path
+            d="M35 20c-8.6-6.7-18.2-8.4-29-5.2 1.2 10.2 6.2 17.6 15 22.2 4.2-6.5 8.9-12 14-17Z"
+            fill="#59b83f"
+            stroke="#071c3b"
+            strokeLinejoin="round"
+            strokeWidth="2"
+          />
+          <path
+            d="M35 20c7.2-4.2 14.8-5 23-2.5-1.1 8.3-5.1 14.3-12 18-3.2-5.5-6.9-10.7-11-15.5Z"
+            fill="#7ed957"
+            stroke="#071c3b"
+            strokeLinejoin="round"
+            strokeWidth="2"
+          />
+          <path
+            d="M19 23c5.5.7 11.6 3.4 18.5 8M43 24c-3.5 1.2-6.9 3.3-10 6.2"
+            stroke="white"
+            strokeLinecap="round"
+            strokeWidth="2"
+          />
         </svg>
       );
     default:
       return (
-        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+        <svg
+          width="46"
+          height="46"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-primary"
+        >
           <circle cx="12" cy="12" r="10" />
         </svg>
       );
@@ -1664,46 +1843,48 @@ function CertificationsSection() {
             viewBox="0 0 360 285"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {[{ cx: 168, cy: 70, r: 46 }, { cx: 242, cy: 186, r: 62 }, { cx: 316, cy: 66, r: 72 }].map(
-              (gear) => (
-                <g key={`${gear.cx}-${gear.cy}`}>
-                  {Array.from({ length: 16 }).map((_, index) => (
-                    <rect
-                      height={gear.r * 0.28}
-                      key={index}
-                      rx="2"
-                      stroke="currentColor"
-                      strokeWidth="1"
-                      transform={`rotate(${index * 22.5} ${gear.cx} ${gear.cy})`}
-                      width={gear.r * 0.12}
-                      x={gear.cx - gear.r * 0.06}
-                      y={gear.cy - gear.r * 1.12}
-                    />
-                  ))}
-                  <circle
-                    cx={gear.cx}
-                    cy={gear.cy}
-                    r={gear.r}
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                  />
-                  <circle
-                    cx={gear.cx}
-                    cy={gear.cy}
-                    r={gear.r * 0.62}
+            {[
+              { cx: 168, cy: 70, r: 46 },
+              { cx: 242, cy: 186, r: 62 },
+              { cx: 316, cy: 66, r: 72 },
+            ].map((gear) => (
+              <g key={`${gear.cx}-${gear.cy}`}>
+                {Array.from({ length: 16 }).map((_, index) => (
+                  <rect
+                    height={gear.r * 0.28}
+                    key={index}
+                    rx="2"
                     stroke="currentColor"
                     strokeWidth="1"
+                    transform={`rotate(${index * 22.5} ${gear.cx} ${gear.cy})`}
+                    width={gear.r * 0.12}
+                    x={gear.cx - gear.r * 0.06}
+                    y={gear.cy - gear.r * 1.12}
                   />
-                  <circle
-                    cx={gear.cx}
-                    cy={gear.cy}
-                    r={gear.r * 0.24}
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  />
-                </g>
-              ),
-            )}
+                ))}
+                <circle
+                  cx={gear.cx}
+                  cy={gear.cy}
+                  r={gear.r}
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                />
+                <circle
+                  cx={gear.cx}
+                  cy={gear.cy}
+                  r={gear.r * 0.62}
+                  stroke="currentColor"
+                  strokeWidth="1"
+                />
+                <circle
+                  cx={gear.cx}
+                  cy={gear.cy}
+                  r={gear.r * 0.24}
+                  stroke="currentColor"
+                  strokeWidth="1"
+                />
+              </g>
+            ))}
           </svg>
         </div>
 
@@ -1740,7 +1921,9 @@ function CertificationsSection() {
             <p className="mx-auto mt-4 max-w-[640px] text-sm font-medium leading-[1.55] text-primary-dark sm:text-base">
               Our processes, materials, and manufacturing systems adhere to
               globally recognized standards that ensure{" "}
-              <span className="font-black">quality, safety, and reliability</span>{" "}
+              <span className="font-black">
+                quality, safety, and reliability
+              </span>{" "}
               in everything we build.
             </p>
           </div>
@@ -1850,13 +2033,22 @@ function FinalCtaSection() {
   const { cta } = aboutPageData;
 
   return (
-<section className="relative overflow-hidden bg-white py-[35px]">
+    <section className="relative overflow-hidden bg-white py-[35px]">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 industrial-grid opacity-25"
       />
-      <div className="pointer-events-none absolute bottom-0 right-0 hidden h-[86%] w-[470px] opacity-[0.1] lg:block">
-        
+      {/* Right-side background image */}
+      <div className="pointer-events-none absolute bottom-0 right-0 hidden h-full w-[30%] lg:block">
+        {/* Fade from left */}
+        <div className="absolute inset-0 z-[1] bg-[linear-gradient(to_right,white_0%,transparent_45%)]" />
+        <Image
+          src="/solutionspage/our services 4 (2).png"
+          alt="Industrial solutions background"
+          fill
+          className="object-cover object-center"
+          sizes="20vw"
+        />
       </div>
       <div
         aria-hidden
@@ -1886,7 +2078,7 @@ function FinalCtaSection() {
           <div>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-[2px] w-5 bg-secondary" />
-              <span className="text-[12px] font-black uppercase tracking-[0.08em] text-secondary">
+              <span className="text-lg font-black uppercase tracking-[0.08em] text-secondary">
                 LET&apos;S BUILD
               </span>
             </div>
@@ -1897,7 +2089,10 @@ function FinalCtaSection() {
             <p className="mt-4 max-w-3xl text-sm font-medium leading-6 text-primary-dark">
               Whether it&apos;s a new project, a complex challenge, or a
               long-term partnership, we&apos;re ready to engineer solutions that
-              drive <span className="font-black italic text-secondary">real impact.</span>
+              drive{" "}
+              <span className="font-black italic text-secondary">
+                real impact.
+              </span>
             </p>
           </div>
 

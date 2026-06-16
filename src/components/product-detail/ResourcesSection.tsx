@@ -104,7 +104,7 @@ export function ResourcesSection({
               </svg>
             </span>
 
-            <span className="text-[11px] font-black text-secondary uppercase tracking-[0.26em] ml-1 mr-1" style={{ fontFamily: "var(--font-heading), sans-serif" }}>
+            <span className="text-lg font-black text-secondary uppercase tracking-[0.1em] ml-1 mr-1" style={{ fontFamily: "var(--font-heading), sans-serif" }}>
               {section.eyebrow}
             </span>
 

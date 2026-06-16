@@ -114,7 +114,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
               </svg>
             </span>
 
-            <span style={{ fontSize: "11px", fontWeight: 900, color: "#fa5902", letterSpacing: "0.26em", textTransform: "uppercase", fontFamily: "var(--font-heading), sans-serif", marginLeft: "4px" }}>
+            <span style={{ fontSize: "1.125rem", fontWeight: 900, color: "#fa5902", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "var(--font-heading), sans-serif", marginLeft: "4px" }}>
               {data.eyebrow}
             </span>
 

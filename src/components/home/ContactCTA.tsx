@@ -85,24 +85,9 @@ export function ContactCTA() {
   return (
     <section className="scroll-mt-24 bg-white !pt-0" id="contact1">
       <Container>
-        <div className="overflow-hidden rounded-[1.15rem] border border-primary/80 lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:max-h-[620px]">
-          <div className="relative min-h-[16rem] sm:min-h-[22rem] overflow-hidden lg:h-full lg:min-h-0">
-            <Image
-              alt="Crushing plant processing aggregates at a quarry"
-              className="object-cover object-center"
-              fill
-              sizes="(max-width: 1024px) 100vw, 48vw"
-              src="/images/contact/crushing-plant-contact1.jpg"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,#fff_43%,rgba(255,255,255,0.98)_51%,rgba(255,255,255,0.40)_62%,transparent_74%)]"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 hidden bg-[linear-gradient(90deg,transparent_55%,#fff_98%)] lg:block"
-            />
-            <div className="relative px-5 pb-8 pt-7 min-[380px]:px-7 sm:px-10 sm:pt-10 lg:px-10 lg:pt-10">
+        <div className="overflow-hidden rounded-[1.15rem] border border-primary/80 lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:max-h-[900px]">
+          <div className="flex flex-col bg-white overflow-hidden lg:h-full lg:min-h-0">
+            <div className="relative z-10 px-5 pb-3 pt-7 min-[380px]:px-7 sm:px-10 sm:pt-10 sm:pb-4 lg:px-10 lg:pt-10">
               <p className="mb-4 flex items-center gap-2.5 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-primary min-[380px]:gap-3 min-[380px]:tracking-[0.2em] sm:text-[0.76rem]">
                 <span aria-hidden className="flex gap-1">
                   <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
@@ -116,23 +101,34 @@ export function ContactCTA() {
                   <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
                 </span>
               </p>
-              <h2 className="headline text-[clamp(2.05rem,11.6vw,2.85rem)] text-primary sm:text-[clamp(2.55rem,3.5vw,3.7rem)]">
+              <h2 className="headline text-[clamp(1.5rem,8vw,2.2rem)] text-primary sm:text-[clamp(1.8rem,3vw,2.6rem)]">
                 Looking for the
                 <span className="mt-1 block text-secondary">
                   Right Crushing
                 </span>
                 <span className="mt-1 block text-secondary">Solution?</span>
               </h2>
-              <p className="mt-4 max-w-[27rem] text-sm leading-7 text-text-dark sm:text-base pt-2">
+              <p className="mt-2 max-w-[27rem] text-sm leading-7 text-text-dark sm:text-base pt-1">
                 Share your requirements with us and our experts will help you
                 find the perfect crushing solution for your business.
               </p>
+            </div>
+            <div className="relative flex-1 min-h-[16rem] sm:min-h-[20rem] w-full -mt-12 sm:-mt-16 lg:-mt-20">
+              <Image
+                alt="Crushing plant processing aggregates at a quarry"
+                className="object-cover object-[center_80%] rounded-bl-[1.15rem] lg:rounded-bl-[1.15rem]"
+                fill
+                sizes="(max-width: 1024px) 100vw, 48vw"
+                src="/images/contact/crushing-plant-contact1.jpg"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,transparent_25%)] pointer-events-none" />
+              <div className="absolute inset-0 bg-[linear-gradient(270deg,#fff_0%,transparent_25%)] pointer-events-none" />
             </div>
           </div>
 
           <form
             onSubmit={handleSubmit}
-            className="m-3 rounded-2xl border border-primary/20 bg-white px-4 py-6 min-[380px]:m-4 min-[380px]:px-5 sm:m-6 sm:px-7 sm:py-7 lg:m-6 lg:ml-0 lg:px-8 lg:py-6 lg:flex lg:flex-col lg:justify-between"
+            className="m-3 rounded-2xl border border-primary/20 bg-white px-4 py-6 min-[380px]:m-4 min-[380px]:px-5 sm:m-6 sm:px-7 sm:py-7 lg:m-6 lg:ml-0 lg:px-8 lg:py-8 lg:flex lg:flex-col lg:justify-between"
           >
             <div className="grid gap-4 lg:grid-cols-2 lg:gap-x-4 lg:gap-y-3">
               <label className={labelStyle}>
@@ -207,7 +203,7 @@ export function ContactCTA() {
                   required
                   value={formData.requirement}
                   onChange={handleChange}
-                  className={`${fieldStyle} h-[5.75rem] lg:h-[4.25rem] resize-none py-3`}
+                  className={`${fieldStyle} h-[10rem] lg:h-[14rem] resize-none py-3`}
                   name="requirement"
                   placeholder="Briefly describe your requirement"
                 />

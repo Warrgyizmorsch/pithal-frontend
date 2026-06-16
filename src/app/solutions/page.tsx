@@ -1118,15 +1118,13 @@ export default function SolutionsPage() {
 
           <Container className="relative z-10">
             {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-12">
-              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+            <div className="mx-auto max-w-full text-center mb-12 px-4">
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.08em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                <span>INDUSTRIES WE SERVE</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="text-lg">INDUSTRIES WE SERVE</span>
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
-              <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
+              <h2 className="headline text-center whitespace-nowrap text-[clamp(1rem,4vw,3.2rem)] font-black leading-[1.1] text-primary">
                 SOLUTIONS THAT POWER{" "}
                 <span className="text-secondary">EVERY INDUSTRY</span>
               </h2>
@@ -1308,19 +1306,16 @@ export default function SolutionsPage() {
 
           <Container className="relative z-10">
             {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-12">
-              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+            <div className="mx-auto max-w-full text-center mb-12 px-4">
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.08em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                <span>CHALLENGES WE SOLVE</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="text-lg">CHALLENGES WE SOLVE</span>
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
-              <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
+              <h2 className="headline text-center whitespace-nowrap text-[clamp(1rem,4vw,3.2rem)] font-black leading-[1.1] text-primary">
                 Every Challenge.{" "}
-                <span className="text-secondary relative inline-block">
+                <span className="text-secondary">
                   Engineered
-                  <span className="absolute left-0 bottom-0.5 w-full h-[2.5px] bg-secondary" />
                 </span>{" "}
                 Solution.
               </h2>
@@ -1342,8 +1337,8 @@ export default function SolutionsPage() {
                       className="group relative flex flex-col md:flex-row items-stretch rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
                     >
                       {/* Left: Thumbnail Image Box */}
-                      <div className="p-3 shrink-0 flex items-center justify-center bg-white">
-                        <div className="relative w-full md:w-[170px] aspect-[16/10] md:h-[110px] overflow-hidden rounded-xl border border-slate-200/60 shadow-sm bg-slate-100">
+                      <div className="p-3 shrink-0 flex items-center justify-center bg-#fa5902/10">
+                        <div className="relative w-full md:w-[170px] aspect-[16/10] md:h-[110px] overflow-hidden rounded-xl border border-slate-200/60 shadow-sm bg-#fa5902/10">
                           <Image
                             src={row.image}
                             alt={row.challengeTitle}
@@ -1359,7 +1354,7 @@ export default function SolutionsPage() {
                       </div>
 
                       {/* Middle: Challenge Box */}
-                      <div className="relative flex-1 bg-[#fdfaf7] p-5 flex flex-col justify-center border-b md:border-b-0 md:border-r border-slate-100">
+                      <div className="relative flex-1 bg-[#fa5902]/10 p-5 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#fa5902]/15">
                         <span className="inline-flex gap-1.5 items-center text-[10px] font-black uppercase text-secondary tracking-wider">
                           <svg
                             viewBox="0 0 24 24"
@@ -1400,7 +1395,7 @@ export default function SolutionsPage() {
                       </div>
 
                       {/* Right: Solution Box */}
-                      <div className="flex-1 bg-slate-50/50 p-5 md:pl-8 flex gap-4 items-center">
+                      <div className="flex-1 bg-[#031b40]/10 p-5 md:pl-8 flex gap-4 items-center">
                         <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[#092a5c] border border-white/10 shadow text-white">
                           <SolIcon
                             size={32}
@@ -1409,7 +1404,7 @@ export default function SolutionsPage() {
                           />
                         </div>
                         <div>
-                          <span className="text-[10px] font-black uppercase text-primary tracking-wider block">
+                          <span className="text-[10px] font-black uppercase text-[#38bdf8] tracking-wider block">
                             PITHAL SOLUTION
                           </span>
                           <h4 className="mt-0.5 text-sm md:text-base font-extrabold text-primary leading-tight uppercase tracking-wide">
@@ -1506,7 +1501,7 @@ export default function SolutionsPage() {
               <div className="max-w-2xl relative z-10">
                 <div className="flex items-center gap-2 mb-4 text-xs font-black uppercase tracking-[0.24em] text-secondary">
                   <span className="h-[1.5px] w-6 bg-secondary rounded-full" />
-                  <span>CUSTOM ENGINEERING SOLUTIONS</span>
+                  <span className="text-lg">CUSTOM ENGINEERING SOLUTIONS</span>
                   <span className="h-[1.5px] w-6 bg-secondary rounded-full" />
                 </div>
 
@@ -1630,9 +1625,7 @@ export default function SolutionsPage() {
             <div className="mx-auto max-w-3xl text-center mb-16">
               <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                <span>APPLICATIONS WE POWER</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="text-lg">APPLICATIONS WE POWER</span>
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
@@ -1791,15 +1784,13 @@ export default function SolutionsPage() {
 
           <Container className="relative z-10">
             {/* Header Block */}
-            <div className="mx-auto max-w-4xl text-center mb-12">
-              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+            <div className="mx-auto max-w-full text-center mb-12 px-4">
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.08em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                <span>OUR PERFORMANCE. YOUR ADVANTAGE.</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="text-lg">OUR PERFORMANCE. YOUR ADVANTAGE.</span>
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
-              <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary uppercase">
+              <h2 className="headline text-center whitespace-nowrap text-[clamp(0.85rem,3.8vw,3.2rem)] font-black leading-[1.1] text-primary uppercase">
                 MEASURABLE PERFORMANCE.{" "}
                 <span className="text-secondary">MAXIMUM RESULTS.</span>
               </h2>
@@ -2378,15 +2369,13 @@ export default function SolutionsPage() {
         <section className="bg-white py-[60px]">
           <Container>
             {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+            <div className="mx-auto max-w-full text-center mb-16 px-4">
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.08em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                <span>OUR SMART PROCESS</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="text-lg">OUR SMART PROCESS</span>
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
-              <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
+              <h2 className="headline text-center whitespace-nowrap text-[clamp(0.85rem,3.5vw,3.2rem)] font-black leading-[1.1] text-primary">
                 INTELLIGENT WORKFLOW.{" "}
                 <span className="text-secondary">SEAMLESS RESULTS.</span>
               </h2>
@@ -2398,7 +2387,7 @@ export default function SolutionsPage() {
             </div>
 
             {/* 6 Step cards */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6 relative mb-14">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6 relative mb-1">
               {/* Connecting line */}
               <div className="absolute top-[32px] left-[10%] right-[10%] h-[1.5px] border-t border-dashed border-slate-200 hidden lg:block z-0" />
 
@@ -2464,7 +2453,7 @@ export default function SolutionsPage() {
             </div>
 
             {/* Dots timeline with glowing pin locator effect */}
-            <div className="relative flex justify-between px-[8%] items-center mb-16">
+            <div className="relative flex justify-between px-[8%] items-center mb-5">
               <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-slate-200 via-secondary to-slate-200 z-0" />
               {smartProcessSteps.map((item, i) => (
                 <div
@@ -2699,15 +2688,13 @@ export default function SolutionsPage() {
         <section className="bg-white py-[60px]">
           <Container>
             {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-16">
-              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
+            <div className="mx-auto max-w-full text-center mb-16 px-4">
+              <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.08em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                <span>WHY CHOOSE PITHAL SOLUTIONS</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <span className="text-lg">WHY CHOOSE PITHAL SOLUTIONS</span>
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
               </div>
-              <h2 className="headline text-center text-[clamp(2.2rem,5vw,3.2rem)] font-black leading-[1.1] text-primary">
+              <h2 className="headline text-center whitespace-nowrap text-[clamp(0.85rem,4vw,3.2rem)] font-black leading-[1.1] text-primary">
                 SOLUTIONS BUILT AROUND{" "}
                 <span className="text-secondary">YOUR SUCCESS.</span>
               </h2>
@@ -2731,14 +2718,17 @@ export default function SolutionsPage() {
               {whyChooseCards.map((item, i) => (
                 <div
                   key={i}
-                  className="why-card group relative flex flex-col bg-slate-50 border border-slate-200/80 p-6 rounded-xl hover:shadow-lg transition-all duration-300 hover:border-slate-300"
+                  className="why-card group relative flex flex-col bg-slate-50 border border-slate-200/80 p-7 rounded-xl min-h-[160px] hover:shadow-xl hover:-translate-y-1 hover:border-secondary/40 hover:bg-white transition-all duration-300 cursor-default"
                 >
+                  {/* Orange accent bar on left on hover */}
+                  <span className="absolute left-0 top-4 bottom-4 w-[3px] rounded-full bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                   {/* Left-side circle container with orange crescent */}
                   <div className="flex gap-5 items-start">
-                    <div className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-md">
+                    <div className="relative flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-md group-hover:shadow-lg transition-shadow duration-300">
                       {/* Orange outer arc — partial by default, full circle + glow on hover */}
                       <svg
-                        className="absolute -inset-[1.5px] h-[82px] w-[82px] -rotate-45 pointer-events-none"
+                        className="absolute -inset-[1.5px] h-[98px] w-[98px] -rotate-45 pointer-events-none"
                         viewBox="0 0 100 100"
                       >
                         <circle
@@ -2754,11 +2744,13 @@ export default function SolutionsPage() {
                         />
                       </svg>
 
-                      {renderWhyChooseIcon(item.icon)}
+                      <div className="transition-transform duration-300 group-hover:scale-110">
+                        {renderWhyChooseIcon(item.icon)}
+                      </div>
                     </div>
 
                     <div>
-                      <h3 className="text-base font-black uppercase tracking-[0.10em] text-primary">
+                      <h3 className="text-base font-black uppercase tracking-[0.10em] text-primary group-hover:text-secondary transition-colors duration-300">
                         {item.title}
                       </h3>
 
@@ -2929,15 +2921,13 @@ export default function SolutionsPage() {
                 {/* Tagline */}
                 <div className="flex items-center gap-3 mb-6">
                   <div className="flex items-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>
                     <span className="w-10 h-[2px] bg-[#ea580c]"></span>
                   </div>
-                  <span className="text-[11px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#ea580c]">
+                  <span className="text-sm sm:text-lg font-black uppercase tracking-[0.2em] text-[#ea580c]">
                     Ready to Build. Ready to Perform.
                   </span>
                   <div className="flex items-center">
                     <span className="w-10 h-[2px] bg-[#ea580c]"></span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span>
                   </div>
                 </div>
 

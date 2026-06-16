@@ -28,7 +28,7 @@ function PerformanceStrip({ text }: { text: string }) {
     return (
       <div className="mx-auto mt-5 flex max-w-[520px] items-center justify-center gap-3 rounded-lg border border-secondary/35 bg-white px-4 py-2.5 text-center text-xs uppercase tracking-[0.04em] text-primary shadow-sm sm:rounded-none sm:[clip-path:polygon(4%_0,96%_0,100%_50%,96%_100%,4%_100%,0_50%)]">
         <ProductIcon name="shield" size={17} strokeWidth={1.8} />
-        <p>{text}</p>
+        <p className="whitespace-nowrap text-[10px] sm:text-xs">{text}</p>
       </div>
     );
   }
@@ -39,7 +39,7 @@ function PerformanceStrip({ text }: { text: string }) {
   return (
     <div className="mx-auto mt-5 flex max-w-[520px] items-center justify-center gap-3 rounded-lg border border-secondary/35 bg-white px-4 py-2.5 text-center text-xs uppercase tracking-[0.04em] text-primary shadow-sm sm:rounded-none sm:[clip-path:polygon(4%_0,96%_0,100%_50%,96%_100%,4%_100%,0_50%)]">
       <ProductIcon name="shield" size={17} strokeWidth={1.8} />
-      <p>
+      <p className="whitespace-nowrap text-[10px] sm:text-xs">
         {beforePerformance}
         <span className="text-secondary">{performance}</span>
         {betweenHighlights}
@@ -69,7 +69,7 @@ export function ProductStats({
           <header className="relative mx-auto mb-6 max-w-4xl text-center">
             <div className="mb-4 flex items-center justify-center gap-3">
               <span className="hidden h-px flex-1 bg-secondary/75 md:block" />
-              <span className="flex items-center gap-4 text-[12px] font-semibold uppercase tracking-[0.16em] text-primary sm:text-[14px]">
+              <span className="flex items-center gap-4 text-lg font-bold uppercase tracking-[0.08em] text-primary sm:text-xl sm:tracking-[0.1em]">
                 <span className="text-secondary">{"///"}</span>
                 <span>
                   <span className="text-secondary">{section.eyebrow.split(" ")[0]}</span>{" "}
@@ -79,10 +79,10 @@ export function ProductStats({
               </span>
               <span className="hidden h-px flex-1 bg-secondary/75 md:block" />
             </div>
-            <h2 className="headline text-[clamp(1.55rem,3.6vw,2.35rem)] text-primary">
+            <h2 className="headline text-[clamp(1.8rem,9vw,2.2rem)] text-primary sm:text-[clamp(2rem,4.6vw,3.25rem)]">
               {section.title} <span className="text-secondary">{section.highlight}</span>
             </h2>
-            <p className="mt-2 text-[13px] leading-[1.45] text-text-dark sm:text-sm">
+            <p className="mt-4 text-sm leading-7 text-text-muted sm:text-base">
               <SplitSubtitle text={section.subtitle} />
             </p>
           </header>

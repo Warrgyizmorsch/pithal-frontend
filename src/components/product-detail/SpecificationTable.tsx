@@ -40,7 +40,7 @@ export function SpecificationTable({
           <div className="border-b border-border px-4 py-5 sm:px-6 lg:px-7">
             <header className="max-w-4xl">
               {section.eyebrow && (
-                <p className="accent-bars mb-2 text-[9px] font-bold uppercase tracking-[0.18em] text-secondary sm:text-[10px]">
+                <p className="accent-bars mb-2 text-lg font-bold uppercase tracking-[0.08em] text-secondary sm:text-xl sm:tracking-[0.1em]">
                   {section.eyebrow}
                 </p>
               )}

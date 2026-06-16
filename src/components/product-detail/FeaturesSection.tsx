@@ -77,6 +77,7 @@ export function FeaturesSection({
           title={sectionHeading}
           highlight={sectionHighlight}
           subtitle={sectionSubtitle}
+          className="!max-w-none [&_h2]:whitespace-nowrap [&_h2]:!text-[clamp(0.85rem,3.8vw,3.25rem)] w-full"
         />
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))] xl:gap-8">
@@ -111,11 +112,11 @@ export function FeaturesSection({
         </div>
 
 
-          <div className="relative mx-auto mt-10 flex flex-col sm:flex-row w-full max-w-xl items-center justify-center gap-4 px-8 py-5 text-center sm:text-left">
+          <div className="relative mx-auto mt-10 flex w-full max-w-2xl items-center justify-center gap-3 sm:gap-4 px-4 py-5 text-center">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
               <ShieldCheck size={24} strokeWidth={1.8} />
             </div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary md:text-base">
+            <p className="text-[11px] sm:text-sm font-semibold uppercase tracking-[0.1em] sm:tracking-[0.22em] text-primary md:text-base whitespace-nowrap">
               Built for <span className="text-secondary">PERFORMANCE.</span> Engineered for <span className="text-secondary">RESULTS.</span>
             </p>
           </div>

@@ -133,6 +133,7 @@ export function CrushingProcessTimeline() {
           title="INTELLIGENT SYSTEMS."
           highlight="SEAMLESS PERFORMANCE."
           subtitle="From raw material to final product, our complete plant solutions are engineered for maximum efficiency, reliability, and productivity."
+          className="!max-w-none [&_h2]:whitespace-nowrap [&_h2]:!text-[clamp(0.75rem,3vw,3.25rem)] w-full"
         />
 
         {/* Desktop View (Grid Layout) */}

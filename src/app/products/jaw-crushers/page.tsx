@@ -32,6 +32,7 @@ export default function JawCrusherProductPage() {
           heading="Engineered For"
           highlightText="Superior Performance"
           subtitle="Our jaw crushers are built with advanced engineering and premium quality components to deliver unmatched performance, reliability and efficiency."
+          
         />
         <SpecificationTable rows={jawCrusherData.specifications} section={jawCrusherData.specificationsSection} />
         <IndustryApplications industries={jawCrusherData.industries} section={jawCrusherData.industriesSection} />

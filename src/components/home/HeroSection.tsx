@@ -30,10 +30,10 @@ export function HeroSection() {
             <source src={heroMachineVideo} type="video/mp4" />
           </video>
         </div>
-        <div className="relative z-10 max-w-[32rem] xl:max-w-[35rem]">
+        <div className="relative z-20 max-w-[32rem] xl:max-w-[35rem]">
           <p className="mb-3 flex items-center gap-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary sm:mb-4 sm:gap-3 sm:text-[13px] sm:tracking-[0.2em]">
-            <span className="h-[2px] w-6 bg-secondary" /> Built strong. Built to
-            perform.
+            <span className="h-[2px] w-6 bg-secondary" /> Crushing Strength,
+Delivering Results.
           </p>
           <h1 className="headline text-[clamp(2.45rem,11vw,3.05rem)] leading-[0.96] text-primary italic sm:text-[clamp(3.2rem,5vw,4.45rem)] lg:text-[clamp(3.65rem,4.25vw,4.65rem)]">
             Engineering the
@@ -79,7 +79,10 @@ export function HeroSection() {
             <source src={heroMachineVideo} type="video/mp4" />
           </video>
         </div>
-        <div className="relative z-10 mt-auto w-full max-w-[780px] pt-5 border-t border-gray-200/60">
+        <div className="relative z-10 mt-auto mb-6 sm:mb-8 lg:mb-12 w-full max-w-[820px] pt-4">
+          {/* Intense white glow behind stats for visibility */}
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,1)_40%,rgba(255,255,255,0)_85%)] -inset-x-16 -inset-y-16 blur-2xl pointer-events-none" />
+          <div className="absolute inset-0 -z-10 bg-white/80 blur-xl -inset-x-8 -inset-y-8 rounded-[3rem] pointer-events-none" />
           <div className="relative grid grid-cols-2 gap-y-6 sm:gap-x-4 md:gap-x-8 lg:grid-cols-4 lg:gap-x-0">
             {stats.map((stat, index) => (
               <div

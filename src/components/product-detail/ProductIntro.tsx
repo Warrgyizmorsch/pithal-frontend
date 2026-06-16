@@ -33,7 +33,7 @@ const calloutLinePositions: Record<IntroCalloutPosition, string> = {
 };
 
 const introButtonClass = "min-h-[46px] min-w-[190px] justify-between rounded px-5 text-[11px]";
-const overviewEyebrowClass = "flex items-center gap-2.5 text-[10px] font-bold uppercase tracking-[0.08em] text-secondary";
+const overviewEyebrowClass = "flex items-center gap-2.5 text-lg font-bold uppercase tracking-[0.08em] text-secondary";
 
 function OverviewEyebrow({ children }: { children: React.ReactNode }) {
   return (
