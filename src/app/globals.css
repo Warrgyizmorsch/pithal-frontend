@@ -141,6 +141,15 @@ textarea {
   transform: scale(1.055);
 }
 
+@keyframes bounce-x {
+  0%, 100% { transform: translate(-25%, -50%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+  50% { transform: translate(0, -50%); animation-timing-function: cubic-bezier(0,0,0.2,1); }
+}
+
+.animate-bounce-x {
+  animation: bounce-x 1s infinite;
+}
+
 @keyframes moving-shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }

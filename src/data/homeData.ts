@@ -11,10 +11,10 @@ export const navigation = [
 ];
 
 export const stats = [
-  { value: "BEST", label: "Quality Commitment", icon: "globe" },
-  { value: "Skilled", label: " Engineering Team", icon: "gear" },
+  { value: "BEST", label: "Quality Commitment", icon: "shield" },
+  { value: "Skilled", label: "Engineering Team", icon: "partners" },
   { value: "24x7", label: "Support & Reliability", icon: "headset" },
-  { value: "Innovative", label: "MAchine Design", icon: "partners" },
+  { value: "Innovative", label: "Machine Design", icon: "gear" },
 ];
 
 export const products = [

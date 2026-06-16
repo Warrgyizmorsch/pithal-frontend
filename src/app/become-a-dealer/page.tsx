@@ -2,6 +2,7 @@ import { Container } from "@/components/common/Container";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { DealerForm } from "@/components/dealer/DealerForm";
+import { StatCard } from "@/components/common/StatCard";
 import { 
   Handshake, 
   TrendingUp, 
@@ -11,10 +12,18 @@ import {
   BarChart3,
   Users2,
   Settings2,
-  Wrench
+  Wrench,
+  Quote
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+
+const dealerStats = [
+  { value: "Great", label: "Engineering Legacy", icon: "shield" },
+  { value: "Grow With Us", label: "Become Partner", icon: "partners" },
+  { value: "24/7", label: "Technical Support Access", icon: "headset" },
+  { value: "100%", label: "Genuine Parts Guarantee", icon: "factory" },
+];
 
 const benefits = [
   {
@@ -63,18 +72,18 @@ export default function BecomeADealerPage() {
       <Header />
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative h-[60vh] min-h-[400px] flex items-center overflow-hidden bg-primary">
+        <section className="relative h-[65vh] min-h-[500px] flex items-center overflow-hidden bg-slate-950">
           <Image
             src="/solutionspage/challenges we solve 14operations.jpg"
             alt="Crushing Plant Blueprint"
             fill
-            className="object-cover opacity-20"
+            className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent z-[5]" />
           
-          <Container className="relative z-10">
-            <div className="max-w-3xl">
+          <Container className="relative z-10 h-full flex flex-col justify-center">
+            <div className="max-w-3xl mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <span className="h-[2px] w-12 bg-secondary" />
                 <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Global Partnership</span>
@@ -93,31 +102,62 @@ export default function BecomeADealerPage() {
                 Apply Now <ArrowRight size={18} />
               </Link>
             </div>
+
+            {/* Stats Bar Structure */}
+            <div className="relative z-10 w-full max-w-[920px] bg-white rounded-lg shadow-2xl overflow-hidden border border-border">
+              <div className="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
+                {dealerStats.map((stat) => (
+                  <div key={stat.label} className="flex justify-center items-center">
+                    <StatCard {...stat} compact className="px-6 py-5 sm:px-8" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </Container>
         </section>
 
         {/* Benefits Grid */}
-        <section className="py-16 bg-white relative">
+        <section className="py-24 bg-white relative overflow-hidden">
+          {/* Decorative background element */}
+          <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gray-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 pointer-events-none" />
+          
           <Container>
-            <div className="text-center max-w-3xl mx-auto mb-10">
-              <h2 className="headline text-4xl text-primary mb-4">Why Partner With <span className="text-secondary italic">Pithal?</span></h2>
-              <div className="h-1 w-20 bg-secondary mx-auto mb-4" />
-              <p className="text-text-dark text-lg font-light">
-                We believe in long-term relationships built on trust, quality, and mutual growth. As a Pithal dealer, you get more than just products; you get a legacy of engineering.
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <span className="h-1 w-8 bg-secondary rounded-full" />
+                <span className="text-secondary font-bold uppercase tracking-widest text-sm">Dealer Benefits</span>
+                <span className="h-1 w-8 bg-secondary rounded-full" />
+              </div>
+              <h2 className="headline text-4xl md:text-5xl text-primary mb-6">Why Partner With <span className="text-secondary italic">Pithal?</span></h2>
+              <p className="text-text-dark text-lg font-light leading-relaxed">
+                We believe in long-term relationships built on trust, quality, and mutual growth. As a Pithal dealer, you get more than just products; you get a legacy of engineering excellence.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-8">
               {benefits.map((benefit, i) => (
-                <div key={i} className="group p-6 rounded-xl border border-border bg-gray-50/50 hover:bg-white hover:shadow-xl hover:border-secondary/30 transition-all duration-300 flex gap-5 items-start">
-                  <div className="w-14 h-14 shrink-0 rounded-lg bg-primary/5 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
-                    <benefit.icon className="text-primary group-hover:text-secondary transition-colors" size={30} strokeWidth={1.5} />
+                <div 
+                  key={i} 
+                  className="group relative p-8 rounded-2xl border border-border bg-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:border-secondary/20 transition-all duration-500 flex flex-col sm:flex-row gap-6 items-start hover:-translate-y-2"
+                >
+                  {/* Hover accent bar */}
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-secondary transition-all duration-500 group-hover:h-2/3 rounded-r-full" />
+                  
+                  <div className="w-16 h-16 shrink-0 rounded-2xl bg-gray-50 flex items-center justify-center group-hover:bg-secondary group-hover:rotate-[10deg] transition-all duration-500 shadow-sm group-hover:shadow-secondary/20">
+                    <benefit.icon className="text-primary group-hover:text-white transition-colors duration-500" size={32} strokeWidth={1.5} />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary uppercase tracking-wider mb-2">{benefit.title}</h3>
-                    <p className="text-text-dark text-sm leading-relaxed font-light">
+                  
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-primary uppercase tracking-wider mb-3 group-hover:text-secondary transition-colors duration-300">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-text-dark text-base leading-relaxed font-light opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                       {benefit.description}
                     </p>
+                    
+                    <div className="mt-4 flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-widest opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 delay-100">
+                      Learn More <ArrowRight size={14} />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -126,53 +166,64 @@ export default function BecomeADealerPage() {
         </section>
 
         {/* How It Works Section */}
-        <section className="py-16 bg-[#f1f4f8] relative overflow-hidden">
+        <section className="py-24 bg-[#f8fafc] relative overflow-hidden">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 opacity-[0.03]"
+            className="pointer-events-none absolute inset-0 opacity-[0.05]"
             style={{
-              backgroundImage:
-                "linear-gradient(to right, #092a5c 1px, transparent 1px), linear-gradient(to bottom, #092a5c 1px, transparent 1px)",
-              backgroundSize: "44px 44px",
+              backgroundImage: "radial-gradient(#092a5c 1.5px, transparent 1.5px)",
+              backgroundSize: "32px 32px",
             }}
           />
+          
+          <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-transparent via-secondary/20 to-transparent" />
+
           <Container className="relative">
-            <div className="text-center max-w-2xl mx-auto mb-14">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex items-center gap-[4px]">
-                  {[0, 1, 2].map((i) => (
-                    <span key={i} aria-hidden className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-secondary" />
-                  ))}
-                </span>
-                <p className="text-lg sm:text-xl font-black uppercase tracking-[0.08em] text-secondary">Simple Process</p>
-                <span className="flex items-center gap-[4px]">
-                  {[0, 1, 2].map((i) => (
-                    <span key={i} aria-hidden className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-secondary" />
-                  ))}
-                </span>
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Path to Partnership</p>
               </div>
-              <h2 className="headline text-[clamp(2rem,4.5vw,3rem)] leading-[1.1] text-primary font-black uppercase">
+              <h2 className="headline text-4xl md:text-5xl text-primary mb-6">
                 Become a Dealer in <span className="text-secondary italic">3 Simple Steps</span>
               </h2>
-              <p className="mt-4 text-sm leading-7 text-text-muted max-w-xl mx-auto">
-                Our onboarding process is designed to be fast, transparent, and rewarding — getting you to market as quickly as possible.
+              <p className="text-text-muted text-lg font-light max-w-2xl mx-auto leading-relaxed">
+                Our onboarding process is engineered for speed and transparency, ensuring you can start delivering results to your territory as quickly as possible.
               </p>
             </div>
 
-            <div className="relative grid md:grid-cols-3 gap-6 lg:gap-10">
-              {/* Connecting line (desktop only) */}
-              <div aria-hidden className="hidden md:block absolute top-[52px] left-[calc(16.67%+24px)] right-[calc(16.67%+24px)] h-[2px] bg-gradient-to-r from-secondary/30 via-secondary to-secondary/30 z-0" />
+            <div className="grid md:grid-cols-3 gap-12 relative">
+              <div className="hidden md:block absolute top-12 left-[20%] right-[20%] h-px border-t-2 border-dashed border-gray-200 z-0" />
 
               {steps.map((step, i) => (
-                <div key={i} className="relative z-10 flex flex-col items-center text-center group">
-                  {/* Number badge */}
-                  <div className="w-[72px] h-[72px] rounded-full bg-white border-2 border-secondary shadow-[0_8px_24px_rgba(250,89,2,0.15)] flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110">
-                    <span className="headline text-2xl text-secondary font-black">{step.number}</span>
+                <div key={i} className="group relative z-10 flex flex-col items-center">
+                  <span className="absolute -top-12 left-1/2 -translate-x-1/2 text-8xl font-black text-primary/[0.03] select-none pointer-events-none transition-all duration-500 group-hover:text-secondary/[0.05] group-hover:-translate-y-2">
+                    {step.number}
+                  </span>
+
+                  <div className="relative w-24 h-24 mb-8">
+                    <div className="absolute inset-0 rounded-full bg-secondary/20 animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative w-full h-full rounded-full bg-white border-4 border-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] group-hover:shadow-secondary/20 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:border-secondary overflow-hidden">
+                      <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                      <span className="relative headline text-3xl text-primary group-hover:text-white transition-colors duration-500 italic">
+                        {step.number}
+                      </span>
+                    </div>
+
+                    {i < steps.length - 1 && (
+                      <div className="hidden md:flex absolute left-[calc(100%+24px)] top-1/2 -translate-x-1/2 -translate-y-1/2 text-secondary animate-bounce-x z-20">
+                        <ArrowRight size={24} strokeWidth={3} />
+                      </div>
+                    )}
                   </div>
-                  <div className="bg-white rounded-xl border border-border p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full">
-                    <h3 className="text-sm font-black uppercase tracking-[0.12em] text-primary mb-3">{step.title}</h3>
-                    <div className="h-[2px] w-8 bg-secondary mx-auto mb-3" />
-                    <p className="text-xs leading-[1.7] text-text-muted">{step.text}</p>
+
+                  <div className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-border group-hover:border-secondary/30 group-hover:shadow-xl transition-all duration-500 text-center relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gray-100 group-hover:bg-secondary transition-colors duration-500" />
+                    <h3 className="text-xl font-bold text-primary uppercase tracking-wider mb-4 group-hover:text-secondary transition-colors duration-300">
+                      {step.title}
+                    </h3>
+                    <p className="text-text-muted text-sm leading-relaxed font-light">
+                      {step.text}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -181,58 +232,77 @@ export default function BecomeADealerPage() {
         </section>
 
         {/* Legacy / Stats Section */}
-        <section className="relative overflow-hidden bg-primary py-16">
-          {/* Background texture */}
-          <div aria-hidden className="absolute inset-0 opacity-[0.04]"
+        <section className="relative overflow-hidden bg-primary py-24">
+          {/* Enhanced Industrial Background */}
+          <div aria-hidden className="absolute inset-0 opacity-[0.08] grayscale brightness-[0.2]"
             style={{
-              backgroundImage: "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
-              backgroundSize: "44px 44px",
+              backgroundImage: "url('/contactus/front.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           />
-          {/* Orange slant decoration */}
-          <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-[38%] bg-secondary/8 skew-x-[-14deg] translate-x-[20%] hidden lg:block" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary-dark/90" />
+          
+          {/* Orange design accents */}
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-secondary/[0.03] -skew-x-12 translate-x-1/4 pointer-events-none" />
 
           <Container className="relative z-10">
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
-              {/* Left: Quote & text */}
-              <div>
+            <div className="grid lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
+              {/* Left: Content & Premium Quote */}
+              <div className="relative">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="h-[2px] w-8 bg-secondary" />
-                  <span className="text-secondary font-black uppercase tracking-[0.08em] text-lg sm:text-xl">Your Growth. Our Commitment.</span>
+                  <span className="h-[2px] w-12 bg-secondary" />
+                  <span className="text-secondary font-black uppercase tracking-[0.15em] text-sm sm:text-base">Engineering Excellence</span>
                 </div>
-                <h2 className="headline text-[clamp(1.9rem,4vw,2.8rem)] leading-[1.1] text-white font-black uppercase mb-5">
-                  A Partnership Built on <span className="text-secondary">Engineering Legacy</span>
+                
+                <h2 className="headline text-[clamp(2.2rem,5vw,3.5rem)] leading-[1] text-white italic mb-8">
+                  A Legacy Built on <br />
+                  <span className="text-secondary">Global Trust</span>
                 </h2>
-                <p className="text-white/75 text-sm leading-7 max-w-lg mb-8">
-                  We believe in long-term relationships built on trust, quality, and mutual growth. As a Pithal dealer, you get more than just products — you get decades of industrial engineering expertise, a proven brand, and a team that supports your success at every step.
+                
+                <p className="text-white/70 text-lg font-light leading-relaxed max-w-xl mb-10">
+                  We don't just build machines; we build the foundations of infrastructure. Partnering with Pithal means gaining access to decades of industrial wisdom and a brand that stands for absolute reliability.
                 </p>
-                {/* Quote block */}
-                <div className="border-l-4 border-secondary pl-5 py-2">
-                  <p className="text-white/90 text-sm italic leading-7">
-                    "Our dealers are not just distributors — they are the face of Pithal in their regions. We invest in their growth because their success is our success."
+
+                {/* Premium Glass Quote Block */}
+                <div className="relative p-8 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-sm shadow-2xl group overflow-hidden">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-secondary group-hover:w-full group-hover:opacity-5 transition-all duration-700" />
+                  <Quote className="text-secondary/20 absolute top-4 right-6" size={80} strokeWidth={1} />
+                  
+                  <p className="relative z-10 text-white/90 text-lg italic font-light leading-relaxed mb-6">
+                    "Our dealers are the face of our commitment. We don't see them as distributors, but as strategic partners in our mission to power global progress."
                   </p>
-                  <p className="mt-3 text-secondary text-xs font-black uppercase tracking-wider">— Pithal Machines Leadership</p>
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-[1px] bg-secondary" />
+                    <p className="text-secondary font-bold uppercase tracking-widest text-xs">Pithal Machines Leadership</p>
+                  </div>
                 </div>
               </div>
 
-              {/* Right: Stat cards */}
-              <div className="grid grid-cols-2 gap-4">
+              {/* Right: Modern Stat Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {[
-                  { value: "25+", label: "Years of Manufacturing Excellence", icon: <TrendingUp size={22} strokeWidth={1.8} /> },
-                  { value: "50+", label: "Dealer Partners Worldwide", icon: <Globe2 size={22} strokeWidth={1.8} /> },
-                  { value: "24/7", label: "Technical Support Access", icon: <Wrench size={22} strokeWidth={1.8} /> },
-                  { value: "100%", label: "Genuine Spare Parts Guarantee", icon: <ShieldCheck size={22} strokeWidth={1.8} /> },
-                  { value: "Custom", label: "Territory-Based Pricing", icon: <Handshake size={22} strokeWidth={1.8} /> },
-                  { value: "Fast", label: "Onboarding & Training Program", icon: <Users2 size={22} strokeWidth={1.8} /> },
+                  { value: "great", label: "Engineering Legacy", icon: <TrendingUp size={24} />, desc: "Decades of manufacturing wisdom" },
+                  { value: "Become", label: "Valuable Partner", icon: <Globe2 size={24} />, desc: "Represented across 6 continents" },
+                  { value: "24/7", label: "Priority Support", icon: <Wrench size={24} />, desc: "Direct engineering team access" },
+                  { value: "100%", label: "Genuine Spares", icon: <ShieldCheck size={24} />, desc: "Quality guaranteed performance" },
+                  { value: "Custom", label: "Local Pricing", icon: <Handshake size={24} />, desc: "Territory-based strategic edge" },
+                  { value: "Fast", label: "Onboarding", icon: <Users2 size={24} />, desc: "From training to market launch" },
                 ].map((stat, i) => (
-                  <div key={i} className="bg-white/[0.06] border border-white/10 rounded-xl p-4 flex gap-3 items-start hover:bg-white/10 transition-colors duration-300">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary/20 text-secondary">
-                      {stat.icon}
-                    </span>
-                    <div>
-                      <p className="headline text-xl text-white leading-none">{stat.value}</p>
-                      <p className="mt-1 text-[11px] font-medium text-white/60 leading-[1.4]">{stat.label}</p>
+                  <div key={i} className="group relative p-6 rounded-2xl bg-white/[0.04] border border-white/10 hover:bg-white/[0.08] hover:border-secondary/40 transition-all duration-500 shadow-lg">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-500 group-hover:rotate-[10deg]">
+                        {stat.icon}
+                      </div>
+                      <p className="headline text-3xl text-white group-hover:text-secondary transition-colors duration-300">{stat.value}</p>
                     </div>
+                    <div>
+                      <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">{stat.label}</p>
+                      <p className="text-white/40 text-[11px] font-light leading-tight">{stat.desc}</p>
+                    </div>
+                    {/* Hover light effect */}
+                    <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-secondary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                 ))}
               </div>

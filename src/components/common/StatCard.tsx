@@ -1,4 +1,4 @@
-import { Cog, Factory, Globe, UsersRound } from "lucide-react";
+import { Cog, Factory, Globe, Headset, ShieldCheck, UsersRound } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const icons = {
@@ -6,6 +6,8 @@ const icons = {
   gear: Cog,
   globe: Globe,
   partners: UsersRound,
+  headset: Headset,
+  shield: ShieldCheck,
 };
 
 export function StatCard({
@@ -13,19 +15,23 @@ export function StatCard({
   label,
   icon,
   compact = false,
+  className,
 }: {
   value: string;
   label: string;
   icon: string;
   compact?: boolean;
+  className?: string;
 }) {
   const Icon = icons[icon as keyof typeof icons] ?? Globe;
 
   return (
     <article
       className={cn(
-        "flex items-center gap-3 border-border pl-0 pr-3 sm:border-r sm:px-5 sm:first:pl-0 sm:last:border-r-0",
-        compact ? "py-3 sm:px-4 lg:py-3 lg:pr-6" : "py-4 lg:py-4 lg:pr-8",
+        "flex items-center gap-3 border-border",
+        !className && "pl-0 pr-3 sm:border-r sm:px-5 sm:first:pl-0 sm:last:border-r-0",
+        compact ? "py-3 lg:py-3" : "py-4 lg:py-4 lg:pr-8",
+        className
       )}
     >
       <Icon

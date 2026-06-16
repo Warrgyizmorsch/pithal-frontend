@@ -19,10 +19,10 @@ export const aboutPageData = {
     },
   },
   stats: [
-    { value: "Best", label: "In the Industry", icon: "settings" },
-    { value: "Custom", label: "Machine Design", icon: "factory" },
-    { value: "Top", label: "Satisfaction Score", icon: "globe" },
-    { value: "Advanced", label: "Manufacturing", icon: "users" },
+    { value: "Best", label: "In the Industry", icon: "award" },
+    { value: "Custom", label: "Machine Design", icon: "settings" },
+    { value: "Top", label: "Satisfaction Score", icon: "spark" },
+    { value: "Advanced", label: "Manufacturing", icon: "factory" },
     { value: "24/7", label: "Support & Service", icon: "headphones" },
   ],
   experience: {
