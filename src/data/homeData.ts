@@ -25,6 +25,18 @@ export const products = [
     href: "/products/jaw-crushers",
   },
   {
+    title: "Prime UltraRock",
+    description: "Advanced crushing technology for extreme durability and performance.",
+    image: "/images/products/crushers.png",
+    href: "/products/prime-ultrarock",
+  },
+  {
+    title: "PrimeBucket",
+    description: "Heavy-duty bucket systems for high-capacity material handling.",
+    image: "/images/products/crushers.png",
+    href: "/products/prime-bucket",
+  },
+  {
     title: "Cone Crushers",
     description: "High efficiency screening equipment for accurate separation and productivity.",
     image: "/images/products/cone-crusher.png",
@@ -168,7 +180,7 @@ export const processFeatures = [
 ];
 
 export const footerColumns = [
-  { title: "Products", links: ["Jaw Crushers", "Cone Crushers", "VSI Crushers", "Vibrating Feeders", "Vibrating Screens", "Mobile Crushing Plants"] },
+  { title: "Products", links: ["Jaw Crushers", "Prime UltraRock", "PrimeBucket", "Cone Crushers", "VSI Crushers", "Vibrating Feeders", "Vibrating Screens", "Mobile Crushing Plants"] },
   // { title: "Solutions", links: ["Aggregate Production", "Mining & Quarrying", "Construction & Demolition", "Sand & Gravel", "Metallurgy", "Recycling Solutions", "Custom Solutions", "Turnkey Projects"] },
   { title: "Quick Links", links: ["About Us", "Blog", "Careers", "Become a Dealer",  "Contact Us"] },
   { title: "Downloads", links: ["Product Brochures", "Technical Catalogues", "User Manuals", "Case Studies", "Product Videos", "Installation Guides"] },
