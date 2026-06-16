@@ -103,12 +103,17 @@ export type PerformanceFeature = {
 
 export type SpecificationRow = {
   model: string;
-  feedOpening: string;
-  maxFeedSize: string;
-  capacity: string;
-  motorPower: string;
-  weight: string;
-  dimension: string;
+  feedOpening?: string;
+  maxFeedSize?: string;
+  capacity?: string;
+  motorPower?: string;
+  weight?: string;
+  dimension?: string;
+  excavatorSize?: string;
+  bucketCapacity?: string;
+  production?: string;
+  reductionRatio?: string;
+  [key: string]: string | undefined;
 };
 
 export type SpecificationColumn = {

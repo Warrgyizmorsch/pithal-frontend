@@ -218,6 +218,7 @@ export const primeUltraRockData: ProductDetailData = {
     thumbnail: {
       src: "/images/products/jaw-crusher/video-showcase.png",
       alt: "Prime UltraRock performance showcase video thumbnail",
+      
     },
     caption: "LARGE MINING OPERATION",
     subCaption: "Explore the next generation of primary crushing.",
