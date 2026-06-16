@@ -16,7 +16,7 @@ export const primeBucketData: ProductDetailData = {
       "Excavator-mounted jaw crusher bucket designed to crush demolition waste, concrete, and natural rock directly on site, reducing transportation and fuel costs.",
     descriptionHighlight: "crush directly on site",
     image: {
-      src: "/images/products/jaw-crusher/hero-scene.png",
+      src: "/primebucket/banner.png",
       alt: "Pithal PrimeBucket™ operating on a demolition site",
     },
     ctas: [
@@ -52,7 +52,7 @@ export const primeBucketData: ProductDetailData = {
     description:
       "Pithal PrimeBucket™ is an excavator-mounted jaw crusher bucket that processes concrete, asphalt, and natural rock on-site. It eliminates the need for material transport to a central plant, significantly reducing fuel and handling costs.",
     image: {
-      src: "/images/products/jaw-crusher/main-machine.png",
+      src: "/primebucket/overview1.png",
       alt: "PrimeBucket™ excavator attachment system",
     },
     ctas: [
@@ -215,7 +215,7 @@ export const primeBucketData: ProductDetailData = {
       },
     ],
     thumbnail: {
-      src: "/images/products/jaw-crusher/video-showcase.png",
+      src: "/primebucket/video-showcase.png",
       alt: "PrimeBucket™ performance video thumbnail",
     },
     caption: "DEMOLITION SITE RECYCLING",

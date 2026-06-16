@@ -16,7 +16,7 @@ export const primeUltraRockData: ProductDetailData = {
       "Next-generation primary crushing solution engineered for higher throughput, superior reduction ratio, and lower operating costs in mining and quarrying.",
     descriptionHighlight: "higher throughput and superior reduction",
     image: {
-      src: "/images/products/jaw-crusher/hero-scene.png",
+      src: "/ultrarock/heroprime.png",
       alt: "Pithal Prime UltraRock high-capacity primary crusher",
     },
     ctas: [
@@ -52,7 +52,7 @@ export const primeUltraRockData: ProductDetailData = {
     description:
       "Prime UltraRock is engineered for mining, quarrying, cement, and aggregate applications. It focuses on high throughput, compact footprint, and smart automation to deliver lower operating costs compared to conventional crushers.",
     image: {
-      src: "/images/products/jaw-crusher/main-machine.png",
+      src: "/ultrarock/primeultrarock1.png",
       alt: "Prime UltraRock advanced primary crusher machine",
     },
     ctas: [
@@ -216,7 +216,7 @@ export const primeUltraRockData: ProductDetailData = {
       },
     ],
     thumbnail: {
-      src: "/images/products/jaw-crusher/video-showcase.png",
+      src: "/ultrarock/primeultrarock2.png",
       alt: "Prime UltraRock performance showcase video thumbnail",
       
     },
