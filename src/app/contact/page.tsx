@@ -581,28 +581,26 @@ Message: ${formData.requirement}`;
         {/* ========================================================================= */}
         {/* SECTION 1: HERO & STATS BANNER */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden pt-4 pb-12 text-white lg:pt-6 lg:pb-14 bg-[#031b40]">
-          <Container className="relative z-10">
-            {/* Background Image & Overlays contained inside Container */}
-            <div className="absolute inset-0 z-0">
-              <Image
-                src="/contactus/front.jpg"
-                alt="Pithal Crushing Plant"
-                fill
-                priority
-                className="object-cover object-center"
-                sizes="(max-width: 1520px) 100vw, 1520px"
-              />
-              {/* Dark overlay for text readability */}
-              <div className="pointer-events-none absolute inset-0 bg-primary-dark/60 z-[1]" />
-              {/* Industrial grid overlay */}
-              <div className="pointer-events-none absolute inset-0 industrial-grid opacity-10 z-[1]" />
-              {/* Corner accent */}
-              <div className="pointer-events-none absolute right-0 top-0 h-[60%] w-[50%] rounded-bl-[60%] border-l border-secondary/25 border-b border-secondary/25 z-[1]" />
-            </div>
+        <section className="relative overflow-hidden pt-4 pb-12 text-white lg:pt-6 lg:pb-14">
+          {/* Background image */}
+          <Image
+            src="/contactus/front.jpg"
+            alt="Pithal Crushing Plant"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="pointer-events-none absolute inset-0 bg-primary-dark/60" />
+          {/* Industrial grid overlay */}
+          <div className="pointer-events-none absolute inset-0 industrial-grid opacity-10" />
+          {/* Corner accent */}
+          <div className="pointer-events-none absolute right-0 top-0 h-[60%] w-[50%] rounded-bl-[60%] border-l border-secondary/25 border-b border-secondary/25" />
 
+          <Container className="relative z-10">
             {/* Breadcrumb */}
-            <div className="relative z-10 mb-6 flex items-center gap-2 text-xs font-medium text-white/60">
+            <div className="mb-6 flex items-center gap-2 text-xs font-medium text-white/60">
               <Link href="/" className="hover:text-secondary transition-colors">
                 Home
               </Link>
@@ -610,7 +608,7 @@ Message: ${formData.requirement}`;
               <span className="text-secondary">Contact Us</span>
             </div>
 
-            <div className="relative z-10 max-w-3xl py-6 lg:py-10">
+            <div className="max-w-3xl py-6 lg:py-10">
               {/* Left Column Text */}
               <div className="flex items-center gap-3 mb-4">
                 <span className="h-[1.5px] w-6 bg-secondary" />
@@ -660,7 +658,7 @@ Message: ${formData.requirement}`;
             </div>
 
             {/* Stats row below Hero */}
-            <div className="relative z-10 mt-10 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-xl p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.2)]">
+            <div className="mt-10 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-xl p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.2)] relative z-20">
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-center">
                 {stats.map((stat, i) => (
                   <div key={i} className="flex items-center gap-4 group">

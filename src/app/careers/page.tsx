@@ -501,133 +501,130 @@ export default function CareersPage() {
       <Header />
       <main className="careers-page bg-white text-gray-900 font-sans overflow-x-hidden">
         <section className="relative overflow-hidden bg-white text-primary lg:h-[calc(100vh-90px)] lg:min-h-[600px] flex flex-col justify-between pt-4 pb-4 lg:pt-6 lg:pb-6">
-          <Container className="relative z-10 flex flex-1 flex-col justify-between w-full">
-            {/* Background Image & Overlays contained inside Container */}
-            <div className="absolute inset-0 z-0">
-              <Image
-                alt="Pithal Machines manufacturing and team"
-                className="object-cover object-center lg:object-right"
-                fill
-                priority
-                sizes="(max-width: 1520px) 100vw, 1520px"
-                src="/careerimg/20.jpg"
-              />
-              {/* Responsive white gradient overlay: vertical fade on mobile, strong horizontal fade on desktop */}
-              <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-white/70 lg:bg-gradient-to-r lg:from-white lg:via-white lg:via-[28%] lg:to-transparent z-[1] pointer-events-none" />
+          {/* Full Background Image covering the entire section */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              alt="Pithal Machines manufacturing and team"
+              className="object-cover object-center lg:object-right"
+              fill
+              priority
+              src="/careerimg/20.jpg"
+            />
+            {/* Responsive white gradient overlay: vertical fade on mobile, strong horizontal fade on desktop */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-white/70 lg:bg-gradient-to-r lg:from-white lg:via-white lg:via-[28%] lg:to-transparent z-10 pointer-events-none" />
+          </div>
+
+          <div className="relative z-20 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex-grow flex flex-col justify-center">
+            {/* Breadcrumbs */}
+            <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-slate-500">
+              <Link
+                href="/"
+                className="hover:text-[#fa5902] transition-colors flex items-center gap-1.5"
+              >
+                <Home size={14} className="stroke-[2]" />
+                Home
+              </Link>
+              <ChevronRight className="w-3.5 h-3.5 text-slate-400 stroke-[2.5]" />
+              <span className="text-slate-500">Careers</span>
             </div>
 
-            <div className="relative z-10 flex-grow flex flex-col justify-center">
-              {/* Breadcrumbs */}
-              <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-slate-500">
-                <Link
-                  href="/"
-                  className="hover:text-[#fa5902] transition-colors flex items-center gap-1.5"
-                >
-                  <Home size={14} className="stroke-[2]" />
-                  Home
-                </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-slate-400 stroke-[2.5]" />
-                <span className="text-slate-500">Careers</span>
-              </div>
-
-              <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-                <div className="py-2">
-                  {/* Careers Tag with line */}
-                  <div className="mb-4 flex items-center gap-3">
-                    <span className="text-lg font-extrabold uppercase tracking-[0.08em] text-[#fa5902]">
-                      CAREERS
-                    </span>
-                    <span className="h-[1.5px] w-12 bg-[#fa5902]" />
-                  </div>
-
-                  <h1 className="font-extrabold text-[2.5rem] sm:text-[3.25rem] lg:text-[3.5rem] leading-[1.05] tracking-tight text-[#092a5c] uppercase">
-                    BUILD MACHINES.
-                    <br />
-                    <span className="text-[#fa5902]">BUILD YOUR FUTURE.</span>
-                  </h1>
-
-                  <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg">
-                    Join Pithal Machines and be a part of a team that engineers
-                    high-performance solutions and powers industries across the
-                    globe.
-                  </p>
-
-                  <div className="mt-6 flex flex-wrap gap-4">
-                    <Link
-                      href="#openings"
-                      className="inline-flex items-center justify-center gap-3.5 bg-[#fa5902] text-white px-7 py-4 rounded-lg text-xs font-black tracking-[0.14em] hover:bg-[#e04f02] transition-colors"
-                    >
-                      EXPLORE OPPORTUNITIES
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        className="w-4 h-4"
-                      >
-                        <path
-                          d="M5 12h14M12 5l7 7-7 7"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </Link>
-                    <Link
-                      href="#about"
-                      className="inline-flex items-center justify-center gap-3.5 border border-[#092a5c] text-[#092a5c] px-7 py-4 rounded-lg text-xs font-black tracking-[0.14em] hover:bg-slate-50 transition-colors"
-                    >
-                      LIFE AT PITHAL
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        className="w-4 h-4"
-                      >
-                        <path
-                          d="M5 12h14M12 5l7 7-7 7"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+              <div className="py-2">
+                {/* Careers Tag with line */}
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="text-lg font-extrabold uppercase tracking-[0.08em] text-[#fa5902]">
+                    CAREERS
+                  </span>
+                  <span className="h-[1.5px] w-12 bg-[#fa5902]" />
                 </div>
 
-                {/* Spacer on desktop to allow background image to be visible on the right without forcing extra height */}
-                <div className="hidden lg:block h-[100px] pointer-events-none" />
-              </div>
-            </div>
+                <h1 className="font-extrabold text-[2.5rem] sm:text-[3.25rem] lg:text-[3.5rem] leading-[1.05] tracking-tight text-[#092a5c] uppercase">
+                  BUILD MACHINES.
+                  <br />
+                  <span className="text-[#fa5902]">BUILD YOUR FUTURE.</span>
+                </h1>
 
-            {/* Stats Card Banner */}
-            <div className="relative z-10 pb-0 pt-4 mt-auto w-full">
-              <div className="grid gap-x-4 gap-y-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 rounded-2xl bg-[#031b40] p-4 sm:p-6 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] lg:divide-x lg:divide-slate-700/50">
-                {heroStats.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col min-[420px]:flex-row items-center min-[420px]:items-start text-center min-[420px]:text-left gap-3 sm:gap-4 p-2 sm:p-4 lg:px-6"
+                <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg">
+                  Join Pithal Machines and be a part of a team that engineers
+                  high-performance solutions and powers industries across the
+                  globe.
+                </p>
+
+                <div className="mt-6 flex flex-wrap gap-4">
+                  <Link
+                    href="#openings"
+                    className="inline-flex items-center justify-center gap-3.5 bg-[#fa5902] text-white px-7 py-4 rounded-lg text-xs font-black tracking-[0.14em] hover:bg-[#e04f02] transition-colors"
                   >
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 shrink-0 items-center justify-center">
-                      <div className="scale-75 sm:scale-90 lg:scale-100">
-                        {item.icon}
-                      </div>
-                    </div>
-                    <div className="min-w-0">
-                      <div className="text-2xl sm:text-3xl lg:text-[2.2rem] font-extrabold tracking-tight text-white leading-none">
-                        {item.value}
-                      </div>
-                      <p className="mt-1.5 text-[10px] sm:text-xs lg:text-[13px] font-extrabold uppercase tracking-wider text-[#fa5902] truncate">
-                        {item.title}
-                      </p>
-                      <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-slate-300 font-medium line-clamp-2 lg:line-clamp-none">
-                        {item.desc}
-                      </p>
+                    EXPLORE OPPORTUNITIES
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        d="M5 12h14M12 5l7 7-7 7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="#about"
+                    className="inline-flex items-center justify-center gap-3.5 border border-[#092a5c] text-[#092a5c] px-7 py-4 rounded-lg text-xs font-black tracking-[0.14em] hover:bg-slate-50 transition-colors"
+                  >
+                    LIFE AT PITHAL
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        d="M5 12h14M12 5l7 7-7 7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Spacer on desktop to allow background image to be visible on the right without forcing extra height */}
+              <div className="hidden lg:block h-[100px] pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Stats Card Banner */}
+          <div className="relative z-20 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 pb-0 pt-4 mt-auto">
+            <div className="grid gap-x-4 gap-y-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 rounded-2xl bg-[#031b40] p-4 sm:p-6 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] lg:divide-x lg:divide-slate-700/50">
+              {heroStats.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col min-[420px]:flex-row items-center min-[420px]:items-start text-center min-[420px]:text-left gap-3 sm:gap-4 p-2 sm:p-4 lg:px-6"
+                >
+                  <div className="flex h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 shrink-0 items-center justify-center">
+                    <div className="scale-75 sm:scale-90 lg:scale-100">
+                      {item.icon}
                     </div>
                   </div>
-                ))}
-              </div>
+                  <div className="min-w-0">
+                    <div className="text-2xl sm:text-3xl lg:text-[2.2rem] font-extrabold tracking-tight text-white leading-none">
+                      {item.value}
+                    </div>
+                    <p className="mt-1.5 text-[10px] sm:text-xs lg:text-[13px] font-extrabold uppercase tracking-wider text-[#fa5902] truncate">
+                      {item.title}
+                    </p>
+                    <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-slate-300 font-medium line-clamp-2 lg:line-clamp-none">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ── SECTION 2: ADVANTAGES ── */}

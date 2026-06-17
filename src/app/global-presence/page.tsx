@@ -285,24 +285,23 @@ export default function GlobalPresencePage() {
     SECTION 1 — HERO
     ══════════════════════════════════════════════════════════════════ */}
         <section className="relative isolate overflow-hidden bg-[#f4f8fc] flex items-center py-8 lg:py-6 lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">
-          <Container className="relative z-10 max-w-[1520px] px-5 sm:px-8 lg:px-10 w-full flex flex-col justify-between gap-4 py-6 lg:py-8">
-            {/* Background Image & Overlays contained inside Container */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              <Image
-                src="/images/global-presense/hero.png"
-                alt="Pithal global logistics with crushing equipment, transport truck, cargo ship and world map"
-                fill
-                priority
-                sizes="(max-width: 1520px) 100vw, 1520px"
-                className="object-cover object-[95%_center]"
-              />
-              {/* ✅ gradient pushes background color further left, opens up more of the image */}
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,#f4f8fc_0%,#f4f8fc_30%,rgba(244,248,252,0.88)_42%,rgba(244,248,252,0.25)_60%,rgba(244,248,252,0)_100%)]" />
-              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f4f8fc] via-[#f4f8fc]/50 to-transparent" />
-            </div>
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            <Image
+              src="/images/global-presense/hero.png"
+              alt="Pithal global logistics with crushing equipment, transport truck, cargo ship and world map"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[95%_center]"
+            />
+            {/* ✅ gradient pushes background color further left, opens up more of the image */}
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,#f4f8fc_0%,#f4f8fc_30%,rgba(244,248,252,0.88)_42%,rgba(244,248,252,0.25)_60%,rgba(244,248,252,0)_100%)]" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f4f8fc] via-[#f4f8fc]/50 to-transparent" />
+          </div>
 
+          <Container className="relative z-10 max-w-[1520px] px-5 sm:px-8 lg:px-10 w-full flex flex-col justify-between gap-4 py-6 lg:py-8">
             {/* Breadcrumb */}
-            <div className="relative z-10 mb-2 flex items-center gap-2 text-xs font-semibold text-slate-500">
+            <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-slate-500">
               <Link
                 href="/"
                 className="hover:text-secondary transition-colors flex items-center gap-1.5"
@@ -316,7 +315,7 @@ export default function GlobalPresencePage() {
               </span>
             </div>
 
-            <div className="relative z-10 max-w-[800px]">
+            <div className="max-w-[800px]">
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-[1.5px] w-8 bg-secondary" />
                 <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
@@ -357,7 +356,7 @@ export default function GlobalPresencePage() {
             </div>
 
             {/* Stats bar */}
-            <div className="relative z-10 mt-4 rounded-2xl border border-white/60 bg-white/90 p-0.5 shadow-[0_20px_50px_rgba(3,27,64,0.1)] backdrop-blur-md">
+            <div className="mt-4 rounded-2xl border border-white/60 bg-white/90 p-0.5 shadow-[0_20px_50px_rgba(3,27,64,0.1)] backdrop-blur-md">
               <div className="grid grid-cols-1 divide-y divide-slate-100 sm:grid-cols-2 sm:divide-y-0 sm:divide-x lg:grid-cols-4">
                 {heroStats.map((s, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 lg:p-5">
@@ -381,7 +380,7 @@ export default function GlobalPresencePage() {
             </div>
 
             {/* Trust bar */}
-            <div className="relative z-10 mx-auto mt-2 flex max-w-4xl flex-col items-center justify-center gap-3 text-center text-[11px] font-bold text-slate-500 md:flex-row md:gap-6 md:text-left">
+            <div className="mx-auto mt-2 flex max-w-4xl flex-col items-center justify-center gap-3 text-center text-[11px] font-bold text-slate-500 md:flex-row md:gap-6 md:text-left">
               <span className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-secondary" />
                 Engineered for global standards. Delivered with trust.
