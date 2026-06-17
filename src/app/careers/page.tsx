@@ -32,6 +32,7 @@ import {
 import { Button } from "@/components/common/Button";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { Container } from "@/components/common/Container";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
