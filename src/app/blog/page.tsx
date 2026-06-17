@@ -1165,21 +1165,23 @@ export default function BlogPage() {
         {/* ══════════════════════════════════════════
           SECTION 1 — HERO
       ══════════════════════════════════════════ */}
-        <section className="relative pt-16 pb-10 lg:pt-20 lg:pb-12 overflow-hidden ">
-          <Image
-            src="/blogpageimg/top.jpg"
-            alt="Blog Hero Background"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+        <section className="relative pt-16 pb-10 lg:pt-20 lg:pb-12 overflow-hidden bg-white">
+          <Container className="relative z-10">
+            {/* Background Image & Overlays contained inside Container */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/blogpageimg/top.jpg"
+                alt="Blog Hero Background"
+                fill
+                priority
+                sizes="(max-width: 1520px) 100vw, 1520px"
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 industrial-grid opacity-70 z-[1]" />
+            </div>
 
-          <div className="absolute inset-0 industrial-grid opacity-70 z-10" />
-
-          <Container className="relative z-20">
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-text-muted">
+            <div className="relative z-10 mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-text-muted">
               <Link href="/" className="hover:text-primary transition-colors">
                 Home
               </Link>
@@ -1187,7 +1189,7 @@ export default function BlogPage() {
               <span className="text-secondary">Blog</span>
             </div>
 
-            <div className="grid lg:grid-cols-12 gap-10 items-center">
+            <div className="relative z-10 grid lg:grid-cols-12 gap-10 items-center">
               {/* Left */}
               <div className="lg:col-span-7">
                 <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/5 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-secondary">
@@ -1222,7 +1224,7 @@ export default function BlogPage() {
             </div>
 
             {/* Stats strip */}
-            <div className="mt-12 grid gap-6 rounded-xl border border-border bg-white/90 p-6 shadow-[0_24px_70px_rgba(3,27,64,0.12)] backdrop-blur-sm sm:grid-cols-2 lg:grid-cols-4">
+            <div className="relative z-10 mt-12 grid gap-6 rounded-xl border border-border bg-white/90 p-6 shadow-[0_24px_70px_rgba(3,27,64,0.12)] backdrop-blur-sm sm:grid-cols-2 lg:grid-cols-4">
               {heroSectionStats.map((s, i) => (
                 <div key={i} className="flex gap-3 items-start">
                   <div className="w-14 h-14 rounded-full border border-secondary/20 bg-secondary/5 flex items-center justify-center text-secondary flex-shrink-0">

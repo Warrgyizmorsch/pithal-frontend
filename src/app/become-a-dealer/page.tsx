@@ -73,17 +73,21 @@ export default function BecomeADealerPage() {
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="relative h-[65vh] min-h-[500px] flex items-center overflow-hidden bg-slate-950">
-          <Image
-            src="/solutionspage/challenges we solve 14operations.jpg"
-            alt="Crushing Plant Blueprint"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent z-[5]" />
-          
           <Container className="relative z-10 h-full flex flex-col justify-center">
-            <div className="max-w-3xl mb-12">
+            {/* Background Image & Overlays contained inside Container */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/solutionspage/challenges we solve 14operations.jpg"
+                alt="Crushing Plant Blueprint"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1520px) 100vw, 1520px"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent z-[1]" />
+            </div>
+
+            <div className="relative z-10 max-w-3xl mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <span className="h-[2px] w-12 bg-secondary" />
                 <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Global Partnership</span>

@@ -4,6 +4,7 @@ import { ChevronRight, Home } from "lucide-react";
 import type { ProductHeroData } from "@/data/products/productDetailTypes";
 import { ProductCtaButton } from "./ProductCtaButton";
 import { ProductIcon } from "./iconMap";
+import { Container } from "@/components/common/Container";
 
 const heroButtonClass = "min-h-[58px] w-full sm:w-auto sm:min-w-[242px] justify-center gap-3 rounded-md px-6 !text-[14px] !font-black !tracking-[0.02em]";
 const secondaryHeroButtonClass = `${heroButtonClass} border-secondary/80 bg-primary-dark/25 text-white hover:border-secondary hover:text-secondary`;
@@ -26,23 +27,25 @@ function HeroDescription({ text, highlight }: { text: string; highlight?: string
 export function ProductHero({ data }: { data: ProductHeroData }) {
   return (
     <section className="relative isolate min-h-[calc(100svh-4.25rem)] sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)] overflow-hidden bg-primary-dark text-white">
-      <Image
-        alt={data.image.alt}
-        className="object-cover object-center"
-        fill
-        priority
-        sizes="100vw"
-        src={data.image.src}
-      />
-      <div className="absolute inset-0 bg-primary-dark/45 lg:bg-transparent" />
-      <div className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,rgba(1,19,45,0.99)_0%,rgba(3,27,64,0.97)_31%,rgba(3,27,64,0.74)_48%,rgba(3,27,64,0.08)_72%)]" />
-      <div className="absolute inset-y-0 left-0 hidden w-[62%] bg-primary-dark/80 [clip-path:polygon(0_0,83%_0,66%_100%,0_100%)] lg:block" />
-      <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_2px_2px,rgba(255,255,255,.28)_1px,transparent_0)] [background-size:20px_20px]" />
-      <div className="absolute left-[48%] top-0 hidden h-[3px] w-[22%] origin-left -rotate-[28deg] bg-secondary lg:block" />
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-secondary/45" />
-
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-4.25rem)] sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)] w-full max-w-[1693px] flex-col px-6 pb-7 pt-9 sm:px-10 lg:px-[68px]">
-        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-4 text-[15px] font-medium text-white/90">
+      <Container className="relative z-10 flex min-h-[calc(100svh-4.25rem)] sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)] flex-col pb-7 pt-9">
+        {/* Background Image & Overlays contained inside Container */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <Image
+            alt={data.image.alt}
+            className="object-cover object-center"
+            fill
+            priority
+            sizes="(max-width: 1520px) 100vw, 1520px"
+            src={data.image.src}
+          />
+          <div className="absolute inset-0 bg-primary-dark/45 lg:bg-transparent z-[1]" />
+          <div className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,rgba(1,19,45,0.99)_0%,rgba(3,27,64,0.97)_31%,rgba(3,27,64,0.74)_48%,rgba(3,27,64,0.08)_72%)] z-[1]" />
+          <div className="absolute inset-y-0 left-0 hidden w-[62%] bg-primary-dark/80 [clip-path:polygon(0_0,83%_0,66%_100%,0_100%)] lg:block z-[1]" />
+          <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_2px_2px,rgba(255,255,255,.28)_1px,transparent_0)] [background-size:20px_20px] z-[1]" />
+          <div className="absolute left-[48%] top-0 hidden h-[3px] w-[22%] origin-left -rotate-[28deg] bg-secondary lg:block z-[1]" />
+          <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-secondary/45 z-[1]" />
+        </div>
+        <nav aria-label="Breadcrumb" className="relative z-10 flex flex-wrap items-center gap-4 text-[15px] font-medium text-white/90">
           {data.breadcrumb.map((item, index) => (
             <span className="flex items-center gap-5" key={item.label}>
               <Link className={index === data.breadcrumb.length - 1 ? "font-bold text-secondary" : "transition-colors hover:text-secondary"} href={item.href}>
@@ -53,7 +56,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
           ))}
         </nav>
 
-        <div className="mt-6 lg:mt-[45px] max-w-[780px] flex flex-col items-center lg:items-start text-center lg:text-left flex-1 justify-center lg:justify-start">
+        <div className="relative z-10 mt-6 lg:mt-[45px] max-w-[780px] flex flex-col items-center lg:items-start text-center lg:text-left flex-1 justify-center lg:justify-start">
           <div className="mb-4 flex items-center justify-center lg:justify-start gap-4">
             <div className="min-w-[260px] sm:min-w-[330px] max-w-full">
               <p className="text-[16px] font-black uppercase leading-none tracking-[0.03em] text-secondary">{data.eyebrow}</p>
@@ -85,7 +88,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
           </div>
         </div>
 
-        <div className="mt-8 lg:mt-auto w-full max-w-[820px] rounded-xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
+        <div className="relative z-10 mt-8 lg:mt-auto w-full max-w-[820px] rounded-xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-white/30">
             {data.quickStats.map((stat) => (
               <article className="flex items-center gap-4 lg:px-6 lg:first:pl-0 lg:last:pr-0" key={stat.label}>
@@ -98,7 +101,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

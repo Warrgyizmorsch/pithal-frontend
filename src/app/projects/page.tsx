@@ -106,21 +106,24 @@ export default function CaseStudyPage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO (Rajasthan Zinc Crushing Plant) */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden flex items-center py-8 lg:py-6 text-white min-h-[calc(100vh-4.25rem)] sm:min-h-[calc(100vh-4.75rem)] lg:h-[calc(100vh-4.25rem)] xl:h-[calc(100vh-5.25rem)]">
-          <Image
-            alt="Rajasthan Zinc Crushing Plant"
-            className="object-cover object-center"
-            fill
-            priority
-            sizes="(min-width: 1024px) 58vw, 100vw"
-            src="/projectimg/rajasthan zinc crushing plant.jpg"
-          />
-
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/55 to-transparent" />
-          <div className="pointer-events-none absolute inset-0 industrial-grid opacity-35" />
+        <section className="relative overflow-hidden flex items-center py-8 lg:py-6 text-white min-h-[calc(100vh-4.25rem)] sm:min-h-[calc(100vh-4.75rem)] lg:h-[calc(100vh-4.25rem)] xl:h-[calc(100vh-5.25rem)] bg-[#031b40]">
           <Container className="relative z-10 w-full flex flex-col justify-between gap-8 lg:gap-2.5 py-4 lg:py-2 lg:h-full">
+            {/* Background Image & Overlays contained inside Container */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                alt="Rajasthan Zinc Crushing Plant"
+                className="object-cover object-center"
+                fill
+                priority
+                sizes="(max-width: 1520px) 100vw, 1520px"
+                src="/projectimg/rajasthan zinc crushing plant.jpg"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/55 to-transparent z-[1]" />
+              <div className="pointer-events-none absolute inset-0 industrial-grid opacity-35 z-[1]" />
+            </div>
+
             {/* Breadcrumb */}
-            <div className="flex items-center flex-wrap gap-2 mb-4 lg:mb-1.5 text-xs sm:text-sm font-semibold text-white/60">
+            <div className="relative z-10 flex items-center flex-wrap gap-2 mb-4 lg:mb-1.5 text-xs sm:text-sm font-semibold text-white/60">
               <Link
                 href="/"
                 className="text-white/80 hover:text-secondary transition-colors"
@@ -138,7 +141,7 @@ export default function CaseStudyPage() {
               <span className="text-white">Rajasthan Zinc Crushing Plant</span>
             </div>
 
-            <div className="grid gap-12 lg:gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="relative z-10 grid gap-12 lg:gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               {/* Left Column Text */}
               <div>
                 <div className="flex items-center gap-2.5 mb-2.5 text-secondary">
@@ -233,7 +236,7 @@ export default function CaseStudyPage() {
             </div>
 
             {/* Bottom Stats row */}
-            <div className="mt-4 lg:mt-2 bg-white text-slate-800 rounded-2xl p-4 sm:p-6 md:p-8 lg:py-6 lg:px-6 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
+            <div className="relative z-10 mt-4 lg:mt-2 bg-white text-slate-800 rounded-2xl p-4 sm:p-6 md:p-8 lg:py-6 lg:px-6 shadow-[0_8px_30px_rgba(3,27,64,0.06)]">
               <div className="grid gap-x-4 gap-y-6 lg:gap-y-0 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-start lg:divide-x lg:divide-slate-100">
                 <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-2 group">
                   <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">

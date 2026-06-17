@@ -122,33 +122,36 @@ function HeroSection() {
 
   return (
     <section className="relative overflow-hidden bg-white lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">
-      <Image
-        alt="Pithal Machines industrial factory floor and quarry application background"
-        className="object-cover object-center"
-        fill
-        priority
-        sizes="100vw"
-        src="/images/about/about-hero-industrial-generated.png"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_22%,rgba(255,255,255,.88)_38%,rgba(255,255,255,.36)_58%,rgba(255,255,255,0)_78%)]"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-y-0 left-0 w-[58%] industrial-grid opacity-60"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/85 to-transparent"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-dark/70 via-primary-dark/20 to-transparent"
-      />
-
       <Container className="relative z-10 flex flex-col gap-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
-        <div>
+        {/* Background Image & Overlays contained inside Container */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            alt="Pithal Machines industrial factory floor and quarry application background"
+            className="object-cover object-center"
+            fill
+            priority
+            sizes="(max-width: 1520px) 100vw, 1520px"
+            src="/images/about/about-hero-industrial-generated.png"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_22%,rgba(255,255,255,.88)_38%,rgba(255,255,255,.36)_58%,rgba(255,255,255,0)_78%)]"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-y-0 left-0 w-[58%] industrial-grid opacity-60"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/85 to-transparent"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-dark/70 via-primary-dark/20 to-transparent"
+          />
+        </div>
+
+        <div className="relative z-10">
           <nav
             aria-label="Breadcrumb"
             className="mb-4 flex items-center gap-3 text-xs font-black text-primary sm:mb-6 sm:text-sm lg:mb-7"
@@ -219,7 +222,7 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-xl bg-white shadow-[0_18px_42px_rgba(3,27,64,0.18)] sm:rounded-2xl">
+        <div className="relative z-10 overflow-hidden rounded-xl bg-white shadow-[0_18px_42px_rgba(3,27,64,0.18)] sm:rounded-2xl">
           <div className="grid grid-cols-2 divide-x divide-y divide-border sm:grid-cols-3 lg:grid-cols-[repeat(5,minmax(0,1fr))_1.75fr] lg:divide-y-0">
             {stats.map((stat) => (
               <article
