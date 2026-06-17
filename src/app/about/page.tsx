@@ -1932,6 +1932,7 @@ function CertificationsSection() {
           </div>
         </Container>
       </div>
+      
 
       <div className="relative border-y border-white/70 bg-[#edf2f7] pb-[35px] shadow-[inset_0_18px_38px_rgba(3,27,64,0.08)]">
         <Container className="relative z-10">
