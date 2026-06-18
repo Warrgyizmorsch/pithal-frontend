@@ -4,6 +4,7 @@ import { ChevronRight, Home } from "lucide-react";
 import type { ProductHeroData } from "@/data/products/productDetailTypes";
 import { ProductCtaButton } from "./ProductCtaButton";
 import { ProductIcon } from "./iconMap";
+import { Container } from "../common/Container";
 
 const heroButtonClass = "min-h-[58px] w-full sm:w-auto sm:min-w-[242px] justify-center gap-3 rounded-md px-6 !text-[14px] !font-black !tracking-[0.02em]";
 const secondaryHeroButtonClass = `${heroButtonClass} border-secondary/80 bg-primary-dark/25 text-white hover:border-secondary hover:text-secondary`;
@@ -26,7 +27,7 @@ function HeroDescription({ text, highlight }: { text: string; highlight?: string
 
 export function ProductHero({ data }: { data: ProductHeroData }) {
   return (
-    <section className="relative isolate min-h-[calc(100svh-4.25rem)] sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)] overflow-hidden bg-primary-dark text-white">
+    <Container className="relative isolate min-h-[calc(100svh-4.25rem)] sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)] overflow-hidden bg-primary-dark text-white">
       <Image
         alt={data.image.alt}
         className="object-cover object-center"
@@ -100,6 +101,6 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
           </div>
         </div>
       </div>
-    </section>
+    </Container>
   );
 }

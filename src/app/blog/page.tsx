@@ -1164,8 +1164,8 @@ export default function BlogPage() {
       <main className="blog-page bg-white text-gray-900 font-sans overflow-x-hidden">
         {/* ══════════════════════════════════════════
           SECTION 1 — HERO
-      ══════════════════════════════════════════ */}
-        <section className="relative pt-16 pb-10 lg:pt-20 lg:pb-12 overflow-hidden ">
+          ══════════════════════════════════════════ */}
+        <section className="relative pt-16 pb-10 lg:pt-20 lg:pb-12 overflow-hidden">
           <Image
             src="/blogpageimg/top.jpg"
             alt="Blog Hero Background"
@@ -1174,17 +1174,17 @@ export default function BlogPage() {
             sizes="100vw"
             className="object-cover object-center"
           />
+          {/* Background image — must be direct child of the relative section */}
+          <div className="absolute inset-0 industrial-grid opacity-70 z-[1]" />
 
-          <div className="absolute inset-0 industrial-grid opacity-70 z-10" />
-
-          <Container className="relative z-20">
+          <Container className="relative z-10">
             {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-text-muted">
-              <Link href="/" className="hover:text-primary transition-colors">
+            <div className="mb-6 relative z-20 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/80">
+              <Link href="/" className="text-black/70 hover:text-black transition-colors">
                 Home
               </Link>
-              <ChevronRight className="w-3.5 h-3.5" />
-              <span className="text-secondary">Blog</span>
+              <ChevronRight className="w-3.5 h-3.5 text-black/50" />
+              <span className="text-secondary font-black">Blog</span>
             </div>
 
             <div className="grid lg:grid-cols-12 gap-10 items-center">
@@ -1199,7 +1199,7 @@ export default function BlogPage() {
                   <span className="text-secondary">DELIVERED WORLDWIDE.</span>
                 </h1>
                 <p className="text-sm leading-relaxed text-text-muted max-w-lg mb-6">
-                  Pithal Engineering delivers advanced crushing & screening
+                  Pithal Engineering delivers advanced crushing &amp; screening
                   solutions across the globe with precision, reliability and
                   unmatched support. From engineering to installation —
                   we&apos;re with you at every step.

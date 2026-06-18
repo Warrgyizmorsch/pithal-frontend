@@ -72,7 +72,7 @@ export default function BecomeADealerPage() {
       <Header />
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative h-[65vh] min-h-[500px] flex items-center overflow-hidden bg-slate-950">
+        <section className="relative h-[85vh] min-h-[500px] flex items-center overflow-hidden bg-white">
           <Container className="relative z-10 h-full flex flex-col justify-center">
             {/* Background Image & Overlays contained inside Container */}
             <div className="absolute inset-0 z-0">
@@ -88,9 +88,9 @@ export default function BecomeADealerPage() {
             </div>
 
             <div className="relative z-10 max-w-3xl mb-12">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="h-[2px] w-12 bg-secondary" />
-                <span className="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Global Partnership</span>
+              <div className="flex items-center gap-3 mb-6 pt-10">
+                <span className="h-[2px]  w-12 bg-secondary" />
+                <span className="text-secondary  font-bold uppercase tracking-[0.2em] text-sm">Global Partnership</span>
               </div>
               <h1 className="headline text-[clamp(2.5rem,8vw,4.5rem)] leading-[1] text-white italic mb-6">
                 Grow Your Business <br />

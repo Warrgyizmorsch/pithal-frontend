@@ -582,7 +582,7 @@ Message: ${formData.requirement}`;
         {/* SECTION 1: HERO & STATS BANNER */}
         {/* ========================================================================= */}
         <section className="relative overflow-hidden pt-4 pb-12 text-white lg:pt-6 lg:pb-14">
-          {/* Background image */}
+          {/* Background image — must be direct child of the relative section */}
           <Image
             src="/contactus/front.jpg"
             alt="Pithal Crushing Plant"
@@ -592,11 +592,11 @@ Message: ${formData.requirement}`;
             sizes="100vw"
           />
           {/* Dark overlay for text readability */}
-          <div className="pointer-events-none absolute inset-0 bg-primary-dark/60" />
+          <div className="pointer-events-none absolute inset-0 bg-primary-dark/60 z-[1]" />
           {/* Industrial grid overlay */}
-          <div className="pointer-events-none absolute inset-0 industrial-grid opacity-10" />
+          <div className="pointer-events-none absolute inset-0 industrial-grid opacity-10 z-[2]" />
           {/* Corner accent */}
-          <div className="pointer-events-none absolute right-0 top-0 h-[60%] w-[50%] rounded-bl-[60%] border-l border-secondary/25 border-b border-secondary/25" />
+          <div className="pointer-events-none absolute right-0 top-0 h-[60%] w-[50%] rounded-bl-[60%] border-l border-secondary/25 border-b border-secondary/25 z-[3]" />
 
           <Container className="relative z-10">
             {/* Breadcrumb */}

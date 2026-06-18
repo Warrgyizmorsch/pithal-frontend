@@ -122,6 +122,8 @@ function HeroSection() {
 
   return (
     <section className="relative overflow-hidden bg-white lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">
+
+      <Container className="relative z-10 flex flex-col gap-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
       <Image
         alt="Pithal Machines industrial factory floor and quarry application background"
         className="object-cover object-center"
@@ -146,9 +148,7 @@ function HeroSection() {
         aria-hidden
         className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-dark/70 via-primary-dark/20 to-transparent"
       />
-
-      <Container className="relative z-10 flex flex-col gap-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
-        <div>
+        <div className="z-20">
           <nav
             aria-label="Breadcrumb"
             className="mb-4 flex items-center gap-3 text-xs font-black text-primary sm:mb-6 sm:text-sm lg:mb-7"
@@ -219,7 +219,7 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-xl bg-white shadow-[0_18px_42px_rgba(3,27,64,0.18)] sm:rounded-2xl">
+        <div className="overflow-hidden z-20 rounded-xl bg-white shadow-[0_18px_42px_rgba(3,27,64,0.18)] sm:rounded-2xl">
           <div className="grid grid-cols-2 divide-x divide-y divide-border sm:grid-cols-3 lg:grid-cols-[repeat(5,minmax(0,1fr))_1.75fr] lg:divide-y-0">
             {stats.map((stat) => (
               <article

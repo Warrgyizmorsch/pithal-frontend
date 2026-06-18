@@ -500,7 +500,7 @@ export default function CareersPage() {
     <>
       <Header />
       <main className="careers-page bg-white text-gray-900 font-sans overflow-x-hidden">
-        <section className="relative overflow-hidden bg-white text-primary lg:h-[calc(100vh-90px)] lg:min-h-[600px] flex flex-col justify-between pt-4 pb-4 lg:pt-6 lg:pb-6">
+        <Container className="relative overflow-hidden bg-white text-primary lg:h-[calc(100vh-90px)] lg:min-h-[600px] flex flex-col justify-between pt-4 pb-4 lg:pt-6 lg:pb-6">
           {/* Full Background Image covering the entire section */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -514,7 +514,7 @@ export default function CareersPage() {
             <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-white/70 lg:bg-gradient-to-r lg:from-white lg:via-white lg:via-[28%] lg:to-transparent z-10 pointer-events-none" />
           </div>
 
-          <div className="relative z-20 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex-grow flex flex-col justify-center">
+          <div className="relative z-22 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex-grow flex flex-col justify-center">
             {/* Breadcrumbs */}
             <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-slate-500">
               <Link
@@ -625,7 +625,7 @@ export default function CareersPage() {
               ))}
             </div>
           </div>
-        </section>
+        </Container>
 
         {/* ── SECTION 2: ADVANTAGES ── */}
         <section className="py-10 bg-white">
