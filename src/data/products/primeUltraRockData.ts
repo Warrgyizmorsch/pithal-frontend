@@ -81,6 +81,7 @@ export const primeUltraRockData: ProductDetailData = {
         { label: "Aggregates (Granite, Basalt)", icon: "mountain" },
         { label: "Cement (Limestone)", icon: "factory" },
         { label: "Infrastructure (Road/Rail)", icon: "construction" },
+        { label: "Coal Processing", icon: "layers" },
       ],
     },
   },
@@ -136,6 +137,7 @@ export const primeUltraRockData: ProductDetailData = {
     { title: "Aggregates", description: "Granite, Basalt, Gabbro, and Quartzite reduction.", image: { src: "/images/industries/aggregates.jpg", alt: "Aggregate quarry conveyors and stockpiles" }, icon: "layers", href: "#", actionLabel: "Explore" },
     { title: "Cement", description: "Limestone and Dolomite preparation for cement plants.", image: { src: "/images/industries/cement.jpg", alt: "Cement industry processing plant" }, icon: "factory", href: "#", actionLabel: "Explore" },
     { title: "Infrastructure", description: "Road Projects, Railway Projects, and Smart Cities.", image: { src: "/images/industries/construction.jpg", alt: "Construction site with industrial equipment" }, icon: "hardHat", href: "#", actionLabel: "Explore" },
+    { title: "Recycling", description: "C&D Waste, Concrete Recycling, and Reclaimed Aggregate production.", image: { src: "/images/industries/recycling.jpg", alt: "Recycling facility with crushed material" }, icon: "recycle", href: "#", actionLabel: "Explore" },
   ],
   processSection: {
     eyebrow: "Working Process",

@@ -5,6 +5,7 @@ import { Container } from "@/components/common/Container";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import type { SectionCopy } from "@/data/products/productDetailTypes";
 import { ArrowRight } from "lucide-react";
+import { sectionPadding } from "./styles";
 
 const videoProcessSteps = [
   {
@@ -130,7 +131,7 @@ export function ProcessTimeline({
   }, [activeIndex, mounted]);
 
   return (
-    <section className="relative bg-white pt-12 pb-2 md:pt-16 md:pb-3">
+    <section className={`relative bg-white ${sectionPadding}`}>
       <Container>
         {/* Section Header */}
         <SectionHeader

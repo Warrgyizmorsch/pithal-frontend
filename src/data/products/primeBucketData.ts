@@ -92,6 +92,7 @@ export const primeBucketData: ProductDetailData = {
         { label: "Road Reconstruction", icon: "construction" },
         { label: "Mining & Quarrying", icon: "pickaxe" },
         { label: "Smart City Projects", icon: "factory" },
+        { label: "Concrete Recycling", icon: "layers" },
       ],
     },
   },
@@ -146,6 +147,7 @@ export const primeBucketData: ProductDetailData = {
     { title: "Infrastructure", description: "Highways, Railways, Metro, and Smart City Projects.", image: { src: "/images/industries/infrastructure.jpg", alt: "Infrastructure project site" }, icon: "layers", href: "#", actionLabel: "Explore" },
     { title: "Mining", description: "Limestone, Granite, Basalt, and Marble waste processing.", image: { src: "/images/industries/mining.jpg", alt: "Quarry waste handling" }, icon: "pickaxe", href: "#", actionLabel: "Explore" },
     { title: "Recycling", description: "Sustainable processing of asphalt and concrete debris.", image: { src: "/images/industries/recycling.jpg", alt: "Recycling facility" }, icon: "recycle", href: "#", actionLabel: "Explore" },
+    { title: "Aggregates", description: "On-site aggregate production for roads, backfilling, and drainage.", image: { src: "/images/industries/aggregates.jpg", alt: "Aggregate production from crushed material" }, icon: "mountain", href: "#", actionLabel: "Explore" },
   ],
   processSection: {
     eyebrow: "Working Principle",

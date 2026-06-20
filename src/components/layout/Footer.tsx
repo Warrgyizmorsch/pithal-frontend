@@ -81,7 +81,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-primary/20 bg-white" id="global">
-      <Container className="py-8 sm:py-10 xl:py-12">
+      <Container className="pt-8 pb-0 sm:pt-10 xl:pt-12">
         <div className="grid gap-x-8 gap-y-8 border-b border-primary/20 pb-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[2.8fr_1.02fr_1.25fr_1fr] xl:gap-y-10 xl:pb-[2.8rem]">
           <div className="md:col-span-2 lg:col-span-1">
             {/* Inner 2-col: brand left, contact right */}
@@ -215,18 +215,33 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="xl:px-10">
-            <FooterHeading>Get In Touch</FooterHeading>
-            <div className="flex items-end justify-between gap-4">
-              <p className="text-[1rem] leading-[1.65] text-text-dark">
-                Have a project in mind?
-                <br />
-                Our experts are ready to help.
-              </p>
-              <Button className="shrink-0 justify-between text-sm px-5" href="/contact">
-                Contact Us
-                <ArrowRight aria-hidden size={19} />
-              </Button>
+          <div className="xl:px-10 relative overflow-hidden ">
+            <Image
+              alt="Plant Design Layout"
+              className="h-[200px] w-full object-cover object-right opacity-40"
+              height={200}
+              src="/blogpageimg/plantdesignlayout.jpg"
+              width={600}
+              style={{
+                maskImage: "linear-gradient(to bottom, transparent 0%, black 35%)",
+                WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 35%)",
+              }}
+            />
+
+            {/* Content on top of image */}
+            <div className="absolute inset-0 flex flex-col justify-start pr-5">
+              <FooterHeading>Get In Touch</FooterHeading>
+              <div className="flex items-end justify-between gap-4">
+                <p className="text-[1rem] leading-[1.65] text-primary font-medium">
+                  Have a project in mind?
+                  <br />
+                  Our experts are ready to help.
+                </p>
+                <Button className="shrink-0 justify-between text-sm px-5" href="/contact">
+                  Contact Us
+                  <ArrowRight aria-hidden size={19} />
+                </Button>
+              </div>
             </div>
           </div>
 

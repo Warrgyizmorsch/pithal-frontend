@@ -1,4 +1,4 @@
-export const sectionPadding = "py-11 sm:py-14 lg:py-16";
+export const sectionPadding = "py-10 sm:py-12 lg:py-12";
 export const technicalCardShadow = "shadow-[0_8px_22px_rgba(3,27,64,0.04)]";
 export const elevatedCardShadow = "shadow-[0_10px_28px_rgba(3,27,64,0.08)]";
 export const formCardShadow = "shadow-[0_12px_34px_rgba(3,27,64,0.08)]";

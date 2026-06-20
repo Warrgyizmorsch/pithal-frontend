@@ -5,6 +5,7 @@ import { User, Building, Globe, Clipboard, Gauge, ShieldCheck, Phone, ArrowRight
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 import type { ContactSectionData } from "@/data/products/productDetailTypes";
+import { sectionPadding } from "./styles";
 
 const CONTACT_SECTION_BACKGROUND =
   "/images/products-images/universal-quarry-plant-background.png";
@@ -89,7 +90,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
   };
 
   return (
-    <section id={data.id} className="bg-[#f8fafc] py-12 md:py-16">
+    <section id={data.id} className={`bg-[#f8fafc] ${sectionPadding}`}>
       <Container>
         <div
           style={{
@@ -101,7 +102,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
           }}
           className="max-sm:px-5 max-sm:py-8"
         >
-          <div className="grid gap-12 lg:grid-cols-[1.12fr_0.88fr] items-stretch">
+          <div className="grid gap-12 lg:grid-cols-[1.12fr_0.88fr] items-start">
         {/* Left Column: Information, Benefits & Image Banner */}
         <div className="flex flex-col h-full">
           {/* Section Header with line and slashes */}
@@ -171,7 +172,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
 
           {/* Large Image Showcase with overlay Contact Strip Banner */}
           <div 
-            className="relative w-full mt-8 flex-1 min-h-[380px] overflow-hidden flex items-end p-4 sm:p-5" 
+            className="relative w-full mt-8 h-[320px] overflow-hidden flex items-end p-4 sm:p-5" 
             style={{ 
               borderRadius: "20px",
               boxShadow: "0 15px 35px rgba(3, 27, 64, 0.05)",
@@ -183,7 +184,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
           >
             {/* Contact Strip Banner overlay floating at the bottom */}
             <div 
-              className="flex items-center justify-between p-5 text-white gap-4 w-full sm:w-auto sm:max-w-[540px] max-sm:flex-col max-sm:items-stretch relative z-10"
+              className="flex items-center justify-between p-5 text-white gap-4 w-full max-sm:flex-col max-sm:items-stretch relative z-10"
               style={{
                 backgroundColor: "#031b40",
                 borderRadius: "16px",

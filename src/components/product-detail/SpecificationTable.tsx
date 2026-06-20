@@ -3,6 +3,7 @@ import type { SpecificationColumn, SpecificationRow, SpecificationsSectionData }
 import { cn } from "@/lib/utils";
 import { ProductCtaButton } from "./ProductCtaButton";
 import { ProductIcon } from "./iconMap";
+import { sectionPadding } from "./styles";
 
 const columnIconMap: Record<string, string> = {
   model: "settings",
@@ -34,7 +35,7 @@ export function SpecificationTable({
   rows: SpecificationRow[];
 }) {
   return (
-    <section className="bg-bg-light py-8 sm:py-10 lg:py-12">
+    <section className={`bg-bg-light ${sectionPadding}`}>
       <Container>
         <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
           <div className="border-b border-border px-4 py-5 sm:px-6 lg:px-7">

@@ -4,6 +4,7 @@ import type { IntroCalloutPosition, ProductIntroData } from "@/data/products/pro
 import { cn } from "@/lib/utils";
 import { ProductCtaButton } from "./ProductCtaButton";
 import { ProductIcon } from "./iconMap";
+import { sectionPadding } from "./styles";
 
 const calloutCardPositions: Record<IntroCalloutPosition, string> = {
   bottomCenter: "left-[43%] top-[80%]",
@@ -47,7 +48,7 @@ function OverviewEyebrow({ children }: { children: React.ReactNode }) {
 
 export function ProductIntro({ data }: { data: ProductIntroData }) {
   return (
-    <section className="relative overflow-hidden bg-white pb-10 pt-5 sm:pb-12 sm:pt-6 lg:pb-14 lg:pt-8">
+    <section className={`relative overflow-hidden bg-white ${sectionPadding}`}>
       <Container className="max-w-[1480px]">
         <div className="grid gap-8 lg:grid-cols-[0.78fr_1fr] lg:items-center">
           <div className="relative z-10">

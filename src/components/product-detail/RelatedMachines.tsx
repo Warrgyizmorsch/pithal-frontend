@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import type { RelatedMachine, SectionCopy } from "@/data/products/productDetailTypes";
+import { sectionPadding } from "./styles";
 
 const coneIcon = (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -82,7 +83,7 @@ export function RelatedMachines({
   };
 
   return (
-    <section className="bg-white py-12 md:py-20">
+    <section className={`bg-white ${sectionPadding}`}>
       <Container>
         {/* Section Header with line and slashes */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", marginBottom: "40px" }}>

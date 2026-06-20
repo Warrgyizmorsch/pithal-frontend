@@ -3,6 +3,7 @@ import { Container } from "@/components/common/Container";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import type { PerformanceFeature, SectionCopy } from "@/data/products/productDetailTypes";
 import { ProductIcon } from "./iconMap";
+import { sectionPadding } from "./styles";
 
 type Feature = {
   icon: React.ReactNode;
@@ -69,7 +70,7 @@ export function FeaturesSection({
   const sectionSubtitle = section?.subtitle ?? subtitle;
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f5f2] py-10 md:py-10 lg:py-10">
+    <section className={`relative overflow-hidden bg-[#f7f5f2] ${sectionPadding}`}>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-38 bg-[radial-gradient(circle_at_top,rgba(255,147,34,0.12),transparent_55%)]" />
       <Container>
         <SectionHeader
@@ -112,7 +113,7 @@ export function FeaturesSection({
         </div>
 
 
-          <div className="relative mx-auto mt-10 flex w-full max-w-2xl items-center justify-center gap-3 sm:gap-4 px-4 py-5 text-center">
+          <div className="relative mx-auto mt-10 flex w-full max-w-2xl items-center justify-center gap-3 sm:gap-4 px-1 py-1 text-center">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
               <ShieldCheck size={24} strokeWidth={1.8} />
             </div>

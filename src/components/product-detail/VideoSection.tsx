@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Shield, Settings, Wrench, TrendingUp, CheckCircle2, Play, Film } from "lucide-react";
 import { Container } from "@/components/common/Container";
 import type { VideoSectionData } from "@/data/products/productDetailTypes";
+import { sectionPadding } from "./styles";
 
 export function VideoSection({ data }: { data: VideoSectionData }) {
   const renderIcon = (iconName: string) => {
@@ -23,7 +24,7 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
   };
 
   return (
-    <section className="bg-white" style={{ padding: "80px 0" }}>
+    <section className={`bg-white ${sectionPadding}`}>
       <Container>
         {/* Section Header with line and slashes */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", marginBottom: "50px" }}>
@@ -54,7 +55,7 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
           <div style={{ flex: 1, height: "1.5px", backgroundColor: "#fa5902", opacity: 0.25 }} />
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] items-start">
+        <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr]">
           {/* Left Column: Title & Benefits */}
           <div>
             <h2 
@@ -128,7 +129,7 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
 
           {/* Right Column: Video Card */}
           <div 
-            className="border border-border bg-[#f8fafc] p-3.5"
+            className="border border-border bg-[#f8fafc] p-3.5 self-start"
             style={{
               borderRadius: "16px",
               boxShadow: "0 20px 45px rgba(3, 27, 64, 0.06)",

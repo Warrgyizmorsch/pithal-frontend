@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 import type { IconText, ResourceItem, ResourcesSectionData } from "@/data/products/productDetailTypes";
+import { sectionPadding } from "./styles";
 
 export function ResourcesSection({
   section,
@@ -88,7 +89,7 @@ export function ResourcesSection({
   };
 
   return (
-    <section className="bg-[#f8fafc] py-12 md:py-20" id={section.id}>
+    <section className={`bg-[#f8fafc] ${sectionPadding}`} id={section.id}>
       <Container>
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
