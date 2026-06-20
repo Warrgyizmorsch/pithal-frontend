@@ -231,6 +231,7 @@ export type ResourcesSectionData = SectionCopy & {
 
 export type ProductDetailData = {
   slug: string;
+  images?: ImageAsset[];
   hero: ProductHeroData;
   statsSection: ProductStatsSectionData;
   stats: ProductStat[];

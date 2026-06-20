@@ -52,7 +52,7 @@ export const primeUltraRockData: ProductDetailData = {
     description:
       "Prime UltraRock is engineered for mining, quarrying, cement, and aggregate applications. It focuses on high throughput, compact footprint, and smart automation to deliver lower operating costs compared to conventional crushers.",
     image: {
-      src: "/ultrarock/primeultrarock1.png",
+      src: "/ultrarock/primeultravideo.png",
       alt: "Prime UltraRock advanced primary crusher machine",
     },
     ctas: [
