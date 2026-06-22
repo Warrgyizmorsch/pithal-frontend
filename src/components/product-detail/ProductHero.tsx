@@ -51,6 +51,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
             current={currentLabel}
             eyebrow={data.eyebrow}
             light
+            breadcrumbs={data.breadcrumb}
           />
 
           <h1 className="headline text-[clamp(2rem,7vw,5.5rem)] leading-[0.95] text-white lg:whitespace-nowrap">

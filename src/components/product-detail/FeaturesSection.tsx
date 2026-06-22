@@ -15,27 +15,27 @@ type FeatureInput = Feature | PerformanceFeature;
 
 const defaultFeatures: Feature[] = [
   {
-    icon: <ShieldCheck size={48} strokeWidth={1.8} className="text-blue-600" />,
+    icon: <ShieldCheck size={48} strokeWidth={1.8} className="text-(--primary)" />,
     title: "High Crushing Ratio",
     description: "Optimized chamber design ensures maximum reduction ratio for higher output.",
   },
   {
-    icon: <Wrench size={48} strokeWidth={1.8} className="text-blue-600" />,
+    icon: <Wrench size={48} strokeWidth={1.8} className="text-(--primary)" />,
     title: "Low Maintenance",
     description: "Easy access design and fewer moving parts reduce maintenance time and cost.",
   },
   {
-    icon: <Weight size={48} strokeWidth={1.8} className="text-blue-600" />,
+    icon: <Weight size={48} strokeWidth={1.8} className="text-(--primary)" />,
     title: "Heavy Duty Build",
     description: "Rugged construction with premium materials for longer service life.",
   },
   {
-    icon: <Fuel size={48} strokeWidth={1.8} className="text-blue-600" />,
+    icon: <Fuel size={48} strokeWidth={1.8} className="text-(--primary)" />,
     title: "Fuel Efficiency",
     description: "Engineered for optimal power utilization and lower operating costs.",
   },
   {
-    icon: <Hexagon size={48} strokeWidth={1.8} className="text-blue-600" />,
+    icon: <Hexagon size={48} strokeWidth={1.8} className="text-(--primary)" />,
     title: "Wear Resistant Parts",
     description: "High quality manganese steel components for maximum durability.",
   },
