@@ -259,7 +259,7 @@ export const primeUltraRockData: ProductDetailData = {
       { title: "GLOBAL SUPPORT", text: "Remote diagnostics and technical service.", icon: "headphones" },
     ],
     contactStrip: {
-      phone: "+91 98797 16000",
+      phone: "+91 98875 37129",
       email: "info@pithalmachines.com",
     },
     form: {

@@ -73,14 +73,14 @@ const contactInformation = [
     channel: "HEAD OFFICE",
     icon: MapPin,
     content:
-      "Pithal Machinery Private Limited\nGondal Road, Plot No. 68,\nVillage Kothariya,\nRajkot - 360022, Gujarat, India",
+      "Pithal Machines Ltd.\nHawa Magri, Industrial Area,\nSukher, 313001\nUdaipur, Rajasthan India",
     linkText: "View on Map",
-    href: "https://maps.google.com/?q=Pithal+Machinery+Rajkot",
+    href: "https://www.google.com/maps/search/Pithal+Machines+Ltd.+Hawa+Magri,+Industrial+Area,+Sukher,+313001+Udaipur,+Rajasthan+India/@24.5871171,73.6568754,23536m/data=!3m2!1e3!4b1?entry=ttu",
   },
   {
     channel: "PHONE NUMBER",
     icon: Phone,
-    content: "Main Line: +91 98875 37129\nMobile / WhatsApp: +91 99099 25667",
+    content: "+91 98875 37129",
     linkText: "Call Us Now",
     href: "tel:+919887537129",
   },
@@ -88,15 +88,15 @@ const contactInformation = [
     channel: "EMAIL ADDRESS",
     icon: Mail,
     content:
-      "General Enquiries: info@pithalindia.com\nSales Enquiries: sales@pithalindia.com",
+      "General Enquiries: info@pithalmachines.com\nSales Enquiries: sales@pithalmachines.com",
     linkText: "Send an Email",
-    href: "mailto:info@pithalindia.com",
+    href: "mailto:info@pithalmachines.com",
   },
   {
     channel: "EXPORT ENQUIRIES",
     icon: Globe,
     content:
-      "Global Sales: exports@pithalindia.com\nInternational Support: +91 281 238 7381",
+      "Global Sales: exports@pithalmachines.com\nInternational Support: +91 98875 37129",
     linkText: "Explore Our Network",
     href: "#contact1",
   },
@@ -105,7 +105,7 @@ const contactInformation = [
     icon: Clock,
     content: "Monday – Saturday: 09:00 AM – 06:00 PM (IST)\nSunday: Closed",
     linkText: "Schedule a Meeting",
-    href: "mailto:info@pithalindia.com?subject=Schedule%20a%20Meeting",
+    href: "mailto:info@pithalmachines.com?subject=Schedule%20a%20Meeting",
   },
 ];
 
@@ -138,8 +138,8 @@ const teamDirectory = [
     icon: Handshake,
     name: "Mr. Ronak Soni",
     role: "Sales Manager",
-    email: "sales@pithalindia.com",
-    phone: "+91 281 238 7381",
+    email: "sales@pithalmachines.com",
+    phone: "+91 98875 37129",
     image: "", // Placeholder
   },
   {
@@ -147,8 +147,8 @@ const teamDirectory = [
     icon: Headphones,
     name: "Mr. Dhaval Patel",
     role: "Senior Engineer – Support",
-    email: "support@pithalindia.com",
-    phone: "+91 281 238 7382",
+    email: "support@pithalmachines.com",
+    phone: "+91 98875 37129",
     image: "", // Placeholder
   },
   {
@@ -156,8 +156,8 @@ const teamDirectory = [
     icon: HardHat,
     name: "Mr. Hardik Mehta",
     role: "Project Manager",
-    email: "projects@pithalindia.com",
-    phone: "+91 281 238 7383",
+    email: "projects@pithalmachines.com",
+    phone: "+91 98875 37129",
     image: "", // Placeholder
   },
   {
@@ -165,8 +165,8 @@ const teamDirectory = [
     icon: Globe,
     name: "Mr. Viral Shah",
     role: "Export Manager",
-    email: "exports@pithalindia.com",
-    phone: "+91 281 238 7384",
+    email: "exports@pithalmachines.com",
+    phone: "+91 98875 37129",
     image: "", // Placeholder
   },
   {
@@ -174,8 +174,8 @@ const teamDirectory = [
     icon: Users,
     name: "Ms. Krupa Joshi",
     role: "HR Manager",
-    email: "careers@pithalindia.com",
-    phone: "+91 281 238 7385",
+    email: "careers@pithalmachines.com",
+    phone: "+91 98875 37129",
     image: "", // Placeholder
   },
   {
@@ -183,8 +183,8 @@ const teamDirectory = [
     icon: Mail,
     name: "Mr. Jaydeep Vyas",
     role: "Admin Executive",
-    email: "info@pithalindia.com",
-    phone: "+91 281 238 7380",
+    email: "info@pithalmachines.com",
+    phone: "+91 98875 37129",
     image: "", // Placeholder
   },
 ];
@@ -1499,21 +1499,21 @@ Message: ${formData.requirement}`;
 
               <div className="flex flex-wrap items-center gap-4 lg:gap-8">
                 <a
-                  href="tel:+912812387373"
+                  href="tel:+919887537129"
                   className="flex items-center gap-2.5 text-xs font-black uppercase tracking-wider text-slate-700 hover:text-secondary transition-colors"
                 >
                   <Phone size={13} className="text-secondary" />
-                  <span>CALL US: +91 98797 16000</span>
+                  <span>CALL US: +91 98875 37129</span>
                 </a>
                 <a
-                  href="mailto:info@pithalindia.com"
+                  href="mailto:info@pithalmachines.com"
                   className="flex items-center gap-2.5 text-xs font-black uppercase tracking-wider text-slate-700 hover:text-secondary transition-colors"
                 >
                   <Mail size={13} className="text-secondary" />
-                  <span>EMAIL US: info@pithalindia.com</span>
+                  <span>EMAIL US: info@pithalmachines.com</span>
                 </a>
                 <a
-                  href="mailto:info@pithalindia.com?subject=Consultation"
+                  href="mailto:info@pithalmachines.com?subject=Consultation"
                   className="flex items-center gap-2.5 text-xs font-black uppercase tracking-wider text-slate-700 hover:text-secondary transition-colors"
                 >
                   <Calendar size={13} className="text-secondary" />
@@ -1639,10 +1639,10 @@ Message: ${formData.requirement}`;
                           Phone
                         </span>
                         <a
-                          href="tel:+912812387373"
+                          href="tel:+919887537129"
                           className="mt-1 text-xs md:text-sm text-slate-200 block font-semibold hover:text-secondary"
                         >
-                          +91 98797 16000
+                          +91 98875 37129
                         </a>
                       </div>
                     </div>
@@ -1657,10 +1657,10 @@ Message: ${formData.requirement}`;
                           Email
                         </span>
                         <a
-                          href="mailto:info@pithalindia.com"
+                          href="mailto:info@pithalmachines.com"
                           className="mt-1 text-xs md:text-sm text-slate-200 block font-semibold hover:text-secondary"
                         >
-                          info@pithalindia.com
+                          info@pithalmachines.com
                         </a>
                       </div>
                     </div>
@@ -1739,7 +1739,7 @@ Message: ${formData.requirement}`;
                     </div>
                   </div>
                   <Button
-                    href="mailto:info@pithalindia.com?subject=Visit%20Plant"
+                    href="mailto:info@pithalmachines.com?subject=Visit%20Plant"
                     variant="primary"
                     className="text-[9.5px] px-4 py-2.5 shrink-0 flex items-center gap-1.5 font-bold uppercase tracking-wider"
                   >
@@ -1788,7 +1788,7 @@ Message: ${formData.requirement}`;
 
                 <div className="mt-8 flex flex-wrap gap-4 items-center">
                   <Button
-                    href="tel:+912812387373"
+                    href="tel:+919887537129"
                     variant="primary"
                     className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8"
                   >
@@ -1804,7 +1804,7 @@ Message: ${formData.requirement}`;
                     SEND INQUIRY
                   </Button>
                   <Button
-                    href="mailto:info@pithalindia.com?subject=Consultation"
+                    href="mailto:info@pithalmachines.com?subject=Consultation"
                     variant="outlineOrange"
                     className="flex items-center justify-center gap-2 text-xs font-black tracking-[0.14em] px-8 py-5.5 text-white border-white/20 hover:bg-white hover:text-primary"
                   >

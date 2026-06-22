@@ -82,7 +82,7 @@ export function Footer() {
   return (
     <footer className="border-t border-primary/20 bg-white" id="global">
       <div className="pt-8 pb-0 sm:pt-10 xl:pt-12 px-10">
-        <div className="grid gap-x-8 gap-y-8 border-b border-primary/20 pb-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[2.8fr_1.02fr_1.25fr_1fr] xl:gap-y-10 xl:pb-[2.8rem]">
+        <div className="grid gap-x-8 gap-y-8 border-b border-primary/20 pb-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[2.8fr_1.02fr_1.25fr_1fr] xl:gap-y-10 xl:pb-[2rem]">
           <div className="md:col-span-2 lg:col-span-1">
             {/* Inner 2-col: brand left, contact right */}
             <div className="grid gap-8 sm:grid-cols-2">
@@ -94,33 +94,66 @@ export function Footer() {
                   industries, build infrastructure and shape a stronger tomorrow.
                 </p>
                 <span aria-hidden className="mt-7 block h-[3px] w-[7.1rem] bg-gradient-to-r from-primary to-secondary" />
+
+
+                {/* QR Section inside the same contact column */}
+                <div className="mt-6 flex flex-col gap-3">
+                  {/* <div className="flex items-center gap-2">
+                    <span className="text-[0.9rem] font-bold uppercase tracking-wider text-primary">Factory Location</span>
+                    <span aria-hidden className="h-[2px] w-6 bg-secondary" />
+                  </div>
+                  <p className="text-xs text-text-dark/80 -mt-2">Scan to Open Google Maps</p> */}
+
+                  <a
+                    href="https://www.google.com/maps/search/Pithal+Machines+Ltd.+Hawa+Magri,+Industrial+Area,+Sukher,+313001+Udaipur,+Rajasthan+India/@24.5871171,73.6568754,23536m/data=!3m2!1e3!4b1?entry=ttu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open factory location in Google Maps"
+                    className="w-fit"
+                  >
+                    <div className="w-[90px] h-[90px] sm:w-[100px] sm:h-[100px] xl:w-[120px] xl:h-[120px] bg-white p-2 rounded-xl hover:scale-[1.05] transition-all duration-300 ease-in-out flex items-center justify-center border border-gray-100">
+                      <Image
+                        src="/images/location-qr.png"
+                        alt="Pithal Machines Ltd. Factory Location QR Code"
+                        width={104}
+                        height={104}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </a>
+                  {/* <p className="text-xs font-bold text-secondary uppercase tracking-wider">Scan for Directions</p> */}
+                  <p className="text-xs font-semibold text-secondary pl-3">Scan QR to Navigate</p>
+                </div>
               </div>
 
               {/* Contact info */}
-              <address className="mt-2 space-y-4 not-italic text-[0.95rem] leading-[1.62] text-text-dark sm:mt-0">
-                <span className="flex items-start gap-4">
-                  <MapPin aria-hidden className="mt-1 shrink-0 text-primary" size={22} />
-                  <span>
-                    <strong className="font-bold">Pithal Machines Ltd.</strong>
-                    <br />
-                    Hawa Magri, Industrial Area, Sukher, 313001
-                    <br />
-                    Udaipur, Rajasthan India
+              <div>
+                <address className="mt-2 space-y-4 not-italic text-[0.95rem] leading-[1.62] text-text-dark sm:mt-0">
+                  <span className="flex items-start gap-4">
+                    <MapPin aria-hidden className="mt-1 shrink-0 text-primary" size={22} />
+                    <span>
+                      <strong className="font-bold">Pithal Machines Ltd.</strong>
+                      <br />
+                      Hawa Magri, Industrial Area, Sukher, 313001
+                      <br />
+                      Udaipur, Rajasthan India
+                    </span>
                   </span>
-                </span>
-                <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919887537129">
-                  <Phone aria-hidden className="shrink-0 text-primary" size={21} />
-                  +91 98875 37129
-                </a>
-                <a className="flex items-center gap-4 break-all hover:text-secondary" href="mailto:info@pithalmachines.com">
-                  <Mail aria-hidden className="shrink-0 text-primary" size={22} />
-                  info@pithalmachines.com
-                </a>
-                <a className="flex items-center gap-4 break-all hover:text-secondary" href="https://www.pithalmachines.com">
-                  <Globe aria-hidden className="shrink-0 text-primary" size={22} />
-                  www.pithalmachines.com
-                </a>
-              </address>
+                  <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919887537129">
+                    <Phone aria-hidden className="shrink-0 text-primary" size={21} />
+                    +91 98875 37129
+                  </a>
+                  <a className="flex items-center gap-4 break-all hover:text-secondary" href="mailto:info@pithalmachines.com">
+                    <Mail aria-hidden className="shrink-0 text-primary" size={22} />
+                    info@pithalmachines.com
+                  </a>
+                  <a className="flex items-center gap-4 break-all hover:text-secondary" href="https://www.pithalmachines.com">
+                    <Globe aria-hidden className="shrink-0 text-primary" size={22} />
+                    www.pithalmachines.com
+                  </a>
+                </address>
+
+              </div>
             </div>
           </div>
 
@@ -175,27 +208,7 @@ export function Footer() {
             );
           })}
 
-          {/* <div>
-            <FooterHeading>Certifications</FooterHeading>
-            <div className="divide-y divide-primary/15">
-              {certifications.map((certification) => (
-                <div className="flex items-center gap-4 py-[0.86rem] first:pt-0" key={certification.code}>
-                  <Image
-                    alt=""
-                    aria-hidden
-                    className="h-[3.85rem] w-[3.85rem] shrink-0"
-                    height={72}
-                    src={certification.icon}
-                    width={72}
-                  />
-                  <span className="text-[0.9rem] leading-[1.6] text-text-dark">
-                    <strong className="block font-bold">{certification.code}</strong>
-                    {certification.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div> */}
+
         </div>
 
         <div className="grid gap-8 pt-6 xl:grid-cols-[1fr_2.08fr_1.23fr] xl:divide-x xl:divide-primary/20">

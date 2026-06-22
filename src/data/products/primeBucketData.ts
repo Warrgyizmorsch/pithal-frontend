@@ -268,7 +268,7 @@ export const primeBucketData: ProductDetailData = {
       { title: "END TO END SUPPORT", text: "Training for your operators and maintenance.", icon: "headphones" },
     ],
     contactStrip: {
-      phone: "+91 98797 16000",
+      phone: "+91 98875 37129",
       email: "info@pithalmachines.com",
     },
     form: {
