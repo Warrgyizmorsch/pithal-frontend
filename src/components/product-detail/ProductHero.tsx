@@ -1,10 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ChevronRight, Home } from "lucide-react";
+import { HeroNavigation } from "@/components/common/HeroNavigation";
 import type { ProductHeroData } from "@/data/products/productDetailTypes";
 import { ProductCtaButton } from "./ProductCtaButton";
 import { ProductIcon } from "./iconMap";
-import { Container } from "../common/Container";
 
 const heroButtonClass = "min-h-[58px] w-full sm:w-auto sm:min-w-[242px] justify-center gap-3 rounded-md px-6 !text-[14px] !font-black !tracking-[0.02em]";
 const secondaryHeroButtonClass = `${heroButtonClass} border-secondary/80 bg-primary-dark/25 text-white hover:border-secondary hover:text-secondary`;
@@ -26,13 +24,17 @@ function HeroDescription({ text, highlight }: { text: string; highlight?: string
 }
 
 export function ProductHero({ data }: { data: ProductHeroData }) {
+  const currentLabel =
+    data.breadcrumb[data.breadcrumb.length - 1]?.label ??
+    `${data.title} ${data.highlightedTitle}`;
+
   return (
-    <Container className="relative isolate min-h-[calc(100svh-4.25rem)] sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)] overflow-hidden bg-primary-dark text-white">
+    <section className="relative isolate min-h-[calc(100svh-4.25rem)] overflow-hidden bg-primary-dark text-white sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)]">
       <Image
         alt={data.image.alt}
         className="object-cover object-center"
         fill
-        priority
+        preload
         sizes="100vw"
         src={data.image.src}
       />
@@ -43,26 +45,13 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
       <div className="absolute left-[48%] top-0 hidden h-[3px] w-[22%] origin-left -rotate-[28deg] bg-secondary lg:block" />
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-secondary/45" />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-4.25rem)] sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)] w-full max-w-[1693px] flex-col px-6 pb-7 pt-9 sm:px-10 lg:px-[68px]">
-        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-4 text-[15px] font-medium text-white/90">
-          {data.breadcrumb.map((item, index) => (
-            <span className="flex items-center gap-5" key={item.label}>
-              <Link className={index === data.breadcrumb.length - 1 ? "font-bold text-secondary" : "transition-colors hover:text-secondary"} href={item.href}>
-                {index === 0 ? <Home aria-hidden size={23} /> : item.label}
-              </Link>
-              {index < data.breadcrumb.length - 1 && <ChevronRight aria-hidden className="text-white/55" size={15} />}
-            </span>
-          ))}
-        </nav>
-
-        <div className="mt-6 lg:mt-[45px] max-w-[780px] flex flex-col items-center lg:items-start text-center lg:text-left flex-1 justify-center lg:justify-start">
-          <div className="mb-4 flex items-center justify-center lg:justify-start gap-4">
-            <div className="min-w-[260px] sm:min-w-[330px] max-w-full">
-              <p className="text-[16px] font-black uppercase leading-none tracking-[0.03em] text-secondary">{data.eyebrow}</p>
-              <span className="mt-2 block h-[2px] w-full bg-secondary" />
-            </div>
-            <ProductIcon className="hidden text-secondary/80 sm:block" name="settings" size={24} strokeWidth={1.3} />
-          </div>
+      <div className="relative z-10 flex min-h-[calc(100svh-4.25rem)] w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:justify-between lg:py-8 sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)]">
+        <div className="max-w-[780px] flex flex-col items-center lg:items-start text-center lg:text-left">
+          <HeroNavigation
+            current={currentLabel}
+            eyebrow={data.eyebrow}
+            light
+          />
 
           <h1 className="headline text-[clamp(2rem,7vw,5.5rem)] leading-[0.95] text-white lg:whitespace-nowrap">
             {data.title} <span className="text-secondary">{data.highlightedTitle}</span>
@@ -87,7 +76,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
           </div>
         </div>
 
-        <div className="mt-8 lg:mt-auto w-full max-w-[820px] rounded-xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
+        <div className="mt-12 lg:mt-auto w-full max-w-[820px] rounded-xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-white/30">
             {data.quickStats.map((stat) => (
               <article className="flex items-center gap-4 lg:px-6 lg:first:pl-0 lg:last:pr-0" key={stat.label}>
@@ -101,6 +90,6 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
           </div>
         </div>
       </div>
-    </Container>
+    </section>
   );
 }

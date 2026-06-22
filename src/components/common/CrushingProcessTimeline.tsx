@@ -39,7 +39,7 @@ const solutionsProcessSteps = [
   },
   {
     number: "06",
-    title: "CONVEYOR SYSTEM",
+    title: "PRIME CONVEYOR SYSTEM",
     text: "Efficient material transfer across stages.",
     video: "/workvideo/magnific_animate-this-image-as-a-c_kLBgSFq16B.mp4"
   },

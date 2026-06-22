@@ -1,11 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowRight,
   Award,
   BadgeCheck,
   Building2,
-  ChevronRight,
   ClipboardCheck,
   Cog,
   Construction,
@@ -14,7 +12,6 @@ import {
   Globe2,
   Handshake,
   Headphones,
-  Home,
   Landmark,
   Leaf,
   Lightbulb,
@@ -39,6 +36,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
+import { HeroNavigation } from "@/components/common/HeroNavigation";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { aboutPageData } from "@/data/aboutPageData";
@@ -122,13 +120,11 @@ function HeroSection() {
 
   return (
     <section className="relative overflow-hidden bg-white lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">
-
-      <Container className="relative z-10 flex flex-col gap-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
       <Image
         alt="Pithal Machines industrial factory floor and quarry application background"
         className="object-cover object-center"
         fill
-        priority
+        preload
         sizes="100vw"
         src="/images/about/about-hero-industrial-generated.png"
       />
@@ -148,45 +144,10 @@ function HeroSection() {
         aria-hidden
         className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-dark/70 via-primary-dark/20 to-transparent"
       />
+      <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
         <div className="z-20">
-          <nav
-            aria-label="Breadcrumb"
-            className="mb-4 flex items-center gap-3 text-xs font-black text-primary sm:mb-6 sm:text-sm lg:mb-7"
-          >
-            <Link
-              className="flex items-center gap-2 transition-colors hover:text-secondary"
-              href="/"
-            >
-              <Home aria-hidden size={16} />
-              Home
-            </Link>
-            <ChevronRight aria-hidden size={18} />
-            <span className="text-secondary">About Us</span>
-          </nav>
-
           <div className="max-w-[650px]">
-            <div className="mb-3 flex items-center gap-3 text-secondary sm:mb-4">
-              <span className="flex items-center gap-[5px]" aria-hidden>
-                {[0, 1, 2].map((index) => (
-                  <span
-                    className="block h-[8px] w-[6px] skew-x-[-30deg] bg-current"
-                    key={index}
-                  />
-                ))}
-              </span>
-              <p className="text-xs font-black uppercase tracking-[0.08em] sm:text-sm">
-                {hero.eyebrow}
-              </p>
-              <span className="flex items-center gap-[5px]" aria-hidden>
-                {[0, 1, 2].map((index) => (
-                  <span
-                    className="block h-[8px] w-[6px] skew-x-[-30deg] bg-current"
-                    key={index}
-                  />
-                ))}
-              </span>
-              <span className="hidden h-px w-16 bg-secondary/30 sm:block" />
-            </div>
+            <HeroNavigation current="About Us" eyebrow={hero.eyebrow} />
             <h1 className="headline mb-4 text-[clamp(2.2rem,5.6vw,4.3rem)] leading-[1.05] text-primary sm:mb-5">
               {hero.title}
               <span className="block text-secondary">{hero.highlight}</span>
@@ -276,7 +237,7 @@ function HeroSection() {
             </article>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
@@ -1929,7 +1890,6 @@ function CertificationsSection() {
           </div>
         </Container>
       </div>
-      
 
       <div className="relative border-y border-white/70 bg-[#edf2f7] pb-[35px] shadow-[inset_0_18px_38px_rgba(3,27,64,0.08)]">
         <Container className="relative z-10">

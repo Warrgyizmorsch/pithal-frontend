@@ -4,12 +4,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ChevronRight,
   Users,
   Settings,
   BookOpen,
   ShieldCheck,
-  Home,
   Trophy,
   Lightbulb,
   Globe,
@@ -33,6 +31,7 @@ import { Button } from "@/components/common/Button";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/common/Container";
+import { HeroNavigation } from "@/components/common/HeroNavigation";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -500,43 +499,25 @@ export default function CareersPage() {
     <>
       <Header />
       <main className="careers-page bg-white text-gray-900 font-sans overflow-x-hidden">
-        <Container className="relative overflow-hidden bg-white text-primary lg:h-[calc(100vh-90px)] lg:min-h-[600px] flex flex-col justify-between pt-4 pb-4 lg:pt-6 lg:pb-6">
+        <section className="relative overflow-hidden bg-white text-primary lg:h-[calc(100vh-90px)] lg:min-h-[600px] flex flex-col justify-between">
           {/* Full Background Image covering the entire section */}
           <div className="absolute inset-0 z-0">
             <Image
               alt="Pithal Machines manufacturing and team"
               className="object-cover object-center lg:object-right"
               fill
-              priority
+              preload
+              sizes="100vw"
               src="/careerimg/20.jpg"
             />
             {/* Responsive white gradient overlay: vertical fade on mobile, strong horizontal fade on desktop */}
             <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-white/70 lg:bg-gradient-to-r lg:from-white lg:via-white lg:via-[28%] lg:to-transparent z-10 pointer-events-none" />
           </div>
 
-          <div className="relative z-22 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex-grow flex flex-col justify-center">
-            {/* Breadcrumbs */}
-            <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-slate-500">
-              <Link
-                href="/"
-                className="hover:text-[#fa5902] transition-colors flex items-center gap-1.5"
-              >
-                <Home size={14} className="stroke-[2]" />
-                Home
-              </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-400 stroke-[2.5]" />
-              <span className="text-slate-500">Careers</span>
-            </div>
-
+          <div className="relative z-22 w-full max-w-[1520px] px-10 py-6 lg:py-8 flex-grow flex flex-col">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div className="py-2">
-                {/* Careers Tag with line */}
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="text-lg font-extrabold uppercase tracking-[0.08em] text-[#fa5902]">
-                    CAREERS
-                  </span>
-                  <span className="h-[1.5px] w-12 bg-[#fa5902]" />
-                </div>
+                <HeroNavigation current="Careers" eyebrow="Careers" />
 
                 <h1 className="font-extrabold text-[2.5rem] sm:text-[3.25rem] lg:text-[3.5rem] leading-[1.05] tracking-tight text-[#092a5c] uppercase">
                   BUILD MACHINES.
@@ -598,7 +579,7 @@ export default function CareersPage() {
           </div>
 
           {/* Stats Card Banner */}
-          <div className="relative z-20 mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 pb-0 pt-4 mt-auto">
+          <div className="relative z-20 w-full max-w-[1520px] px-10 pb-0 pt-4 mt-auto">
             <div className="grid gap-x-4 gap-y-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 rounded-2xl bg-[#031b40] p-4 sm:p-6 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] lg:divide-x lg:divide-slate-700/50">
               {heroStats.map((item, index) => (
                 <div
@@ -625,7 +606,7 @@ export default function CareersPage() {
               ))}
             </div>
           </div>
-        </Container>
+        </section>
 
         {/* ── SECTION 2: ADVANTAGES ── */}
         <section className="py-10 bg-white">

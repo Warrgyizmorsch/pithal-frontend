@@ -81,7 +81,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-primary/20 bg-white" id="global">
-      <Container className="pt-8 pb-0 sm:pt-10 xl:pt-12">
+      <div className="pt-8 pb-0 sm:pt-10 xl:pt-12 px-10">
         <div className="grid gap-x-8 gap-y-8 border-b border-primary/20 pb-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[2.8fr_1.02fr_1.25fr_1fr] xl:gap-y-10 xl:pb-[2.8rem]">
           <div className="md:col-span-2 lg:col-span-1">
             {/* Inner 2-col: brand left, contact right */}
@@ -108,9 +108,9 @@ export function Footer() {
                     Udaipur, Rajasthan India
                   </span>
                 </span>
-                <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919879716000">
+                <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919887537129">
                   <Phone aria-hidden className="shrink-0 text-primary" size={21} />
-                  +91 98797 16000
+                  +91 98875 37129
                 </a>
                 <a className="flex items-center gap-4 break-all hover:text-secondary" href="mailto:info@pithalmachines.com">
                   <Mail aria-hidden className="shrink-0 text-primary" size={22} />
@@ -127,11 +127,11 @@ export function Footer() {
           {navColumns.map((column) => {
             const linkMap: Record<string, Record<string, string>> = {
               "Products": {
-                "Jaw Crushers": "/products/jaw-crushers",
-                "Cone Crushers": "/products/cone-crushers",
-                "VSI Crushers": "/products/vsi-crushers",
-                "Vibrating Feeders": "/products/feeders",
-                "Vibrating Screens": "/products/screening-solutions",
+                "Prime Jaw Crushers": "/products/jaw-crushers",
+                "Prime Cone Crushers": "/products/cone-crushers",
+                "Prime VSI Crushers": "/products/vsi-crushers",
+                "Prime Vibrating Feeders": "/products/feeders",
+                "Prime Vibrating Screens": "/products/screening-solutions",
                 "Mobile Crushing Plants": "/products/complete-plants",
                 "Spare Parts": "/products",
                 "Wear Parts": "/products",
@@ -255,10 +255,10 @@ export function Footer() {
             </h2>
           </div>
         </div>
-      </Container>
+      </div>
       {/* Full width gradient bottom bar */}
 
-        <Container className="bg-gradient-to-r from-primary via-[#294385] to-secondary flex flex-col items-center justify-between gap-4 py-4 text-sm text-white sm:flex-row">
+        <div className="bg-gradient-to-r from-primary via-[#294385] to-secondary flex flex-col items-center justify-between gap-4 py-4 text-sm text-white sm:flex-row px-10">
           <p className="order-2 mt-2 text-white/90 sm:order-1 sm:mt-0">&copy; 2026 Pithal Machines Ltd. All Rights Reserved.</p>
 
           <div className="order-1 flex items-center gap-4 sm:order-2">
@@ -275,7 +275,7 @@ export function Footer() {
 
             <ScrollToTopButton />
           </div>
-        </Container>
+        </div>
 
 
     </footer>

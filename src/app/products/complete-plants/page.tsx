@@ -5,9 +5,9 @@ import { ProductDetailTemplate } from "@/components/product-detail/ProductDetail
 import { completePlantsData } from "@/data/products/additionalProductData";
 
 export const metadata: Metadata = {
-  title: "Complete Plants | Pithal Machine Pvt.",
+  title: "Prime Complete Plants | Pithal Machine Pvt.",
   description:
-    "Turnkey crushing and screening plants engineered for integrated production and reliable output.",
+    "Turnkey Prime Complete Plants engineered for integrated production and reliable output.",
 };
 
 export default function CompletePlantsPage() {

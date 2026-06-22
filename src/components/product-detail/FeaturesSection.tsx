@@ -55,7 +55,7 @@ export function FeaturesSection({
   eyebrow,
   heading = "Engineered For",
   highlightText = "Superior Performance",
-  subtitle = "Our jaw crushers are built with advanced engineering and premium quality components to deliver unmatched performance, reliability and efficiency.",
+  subtitle = "Our Prime Jaw Crushers are built with advanced engineering and premium quality components to deliver unmatched performance, reliability and efficiency.",
 }: {
   features?: FeatureInput[];
   section?: SectionCopy;

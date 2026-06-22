@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  ChevronRight,
   Zap,
   Shield,
   CheckCircle2,
@@ -33,6 +32,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
+import { HeroNavigation } from "@/components/common/HeroNavigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
@@ -111,42 +111,22 @@ export default function CaseStudyPage() {
             alt="Rajasthan Zinc Crushing Plant"
             className="object-cover object-center"
             fill
-            priority
-            sizes="(min-width: 1024px) 58vw, 100vw"
+            preload
+            sizes="100vw"
             src="/projectimg/rajasthan zinc crushing plant.jpg"
           />
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/55 to-transparent" />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-35" />
-          <Container className="relative z-10 w-full flex flex-col justify-between gap-8 lg:gap-2.5 py-4 lg:py-2 lg:h-full">
-            {/* Breadcrumb */}
-            <div className="flex items-center flex-wrap gap-2 mb-4 lg:mb-1.5 text-xs sm:text-sm font-semibold text-white/60">
-              <Link
-                href="/"
-                className="text-white/80 hover:text-secondary transition-colors"
-              >
-                Home
-              </Link>
-              <ChevronRight size={10} className="text-white/40" />
-              <Link
-                href="/projects"
-                className="text-white/80 hover:text-secondary transition-colors"
-              >
-                Projects & Case Studies
-              </Link>
-              <ChevronRight size={10} className="text-white/40" />
-              <span className="text-white">Rajasthan Zinc Crushing Plant</span>
-            </div>
-
+          <div className="relative z-10 flex w-full max-w-[1520px] flex-col justify-between gap-8 px-10 py-4 lg:h-full lg:gap-2.5 lg:py-2">
             <div className="grid gap-12 lg:gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               {/* Left Column Text */}
               <div>
-                <div className="flex items-center gap-2.5 mb-2.5 text-secondary">
-                  <CheckCircle2 size={24} className="text-secondary" />
-                  <span className="text-xl font-black uppercase tracking-[0.24em] text-secondary">
-                    FEATURED PROJECT
-                  </span>
-                </div>
+                <HeroNavigation
+                  current="Projects & Case Studies"
+                  eyebrow="Featured Project"
+                  light
+                />
 
                 <h1 className="text-[clamp(2.5rem,6vw,3.75rem)] lg:text-[clamp(2.5rem,4vw,3.3rem)] font-black uppercase leading-[1.02] tracking-tight text-white">
                   RAJASTHAN<span className="mx-3">ZINC</span>
@@ -315,7 +295,7 @@ export default function CaseStudyPage() {
                 </div>
               </div>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ========================================================================= */}
@@ -1105,7 +1085,7 @@ export default function CaseStudyPage() {
                 },
                 {
                   number: "05",
-                  name: "CONVEYOR SYSTEM",
+                  name: "PRIME CONVEYOR SYSTEM",
                   desc: "Efficient conveying ensures continuous flow",
                   icon: (
                     <svg
@@ -1315,7 +1295,7 @@ export default function CaseStudyPage() {
               {[
                 {
                   number: "01",
-                  name: "JAW CRUSHER",
+                  name: "PRIME JAW CRUSHER",
                   model: "PEW 1100 x 750",
                   img: "/images/products/jaw-crusher/main-machine.png",
                   role: "Primary crushing of run-of-mine material into manageable size.",
@@ -1340,7 +1320,7 @@ export default function CaseStudyPage() {
                 },
                 {
                   number: "02",
-                  name: "CONE CRUSHER",
+                  name: "PRIME CONE CRUSHER",
                   model: "PCH 220",
                   img: "/images/products/cone-crusher/main-machine.png",
                   role: "Secondary crushing for further size reduction and shape control.",
@@ -1365,7 +1345,7 @@ export default function CaseStudyPage() {
                 },
                 {
                   number: "03",
-                  name: "VSI CRUSHER",
+                  name: "PRIME VSI CRUSHER",
                   model: "PVSI 1145",
                   img: "/images/products/vsi-crusher/product-review.png",
                   role: "Tertiary crushing & shaping for high-quality, cubical products.",
@@ -1397,7 +1377,7 @@ export default function CaseStudyPage() {
                 },
                 {
                   number: "04",
-                  name: "VIBRATING SCREEN",
+                  name: "PRIME VIBRATING SCREEN",
                   model: "3YK 2160",
                   img: "/images/products/vibrating-screen/product-review.png",
                   role: "Separation and classification of material by size.",

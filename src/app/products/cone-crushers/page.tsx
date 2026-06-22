@@ -15,9 +15,9 @@ import { Header } from "@/components/layout/Header";
 import { coneCrusherData } from "@/data/products/coneCrusherData";
 
 export const metadata: Metadata = {
-  title: "Cone Crushers | Pithal Machine Pvt.",
+  title: "Prime Cone Crushers | Pithal Machine Pvt.",
   description:
-    "High-efficiency secondary and tertiary cone crushers engineered for mining, aggregates, cement, and infrastructure industries.",
+    "High-efficiency secondary and tertiary Prime Cone Crushers engineered for mining, aggregates, cement, and infrastructure industries.",
 };
 
 export default function ConeCrusherProductPage() {
@@ -31,7 +31,7 @@ export default function ConeCrusherProductPage() {
         <FeaturesSection 
           heading="Engineered For"
           highlightText="Superior Performance"
-          subtitle="Our cone crushers are built with advanced engineering and premium quality components to deliver unmatched performance, reliability and efficiency."
+          subtitle="Our Prime Cone Crushers are built with advanced engineering and premium quality components to deliver unmatched performance, reliability and efficiency."
         />
         <SpecificationTable rows={coneCrusherData.specifications} section={coneCrusherData.specificationsSection} />
         <IndustryApplications industries={coneCrusherData.industries} section={coneCrusherData.industriesSection} />

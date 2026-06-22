@@ -1,5 +1,5 @@
 export const plantsData = {
-  title: "Complete Plants",
+  title: "Prime Complete Plants",
   description: "Integrated crushing and screening systems for comprehensive processing solutions",
   intro: {
     eyebrow: "Equipment Category",
@@ -20,7 +20,7 @@ export const plantsData = {
     { title: "Full Support", description: "Installation, training, and ongoing technical support" },
   ],
   industries: ["Mining", "Aggregates", "Cement", "Recycling", "Infrastructure"],
-  relatedProducts: ["Crushers", "Screening Solutions", "Feeders"],
+    relatedProducts: ["Crushers", "Prime Screening Solutions", "Feeders"],
   cta: {
     title: "Design Your Complete Plant",
     description: "Our experts will create the perfect processing solution for you.",

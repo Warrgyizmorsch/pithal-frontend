@@ -20,7 +20,7 @@ export const crushersData = {
     { title: "Efficiency", description: "Optimized crushing chamber for better results" },
   ],
   industries: ["Mining", "Construction", "Aggregates", "Recycling", "Cement"],
-  relatedProducts: ["Screening Solutions", "Feeders", "Complete Plants"],
+    relatedProducts: ["Prime Screening Solutions", "Feeders", "Prime Complete Plants"],
   cta: {
     title: "Ready to Get Started?",
     description: "Contact our team to find the perfect crushing solution for your needs.",

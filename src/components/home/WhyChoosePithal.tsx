@@ -58,10 +58,22 @@ const features: Feature[] = [
 export default function WhyChoosePithal() {
   return (
     <section
-      className="relative overflow-hidden  bg-white"
+      className="relative overflow-hidden bg-white"
       id="solutions"
     >
-      <Container className="relative z-10 grid items-center border-b-[3px] border-secondary gap-8 lg:grid-cols-12">
+      {/* Right Side Bleeding Image relative to section */}
+      <div className="absolute right-0 top-[50%] -translate-y-1/2 hidden lg:block h-[min(36rem,95%)] xl:h-[min(50rem,100%)] w-[65vw] z-0">
+        <Image
+          alt="Pithal engineered mobile crushing machine"
+          className="h-full w-full object-cover object-right"
+          fill
+          priority
+          sizes="65vw"
+          src="/images/hero/engineered-machine.png"
+        />
+      </div>
+
+      <section className="relative z-10 grid items-center pl-10 border-b-[3px] border-secondary gap-8 lg:grid-cols-12">
         {/* Left Side: Content Column */}
         <div className="py-9 px-0 lg:col-span-6 lg:py-[clamp(2.3rem,3vw,3.1rem)] z-10">
           <div className="max-w-[42rem]">
@@ -111,21 +123,9 @@ export default function WhyChoosePithal() {
           </div>
         </div>
 
-        {/* Right Side: Desktop Image */}
-        <div className="hidden lg:flex lg:col-span-6 lg:items-center lg:justify-end ">
-          <div className="absolute right-0 top-[50%] hidden h-[min(36rem,95%)] w-[75vw] -translate-y-1/2 lg:block xl:h-[min(50rem,100%)] xl:w-full">
-            <Image
-              alt="Pithal engineered mobile crushing machine"
-              className="h-full w-full object-cover object-right"
-              fill
-              priority
-              sizes="(min-width: 1024px) 50vw, 1px"
-              src="/images/hero/engineered-machine.png"
-            />
-          </div>
-        </div>
-
-      </Container>
+        {/* Right Side placeholder to reserve space in grid */}
+        <div className="hidden lg:block lg:col-span-6 h-full" />
+      </section>
     </section>
   );
 }

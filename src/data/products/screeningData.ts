@@ -1,5 +1,5 @@
 export const screeningData = {
-  title: "Screening Solutions",
+  title: "Prime Screening Solutions",
   description: "High-efficiency screening equipment for accurate material separation",
   intro: {
     eyebrow: "Equipment Category",

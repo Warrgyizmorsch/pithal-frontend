@@ -36,6 +36,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
+import { HeroNavigation } from "@/components/common/HeroNavigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
@@ -79,9 +80,9 @@ const contactInformation = [
   {
     channel: "PHONE NUMBER",
     icon: Phone,
-    content: "Main Line: +91 281 238 7381\nMobile / WhatsApp: +91 99099 25667",
+    content: "Main Line: +91 98875 37129\nMobile / WhatsApp: +91 99099 25667",
     linkText: "Call Us Now",
-    href: "tel:+912812387381",
+    href: "tel:+919887537129",
   },
   {
     channel: "EMAIL ADDRESS",
@@ -587,7 +588,7 @@ Message: ${formData.requirement}`;
             src="/contactus/front.jpg"
             alt="Pithal Crushing Plant"
             fill
-            priority
+            preload
             className="object-cover object-center"
             sizes="100vw"
           />
@@ -598,24 +599,9 @@ Message: ${formData.requirement}`;
           {/* Corner accent */}
           <div className="pointer-events-none absolute right-0 top-0 h-[60%] w-[50%] rounded-bl-[60%] border-l border-secondary/25 border-b border-secondary/25 z-[3]" />
 
-          <Container className="relative z-10">
-            {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-xs font-medium text-white/60">
-              <Link href="/" className="hover:text-secondary transition-colors">
-                Home
-              </Link>
-              <ChevronRight size={10} />
-              <span className="text-secondary">Contact Us</span>
-            </div>
-
-            <div className="max-w-3xl py-6 lg:py-10">
-              {/* Left Column Text */}
-              <div className="flex items-center gap-3 mb-4">
-                <span className="h-[1.5px] w-6 bg-secondary" />
-                <span className="text-base md:text-lg font-black uppercase tracking-[0.24em] text-secondary">
-                  CONTACT US
-                </span>
-              </div>
+          <div className="relative z-10 w-full max-w-[1520px] px-10 py-6 lg:py-8">
+            <div className="max-w-3xl">
+              <HeroNavigation current="Contact Us" eyebrow="Contact Us" light />
 
               <h1 className="headline text-[clamp(2.35rem,5.4vw,4rem)] uppercase leading-[0.96] tracking-tight text-white">
                 LET&apos;S BUILD <br />
@@ -683,7 +669,7 @@ Message: ${formData.requirement}`;
                 ))}
               </div>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ========================================================================= */}

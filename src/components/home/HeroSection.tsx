@@ -1,8 +1,8 @@
 import { Button } from "@/components/common/Button";
+import { HeroNavigation } from "@/components/common/HeroNavigation";
 import { StatCard } from "@/components/common/StatCard";
 import { stats } from "@/data/homeData";
 import { ChevronRight } from "lucide-react";
-import { Container } from "@/components/common/Container";
 
 const heroMachineVideo = "/images/hero/hero-machine-video.mp4";
 const heroMachinePoster = "/images/hero/hero-machine-photo.png";
@@ -14,27 +14,25 @@ export function HeroSection() {
       id="home"
     >
       {/* Desktop Crushing Machine Video */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-full lg:block">
+        <video
+          aria-label="Mobile crushing machine operating in a quarry"
+          autoPlay
+          className="h-full w-full object-cover object-right"
+          loop
+          muted
+          playsInline
+          poster={heroMachinePoster}
+          preload="metadata"
+        >
+          <source src={heroMachineVideo} type="video/mp4" />
+        </video>
+      </div>
+      <div className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_25%,rgba(255,255,255,.78)_43%,rgba(255,255,255,.16)_66%,rgba(255,255,255,0)_100%)] lg:block" />
 
-      <Container className="relative flex flex-1 flex-col gap-3 pt-7 pb-6 sm:pt-10 sm:pb-8 lg:pt-[2.25rem] lg:pb-8">
-        <div className="pointer-events-none absolute right-0 top-[50%] hidden h-[min(36rem,95%)] w-[75vw] -translate-y-1/2 lg:block xl:h-[min(50rem,100%)] xl:w-full">
-          <video
-            aria-label="Mobile crushing machine operating in a quarry"
-            autoPlay
-            className="h-full w-full object-cover object-right"
-            loop
-            muted
-            playsInline
-            poster={heroMachinePoster}
-            preload="metadata"
-          >
-            <source src={heroMachineVideo} type="video/mp4" />
-          </video>
-        </div>
+      <div className="relative flex flex-1 flex-col gap-3 px-10 pt-7 pb-6 sm:pt-10 sm:pb-8 lg:pt-[2.25rem] lg:pb-8">
         <div className="relative z-20 max-w-[32rem] xl:max-w-[35rem]">
-          <p className="mb-3 flex items-center gap-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-primary sm:mb-4 sm:gap-3 sm:text-[13px] sm:tracking-[0.2em]">
-            <span className="h-[2px] w-6 bg-secondary" /> Crushing Strength,
-Delivering Results.
-          </p>
+          <HeroNavigation eyebrow="Crushing Strength, Delivering Results." />
           <h1 className="headline text-[clamp(2.45rem,11vw,3.05rem)] leading-[0.96] text-primary italic sm:text-[clamp(3.2rem,5vw,4.45rem)] lg:text-[clamp(3.65rem,4.25vw,4.65rem)]">
             Engineering the
             <br />
@@ -96,7 +94,7 @@ Delivering Results.
             ))}
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

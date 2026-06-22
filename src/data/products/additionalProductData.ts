@@ -363,7 +363,7 @@ const commonRelated = {
     description: "Accurate material separation for final product grades.",
   },
   conveyor: {
-    title: "BELT CONVEYOR",
+    title: "PRIME BELT CONVEYOR",
     href: "/products/conveyor-systems",
     image: "/images/products/related-products/belt-conveyor.png",
     icon: "conveyor",
@@ -382,7 +382,7 @@ const defaultProcess = [
 
 export const vsiCrusherData = createProductData({
   slug: "vsi-crushers",
-  crumb: "VSI Crushers",
+  crumb: "Prime VSI Crushers",
   eyebrow: "Vertical Shaft Impact Crushing",
   title: "VSI",
   highlightedTitle: "CRUSHERS",
@@ -432,7 +432,7 @@ export const vsiCrusherData = createProductData({
 
 export const vibratingScreenData = createProductData({
   slug: "vibrating-screens",
-  crumb: "Vibrating Screens",
+  crumb: "Prime Vibrating Screens",
   eyebrow: "Precision Screening",
   title: "VIBRATING",
   highlightedTitle: "SCREENS",
@@ -482,7 +482,7 @@ export const vibratingScreenData = createProductData({
 
 export const vibratingFeederData = createProductData({
   slug: "feeders",
-  crumb: "Vibrating Feeders",
+  crumb: "Prime Vibrating Feeders",
   eyebrow: "Controlled Feeding",
   title: "VIBRATING",
   highlightedTitle: "FEEDERS",
@@ -532,7 +532,7 @@ export const vibratingFeederData = createProductData({
 
 export const conveyorSystemData = createProductData({
   slug: "conveyor-systems",
-  crumb: "Conveyor Systems",
+  crumb: "Prime Conveyor Systems",
   eyebrow: "Material Handling",
   title: "CONVEYOR",
   highlightedTitle: "SYSTEMS",
@@ -541,7 +541,7 @@ export const conveyorSystemData = createProductData({
   descriptionHighlight: "efficient material transfer",
   folder: "belt-conveyor",
   heroAlt: "Pithal conveyor system moving aggregate material",
-  machineAlt: "Belt conveyor system product view",
+  machineAlt: "Prime Belt Conveyor system product view",
   capacity: "50 - 1200 TPH",
   feedSize: "Bulk Material",
   motorPower: "3 - 75 kW",
@@ -582,7 +582,7 @@ export const conveyorSystemData = createProductData({
 
 export const completePlantsData = createProductData({
   slug: "complete-plants",
-  crumb: "Complete Plants",
+  crumb: "Prime Complete Plants",
   eyebrow: "Turnkey Processing Solutions",
   title: "COMPLETE",
   highlightedTitle: "PLANTS",

@@ -19,7 +19,7 @@ export const stats = [
 
 export const products = [
   {
-    title: "Jaw Crushers",
+    title: "Prime Jaw Crushers",
     description: "Robust and reliable crushers built for high capacity and maximum efficiency.",
     image: "/images/products/crushers.png",
     href: "/products/jaw-crushers",
@@ -27,30 +27,30 @@ export const products = [
   {
     title: "Prime UltraRock",
     description: "Advanced crushing technology for extreme durability and performance.",
-    image: "/images/products/crushers.png",
+    image: "/images/products/ultra-rock.png",
     href: "/products/prime-ultrarock",
   },
   {
     title: "Prime Bucket Crusher",
     description: "Heavy-duty bucket systems for high-capacity material handling.",
-    image: "/images/products/crushers.png",
+    image: "/images/products/bucket-crusher.png",
     href: "/products/prime-bucket",
   },
   {
-    title: "Cone Crushers",
+    title: "Prime Cone Crushers",
     description: "High efficiency screening equipment for accurate separation and productivity.",
     image: "/images/products/cone-crusher.png",
     href: "/products/cone-crushers",
   },
   {
-    title: "VSI Crushers",
+    title: "Prime VSI Crushers",
     description: "High efficiency screening equipment for accurate separation and productivity.",
     image: "/images/products/vsi-crusher.png",
     href: "/products/vsi-crushers",
   },
 
   {
-    title: "Vibrating Screens",
+    title: "Prime Vibrating Screens",
     description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",
     image: "/images/products/vibrating-screen.png",
     href: "/products/vibrating-screens",
@@ -62,13 +62,13 @@ export const products = [
   //   href: "/products/feeders",
   // },
   {
-    title: "Conveyor Systems",
+    title: "Prime Conveyor Systems",
     description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",
     image: "/images/products/belt-conveyor.png",
     href: "/products/conveyor-systems",
   },
   {
-    title: "Complete Plants",
+    title: "Prime Complete Plants",
     description: "Custom-built complete crushing plants tailored to your specific needs and applications.",
     image: "/images/products/complete-plants.png",
     href: "/products/complete-plants",
@@ -165,9 +165,9 @@ export const projects = [
 export const processSteps = [
   { number: "01", title: "Material Input", text: "Raw material is loaded into the hopper by dump trucks or loaders.", image: "/images/process/raw.png", icon: "/icons/material-input.png" },
   { number: "02", title: "Feed Hopper", text: "Feeder hopper regulates the continuous and uniform flow of materials.", image: "/images/process/feed-hopper.png", icon: "/icons/material-input.png" },
-  { number: "03", title: "Primary Crushing", text: "Jaw crusher reduces large rocks into smaller, manageable sizes.", image: "/images/process/jaw-crusher.png", icon: "/icons/primary-crushing.png" },
-  { number: "04", title: "Secondary Crushing", text: "Further size reduction using cone crusher for consistent output.", image: "/images/process/cone.png", icon: "/icons/secondary-crushing.png" },
-  { number: "05", title: "Screening", text: "Vibrating screens separate material into different sizes.", image: "/images/process/screen1.png", icon: "/icons/screening.png" },
+  { number: "03", title: "Primary Crushing", text: "Prime Jaw Crusher reduces large rocks into smaller, manageable sizes.", image: "/images/process/jaw-crusher.png", icon: "/icons/primary-crushing.png" },
+  { number: "04", title: "Secondary Crushing", text: "Further size reduction using Prime Cone Crusher for consistent output.", image: "/images/process/cone.png", icon: "/icons/secondary-crushing.png" },
+  { number: "05", title: "Screening", text: "Prime Vibrating Screens separate material into different sizes.", image: "/images/process/screen1.png", icon: "/icons/screening.png" },
   { number: "06", title: "Conveyer Belt", text: "Carries materials to the desired location.", image: "/images/process/stockpile.png", icon: "/icons/stockpile.png" },
   { number: "07", title: "Final Output", text: "High-quality aggregates ready for various applications.", image: "/images/process/output.png", icon: "/icons/final-output.png" },
 ];
@@ -180,7 +180,7 @@ export const processFeatures = [
 ];
 
 export const footerColumns = [
-  { title: "Products", links: ["Jaw Crushers", "Prime UltraRock", "Prime Bucket Crusher", "Cone Crushers", "VSI Crushers", "Vibrating Feeders", "Vibrating Screens", "Mobile Crushing Plants"] },
+  { title: "Products", links: ["Prime Jaw Crushers", "Prime UltraRock", "Prime Bucket Crusher", "Prime Cone Crushers", "Prime VSI Crushers", "Prime Vibrating Feeders", "Prime Vibrating Screens", "Mobile Crushing Plants"] },
   // { title: "Solutions", links: ["Aggregate Production", "Mining & Quarrying", "Construction & Demolition", "Sand & Gravel", "Metallurgy", "Recycling Solutions", "Custom Solutions", "Turnkey Projects"] },
   { title: "Quick Links", links: ["About Us", "Blog", "Careers", "Become a Dealer",  "Contact Us"] },
   { title: "Downloads", links: ["Product Brochures", "Technical Catalogues", "User Manuals", "Case Studies", "Product Videos", "Installation Guides"] },

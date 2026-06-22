@@ -5,9 +5,9 @@ import { ProductDetailTemplate } from "@/components/product-detail/ProductDetail
 import { vsiCrusherData } from "@/data/products/additionalProductData";
 
 export const metadata: Metadata = {
-  title: "VSI Crushers | Pithal Machine Pvt.",
+  title: "Prime VSI Crushers | Pithal Machine Pvt.",
   description:
-    "VSI crushers engineered for cubical aggregate shape, fine crushing, and M-Sand production.",
+    "Prime VSI Crushers engineered for cubical aggregate shape, fine crushing, and M-Sand production.",
 };
 
 export default function VsiCrushersPage() {

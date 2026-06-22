@@ -49,6 +49,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
+import { HeroNavigation } from "@/components/common/HeroNavigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
@@ -243,7 +244,7 @@ const plantWorkflow = [
   },
   {
     step: "05",
-    title: "CONVEYOR SYSTEM",
+    title: "PRIME CONVEYOR SYSTEM",
     desc: "Efficient material transfer across stages.",
     icon: "conveyor",
     image: "/solutionspage/complete plant processs 5.jpg",
@@ -927,12 +928,11 @@ export default function SolutionsPage() {
         {/* SECTION 1: HERO & STATS BANNER */}
         {/* ========================================================================= */}
         <section className="relative overflow-hidden bg-white text-primary lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">
-          <Container className="relative z-10 flex flex-col gap-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
           <Image
             alt="Pithal complete crushing and screening plant"
             className="object-cover object-center"
             fill
-            priority
+            preload
             sizes="100vw"
             src="/solutionspage/ffirst page.jpg"
           />
@@ -941,26 +941,10 @@ export default function SolutionsPage() {
             className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_22%,rgba(255,255,255,.88)_38%,rgba(255,255,255,.36)_58%,rgba(255,255,255,0)_78%)]"
           />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
+          <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
             <div className="z-20">
-              {/* Breadcrumb */}
-              <div className="mb-3  flex items-center gap-2 text-xs font-medium text-primary/70 sm:mb-4">
-                <Link
-                  href="/"
-                  className="hover:text-secondary transition-colors"
-                >
-                  Home
-                </Link>
-                <ChevronRight size={10} />
-                <span>Solutions & Applications</span>
-              </div>
-
               <div className="max-w-[650px] py-0 lg:py-2">
-                <div className="mb-3 flex items-center gap-3">
-                  <span className="h-[1.5px] w-6 bg-secondary" />
-                  <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
-                    SOLUTIONS
-                  </span>
-                </div>
+                <HeroNavigation current="Solutions & Applications" eyebrow="Solutions" />
 
                 <h1 className="headline mb-4 text-[clamp(2.15rem,5.2vw,4rem)] uppercase leading-[1.05] tracking-tight text-primary sm:mb-6">
                   ENGINEERED SOLUTIONS <br />
@@ -1027,7 +1011,7 @@ export default function SolutionsPage() {
                 ))}
               </div>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ========================================================================= */}

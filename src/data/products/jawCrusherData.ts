@@ -6,9 +6,9 @@ export const jawCrusherData: ProductDetailData = {
     breadcrumb: [
       { label: "Home", href: "/" },
       { label: "Products", href: "/#products" },
-      { label: "Jaw Crushers", href: "/products/jaw-crushers" },
+      { label: "Prime Jaw Crushers", href: "/products/jaw-crushers" },
     ],
-    eyebrow: "Jaw Crushers",
+    eyebrow: "Prime Jaw Crushers",
     title: "JAW",
     highlightedTitle: "CRUSHERS",
     subtitle: "Built to Crush. Engineered to Last.",
@@ -241,7 +241,7 @@ export const jawCrusherData: ProductDetailData = {
     { title: "VSI CRUSHER", description: "Advanced crushing technology for superior cubical shape and reliability.", image: { src: "/images/products/related-products/vsi-crusher.png", alt: "VSI Crusher" }, category: "Crushing", icon: "vsi", href: "/products/vsi-crushers", actionLabel: "VIEW DETAILS" },
     { title: "VIBRATING FEEDER", description: "Consistent and controlled material feeding for smooth plant operation.", image: { src: "/images/products/related-products/vibrating-feeder.png", alt: "Vibrating Feeder" }, category: "Feeding", icon: "feeder", href: "/products/feeders", actionLabel: "VIEW DETAILS" },
     { title: "VIBRATING SCREEN", description: "High-performance screening for accurate size separation and higher output.", image: { src: "/images/products/related-products/vibrating-screen.png", alt: "Vibrating Screen" }, category: "Screening", icon: "screen", href: "/products/vibrating-screens", actionLabel: "VIEW DETAILS" },
-    { title: "BELT CONVEYOR", description: "Efficient material handling with robust design and long service life.", image: { src: "/images/products/related-products/belt-conveyor.png", alt: "Belt Conveyor" }, category: "Conveying", icon: "conveyor", href: "/products/conveyor-systems", actionLabel: "VIEW DETAILS" },
+    { title: "PRIME BELT CONVEYOR", description: "Efficient material handling with robust design and long service life.", image: { src: "/images/products/related-products/belt-conveyor.png", alt: "Belt Conveyor" }, category: "Conveying", icon: "conveyor", href: "/products/conveyor-systems", actionLabel: "VIEW DETAILS" },
   ],
   contactSection: {
     id: "contact",

@@ -5,9 +5,9 @@ import { ProductDetailTemplate } from "@/components/product-detail/ProductDetail
 import { vibratingFeederData } from "@/data/products/additionalProductData";
 
 export const metadata: Metadata = {
-  title: "Vibrating Feeders | Pithal Machine Pvt.",
+  title: "Prime Vibrating Feeders | Pithal Machine Pvt.",
   description:
-    "Heavy-duty vibrating feeders engineered for controlled material flow and reliable plant performance.",
+    "Heavy-duty Prime Vibrating Feeders engineered for controlled material flow and reliable plant performance.",
 };
 
 export default function FeedersPage() {

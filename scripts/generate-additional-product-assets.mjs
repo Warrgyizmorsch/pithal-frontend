@@ -6,7 +6,7 @@ const root = process.cwd();
 const products = [
   {
     folder: "vsi-crusher",
-    label: "VSI Crusher",
+    label: "Prime VSI Crusher",
     title: "VSI",
     highlight: "CRUSHER",
     subtitle: "Cubical shaping and fine aggregate production",
@@ -14,7 +14,7 @@ const products = [
   },
   {
     folder: "vibrating-screen",
-    label: "Vibrating Screen",
+    label: "Prime Vibrating Screen",
     title: "VIBRATING",
     highlight: "SCREEN",
     subtitle: "Accurate sizing and high-efficiency separation",
@@ -22,7 +22,7 @@ const products = [
   },
   {
     folder: "vibrating-feeder",
-    label: "Vibrating Feeder",
+    label: "Prime Vibrating Feeder",
     title: "VIBRATING",
     highlight: "FEEDER",
     subtitle: "Controlled material feed for stable crushing plants",
@@ -30,7 +30,7 @@ const products = [
   },
   {
     folder: "belt-conveyor",
-    label: "Conveyor System",
+    label: "Prime Conveyor System",
     title: "CONVEYOR",
     highlight: "SYSTEM",
     subtitle: "Reliable bulk material transfer and stockpiling",
@@ -38,7 +38,7 @@ const products = [
   },
   {
     folder: "complete-plants",
-    label: "Complete Plant",
+    label: "Prime Complete Plant",
     title: "COMPLETE",
     highlight: "PLANT",
     subtitle: "Integrated crushing, screening and conveying systems",

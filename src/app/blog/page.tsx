@@ -8,7 +8,6 @@ import {
   Building2,
   Clock,
   Settings,
-  ChevronRight,
   Mail,
   TrendingUp,
   Cog,
@@ -33,6 +32,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
+import { HeroNavigation } from "@/components/common/HeroNavigation";
 import {
   blogPosts,
   getFeaturedPosts,
@@ -347,8 +347,8 @@ const knowledgeHubTopics = [
     title: "CRUSHER SELECTION",
     count: "25+",
     items: [
-      "Jaw Crushers",
-      "Cone Crushers",
+      "Prime Jaw Crushers",
+      "Prime Cone Crushers",
       "VSI Systems",
       "Capacity Planning",
     ],
@@ -1165,34 +1165,23 @@ export default function BlogPage() {
         {/* ══════════════════════════════════════════
           SECTION 1 — HERO
           ══════════════════════════════════════════ */}
-        <section className="relative pt-16 pb-10 lg:pt-20 lg:pb-12 overflow-hidden">
+        <section className="relative overflow-hidden">
           <Image
             src="/blogpageimg/top.jpg"
             alt="Blog Hero Background"
             fill
-            priority
+            preload
             sizes="100vw"
             className="object-cover object-center"
           />
           {/* Background image — must be direct child of the relative section */}
           <div className="absolute inset-0 industrial-grid opacity-70 z-[1]" />
 
-          <Container className="relative z-10">
-            {/* Breadcrumb */}
-            <div className="mb-6 relative z-20 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/80">
-              <Link href="/" className="text-black/70 hover:text-black transition-colors">
-                Home
-              </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-black/50" />
-              <span className="text-secondary font-black">Blog</span>
-            </div>
-
+          <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:py-8">
             <div className="grid lg:grid-cols-12 gap-10 items-center">
               {/* Left */}
               <div className="lg:col-span-7">
-                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/5 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-secondary">
-                  <Globe className="w-3 h-3" /> Blog
-                </div>
+                <HeroNavigation current="Blog" eyebrow="Blog" />
                 <h1 className="headline text-[clamp(2.15rem,5vw,3.3rem)] text-primary leading-[0.92] mb-4">
                   ENGINEERING INSIGHTS.
                   <br />
@@ -1242,7 +1231,7 @@ export default function BlogPage() {
                 </div>
               ))}
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ══════════════════════════════════════════

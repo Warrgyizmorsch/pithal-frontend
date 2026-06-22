@@ -12,7 +12,6 @@ import {
   Truck,
   ArrowRight,
   ChevronRight,
-  Home,
   Shield,
   Award,
   TrendingUp,
@@ -34,6 +33,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
+import { HeroNavigation } from "@/components/common/HeroNavigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
@@ -290,7 +290,7 @@ export default function GlobalPresencePage() {
               src="/images/global-presense/hero.png"
               alt="Pithal global logistics with crushing equipment, transport truck, cargo ship and world map"
               fill
-              priority
+              preload
               sizes="100vw"
               className="object-cover object-[95%_center]"
             />
@@ -299,29 +299,12 @@ export default function GlobalPresencePage() {
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f4f8fc] via-[#f4f8fc]/50 to-transparent" />
           </div>
 
-          <Container className="relative z-10 max-w-[1520px] px-5 sm:px-8 lg:px-10 w-full flex flex-col justify-between gap-4 py-6 lg:py-8">
-            {/* Breadcrumb */}
-            <div className="mb-2 flex items-center gap-2 text-xs font-semibold text-slate-500">
-              <Link
-                href="/"
-                className="hover:text-secondary transition-colors flex items-center gap-1.5"
-              >
-                <Home size={14} className="stroke-[2]" />
-                Home
-              </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-400 stroke-[2.5]" />
-              <span className="text-slate-500 font-medium">
-                Global Presence
-              </span>
-            </div>
-
+          <div className="relative z-10 flex w-full max-w-[1520px] flex-col justify-between gap-4 px-10 py-6 lg:py-8">
             <div className="max-w-[800px]">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-[1.5px] w-8 bg-secondary" />
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-secondary">
-                  GLOBAL PRESENCE
-                </span>
-              </div>
+              <HeroNavigation
+                current="Global Presence"
+                eyebrow="Global Presence"
+              />
 
               <h1 className="headline mb-4 text-[clamp(2.2rem,5vw,3.8rem)] font-black uppercase leading-[1.05] tracking-tight text-primary">
                 ENGINEERING EXCELLENCE. <br />
@@ -390,7 +373,7 @@ export default function GlobalPresencePage() {
                 Manufactured in India. Trusted by industries worldwide.
               </span>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ══════════════════════════════════════════════════════════════════

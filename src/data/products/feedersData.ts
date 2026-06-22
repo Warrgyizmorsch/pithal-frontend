@@ -20,7 +20,7 @@ export const feedersData = {
     { title: "Wear Resistant", description: "Hardened surfaces extend operational life" },
   ],
   industries: ["Mining", "Aggregates", "Cement", "Construction", "Recycling"],
-  relatedProducts: ["Crushers", "Screening Solutions", "Complete Plants"],
+    relatedProducts: ["Crushers", "Prime Screening Solutions", "Prime Complete Plants"],
   cta: {
     title: "Improve Your Feeding System",
     description: "Get consistent material supply with our precision feeders.",

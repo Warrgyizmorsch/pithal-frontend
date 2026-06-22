@@ -87,7 +87,7 @@ function ProductsDropdown() {
 export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/96 backdrop-blur">
-      <Container className="flex h-[4.25rem] items-center justify-between gap-4 border-b border-border/70 sm:h-[4.75rem] sm:gap-6 xl:h-[5.25rem]">
+      <div className="flex h-[4.25rem] items-center justify-between gap-4 border-b border-border/70 sm:h-[4.75rem] sm:gap-6 xl:h-[5.25rem] px-10">
         <Link
           aria-label="Pithal Machines home"
           className="block shrink-0"
@@ -121,7 +121,7 @@ export function Header() {
           Contact Us <ArrowRight aria-hidden className="ml-2" size={16} />
         </Link>
         <MobileMenu />
-      </Container>
+      </div>
     </header>
   );
 }

@@ -5,9 +5,9 @@ import { ProductDetailTemplate } from "@/components/product-detail/ProductDetail
 import { vibratingScreenData } from "@/data/products/additionalProductData";
 
 export const metadata: Metadata = {
-  title: "Vibrating Screens | Pithal Machine Pvt.",
+  title: "Prime Vibrating Screens | Pithal Machine Pvt.",
   description:
-    "High-efficiency vibrating screens engineered for accurate sizing, grading, and material separation.",
+    "High-efficiency Prime Vibrating Screens engineered for accurate sizing, grading, and material separation.",
 };
 
 export default function ScreeningPage() {

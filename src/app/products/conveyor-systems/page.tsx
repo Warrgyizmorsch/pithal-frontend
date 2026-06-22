@@ -5,9 +5,9 @@ import { ProductDetailTemplate } from "@/components/product-detail/ProductDetail
 import { conveyorSystemData } from "@/data/products/additionalProductData";
 
 export const metadata: Metadata = {
-  title: "Conveyor Systems | Pithal Machine Pvt.",
+  title: "Prime Conveyor Systems | Pithal Machine Pvt.",
   description:
-    "Belt conveyor systems engineered for efficient material transfer across crushing and screening plants.",
+    "Belt Prime Conveyor Systems engineered for efficient material transfer across crushing and screening plants.",
 };
 
 export default function ConveyorSystemsPage() {

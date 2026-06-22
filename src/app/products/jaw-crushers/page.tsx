@@ -15,9 +15,9 @@ import { Header } from "@/components/layout/Header";
 import { jawCrusherData } from "@/data/products/jawCrusherData";
 
 export const metadata: Metadata = {
-  title: "Jaw Crushers | Pithal Machine Pvt.",
+  title: "Prime Jaw Crushers | Pithal Machine Pvt.",
   description:
-    "Heavy-duty jaw crushers engineered for primary crushing, high capacity, and long service life.",
+    "Heavy-duty Prime Jaw Crushers engineered for primary crushing, high capacity, and long service life.",
 };
 
 export default function JawCrusherProductPage() {
@@ -31,7 +31,7 @@ export default function JawCrusherProductPage() {
         <FeaturesSection 
           heading="Engineered For"
           highlightText="Superior Performance"
-          subtitle="Our jaw crushers are built with advanced engineering and premium quality components to deliver unmatched performance, reliability and efficiency."
+          subtitle="Our Prime Jaw Crushers are built with advanced engineering and premium quality components to deliver unmatched performance, reliability and efficiency."
           
         />
         <SpecificationTable rows={jawCrusherData.specifications} section={jawCrusherData.specificationsSection} />
