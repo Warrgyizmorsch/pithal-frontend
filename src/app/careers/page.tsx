@@ -1324,11 +1324,11 @@ export default function CareersPage() {
                 <div className="h-8 w-[1px] bg-slate-350 hidden md:block" />
 
                 <Link
-                  href="mailto:careers@pithalmachines.com"
+                  href="mailto:careers@pithalmachine.com"
                   className="w-full sm:w-auto flex items-center justify-center gap-2 text-xs sm:text-sm font-black text-[#092a5c] hover:text-secondary transition-colors py-2"
                 >
                   <Mail size={16} className="stroke-[2.2]" />
-                  careers@pithalmachines.com
+                  careers@pithalmachine.com
                 </Link>
               </div>
             </div>

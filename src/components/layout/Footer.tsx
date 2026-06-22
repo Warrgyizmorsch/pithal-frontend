@@ -143,13 +143,13 @@ export function Footer() {
                     <Phone aria-hidden className="shrink-0 text-primary" size={21} />
                     +91 98875 37129
                   </a>
-                  <a className="flex items-center gap-4 break-all hover:text-secondary" href="mailto:info@pithalmachines.com">
+                  <a className="flex items-center gap-4 break-all hover:text-secondary" href="mailto:info@pithalmachine.com">
                     <Mail aria-hidden className="shrink-0 text-primary" size={22} />
-                    info@pithalmachines.com
+                    info@pithalmachine.com
                   </a>
-                  <a className="flex items-center gap-4 break-all hover:text-secondary" href="https://www.pithalmachines.com">
+                  <a className="flex items-center gap-4 break-all hover:text-secondary" href="https://www.pithalmachine.com">
                     <Globe aria-hidden className="shrink-0 text-primary" size={22} />
-                    www.pithalmachines.com
+                    www.pithalmachine.com
                   </a>
                 </address>
 

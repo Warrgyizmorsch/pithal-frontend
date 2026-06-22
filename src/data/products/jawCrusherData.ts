@@ -262,7 +262,7 @@ export const jawCrusherData: ProductDetailData = {
     ],
     contactStrip: {
       phone: "+91 98875 37129",
-      email: "info@pithalmachines.com",
+      email: "info@pithalmachine.com",
     },
     form: {
       title: "REQUEST EXPERT CONSULTATION",
