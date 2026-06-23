@@ -184,17 +184,17 @@ function HeroSection() {
           <div className="grid grid-cols-2 divide-x divide-y divide-border sm:grid-cols-3 lg:grid-cols-[repeat(5,minmax(0,1fr))_1.75fr] lg:divide-y-0">
             {stats.map((stat) => (
               <article
-                className="flex min-h-[72px] items-center gap-2.5 px-3 py-3 sm:min-h-[82px] sm:gap-3 sm:px-4 lg:min-h-[92px] transition-transform duration-300 hover:scale-[1.03] hover:bg-slate-50/30 cursor-default"
+                className="flex min-h-[72px] items-center gap-2.5 px-3 py-3 sm:min-h-[82px] sm:gap-3 sm:px-4 lg:min-h-[92px] lg:px-2 lg:gap-2 xl:px-4 xl:gap-3 transition-transform duration-300 hover:scale-[1.03] hover:bg-slate-50/30 cursor-default"
                 key={stat.label}
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary sm:h-11 sm:w-11 lg:h-12 lg:w-12">
-                  <Icon name={stat.icon} size={22} />
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary sm:h-11 sm:w-11 lg:h-9 lg:w-9 xl:h-12 xl:w-12">
+                  <Icon name={stat.icon} className="h-[22px] w-[22px] lg:h-[18px] lg:w-[18px] xl:h-[22px] xl:w-[22px]" size={22} />
                 </span>
                 <div>
-                  <p className="headline text-[22px] leading-none text-primary sm:text-[35px] lg:text-[28px]">
+                  <p className="headline text-[22px] leading-none text-primary sm:text-[35px] lg:text-[18px] xl:text-[24px] 2xl:text-[28px]">
                     {stat.value}
                   </p>
-                  <p className="mt-1 max-w-[8rem] text-[10px] font-black leading-4 text-primary-dark lg:text-[11px]">
+                  <p className="mt-1 max-w-[8rem] text-[10px] font-black leading-4 text-primary-dark lg:text-[9.5px] lg:leading-3 xl:text-[11px] xl:leading-4">
                     {stat.label}
                   </p>
                 </div>
@@ -205,12 +205,12 @@ function HeroSection() {
                 aria-hidden
                 className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(250,89,2,0.18),transparent_35%)]"
               />
-              <div className="relative flex h-full min-h-[76px] items-center gap-3 p-3 sm:min-h-[82px] sm:p-4 lg:min-h-[92px]">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary text-white shadow-[0_12px_22px_rgba(250,89,2,0.25)]">
-                  <Play fill="currentColor" size={17} />
+              <div className="relative flex h-full min-h-[76px] items-center gap-3 p-3 sm:min-h-[82px] sm:p-4 lg:min-h-[92px] lg:p-2 lg:gap-2 xl:p-4 xl:gap-3">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary text-white shadow-[0_12px_22px_rgba(250,89,2,0.25)] lg:h-9 lg:w-9 xl:h-11 xl:w-11">
+                  <Play fill="currentColor" size={17} className="h-[17px] w-[17px] lg:h-[13px] lg:w-[13px] xl:h-[17px] xl:w-[17px]" />
                 </span>
                 <div>
-                  <p className="max-w-[7rem] text-xs font-black leading-5">
+                  <p className="max-w-[7rem] text-xs font-black leading-5 lg:text-[10px] lg:leading-4 xl:text-xs xl:leading-5">
                     Watch Our {hero.video.label}
                   </p>
                   <ArrowRight
@@ -219,7 +219,7 @@ function HeroSection() {
                     size={16}
                   />
                 </div>
-                <div className="relative ml-auto hidden h-[66px] w-[126px] overflow-hidden rounded-lg border border-secondary/45 sm:block">
+                <div className="relative ml-auto hidden h-[66px] w-[126px] overflow-hidden rounded-lg border border-secondary/45 sm:block lg:hidden xl:block xl:h-[60px] xl:w-[110px] 2xl:h-[66px] 2xl:w-[126px]">
                   <Image
                     alt={hero.video.label}
                     className="object-cover"
