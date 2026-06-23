@@ -79,7 +79,7 @@ export function ProductCategories() {
           highlight="Engineered for Results."
           subtitle="High-performance crushing and screening solutions designed to deliver maximum productivity, reliability and value in every operation."
           title="Built for Performance."
-          className="max-w-full [&_h2]:whitespace-nowrap [&_h2]:text-[clamp(0.9rem,3.2vw,3.25rem)]"
+          className="max-w-full lg:[&_h2]:whitespace-nowrap [&_h2]:text-[clamp(0.9rem,3.2vw,3.25rem)]"
         />
 
         {/* Desktop View (Grid Layout) */}

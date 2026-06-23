@@ -56,7 +56,7 @@ const benefits = [
 const steps = [
   {
     number: "01",
-    title: "Inquiry",
+    title: "Enquiry",
     text: "Fill out the dealer application form with your company details and experience.",
   },
   {
@@ -77,7 +77,7 @@ export default function BecomeADealerPage() {
       <Header />
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative h-[85vh] min-h-[500px] flex items-center overflow-hidden bg-white">
+        <section className="relative min-h-[500px] flex items-center overflow-hidden bg-white">
           <div className="absolute inset-0 z-0">
             <Image
               src="/solutionspage/challenges we solve 14operations.jpg"
@@ -89,7 +89,7 @@ export default function BecomeADealerPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent z-[1]" />
           </div>
-          <div className="relative z-10 flex h-full w-full max-w-[1520px] flex-col gap-10 justify-between px-10 py-6 lg:py-8">
+          <div className="relative z-10 flex h-full w-full max-w-[1520px] flex-col gap-10 justify-between px-5 sm:px-8 lg:px-10 py-6 lg:py-8">
             <div className="relative z-10 max-w-3xl">
               <HeroNavigation
                 current="Become a Dealer"

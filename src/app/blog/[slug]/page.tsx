@@ -9,13 +9,14 @@ import { Clock, Calendar, Eye, Share2 } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import ReactMarkdown from 'react-markdown';
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  let post = getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  let post = getPostBySlug(slug);
 
   if (!post) {
     // Fallback demo data instead of notFound()
     post = {
-      slug: params.slug,
+      slug: slug,
       tag: "GENERAL",
       title: "Exploring Industrial Innovations: A Comprehensive Guide",
       desc: "Discover the latest trends, technologies, and best practices shaping the future of industrial operations and engineering.",
@@ -60,7 +61,7 @@ Efficiency and reliability are the cornerstones of profitable operations. Small 
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-15" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-gray-50 via-gray-50/45 to-transparent" />
 
-          <div className="relative z-10 flex w-full max-w-[1520px] flex-col px-10 pt-6 pb-24 lg:pt-8 lg:pb-36">
+          <div className="relative z-10 flex w-full max-w-[1520px] flex-col px-5 sm:px-8 lg:px-10 pt-6 pb-24 lg:pt-8 lg:pb-36">
             <div className="max-w-[820px]">
               <HeroNavigation current="Blog" eyebrow={post.tag} light />
               <div className="mb-5 flex flex-wrap items-center gap-3">

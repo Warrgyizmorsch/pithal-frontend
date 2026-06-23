@@ -81,7 +81,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-primary/20 bg-white" id="global">
-      <div className="pt-8 pb-0 sm:pt-10 xl:pt-12 px-10">
+      <div className="pt-8 pb-0 sm:pt-10 xl:pt-12 px-5 sm:px-8 lg:px-10">
         <div className="grid gap-x-8 gap-y-8 border-b border-primary/20 pb-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[2.8fr_1.02fr_1.25fr_1fr] xl:gap-y-10 xl:pb-[2rem]">
           <div className="md:col-span-2 lg:col-span-1">
             {/* Inner 2-col: brand left, contact right */}
@@ -271,7 +271,7 @@ export function Footer() {
       </div>
       {/* Full width gradient bottom bar */}
 
-        <div className="bg-gradient-to-r from-primary via-[#294385] to-secondary flex flex-col items-center justify-between gap-4 py-4 text-sm text-white sm:flex-row px-10">
+        <div className="bg-gradient-to-r from-primary via-[#294385] to-secondary flex flex-col items-center justify-between gap-4 py-4 text-sm text-white sm:flex-row px-5 sm:px-8 lg:px-10">
           <p className="order-2 mt-2 text-white/90 sm:order-1 sm:mt-0">&copy; 2026 Pithal Machines Ltd. All Rights Reserved.</p>
 
           <div className="order-1 flex items-center gap-4 sm:order-2">

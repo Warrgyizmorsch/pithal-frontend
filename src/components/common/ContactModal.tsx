@@ -154,7 +154,7 @@ export function ContactModal() {
       {/* Modal Content */}
       <div
         className={cn(
-          "relative w-full max-w-4xl overflow-hidden rounded-2xl border border-primary/30 bg-white shadow-2xl modal-card-scale lg:grid lg:grid-cols-[0.85fr_1.15fr] lg:max-h-[90vh]",
+          "relative w-full max-w-4xl max-h-[calc(100dvh-2rem)] overflow-y-auto lg:max-h-[90vh] lg:overflow-visible rounded-2xl border border-primary/30 bg-white shadow-2xl modal-card-scale lg:grid lg:grid-cols-[0.85fr_1.15fr]",
           isAnimating ? "modal-card-show" : "modal-card-hidden"
         )}
       >
@@ -162,7 +162,7 @@ export function ContactModal() {
         <button
           type="button"
           onClick={handleClose}
-          className="absolute right-4 top-4 z-30 rounded-full p-2 bg-slate-900/20 hover:bg-slate-900/40 text-slate-800 lg:text-slate-600 hover:text-slate-900 transition-colors bg-white shadow-md border border-slate-200"
+          className="secondary-btn absolute right-4 top-4 z-30 rounded-full p-2 bg-slate-900/20 hover:bg-slate-900/40 text-slate-800 lg:text-slate-600 hover:text-slate-900 transition-colors bg-white shadow-md border border-slate-200"
         >
           <X className="w-5 h-5" />
         </button>
@@ -307,7 +307,7 @@ export function ContactModal() {
             <button
               type="submit"
               disabled={loading}
-              className="min-h-[2.8rem] w-full rounded-lg bg-secondary text-white text-xs md:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-1.5 hover:bg-primary transition-all disabled:opacity-50"
+              className="primary-btn min-h-[2.8rem] w-full rounded-lg bg-secondary text-white text-xs md:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-1.5 hover:bg-primary transition-all disabled:opacity-50"
             >
               <FileText aria-hidden size={18} strokeWidth={2} />
               {loading ? "Submitting..." : "Request Quote"}
@@ -316,7 +316,7 @@ export function ContactModal() {
               href="https://wa.me/919887537129"
               target="_blank"
               rel="noopener noreferrer"
-              className="min-h-[2.8rem] w-full rounded-lg border border-primary text-primary hover:bg-primary hover:text-white text-xs md:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all"
+              className="secondary-btn min-h-[2.8rem] w-full rounded-lg border border-primary text-primary hover:bg-primary hover:text-white text-xs md:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all"
             >
               <FaWhatsapp aria-hidden size={18} />
               WhatsApp Consultation

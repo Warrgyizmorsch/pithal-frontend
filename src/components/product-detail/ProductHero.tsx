@@ -29,13 +29,13 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
     `${data.title} ${data.highlightedTitle}`;
 
   return (
-    <section className="relative isolate min-h-[calc(100svh-4.25rem)] overflow-hidden bg-primary-dark text-white sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)]">
+    <section className="min-h-[500px] relative isolate overflow-hidden bg-primary-dark text-white">
       <Image
         alt={data.image.alt}
-        className="object-cover object-center"
+        className="object-cover object-center "
         fill
         preload
-        sizes="100vw"
+        sizes="100vw lg:90vw]"
         src={data.image.src}
       />
       <div className="absolute inset-0 bg-primary-dark/45 lg:bg-transparent" />
@@ -45,7 +45,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
       <div className="absolute left-[48%] top-0 hidden h-[3px] w-[22%] origin-left -rotate-[28deg] bg-secondary lg:block" />
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-secondary/45" />
 
-      <div className="relative z-10 flex min-h-[calc(100svh-4.25rem)] w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:justify-between lg:py-8 sm:min-h-[calc(100svh-4.75rem)] xl:min-h-[calc(100svh-5.25rem)]">
+      <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:justify-between lg:py-8 mx-auto">
         <div className="max-w-[780px] flex flex-col items-center lg:items-start text-center lg:text-left">
           <HeroNavigation
             current={currentLabel}
@@ -78,9 +78,9 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
         </div>
 
         <div className="mt-12 lg:mt-auto w-full max-w-[820px] rounded-xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-white/30">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-6 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-white/30">
             {data.quickStats.map((stat) => (
-              <article className="flex items-center gap-4 lg:px-6 lg:first:pl-0 lg:last:pr-0" key={stat.label}>
+              <article className="flex flex-col items-center text-center sm:flex-row sm:text-left gap-2 sm:gap-4 lg:px-6 lg:first:pl-0 lg:last:pr-0" key={stat.label}>
                 <ProductIcon className="shrink-0 text-secondary" name={stat.icon} size={40} strokeWidth={1.55} />
                 <p className="text-[15px] font-bold leading-tight text-white">
                   <span className="block">{stat.label}</span>

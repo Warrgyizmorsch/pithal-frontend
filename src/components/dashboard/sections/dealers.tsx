@@ -113,25 +113,25 @@ export function DealersSection() {
       </div>
 
       {/* Filters and search */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <div className="relative">
+      <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-1">
+          <div className="relative flex-1 sm:flex-none">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
               type="text"
               placeholder="Search Dealers..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-64 h-9 pl-9 pr-4 rounded-lg bg-secondary border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/20 focus:border-accent transition-all duration-200"
+              className="w-full sm:w-64 h-9 pl-9 pr-4 rounded-lg bg-secondary border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/20 focus:border-accent transition-all duration-200"
             />
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             {["all", "approved", "pending", "rejected"].map((filter) => (
               <button
                 key={filter}
                 onClick={() => setSelectedFilter(filter)}
                 className={cn(
-                  "px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200",
+                  "px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 flex-1 sm:flex-none text-center",
                   selectedFilter === filter
                     ? "bg-accent text-accent-foreground"
                     : "bg-secondary text-muted-foreground hover:text-foreground"
@@ -142,7 +142,7 @@ export function DealersSection() {
             ))}
           </div>
         </div>
-        <button className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-secondary text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+        <button className="flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg bg-secondary text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
           <Filter className="w-4 h-4" />
           More filters
           <ChevronDown className="w-3 h-3" />

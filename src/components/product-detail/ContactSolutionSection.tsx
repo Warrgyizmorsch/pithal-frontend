@@ -98,33 +98,32 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
             border: "1px solid rgba(229, 231, 235, 0.8)",
             borderRadius: "24px",
             boxShadow: "0 20px 45px rgba(3, 27, 64, 0.05)",
-            padding: "50px 40px",
           }}
-          className="max-sm:px-5 max-sm:py-8"
+          className="px-5 py-8 sm:px-10 sm:py-12"
         >
           <div className="grid gap-12 lg:grid-cols-[1.12fr_0.88fr] items-start">
         {/* Left Column: Information, Benefits & Image Banner */}
         <div className="flex flex-col h-full">
           {/* Section Header with line and slashes */}
-          <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "20px" }}>
+          <div className="flex items-center gap-1.5 w-full mb-5">
             {/* Cogwheel icon */}
-            <span style={{ display: "inline-flex", alignItems: "center", color: "#fa5902" }}>
+            <span className="inline-flex items-center text-secondary shrink-0">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="3" />
                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
               </svg>
             </span>
 
-            <span style={{ fontSize: "1.125rem", fontWeight: 900, color: "#fa5902", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "var(--font-heading), sans-serif", marginLeft: "4px" }}>
+            <span className="text-base sm:text-lg font-black uppercase text-secondary tracking-widest ml-1 font-heading">
               {data.eyebrow}
             </span>
 
             {/* 3 orange accent bars */}
-            <span style={{ display: "inline-block", height: "7px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)", marginLeft: "8px" }} />
-            <span style={{ display: "inline-block", height: "7px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)" }} />
-            <span style={{ display: "inline-block", height: "7px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)", marginRight: "8px" }} />
+            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg] ml-2" />
+            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
+            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
             
-            <div style={{ flex: 1, height: "1.5px", backgroundColor: "#fa5902", opacity: 0.25 }} />
+            <div className="hidden sm:block flex-1 h-[1.5px] bg-secondary/25" />
           </div>
 
           <h2 
@@ -145,7 +144,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
           </p>
 
           {/* Benefits Grid */}
-          <div className="mt-8 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
             {data.benefits.map((benefit) => (
               <article key={benefit.title} className="flex flex-col gap-2.5">
                 <div className="flex items-center gap-2">
@@ -184,7 +183,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
           >
             {/* Contact Strip Banner overlay floating at the bottom */}
             <div 
-              className="flex items-center justify-between p-5 text-white gap-4 w-full max-sm:flex-col max-sm:items-stretch relative z-10"
+              className="flex flex-col sm:flex-row sm:items-center justify-between p-5 text-white gap-4 w-full relative z-10"
               style={{
                 backgroundColor: "#031b40",
                 borderRadius: "16px",

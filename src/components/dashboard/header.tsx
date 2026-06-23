@@ -9,6 +9,7 @@ interface HeaderProps {
   activeSection: Section;
   theme: "dark" | "light";
   onThemeChange: (theme: "dark" | "light") => void;
+  onMenuClick?: () => void;
 }
 
 const sectionTitles: Record<Section, string> = {
@@ -16,13 +17,34 @@ const sectionTitles: Record<Section, string> = {
   Dealers: "Dealer Applications",
 };
 
-export function Header({ activeSection, theme, onThemeChange }: HeaderProps) {
+export function Header({ activeSection, theme, onThemeChange, onMenuClick }: HeaderProps) {
   const [searchFocused, setSearchFocused] = useState(false);
 
   return (
-    <header className="h-16 border-b border-sidebar-border bg-background/80 backdrop-blur-sm sticky top-0 z-30 flex items-center justify-between px-6">
-      <div className="flex items-center gap-6">
-        <h1 className="text-xl font-semibold text-foreground">
+    <header className="h-16 border-b border-sidebar-border bg-background/80 backdrop-blur-sm sticky top-0 z-30 flex items-center justify-between px-4 sm:px-6">
+      <div className="flex items-center gap-3 sm:gap-6">
+        {onMenuClick && (
+          <button
+            onClick={onMenuClick}
+            className="lg:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-200 shrink-0 animate-in fade-in"
+            aria-label="Toggle Menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        )}
+        <h1 className="text-lg sm:text-xl font-semibold text-foreground whitespace-nowrap">
           {sectionTitles[activeSection]}
         </h1>
         <div className="hidden md:flex items-center gap-2 text-sm text-muted-foreground">

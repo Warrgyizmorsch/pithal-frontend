@@ -119,7 +119,7 @@ function HeroSection() {
   const { hero, stats } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-white lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">
+    <section className="min-h-[500px] relative overflow-hidden bg-white">
       <Image
         alt="Pithal Machines industrial factory floor and quarry application background"
         className="object-cover object-center"
@@ -144,20 +144,20 @@ function HeroSection() {
         aria-hidden
         className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-dark/70 via-primary-dark/20 to-transparent"
       />
-      <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
+      <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:justify-between lg:py-8">
         <div className="z-20">
-          <div className="max-w-[650px]">
+          <div className="max-w-[650px] flex flex-col items-center lg:items-start text-center lg:text-left w-full mx-auto lg:mx-0">
             <HeroNavigation current="About Us" eyebrow={hero.eyebrow} />
-            <h1 className="headline mb-4 text-[clamp(2.2rem,5.6vw,4.3rem)] leading-[1.05] text-primary sm:mb-5">
+            <h1 className="headline mb-4 text-[clamp(2.2rem,5.6vw,4.3rem)] leading-[1.05] text-primary text-center lg:text-left sm:mb-5">
               {hero.title}
               <span className="block text-secondary">{hero.highlight}</span>
             </h1>
-            <p className="mt-4 max-w-[560px] text-sm font-medium leading-6 text-text-dark sm:text-[16px] lg:leading-7">
+            <p className="mt-4 max-w-[560px] text-sm font-medium leading-6 text-text-dark sm:text-[16px] lg:leading-7 text-center lg:text-left mx-auto lg:mx-0">
               {hero.subtitle}
             </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:mt-7">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:mt-7 w-full sm:w-auto justify-center lg:justify-start">
               <Button
-                className="min-h-[50px] rounded-md px-5 text-[11px] shadow-[0_14px_28px_rgba(250,89,2,0.24)] sm:min-h-[52px] sm:px-6 sm:text-[12px]"
+                className="min-h-[50px] rounded-md px-5 text-[11px] shadow-[0_14px_28px_rgba(250,89,2,0.24)] sm:min-h-[52px] sm:px-6 sm:text-[12px] w-full sm:w-auto justify-center"
                 href={hero.ctas[0].href}
                 variant="primary"
               >
@@ -168,7 +168,7 @@ function HeroSection() {
                 <ArrowRight aria-hidden size={19} />
               </Button>
               <Button
-                className="min-h-[50px] rounded-md border-secondary/35 bg-white/95 px-5 text-[11px] shadow-[0_12px_22px_rgba(3,27,64,0.09)] sm:min-h-[52px] sm:px-6 sm:text-[12px]"
+                className="min-h-[50px] rounded-md border-secondary/35 bg-white/95 px-5 text-[11px] shadow-[0_12px_22px_rgba(3,27,64,0.09)] sm:min-h-[52px] sm:px-6 sm:text-[12px] w-full sm:w-auto justify-center"
                 href={hero.ctas[1].href}
                 variant="outlineNavy"
               >
@@ -200,7 +200,7 @@ function HeroSection() {
                 </div>
               </article>
             ))}
-            <article className="relative col-span-1 min-h-[76px] overflow-hidden bg-primary-dark text-white sm:col-span-1 sm:min-h-[82px] lg:min-h-[92px]">
+            <article className="relative col-span-2 min-h-[76px] overflow-hidden bg-primary-dark text-white sm:col-span-1 sm:min-h-[82px] lg:min-h-[92px]">
               <div
                 aria-hidden
                 className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(250,89,2,0.18),transparent_35%)]"

@@ -31,7 +31,7 @@ export function HeroNavigation({
       {breadcrumbs ? (
         <nav
           aria-label="Breadcrumb"
-          className="mb-8 flex flex-wrap items-center gap-4 text-xs font-semibold leading-none"
+          className="mb-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs font-semibold leading-none"
         >
           {breadcrumbs.map((item, index) => {
             const isLast = index === breadcrumbs.length - 1;
@@ -65,7 +65,8 @@ export function HeroNavigation({
                     className={light ? "text-white" : "text-primary"}
                     size={16}
                     strokeWidth={1.8}
-                  />
+                  >
+                  </ChevronRight>
                 )}
               </React.Fragment>
             );
@@ -74,7 +75,7 @@ export function HeroNavigation({
       ) : current ? (
         <nav
           aria-label="Breadcrumb"
-          className="mb-8 flex flex-wrap items-center gap-4 text-xs font-semibold leading-none"
+          className="mb-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs font-semibold leading-none"
         >
           <Link
             className={`flex items-center gap-2 transition-colors hover:text-secondary ${
@@ -95,7 +96,7 @@ export function HeroNavigation({
         </nav>
       ) : null}
 
-      <div className="flex flex-wrap items-center gap-4 text-secondary">
+      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-secondary">
         <AccentBars />
         <p className="text-xs font-black uppercase leading-none tracking-[0.16em]">
           {eyebrow}

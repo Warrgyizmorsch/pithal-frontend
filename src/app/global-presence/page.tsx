@@ -299,7 +299,7 @@ export default function GlobalPresencePage() {
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f4f8fc] via-[#f4f8fc]/50 to-transparent" />
           </div>
 
-          <div className="relative z-10 flex w-full max-w-[1520px] flex-col justify-between gap-4 px-10 py-6 lg:py-8">
+          <div className="relative z-10 flex w-full max-w-[1520px] flex-col justify-between gap-4 px-5 sm:px-8 lg:px-10 py-6 lg:py-8">
             <div className="max-w-[800px]">
               <HeroNavigation
                 current="Global Presence"

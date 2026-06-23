@@ -50,7 +50,7 @@ const heroStats = [
         fill="none"
         stroke="currentColor"
         strokeWidth="1.0"
-        className="h-14 w-14 text-[#fa5902] stroke-[1.0]"
+        className="h-11 w-11 text-[#fa5902] stroke-[1.0]"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
@@ -71,7 +71,7 @@ const heroStats = [
         fill="none"
         stroke="currentColor"
         strokeWidth="1.0"
-        className="h-14 w-14 text-[#fa5902] stroke-[1.0]"
+        className="h-11 w-11 text-[#fa5902] stroke-[1.0]"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
@@ -90,7 +90,7 @@ const heroStats = [
         fill="none"
         stroke="currentColor"
         strokeWidth="1.0"
-        className="h-14 w-14 text-[#fa5902] stroke-[1.0]"
+        className="h-11 w-11 text-[#fa5902] stroke-[1.0]"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
@@ -112,7 +112,7 @@ const heroStats = [
         fill="none"
         stroke="currentColor"
         strokeWidth="1.0"
-        className="h-14 w-14 text-[#fa5902] stroke-[1.0]"
+        className="h-11 w-11 text-[#fa5902] stroke-[1.0]"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
@@ -499,7 +499,7 @@ export default function CareersPage() {
     <>
       <Header />
       <main className="careers-page bg-white text-gray-900 font-sans overflow-x-hidden">
-        <section className="relative overflow-hidden bg-white text-primary lg:h-[calc(100vh-90px)] lg:min-h-[600px] flex flex-col justify-between">
+        <section className="relative overflow-hidden bg-white text-primary  lg:min-h-[600px] flex flex-col justify-around">
           {/* Full Background Image covering the entire section */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -514,27 +514,27 @@ export default function CareersPage() {
             <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-white/70 lg:bg-gradient-to-r lg:from-white lg:via-white lg:via-[28%] lg:to-transparent z-10 pointer-events-none" />
           </div>
 
-          <div className="relative z-22 w-full max-w-[1520px] px-10 py-6 lg:py-8 flex-grow flex flex-col">
+          <div className="relative z-22 w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 py-6 lg:py-8 flex-grow flex flex-col">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-              <div className="py-2">
+              <div className="py-2 flex flex-col items-center lg:items-start text-center lg:text-left gap-2 w-full mx-auto lg:mx-0">
                 <HeroNavigation current="Careers" eyebrow="Careers" />
 
-                <h1 className="font-extrabold text-[2.5rem] sm:text-[3.25rem] lg:text-[3.5rem] leading-[1.05] tracking-tight text-[#092a5c] uppercase">
+                <h1 className="font-extrabold text-[2.5rem] sm:text-[3.25rem] lg:text-[3.5rem] leading-[1.05] tracking-tight text-[#092a5c] uppercase text-center lg:text-left">
                   BUILD MACHINES.
                   <br />
                   <span className="text-[#fa5902]">BUILD YOUR FUTURE.</span>
                 </h1>
 
-                <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg">
+                <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-slate-600 max-w-lg text-center lg:text-left mx-auto lg:mx-0">
                   Join Pithal Machines and be a part of a team that engineers
                   high-performance solutions and powers industries across the
                   globe.
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-4">
+                <div className="mt-6 flex flex-col sm:flex-row w-full sm:w-auto gap-4 justify-center lg:justify-start">
                   <Link
                     href="#openings"
-                    className="inline-flex items-center justify-center gap-3.5 bg-[#fa5902] text-white px-7 py-4 rounded-lg text-xs font-black tracking-[0.14em] hover:bg-[#e04f02] transition-colors"
+                    className="primary-btn inline-flex items-center justify-center gap-3.5 bg-[#fa5902] text-white px-7 py-4 rounded-lg text-xs font-black tracking-[0.04em] hover:bg-[#e04f02] transition-colors w-full sm:w-auto"
                   >
                     EXPLORE OPPORTUNITIES
                     <svg
@@ -553,7 +553,7 @@ export default function CareersPage() {
                   </Link>
                   <Link
                     href="#about"
-                    className="inline-flex items-center justify-center gap-3.5 border border-[#092a5c] text-[#092a5c] px-7 py-4 rounded-lg text-xs font-black tracking-[0.14em] hover:bg-slate-50 transition-colors"
+                    className="secondary-btn inline-flex items-center justify-center gap-3.5 border border-[#092a5c] text-[#092a5c] px-7 py-4 rounded-lg text-xs font-black tracking-[0.04em] hover:bg-slate-50 transition-colors w-full sm:w-auto"
                   >
                     LIFE AT PITHAL
                     <svg
@@ -579,26 +579,26 @@ export default function CareersPage() {
           </div>
 
           {/* Stats Card Banner */}
-          <div className="relative z-20 w-full max-w-[1520px] px-10 pb-0 pt-4 mt-auto">
-            <div className="grid gap-x-4 gap-y-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 rounded-2xl bg-[#031b40] p-4 sm:p-6 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] lg:divide-x lg:divide-slate-700/50">
+          <div className="relative z-20 w-full max-w-[1520px] px-5 sm:px-8 lg:px-10">
+            <div className="grid gap-x-4 gap-y-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 rounded-2xl bg-[#031b40] p-3 sm:p-4 lg:py-4 lg:px-5 text-white shadow-[0_28px_80px_rgba(9,25,59,0.22)] lg:divide-x lg:divide-slate-700/50">
               {heroStats.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col min-[420px]:flex-row items-center min-[420px]:items-start text-center min-[420px]:text-left gap-3 sm:gap-4 p-2 sm:p-4 lg:px-6"
+                  className="flex flex-col min-[420px]:flex-row items-center min-[420px]:items-start text-center min-[420px]:text-left gap-2 sm:gap-3 p-1.5 sm:p-2 lg:px-4"
                 >
-                  <div className="flex h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 shrink-0 items-center justify-center">
-                    <div className="scale-75 sm:scale-90 lg:scale-100">
+                  <div className="flex h-9 w-9 sm:h-11 sm:w-11 lg:h-12 lg:w-12 shrink-0 items-center justify-center">
+                    <div className="scale-75 sm:scale-85 lg:scale-95">
                       {item.icon}
                     </div>
                   </div>
                   <div className="min-w-0">
-                    <div className="text-2xl sm:text-3xl lg:text-[2.2rem] font-extrabold tracking-tight text-white leading-none">
+                    <div className="text-xl sm:text-2xl lg:text-[1.65rem] font-extrabold tracking-tight text-white leading-none">
                       {item.value}
                     </div>
-                    <p className="mt-1.5 text-[10px] sm:text-xs lg:text-[13px] font-extrabold uppercase tracking-wider text-[#fa5902] truncate">
+                    <p className="mt-1 text-[9px] sm:text-[10px] lg:text-[11px] font-extrabold uppercase tracking-wider text-[#fa5902] truncate">
                       {item.title}
                     </p>
-                    <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-slate-300 font-medium line-clamp-2 lg:line-clamp-none">
+                    <p className="mt-1.5 text-[11px] sm:text-xs leading-normal text-slate-300 font-medium line-clamp-2 lg:line-clamp-none">
                       {item.desc}
                     </p>
                   </div>
@@ -1276,7 +1276,7 @@ export default function CareersPage() {
                       <div className="flex flex-col items-center justify-center shrink-0 lg:w-40 gap-2">
                         <Link
                           href="#"
-                          className={`w-full h-10 rounded-xl ${btnBg} text-white flex items-center justify-center gap-2 text-xs font-black tracking-wider transition-all duration-300 apply-btn shadow-sm`}
+                          className={`w-full h-10 rounded-xl ${btnBg} primary-btn text-white flex items-center justify-center gap-2 text-xs font-black tracking-wider transition-all duration-300 apply-btn shadow-sm`}
                         >
                           Apply Now
                           <ArrowRight size={14} className="stroke-[2.5]" />
@@ -1315,7 +1315,7 @@ export default function CareersPage() {
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
                 <Link
                   href="#"
-                  className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-50 text-[#092a5c] font-black border border-slate-200 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
+                  className="secondary-btn w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-50 text-[#092a5c] font-black border border-slate-200 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
                 >
                   Upload Your CV
                   <Upload size={16} className="stroke-[2.2]" />
@@ -1845,78 +1845,87 @@ export default function CareersPage() {
             </div>
           </div>
 
-          {/* Bottom Growth Banner - Full width, flat corners, screen touching */}
-          <div className="w-full bg-primary-dark shadow-xl border-l-[12px] border-secondary border-y border-border">
-            <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row relative overflow-hidden">
-              {/* Text & List Section */}
-              <div className="flex-1 flex flex-col md:flex-row items-center py-8 md:py-12 z-10">
-                {/* Quote & Title */}
-                <div className="w-full md:w-auto md:pr-10 mb-8 md:mb-0">
-                  <div className="text-secondary text-6xl md:text-7xl font-heading leading-none h-10 mb-2">
-                    “
-                  </div>
-                  <h3 className="text-white font-bold text-3xl md:text-4xl leading-snug tracking-tight mb-5">
-                    Your Growth is
-                    <br />
-                    Our Commitment.
-                  </h3>
-                  <div className="w-12 h-1 bg-secondary"></div>
-                </div>
+ {/* Bottom Growth Banner */}
+<Container className="w-full my-12">
+  <div className="bg-[#031b40] rounded-3xl shadow-xl overflow-hidden relative flex flex-col lg:flex-row min-h-[280px] items-stretch">
+    
+    {/* Left slanted orange accent */}
+    <div className="absolute left-0 top-0 bottom-0 w-8 bg-[#fa5902] [clip-path:polygon(0_0,100%_0,30%_100%,0_100%)] z-20 pointer-events-none" />
 
-                {/* Vertical Divider (Desktop) */}
-                <div className="hidden md:block w-px h-32 bg-slate-700/60 mx-4 lg:mx-8"></div>
+    {/* Content Section (Text & List) */}
+    {/* FIX: items-center ko badal kar items-start kiya taaki top-align ho sake */}
+    <div className="relative z-10 w-full lg:w-[50%] flex flex-col md:flex-row items-start py-12 px-8 sm:px-12 lg:pl-16 lg:pr-4">
+      
+      {/* Quote & Title */}
+      <div className="w-full md:w-auto md:pr-6 mb-8 md:mb-0 flex-shrink-0">
+        {/* FIX: Quote icon ka margin adjust kiya */}
+        <div className="text-[#fa5902] text-5xl md:text-6xl font-black leading-none mb-4 select-none h-6">
+          “
+        </div>
+        <h3 className="text-white font-extrabold text-2xl sm:text-3xl leading-snug tracking-tight">
+          Your Growth is
+          <br />
+          Our Commitment.
+        </h3>
+        <div className="w-16 h-1 bg-[#fa5902] mt-5"></div>
+      </div>
 
-                {/* Checkmark List */}
-                <div className="w-full md:w-auto md:pl-6 lg:pl-10">
-                  <ul className="space-y-5">
-                    {[
-                      "Recognition & Rewards",
-                      "Health & Safety",
-                      "Work-Life Balance",
-                      "Long-Term Career Opportunities",
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-4.5">
-                        <svg
-                          className="w-[28px] h-[28px] text-secondary flex-shrink-0"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                        >
-                          <circle
-                            cx="12"
-                            cy="12"
-                            r="11"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          />
-                          <path
-                            d="M7 12.5L10.5 16L17 8"
-                            stroke="currentColor"
-                            strokeWidth="2.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                        <span className="text-white text-[17px] sm:text-[20px] font-bold tracking-wide">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+      {/* Vertical Divider (Desktop) */}
+      {/* FIX: Divider ki height aur margin ko perfectly align kiya */}
+      <div className="hidden md:block w-px h-32 bg-white/20 mx-8 lg:mx-12 flex-shrink-0 mt-6"></div>
 
-              {/* Right Side Image */}
-              <div className="hidden lg:block lg:w-[45%] xl:w-[40%] relative lg:min-h-full">
-                {/* Gradient overlay to smoothly blend dark section and image on both sides */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-transparent to-primary-dark z-10"></div>
-                <img
-                  src="/careerimg/skilled%20workforce.jpg"
-                  alt="Skilled workforce at Pithal Machines"
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+      {/* Checkmark List */}
+      {/* FIX: List ko thoda niche se start karne ke liye mt-6 lagaya taaki text ke sath align ho */}
+      <div className="w-full md:w-auto flex-grow mt-6 md:mt-7">
+        <ul className="space-y-4">
+          {[
+            "Recognition & Rewards",
+            "Health & Safety",
+            "Work-Life Balance",
+            "Long-Term Career Opportunities",
+          ].map((item, idx) => (
+            <li key={idx} className="flex items-center gap-4">
+              <svg
+                className="w-[24px] h-[24px] text-[#fa5902] flex-shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="11"
+                  strokeWidth="2"
                 />
-              </div>
-            </div>
-          </div>
+                <path
+                  d="M7 12.5L10.5 16L17 8"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              {/* FIX: Font size ko text-[16px] kiya jo exact image jaisa dikhega */}
+              <span className="text-white text-[16px] sm:text-[18px] font-semibold tracking-wide whitespace-nowrap">
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    {/* Right Side Image - Slanted and fully bright in background */}
+    {/* FIX: Width aur clip-path ko adjust kiya taaki image sahi jagah se start ho */}
+    <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[54%] pointer-events-none z-0 overflow-hidden [clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)] hidden lg:block">
+      <img
+        src="/careerimg/growth.jpg"
+        alt="Skilled workforce at Pithal Machines"
+        className="w-full h-full object-cover object-center"
+      />
+    </div>
+  </div>
+</Container>
+
         </section>
 
         {/* ── SECTION 8: GROW YOUR SKILLS ── */}
@@ -2099,31 +2108,34 @@ export default function CareersPage() {
             </div>
           </div>
 
-          {/* Bottom Stats Banner - Full width, flat corners, screen touching */}
-          <div className="w-full bg-primary-dark shadow-xl py-6 lg:py-8 border-y border-border">
-            <div className="mx-auto w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-8 relative z-20">
+          {/* Bottom Stats Banner */}
+          <Container className="w-full my-12">
+            <div className="bg-[#031b40] rounded-3xl shadow-xl overflow-hidden py-8 px-6 sm:px-10 relative z-20 flex flex-col lg:flex-row items-center justify-between gap-8">
               {/* Left Intro text */}
-              <div className="flex items-center gap-5 w-full lg:w-auto shrink-0">
-                <div className="w-16 h-16 rounded-full border-2 border-secondary/30 flex items-center justify-center relative bg-secondary/10">
+              <div className="flex items-center gap-5 w-full lg:w-auto shrink-0 justify-center lg:justify-start">
+                <div className="w-16 h-16 rounded-full border-2 border-[#fa5902]/30 flex items-center justify-center relative bg-[#fa5902]/10 shrink-0">
                   <svg
-                    className="w-8 h-8 text-secondary"
+                    className="w-8 h-8 text-[#fa5902]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                    />
+                    <path d="M3 3v18h18" />
+                    <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+                    <path d="M17 8h3v3" />
+                    <rect x="7" y="16" width="2" height="4" fill="currentColor" />
+                    <rect x="12" y="12" width="2" height="8" fill="currentColor" />
+                    <rect x="17" y="9" width="2" height="11" fill="currentColor" />
                   </svg>
                 </div>
                 <div>
                   <h4 className="text-white font-extrabold text-[15px] uppercase tracking-wide leading-tight">
                     We Grow Together.
                   </h4>
-                  <h4 className="text-secondary font-extrabold text-[15px] uppercase tracking-wide leading-tight mb-1">
+                  <h4 className="text-[#fa5902] font-extrabold text-[15px] uppercase tracking-wide leading-tight mb-1">
                     Your Journey Matters.
                   </h4>
                   <p className="text-gray-400 text-[12px] max-w-[200px] leading-snug">
@@ -2142,8 +2154,7 @@ export default function CareersPage() {
                   {
                     value: "50+",
                     label: "Training Programs Every Year",
-                    iconBg: "bg-blue-500",
-                    iconColor: "text-blue-400",
+                    iconBg: "bg-blue-600",
                     icon: (
                       <path
                         strokeLinecap="round"
@@ -2156,8 +2167,7 @@ export default function CareersPage() {
                   {
                     value: "200+",
                     label: "Employees Trained Annually",
-                    iconBg: "bg-secondary",
-                    iconColor: "text-secondary",
+                    iconBg: "bg-[#fa5902]",
                     icon: (
                       <path
                         strokeLinecap="round"
@@ -2170,8 +2180,7 @@ export default function CareersPage() {
                   {
                     value: "80%",
                     label: "Internal Growth Opportunities",
-                    iconBg: "bg-green-500",
-                    iconColor: "text-green-400",
+                    iconBg: "bg-green-600",
                     icon: (
                       <path
                         strokeLinecap="round"
@@ -2184,8 +2193,7 @@ export default function CareersPage() {
                   {
                     value: "1000+",
                     label: "Skills Upgraded Every Year",
-                    iconBg: "bg-purple-500",
-                    iconColor: "text-purple-400",
+                    iconBg: "bg-purple-600",
                     icon: (
                       <path
                         strokeLinecap="round"
@@ -2198,8 +2206,7 @@ export default function CareersPage() {
                   {
                     value: "Future",
                     label: "Ready Careers Built Here",
-                    iconBg: "bg-secondary",
-                    iconColor: "text-secondary",
+                    iconBg: "bg-[#fa5902]",
                     icon: (
                       <path
                         strokeLinecap="round"
@@ -2219,7 +2226,7 @@ export default function CareersPage() {
                         className={`w-10 h-10 rounded-full ${stat.iconBg} text-white flex items-center justify-center shrink-0`}
                       >
                         <svg
-                          className="w-[22px] h-[22px]"
+                          className="w-5 h-5"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -2227,7 +2234,7 @@ export default function CareersPage() {
                           {stat.icon}
                         </svg>
                       </div>
-                      <div className="text-secondary font-extrabold text-[22px] leading-none">
+                      <div className="text-[#fa5902] font-heading font-black text-2xl lg:text-[26px] leading-none">
                         {stat.value}
                       </div>
                     </div>
@@ -2247,7 +2254,7 @@ export default function CareersPage() {
                 ))}
               </div>
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* ── SECTION 9: YOUR JOURNEY ── */}
@@ -2910,147 +2917,143 @@ export default function CareersPage() {
             </div>
           </div>
 
-          {/* Bottom Banner - Full width, flat corners, screen touching */}
-          <div className="w-full bg-primary-dark overflow-hidden flex flex-col lg:flex-row shadow-xl border-y border-border">
-            {/* Left side: Image */}
-            <div className="w-full lg:w-[28%] relative min-h-[250px] lg:min-h-[auto]">
-              <img
-                src="careerimg/32.jpg"
-                alt="Worker"
-                className="absolute inset-0 w-full h-full object-cover object-[2%_top]"
-              />
-              {/* Double-sided gradient fade */}
-              <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-primary-dark via-transparent to-primary-dark z-10"></div>
-            </div>
-
-            {/* Content columns aligned with container bounds */}
-            <div className="flex-1 flex flex-col lg:flex-row lg:pr-[max(1.25rem,calc((100vw-1520px)/2+1.25rem))]">
-              {/* Middle side: Quote */}
-              <div className="w-full lg:w-[45%] p-8 lg:py-12 lg:px-10 flex flex-col justify-center relative z-10">
-                <div className="text-secondary text-6xl lg:text-7xl font-heading leading-none h-8 lg:h-10 mb-2">
-                  “
-                </div>
-                <h3 className="text-white text-3xl md:text-4xl font-extrabold leading-tight mb-1 tracking-tight">
-                  We look for potential.
-                </h3>
-                <h3 className="text-white text-3xl md:text-4xl font-extrabold leading-tight mb-6 tracking-tight">
-                  We build the future.
-                </h3>
-                <div className="w-12 h-[3px] bg-secondary"></div>
+          {/* Bottom Banner */}
+          <Container className="w-full my-12">
+            <div className="bg-[#031b40] rounded-3xl shadow-xl overflow-hidden relative flex flex-col lg:flex-row min-h-[340px] items-stretch">
+              {/* Left side: Image with slanted orange accent line */}
+              <div className="w-full lg:w-[28%] relative min-h-[250px] lg:min-h-auto bg-[#fa5902] [clip-path:polygon(0_0,97%_0,100%_100%,0_100%)] overflow-hidden shrink-0">
+                <img
+                  src="careerimg/32.jpg"
+                  alt="Worker"
+                  className="absolute inset-0 w-full h-full object-cover object-[2%_top] [clip-path:polygon(0_0,95.5%_0,98.5%_100%,0_100%)]"
+                />
               </div>
 
-              {/* Right side: 4 Traits Grid */}
-              <div className="w-full lg:w-[55%] p-8 lg:py-12 lg:pr-12 lg:pl-0 flex flex-col justify-center">
-                <div className="flex flex-col divide-y divide-slate-700/40">
-                  {/* Row 1 */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 sm:divide-x sm:divide-slate-700/40 pb-6 lg:pb-8">
+              {/* Right side: Content */}
+              <div className="flex-1 flex flex-col lg:flex-row py-10 px-8 sm:px-12 lg:pl-10 lg:pr-12 items-center">
+                {/* Middle side: Quote */}
+                <div className="w-full lg:w-[42%] flex flex-col justify-center relative z-10 flex-shrink-0">
+                  <div className="text-[#fa5902] text-5xl md:text-6xl font-black leading-none mb-2 select-none h-8">
+                    “
+                  </div>
+                  <h3 className="text-white font-extrabold text-2xl sm:text-3xl leading-snug tracking-tight">
+                    We look for potential.
+                    <br />
+                    We build the future.
+                  </h3>
+                  <div className="w-16 h-1 bg-[#fa5902] mt-4"></div>
+                </div>
+
+                {/* Vertical Divider (Desktop) */}
+                <div className="hidden lg:block w-px h-28 bg-white/20 mx-6 lg:mx-8 flex-shrink-0"></div>
+
+                {/* Right side: 4 Traits Grid */}
+                <div className="w-full lg:w-[58%] flex flex-col justify-center mt-8 lg:mt-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-6 lg:gap-x-10 lg:gap-y-8">
                     {/* Passion to Learn */}
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-4 pb-6 border-b border-dashed border-white/15 sm:pr-6 lg:pr-10 sm:border-r">
                       <div className="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 text-white mt-1">
                         <svg
-                          className="w-6 h-6"
+                          className="w-6 h-6 text-white"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
+                          strokeWidth={2}
                         >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z M19 11l-2 2-3-3"
+                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 113.536 0V21h2v-2.7a5 5 0 013.536 0z"
                           />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-bold text-white text-[16px] sm:text-[17px] mb-1.5 leading-snug">
+                        <h4 className="font-bold text-white text-base leading-snug mb-1">
                           Passion to Learn
                         </h4>
-                        <p className="text-[13px] sm:text-[14px] text-gray-400 leading-relaxed">
+                        <p className="text-xs text-gray-300 leading-relaxed">
                           A strong desire to learn and grow every day.
                         </p>
                       </div>
                     </div>
+
                     {/* Team Player */}
-                    <div className="flex items-start gap-4 sm:pl-6 lg:pl-8">
+                    <div className="flex items-start gap-4 pb-6 border-b border-dashed border-white/15 sm:pl-6 lg:pl-10">
                       <div className="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 text-white mt-1">
                         <svg
-                          className="w-6 h-6"
+                          className="w-6 h-6 text-white"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                          />
+                          <circle cx="12" cy="12" r="3" />
+                          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-bold text-white text-[16px] sm:text-[17px] mb-1.5 leading-snug">
+                        <h4 className="font-bold text-white text-base leading-snug mb-1">
                           Team Player
                         </h4>
-                        <p className="text-[13px] sm:text-[14px] text-gray-400 leading-relaxed">
+                        <p className="text-xs text-gray-300 leading-relaxed">
                           Work collaboratively and support team success.
                         </p>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Row 2 */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 sm:divide-x sm:divide-slate-700/40 pt-6 lg:pt-8">
                     {/* Positive Attitude */}
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-4 sm:pr-6 lg:pr-10 sm:border-r sm:border-dashed sm:border-white/15">
                       <div className="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 text-white mt-1">
                         <svg
-                          className="w-6 h-6"
+                          className="w-6 h-6 text-white"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
+                          strokeWidth={2}
                         >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            strokeWidth={1.5}
+                            strokeWidth={2}
                             d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                           />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-bold text-white text-[16px] sm:text-[17px] mb-1.5 leading-snug">
+                        <h4 className="font-bold text-white text-base leading-snug mb-1">
                           Positive Attitude
                         </h4>
-                        <p className="text-[13px] sm:text-[14px] text-gray-400 leading-relaxed">
-                          A can-do attitude and willingness to take on
-                          challenges.
+                        <p className="text-xs text-gray-300 leading-relaxed">
+                          A can-do attitude and willingness to take on challenges.
                         </p>
                       </div>
                     </div>
+
                     {/* Commitment to Excellence */}
-                    <div className="flex items-start gap-4 sm:pl-6 lg:pl-8">
+                    <div className="flex items-start gap-4 sm:pl-6 lg:pl-10">
                       <div className="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center shrink-0 text-white mt-1">
                         <svg
-                          className="w-6 h-6"
+                          className="w-6 h-6 text-white"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z"
-                          />
+                          <circle cx="12" cy="12" r="10" />
+                          <circle cx="12" cy="12" r="6" />
+                          <circle cx="12" cy="12" r="2" />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-bold text-white text-[16px] sm:text-[17px] mb-1.5 leading-snug">
+                        <h4 className="font-bold text-white text-base leading-snug mb-1">
                           Commitment to Excellence
                         </h4>
-                        <p className="text-[13px] sm:text-[14px] text-gray-400 leading-relaxed">
-                          Deliver quality and strive for excellence in all you
-                          do.
+                        <p className="text-xs text-gray-300 leading-relaxed">
+                          Deliver quality and strive for excellence in all you do.
                         </p>
                       </div>
                     </div>
@@ -3058,7 +3061,7 @@ export default function CareersPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* ── SECTION 11: TESTIMONIALS ── */}
@@ -3404,7 +3407,7 @@ export default function CareersPage() {
               <div className="flex flex-col gap-3 lg:w-[22%] w-full shrink-0">
                 <a
                   href="#"
-                  className="w-full flex items-center justify-between h-[52px] bg-[#fa5902] text-white rounded-xl font-bold uppercase tracking-wider text-[12px] px-6 transition-all hover:bg-[#e04f02] shadow-[0_4px_15px_rgba(250,89,2,0.15)] group"
+                  className="primary-btn text-sm w-full flex items-center justify-between h-[52px] bg-[#fa5902] text-white rounded-xl font-bold uppercase tracking-wider text-[12px] px-6 transition-all hover:bg-[#e04f02] shadow-[0_4px_15px_rgba(250,89,2,0.15)] group"
                 >
                   <div className="flex items-center gap-3">
                     <svg
@@ -3439,7 +3442,7 @@ export default function CareersPage() {
 
                 <a
                   href="#openings"
-                  className="w-full flex items-center justify-between h-[52px] bg-white text-[#092a5c] border-2 border-[#092a5c] rounded-xl font-bold uppercase tracking-wider text-[12px] px-6 transition-all hover:bg-slate-50 group"
+                  className="secondary-btn text-sm w-full flex items-center justify-between h-[52px] bg-white text-[#092a5c] border-2 border-[#092a5c] rounded-xl font-bold uppercase tracking-wider text-[12px] px-6 transition-all hover:bg-slate-50 group"
                 >
                   <div className="flex items-center gap-3">
                     <svg

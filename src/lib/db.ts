@@ -64,7 +64,9 @@ async function initDb() {
   }
 }
 
-// Initialize the database table structure
-initDb();
+// Initialize the database table structure only at runtime (not during Next.js production build phase)
+if (process.env.NEXT_PHASE !== "phase-production-build") {
+  initDb();
+}
 
 export default pool;

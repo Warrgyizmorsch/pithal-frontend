@@ -130,7 +130,7 @@ export function ContactCTA() {
             onSubmit={handleSubmit}
             className="m-3 rounded-2xl border border-primary/20 bg-white px-4 py-6 min-[380px]:m-4 min-[380px]:px-5 sm:m-6 sm:px-7 sm:py-7 lg:m-6 lg:ml-0 lg:px-8 lg:py-8 lg:flex lg:flex-col lg:justify-between"
           >
-            <div className="grid gap-4 lg:grid-cols-2 lg:gap-x-4 lg:gap-y-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:gap-x-4 lg:gap-y-3">
               <label className={labelStyle}>
                 Name
                 <input
@@ -197,7 +197,7 @@ export function ContactCTA() {
                 </select>
               </label>
 
-              <label className={`${labelStyle} lg:col-span-2`}>
+              <label className={`${labelStyle} sm:col-span-2`}>
                 Requirement
                 <textarea
                   required
@@ -221,7 +221,7 @@ export function ContactCTA() {
               </div>
             )}
 
-            <div className="mt-6 lg:mt-4 grid gap-3 lg:grid-cols-2 lg:gap-4">
+            <div className="mt-6 lg:mt-4 grid gap-3 sm:grid-cols-2 lg:gap-4">
               <Button
                 className="min-h-[3.4rem] w-full rounded-lg px-3 text-sm tracking-[0.03em] sm:min-h-[3.7rem] sm:px-4"
                 type="submit"

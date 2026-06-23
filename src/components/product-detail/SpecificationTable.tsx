@@ -89,9 +89,9 @@ export function SpecificationTable({
           <div className="border-t border-border px-4 py-4 sm:px-6 lg:px-7">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-[11px] leading-5 text-text-muted sm:text-xs">{section.note}</p>
-              <div className="flex flex-col gap-2 sm:flex-row">
+              <div className="flex flex-col gap-2 sm:flex-row w-full sm:w-auto">
                 {section.ctas.map((cta) => (
-                  <ProductCtaButton className="min-h-9 px-4 text-[10px] tracking-[0.13em]" cta={cta} iconSize={14} key={cta.label} />
+                  <ProductCtaButton className="min-h-11 w-full sm:w-auto justify-center gap-2 rounded px-5 text-[10px] sm:text-[11px] font-black uppercase tracking-wider" cta={cta} iconSize={14} key={cta.label} />
                 ))}
               </div>
             </div>

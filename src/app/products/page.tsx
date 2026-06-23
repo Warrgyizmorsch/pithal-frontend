@@ -32,15 +32,15 @@ export default function ProductsPage() {
           <div className="pointer-events-none absolute inset-y-0 left-0 w-[58%] industrial-grid opacity-60" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/55 to-transparent" />
 
-          <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
+          <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
             <div>
-              <div className="max-w-[680px]">
+              <div className="max-w-[680px] flex flex-col items-center lg:items-start text-center lg:text-left w-full mx-auto lg:mx-0">
                 <HeroNavigation current="Products" eyebrow="Our Range" />
-                <h1 className="headline mb-5 text-[clamp(2.3rem,5.5vw,4.4rem)] uppercase leading-[1.02] text-primary">
+                <h1 className="headline mb-5 text-[clamp(2.3rem,5.5vw,4.4rem)] uppercase leading-[1.02] text-primary text-center lg:text-left">
                   Comprehensive <br />
                   <span className="text-secondary">Product Categories.</span>
                 </h1>
-                <p className="max-w-[560px] text-sm font-medium leading-7 text-primary/80 md:text-[16px]">
+                <p className="max-w-[560px] text-sm font-medium leading-7 text-primary/80 md:text-[16px] text-center lg:text-left mx-auto lg:mx-0">
                   Explore our complete range of crushing and screening equipment,
                   engineered for reliable output across mining, aggregates,
                   infrastructure and recycling applications.
@@ -49,9 +49,9 @@ export default function ProductsPage() {
             </div>
 
             <div className="relative z-20 rounded-xl bg-white p-3 text-slate-800 shadow-[0_18px_44px_rgba(3,27,64,0.12)] sm:rounded-2xl sm:p-4 md:px-5 md:py-4">
-              <div className="grid grid-cols-1 divide-y divide-slate-100 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
+              <div className="grid grid-cols-2 divide-y-0 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
                 {productHeroStats.map((stat) => (
-                  <article className="p-4 lg:p-5" key={stat.label}>
+                  <article className="p-2 sm:p-4 lg:p-5 flex flex-col items-center text-center sm:items-start sm:text-left" key={stat.label}>
                     <p className="headline text-[28px] leading-none text-secondary md:text-[34px]">
                       {stat.value}
                     </p>

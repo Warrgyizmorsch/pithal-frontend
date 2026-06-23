@@ -1177,7 +1177,7 @@ export default function BlogPage() {
           {/* Background image — must be direct child of the relative section */}
           <div className="absolute inset-0 industrial-grid opacity-70 z-[1]" />
 
-          <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:py-8">
+          <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:py-8">
             <div className="grid lg:grid-cols-12 gap-10 items-center">
               {/* Left */}
               <div className="lg:col-span-7">
@@ -1888,7 +1888,7 @@ export default function BlogPage() {
                 <Button
                   variant="ghost"
                   href="#"
-                  className="inline-flex items-center gap-2 rounded-full border border-secondary bg-white px-8 py-3 text-xs font-bold uppercase tracking-[0.16em] text-secondary transition hover:bg-secondary hover:text-white shadow-sm min-h-0 h-11"
+                  className="primary-btn inline-flex items-center gap-2 rounded-full border border-secondary bg-white px-8 py-3 text-xs font-bold uppercase tracking-[0.16em] text-secondary transition hover:bg-secondary hover:text-white shadow-sm min-h-0 h-11"
                 >
                   Explore More Insights <span className="secondary-btn"></span>
                 </Button>
@@ -1967,7 +1967,7 @@ export default function BlogPage() {
                       </div>
                       <Button
                         variant="outlineNavySwap"
-                        className="w-full justify-center gap-2 rounded-lg mt-auto"
+                        className="secondary-btn cursor-pointer w-full justify-center gap-2 rounded-lg mt-auto"
                       >
                         <DownloadIcon />
                         DOWNLOAD RESOURCE

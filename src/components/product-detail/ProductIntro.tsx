@@ -33,8 +33,8 @@ const calloutLinePositions: Record<IntroCalloutPosition, string> = {
   rightTop: "right-[17%] top-[20%] h-[70px] w-[92px] border-b border-r",
 };
 
-const introButtonClass = "min-h-[46px] min-w-[190px] justify-between rounded px-5 text-[11px]";
-const overviewEyebrowClass = "flex items-center gap-2.5 text-lg font-bold uppercase tracking-[0.08em] text-secondary";
+const introButtonClass = "min-h-[46px] w-full sm:w-auto sm:min-w-[190px] justify-center sm:justify-between gap-3 rounded px-5 text-[11px] font-black uppercase tracking-wider";
+const overviewEyebrowClass = "flex items-center justify-center lg:justify-start gap-2.5 text-lg font-bold uppercase tracking-[0.08em] text-secondary";
 
 function OverviewEyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -51,20 +51,22 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
     <section className={`relative overflow-hidden bg-white ${sectionPadding}`}>
       <Container className="max-w-[1480px]">
         <div className="grid gap-8 lg:grid-cols-[0.78fr_1fr] lg:items-center">
-          <div className="relative z-10">
-            <OverviewEyebrow>{data.eyebrow}</OverviewEyebrow>
-            <h2 className="headline mt-5 text-[clamp(2.4rem,4.35vw,4rem)] leading-[0.96] text-primary">
+          <div className="relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <div className="w-full">
+              <OverviewEyebrow>{data.eyebrow}</OverviewEyebrow>
+            </div>
+            <h2 className="headline mt-5 text-[clamp(2.4rem,4.35vw,4rem)] leading-[0.96] text-primary text-center lg:text-left">
               {data.title}
               <span className="block text-secondary">{data.highlight}</span>
             </h2>
-            <p className="mt-5 max-w-[560px] text-sm leading-7 text-text-dark sm:text-[15px]">
+            <p className="mt-5 max-w-[560px] text-sm leading-7 text-text-dark sm:text-[15px] text-center lg:text-left mx-auto lg:mx-0">
               {data.description}
             </p>
-            <span aria-hidden className="mt-7 block h-[2px] w-16 bg-secondary" />
+            <span aria-hidden className="mt-7 block h-[2px] w-16 bg-secondary mx-auto lg:mx-0" />
 
-            <div className="mt-7 grid gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
+            <div className="mt-7 grid gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border w-full">
               {data.features.map((feature) => (
-                <article className="px-2.5 first:pl-0" key={feature.title}>
+                <article className="px-2.5 flex flex-col items-center text-center lg:items-start lg:text-left" key={feature.title}>
                   <ProductIcon className="mb-4 text-secondary" name={feature.icon} size={42} strokeWidth={1.45} />
                   <h3 className="text-[11px] font-black uppercase tracking-[0.03em] text-primary">{feature.title}</h3>
                   <p className="mt-1.5 text-[12px] leading-5 text-text-dark">{feature.text}</p>
@@ -72,18 +74,18 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
               ))}
             </div>
 
-            <div className="mt-12">
-              <div className="flex items-center gap-2.5">
+            <div className="mt-12 w-full flex flex-col items-center lg:items-start">
+              <div className="flex items-center gap-2.5 justify-center lg:justify-start">
                 <ProductIcon className="text-secondary" name="settings" size={28} />
                 <div>
                   <h3 className="text-base font-black uppercase tracking-[0.04em] text-primary">{data.applications.eyebrow}</h3>
-                  <span className="mt-1.5 block h-[2px] w-9 bg-secondary" />
+                  <span className="mt-1.5 block h-[2px] w-9 bg-secondary mx-auto lg:mx-0" />
                 </div>
               </div>
-              <p className="mt-4 max-w-[570px] whitespace-pre-line text-sm leading-6 text-text-dark">
+              <p className="mt-4 max-w-[570px] whitespace-pre-line text-sm leading-6 text-text-dark text-center lg:text-left mx-auto lg:mx-0">
                 {data.applications.description}
               </p>
-              <div className="mt-6 grid grid-cols-2 overflow-hidden rounded border-t border-l border-border sm:grid-cols-5">
+              <div className="mt-6 grid grid-cols-2 overflow-hidden rounded border-t border-l border-border sm:grid-cols-5 w-full">
                 {data.applications.items.map((item) => (
                   <article className="flex min-h-[96px] flex-col items-center justify-center border-b border-r border-border p-3 text-center" key={item.label}>
                     <ProductIcon className="text-secondary" name={item.icon} size={38} strokeWidth={1.45} />
@@ -93,7 +95,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row w-full justify-center lg:justify-start">
               {data.ctas.map((cta) => (
                 <ProductCtaButton className={introButtonClass} cta={cta} iconSize={17} key={cta.label} />
               ))}

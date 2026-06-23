@@ -599,11 +599,11 @@ Message: ${formData.requirement}`;
           {/* Corner accent */}
           <div className="pointer-events-none absolute right-0 top-0 h-[60%] w-[50%] rounded-bl-[60%] border-l border-secondary/25 border-b border-secondary/25 z-[3]" />
 
-          <div className="relative z-10 w-full max-w-[1520px] px-10 py-6 lg:py-8">
-            <div className="max-w-3xl">
+          <div className="relative z-10 w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 py-6 lg:py-8">
+            <div className="max-w-3xl flex flex-col items-center lg:items-start text-center lg:text-left w-full mx-auto lg:mx-0">
               <HeroNavigation current="Contact Us" eyebrow="Contact Us" light />
 
-              <h1 className="headline text-[clamp(2.35rem,5.4vw,4rem)] uppercase leading-[0.96] tracking-tight text-white">
+              <h1 className="headline text-[clamp(2.35rem,5.4vw,4rem)] uppercase leading-[0.96] tracking-tight text-white text-center lg:text-left">
                 LET&apos;S BUILD <br />
                 INDUSTRIAL SOLUTIONS{" "}
                 <span className="text-secondary">TOGETHER.</span>
@@ -611,20 +611,20 @@ Message: ${formData.requirement}`;
 
               <span
                 aria-hidden
-                className="mt-6 block h-[2px] w-14 bg-secondary"
+                className="mt-6 block h-[2px] w-14 bg-secondary mx-auto lg:mx-0"
               />
 
-              <p className="mt-6 max-w-xl text-sm md:text-[18px] lg:text-[20px] leading-relaxed text-slate-300 font-medium">
+              <p className="mt-6 max-w-xl text-sm md:text-[18px] lg:text-[20px] leading-relaxed text-slate-300 font-medium text-center lg:text-left mx-auto lg:mx-0">
                 Partner with our engineering experts to design, build and
                 deliver high-performance solutions that drive your operations
                 forward.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-col sm:flex-row w-full sm:w-auto gap-4 justify-center lg:justify-start">
                 <Button
                   href="#consultation"
                   variant="primary"
-                  className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5"
+                  className="flex items-center justify-center gap-2 group text-xs font-black tracking-[0.14em] px-8 py-5.5 w-full sm:w-auto"
                 >
                   TALK TO OUR EXPERTS
                   <ArrowRight
@@ -635,7 +635,7 @@ Message: ${formData.requirement}`;
                 <Button
                   href="#contact-info"
                   variant="outlineOrange"
-                  className="flex items-center justify-center gap-2 text-xs font-black tracking-[0.14em] px-8 py-5.5 text-white border-white/25 hover:bg-white hover:text-primary"
+                  className="flex items-center justify-center gap-2 text-xs font-black tracking-[0.14em] px-8 py-5.5 text-white border-white/25 hover:bg-white hover:text-primary w-full sm:w-auto"
                 >
                   VIEW CONTACT INFO
                   <ArrowRight size={14} />

@@ -927,7 +927,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO & STATS BANNER */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden bg-white text-primary lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">
+        <section className="min-h-[500px] relative overflow-hidden bg-white text-primary">
           <Image
             alt="Pithal complete crushing and screening plant"
             className="object-cover object-center"
@@ -941,7 +941,7 @@ export default function SolutionsPage() {
             className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_22%,rgba(255,255,255,.88)_38%,rgba(255,255,255,.36)_58%,rgba(255,255,255,0)_78%)]"
           />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
-          <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
+          <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:justify-between lg:py-8">
             <div className="z-20">
               <div className="max-w-[650px] py-0 lg:py-2">
                 <HeroNavigation current="Solutions & Applications" eyebrow="Solutions" />
@@ -1459,6 +1459,9 @@ export default function SolutionsPage() {
           className="relative overflow-hidden bg-white pt-[60px] pb-[10px]"
           id="engineering"
         >
+
+          <Container className="relative z-10">
+            {/* Top Grid layout */}
           {/* Blueprint Image Background (Aligned to the Right) */}
           <div
             className="absolute right-0 top-0 h-full w-full lg:w-[55%] pointer-events-none select-none opacity-20 lg:opacity-100 z-0"
@@ -1477,9 +1480,6 @@ export default function SolutionsPage() {
               priority
             />
           </div>
-
-          <Container className="relative z-10">
-            {/* Top Grid layout */}
             <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center mb-4">
               {/* Left Column info */}
               <div className="max-w-2xl relative z-10">
@@ -3044,7 +3044,7 @@ export default function SolutionsPage() {
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col sm:flex-row items-center gap-4">
                     {/* Orange Solid Button */}
-                    <a
+                    <Button
                       href="#contact1"
                       className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#ea580c] hover:bg-[#d44d0a] text-white px-8 py-4 rounded-xl text-[13px] font-black tracking-wide transition-colors"
                     >
@@ -3075,7 +3075,7 @@ export default function SolutionsPage() {
                           d="M14 5l7 7m0 0l-7 7m7-7H3"
                         ></path>
                       </svg>
-                    </a>
+                    </Button>
                     {/* WhatsApp Button */}
                     <a
                       href="https://wa.me/919887537129"

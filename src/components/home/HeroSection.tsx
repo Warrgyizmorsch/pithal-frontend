@@ -10,7 +10,7 @@ const heroMachinePoster = "/images/hero/hero-machine-photo.png";
 export function HeroSection() {
   return (
     <section
-      className="relative overflow-hidden bg-white flex flex-col lg:h-[calc(100vh-4.25rem)] xl:h-[calc(100vh-5.25rem)]"
+      className="min-h-[500px] relative overflow-hidden bg-white flex flex-col"
       id="home"
     >
       {/* Desktop Crushing Machine Video */}
@@ -30,7 +30,7 @@ export function HeroSection() {
       </div>
       <div className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_25%,rgba(255,255,255,.78)_43%,rgba(255,255,255,.16)_66%,rgba(255,255,255,0)_100%)] lg:block" />
 
-      <div className="relative flex flex-1 flex-col gap-3 px-10 pt-7 pb-6 sm:pt-10 sm:pb-8 lg:pt-[2.25rem] lg:pb-8">
+      <div className="relative flex flex-1 flex-col gap-3 px-5 sm:px-8 lg:px-10 pt-7 pb-6 sm:pt-10 sm:pb-8 lg:pt-[2.25rem] lg:pb-8">
         <div className="relative z-20 max-w-[32rem] xl:max-w-[35rem]">
           <HeroNavigation eyebrow="Crushing Strength, Delivering Results." />
           <h1 className="headline text-[clamp(2.45rem,11vw,3.05rem)] leading-[0.96] text-primary italic sm:text-[clamp(3.2rem,5vw,4.45rem)] lg:text-[clamp(3.65rem,4.25vw,4.65rem)]">
@@ -87,7 +87,7 @@ export function HeroSection() {
                 key={stat.label}
                 className={`flex items-start gap-4 lg:px-6 ${
                   index !== 0 ? "lg:border-l lg:border-gray-300/70" : ""
-                }`}
+                } first:lg:px-0`}
               >
                 <StatCard {...stat} compact />
               </div>

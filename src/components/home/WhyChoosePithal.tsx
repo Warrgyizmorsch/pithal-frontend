@@ -58,7 +58,7 @@ const features: Feature[] = [
 export default function WhyChoosePithal() {
   return (
     <section
-      className="relative overflow-hidden bg-white"
+      className="relative overflow-hidden bg-white border-b-[3px] border-secondary"
       id="solutions"
     >
       {/* Right Side Bleeding Image relative to section */}
@@ -73,7 +73,7 @@ export default function WhyChoosePithal() {
         />
       </div>
 
-      <section className="relative z-10 grid items-center pl-10 border-b-[3px] border-secondary gap-8 lg:grid-cols-12">
+      <Container className="relative z-10 grid items-center gap-8 lg:grid-cols-12">
         {/* Left Side: Content Column */}
         <div className="py-9 px-0 lg:col-span-6 lg:py-[clamp(2.3rem,3vw,3.1rem)] z-10">
           <div className="max-w-[42rem]">
@@ -125,7 +125,7 @@ export default function WhyChoosePithal() {
 
         {/* Right Side placeholder to reserve space in grid */}
         <div className="hidden lg:block lg:col-span-6 h-full" />
-      </section>
+      </Container>
     </section>
   );
 }

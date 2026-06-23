@@ -118,7 +118,7 @@ export default function CaseStudyPage() {
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/55 to-transparent" />
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-35" />
-          <div className="relative z-10 flex w-full max-w-[1520px] flex-col justify-between gap-8 px-10 py-4 lg:h-full lg:gap-2.5 lg:py-2">
+          <div className="relative z-10 flex w-full max-w-[1520px] flex-col justify-between gap-8 px-5 sm:px-8 lg:px-10 py-4 lg:h-full lg:gap-2.5 lg:py-2">
             <div className="grid gap-12 lg:gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               {/* Left Column Text */}
               <div>

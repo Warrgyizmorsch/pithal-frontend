@@ -28,7 +28,7 @@ function PerformanceStrip({ text }: { text: string }) {
     return (
       <div className="mx-auto mt-5 flex max-w-[520px] items-center justify-center gap-3 rounded-lg border border-secondary/35 bg-white px-4 py-2.5 text-center text-xs uppercase tracking-[0.04em] text-primary shadow-sm sm:rounded-none sm:[clip-path:polygon(4%_0,96%_0,100%_50%,96%_100%,4%_100%,0_50%)]">
         <ProductIcon name="shield" size={17} strokeWidth={1.8} />
-        <p className="whitespace-nowrap text-[10px] sm:text-xs">{text}</p>
+        <p className="sm:whitespace-nowrap whitespace-normal text-[10px] sm:text-xs">{text}</p>
       </div>
     );
   }
@@ -39,7 +39,7 @@ function PerformanceStrip({ text }: { text: string }) {
   return (
     <div className="mx-auto mt-5 flex max-w-[520px] items-center justify-center gap-3 rounded-lg border border-secondary/35 bg-white px-4 py-2.5 text-center text-xs uppercase tracking-[0.04em] text-primary shadow-sm sm:rounded-none sm:[clip-path:polygon(4%_0,96%_0,100%_50%,96%_100%,4%_100%,0_50%)]">
       <ProductIcon name="shield" size={17} strokeWidth={1.8} />
-      <p className="whitespace-nowrap text-[10px] sm:text-xs">
+      <p className="sm:whitespace-nowrap whitespace-normal text-[10px] sm:text-xs">
         {beforePerformance}
         <span className="text-secondary">{performance}</span>
         {betweenHighlights}
@@ -114,8 +114,8 @@ export function ProductStats({
           </div>
           <PerformanceStrip text={section.ctaText} />
           {section.cta && (
-            <div className="mt-4 flex justify-center">
-              <ProductCtaButton className={`${compactButtonClass} min-h-9 px-4 text-[10px] tracking-[0.13em]`} cta={section.cta} iconSize={14} />
+            <div className="mt-5 flex justify-center">
+              <ProductCtaButton className="min-h-11 w-full sm:w-auto justify-center gap-2.5 rounded px-6 text-xs font-black uppercase tracking-wider" cta={section.cta} iconSize={16} />
             </div>
           )}
         </div>

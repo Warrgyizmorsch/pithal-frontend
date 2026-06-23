@@ -86,32 +86,32 @@ export function RelatedMachines({
     <section className={`bg-white ${sectionPadding}`}>
       <Container>
         {/* Section Header with line and slashes */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", marginBottom: "40px" }}>
-          <div style={{ flex: 1, height: "1.5px", backgroundColor: "#fa5902", opacity: 0.25 }} />
-          <div style={{ display: "flex", alignItems: "center", gap: "6px", padding: "0 24px" }}>
+        <div className="flex items-center justify-center w-full mb-10">
+          <div className="hidden sm:block flex-1 h-[1.5px] bg-secondary/25" />
+          <div className="flex items-center gap-1.5 px-0 sm:px-6">
             {/* 3 orange accent bars on left */}
-            <span style={{ display: "inline-block", height: "7px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)" }} />
-            <span style={{ display: "inline-block", height: "7px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)" }} />
-            <span style={{ display: "inline-block", height: "7px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)", marginRight: "4px" }} />
+            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
+            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
+            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg] mr-1" />
             
             {/* Cogwheel icon */}
-            <span style={{ display: "inline-flex", alignItems: "center", color: "#fa5902" }}>
+            <span className="inline-flex items-center text-secondary shrink-0">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="3" />
                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
               </svg>
             </span>
 
-            <span style={{ fontSize: "1.125rem", fontWeight: 900, color: "#fa5902", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "var(--font-heading), sans-serif", marginLeft: "4px" }}>
+            <span className="text-base sm:text-lg font-black uppercase text-secondary tracking-widest ml-1 font-heading">
               {section.eyebrow}
             </span>
 
             {/* 3 orange accent bars on right */}
-            <span style={{ display: "inline-block", height: "7px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)", marginLeft: "8px" }} />
-            <span style={{ display: "inline-block", height: "7px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)" }} />
-            <span style={{ display: "inline-block", height: "7px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)" }} />
+            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg] ml-2" />
+            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
+            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
           </div>
-          <div style={{ flex: 1, height: "1.5px", backgroundColor: "#fa5902", opacity: 0.25 }} />
+          <div className="hidden sm:block flex-1 h-[1.5px] bg-secondary/25" />
         </div>
 
         {/* Section Headline & Description */}
