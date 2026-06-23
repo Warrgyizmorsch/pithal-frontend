@@ -105,7 +105,7 @@ export function Footer() {
                   <p className="text-xs text-text-dark/80 -mt-2">Scan to Open Google Maps</p> */}
 
                   <a
-                    href="https://www.google.com/maps/search/Pithal+Machines+Ltd.+Hawa+Magri,+Industrial+Area,+Sukher,+313001+Udaipur,+Rajasthan+India/@24.5871171,73.6568754,23536m/data=!3m2!1e3!4b1?entry=ttu"
+                    href="https://www.google.com/maps/dir//TASS,+National+Highway+27,+Sukher+Rd,+Rajasthan+313011/@24.6412473,73.7172356,18z/data=!4m16!1m7!3m6!1s0x3967e44236e80ead:0xbce661d60cd0cf9c!2sTASS!8m2!3d24.6412473!4d73.7172356!16s%2Fg%2F11bt_j7kgp!4m7!1m0!1m5!1m1!1s0x3967e44236e80ead:0xbce661d60cd0cf9c!2m2!1d73.7172679!2d24.641242?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Open factory location in Google Maps"
@@ -125,7 +125,6 @@ export function Footer() {
                   <p className="text-xs font-semibold text-secondary pl-3">Scan QR to Navigate</p>
                 </div>
               </div>
-
               {/* Contact info */}
               <div>
                 <address className="mt-2 space-y-4 not-italic text-[0.95rem] leading-[1.62] text-text-dark sm:mt-0">
@@ -134,9 +133,13 @@ export function Footer() {
                     <span>
                       <strong className="font-bold">Pithal Machines Ltd.</strong>
                       <br />
-                      Hawa Magri, Industrial Area, Sukher, 313001
+                      Building No. 1, First Floor,
                       <br />
-                      Udaipur, Rajasthan India
+                      National Highway 27, Sukher Road,
+                      <br />
+                      Village Sukher, Tehsil Badgaon,
+                      <br />
+                      District Udaipur, Rajasthan – 313011, India
                     </span>
                   </span>
                   <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919887537129">

@@ -508,7 +508,7 @@ export default function CareersPage() {
               fill
               preload
               sizes="100vw"
-              src="/careerimg/20.jpg"
+              src="/careerimg/top.jpg"
             />
             {/* Responsive white gradient overlay: vertical fade on mobile, strong horizontal fade on desktop */}
             <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-white/70 lg:bg-gradient-to-r lg:from-white lg:via-white lg:via-[28%] lg:to-transparent z-10 pointer-events-none" />
@@ -827,7 +827,7 @@ export default function CareersPage() {
                   alt: "SKILLED WORKFORCE",
                 },
                 {
-                  src: "/careerimg/training%20%26%20upskilling.jpg",
+                  src: "/careerimg/training-and-upskilling.jpg",
                   alt: "TRAINING & UPSKILLING",
                 },
                 {
@@ -916,7 +916,7 @@ export default function CareersPage() {
                 {
                   title: "Production & Technical Roles",
                   icon: Cpu,
-                  image: "/careerimg/production & technical roles.jpg",
+                  image: "/careerimg/production-and-technical-roles.jpg",
                   roles: [
                     { title: "VMC Operator", icon: Wrench },
                     { title: "CNC Operator", icon: Cpu },
@@ -2923,7 +2923,7 @@ export default function CareersPage() {
               {/* Left side: Image with slanted orange accent line */}
               <div className="w-full lg:w-[28%] relative min-h-[250px] lg:min-h-auto bg-[#fa5902] [clip-path:polygon(0_0,97%_0,100%_100%,0_100%)] overflow-hidden shrink-0">
                 <img
-                  src="careerimg/32.jpg"
+                  src="/careerimg/32.jpg"
                   alt="Worker"
                   className="absolute inset-0 w-full h-full object-cover object-[2%_top] [clip-path:polygon(0_0,95.5%_0,98.5%_100%,0_100%)]"
                 />
