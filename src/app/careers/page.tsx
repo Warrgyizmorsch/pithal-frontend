@@ -2794,7 +2794,7 @@ export default function CareersPage() {
                 },
                 {
                   title: "Industry Experience",
-                  img: "/careerimg/Industry experiendce.jpg",
+                  img: "/careerimg/industry experiendce.jpg",
                   icon: (
                     <path
                       strokeLinecap="round"

@@ -65,6 +65,7 @@ export function RelatedMachines({
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(true);
 
   const displayMachines = useMemo<RelatedMachine[]>(() => {
     return homeProducts.map((product) => {
@@ -108,20 +109,38 @@ export function RelatedMachines({
     return () => window.removeEventListener("resize", updateVisibleCards);
   }, []);
 
-  const windowCount = Math.max(1, displayMachines.length - visibleCards + 1);
-  const safeActiveIndex = Math.min(activeIndex, Math.max(0, windowCount - 1));
+  const originalLength = displayMachines.length;
+  const extendedMachines = useMemo(() => [...displayMachines, ...displayMachines], [displayMachines]);
 
   useEffect(() => {
-    if (displayMachines.length <= visibleCards) {
-      return;
-    }
+    if (originalLength <= visibleCards) return;
 
     const timer = window.setInterval(() => {
-      setActiveIndex((previousIndex) => (previousIndex + 1) % windowCount);
+      setIsTransitioning(true);
+      setActiveIndex((prev) => prev + 1);
     }, 5000);
 
     return () => window.clearInterval(timer);
-  }, [displayMachines.length, visibleCards, windowCount]);
+  }, [originalLength, visibleCards]);
+
+  useEffect(() => {
+    if (activeIndex >= originalLength) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(false);
+        setActiveIndex((prev) => prev - originalLength);
+      }, 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [activeIndex, originalLength]);
+
+  useEffect(() => {
+    if (!isTransitioning) {
+      const frame = requestAnimationFrame(() => {
+        setIsTransitioning(true);
+      });
+      return () => cancelAnimationFrame(frame);
+    }
+  }, [isTransitioning]);
 
   const renderIcon = (iconName: string) => {
     switch (iconName.toLowerCase()) {
@@ -145,15 +164,40 @@ export function RelatedMachines({
   };
 
   const goToPreviousSlide = () => {
-    setActiveIndex((previousIndex) => (previousIndex === 0 ? windowCount - 1 : previousIndex - 1));
+    if (activeIndex === 0) {
+      setIsTransitioning(false);
+      setActiveIndex(originalLength);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTransitioning(true);
+          setActiveIndex(originalLength - 1);
+        });
+      });
+    } else {
+      setIsTransitioning(true);
+      setActiveIndex((prev) => prev - 1);
+    }
   };
 
   const goToNextSlide = () => {
-    setActiveIndex((previousIndex) => (previousIndex + 1) % windowCount);
+    if (activeIndex >= originalLength) {
+      setIsTransitioning(false);
+      setActiveIndex(activeIndex - originalLength);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTransitioning(true);
+          setActiveIndex((prev) => prev + 1);
+        });
+      });
+    } else {
+      setIsTransitioning(true);
+      setActiveIndex((prev) => prev + 1);
+    }
   };
 
   const cardWidthClass = visibleCards === 1 ? "w-full" : visibleCards === 2 ? "w-full sm:w-1/2" : "w-full sm:w-1/2 xl:w-1/4";
-  const slideOffset = `${(safeActiveIndex * 100) / visibleCards}%`;
+  const slideOffset = `${(activeIndex * 100) / visibleCards}%`;
+  const safeDotIndex = activeIndex % originalLength;
 
   return (
     <section className={`bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] ${sectionPadding}`}>
@@ -188,7 +232,7 @@ export function RelatedMachines({
         </div>
 
         <div className="relative flex items-center">
-          {displayMachines.length > visibleCards && (
+          {originalLength > visibleCards && (
             <button
               aria-label="Show previous related products"
               className="absolute left-0 z-20 hidden h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-secondary shadow-[0_10px_25px_rgba(3,27,64,0.08)] transition hover:border-secondary hover:bg-secondary/5 lg:flex"
@@ -198,14 +242,14 @@ export function RelatedMachines({
             </button>
           )}
 
-          <div className="w-full">
+          <div className="w-full overflow-hidden py-6 -my-6">
             <div
-              className="flex will-change-transform transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              className={`flex will-change-transform ${isTransitioning ? "transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]" : ""}`}
               style={{ transform: `translateX(-${slideOffset})` }}
             >
-              {displayMachines.map((machine) => (
+              {extendedMachines.map((machine, idx) => (
                 <div
-                  key={`${machine.title}-${machine.href}`}
+                  key={`${machine.title}-${machine.href}-${idx}`}
                   className={`${cardWidthClass} shrink-0 px-2`}
                 >
                   <div className="group flex h-full flex-col justify-between rounded-3xl border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#fcfdff_100%)] p-5 shadow-[0_18px_45px_rgba(3,27,64,0.05)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-secondary/30 hover:shadow-[0_20px_55px_rgba(3,27,64,0.11)]">
@@ -249,7 +293,7 @@ export function RelatedMachines({
             </div>
           </div>
 
-          {displayMachines.length > visibleCards && (
+          {originalLength > visibleCards && (
             <button
               aria-label="Show next related products"
               className="absolute right-0 z-20 hidden h-11 w-11 translate-x-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-secondary shadow-[0_10px_25px_rgba(3,27,64,0.08)] transition hover:border-secondary hover:bg-secondary/5 lg:flex"
@@ -260,14 +304,17 @@ export function RelatedMachines({
           )}
         </div>
 
-        {displayMachines.length > visibleCards && (
+        {originalLength > visibleCards && (
           <div className="mt-10 flex justify-center gap-2.5">
-            {Array.from({ length: windowCount }).map((_, index) => (
+            {Array.from({ length: originalLength }).map((_, index) => (
               <button
                 aria-label={`Go to related products slide ${index + 1}`}
                 key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`h-2.5 w-2.5 rounded-full border-0 p-0 transition ${index === safeActiveIndex ? "bg-secondary" : "bg-slate-300"}`}
+                onClick={() => {
+                  setIsTransitioning(true);
+                  setActiveIndex(index);
+                }}
+                className={`h-2.5 w-2.5 rounded-full border-0 p-0 transition ${index === safeDotIndex ? "bg-secondary" : "bg-slate-300"}`}
               />
             ))}
           </div>
