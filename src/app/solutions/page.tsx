@@ -332,7 +332,7 @@ const engineeringServices = [
     step: "04",
     title: "CAPACITY PLANNING",
     desc: "Data-driven capacity calculations to ensure your plant meets today's needs and tomorrow's growth.",
-    image: "/solutionspage/our services , 1.png",
+    image: "/solutionspage/our services 1.png",
   },
   {
     step: "05",
