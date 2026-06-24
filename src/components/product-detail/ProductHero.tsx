@@ -45,7 +45,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
       <div className="absolute left-[48%] top-0 hidden h-[3px] w-[22%] origin-left -rotate-[28deg] bg-secondary lg:block" />
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-secondary/45" />
 
-      <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:justify-between lg:py-8 mx-auto">
+      <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:justify-between lg:py-8 mx-auto lg:mx-0">
         <div className="max-w-[780px] flex flex-col items-center lg:items-start text-center lg:text-left">
           <HeroNavigation
             current={currentLabel}

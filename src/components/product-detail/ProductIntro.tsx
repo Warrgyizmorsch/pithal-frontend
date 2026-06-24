@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Container } from "@/components/common/Container";
 import type { IntroCalloutPosition, ProductIntroData } from "@/data/products/productDetailTypes";
@@ -6,31 +9,25 @@ import { ProductCtaButton } from "./ProductCtaButton";
 import { ProductIcon } from "./iconMap";
 import { sectionPadding } from "./styles";
 
+const defaultCardClass = "left-[6%] top-[8%]";
+const defaultDotClass = "left-[34%] top-[22%]";
+
 const calloutCardPositions: Record<IntroCalloutPosition, string> = {
-  bottomCenter: "left-[43%] top-[80%]",
-  leftBottom: "left-[12%] top-[58%]",
-  leftTop: "left-[9%] top-[10%]",
-  rightBottom: "right-[3%] top-[62%]",
-  rightMiddle: "right-[4%] top-[39%]",
-  rightTop: "right-[6%] top-[10%]",
+  bottomCenter: "left-[38%] top-[78%]",
+  leftBottom: "left-[8%] top-[60%]",
+  leftTop: "left-[6%] top-[8%]",
+  rightBottom: "right-[2%] top-[61%]",
+  rightMiddle: "right-[4%] top-[37%]",
+  rightTop: "right-[3%] top-[8%]",
 };
 
 const calloutDotPositions: Record<IntroCalloutPosition, string> = {
-  bottomCenter: "left-[44%] top-[71%]",
-  leftBottom: "left-[31%] top-[54%]",
-  leftTop: "left-[37%] top-[25%]",
+  bottomCenter: "left-[45%] top-[71%]",
+  leftBottom: "left-[28%] top-[55%]",
+  leftTop: "left-[34%] top-[22%]",
   rightBottom: "right-[19%] top-[58%]",
-  rightMiddle: "right-[31%] top-[48%]",
-  rightTop: "right-[25%] top-[25%]",
-};
-
-const calloutLinePositions: Record<IntroCalloutPosition, string> = {
-  bottomCenter: "left-[45.5%] top-[73%] h-[72px] border-l",
-  leftBottom: "left-[19%] top-[55%] h-px w-[110px] border-t",
-  leftTop: "left-[26%] top-[19%] h-[70px] w-[120px] border-b border-l",
-  rightBottom: "right-[15.5%] top-[60%] h-[82px] w-[82px] border-r border-t",
-  rightMiddle: "right-[14%] top-[49%] h-px w-[130px] border-t",
-  rightTop: "right-[17%] top-[20%] h-[70px] w-[92px] border-b border-r",
+  rightMiddle: "right-[29%] top-[47%]",
+  rightTop: "right-[24%] top-[23%]",
 };
 
 const introButtonClass = "min-h-12 w-full sm:w-auto sm:min-w-[190px] justify-center sm:justify-between gap-3 rounded-md px-5 text-[11px] font-black uppercase tracking-wider";
@@ -46,7 +43,137 @@ function OverviewEyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
+interface LinePath {
+  label: string;
+  path: string;
+}
+
 export function ProductIntro({ data }: { data: ProductIntroData }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const dotRefs = useRef<Map<string, HTMLSpanElement>>(new Map());
+  const cardRefs = useRef<Map<string, HTMLElement>>(new Map());
+  const [lines, setLines] = useState<LinePath[]>([]);
+
+  const updateLines = () => {
+    if (!containerRef.current) return;
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const newLines: LinePath[] = [];
+
+    data.callouts.forEach((callout) => {
+      const dotEl = dotRefs.current.get(callout.label);
+      const cardEl = cardRefs.current.get(callout.label);
+
+      if (dotEl && cardEl) {
+        const dotRect = dotEl.getBoundingClientRect();
+        const cardRect = cardEl.getBoundingClientRect();
+
+        // Calculate dot center relative to container
+        const dotX = dotRect.left - containerRect.left + dotRect.width / 2;
+        const dotY = dotRect.top - containerRect.top + dotRect.height / 2;
+
+        // Calculate card bounds relative to container
+        const cardLeft = cardRect.left - containerRect.left;
+        const cardRight = cardRect.right - containerRect.left;
+        const cardTop = cardRect.top - containerRect.top;
+        const cardBottom = cardRect.bottom - containerRect.top;
+        const cardWidth = cardRect.width;
+        const cardHeight = cardRect.height;
+
+        // Determine connection side (use override if available)
+        let side: "left" | "right" | "top" | "bottom";
+
+        if (callout.layout?.connectionSide) {
+          side = callout.layout.connectionSide;
+        } else {
+          // Automatic gap-based heuristic to find the closest edge of the card to the dot
+          let hGap = 0;
+          if (dotX < cardLeft) {
+            hGap = cardLeft - dotX;
+          } else if (dotX > cardRight) {
+            hGap = dotX - cardRight;
+          }
+
+          let vGap = 0;
+          if (dotY < cardTop) {
+            vGap = cardTop - dotY;
+          } else if (dotY > cardBottom) {
+            vGap = dotY - cardBottom;
+          }
+
+          if (hGap >= vGap) {
+            side = dotX < cardLeft ? "left" : "right";
+          } else {
+            side = dotY < cardTop ? "top" : "bottom";
+          }
+        }
+
+        // Calculate connection point on card
+        let targetX = 0;
+        let targetY = 0;
+
+        if (side === "left") {
+          targetX = cardLeft;
+          targetY = cardTop + cardHeight / 2;
+        } else if (side === "right") {
+          targetX = cardRight;
+          targetY = cardTop + cardHeight / 2;
+        } else if (side === "top") {
+          targetX = cardLeft + cardWidth / 2;
+          targetY = cardTop;
+        } else {
+          // bottom
+          targetX = cardLeft + cardWidth / 2;
+          targetY = cardBottom;
+        }
+
+        // Draw path (elbow or straight)
+        let path = "";
+        const pathType = callout.layout?.pathType ?? "elbow";
+
+        if (pathType === "straight") {
+          path = `M ${dotX} ${dotY} L ${targetX} ${targetY}`;
+        } else {
+          // Elbow path:
+          // If we enter horizontally (left/right), go vertically first, then horizontally
+          if (side === "left" || side === "right") {
+            path = `M ${dotX} ${dotY} V ${targetY} H ${targetX}`;
+          } else {
+            // If we enter vertically (top/bottom), go horizontally first, then vertically
+            path = `M ${dotX} ${dotY} H ${targetX} V ${targetY}`;
+          }
+        }
+
+        newLines.push({ label: callout.label, path });
+      }
+    });
+
+    setLines(newLines);
+  };
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    updateLines();
+
+    const observer = new ResizeObserver(() => {
+      updateLines();
+    });
+    observer.observe(containerRef.current);
+
+    const t1 = setTimeout(updateLines, 100);
+    const t2 = setTimeout(updateLines, 500);
+    const t3 = setTimeout(updateLines, 1000);
+    const t4 = setTimeout(updateLines, 2000);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+    };
+  }, [data]);
+
   return (
     <section className={`relative overflow-hidden bg-white ${sectionPadding}`}>
       <Container className="max-w-[1480px]">
@@ -103,7 +230,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
           </div>
 
           <div>
-            <div className="relative min-h-[320px] sm:min-h-[520px] lg:min-h-[680px]">
+            <div ref={containerRef} className="relative min-h-[320px] sm:min-h-[520px] lg:min-h-[680px]">
               <div className="absolute inset-0 border-l-2 border-secondary bg-bg-light [clip-path:polygon(8%_0,100%_0,100%_88%,92%_100%,16%_100%,0_86%,0_16%)]" />
               <div className="absolute inset-0 opacity-30 [clip-path:polygon(8%_0,100%_0,100%_88%,92%_100%,16%_100%,0_86%,0_16%)]">
                 <Image
@@ -124,35 +251,61 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
                 src={data.image.src}
               />
 
-              {data.callouts.map((callout) => (
-                <div key={callout.label}>
-                  <span
-                    aria-hidden
-                    className={cn(
-                      "absolute z-10 hidden border-dashed border-secondary/60 lg:block",
-                      calloutLinePositions[callout.position],
-                    )}
+              <svg className="absolute inset-0 z-10 hidden h-full w-full pointer-events-none lg:block">
+                {lines.map((line) => (
+                  <path
+                    key={line.label}
+                    d={line.path}
+                    fill="none"
+                    stroke="var(--secondary)"
+                    strokeWidth="1.5"
+                    strokeDasharray="4 4"
+                    className="opacity-60"
                   />
-                  <span
-                    aria-hidden
-                    className={cn(
-                      "absolute z-20 hidden h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-secondary text-white shadow-md lg:flex",
-                      calloutDotPositions[callout.position],
-                    )}
-                  >
-                    <ProductIcon name="plus" size={13} strokeWidth={2.5} />
-                  </span>
-                  <article
-                    className={cn(
-                      "absolute z-20 hidden w-[160px] rounded-xl border border-border bg-white/95 p-3 shadow-[0_12px_28px_rgba(3,27,64,0.1)] lg:block",
-                      calloutCardPositions[callout.position],
-                    )}
-                  >
-                    <h3 className="text-[11px] font-black uppercase tracking-[0.03em] text-primary">{callout.label}</h3>
-                    <p className="mt-2 text-[12px] leading-5 text-text-dark">{callout.text}</p>
-                  </article>
-                </div>
-              ))}
+                ))}
+              </svg>
+
+              {data.callouts.map((callout) => {
+                const dotClass = callout.layout?.dotClass ?? (callout.position ? calloutDotPositions[callout.position] : defaultDotClass);
+                const cardClass = callout.layout?.cardClass ?? (callout.position ? calloutCardPositions[callout.position] : defaultCardClass);
+
+                return (
+                  <div key={callout.label}>
+                    <span
+                      ref={(el) => {
+                        if (el) {
+                          dotRefs.current.set(callout.label, el);
+                        } else {
+                          dotRefs.current.delete(callout.label);
+                        }
+                      }}
+                      aria-hidden
+                      className={cn(
+                        "absolute z-20 hidden h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-secondary text-white shadow-md lg:flex",
+                        dotClass,
+                      )}
+                    >
+                      <ProductIcon name="plus" size={13} strokeWidth={2.5} />
+                    </span>
+                    <article
+                      ref={(el) => {
+                        if (el) {
+                          cardRefs.current.set(callout.label, el);
+                        } else {
+                          cardRefs.current.delete(callout.label);
+                        }
+                      }}
+                      className={cn(
+                        "absolute z-20 hidden w-[160px] rounded-xl border border-border bg-white/95 p-3 shadow-[0_12px_28px_rgba(3,27,64,0.1)] lg:block",
+                        cardClass,
+                      )}
+                    >
+                      <h3 className="text-[11px] font-black uppercase tracking-[0.03em] text-primary">{callout.label}</h3>
+                      <p className="mt-2 text-[12px] leading-5 text-text-dark">{callout.text}</p>
+                    </article>
+                  </div>
+                );
+              })}
             </div>
 
             {/* Mobile annotations grid */}

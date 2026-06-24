@@ -68,6 +68,14 @@ export type IntroCalloutPosition =
   | "rightMiddle"
   | "rightTop";
 
+export type IntroCalloutLayout = {
+  lineClass?: string;
+  dotClass?: string;
+  cardClass?: string;
+  connectionSide?: 'left' | 'right' | 'top' | 'bottom';
+  pathType?: 'elbow' | 'straight';
+};
+
 export type ProductIntroData = {
   eyebrow: string;
   title: string;
@@ -83,7 +91,8 @@ export type ProductIntroData = {
   callouts: Array<{
     label: string;
     text: string;
-    position: IntroCalloutPosition;
+    position?: IntroCalloutPosition;
+    layout?: IntroCalloutLayout;
   }>;
   applications: {
     eyebrow: string;

@@ -66,11 +66,56 @@ export const primeUltraRockData: ProductDetailData = {
       { title: "Smart Automation", text: "PITHAL SMART CRUSH™ for remote diagnostics", icon: "settings" },
     ],
     callouts: [
-      { label: "High Stroke", text: "Constant high stroke for better feed acceptance", position: "leftTop" },
-      { label: "Integrated Scalper", text: "Removes fines before crushing to reduce wear", position: "rightTop" },
-      { label: "Hydraulic CSS", text: "Automatic adjustment for consistent output", position: "rightMiddle" },
-      { label: "Predictive Maint.", text: "Sensors for liner wear and vibration monitoring", position: "rightBottom" },
-      { label: "Robust Frame", text: "Designed for underground and space-constrained mines", position: "bottomCenter" },
+      {
+        label: "High Stroke",
+        text: "Constant high stroke for better feed acceptance",
+        position: "leftTop",
+        layout: {
+          dotClass: "left-[32%] top-[20%]",
+          lineClass: "left-[16%] top-[8%] h-[90px] w-[110px] border-b border-l",
+          cardClass: "left-[1%] top-[2%] w-[172px]",
+        },
+      },
+      {
+        label: "Integrated Scalper",
+        text: "Removes fines before crushing to reduce wear",
+        position: "rightTop",
+        layout: {
+          dotClass: "right-[28%] top-[12%]",
+          lineClass: "right-[8%] top-[4%] h-[58px] w-[136px] border-b border-r",
+          cardClass: "right-[1%] top-[2%] w-[172px]",
+        },
+      },
+      {
+        label: "Hydraulic CSS",
+        text: "Automatic adjustment for consistent output",
+        position: "rightMiddle",
+        layout: {
+          dotClass: "right-[30%] top-[44%]",
+          lineClass: "right-[8%] top-[38%] h-px w-[150px] border-t",
+          cardClass: "right-[1%] top-[30%] w-[176px]",
+        },
+      },
+      {
+        label: "Predictive Maint.",
+        text: "Sensors for liner wear and vibration monitoring",
+        position: "rightBottom",
+        layout: {
+          dotClass: "right-[18%] top-[58%]",
+          lineClass: "right-[8%] top-[52%] h-[50px] w-[66px] border-r border-t",
+          cardClass: "right-[1%] top-[62%] w-[176px]",
+        },
+      },
+      {
+        label: "Robust Frame",
+        text: "Designed for underground and space-constrained mines",
+        position: "bottomCenter",
+        layout: {
+          dotClass: "left-[40%] top-[80%]",
+          lineClass: "left-[38%] top-[82%] h-[46px] border-l",
+          cardClass: "left-[26%] top-[86%] w-[180px]",
+        },
+      },
     ],
     applications: {
       eyebrow: "Target Industries",

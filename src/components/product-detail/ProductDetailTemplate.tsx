@@ -22,7 +22,7 @@ export function ProductDetailTemplate({ data }: { data: ProductDetailData }) {
       <IndustryApplications industries={data.industries} section={data.industriesSection} />
       <ProcessTimeline section={data.processSection} steps={data.processSteps} />
       <VideoSection data={data.videoSection} />
-      <RelatedMachines machines={data.relatedMachines} section={data.relatedSection} />
+      <RelatedMachines section={data.relatedSection} />
       <ContactSolutionSection data={data.contactSection} />
       <ResourcesSection resources={data.resources} section={data.resourcesSection} supportFeatures={data.supportFeatures} />
     </main>

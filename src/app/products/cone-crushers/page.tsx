@@ -37,7 +37,7 @@ export default function ConeCrusherProductPage() {
         <IndustryApplications industries={coneCrusherData.industries} section={coneCrusherData.industriesSection} />
         <ProcessTimeline section={coneCrusherData.processSection} steps={coneCrusherData.processSteps} />
         <VideoSection data={coneCrusherData.videoSection} />
-        <RelatedMachines machines={coneCrusherData.relatedMachines} section={coneCrusherData.relatedSection} />
+        <RelatedMachines section={coneCrusherData.relatedSection} />
         <ContactSolutionSection data={coneCrusherData.contactSection} />
         <ResourcesSection resources={coneCrusherData.resources} section={coneCrusherData.resourcesSection} supportFeatures={coneCrusherData.supportFeatures} />
       </main>

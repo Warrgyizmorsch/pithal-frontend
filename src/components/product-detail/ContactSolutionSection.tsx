@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { User, Building, Globe, Clipboard, Gauge, ShieldCheck, Phone, ArrowRight, Settings, ClipboardList, TrendingUp, Headphones, CheckCircle2, AlertCircle } from "lucide-react";
 import { Container } from "@/components/common/Container";
@@ -67,7 +68,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
       } else {
         setError(data.error || "Failed to submit request. Please try again.");
       }
-    } catch (err) {
+    } catch {
       setError("Something went wrong. Please check your connection and try again.");
     } finally {
       setLoading(false);
@@ -96,38 +97,36 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
           style={{
             backgroundColor: "#ffffff",
             border: "1px solid rgba(229, 231, 235, 0.8)",
-            borderRadius: "24px",
-            boxShadow: "0 20px 45px rgba(3, 27, 64, 0.05)",
+            borderRadius: "28px",
+            boxShadow: "0 25px 70px rgba(3, 27, 64, 0.06)",
           }}
-          className="px-5 py-8 sm:px-10 sm:py-12"
+          className="overflow-hidden bg-[linear-gradient(135deg,#ffffff_0%,#f9fbff_100%)] px-4 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10"
         >
-          <div className="grid gap-12 lg:grid-cols-[1.12fr_0.88fr] items-start">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         {/* Left Column: Information, Benefits & Image Banner */}
-        <div className="flex flex-col h-full">
+        <div className="flex min-w-0 flex-col h-full">
           {/* Section Header with line and slashes */}
-          <div className="flex items-center gap-1.5 w-full mb-5">
-            {/* Cogwheel icon */}
-            <span className="inline-flex items-center text-secondary shrink-0">
+          <div className="mb-5 flex w-full flex-wrap items-center justify-center gap-1.5 sm:justify-start">
+            <span className="inline-flex shrink-0 items-center rounded-full border border-secondary/15 bg-secondary/10 p-2 text-secondary">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="3" />
                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
               </svg>
             </span>
 
-            <span className="text-base sm:text-lg font-black uppercase text-secondary tracking-widest ml-1 font-heading">
+            <span className="ml-1 font-heading text-base font-black uppercase tracking-[0.25em] text-secondary sm:text-lg">
               {data.eyebrow}
             </span>
 
-            {/* 3 orange accent bars */}
-            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg] ml-2" />
-            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
-            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
-            
-            <div className="hidden sm:block flex-1 h-[1.5px] bg-secondary/25" />
+            <span className="ml-2 hidden h-[7px] w-[3.5px] -skew-x-[30deg] bg-secondary sm:inline-block" />
+            <span className="hidden h-[7px] w-[3.5px] -skew-x-[30deg] bg-secondary sm:inline-block" />
+            <span className="hidden h-[7px] w-[3.5px] -skew-x-[30deg] bg-secondary sm:inline-block" />
+
+            <div className="hidden h-[1.5px] flex-1 bg-secondary/25 sm:block" />
           </div>
 
           <h2 
-            className="headline text-primary" 
+            className="headline text-center text-primary sm:text-left" 
             style={{ 
               fontSize: "clamp(2rem, 5.5vw, 3.8rem)", 
               lineHeight: "0.95", 
@@ -139,23 +138,22 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
             {data.title}<br />
             <span style={{ color: "#fa5902" }}>{data.highlight}</span>
           </h2>
-          <p className="mt-5 text-sm sm:text-base leading-7 text-text-muted max-w-xl" style={{ lineHeight: "1.7" }}>
+          <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-7 text-text-muted sm:mx-0 sm:text-left sm:text-base" style={{ lineHeight: "1.7" }}>
             {data.description}
           </p>
 
-          {/* Benefits Grid */}
-          <div className="mt-8 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {data.benefits.map((benefit) => (
-              <article key={benefit.title} className="flex flex-col gap-2.5">
-                <div className="flex items-center gap-2">
-                  <span style={{ color: "#fa5902" }}>
+              <article key={benefit.title} className="flex w-full flex-col gap-2.5 rounded-2xl border border-slate-200/80 bg-slate-50/80 p-4 shadow-sm">
+                <div className="flex items-center gap-1">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                     {renderBenefitIcon(benefit.icon)}
                   </span>
                   <h4 
-                    className="text-primary font-bold uppercase" 
+                    className="font-bold w-[70%] uppercase text-primary" 
                     style={{ 
-                      fontSize: "0.72rem", 
-                      letterSpacing: "0.06em",
+                      fontSize: "0.70rem", 
+                      letterSpacing: "0.04em",
                       lineHeight: "1.2"
                     }}
                   >
@@ -171,9 +169,9 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
 
           {/* Large Image Showcase with overlay Contact Strip Banner */}
           <div 
-            className="relative w-full mt-8 h-[320px] overflow-hidden flex items-end p-4 sm:p-5" 
+            className="relative mt-8 h-[220px] w-full overflow-hidden p-3 sm:h-[260px] sm:p-4 lg:h-[320px] lg:p-5" 
             style={{ 
-              borderRadius: "20px",
+              borderRadius: "22px",
               boxShadow: "0 15px 35px rgba(3, 27, 64, 0.05)",
               backgroundImage: `url(${CONTACT_SECTION_BACKGROUND})`,
               backgroundSize: "cover",
@@ -181,15 +179,9 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
               backgroundRepeat: "no-repeat"
             }}
           >
-            {/* Contact Strip Banner overlay floating at the bottom */}
-            <div 
-              className="flex flex-col sm:flex-row sm:items-center justify-between p-5 text-white gap-4 w-full relative z-10"
-              style={{
-                backgroundColor: "#031b40",
-                borderRadius: "16px",
-                boxShadow: "0 12px 30px rgba(3, 27, 64, 0.3)",
-                overflow: "hidden"
-              }}
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,27,64,0.12)_0%,rgba(3,27,64,0.64)_100%)]" />
+            <div
+              className="absolute bottom-3 left-3 right-3 z-20 flex w-auto flex-col gap-3 rounded-[28px] border border-white/10 bg-[#031b40]/95 p-3 text-white shadow-[0_14px_35px_rgba(3,27,64,0.35)] backdrop-blur-xl sm:bottom-4 sm:left-4 sm:right-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:p-4"
             >
               <div 
                 className="absolute text-white pointer-events-none" 
@@ -214,10 +206,10 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 </svg>
               </div>
 
-              <div className="flex items-center gap-4 flex-1">
+              <div className="flex flex-1 items-center gap-3 sm:gap-4">
                 <div 
-                  className="flex items-center justify-center rounded-full bg-white text-secondary"
-                  style={{ width: 44, height: 44, minWidth: 44, minHeight: 44 }}
+                  className="flex shrink-0 items-center justify-center rounded-full bg-white/95 text-secondary"
+                  style={{ width: 50, height: 50, minWidth: 50, minHeight: 50 }}
                 >
                   <Phone size={20} fill="#fa5902" stroke="none" />
                 </div>
@@ -231,9 +223,9 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 </div>
               </div>
 
-              <div style={{ width: "1px", height: "36px", backgroundColor: "rgba(255, 255, 255, 0.15)", margin: "0 12px" }} className="hidden sm:block" />
+              <div style={{ width: "1px", height: "34px", backgroundColor: "rgba(255, 255, 255, 0.15)", margin: "0 10px" }} className="hidden sm:block" />
 
-              <div className="flex flex-col sm:items-end justify-center shrink-0">
+              <div className="flex w-full flex-col items-start justify-center shrink-0 sm:w-auto sm:items-end">
                 <span style={{ fontSize: "0.7rem", color: "rgba(255, 255, 255, 0.7)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
                   Call Us Now
                 </span>
@@ -256,15 +248,9 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
 
         {/* Right Column: Premium Form Card */}
         <div 
-          className="bg-white p-6 sm:p-8"
-          style={{
-            border: "1px solid rgba(229, 231, 235, 0.8)",
-            borderRadius: "16px",
-            boxShadow: "0 20px 45px rgba(3, 27, 64, 0.06)"
-          }}
+          className="w-full h-full min-w-0 rounded-[20px] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#fdfefe_100%)] p-4 shadow-[0_20px_45px_rgba(3,27,64,0.06)] sm:p-7 lg:p-8"
         >
-          {/* Card Header with Construction Engineer Icon */}
-          <div className="flex items-start gap-4">
+          <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-start sm:gap-4">
             <div 
               className="flex shrink-0 items-center justify-center rounded-xl relative"
               style={{
@@ -274,13 +260,15 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 color: "#ffffff"
               }}
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 10a7 7 0 0 1 14 0h-14z" fill="rgba(255,255,255,0.1)" />
-                <path d="M3 10h18" strokeWidth="2.5" />
-                <path d="M12 3v7" />
-                <path d="M9 13.5v1.5a3 3 0 0 0 6 0v-1.5" />
-                <path d="M5 20a5 5 0 0 1 10 0H5z" />
-              </svg>
+              <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-xl">
+                <Image
+                  src="/icons/contact-cta-product.png"
+                  alt="Contact CTA icon"
+                  width={56}
+                  height={56}
+                  className="h-full w-full object-contain p-1"
+                />
+              </div>
               <div 
                 className="absolute flex items-center justify-center rounded-full bg-[#031b40]"
                 style={{
@@ -299,8 +287,11 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
               </div>
             </div>
             <div>
+              <div className="inline-flex items-center rounded-full border border-secondary/15 bg-secondary/10 px-3 py-1 text-[0.66rem] font-black uppercase tracking-[0.2em] text-secondary">
+                Request a quote
+              </div>
               <h3 
-                className="text-primary uppercase font-bold" 
+                className="mt-3 font-bold uppercase text-primary" 
                 style={{ 
                   fontSize: "0.95rem", 
                   fontWeight: 800, 
@@ -320,7 +311,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
           <div style={{ width: "100%", height: "1px", backgroundColor: "#fa5902", opacity: 0.15, marginTop: "16px", marginBottom: "20px" }} />
 
           {/* Form */}
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form className="space-y-3 flex flex-col gap-3 sm:space-y-4" onSubmit={handleSubmit}>
             {/* Full Name Input */}
             <div 
               className="flex items-stretch"
@@ -329,20 +320,20 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 borderRadius: "8px",
                 backgroundColor: "#ffffff",
                 overflow: "hidden",
-                height: "64px"
+                minHeight: "64px"
               }}
             >
               <div 
                 className="flex shrink-0 items-center justify-center bg-[#f8fafc]"
                 style={{
-                  width: "52px",
+                  width: "48px",
                   color: "#9ca3af",
                   borderRight: "1.5px solid #e5e7eb"
                 }}
               >
                 <User size={20} strokeWidth={2.2} />
               </div>
-              <div className="flex-1 flex flex-col justify-center px-4">
+              <div className="flex-1 flex flex-col  justify-center px-3 sm:px-4">
                 <label style={{ fontSize: "8.5px", fontWeight: 800, color: "#6b7280", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                   FULL NAME <span style={{ color: "#fa5902" }}>*</span>
                 </label>
@@ -367,20 +358,20 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 borderRadius: "8px",
                 backgroundColor: "#ffffff",
                 overflow: "hidden",
-                height: "64px"
+                minHeight: "64px"
               }}
             >
               <div 
                 className="flex shrink-0 items-center justify-center bg-[#f8fafc]"
                 style={{
-                  width: "52px",
+                  width: "48px",
                   color: "#9ca3af",
                   borderRight: "1.5px solid #e5e7eb"
                 }}
               >
                 <Building size={20} strokeWidth={2.2} />
               </div>
-              <div className="flex-1 flex flex-col justify-center px-4">
+              <div className="flex-1 flex flex-col justify-center px-3 sm:px-4">
                 <label style={{ fontSize: "8.5px", fontWeight: 800, color: "#6b7280", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                   COMPANY NAME <span style={{ color: "#fa5902" }}>*</span>
                 </label>
@@ -405,20 +396,20 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 borderRadius: "8px",
                 backgroundColor: "#ffffff",
                 overflow: "hidden",
-                height: "64px"
+                minHeight: "64px"
               }}
             >
               <div 
                 className="flex shrink-0 items-center justify-center bg-[#f8fafc]"
                 style={{
-                  width: "52px",
+                  width: "48px",
                   color: "#9ca3af",
                   borderRight: "1.5px solid #e5e7eb"
                 }}
               >
                 <Globe size={20} strokeWidth={2.2} />
               </div>
-              <div className="flex-1 flex flex-col justify-center px-4 relative">
+              <div className="flex-1 flex flex-col justify-center px-3 sm:px-4 relative">
                 <label style={{ fontSize: "8.5px", fontWeight: 800, color: "#6b7280", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                   COUNTRY <span style={{ color: "#fa5902" }}>*</span>
                 </label>
@@ -449,19 +440,19 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
 
             {/* Requirement / Application Textarea */}
             <div 
-              className="flex items-start"
+              className="flex items-start transition-all duration-200 focus-within:border-secondary/50 focus-within:shadow-[0_0_0_3px_rgba(250,89,2,0.12)]"
               style={{
                 border: "1.5px solid #e5e7eb",
-                borderRadius: "8px",
+                borderRadius: "10px",
                 backgroundColor: "#ffffff",
                 overflow: "hidden",
-                height: "100px"
+                minHeight: "100px"
               }}
             >
               <div 
                 className="flex shrink-0 items-center justify-center bg-[#f8fafc]"
                 style={{
-                  width: "52px",
+                  width: "48px",
                   height: "98px",
                   color: "#9ca3af",
                   borderRight: "1.5px solid #e5e7eb"
@@ -469,7 +460,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
               >
                 <Clipboard size={20} strokeWidth={2.2} />
               </div>
-              <div className="flex-1 flex flex-col justify-center px-4 py-2">
+              <div className="flex-1 flex flex-col justify-center px-3 py-2 sm:px-4">
                 <label style={{ fontSize: "8.5px", fontWeight: 800, color: "#6b7280", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                   {data.form.dropdown.label} <span style={{ color: "#fa5902" }}>*</span>
                 </label>
@@ -493,20 +484,20 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 borderRadius: "8px",
                 backgroundColor: "#ffffff",
                 overflow: "hidden",
-                height: "64px"
+                minHeight: "64px"
               }}
             >
               <div 
                 className="flex shrink-0 items-center justify-center bg-[#f8fafc]"
                 style={{
-                  width: "52px",
+                  width: "48px",
                   color: "#9ca3af",
                   borderRight: "1.5px solid #e5e7eb"
                 }}
               >
                 <Gauge size={20} strokeWidth={2.2} />
               </div>
-              <div className="flex-1 flex flex-col justify-center px-4">
+              <div className="flex-1 flex flex-col justify-center px-3 sm:px-4">
                 <label style={{ fontSize: "8.5px", fontWeight: 800, color: "#6b7280", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                   {data.form.textarea.label} <span style={{ color: "#fa5902" }}>*</span>
                 </label>
@@ -528,7 +519,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
 
             {/* Security Notice */}
             <div 
-              className="flex items-center gap-3"
+              className="flex flex-col items-start gap-3 sm:flex-row sm:items-center"
               style={{
                 border: "1.5px solid rgba(9, 42, 92, 0.05)",
                 borderRadius: "8px",
@@ -562,7 +553,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
             <Button 
               type="submit"
               disabled={loading}
-              className="w-full min-h-[3.6rem] rounded-lg px-5 flex items-center justify-start gap-4 disabled:opacity-50"
+              className="w-full min-h-[3.6rem] rounded-2xl px-4 py-3 flex flex-col items-center justify-center gap-3 sm:flex-row sm:justify-start sm:gap-4 disabled:opacity-50"
               variant="primary"
             >
               <div 
@@ -572,7 +563,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 <ArrowRight size={18} strokeWidth={3} className="text-secondary" />
               </div>
               
-              <div style={{ textAlign: "left", textTransform: "none", letterSpacing: "normal" }}>
+              <div className="text-center sm:text-left" style={{ textTransform: "none", letterSpacing: "normal" }}>
                 <div className="font-extrabold uppercase text-white" style={{ fontSize: "0.9rem", letterSpacing: "0.08em", lineHeight: 1.2 }}>
                   {loading ? "Submitting..." : data.form.button}
                 </div>

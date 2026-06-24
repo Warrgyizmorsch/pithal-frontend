@@ -3,7 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { Container } from "@/components/common/Container";
+import { products as homeProducts } from "@/data/homeData";
 import type { RelatedMachine, SectionCopy } from "@/data/products/productDetailTypes";
 import { sectionPadding } from "./styles";
 
@@ -58,11 +60,69 @@ const jawIcon = (
 
 export function RelatedMachines({
   section,
-  machines,
 }: {
   section: SectionCopy;
-  machines: RelatedMachine[];
 }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(1);
+
+  const displayMachines = useMemo<RelatedMachine[]>(() => {
+    return homeProducts.map((product) => {
+      const normalizedTitle = product.title.toLowerCase();
+      let icon = "cone";
+
+      if (normalizedTitle.includes("jaw")) icon = "jaw";
+      else if (normalizedTitle.includes("vsi")) icon = "vsi";
+      else if (normalizedTitle.includes("screen")) icon = "screen";
+      else if (normalizedTitle.includes("conveyor")) icon = "conveyor";
+      else if (normalizedTitle.includes("bucket")) icon = "feeder";
+      else if (normalizedTitle.includes("complete")) icon = "settings";
+      else if (normalizedTitle.includes("ultrarock")) icon = "cone";
+
+      return {
+        title: product.title,
+        description: product.description,
+        image: { src: product.image, alt: product.title },
+        category: product.title,
+        icon,
+        href: product.href,
+        actionLabel: "VIEW DETAILS",
+      };
+    });
+  }, []);
+
+  useEffect(() => {
+    const updateVisibleCards = () => {
+      if (window.innerWidth >= 1280) {
+        setVisibleCards(4);
+      } else if (window.innerWidth >= 640) {
+        setVisibleCards(2);
+      } else {
+        setVisibleCards(1);
+      }
+    };
+
+    updateVisibleCards();
+    window.addEventListener("resize", updateVisibleCards);
+
+    return () => window.removeEventListener("resize", updateVisibleCards);
+  }, []);
+
+  const windowCount = Math.max(1, displayMachines.length - visibleCards + 1);
+  const safeActiveIndex = Math.min(activeIndex, Math.max(0, windowCount - 1));
+
+  useEffect(() => {
+    if (displayMachines.length <= visibleCards) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((previousIndex) => (previousIndex + 1) % windowCount);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, [displayMachines.length, visibleCards, windowCount]);
+
   const renderIcon = (iconName: string) => {
     switch (iconName.toLowerCase()) {
       case "cone":
@@ -77,235 +137,141 @@ export function RelatedMachines({
         return screenIcon;
       case "conveyor":
         return conveyorIcon;
+      case "settings":
+        return coneIcon;
       default:
         return coneIcon;
     }
   };
 
+  const goToPreviousSlide = () => {
+    setActiveIndex((previousIndex) => (previousIndex === 0 ? windowCount - 1 : previousIndex - 1));
+  };
+
+  const goToNextSlide = () => {
+    setActiveIndex((previousIndex) => (previousIndex + 1) % windowCount);
+  };
+
+  const cardWidthClass = visibleCards === 1 ? "w-full" : visibleCards === 2 ? "w-full sm:w-1/2" : "w-full sm:w-1/2 xl:w-1/4";
+  const slideOffset = `${(safeActiveIndex * 100) / visibleCards}%`;
+
   return (
-    <section className={`bg-white ${sectionPadding}`}>
+    <section className={`bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] ${sectionPadding}`}>
       <Container>
-        {/* Section Header with line and slashes */}
-        <div className="flex items-center justify-center w-full mb-10">
-          <div className="hidden sm:block flex-1 h-[1.5px] bg-secondary/25" />
-          <div className="flex items-center gap-1.5 px-0 sm:px-6">
-            {/* 3 orange accent bars on left */}
-            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
-            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
-            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg] mr-1" />
-            
-            {/* Cogwheel icon */}
-            <span className="inline-flex items-center text-secondary shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <div className="mb-10 flex flex-col items-center text-center sm:mb-12">
+          <div className="mb-4 flex items-center justify-center gap-2 sm:gap-3">
+            <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
+            <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
+            <span className="mr-1 hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
+            <span className="inline-flex items-center text-secondary">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="3" />
                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
               </svg>
             </span>
-
-            <span className="text-base sm:text-lg font-black uppercase text-secondary tracking-widest ml-1 font-heading">
+            <span className="text-base font-black uppercase tracking-[0.2em] text-secondary sm:text-lg">
               {section.eyebrow}
             </span>
-
-            {/* 3 orange accent bars on right */}
-            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg] ml-2" />
-            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
-            <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
+            <span className="ml-1 hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
+            <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
+            <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
           </div>
-          <div className="hidden sm:block flex-1 h-[1.5px] bg-secondary/25" />
-        </div>
 
-        {/* Section Headline & Description */}
-        <div style={{ textAlign: "center", marginBottom: "56px" }}>
-          <h2 
-            className="headline text-primary" 
-            style={{ 
-              fontSize: "clamp(2.25rem, 6vw, 3.75rem)", 
-              lineHeight: "1.1", 
-              fontWeight: 900,
-              letterSpacing: "0.035em",
-              textTransform: "uppercase"
-            }}
-          >
-            {section.title}{" "}
-            <span className="text-secondary">{section.highlight}</span>
+          <h2 className="headline text-[clamp(2rem,5vw,3.25rem)] font-black uppercase leading-[1.08] tracking-[0.03em] text-primary">
+            {section.title} <span className="text-secondary">{section.highlight}</span>
           </h2>
           {section.subtitle && (
-            <p className="mx-auto mt-5 max-w-3xl text-base sm:text-lg leading-7 text-text-muted">
+            <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-text-muted sm:text-base">
               {section.subtitle}
             </p>
           )}
         </div>
 
-        {/* Cards Row Container */}
-        <div style={{ position: "relative", width: "100%", display: "flex", alignItems: "center" }}>
-          {/* Left Arrow Button */}
-          <button 
-            className="hidden lg:flex items-center justify-center shrink-0"
-            style={{
-              position: "absolute",
-              left: "-56px",
-              zIndex: 10,
-              width: 44,
-              height: 44,
-              backgroundColor: "#ffffff",
-              border: "1.5px solid #e5e7eb",
-              borderRadius: "8px",
-              color: "#fa5902",
-              boxShadow: "0 4px 12px rgba(3, 27, 64, 0.04)",
-              cursor: "pointer",
-              transition: "border-color 0.2s, background-color 0.2s"
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#fa5902";
-              e.currentTarget.style.backgroundColor = "rgba(250, 89, 2, 0.02)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "#e5e7eb";
-              e.currentTarget.style.backgroundColor = "#ffffff";
-            }}
-          >
-            <ChevronLeft size={22} strokeWidth={2.5} />
-          </button>
+        <div className="relative flex items-center">
+          {displayMachines.length > visibleCards && (
+            <button
+              aria-label="Show previous related products"
+              className="absolute left-0 z-20 hidden h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-secondary shadow-[0_10px_25px_rgba(3,27,64,0.08)] transition hover:border-secondary hover:bg-secondary/5 lg:flex"
+              onClick={goToPreviousSlide}
+            >
+              <ChevronLeft size={22} strokeWidth={2.5} />
+            </button>
+          )}
 
-          {/* Cards Grid */}
-          <div className="grid gap-5 w-full sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            {machines.map((machine) => (
-              <div 
-                key={machine.title} 
-                className="group flex flex-col justify-between p-5 bg-white transition-all duration-300"
-                style={{
-                  border: "1px solid rgba(229, 231, 235, 0.8)",
-                  borderRadius: "16px",
-                  boxShadow: "0 10px 25px rgba(3, 27, 64, 0.03)",
-                }}
-              >
-                <div>
-                  {/* Image container */}
-                  <div 
-                    className="relative w-full overflow-hidden flex items-center justify-center bg-white transition-transform duration-300 group-hover:scale-[1.03]"
-                    style={{
-                      height: 180,
-                      borderRadius: "12px",
-                    }}
-                  >
-                    <Image
-                      alt={machine.image.alt}
-                      className="object-contain"
-                      fill
-                      sizes="(max-width: 1023px) 50vw, 20vw"
-                      src={machine.image.src}
-                      style={{ padding: "8px" }}
-                    />
+          <div className="w-full">
+            <div
+              className="flex will-change-transform transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              style={{ transform: `translateX(-${slideOffset})` }}
+            >
+              {displayMachines.map((machine) => (
+                <div
+                  key={`${machine.title}-${machine.href}`}
+                  className={`${cardWidthClass} shrink-0 px-2`}
+                >
+                  <div className="group flex h-full flex-col justify-between rounded-3xl border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#fcfdff_100%)] p-5 shadow-[0_18px_45px_rgba(3,27,64,0.05)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-secondary/30 hover:shadow-[0_20px_55px_rgba(3,27,64,0.11)]">
+                    <div>
+                      <div className="relative flex h-45 items-center justify-center overflow-hidden rounded-[18px] border border-slate-100 bg-[radial-gradient(circle_at_top_left,#ffffff_0%,#f7fbff_60%,#eef4fb_100%)] transition-transform duration-300 group-hover:scale-[1.03]">
+                        <Image
+                          alt={machine.image.alt}
+                          className="object-contain p-3"
+                          fill
+                          sizes="(max-width: 1023px) 50vw, 20vw"
+                          src={machine.image.src}
+                        />
+                      </div>
+
+                      <div className="mt-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-secondary/20 bg-secondary/5 text-secondary">
+                        {renderIcon(machine.icon)}
+                      </div>
+
+                      <h3 className="mt-4 text-[0.95rem] font-black uppercase leading-[1.2] tracking-[0.08em] text-primary">
+                        {machine.title}
+                      </h3>
+
+                      <p className="mt-2 min-h-14 text-[0.9rem] leading-6 text-text-muted">
+                        {machine.description}
+                      </p>
+                    </div>
+
+                    <Link
+                      href={machine.href}
+                      className="mt-5 inline-flex items-center gap-2 font-black uppercase tracking-[0.08em] text-secondary transition-colors hover:text-primary"
+                    >
+                      {machine.actionLabel}
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </Link>
                   </div>
-
-                  {/* Icon Box */}
-                  <div 
-                    className="flex items-center justify-center rounded-lg bg-[#fa5902]/[0.03]"
-                    style={{
-                      width: 56,
-                      height: 56,
-                      border: "1.5px solid rgba(250, 89, 2, 0.15)",
-                      color: "#fa5902",
-                      marginTop: "20px",
-                      marginBottom: "16px"
-                    }}
-                  >
-                    {renderIcon(machine.icon)}
-                  </div>
-
-                  {/* Title */}
-                  <h3 
-                    className="text-primary uppercase"
-                    style={{
-                      fontSize: "1rem",
-                      fontWeight: 900,
-                      letterSpacing: "0.08em",
-                      lineHeight: "1.2"
-                    }}
-                  >
-                    {machine.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p 
-                    className="mt-2 text-text-muted"
-                    style={{
-                      fontSize: "0.9rem",
-                      lineHeight: "1.6",
-                      minHeight: "56px"
-                    }}
-                  >
-                    {machine.description}
-                  </p>
                 </div>
-
-                {/* View Details Link */}
-                <div>
-                  <Link 
-                    href={machine.href}
-                    className="inline-flex items-center gap-1.5 font-bold uppercase transition-colors"
-                    style={{
-                      color: "#fa5902",
-                      fontSize: "0.85rem",
-                      letterSpacing: "0.08em",
-                      marginTop: "20px"
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "#ff7a30";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "#fa5902";
-                    }}
-                  >
-                    {machine.actionLabel}
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          {/* Right Arrow Button */}
-          <button 
-            className="hidden lg:flex items-center justify-center shrink-0"
-            style={{
-              position: "absolute",
-              right: "-56px",
-              zIndex: 10,
-              width: 44,
-              height: 44,
-              backgroundColor: "#ffffff",
-              border: "1.5px solid #e5e7eb",
-              borderRadius: "8px",
-              color: "#fa5902",
-              boxShadow: "0 4px 12px rgba(3, 27, 64, 0.04)",
-              cursor: "pointer",
-              transition: "border-color 0.2s, background-color 0.2s"
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#fa5902";
-              e.currentTarget.style.backgroundColor = "rgba(250, 89, 2, 0.02)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "#e5e7eb";
-              e.currentTarget.style.backgroundColor = "#ffffff";
-            }}
-          >
-            <ChevronRight size={22} strokeWidth={2.5} />
-          </button>
+          {displayMachines.length > visibleCards && (
+            <button
+              aria-label="Show next related products"
+              className="absolute right-0 z-20 hidden h-11 w-11 translate-x-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-secondary shadow-[0_10px_25px_rgba(3,27,64,0.08)] transition hover:border-secondary hover:bg-secondary/5 lg:flex"
+              onClick={goToNextSlide}
+            >
+              <ChevronRight size={22} strokeWidth={2.5} />
+            </button>
+          )}
         </div>
 
-        {/* Carousel Pagination Dots */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "8px", marginTop: "40px" }}>
-          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#fa5902" }} />
-          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#e5e7eb" }} />
-          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#e5e7eb" }} />
-          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#e5e7eb" }} />
-          <span style={{ width: 8, height: 8, borderRadius: "50%", backgroundColor: "#e5e7eb" }} />
-        </div>
+        {displayMachines.length > visibleCards && (
+          <div className="mt-10 flex justify-center gap-2.5">
+            {Array.from({ length: windowCount }).map((_, index) => (
+              <button
+                aria-label={`Go to related products slide ${index + 1}`}
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`h-2.5 w-2.5 rounded-full border-0 p-0 transition ${index === safeActiveIndex ? "bg-secondary" : "bg-slate-300"}`}
+              />
+            ))}
+          </div>
+        )}
       </Container>
     </section>
   );

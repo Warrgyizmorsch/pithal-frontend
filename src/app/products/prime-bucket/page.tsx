@@ -49,10 +49,7 @@ export default function PrimeBucketProductPage() {
           steps={primeBucketData.processSteps}
         />
         <VideoSection data={primeBucketData.videoSection} />
-        <RelatedMachines
-          machines={primeBucketData.relatedMachines}
-          section={primeBucketData.relatedSection}
-        />
+        <RelatedMachines section={primeBucketData.relatedSection} />
         <ContactSolutionSection data={primeBucketData.contactSection} />
         <ResourcesSection
           resources={primeBucketData.resources}

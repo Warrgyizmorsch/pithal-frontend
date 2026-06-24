@@ -38,7 +38,7 @@ export default function JawCrusherProductPage() {
         <IndustryApplications industries={jawCrusherData.industries} section={jawCrusherData.industriesSection} />
         <ProcessTimeline section={jawCrusherData.processSection} steps={jawCrusherData.processSteps} />
         <VideoSection data={jawCrusherData.videoSection} />
-        <RelatedMachines machines={jawCrusherData.relatedMachines} section={jawCrusherData.relatedSection} />
+        <RelatedMachines section={jawCrusherData.relatedSection} />
         <ContactSolutionSection data={jawCrusherData.contactSection} />
         <ResourcesSection resources={jawCrusherData.resources} section={jawCrusherData.resourcesSection} supportFeatures={jawCrusherData.supportFeatures} />
       </main>

@@ -66,11 +66,56 @@ export const jawCrusherData: ProductDetailData = {
       { title: "Cost Effective", text: "Low operating cost high return on investment", icon: "handCoins" },
     ],
     callouts: [
-      { label: "Feed Opening", text: "Wide feed opening for large size material", position: "leftTop" },
-      { label: "Flywheel", text: "Heavy-duty flywheel for smooth operations", position: "rightTop" },
-      { label: "Jaw Plates", text: "High manganese steel for maximum wear resistance", position: "rightMiddle" },
-      { label: "Adjustment System", text: "Hydraulic adjustment for easy setting control", position: "rightBottom" },
-      { label: "Robust Frame", text: "Reinforced structure for extra strength and stability", position: "bottomCenter" },
+      {
+        label: "Feed Opening",
+        text: "Wide feed opening for large size material",
+        position: "leftTop",
+        layout: {
+          dotClass: "left-[28%] top-[16%]",
+          lineClass: "left-[17%] top-[11%] h-[40px] w-[80px] border-b border-l",
+          cardClass: "left-[2%] top-[2%] w-[172px]",
+        },
+      },
+      {
+        label: "Flywheel",
+        text: "Heavy-duty flywheel for smooth operations",
+        position: "rightTop",
+        layout: {
+          dotClass: "right-[18%] top-[22%]",
+          lineClass: "right-[8%] top-[8%] h-[108px] w-[72px] border-b border-r",
+          cardClass: "right-[1%] top-[2%] w-[172px]",
+        },
+      },
+      {
+        label: "Jaw Plates",
+        text: "High manganese steel for maximum wear resistance",
+        position: "leftBottom",
+        layout: {
+          dotClass: "left-[32%] top-[48%]",
+          lineClass: "left-[14%] top-[50%] h-px w-[72px] border-t",
+          cardClass: "left-[1%] top-[42%] w-[176px]",
+        },
+      },
+      {
+        label: "Adjustment System",
+        text: "Hydraulic adjustment for easy setting control",
+        position: "rightBottom",
+        layout: {
+          dotClass: "right-[26%] top-[58%]",
+          lineClass: "right-[8%] top-[56%] h-[62px] w-[80px] border-r border-t",
+          cardClass: "right-[1%] top-[62%] w-[176px]",
+        },
+      },
+      {
+        label: "Robust Frame",
+        text: "Reinforced structure for extra strength and stability",
+        position: "bottomCenter",
+        layout: {
+          dotClass: "left-[46%] top-[78%]",
+          lineClass: "left-[47%] top-[80%] h-[48px] border-l",
+          cardClass: "left-[34%] top-[85%] w-[180px]",
+        },
+      },
     ],
     applications: {
       eyebrow: "Applications",

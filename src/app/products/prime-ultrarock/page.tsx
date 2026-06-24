@@ -37,7 +37,7 @@ export default function PrimeUltraRockProductPage() {
         <IndustryApplications industries={primeUltraRockData.industries} section={primeUltraRockData.industriesSection} />
         <ProcessTimeline section={primeUltraRockData.processSection} steps={primeUltraRockData.processSteps} />
         <VideoSection data={primeUltraRockData.videoSection} />
-        <RelatedMachines machines={primeUltraRockData.relatedMachines} section={primeUltraRockData.relatedSection} />
+        <RelatedMachines section={primeUltraRockData.relatedSection} />
         <ContactSolutionSection data={primeUltraRockData.contactSection} />
         <ResourcesSection resources={primeUltraRockData.resources} section={primeUltraRockData.resourcesSection} supportFeatures={primeUltraRockData.supportFeatures} />
       </main>

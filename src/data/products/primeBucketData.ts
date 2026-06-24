@@ -77,11 +77,56 @@ export const primeBucketData: ProductDetailData = {
       { title: "Anti-Jamming", text: "Hydraulic reverse for blockage removal", icon: "wrench" },
     ],
     callouts: [
-      { label: "Manganese Jaws", text: "High-grade steel for maximum wear life", position: "leftTop" },
-      { label: "Reversible Jaws", text: "Increased operating life and lower cost", position: "rightTop" },
-      { label: "Wear Chamber", text: "Optimized geometry for faster crushing", position: "rightMiddle" },
-      { label: "Universal Hitch", text: "Easy mounting on standard excavators", position: "rightBottom" },
-      { label: "Heavy Duty Drive", text: "No separate engine required for power", position: "bottomCenter" },
+      {
+        label: "Manganese Jaws",
+        text: "High-grade steel for maximum wear life",
+        position: "leftTop",
+        layout: {
+          dotClass: "left-[30%] top-[30%]",
+          lineClass: "left-[16%] top-[10%] h-[150px] w-[98px] border-b border-l",
+          cardClass: "left-[1%] top-[2%] w-[168px]",
+        },
+      },
+      {
+        label: "Reversible Jaws",
+        text: "Increased operating life and lower cost",
+        position: "rightTop",
+        layout: {
+          dotClass: "right-[30%] top-[15%]",
+          lineClass: "right-[8%] top-[4%] h-[82px] w-[150px] border-b border-r",
+          cardClass: "right-[1%] top-[2%] w-[168px]",
+        },
+      },
+      {
+        label: "Wear Chamber",
+        text: "Optimized geometry for faster crushing",
+        position: "rightMiddle",
+        layout: {
+          dotClass: "right-[26%] top-[40%]",
+          lineClass: "right-[8%] top-[34%] h-px w-[120px] border-t",
+          cardClass: "right-[1%] top-[27%] w-[168px]",
+        },
+      },
+      {
+        label: "Universal Hitch",
+        text: "Easy mounting on standard excavators",
+        position: "rightBottom",
+        layout: {
+          dotClass: "right-[24%] top-[56%]",
+          lineClass: "right-[8%] top-[50%] h-[50px] w-[108px] border-r border-t",
+          cardClass: "right-[1%] top-[62%] w-[168px]",
+        },
+      },
+      {
+        label: "Heavy Duty Drive",
+        text: "No separate engine required for power",
+        position: "bottomCenter",
+        layout: {
+          dotClass: "left-[38%] top-[72%]",
+          lineClass: "left-[36%] top-[74%] h-[52px] border-l",
+          cardClass: "left-[24%] top-[82%] w-[172px]",
+        },
+      },
     ],
     applications: {
       eyebrow: "Applications",

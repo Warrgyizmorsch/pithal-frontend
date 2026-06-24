@@ -1,5 +1,11 @@
 import type { ProductDetailData, SpecificationRow } from "./productDetailTypes";
 
+type CalloutLayout = {
+  lineClass?: string;
+  dotClass?: string;
+  cardClass?: string;
+};
+
 type ProductConfig = {
   slug: string;
   crumb: string;
@@ -22,7 +28,7 @@ type ProductConfig = {
   stats: SpecificationRow[];
   specs: Array<{ title: string; text: string; icon: string }>;
   features: Array<{ title: string; description: string; icon: string }>;
-  callouts: Array<{ label: string; text: string }>;
+  callouts: Array<{ label: string; text: string; layout?: CalloutLayout }>;
   applications: string[];
   process: Array<{ title: string; description: string; image: string; iconFile: string }>;
   related: Array<{ title: string; href: string; image: string; icon: string; category: string; description: string }>;
@@ -419,11 +425,11 @@ export const vsiCrusherData = createProductData({
     { title: "M-Sand Ready", description: "Configured for sand shaping and final aggregate improvement.", icon: "layers" },
   ],
   callouts: [
-    { label: "Feed Tube", text: "Controlled feed entry for stable rotor loading" },
-    { label: "High-Speed Rotor", text: "Balanced rotor delivers strong impact energy" },
-    { label: "Crushing Chamber", text: "Optimized chamber creates cubical output" },
-    { label: "Wear Liners", text: "Protected surfaces reduce wear cost" },
-    { label: "Discharge Zone", text: "Smooth material exit supports steady output" },
+    { label: "Feed Tube", text: "Controlled feed entry for stable rotor loading", layout: { dotClass: "left-[42%] top-[8%]", lineClass: "left-[28%] top-[4%] h-[30px] w-[100px] border-b border-l", cardClass: "left-[2%] top-[2%] w-[170px]" } },
+    { label: "High-Speed Rotor", text: "Balanced rotor delivers strong impact energy", layout: { dotClass: "right-[30%] top-[22%]", lineClass: "right-[8%] top-[6%] h-[120px] w-[150px] border-b border-r", cardClass: "right-[1%] top-[2%] w-[170px]" } },
+    { label: "Crushing Chamber", text: "Optimized chamber creates cubical output", layout: { dotClass: "left-[30%] top-[36%]", lineClass: "left-[14%] top-[36%] h-px w-[108px] border-t", cardClass: "left-[1%] top-[28%] w-[174px]" } },
+    { label: "Wear Liners", text: "Protected surfaces reduce wear cost", layout: { dotClass: "right-[20%] top-[48%]", lineClass: "right-[8%] top-[42%] h-px w-[82px] border-t", cardClass: "right-[1%] top-[54%] w-[174px]" } },
+    { label: "Discharge Zone", text: "Smooth material exit supports steady output", layout: { dotClass: "left-[46%] top-[72%]", lineClass: "left-[44%] top-[74%] h-[50px] border-l", cardClass: "left-[32%] top-[82%] w-[176px]" } },
   ],
   applications: ["Aggregates", "Construction", "Infrastructure", "Cement", "Recycling"],
   process: defaultProcess,
@@ -469,11 +475,11 @@ export const vibratingScreenData = createProductData({
     { title: "Consistent Grades", description: "Reliable separation helps maintain product quality.", icon: "target" },
   ],
   callouts: [
-    { label: "Feed Box", text: "Distributes material evenly across the deck" },
-    { label: "Screen Decks", text: "Configurable decks for multiple product sizes" },
-    { label: "Vibration Drive", text: "Reliable exciter system creates consistent motion" },
-    { label: "Screen Media", text: "Mesh options selected for material and output" },
-    { label: "Discharge Chutes", text: "Separate product streams move to stockpiles" },
+    { label: "Feed Box", text: "Distributes material evenly across the deck", layout: { dotClass: "left-[26%] top-[18%]", lineClass: "left-[12%] top-[8%] h-[72px] w-[96px] border-b border-l", cardClass: "left-[1%] top-[2%] w-[168px]" } },
+    { label: "Screen Decks", text: "Configurable decks for multiple product sizes", layout: { dotClass: "right-[34%] top-[28%]", lineClass: "right-[8%] top-[6%] h-[160px] w-[170px] border-b border-r", cardClass: "right-[1%] top-[2%] w-[168px]" } },
+    { label: "Vibration Drive", text: "Reliable exciter system creates consistent motion", layout: { dotClass: "right-[22%] top-[42%]", lineClass: "right-[8%] top-[36%] h-px w-[96px] border-t", cardClass: "right-[1%] top-[29%] w-[172px]" } },
+    { label: "Screen Media", text: "Mesh options selected for material and output", layout: { dotClass: "left-[36%] top-[44%]", lineClass: "left-[14%] top-[44%] h-px w-[148px] border-t", cardClass: "left-[1%] top-[36%] w-[172px]" } },
+    { label: "Discharge Chutes", text: "Separate product streams move to stockpiles", layout: { dotClass: "left-[22%] top-[68%]", lineClass: "left-[14%] top-[68%] h-[52px] w-[58px] border-b border-l", cardClass: "left-[1%] top-[72%] w-[176px]" } },
   ],
   applications: ["Aggregates", "Mining", "Construction", "Recycling", "Cement"],
   process: defaultProcess,
@@ -519,11 +525,11 @@ export const vibratingFeederData = createProductData({
     { title: "Easy Maintenance", description: "Accessible drive and wear surfaces simplify service.", icon: "wrench" },
   ],
   callouts: [
-    { label: "Feed Hopper", text: "Receives blasted rock or raw material" },
-    { label: "Grizzly Bars", text: "Scalps fines before primary crushing" },
-    { label: "Vibration Drive", text: "Provides controlled material movement" },
-    { label: "Wear Liners", text: "Protect tray surfaces from abrasive feed" },
-    { label: "Discharge End", text: "Delivers steady feed to the crusher" },
+    { label: "Feed Hopper", text: "Receives blasted rock or raw material", layout: { dotClass: "right-[24%] top-[20%]", lineClass: "right-[8%] top-[6%] h-[104px] w-[108px] border-b border-r", cardClass: "right-[1%] top-[2%] w-[160px]" } },
+    { label: "Grizzly Bars", text: "Scalps fines before primary crushing", layout: { dotClass: "right-[28%] top-[42%]", lineClass: "right-[8%] top-[36%] h-px w-[136px] border-t", cardClass: "right-[1%] top-[28%] w-[162px]" } },
+    { label: "Vibration Drive", text: "Provides controlled material movement", layout: { dotClass: "left-[24%] top-[46%]", lineClass: "left-[10%] top-[40%] h-px w-[96px] border-t", cardClass: "left-[1%] top-[32%] w-[166px]" } },
+    { label: "Wear Liners", text: "Protect tray surfaces from abrasive feed", layout: { dotClass: "left-[42%] top-[32%]", lineClass: "left-[14%] top-[18%] h-[108px] w-[190px] border-b border-l", cardClass: "left-[1%] top-[8%] w-[166px]" } },
+    { label: "Discharge End", text: "Delivers steady feed to the crusher", layout: { dotClass: "left-[30%] top-[62%]", lineClass: "left-[20%] top-[62%] h-[52px] w-[72px] border-b border-l", cardClass: "left-[1%] top-[68%] w-[168px]" } },
   ],
   applications: ["Mining", "Aggregates", "Construction", "Cement", "Recycling"],
   process: defaultProcess,
@@ -569,11 +575,11 @@ export const conveyorSystemData = createProductData({
     { title: "Efficient Stockpiling", description: "Moves final aggregates cleanly to storage areas.", icon: "boxes" },
   ],
   callouts: [
-    { label: "Head Pulley", text: "Reliable drive system for steady belt motion" },
-    { label: "Belt System", text: "Durable belt selected for material and capacity" },
-    { label: "Idlers", text: "Support rollers maintain smooth movement" },
-    { label: "Frame Structure", text: "Strong truss frame supports long spans" },
-    { label: "Discharge Point", text: "Optimized transfer into stockpiles or equipment" },
+    { label: "Head Pulley", text: "Reliable drive system for steady belt motion", layout: { dotClass: "left-[22%] top-[12%]", lineClass: "left-[10%] top-[4%] h-[58px] w-[82px] border-b border-l", cardClass: "left-[1%] top-[2%] w-[162px]" } },
+    { label: "Belt System", text: "Durable belt selected for material and capacity", layout: { dotClass: "right-[36%] top-[22%]", lineClass: "right-[8%] top-[6%] h-[118px] w-[186px] border-b border-r", cardClass: "right-[1%] top-[2%] w-[162px]" } },
+    { label: "Idlers", text: "Support rollers maintain smooth movement", layout: { dotClass: "right-[34%] top-[38%]", lineClass: "right-[8%] top-[32%] h-px w-[176px] border-t", cardClass: "right-[1%] top-[24%] w-[168px]" } },
+    { label: "Frame Structure", text: "Strong truss frame supports long spans", layout: { dotClass: "right-[28%] top-[54%]", lineClass: "right-[8%] top-[48%] h-[48px] w-[136px] border-r border-t", cardClass: "right-[1%] top-[46%] w-[168px]" } },
+    { label: "Discharge Point", text: "Optimized transfer into stockpiles or equipment", layout: { dotClass: "right-[20%] top-[68%]", lineClass: "right-[8%] top-[64%] h-[36px] w-[82px] border-r border-t", cardClass: "right-[1%] top-[74%] w-[172px]" } },
   ],
   applications: ["Aggregates", "Mining", "Construction", "Cement", "Infrastructure"],
   process: defaultProcess,
@@ -619,11 +625,11 @@ export const completePlantsData = createProductData({
     { title: "Project Support", description: "Technical support from selection through commissioning.", icon: "headphones" },
   ],
   callouts: [
-    { label: "Primary Stage", text: "Jaw crusher handles large feed material" },
-    { label: "Secondary Stage", text: "Cone or VSI crusher controls final reduction" },
-    { label: "Screening Unit", text: "Separates material into required grades" },
-    { label: "Conveyors", text: "Connect every process stage efficiently" },
-    { label: "Control Layout", text: "Plant designed for smooth operation and service" },
+    { label: "Primary Stage", text: "Jaw crusher handles large feed material", layout: { dotClass: "left-[30%] top-[26%]", lineClass: "left-[14%] top-[8%] h-[130px] w-[110px] border-b border-l", cardClass: "left-[1%] top-[2%] w-[166px]" } },
+    { label: "Secondary Stage", text: "Cone or VSI crusher controls final reduction", layout: { dotClass: "right-[32%] top-[20%]", lineClass: "right-[8%] top-[4%] h-[118px] w-[162px] border-b border-r", cardClass: "right-[1%] top-[2%] w-[166px]" } },
+    { label: "Screening Unit", text: "Separates material into required grades", layout: { dotClass: "right-[22%] top-[36%]", lineClass: "right-[8%] top-[30%] h-px w-[96px] border-t", cardClass: "right-[1%] top-[23%] w-[172px]" } },
+    { label: "Conveyors", text: "Connect every process stage efficiently", layout: { dotClass: "right-[14%] top-[54%]", lineClass: "right-[8%] top-[48%] h-[48px] w-[40px] border-r border-t", cardClass: "right-[1%] top-[60%] w-[172px]" } },
+    { label: "Control Layout", text: "Plant designed for smooth operation and service", layout: { dotClass: "left-[44%] top-[68%]", lineClass: "left-[38%] top-[70%] h-[52px] border-l", cardClass: "left-[26%] top-[78%] w-[176px]" } },
   ],
   applications: ["Mining", "Aggregates", "Infrastructure", "Construction", "Cement"],
   process: defaultProcess,

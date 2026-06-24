@@ -71,12 +71,66 @@ export const coneCrusherData: ProductDetailData = {
       { title: "Easy Maintenance", text: "Service-friendly access for inspection and liner changes", icon: "wrench" },
     ],
     callouts: [
-      { label: "Hydraulic Adjustment System", text: "Quick setting control for consistent product size", position: "leftTop" },
-      { label: "Heavy-Duty Crushing Chamber", text: "Optimized chamber profile for high reduction ratio", position: "rightTop" },
-      { label: "Mantle & Concave", text: "Wear-resistant liners for long service life", position: "rightMiddle" },
-      { label: "Drive System", text: "High-performance drive for stable crushing output", position: "rightBottom" },
-      { label: "Stable Base Frame", text: "Reinforced frame for vibration control and durability", position: "bottomCenter" },
-      { label: "Inspection Access", text: "Easy service access for maintenance and uptime", position: "leftBottom" },
+      {
+        label: "Hydraulic Adjustment System",
+        text: "Quick setting control for consistent product size",
+        position: "leftTop",
+        layout: {
+          dotClass: "left-[34%] top-[28%]",
+          lineClass: "left-[18%] top-[10%] h-[130px] w-[110px] border-b border-l",
+          cardClass: "left-[1%] top-[2%] w-[176px]",
+        },
+      },
+      {
+        label: "Heavy-Duty Crushing Chamber",
+        text: "Optimized chamber profile for high reduction ratio",
+        position: "rightTop",
+        layout: {
+          dotClass: "right-[26%] top-[16%]",
+          lineClass: "right-[8%] top-[4%] h-[92px] w-[120px] border-b border-r",
+          cardClass: "right-[1%] top-[2%] w-[176px]",
+        },
+      },
+      {
+        label: "Mantle & Concave",
+        text: "Wear-resistant liners for long service life",
+        position: "rightMiddle",
+        layout: {
+          dotClass: "right-[24%] top-[42%]",
+          lineClass: "right-[8%] top-[36%] h-px w-[110px] border-t",
+          cardClass: "right-[1%] top-[29%] w-[176px]",
+        },
+      },
+      {
+        label: "Inspection Access",
+        text: "Easy service access for maintenance and uptime",
+        position: "leftBottom",
+        layout: {
+          dotClass: "left-[28%] top-[56%]",
+          lineClass: "left-[12%] top-[56%] h-px w-[110px] border-t",
+          cardClass: "left-[1%] top-[48%] w-[170px]",
+        },
+      },
+      {
+        label: "Drive System",
+        text: "High-performance drive for stable crushing output",
+        position: "rightBottom",
+        layout: {
+          dotClass: "right-[22%] top-[58%]",
+          lineClass: "right-[8%] top-[52%] h-[50px] w-[96px] border-r border-t",
+          cardClass: "right-[1%] top-[50%] w-[176px]",
+        },
+      },
+      {
+        label: "Stable Base Frame",
+        text: "Reinforced frame for vibration control and durability",
+        position: "bottomCenter",
+        layout: {
+          dotClass: "left-[46%] top-[80%]",
+          lineClass: "left-[38%] top-[82%] h-[48px] border-l",
+          cardClass: "left-[26%] top-[88%] w-[182px]",
+        },
+      },
     ],
     applications: {
       eyebrow: "Applications",
