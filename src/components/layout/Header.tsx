@@ -23,7 +23,7 @@ function Logo() {
   return (
     <Image
       alt="Pithal Machines Ltd."
-      className="h-auto w-[136px] min-[380px]:w-[152px] sm:w-[178px] xl:w-[188px] 2xl:w-[196px]"
+      className="h-auto w-[160px] min-[380px]:w-[180px] sm:w-[210px] xl:w-[230px] 2xl:w-[240px]"
       height={140}
       priority
       src="/images/brand/pithal-logo.png"

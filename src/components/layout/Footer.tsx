@@ -221,7 +221,7 @@ export function Footer() {
               {socialLinks.map(({ href, icon: Icon, label }) => (
                 <Link
                   aria-label={label}
-                  className="flex h-[2.3rem] w-[2.3rem] items-center justify-center rounded-full border border-secondary text-primary transition-colors hover:bg-secondary hover:text-white"
+                  className="flex h-[2.3rem] w-[2.3rem] items-center justify-center rounded-full border border-secondary text-primary transition-all duration-500 hover:rotate-[360deg] hover:bg-secondary hover:text-white"
                   href={href}
                   key={label}
                 >

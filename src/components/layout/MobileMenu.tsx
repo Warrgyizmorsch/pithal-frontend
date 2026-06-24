@@ -3,12 +3,18 @@
 import { navigation, products } from "@/data/homeData";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const close = useCallback(() => setIsOpen(false), []);
 
@@ -24,37 +30,30 @@ export function MobileMenu() {
 
   /* Lock body scroll when open */
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
     return () => {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
 
-  return (
-    <div className="xl:hidden">
-      {/* Hamburger Toggle */}
-      <button
-        aria-expanded={isOpen}
-        aria-label="Open navigation menu"
-        className="flex h-10 w-10 cursor-pointer items-center justify-center border border-border text-primary transition-colors hover:border-secondary hover:text-secondary sm:h-11 sm:w-11"
-        onClick={() => setIsOpen(true)}
-        type="button"
-      >
-        <Menu aria-hidden size={22} />
-      </button>
-
+  const drawerContent = (
+    <div className={`xl:hidden ${isOpen ? "pointer-events-auto" : "pointer-events-none"}`}>
       {/* Backdrop Overlay */}
       <div
         aria-hidden
-        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
+          isOpen ? "opacity-100" : "opacity-0"
         }`}
         onClick={close}
       />
 
       {/* Slide Drawer Side Sheet */}
       <div
-        className={`fixed right-0 top-0 bottom-0 z-50 h-screen w-[300px] max-w-[calc(100vw-2rem)] bg-white shadow-2xl transition-transform duration-300 ease-out flex flex-col ${
+        className={`fixed right-0 top-0 bottom-0 z-[101] h-[100dvh] w-[300px] max-w-[calc(100vw-2rem)] bg-white shadow-2xl transition-transform duration-300 ease-out flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -143,6 +142,23 @@ export function MobileMenu() {
           </Link>
         </nav>
       </div>
+    </div>
+  );
+
+  return (
+    <div className="xl:hidden">
+      {/* Hamburger Toggle */}
+      <button
+        aria-expanded={isOpen}
+        aria-label="Open navigation menu"
+        className="flex h-10 w-10 cursor-pointer items-center justify-center border border-border text-primary transition-colors hover:border-secondary hover:text-secondary sm:h-11 sm:w-11"
+        onClick={() => setIsOpen(true)}
+        type="button"
+      >
+        <Menu aria-hidden size={22} />
+      </button>
+
+      {mounted && typeof document !== "undefined" ? createPortal(drawerContent, document.body) : null}
     </div>
   );
 }
