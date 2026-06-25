@@ -252,7 +252,7 @@ export function RelatedMachines({
                   key={`${machine.title}-${machine.href}-${idx}`}
                   className={`${cardWidthClass} shrink-0 px-2`}
                 >
-                  <div className="group flex h-full flex-col justify-between rounded-3xl border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#fcfdff_100%)] p-5 shadow-[0_18px_45px_rgba(3,27,64,0.05)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-secondary/30 hover:shadow-[0_20px_55px_rgba(3,27,64,0.11)]">
+                  <div className="group flex h-full flex-col justify-between rounded-3xl border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#fcfdff_100%)] p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-secondary/30 hover:shadow-[0_15px_40px_rgba(3,27,64,0.05)]">
                     <div>
                       <div className="relative flex h-45 items-center justify-center overflow-hidden rounded-[18px] border border-slate-100 bg-[radial-gradient(circle_at_top_left,#ffffff_0%,#f7fbff_60%,#eef4fb_100%)] transition-transform duration-300 group-hover:scale-[1.03]">
                         <Image

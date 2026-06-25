@@ -279,6 +279,7 @@ textarea {
   position: relative;
   border-radius: 50% !important;
   z-index: 10;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .icon-box::after,
@@ -439,6 +440,10 @@ textarea {
 
 .testimonial-card-hover:hover h4 {
   color: #fa5902;
+}
+
+.training-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .training-card-hover:hover {
@@ -625,6 +630,9 @@ textarea {
 
 .benefit-card-premium:hover .benefit-icon-wrapper {
   transform: scale(1.15) translateY(-5px);
+}
+
+.benefit-card-premium:hover .benefit-icon-wrapper .w-28 {
   box-shadow: 0 15px 30px rgba(250, 89, 2, 0.2);
 }
 
