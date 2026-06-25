@@ -1,8 +1,13 @@
+"use client";
+
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
 import { SectionHeader } from "@/components/common/SectionHeader";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 import type { IndustryApplication, SectionCopy } from "@/data/products/productDetailTypes";
 import { ProductIcon } from "./iconMap";
 import { actionLinkClass, sectionPadding } from "./styles";
@@ -18,7 +23,7 @@ export function IndustryApplications({
     <section className={`industrial-grid bg-white ${sectionPadding}`}>
       <Container>
         <SectionHeader eyebrow={section.eyebrow} highlight={section.highlight} subtitle={section.subtitle} title={section.title} />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <MobileCarousel className="gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {industries.map((industry) => (
             <article className="group relative min-h-[360px] overflow-hidden rounded-2xl bg-slate-950 text-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_rgba(3,27,64,0.35)]" key={industry.title}>
               <Image
@@ -47,7 +52,7 @@ export function IndustryApplications({
               </div>
             </article>
           ))}
-        </div>
+        </MobileCarousel>
 
         <div className="mt-10 rounded-2xl border border-border/70 bg-white px-6 py-6 shadow-sm sm:px-8 lg:px-10">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -71,5 +76,143 @@ export function IndustryApplications({
         </div>
       </Container>
     </section>
+  );
+}
+
+interface MobileCarouselProps {
+  children: React.ReactNode;
+  className?: string; // The grid class for desktop
+}
+
+function MobileCarousel({ children, className }: MobileCarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
+  const childrenArray = React.Children.toArray(children);
+
+  // Use IntersectionObserver to update currentIndex when user swipes manually
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setCurrentIndex(index);
+          }
+        });
+      },
+      {
+        root: scrollRef.current,
+        threshold: 0.6, // Fire when 60% of the card is visible
+      }
+    );
+
+    const childNodes = scrollRef.current.children;
+    for (let i = 0; i < childNodes.length; i++) {
+      observer.observe(childNodes[i]);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToIndex = useCallback((index: number) => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const child = container.children[index] as HTMLElement;
+      if (child) {
+        const childLeft = child.offsetLeft;
+        const childWidth = child.offsetWidth;
+        const containerWidth = container.offsetWidth;
+        // Calculate position to center the child
+        const scrollPosition = childLeft - (containerWidth / 2) + (childWidth / 2);
+        
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, []);
+
+  const handleNext = useCallback(() => {
+    scrollToIndex((currentIndex + 1) % childrenArray.length);
+  }, [currentIndex, childrenArray.length, scrollToIndex]);
+
+  const handlePrev = useCallback(() => {
+    scrollToIndex((currentIndex - 1 + childrenArray.length) % childrenArray.length);
+  }, [currentIndex, childrenArray.length, scrollToIndex]);
+
+  // Auto-slide interval
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3500); // 3.5 seconds
+    
+    // Interval restarts when currentIndex changes (manual swipe or auto-slide)
+    return () => clearInterval(interval);
+  }, [handleNext]);
+
+  return (
+    <>
+      {/* Mobile Slider View */}
+      <div className="block md:hidden w-full relative group pb-1">
+        <div 
+          ref={scrollRef}
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full no-scrollbar pb-1 items-stretch"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {childrenArray.map((child, idx) => (
+            <div 
+              key={idx} 
+              data-index={idx}
+              className="w-full shrink-0 snap-center px-1 flex flex-col"
+            >
+              <div className="h-full w-full flex flex-col">
+                {child}
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Arrows and Dots */}
+        <div className="flex justify-center items-center gap-5 mt-2">
+          <button 
+            onClick={handlePrev}
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <div className="flex gap-1.5">
+            {childrenArray.map((_, idx) => (
+              <span 
+                key={idx} 
+                className={cn(
+                  "h-1.5 rounded-full transition-all duration-300",
+                  idx === currentIndex ? "bg-secondary w-4" : "bg-slate-300 w-1.5"
+                )}
+              />
+            ))}
+          </div>
+          <button 
+            onClick={handleNext}
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
+          >
+            <ChevronRight size={16} />
+          </button>
+        </div>
+        <style>{`
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
+      </div>
+
+      {/* Desktop Grid View */}
+      <div className={cn("hidden md:grid mt-8", className)}>
+        {children}
+      </div>
+    </>
   );
 }

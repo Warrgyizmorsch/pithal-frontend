@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
+import React from "react";
+import { cn } from "@/lib/utils";
 import {
   Globe,
   Building2,
@@ -27,6 +29,10 @@ import {
   LayoutDashboard,
   Award,
   GraduationCap,
+  ChevronLeft,
+  ChevronRight,
+  Eye,
+  Folder,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -1211,20 +1217,20 @@ export default function BlogPage() {
             </div>
 
             {/* Stats strip */}
-            <div className="mt-12 grid gap-6 rounded-xl border border-border bg-white/90 p-6 shadow-[0_24px_70px_rgba(3,27,64,0.12)] backdrop-blur-sm sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 sm:mt-12 grid grid-cols-2 gap-x-3 gap-y-5 sm:gap-6 rounded-xl border border-border bg-white/90 p-4 sm:p-6 shadow-[0_24px_70px_rgba(3,27,64,0.12)] backdrop-blur-sm lg:grid-cols-4">
               {heroSectionStats.map((s, i) => (
-                <div key={i} className="flex gap-3 items-start">
-                  <div className="w-14 h-14 rounded-full border border-secondary/20 bg-secondary/5 flex items-center justify-center text-secondary flex-shrink-0">
-                    <s.icon className="w-7 h-7" />
+                <div key={i} className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-center sm:items-start text-center sm:text-left">
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-secondary/20 bg-secondary/5 flex items-center justify-center text-secondary flex-shrink-0">
+                    <s.icon className="w-5 h-5 sm:w-7 sm:h-7" />
                   </div>
-                  <div>
-                    <div className="text-2xl font-black text-secondary">
+                  <div className="flex flex-col">
+                    <div className="text-[17px] sm:text-2xl font-black text-secondary leading-none sm:leading-tight mt-1 sm:mt-0">
                       {s.value}
                     </div>
-                    <div className="text-xs font-bold text-primary uppercase tracking-wide">
+                    <div className="text-[10px] sm:text-xs font-bold text-primary uppercase tracking-wider sm:tracking-wide mt-1">
                       {s.label}
                     </div>
-                    <div className="text-xs text-text-muted mt-0.5">
+                    <div className="text-[9px] sm:text-xs text-text-muted mt-1 sm:mt-0.5 leading-[1.3] sm:leading-normal">
                       {s.desc}
                     </div>
                   </div>
@@ -1399,7 +1405,7 @@ export default function BlogPage() {
         {/* ══════════════════════════════════════════
           SECTION 4 — EXPLORE BY CATEGORY
       ══════════════════════════════════════════ */}
-        <section id="categories" className="py-10 bg-bg-light">
+        <section id="categories" className="py-6 sm:py-8 bg-bg-light">
           <Container>
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <SectionHeader
@@ -1410,35 +1416,45 @@ export default function BlogPage() {
               <Button
                 variant="outlineNavy"
                 href="#categories"
-                className="h-11 min-h-0 rounded-lg px-5"
+                className="hidden lg:flex h-11 min-h-0 rounded-lg px-5"
               >
                 View all categories <ArrowRight cls="w-4 h-4" />
               </Button>
             </div>
 
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-4">
+            <MobileCarousel className="mt-6 sm:mt-10 gap-3 sm:gap-4 sm:grid-cols-3 xl:grid-cols-5">
               {categories.map((cat, i) => (
                 <Link
                   key={i}
                   href="#"
-                  className="group lift rounded-lg border border-border bg-white p-4 text-center shadow-[0_12px_32px_rgba(3,27,64,0.06)] sm:p-6 flex flex-col h-full"
+                  className="group lift rounded-xl border border-border bg-white p-3 sm:p-6 text-center shadow-[0_12px_32px_rgba(3,27,64,0.06)] flex flex-col h-full"
                 >
-                  <div className="mx-auto mb-5 flex h-24 w-24 items-center justify-center rounded-full bg-secondary/10 text-primary transition duration-300 group-hover:bg-secondary/20">
+                  <div className="mx-auto mb-3 sm:mb-5 flex h-14 w-14 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-secondary/10 text-primary transition duration-300 group-hover:bg-secondary/20 shrink-0 [&>svg]:!w-7 [&>svg]:!h-7 sm:[&>svg]:!w-10 sm:[&>svg]:!h-10">
                     {cat.icon}
                   </div>
-                  <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-primary mb-3">
+                  <h3 className="text-[11px] sm:text-sm font-bold uppercase tracking-wider sm:tracking-[0.16em] text-primary mb-2 sm:mb-3 leading-tight">
                     {cat.name}
                   </h3>
-                  <p className="text-[0.82rem] leading-6 text-text-muted mb-6 flex-grow">
+                  <p className="text-[10px] sm:text-[0.82rem] leading-[1.4] sm:leading-6 text-text-muted mb-4 sm:mb-6 flex-grow">
                     {cat.desc}
                   </p>
-                  <div className="mt-auto flex justify-center">
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-secondary/10 text-secondary transition duration-300 group-hover:bg-secondary group-hover:text-white">
-                      <ArrowRight cls="w-4 h-4" />
+                  <div className="mt-auto flex justify-center shrink-0">
+                    <span className="inline-flex h-7 w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-secondary/10 text-secondary transition duration-300 group-hover:bg-secondary group-hover:text-white">
+                      <ArrowRight cls="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </span>
                   </div>
                 </Link>
               ))}
+            </MobileCarousel>
+
+            <div className="mt-8 flex justify-center lg:hidden">
+              <Button
+                variant="outlineNavy"
+                href="#categories"
+                className="h-11 min-h-0 rounded-lg px-5 w-full max-w-xs"
+              >
+                View all categories <ArrowRight cls="w-4 h-4" />
+              </Button>
             </div>
           </Container>
         </section>
@@ -1446,7 +1462,7 @@ export default function BlogPage() {
         {/* ══════════════════════════════════════════
           SECTION 5 — LATEST ARTICLES
       ══════════════════════════════════════════ */}
-        <section id="articles" className="py-10 bg-bg-light">
+        <section id="articles" className="py-6 sm:py-8 bg-bg-light">
           <Container>
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <SectionHeader
@@ -1457,13 +1473,13 @@ export default function BlogPage() {
               <Button
                 variant="outlineNavy"
                 href="#"
-                className="h-11 min-h-0 rounded-lg px-5"
+                className="hidden lg:flex h-11 min-h-0 rounded-lg px-5"
               >
                 View all articles <ArrowRight cls="w-4 h-4" />
               </Button>
             </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="mt-6 sm:mt-10 grid gap-6 md:grid-cols-3">
               {latestArticles.slice(0, 3).map((art, i) => (
                 <div
                   key={i}
@@ -1509,16 +1525,25 @@ export default function BlogPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-8 flex justify-center lg:hidden">
+              <Button
+                variant="outlineNavy"
+                href="#"
+                className="h-11 min-h-0 rounded-lg px-5 w-full max-w-xs"
+              >
+                View all articles <ArrowRight cls="w-4 h-4" />
+              </Button>
+            </div>
           </Container>
         </section>
 
         {/* ══════════════════════════════════════════
           SECTION 6 — INDUSTRIAL KNOWLEDGE HUB
       ══════════════════════════════════════════ */}
-        <section className="py-10 bg-bg-light">
+        <section className="py-6 sm:py-8 bg-bg-light">
           <Container>
             {/* Header */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-6 sm:mb-10">
               <div className="flex items-center justify-center gap-3.5 mb-4">
                 <span className="w-10 h-0.5 bg-secondary" />
                 <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.06em]">
@@ -1752,25 +1777,25 @@ export default function BlogPage() {
           </Container>
 
           {/* Unified Bottom stats banner (Full Width, Flat Corners) */}
-          <div className="mt-12 bg-white border-y border-border p-5 sm:py-8 shadow-[0_8px_30px_rgba(3,27,64,0.04)] w-full">
+          <div className="mt-8 sm:mt-12 bg-white border-y border-border p-4 sm:p-5 sm:py-8 shadow-[0_8px_30px_rgba(3,27,64,0.04)] w-full">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-slate-100">
+              <div className="grid grid-cols-2 gap-y-6 gap-x-2 sm:gap-6 md:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-slate-100">
                 {hubStats.map((s, i) => (
                   <div
                     key={i}
-                    className="flex gap-4 items-center px-4 first:pl-0 last:pr-0"
+                    className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center sm:items-start text-center sm:text-left px-1 sm:px-4 lg:first:pl-0 lg:last:pr-0"
                   >
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary flex-shrink-0 shadow-sm">
+                    <div className="flex h-10 w-10 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary flex-shrink-0 shadow-sm [&>svg]:!w-5 [&>svg]:!h-5 sm:[&>svg]:!w-8 sm:[&>svg]:!h-8">
                       {s.icon}
                     </div>
                     <div>
-                      <div className="text-xl font-extrabold text-primary leading-tight">
+                      <div className="text-[17px] sm:text-xl font-extrabold text-primary leading-tight mt-1 sm:mt-0">
                         {s.value}
                       </div>
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mt-0.5">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mt-1 sm:mt-0.5">
                         {s.label}
                       </div>
-                      <div className="text-xs text-slate-400 mt-1 leading-normal font-medium">
+                      <div className="text-[9px] sm:text-xs text-slate-400 mt-1 leading-[1.3] sm:leading-normal font-medium">
                         {s.sub}
                       </div>
                     </div>
@@ -1784,7 +1809,7 @@ export default function BlogPage() {
         {/* ══════════════════════════════════════════
           SECTION 7 — TRENDING INSIGHTS
       ══════════════════════════════════════════ */}
-        <section className="py-10 bg-white">
+        <section className="py-6 sm:py-8 bg-white">
           <Container>
             {/* Header */}
             <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between mb-8">
@@ -1803,7 +1828,7 @@ export default function BlogPage() {
               <Button
                 variant="ghost"
                 href="#"
-                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.16em] text-primary hover:text-secondary p-0 min-h-0 border-0"
+                className="hidden lg:inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.16em] text-primary hover:text-secondary p-0 min-h-0 border-0"
               >
                 View all insights{" "}
                 <span className="text-secondary font-black text-xs">→</span>
@@ -2078,7 +2103,7 @@ export default function BlogPage() {
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4 mb-10">
+            <MobileCarousel className="gap-6 md:grid-cols-3 lg:grid-cols-4 mb-10">
               {expertQuotes.map((q, i) => (
                 <div
                   key={i}
@@ -2138,7 +2163,7 @@ export default function BlogPage() {
                   </div>
                 </div>
               ))}
-            </div>
+            </MobileCarousel>
           </Container>
         </section>
 
@@ -2339,7 +2364,7 @@ export default function BlogPage() {
         {/* ══════════════════════════════════════════
           SECTION 11 — COMPREHENSIVE COVERAGE
       ══════════════════════════════════════════ */}
-        <section className="py-10 bg-white border-t border-slate-100">
+        <section className="py-6 sm:py-8 bg-bg-light border-y border-slate-100">
           <Container>
             {/* Header */}
             <div className="text-center mb-8">
@@ -2743,6 +2768,144 @@ export default function BlogPage() {
         </section>
       </main>
       <Footer />
+    </>
+  );
+}
+
+interface MobileCarouselProps {
+  children: React.ReactNode;
+  className?: string; // The grid class for desktop
+}
+
+function MobileCarousel({ children, className }: MobileCarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
+  const childrenArray = React.Children.toArray(children);
+
+  // Use IntersectionObserver to update currentIndex when user swipes manually
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setCurrentIndex(index);
+          }
+        });
+      },
+      {
+        root: scrollRef.current,
+        threshold: 0.6, // Fire when 60% of the card is visible
+      }
+    );
+
+    const childNodes = scrollRef.current.children;
+    for (let i = 0; i < childNodes.length; i++) {
+      observer.observe(childNodes[i]);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToIndex = useCallback((index: number) => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const child = container.children[index] as HTMLElement;
+      if (child) {
+        const childLeft = child.offsetLeft;
+        const childWidth = child.offsetWidth;
+        const containerWidth = container.offsetWidth;
+        // Calculate position to center the child
+        const scrollPosition = childLeft - (containerWidth / 2) + (childWidth / 2);
+        
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, []);
+
+  const handleNext = useCallback(() => {
+    scrollToIndex((currentIndex + 1) % childrenArray.length);
+  }, [currentIndex, childrenArray.length, scrollToIndex]);
+
+  const handlePrev = useCallback(() => {
+    scrollToIndex((currentIndex - 1 + childrenArray.length) % childrenArray.length);
+  }, [currentIndex, childrenArray.length, scrollToIndex]);
+
+  // Auto-slide interval
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3500); // 3.5 seconds
+    
+    // Interval restarts when currentIndex changes (manual swipe or auto-slide)
+    return () => clearInterval(interval);
+  }, [handleNext]);
+
+  return (
+    <>
+      {/* Mobile Slider View */}
+      <div className="block md:hidden w-full relative group pb-1">
+        <div 
+          ref={scrollRef}
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full no-scrollbar pb-1 items-stretch"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {childrenArray.map((child, idx) => (
+            <div 
+              key={idx} 
+              data-index={idx}
+              className="w-full shrink-0 snap-center px-1 flex flex-col"
+            >
+              <div className="h-full w-full flex flex-col">
+                {child}
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Arrows and Dots */}
+        <div className="flex justify-center items-center gap-5 mt-2">
+          <button 
+            onClick={handlePrev}
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <div className="flex gap-1.5">
+            {childrenArray.map((_, idx) => (
+              <span 
+                key={idx} 
+                className={cn(
+                  "h-1.5 rounded-full transition-all duration-300",
+                  idx === currentIndex ? "bg-secondary w-4" : "bg-slate-300 w-1.5"
+                )}
+              />
+            ))}
+          </div>
+          <button 
+            onClick={handleNext}
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
+          >
+            <ChevronRight size={16} />
+          </button>
+        </div>
+        <style>{`
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
+      </div>
+
+      {/* Desktop Grid View */}
+      <div className={cn("hidden md:grid", className)}>
+        {children}
+      </div>
     </>
   );
 }

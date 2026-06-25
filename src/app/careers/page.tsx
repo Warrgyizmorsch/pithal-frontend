@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import {
   Users,
@@ -26,6 +27,8 @@ import {
   UserCheck,
   Upload,
   Mail,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Footer } from "@/components/layout/Footer";
@@ -626,11 +629,11 @@ export default function CareersPage() {
               <div className="mx-auto mt-6 h-1.5 w-28 bg-secondary rounded-full" />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+            <MobileCarousel className="gap-6 sm:grid-cols-2 xl:grid-cols-3">
               {advantages.map((a, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border border-slate-200 bg-white p-8 shadow-[0_24px_70px_rgba(15,23,42,0.14)] flex flex-col items-center text-center career-card-hover"
+                  className="rounded-lg border border-slate-200 bg-white p-8 shadow-sm md:shadow-[0_24px_70px_rgba(15,23,42,0.14)] flex flex-col items-center text-center career-card-hover"
                   style={{ "--accent-color": "#fa5902" } as React.CSSProperties}
                 >
                   <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary transition-all duration-300 icon-box">
@@ -644,7 +647,7 @@ export default function CareersPage() {
                   </p>
                 </div>
               ))}
-            </div>
+            </MobileCarousel>
           </div>
 
           {/* Full-width flat banner - screen touching */}
@@ -809,7 +812,7 @@ export default function CareersPage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
-                    <div className="bg-[#031b40] py-2 text-center border-t border-[#031b40]">
+                    <div className="bg-[#031b40] py-2 px-2 text-center border-t border-[#031b40] flex-1 flex items-center justify-center">
                       <span className="text-[11px] sm:text-xs font-black uppercase tracking-widest text-white">
                         {img.alt}
                       </span>
@@ -852,7 +855,7 @@ export default function CareersPage() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="bg-[#031b40] py-2 text-center border-t border-[#031b40]">
+                  <div className="bg-[#031b40] py-2 px-2 text-center border-t border-[#031b40] flex-1 flex items-center justify-center">
                     <span className="text-[11px] sm:text-xs font-black uppercase tracking-widest text-white">
                       {img.alt}
                     </span>
@@ -1155,7 +1158,7 @@ export default function CareersPage() {
             </div>
 
             {/* Openings list */}
-            <div className="space-y-4">
+            <MobileCarousel className="gap-4">
               {openings
                 .filter((o) => {
                   const matchSearch = o.title
@@ -1200,7 +1203,7 @@ export default function CareersPage() {
                   return (
                     <div
                       key={i}
-                      className="bg-white border border-slate-100 rounded-2xl p-6 shadow-[0_8px_30px_rgba(3,27,64,0.03)] flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 job-card-hover"
+                      className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm md:shadow-[0_8px_30px_rgba(3,27,64,0.03)] flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 job-card-hover"
                     >
                       {/* 1. Role & Department Info */}
                       <div className="flex items-center gap-4 lg:w-1/3">
@@ -1291,7 +1294,7 @@ export default function CareersPage() {
                     </div>
                   );
                 })}
-            </div>
+            </MobileCarousel>
           </div>
 
           {/* Full-width flat banner - screen touching */}
@@ -1631,7 +1634,7 @@ export default function CareersPage() {
             </div>
 
             {/* Benefits Grid (6 Columns) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 xl:gap-6 mb-16">
+            <MobileCarousel className="gap-4 xl:gap-6 mb-16 sm:grid-cols-2 lg:grid-cols-6">
               {[
                 {
                   title: "Competitive Salary",
@@ -1809,7 +1812,7 @@ export default function CareersPage() {
               ].map((b, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-[28px] pt-8 pb-6 px-5 shadow-[0_12px_45px_rgba(3,27,64,0.06)] relative overflow-hidden text-center flex flex-col items-center benefit-card-premium group"
+                  className="bg-white rounded-[28px] pt-8 pb-6 px-5 shadow-sm md:shadow-[0_12px_45px_rgba(3,27,64,0.06)] relative overflow-hidden text-center flex flex-col items-center benefit-card-premium group"
                   style={
                     { "--accent-color": b.accentColor } as React.CSSProperties
                   }
@@ -1842,7 +1845,7 @@ export default function CareersPage() {
                   />
                 </div>
               ))}
-            </div>
+            </MobileCarousel>
           </div>
 
  {/* Bottom Growth Banner */}
@@ -3578,6 +3581,144 @@ export default function CareersPage() {
         `}</style>
       </main>
       <Footer />
+    </>
+  );
+}
+
+interface MobileCarouselProps {
+  children: React.ReactNode;
+  className?: string; // The grid class for desktop
+}
+
+function MobileCarousel({ children, className }: MobileCarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
+  const childrenArray = React.Children.toArray(children);
+
+  // Use IntersectionObserver to update currentIndex when user swipes manually
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setCurrentIndex(index);
+          }
+        });
+      },
+      {
+        root: scrollRef.current,
+        threshold: 0.6, // Fire when 60% of the card is visible
+      }
+    );
+
+    const childNodes = scrollRef.current.children;
+    for (let i = 0; i < childNodes.length; i++) {
+      observer.observe(childNodes[i]);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToIndex = useCallback((index: number) => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const child = container.children[index] as HTMLElement;
+      if (child) {
+        const childLeft = child.offsetLeft;
+        const childWidth = child.offsetWidth;
+        const containerWidth = container.offsetWidth;
+        // Calculate position to center the child
+        const scrollPosition = childLeft - (containerWidth / 2) + (childWidth / 2);
+        
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, []);
+
+  const handleNext = useCallback(() => {
+    scrollToIndex((currentIndex + 1) % childrenArray.length);
+  }, [currentIndex, childrenArray.length, scrollToIndex]);
+
+  const handlePrev = useCallback(() => {
+    scrollToIndex((currentIndex - 1 + childrenArray.length) % childrenArray.length);
+  }, [currentIndex, childrenArray.length, scrollToIndex]);
+
+  // Auto-slide interval
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3500); // 3.5 seconds
+    
+    // Interval restarts when currentIndex changes (manual swipe or auto-slide)
+    return () => clearInterval(interval);
+  }, [handleNext]);
+
+  return (
+    <>
+      {/* Mobile Slider View */}
+      <div className="block md:hidden w-full relative group pb-1">
+        <div 
+          ref={scrollRef}
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full no-scrollbar pb-1 items-stretch"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {childrenArray.map((child, idx) => (
+            <div 
+              key={idx} 
+              data-index={idx}
+              className="w-full shrink-0 snap-center px-1 flex flex-col"
+            >
+              <div className="h-full w-full flex flex-col">
+                {child}
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Arrows and Dots */}
+        <div className="flex justify-center items-center gap-5 mt-2">
+          <button 
+            onClick={handlePrev}
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <div className="flex gap-1.5">
+            {childrenArray.map((_, idx) => (
+              <span 
+                key={idx} 
+                className={cn(
+                  "h-1.5 rounded-full transition-all duration-300",
+                  idx === currentIndex ? "bg-secondary w-4" : "bg-slate-300 w-1.5"
+                )}
+              />
+            ))}
+          </div>
+          <button 
+            onClick={handleNext}
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
+          >
+            <ChevronRight size={16} />
+          </button>
+        </div>
+        <style>{`
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
+      </div>
+
+      {/* Desktop Grid View */}
+      <div className={cn("hidden md:grid", className)}>
+        {children}
+      </div>
     </>
   );
 }

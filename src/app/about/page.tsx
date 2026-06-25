@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import {
   ArrowRight,
@@ -39,6 +42,7 @@ import { Container } from "@/components/common/Container";
 import { HeroNavigation } from "@/components/common/HeroNavigation";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { aboutPageData } from "@/data/aboutPageData";
 import { cn } from "@/lib/utils";
 
@@ -634,7 +638,7 @@ function WhyChooseSection() {
         </div>
 
         {/* ── Cards 3×2 Grid ── */}
-        <div className="mx-auto mt-9 grid max-w-[1520px] gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <MobileCarousel className="mx-auto mt-9 gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-[1520px]">
           {whyChoose.cards.map((card) => (
             <article
               className="group relative flex items-start gap-6 rounded-xl border border-slate-100 bg-white p-8 md:p-9 shadow-[0_12px_38px_rgba(3,27,64,0.04)] transition-all duration-300 hover:shadow-[0_16px_44px_rgba(3,27,64,0.08)] hover:-translate-y-1.5 overflow-hidden"
@@ -683,7 +687,7 @@ function WhyChooseSection() {
               </div>
             </article>
           ))}
-        </div>
+        </MobileCarousel>
       </Container>
 
       {/* ── Bottom Dark Bar ── */}
@@ -842,7 +846,7 @@ function ManufacturingSection() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 max-w-[1520px] mx-auto">
           {manufacturing.cards.map((card) => (
             <article
-              className="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_12px_38px_rgba(3,27,64,0.03)] hover:shadow-[0_16px_44px_rgba(3,27,64,0.06)] transition-all duration-300 hover:-translate-y-1 relative flex flex-col h-full"
+              className="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm md:shadow-[0_12px_38px_rgba(3,27,64,0.03)] hover:shadow-md md:hover:shadow-[0_16px_44px_rgba(3,27,64,0.06)] transition-all duration-300 hover:-translate-y-1 relative flex flex-col h-full"
               key={card.title}
             >
               {/* Bottom sliding train line */}
@@ -988,7 +992,7 @@ function GlobalSection() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {globalData.cards.map((card) => (
             <article
-              className="group relative flex gap-4 rounded-xl border border-border/80 bg-white p-5 shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
+              className="group relative flex gap-4 rounded-xl border border-border/80 bg-white p-5 shadow-sm md:shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-md md:hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
               key={card.title}
             >
               {/* Orange top bar */}
@@ -1023,7 +1027,7 @@ function IndustriesSection() {
   const { industries } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f9fc] py-[35px]">
+    <section className="relative overflow-hidden bg-[#f7f9fc] py-[30px]">
       {/* Faint grid */}
       <div
         aria-hidden
@@ -1098,10 +1102,10 @@ function IndustriesSection() {
         </div>
 
         {/* ── 6-Column Cards ── */}
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+        <MobileCarousel className="mt-9 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {industries.cards.map((industry) => (
             <article
-              className="group relative overflow-visible rounded-xl border border-border/80 bg-white shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
+              className="group relative overflow-visible rounded-xl border border-border/80 bg-white shadow-sm md:shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-md md:hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
               key={industry.title}
             >
               {/* Image */}
@@ -1137,7 +1141,7 @@ function IndustriesSection() {
               </div>
             </article>
           ))}
-        </div>
+        </MobileCarousel>
       </Container>
     </section>
   );
@@ -1147,7 +1151,7 @@ function ValuesSection() {
   const { values } = aboutPageData;
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f9fc] pt-[35px]">
+    <section className="relative overflow-hidden bg-[#f7f9fc] pt-[30px]">
       {/* Decorative dot grid top-right */}
       <div
         aria-hidden
@@ -2111,6 +2115,144 @@ export default function AboutPage() {
         <FinalCtaSection />
       </main>
       <Footer />
+    </>
+  );
+}
+
+interface MobileCarouselProps {
+  children: React.ReactNode;
+  className?: string; // The grid class for desktop
+}
+
+function MobileCarousel({ children, className }: MobileCarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
+  const childrenArray = React.Children.toArray(children);
+
+  // Use IntersectionObserver to update currentIndex when user swipes manually
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setCurrentIndex(index);
+          }
+        });
+      },
+      {
+        root: scrollRef.current,
+        threshold: 0.6, // Fire when 60% of the card is visible
+      }
+    );
+
+    const childNodes = scrollRef.current.children;
+    for (let i = 0; i < childNodes.length; i++) {
+      observer.observe(childNodes[i]);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToIndex = useCallback((index: number) => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const child = container.children[index] as HTMLElement;
+      if (child) {
+        const childLeft = child.offsetLeft;
+        const childWidth = child.offsetWidth;
+        const containerWidth = container.offsetWidth;
+        // Calculate position to center the child
+        const scrollPosition = childLeft - (containerWidth / 2) + (childWidth / 2);
+        
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, []);
+
+  const handleNext = useCallback(() => {
+    scrollToIndex((currentIndex + 1) % childrenArray.length);
+  }, [currentIndex, childrenArray.length, scrollToIndex]);
+
+  const handlePrev = useCallback(() => {
+    scrollToIndex((currentIndex - 1 + childrenArray.length) % childrenArray.length);
+  }, [currentIndex, childrenArray.length, scrollToIndex]);
+
+  // Auto-slide interval
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3500); // 3.5 seconds
+    
+    // Interval restarts when currentIndex changes (manual swipe or auto-slide)
+    return () => clearInterval(interval);
+  }, [handleNext]);
+
+  return (
+    <>
+      {/* Mobile Slider View */}
+      <div className="block md:hidden w-full relative group pb-1">
+        <div 
+          ref={scrollRef}
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full no-scrollbar pb-1 items-stretch"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {childrenArray.map((child, idx) => (
+            <div 
+              key={idx} 
+              data-index={idx}
+              className="w-full shrink-0 snap-center px-1 flex flex-col"
+            >
+              <div className="h-full w-full flex flex-col">
+                {child}
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Arrows and Dots */}
+        <div className="flex justify-center items-center gap-5 mt-2">
+          <button 
+            onClick={handlePrev}
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <div className="flex gap-1.5">
+            {childrenArray.map((_, idx) => (
+              <span 
+                key={idx} 
+                className={cn(
+                  "h-1.5 rounded-full transition-all duration-300",
+                  idx === currentIndex ? "bg-secondary w-4" : "bg-slate-300 w-1.5"
+                )}
+              />
+            ))}
+          </div>
+          <button 
+            onClick={handleNext}
+            className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
+          >
+            <ChevronRight size={16} />
+          </button>
+        </div>
+        <style>{`
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
+      </div>
+
+      {/* Desktop Grid View */}
+      <div className={cn("hidden md:grid", className)}>
+        {children}
+      </div>
     </>
   );
 }

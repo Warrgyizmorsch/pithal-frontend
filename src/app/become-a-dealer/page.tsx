@@ -130,12 +130,12 @@ export default function BecomeADealerPage() {
         </section>
 
         {/* Benefits Grid */}
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-white relative overflow-hidden">
           {/* Decorative background element */}
           <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gray-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 pointer-events-none" />
 
           <Container>
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="h-1 w-8 bg-secondary rounded-full" />
                 <span className="text-secondary font-bold uppercase tracking-widest text-sm">
@@ -190,7 +190,7 @@ export default function BecomeADealerPage() {
         </section>
 
         {/* How It Works Section */}
-        <section className="py-24 bg-[#f8fafc] relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-[#f8fafc] relative overflow-hidden">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 opacity-[0.05]"
@@ -204,7 +204,7 @@ export default function BecomeADealerPage() {
           <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-transparent via-secondary/20 to-transparent" />
 
           <Container className="relative">
-            <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">
                   Path to Partnership
@@ -265,7 +265,7 @@ export default function BecomeADealerPage() {
         </section>
 
         {/* Legacy / Stats Section */}
-        <section className="relative overflow-hidden bg-primary py-24">
+        <section className="relative overflow-hidden bg-primary py-12 md:py-16">
           {/* Enhanced Industrial Background */}
           <div
             aria-hidden

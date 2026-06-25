@@ -136,7 +136,7 @@ export const aboutPageData = {
     title: "Industries",
     highlight: "We Serve",
     subtitle:
-      "Our robust and reliable equipment is engineered to perform in\nthe most demanding applications across diverse industries.",
+      "Our robust and reliable equipment is engineered to perform in the most demanding applications across diverse industries.",
     cards: [
       { title: "Mining", text: "Engineered for tough mining operations with high capacity, durability and maximum uptime.", image: "/images/industries/mining.jpg", icon: "pickaxe" },
       { title: "Aggregates", text: "Reliable solutions for crushing, screening and material processing with consistent performance.", image: "/images/industries/aggregates.jpg", icon: "mountain" },

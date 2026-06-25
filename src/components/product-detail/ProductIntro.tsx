@@ -191,7 +191,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
             </p>
             <span aria-hidden className="mt-7 block h-[2px] w-16 bg-secondary mx-auto lg:mx-0" />
 
-            <div className="mt-7 grid gap-y-6 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border w-full">
+            <div className="mt-7 grid grid-cols-2 gap-y-6 gap-x-3 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border w-full">
               {data.features.map((feature) => (
                 <article className="px-2.5 flex flex-col items-center text-center lg:items-start lg:text-left" key={feature.title}>
                   <ProductIcon className="mb-4 text-secondary" name={feature.icon} size={42} strokeWidth={1.45} />

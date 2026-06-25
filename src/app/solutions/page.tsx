@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -671,21 +671,22 @@ const ctaNavyOverlayMetrics = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 function renderIndustryIcon(icon: string) {
+  const props = { className: "w-6 h-6 sm:w-8 sm:h-8 text-white", strokeWidth: 1.5 };
   switch (icon) {
     case "mining":
-      return <Pickaxe size={32} className="text-white" strokeWidth={1.5} />;
+      return <Pickaxe {...props} />;
     case "aggregate":
-      return <Boxes size={32} className="text-white" strokeWidth={1.5} />;
+      return <Boxes {...props} />;
     case "cement":
-      return <Factory size={32} className="text-white" strokeWidth={1.5} />;
+      return <Factory {...props} />;
     case "infra":
-      return <Road size={32} className="text-white" strokeWidth={1.5} />;
+      return <Road {...props} />;
     case "const":
-      return <HardHat size={32} className="text-white" strokeWidth={1.5} />;
+      return <HardHat {...props} />;
     case "recycle":
-      return <Recycle size={32} className="text-white" strokeWidth={1.5} />;
+      return <Recycle {...props} />;
     default:
-      return <Settings size={32} className="text-white" strokeWidth={1.5} />;
+      return <Settings {...props} />;
   }
 }
 
@@ -694,15 +695,13 @@ function renderCircleStatsIcon(name: string) {
     case "inst":
       return (
         <svg
-          width="72"
-          height="72"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-primary"
+          className="text-primary w-full h-full p-2 sm:p-3 lg:p-4"
         >
           <circle cx="12" cy="12" r="10" />
           <circle cx="12" cy="12" r="4" stroke="#ff5a00" />
@@ -711,15 +710,13 @@ function renderCircleStatsIcon(name: string) {
     case "countries":
       return (
         <svg
-          width="72"
-          height="72"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-primary"
+          className="text-primary w-full h-full p-2 sm:p-3 lg:p-4"
         >
           <circle cx="12" cy="12" r="10" />
           <path
@@ -732,15 +729,13 @@ function renderCircleStatsIcon(name: string) {
     case "support":
       return (
         <svg
-          width="72"
-          height="72"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-primary"
+          className="text-primary w-full h-full p-2 sm:p-3 lg:p-4"
         >
           <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
           <path
@@ -752,15 +747,13 @@ function renderCircleStatsIcon(name: string) {
     case "custom":
       return (
         <svg
-          width="72"
-          height="72"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-primary"
+          className="text-primary w-full h-full p-2 sm:p-3 lg:p-4"
         >
           <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
           <circle cx="12" cy="12" r="3" fill="#ff5a00" stroke="#ff5a00" />
@@ -776,8 +769,7 @@ function renderWhyChooseIcon(icon: string) {
     case "puzzle":
       return (
         <svg
-          width="38"
-          height="38"
+          className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -790,8 +782,7 @@ function renderWhyChooseIcon(icon: string) {
     case "stopwatch":
       return (
         <svg
-          width="38"
-          height="38"
+          className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -804,8 +795,7 @@ function renderWhyChooseIcon(icon: string) {
     case "engineer":
       return (
         <svg
-          width="38"
-          height="38"
+          className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -823,8 +813,7 @@ function renderWhyChooseIcon(icon: string) {
     case "gauge":
       return (
         <svg
-          width="38"
-          height="38"
+          className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -845,8 +834,7 @@ function renderWhyChooseIcon(icon: string) {
     case "handshake":
       return (
         <svg
-          width="38"
-          height="38"
+          className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -864,8 +852,7 @@ function renderWhyChooseIcon(icon: string) {
     case "scalable":
       return (
         <svg
-          width="38"
-          height="38"
+          className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#031b40"
@@ -886,21 +873,22 @@ function renderWhyChooseIcon(icon: string) {
 }
 
 function renderApplicationIcon(title: string) {
+  const props = { className: "w-6 h-6 sm:w-[26px] sm:h-[26px] text-white", strokeWidth: 1.5 };
   switch (title) {
     case "GRANITE CRUSHING":
-      return <Gem size={26} className="text-white" strokeWidth={1.5} />;
+      return <Gem {...props} />;
     case "LIMESTONE PROCESSING":
-      return <Layers size={26} className="text-white" strokeWidth={1.5} />;
+      return <Layers {...props} />;
     case "SAND MANUFACTURING":
-      return <Sparkles size={26} className="text-white" strokeWidth={1.5} />;
+      return <Sparkles {...props} />;
     case "ROAD CONSTRUCTION":
-      return <Road size={26} className="text-white" strokeWidth={1.5} />;
+      return <Road {...props} />;
     case "QUARRY OPERATIONS":
-      return <Pickaxe size={26} className="text-white" strokeWidth={1.5} />;
+      return <Pickaxe {...props} />;
     case "INDUSTRIAL MATERIAL HANDLING":
-      return <Boxes size={26} className="text-white" strokeWidth={1.5} />;
+      return <Boxes {...props} />;
     default:
-      return <Settings size={26} className="text-white" strokeWidth={1.5} />;
+      return <Settings {...props} />;
   }
 }
 
@@ -961,11 +949,11 @@ export default function SolutionsPage() {
                   .
                 </p>
 
-                <div className="mt-5 flex flex-wrap gap-3 lg:mt-8">
+                <div className="mt-5 flex flex-col sm:flex-row gap-3 lg:mt-8">
                   <Button
                     href="#contact"
                     variant="primary"
-                    className="group flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7"
+                    className="w-full sm:w-auto group flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-[13px] font-black tracking-[0.14em] sm:px-7"
                   >
                     EXPLORE SOLUTIONS
                     <ArrowRight
@@ -976,7 +964,7 @@ export default function SolutionsPage() {
                   <Button
                     href=""
                     variant="outlineNavy"
-                    className="flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-xs font-black tracking-[0.14em] sm:px-7"
+                    className="w-full sm:w-auto bg-white flex min-h-[50px] items-center justify-center gap-2 px-5 py-4 text-[13px] font-black tracking-[0.14em] sm:px-7"
                   >
                     <Download size={14} className="mr-0.5" />
                     DOWNLOAD BROCHURE
@@ -991,19 +979,19 @@ export default function SolutionsPage() {
                 {stats.map((stat, i) => (
                   <div
                     key={i}
-                    className="group flex min-w-0 items-center gap-2.5 sm:gap-3"
+                    className="group flex min-w-0 items-center gap-2 sm:gap-3"
                   >
-                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-slate-200/80 bg-slate-50 text-primary shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] lg:h-22 lg:w-22">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-200/80 bg-slate-50 text-primary shadow-[inset_0_2px_4px_rgba(0,0,0,0.03)] sm:h-16 sm:w-16 lg:h-20 lg:w-20">
                       {renderCircleStatsIcon(stat.icon)}
                     </div>
                     <div className="min-w-0">
-                      <h4 className="text-[22px] font-black leading-none text-primary md:text-2xl">
+                      <h4 className="text-[18px] sm:text-[22px] font-black leading-none text-primary md:text-2xl">
                         {stat.value}
                       </h4>
-                      <p className="mt-1 text-[10px] font-black uppercase tracking-wider text-secondary md:text-xs">
+                      <p className="mt-1 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-secondary md:text-xs">
                         {stat.label}
                       </p>
-                      <p className="mt-0.5 truncate text-[11px] text-slate-500 md:text-xs">
+                      <p className="mt-0.5 text-[10px] sm:text-[11px] text-slate-500 md:text-xs w-full sm:max-w-none leading-tight">
                         {stat.desc}
                       </p>
                     </div>
@@ -1018,7 +1006,7 @@ export default function SolutionsPage() {
         {/* SECTION 2: SOLUTIONS THAT POWER EVERY INDUSTRY */}
         {/* ========================================================================= */}
         <section
-          className="relative overflow-hidden bg-white py-[60px]"
+          className="relative overflow-hidden bg-white py-[25px] sm:py-[60px]"
           id="industries"
         >
           {/* Faint Gears Blueprint Schematic on Left */}
@@ -1102,7 +1090,7 @@ export default function SolutionsPage() {
 
           <Container className="relative z-10">
             {/* Header Block */}
-            <div className="mx-auto max-w-full text-center mb-12 px-4">
+            <div className="mx-auto max-w-full text-center mb-8 sm:mb-12 px-4">
               <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.08em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
                 <span className="text-lg">INDUSTRIES WE SERVE</span>
@@ -1120,7 +1108,7 @@ export default function SolutionsPage() {
             </div>
 
             {/* Grid of 6 cards */}
-            <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <MobileCarousel className="gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {industriesServe.map((item, i) => (
                 <div
                   key={i}
@@ -1140,7 +1128,7 @@ export default function SolutionsPage() {
                     <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent z-10" />
 
                     {/* Dark blue square/rounded box with orange/white icon */}
-                    <div className="absolute left-4 top-4 z-20 flex h-16 w-16 items-center justify-center rounded-xl bg-[#092a5c] border border-white/10 shadow-lg group-hover:bg-secondary transition-all duration-350">
+                    <div className="absolute left-4 top-4 sm:left-5 sm:top-5 z-20 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-xl bg-[#092a5c] border border-white/10 shadow-lg group-hover:bg-secondary transition-all duration-350">
                       {renderIndustryIcon(item.icon)}
                     </div>
 
@@ -1213,7 +1201,7 @@ export default function SolutionsPage() {
                   </div>
                 </div>
               ))}
-            </div>
+            </MobileCarousel>
           </Container>
         </section>
 
@@ -1221,7 +1209,7 @@ export default function SolutionsPage() {
         {/* SECTION 3: CHALLENGES WE SOLVE (Every Challenge. Engineered Solution.) */}
         {/* ========================================================================= */}
         <section
-          className="relative overflow-hidden bg-white py-[60px]"
+          className="relative overflow-hidden bg-white py-[25px] sm:py-[60px]"
           id="challenges"
         >
           {/* Faint Gears Blueprint Schematic on Left */}
@@ -1290,7 +1278,7 @@ export default function SolutionsPage() {
 
           <Container className="relative z-10">
             {/* Header Block */}
-            <div className="mx-auto max-w-full text-center mb-12 px-4">
+            <div className="mx-auto max-w-full text-center mb-8 sm:mb-12 px-4">
               <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.08em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
                 <span className="text-lg">CHALLENGES WE SOLVE</span>
@@ -1456,7 +1444,7 @@ export default function SolutionsPage() {
         {/* SECTION 5: ENGINEERED AROUND YOUR OPERATION */}
         {/* ========================================================================= */}
         <section
-          className="relative overflow-hidden bg-white pt-[60px] pb-[10px]"
+          className="relative overflow-hidden bg-white pt-[25px] sm:pt-[60px] pb-[10px]"
           id="engineering"
         >
 
@@ -1533,7 +1521,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 5B: OUR ENGINEERING SERVICES */}
         {/* ========================================================================= */}
-        <section className="bg-white pt-[20px] pb-[60px]">
+        <section className="bg-white pt-[15px] sm:pt-[20px] pb-[25px] sm:pb-[60px]">
           <Container>
             {/* Bottom block: Our Engineering Services */}
             <div className="pt-0">
@@ -1603,10 +1591,10 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 6: BUILT FOR EVERY APPLICATION */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[30px]">
+        <section className="bg-white py-[25px] sm:py-[30px]">
           <Container>
             {/* Header Block */}
-            <div className="mx-auto max-w-3xl text-center mb-16">
+            <div className="mx-auto max-w-3xl text-center mb-8 sm:mb-16">
               <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
                 <span className="text-lg">APPLICATIONS WE POWER</span>
@@ -1624,7 +1612,7 @@ export default function SolutionsPage() {
             </div>
 
             {/* Grid of 6 cards */}
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <MobileCarousel className="gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {builtApplications.map((item, i) => (
                 <div
                   key={i}
@@ -1651,7 +1639,7 @@ export default function SolutionsPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent z-10" />
 
                   {/* Top orange circular badge */}
-                  <div className="absolute left-6 top-6 z-20 flex h-16 w-16 items-center justify-center rounded-full bg-secondary border border-white/10 shadow-lg">
+                  <div className="absolute left-4 top-4 sm:left-6 sm:top-6 z-20 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-secondary border border-white/10 shadow-lg">
                     {renderApplicationIcon(item.title)}
                   </div>
 
@@ -1677,7 +1665,7 @@ export default function SolutionsPage() {
                   </div>
                 </div>
               ))}
-            </div>
+            </MobileCarousel>
 
             {/* Bottom CTA Banner */}
             <div className="mt-14 bg-slate-50 border border-slate-200/80 p-5 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -1714,7 +1702,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 7: MEASURABLE PERFORMANCE. MAXIMUM RESULTS. */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[60px] relative overflow-hidden">
+        <section className="bg-white py-[25px] sm:py-[60px] relative overflow-hidden">
           {/* Blueprint gears background motif */}
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none z-0">
             {/* Left Gear */}
@@ -2075,7 +2063,7 @@ export default function SolutionsPage() {
             <div className="bg-[#f8faff] border border-slate-100 rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm relative overflow-hidden">
               <div className="grid gap-8 lg:grid-cols-12 lg:items-center relative z-10">
                 {/* Left Column Text and Image Box (5 cols) */}
-                <div className="lg:col-span-5 relative aspect-[16/11] w-full rounded-2xl border border-slate-200/60 overflow-hidden shadow-sm">
+                <div className="lg:col-span-5 relative min-h-[320px] sm:min-h-0 sm:aspect-[16/11] w-full rounded-2xl border border-slate-200/60 overflow-hidden shadow-sm">
                   {/* Background Image - positioned properly to prevent cutting off */}
                   <Image
                     src="/solutionspage/our performance your advantage.jpg"
@@ -2085,7 +2073,7 @@ export default function SolutionsPage() {
                     sizes="(min-width: 1024px) 35vw, 100vw"
                   />
                   {/* Text Overlay Box (aligned to the left) */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/98 via-white/85 to-transparent flex flex-col justify-center p-6 md:p-8 max-w-[70%] z-10">
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/98 via-white/85 to-transparent flex flex-col justify-center p-6 md:p-8 max-w-[80%] sm:max-w-[70%] z-10">
                     <h3 className="text-[20px] md:text-[22px] font-extrabold uppercase tracking-wide text-[#092a5c] leading-tight">
                       PERFORMANCE THAT
                       <br />
@@ -2095,9 +2083,7 @@ export default function SolutionsPage() {
                     </h3>
                     <div className="w-10 h-[2px] bg-[#fa5902] my-3" />
                     <p className="text-[12px] md:text-[13px] leading-relaxed text-slate-600 font-medium">
-                      Our solutions are designed <br /> to maximize every aspect
-                      of <br /> your operations – from efficiency <br /> and
-                      productivity to cost savings <br /> and sustainability.
+                      Our solutions are designed to maximize every aspect of your operations – from efficiency and productivity to cost savings and sustainability.
                     </p>
                   </div>
                 </div>
@@ -2350,10 +2336,10 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 8: INTELLIGENT SMART PROCESS WORKFLOW */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[60px]">
+        <section className="bg-white py-[25px] sm:py-[60px]">
           <Container>
             {/* Header Block */}
-            <div className="mx-auto max-w-full text-center mb-16 px-4">
+            <div className="mx-auto max-w-full text-center mb-8 sm:mb-16 px-4">
               <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.08em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
                 <span className="text-lg">OUR SMART PROCESS</span>
@@ -2669,10 +2655,10 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 10: SOLUTIONS BUILT AROUND YOUR SUCCESS */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[60px]">
+        <section className="bg-white py-[25px] sm:py-[60px]">
           <Container>
             {/* Header Block */}
-            <div className="mx-auto max-w-full text-center mb-16 px-4">
+            <div className="mx-auto max-w-full text-center mb-8 sm:mb-16 px-4">
               <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.08em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
                 <span className="text-lg">WHY CHOOSE PITHAL SOLUTIONS</span>
@@ -2698,7 +2684,7 @@ export default function SolutionsPage() {
                 animation: arc-spin 0.7s cubic-bezier(0.4,0,0.2,1) forwards;
               }
             `}</style>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16">
+            <MobileCarousel className="gap-8 sm:grid-cols-2 lg:grid-cols-3 sm:mb-16">
               {whyChooseCards.map((item, i) => (
                 <div
                   key={i}
@@ -2708,11 +2694,11 @@ export default function SolutionsPage() {
                   <span className="absolute left-0 top-4 bottom-4 w-[3px] rounded-full bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Left-side circle container with orange crescent */}
-                  <div className="flex gap-5 items-start">
-                    <div className="relative flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex gap-4 sm:gap-5 items-start">
+                    <div className="relative flex h-16 w-16 sm:h-24 sm:w-24 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-md group-hover:shadow-lg transition-shadow duration-300">
                       {/* Orange outer arc — partial by default, full circle + glow on hover */}
                       <svg
-                        className="absolute -inset-[1.5px] h-[98px] w-[98px] -rotate-45 pointer-events-none"
+                        className="absolute -inset-[1px] sm:-inset-[1.5px] h-[66px] w-[66px] sm:h-[98px] sm:w-[98px] -rotate-45 pointer-events-none"
                         viewBox="0 0 100 100"
                       >
                         <circle
@@ -2747,10 +2733,10 @@ export default function SolutionsPage() {
                   </div>
                 </div>
               ))}
-            </div>
+            </MobileCarousel>
 
             {/* Bottom 6 stats row */}
-            <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6.5 shadow-sm flex flex-wrap items-center justify-center gap-6 md:gap-12">
+            <div className="mt-8 sm:mt-10 bg-slate-50 border border-slate-200/80 rounded-2xl p-6.5 shadow-sm flex flex-wrap items-center justify-center gap-6 md:gap-12">
               {whyChooseBottomStats.map((item, i) => {
                 const SIcon = item.icon;
                 return (
@@ -3224,5 +3210,113 @@ export default function SolutionsPage() {
       </main>
       <Footer />
     </>
+  );
+}
+
+interface MobileCarouselProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+function MobileCarousel({ children, className }: MobileCarouselProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const checkScroll = useCallback(() => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    setCanScrollLeft(scrollLeft > 0);
+    setCanScrollRight(Math.ceil(scrollLeft + clientWidth) < scrollWidth);
+
+    const childWidth = scrollWidth / React.Children.count(children);
+    const newActiveIndex = Math.round(scrollLeft / childWidth);
+    setActiveIndex(newActiveIndex);
+  }, [children]);
+
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener("resize", checkScroll);
+    return () => window.removeEventListener("resize", checkScroll);
+  }, [checkScroll]);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    
+    const isAtEnd = Math.ceil(scrollLeft + clientWidth) >= scrollWidth - 10;
+    const isAtStart = scrollLeft <= 10;
+
+    if (direction === "right" && isAtEnd) {
+      scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+      return;
+    }
+    if (direction === "left" && isAtStart) {
+      scrollRef.current.scrollTo({ left: scrollWidth, behavior: "smooth" });
+      return;
+    }
+
+    const scrollAmount = direction === "left" ? -clientWidth : clientWidth;
+    scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  };
+
+  const scrollTo = (index: number) => {
+    if (!scrollRef.current) return;
+    const { scrollWidth } = scrollRef.current;
+    const childWidth = scrollWidth / React.Children.count(children);
+    scrollRef.current.scrollTo({
+      left: index * childWidth,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <div className="relative group w-full mb-3 sm:mb-0">
+      <div
+        ref={scrollRef}
+        onScroll={checkScroll}
+        className={`flex overflow-x-auto snap-x snap-mandatory scrollbar-hide [&::-webkit-scrollbar]:hidden w-full pb-2 sm:grid sm:overflow-visible sm:snap-none sm:pb-0 ${className || ""}`}
+        style={{ scrollBehavior: "smooth", WebkitOverflowScrolling: "touch", scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {React.Children.map(children, (child) => (
+          <div className="snap-center shrink-0 w-full px-4 sm:w-auto sm:px-0 h-full">
+            {child}
+          </div>
+        ))}
+      </div>
+
+      <div className="flex sm:hidden items-center justify-center gap-4 mt-6">
+        <button
+          onClick={() => scroll("left")}
+          className="flex h-10 w-10 items-center justify-center rounded-full border transition-all border-secondary/30 bg-white text-secondary shadow-sm hover:border-secondary hover:bg-secondary/5"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+
+        <div className="flex items-center gap-2">
+          {React.Children.map(children, (_, index) => (
+            <button
+              onClick={() => scrollTo(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === activeIndex ? "w-6 bg-secondary" : "w-2 bg-slate-200"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={() => scroll("right")}
+          className="flex h-10 w-10 items-center justify-center rounded-full border transition-all border-secondary/30 bg-white text-secondary shadow-sm hover:border-secondary hover:bg-secondary/5"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+    </div>
   );
 }
