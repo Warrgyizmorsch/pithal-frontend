@@ -38,23 +38,25 @@ export function StatCard({
         aria-hidden
         className={cn(
           "shrink-0 text-primary",
-          compact ? "h-8 w-8 sm:h-9 sm:w-9" : "h-9 w-9 sm:h-[43px] sm:w-[43px]",
+          compact ? "h-7 w-7 sm:h-9 sm:w-9" : "h-9 w-9 sm:h-[43px] sm:w-[43px]",
         )}
         strokeWidth={1.25}
       />
-      <div>
+      <div className="min-w-0">
         <p
           className={cn(
             "headline leading-none text-secondary",
-            compact ? "text-[1.75rem] sm:text-[2rem]" : "text-[1.85rem] sm:text-[2.15rem]",
+            compact
+              ? "text-[clamp(0.95rem,5vw,2rem)] sm:text-[2rem]"
+              : "text-[1.85rem] sm:text-[2.15rem]",
           )}
         >
           {value}
         </p>
         <p
           className={cn(
-            "mt-1 max-w-32 font-bold uppercase text-primary",
-            compact ? "text-[11px] leading-[1.15]" : "text-xs leading-[1.25]",
+            "mt-1 font-bold uppercase text-primary",
+            compact ? "text-[10px] sm:text-[11px] leading-[1.15]" : "text-xs leading-[1.25]",
           )}
         >
           {label}
@@ -62,4 +64,5 @@ export function StatCard({
       </div>
     </article>
   );
+
 }

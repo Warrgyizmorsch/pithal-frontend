@@ -81,7 +81,7 @@ export function HeroSection() {
           {/* Intense white glow behind stats for visibility */}
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,1)_40%,rgba(255,255,255,0)_85%)] -inset-x-16 -inset-y-16 blur-2xl pointer-events-none" />
           <div className="absolute inset-0 -z-10 bg-white/80 blur-xl -inset-x-8 -inset-y-8 rounded-[3rem] pointer-events-none" />
-          <div className="relative grid grid-cols-2 gap-y-6 sm:gap-x-4 md:gap-x-8 lg:grid-cols-4 lg:gap-x-0">
+          <div className="relative grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-4 md:gap-x-8 lg:grid-cols-4 lg:gap-x-0">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
