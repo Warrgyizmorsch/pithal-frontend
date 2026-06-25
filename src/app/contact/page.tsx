@@ -720,36 +720,39 @@ Message: ${formData.requirement}`;
                 return (
                   <div
                     key={i}
-                    className="group relative flex flex-col bg-white border border-slate-200 p-6 rounded-xl hover:shadow-xl transition-all duration-300 hover:border-slate-300 justify-between min-h-[220px]"
+                    className="group relative overflow-hidden flex flex-col bg-white border border-slate-200 p-6 rounded-xl hover:shadow-xl transition-all duration-500 hover:border-primary justify-between min-h-[220px]"
                   >
-                    <div className="space-y-4">
+                    {/* Sliding Background */}
+                    <div className="absolute inset-0 bg-[#092a5c]/95 backdrop-blur-sm -translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:translate-y-0 z-0" />
+
+                    <div className="space-y-4 relative z-10">
                       {/* Top icon in orange outlined circle */}
-                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white border border-secondary/20 shadow-sm text-secondary">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white border border-secondary/20 shadow-sm text-secondary transition-colors duration-500 group-hover:bg-secondary group-hover:text-white group-hover:border-secondary">
                         <Icon size={20} />
                       </div>
 
                       <div>
-                        <h3 className="text-sm font-black uppercase tracking-wider text-primary">
+                        <h3 className="text-sm font-black uppercase tracking-wider text-primary transition-colors duration-500 group-hover:text-white">
                           {info.channel}
                         </h3>
-                        <p className="mt-2 text-xs md:text-sm text-slate-600 leading-relaxed whitespace-pre-line font-medium">
+                        <p className="mt-2 text-xs md:text-sm text-slate-600 leading-relaxed whitespace-pre-line font-medium transition-colors duration-500 group-hover:text-slate-300">
                           {info.content}
                         </p>
                       </div>
                     </div>
 
-                    <div className="mt-6 pt-3 border-t border-slate-100">
+                    <div className="mt-6 pt-3 border-t border-slate-100 relative z-10 transition-colors duration-500 group-hover:border-white/20">
                       <a
                         href={info.href}
                         target={
                           info.href.startsWith("http") ? "_blank" : "_self"
                         }
-                        className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-secondary hover:text-primary transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-secondary group-hover:text-white transition-colors duration-500"
                       >
                         {info.linkText}
                         <ArrowRight
                           size={12}
-                          className="transition-transform group-hover:translate-x-1"
+                          className="transition-transform duration-300 group-hover:translate-x-1"
                         />
                       </a>
                     </div>
@@ -1465,16 +1468,23 @@ Message: ${formData.requirement}`;
                     </button>
 
                     {/* Answer content box */}
-                    {isOpen && (
-                      <div className="p-5.5 pt-0 border-t border-slate-100 bg-slate-50/50 flex gap-4.5 items-start">
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-xs mt-1">
-                          <Headphones size={16} />
+                    <div
+                      className={cn(
+                        "grid transition-all duration-300 ease-in-out",
+                        isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      )}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="p-5.5 pt-0 border-t border-slate-100 bg-slate-50/50 flex gap-4.5 items-start">
+                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 text-secondary shadow-xs mt-1">
+                            <Headphones size={16} />
+                          </div>
+                          <p className="text-sm md:text-base leading-relaxed text-slate-600 font-medium">
+                            {faq.answer}
+                          </p>
                         </div>
-                        <p className="text-sm md:text-base leading-relaxed text-slate-600 font-medium">
-                          {faq.answer}
-                        </p>
                       </div>
-                    )}
+                    </div>
                   </div>
                 );
               })}

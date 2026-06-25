@@ -63,7 +63,7 @@ export const primeUltraRockData: ProductDetailData = {
       { title: "High Throughput", text: "Optimized for maximum material processing", icon: "gauge" },
       { title: "Compact Design", text: "Lower civil and installation costs", icon: "layers" },
       { title: "Hydraulic Safety", text: "Protection against tramp iron and overloads", icon: "shield" },
-      { title: "Smart Automation", text: "PITHAL SMART CRUSH™ for remote diagnostics", icon: "settings" },
+      { title: "Smart Automation", text: "PITHAL SMART CRUSH for remote diagnostics", icon: "settings" },
     ],
     callouts: [
       {
@@ -141,7 +141,7 @@ export const primeUltraRockData: ProductDetailData = {
     { title: "Constant High Stroke", description: "Maintains aggressive crushing action throughout the chamber for higher reduction.", icon: "target" },
     { title: "Hydraulic Overload", description: "Automatic release mechanism protects the crusher from tramp iron.", icon: "shield" },
     { title: "Integrated Scalping", description: "Improves efficiency by removing fines and reducing energy consumption.", icon: "gauge" },
-    { title: "Smart Automation", description: "CSS adjustment, capacity monitoring, and predictive maintenance via SMART CRUSH™.", icon: "settings" },
+    { title: "Smart Automation", description: "CSS adjustment, capacity monitoring, and predictive maintenance via SMART CRUSH.", icon: "settings" },
     { title: "Compact Footprint", description: "Reduced structural steel and easier installation in constrained spaces.", icon: "layers" },
   ],
   specificationsSection: {
@@ -216,7 +216,7 @@ export const primeUltraRockData: ProductDetailData = {
     {
       number: "04",
       title: "Smart Monitoring",
-      description: "SMART CRUSH™ monitors CSS, liners, and vibration.",
+      description: "SMART CRUSH monitors CSS, liners, and vibration.",
       iconFile: "final-output.png",
       image: { src: "/images/process/final-output.png", alt: "Automation monitoring" },
     },

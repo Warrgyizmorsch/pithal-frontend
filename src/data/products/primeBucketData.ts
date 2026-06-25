@@ -5,11 +5,11 @@ export const primeBucketData: ProductDetailData = {
   images: [
     {
       src: "/primebucket/banner.png",
-      alt: "Prime Bucket Crusher™ Hero – excavator-mounted jaw crusher on demolition site",
+      alt: "Prime Bucket Crusher Hero – excavator-mounted jaw crusher on demolition site",
     },
     {
       src: "/primebucket/overview1.png",
-      alt: "Prime Bucket Crusher™ Overview – crusher bucket detail and attachment system",
+      alt: "Prime Bucket Crusher Overview – crusher bucket detail and attachment system",
     },
    
   ],
@@ -19,7 +19,7 @@ export const primeBucketData: ProductDetailData = {
       { label: "Products", href: "/#products" },
       { label: "PrimeBucket", href: "/products/prime-bucket" },
     ],
-    eyebrow: "PrimeBucket™",
+    eyebrow: "PrimeBucket",
     title: "PRIME",
     highlightedTitle: "BUCKET",
     subtitle: "Crush On Site. Save Time. Reduce Cost.",
@@ -28,7 +28,7 @@ export const primeBucketData: ProductDetailData = {
     descriptionHighlight: "crush directly on site",
     image: {
       src: "/primebucket/banner.png",
-      alt: "Pithal Prime Bucket Crusher™ operating on a demolition site",
+      alt: "Pithal Prime Bucket Crusher operating on a demolition site",
     },
     ctas: [
       { label: "Request Quote", href: "#contact", variant: "primary", icon: "file" },
@@ -46,7 +46,7 @@ export const primeBucketData: ProductDetailData = {
     title: "EFFICIENCY AT",
     highlight: "THE SOURCE",
     subtitle:
-      "Transform your excavator into a high-performance mobile crushing plant with Prime Bucket Crusher™ technology.",
+      "Transform your excavator into a high-performance mobile crushing plant with Prime Bucket Crusher technology.",
     ctaText: "Crush On Site. Save Costs. Build Faster.",
   },
   stats: [
@@ -61,10 +61,10 @@ export const primeBucketData: ProductDetailData = {
     title: "CRUSH ON SITE.",
     highlight: "REDUCE WASTE.",
     description:
-      "Pithal Prime Bucket Crusher™ is an excavator-mounted jaw crusher bucket that processes concrete, asphalt, and natural rock on-site. It eliminates the need for material transport to a central plant, significantly reducing fuel and handling costs.",
+      "Pithal Prime Bucket Crusher is an excavator-mounted jaw crusher bucket that processes concrete, asphalt, and natural rock on-site. It eliminates the need for material transport to a central plant, significantly reducing fuel and handling costs.",
     image: {
       src: "/primebucket/overview1.png",
-      alt: "Prime Bucket Crusher™ excavator attachment system",
+      alt: "Prime Bucket Crusher excavator attachment system",
     },
     ctas: [
       { label: "Request Quote", href: "#contact", variant: "primary", icon: "file" },
@@ -243,7 +243,7 @@ export const primeBucketData: ProductDetailData = {
     title: "SITE CRUSHING.",
     highlight: "SIMPLIFIED.",
     description:
-      "Watch Prime Bucket Crusher™ transform demolition waste into valuable aggregates in seconds.",
+      "Watch Prime Bucket Crusher transform demolition waste into valuable aggregates in seconds.",
     points: [
       "No Transport Needed",
       "Hydraulic Reverse Function",
@@ -274,7 +274,7 @@ export const primeBucketData: ProductDetailData = {
     ],
     thumbnail: {
       src: "/primebucket/video-showcase.png",
-      alt: "Prime Bucket Crusher™ performance video thumbnail",
+      alt: "Prime Bucket Crusher performance video thumbnail",
     },
     caption: "DEMOLITION SITE RECYCLING",
     subCaption: "Crush, recycle, and reuse on the spot.",
@@ -289,11 +289,11 @@ export const primeBucketData: ProductDetailData = {
       "Explore upcoming Prime Series attachments for your excavator.",
   },
   relatedMachines: [
-    { title: "PRIMESCREEN™", description: "Screening bucket for accurate material separation.", image: { src: "/images/products/related-products/vibrating-screen.png", alt: "Screening Bucket" }, category: "Screening", icon: "screen", href: "#", actionLabel: "COMING SOON" },
-    { title: "PRIMESORT™", description: "Sorting grapple for efficient demolition management.", image: { src: "/images/products/related-products/belt-conveyor.png", alt: "Sorting Grapple" }, category: "Sorting", icon: "layers", href: "#", actionLabel: "COMING SOON" },
-    { title: "PRIMEPULVERIZER™", description: "Secondary processing for concrete and rebar.", image: { src: "/images/products/related-products/cone-crusher.png", alt: "Pulverizer" }, category: "Recycling", icon: "settings", href: "#", actionLabel: "COMING SOON" },
-    { title: "PRIMESHEAR™", description: "Heavy-duty steel and rebar cutting attachment.", image: { src: "/images/products/related-products/vsi-crusher.png", alt: "Shear" }, category: "Demolition", icon: "shield", href: "#", actionLabel: "COMING SOON" },
-    { title: "PRIMEDRUM™", description: "Rotary screening bucket for topsoil and aggregates.", image: { src: "/images/products/related-products/vibrating-feeder.png", alt: "Rotary Drum" }, category: "Screening", icon: "layers", href: "#", actionLabel: "COMING SOON" },
+    { title: "PRIMESCREEN", description: "Screening bucket for accurate material separation.", image: { src: "/images/products/related-products/vibrating-screen.png", alt: "Screening Bucket" }, category: "Screening", icon: "screen", href: "#", actionLabel: "COMING SOON" },
+    { title: "PRIMESORT", description: "Sorting grapple for efficient demolition management.", image: { src: "/images/products/related-products/belt-conveyor.png", alt: "Sorting Grapple" }, category: "Sorting", icon: "layers", href: "#", actionLabel: "COMING SOON" },
+    { title: "PRIMEPULVERIZER", description: "Secondary processing for concrete and rebar.", image: { src: "/images/products/related-products/cone-crusher.png", alt: "Pulverizer" }, category: "Recycling", icon: "settings", href: "#", actionLabel: "COMING SOON" },
+    { title: "PRIMESHEAR", description: "Heavy-duty steel and rebar cutting attachment.", image: { src: "/images/products/related-products/vsi-crusher.png", alt: "Shear" }, category: "Demolition", icon: "shield", href: "#", actionLabel: "COMING SOON" },
+    { title: "PRIMEDRUM", description: "Rotary screening bucket for topsoil and aggregates.", image: { src: "/images/products/related-products/vibrating-feeder.png", alt: "Rotary Drum" }, category: "Screening", icon: "layers", href: "#", actionLabel: "COMING SOON" },
   ],
   contactSection: {
     id: "contact",
@@ -301,7 +301,7 @@ export const primeBucketData: ProductDetailData = {
     title: "REDUCE COSTS ON",
     highlight: "YOUR NEXT SITE.",
     description:
-      "Tell us your excavator model and site requirements, and we'll recommend the best Prime Bucket Crusher™ for you.",
+      "Tell us your excavator model and site requirements, and we'll recommend the best Prime Bucket Crusher for you.",
     image: {
       src: "/images/products/jaw-crusher/contact-us.png",
       alt: "On-site crushing consultation",
@@ -340,7 +340,7 @@ export const primeBucketData: ProductDetailData = {
     id: "resources",
     eyebrow: "Downloads",
     title: "LEARN MORE",
-    highlight: "ABOUT Prime Bucket Crusher™.",
+    highlight: "ABOUT Prime Bucket Crusher.",
     subtitle:
       "Download our brochures and technical guides to start saving on your project today.",
     supportCta: { label: "REQUEST BROCHURE", href: "#", variant: "primary", icon: "arrow" },

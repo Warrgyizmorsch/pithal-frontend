@@ -168,7 +168,7 @@ export function Footer() {
                 "Prime VSI Crushers": "/products/vsi-crushers",
                 "Prime Vibrating Feeders": "/products/feeders",
                 "Prime Vibrating Screens": "/products/screening-solutions",
-                "Mobile Crushing Plants": "/products/complete-plants",
+                "Prime Complete Plants": "/products/complete-plants",
                 "Spare Parts": "/products",
                 "Wear Parts": "/products",
               },
