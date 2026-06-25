@@ -30,9 +30,9 @@ const certifications = [
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mb-6">
+    <div className="mb-4 sm:mb-6">
       <h3 className="text-[1.05rem] font-bold uppercase text-primary">{children}</h3>
-      <span aria-hidden className="mt-4 block h-[3px] w-9 bg-secondary" />
+      <span aria-hidden className="mt-3 sm:mt-4 block h-[3px] w-9 bg-secondary" />
     </div>
   );
 }
@@ -41,7 +41,7 @@ function FooterLink({ children, href = "#" }: { children: React.ReactNode; href?
   return (
     <li>
       <Link
-        className="group flex items-center gap-3 text-[0.95rem] text-text-dark transition-colors hover:text-secondary"
+        className="group flex items-center gap-2 sm:gap-3 text-[0.82rem] sm:text-[0.95rem] text-text-dark transition-colors hover:text-secondary"
         href={href}
       >
         <ChevronRight
@@ -82,8 +82,8 @@ export function Footer() {
   return (
     <footer className="border-t border-primary/20 bg-white" id="global">
       <div className="pt-8 pb-0 sm:pt-10 xl:pt-12 px-5 sm:px-8 lg:px-10">
-        <div className="grid gap-x-8 gap-y-8 border-b border-primary/20 pb-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[2.8fr_1.02fr_1.25fr_1fr] xl:gap-y-10 xl:pb-[2rem]">
-          <div className="md:col-span-2 lg:col-span-1">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-8 border-b border-primary/20 pb-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[2.8fr_1.02fr_1.25fr_1fr] xl:gap-y-10 xl:pb-[2rem]">
+          <div className="col-span-2 md:col-span-2 lg:col-span-1">
             {/* Inner 2-col: brand left, contact right */}
             <div className="grid gap-8 sm:grid-cols-2">
               {/* Brand + tagline */}
@@ -198,7 +198,7 @@ export function Footer() {
             return (
               <div key={column.title}>
                 <FooterHeading>{column.title}</FooterHeading>
-                <ul className="space-y-[1.3rem]">
+                <ul className="space-y-3 sm:space-y-[1.3rem]">
                   {column.links
                     .filter((link) => link !== "Projects")
                     .map((link) => (
