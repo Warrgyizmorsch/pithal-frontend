@@ -44,6 +44,11 @@ export const aboutPageData = {
         title: "Our Industrial Capability",
         text: "From design & manufacturing to installation & support, our end-to-end capabilities ensure every machine meets the highest standards of quality, durability and efficiency.",
       },
+      {
+        icon: "handshake",
+        title: "Our Customer Commitment",
+        text: "We are dedicated to building long-term relationships through exceptional after-sales support, reliable parts availability, and expert technical service globally.",
+      },
     ],
     metrics: [
       { title: "Precision Engineering", text: "Designed with accuracy, built for performance. Every component engineered for strength, efficiency and reliability.", icon: "target" },
@@ -159,7 +164,7 @@ export const aboutPageData = {
       { title: "Performance", text: "We are committed to engineering excellence and continuous improvement in everything we do.", icon: "trending" },
       { title: "Integrity", text: "We operate with honesty, transparency, and fairness in our relationships and business practices.", icon: "scale" },
       { title: "Sustainability", text: "We care for the environment and build sustainable solutions that support a better future.", icon: "leaf" },
-      { title: "Customer Success", text: "We've committed to customer success. We listen, adapt, and deliver solutions that create lasting value.", icon: "users" },
+      { title: "Customer Success", text: "Our customers' success is our success. We listen, adapt, and deliver solutions that create lasting value.", icon: "users" },
     ],
     bottomItems: [
       { title: "Strong Values", text: "The foundation of everything we do.", icon: "award" },

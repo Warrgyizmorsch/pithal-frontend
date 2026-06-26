@@ -475,7 +475,7 @@ export const vibratingScreenData = createProductData({
     { title: "Consistent Grades", description: "Reliable separation helps maintain product quality.", icon: "target" },
   ],
   callouts: [
-    { label: "Feed Box", text: "Distributes material evenly across the deck", layout: { dotClass: "left-[26%] top-[18%]", lineClass: "left-[12%] top-[8%] h-[72px] w-[96px] border-b border-l", cardClass: "left-[1%] top-[2%] w-[168px]" } },
+    { label: "Feed Box", text: "Distributes material evenly across the deck", layout: { dotClass: "left-[41%] top-[34%]", lineClass: "left-[27%] top-[24%] h-[72px] w-[96px] border-b border-l", cardClass: "left-[16%] top-[18%] w-[168px]" } },
     { label: "Screen Decks", text: "Configurable decks for multiple product sizes", layout: { dotClass: "right-[34%] top-[28%]", lineClass: "right-[8%] top-[6%] h-[160px] w-[170px] border-b border-r", cardClass: "right-[1%] top-[2%] w-[168px]" } },
     { label: "Vibration Drive", text: "Reliable exciter system creates consistent motion", layout: { dotClass: "right-[22%] top-[42%]", lineClass: "right-[8%] top-[36%] h-px w-[96px] border-t", cardClass: "right-[1%] top-[29%] w-[172px]" } },
     { label: "Screen Media", text: "Mesh options selected for material and output", layout: { dotClass: "left-[36%] top-[44%]", lineClass: "left-[14%] top-[44%] h-px w-[148px] border-t", cardClass: "left-[1%] top-[36%] w-[172px]" } },

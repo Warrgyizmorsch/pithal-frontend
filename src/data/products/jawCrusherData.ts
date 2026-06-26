@@ -71,9 +71,9 @@ export const jawCrusherData: ProductDetailData = {
         text: "Wide feed opening for large size material",
         position: "leftTop",
         layout: {
-          dotClass: "left-[28%] top-[16%]",
-          lineClass: "left-[17%] top-[11%] h-[40px] w-[80px] border-b border-l",
-          cardClass: "left-[2%] top-[2%] w-[172px]",
+          dotClass: "left-[40%] top-[18%]",
+          lineClass: "left-[29%] top-[13%] h-[40px] w-[80px] border-b border-l",
+          cardClass: "left-[14%] top-[4%] w-[172px]",
         },
       },
       {
@@ -89,11 +89,11 @@ export const jawCrusherData: ProductDetailData = {
       {
         label: "Jaw Plates",
         text: "High manganese steel for maximum wear resistance",
-        position: "leftBottom",
+        position: "rightBottom",
         layout: {
-          dotClass: "left-[32%] top-[48%]",
-          lineClass: "left-[14%] top-[50%] h-px w-[72px] border-t",
-          cardClass: "left-[1%] top-[42%] w-[176px]",
+          dotClass: "left-[62%] top-[48%]",
+          lineClass: "left-[63%] top-[50%] h-px w-[72px] border-t",
+          cardClass: "left-[75%] top-[42%] w-[176px]",
         },
       },
       {

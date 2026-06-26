@@ -29,24 +29,54 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
     `${data.title} ${data.highlightedTitle}`;
 
   return (
-    <section className="min-h-[500px] relative isolate overflow-hidden bg-primary-dark text-white">
-      <Image
-        alt={data.image.alt}
-        className="object-cover object-center "
-        fill
-        preload
-        sizes="100vw lg:90vw]"
-        src={data.image.src}
-      />
-      <div className="absolute inset-0 bg-primary-dark/45 lg:bg-transparent" />
-      <div className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,rgba(1,19,45,0.99)_0%,rgba(3,27,64,0.97)_31%,rgba(3,27,64,0.74)_48%,rgba(3,27,64,0.08)_72%)]" />
-      <div className="absolute inset-y-0 left-0 hidden w-[62%] bg-primary-dark/80 [clip-path:polygon(0_0,83%_0,66%_100%,0_100%)] lg:block" />
-      <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_2px_2px,rgba(255,255,255,.28)_1px,transparent_0)] [background-size:20px_20px]" />
-      <div className="absolute left-[48%] top-0 hidden h-[3px] w-[22%] origin-left -rotate-[28deg] bg-secondary lg:block" />
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-secondary/45" />
+    <section 
+      className="relative min-h-[500px] lg:min-h-[600px] xl:min-h-[650px] flex flex-col justify-center overflow-hidden text-white"
+      style={{ background: 'linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0d1929 100%)' }}
+    >
+      <div 
+        className="absolute top-auto bottom-0 right-0 w-full h-[50%] md:top-0 md:bottom-auto md:h-full md:w-[65%] lg:w-[88%] pointer-events-none z-0
+                   [clip-path:polygon(0_30%,100%_0,100%_100%,0%_100%)]
+                   md:[clip-path:polygon(30%_0,100%_0,100%_100%,10%_100%)]
+                   lg:[clip-path:polygon(20%_0,100%_0,100%_100%,0%_100%)]"
+      >
+        <Image
+          alt={data.image.alt}
+          className="object-contain object-center md:object-right"
+          fill
+          preload
+          sizes="(max-width: 768px) 100vw, 65vw"
+          src={data.image.src}
+        />
+        {/* Overlay fade effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628] via-[#0a1628]/80 to-transparent hidden md:block" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628] via-[#0a1628]/80 to-transparent md:hidden block" />
+      </div>
 
-      <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:justify-between lg:py-8 mx-auto lg:mx-0">
-        <div className="max-w-[780px] flex flex-col items-center lg:items-start text-center lg:text-left">
+
+
+      {/* Dots Pattern */}
+      <div 
+        className="absolute w-[100px] h-[100px] opacity-75 hidden md:block z-0"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 2px)',
+          backgroundSize: '15px 15px',
+          top: '20%',
+          left: '3%'
+        }}
+      />
+      <div 
+        className="absolute w-[100px] h-[100px] opacity-75 hidden md:block z-0"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 2px)',
+          backgroundSize: '15px 15px',
+          bottom: '25%',
+          left: '40%'
+        }}
+      />
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-secondary/45 z-10" />
+
+      <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-8 lg:justify-between lg:py-10 mx-auto">
+        <div className="max-w-[650px] flex flex-col items-center lg:items-start text-center lg:text-left">
           <HeroNavigation
             current={currentLabel}
             eyebrow={data.eyebrow}
@@ -54,14 +84,14 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
             breadcrumbs={data.breadcrumb}
           />
 
-          <h1 className="headline text-[clamp(2rem,7vw,5.5rem)] leading-[0.95] text-white lg:whitespace-nowrap">
+          <h1 className="headline text-[clamp(2rem,6.2vw,4.8rem)] leading-[0.95] text-white">
             {data.title} <span className="text-secondary">{data.highlightedTitle}</span>
           </h1>
-          <p className="mt-2 text-[clamp(1.2rem,2.2vw,1.6rem)] font-black uppercase leading-tight tracking-[0.12em] text-white lg:whitespace-nowrap">
+          <p className="mt-2 text-[clamp(1.1rem,1.8vw,1.4rem)] font-black uppercase leading-tight tracking-[0.12em] text-white">
             {data.subtitle}
           </p>
           <span className="mt-3 block h-1.5 w-32 bg-secondary [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)] mx-auto lg:mx-0" />
-          <p className="mt-5 max-w-[580px] text-[16px] font-medium leading-[1.45] text-white mx-auto lg:mx-0">
+          <p className="mt-5 max-w-[500px] text-[16px] font-medium leading-[1.45] text-white mx-auto lg:mx-0">
             <HeroDescription highlight={data.descriptionHighlight} text={data.description} />
           </p>
 

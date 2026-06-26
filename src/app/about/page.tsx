@@ -192,7 +192,11 @@ function HeroSection() {
                 key={stat.label}
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary sm:h-11 sm:w-11 lg:h-9 lg:w-9 xl:h-12 xl:w-12">
-                  <Icon name={stat.icon} className="h-[22px] w-[22px] lg:h-[18px] lg:w-[18px] xl:h-[22px] xl:w-[22px]" size={22} />
+                  <Icon
+                    name={stat.icon}
+                    className="h-[22px] w-[22px] lg:h-[18px] lg:w-[18px] xl:h-[22px] xl:w-[22px]"
+                    size={22}
+                  />
                 </span>
                 <div>
                   <p className="headline text-[22px] leading-none text-primary sm:text-[35px] lg:text-[18px] xl:text-[24px] 2xl:text-[28px]">
@@ -211,7 +215,11 @@ function HeroSection() {
               />
               <div className="relative flex h-full min-h-[76px] items-center gap-3 p-3 sm:min-h-[82px] sm:p-4 lg:min-h-[92px] lg:p-2 lg:gap-2 xl:p-4 xl:gap-3">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary text-white shadow-[0_12px_22px_rgba(250,89,2,0.25)] lg:h-9 lg:w-9 xl:h-11 xl:w-11">
-                  <Play fill="currentColor" size={17} className="h-[17px] w-[17px] lg:h-[13px] lg:w-[13px] xl:h-[17px] xl:w-[17px]" />
+                  <Play
+                    fill="currentColor"
+                    size={17}
+                    className="h-[17px] w-[17px] lg:h-[13px] lg:w-[13px] xl:h-[17px] xl:w-[17px]"
+                  />
                 </span>
                 <div>
                   <p className="max-w-[7rem] text-xs font-black leading-5 lg:text-[10px] lg:leading-4 xl:text-xs xl:leading-5">
@@ -252,7 +260,7 @@ function WhoWeAreSection() {
   return (
     <section className="bg-white py-[35px]">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           {/* ── Left Column ── */}
           <div>
             {/* Eyebrow: /// WHO WE ARE /// ——————— */}
@@ -290,10 +298,10 @@ function WhoWeAreSection() {
             </h2>
 
             {/* Description paragraphs */}
-            <p className="mt-6 max-w-[520px] text-base leading-7 text-text-muted sm:text-[17px]">
+            <p className="mt-6 max-w-[680px] text-base leading-7 text-text-muted sm:text-[17px]">
               {experience.description1}
             </p>
-            <p className="mt-3 max-w-[520px] text-base leading-7 text-text-muted sm:text-[17px]">
+            <p className="mt-3 max-w-[680px] text-base leading-7 text-text-muted sm:text-[17px]">
               {experience.description2}
             </p>
 
@@ -301,14 +309,14 @@ function WhoWeAreSection() {
             <div className="mt-8 space-y-5">
               {experience.philosophy.map((item) => (
                 <div className="flex gap-4" key={item.title}>
-                  <span className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-dashed border-secondary/55 bg-secondary/5 text-secondary">
-                    <Icon name={item.icon} size={20} />
+                  <span className="mt-0.5 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-dashed border-secondary/55 bg-secondary/5 text-secondary">
+                    <Icon name={item.icon} size={26} />
                   </span>
                   <div>
                     <h3 className="text-[15px] font-black uppercase tracking-[0.07em] text-primary">
                       {item.title}
                     </h3>
-                    <p className="mt-1.5 max-w-[430px] text-[15px] leading-6 text-text-muted">
+                    <p className="mt-1.5 max-w-[580px] text-[15px] leading-6 text-text-muted">
                       {item.text}
                     </p>
                   </div>
@@ -318,9 +326,9 @@ function WhoWeAreSection() {
           </div>
 
           {/* ── Right Column: Image Grid ── */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
             {/* Top wide image */}
-            <div className="image-hover relative h-[320px] overflow-hidden rounded-2xl shadow-[0_16px_36px_rgba(3,27,64,0.12)] sm:h-[380px] group/img1">
+            <div className="image-hover relative h-[320px] overflow-hidden rounded-lg shadow-[0_16px_36px_rgba(3,27,64,0.12)] sm:h-[380px] group/img1">
               <Image
                 alt="Pithal Machines manufacturing floor with crushing equipment"
                 className="object-cover transition-transform duration-700 group-hover/img1:scale-[1.03]"
@@ -330,8 +338,8 @@ function WhoWeAreSection() {
               />
             </div>
             {/* Bottom row: two images side-by-side */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="image-hover relative h-[190px] overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[220px] group/img2">
+            <div className="grid grid-cols-2 gap-2">
+              <div className="image-hover relative h-[190px] overflow-hidden rounded-lg shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[220px] group/img2">
                 <Image
                   alt="Pithal Machines facility exterior"
                   className="object-cover transition-transform duration-700 group-hover/img2:scale-[1.04]"
@@ -340,7 +348,7 @@ function WhoWeAreSection() {
                   src="/images/about/our-foundation-2.png"
                 />
               </div>
-              <div className="image-hover relative h-[190px] overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[220px] group/img3">
+              <div className="image-hover relative h-[190px] overflow-hidden rounded-lg shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[220px] group/img3">
                 <Image
                   alt="Pithal engineers reviewing technical blueprints"
                   className="object-cover transition-transform duration-700 group-hover/img3:scale-[1.04]"
@@ -358,8 +366,8 @@ function WhoWeAreSection() {
           <div className="grid divide-y divide-border sm:grid-cols-2 sm:divide-y-0 sm:divide-x lg:grid-cols-4">
             {experience.metrics.map((metric) => (
               <article className="flex gap-4 p-6" key={metric.title}>
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
-                  <Icon name={metric.icon} size={22} />
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
+                  <Icon name={metric.icon} size={26} />
                 </span>
                 <div>
                   <h3 className="text-[14px] font-black uppercase tracking-[0.07em] text-primary">
@@ -460,7 +468,7 @@ function VisionMissionSection() {
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="w-10 h-10 text-white transition-transform duration-500 group-hover/vision:rotate-12"
+                        className="w-[72px] h-[72px] text-white transition-transform duration-500 group-hover/vision:rotate-12"
                       >
                         <line x1="12" y1="3" x2="12" y2="12" />
                         <path
@@ -496,7 +504,7 @@ function VisionMissionSection() {
                   <div className="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-dashed border-[#fa5902]/30 p-2">
                     <div className="w-full h-full rounded-full border border-[#031b40]/10 flex items-center justify-center bg-gray-50/50">
                       <Cog
-                        className="w-10 h-10 text-[#031b40] animate-[spin_8s_linear_infinite] group-hover/mission:animate-[spin_1.5s_linear_infinite]"
+                        className="w-[72px] h-[72px] text-[#031b40] animate-[spin_8s_linear_infinite] group-hover/mission:animate-[spin_1.5s_linear_infinite]"
                         strokeWidth={1.5}
                       />
                     </div>
@@ -701,7 +709,7 @@ function WhyChooseSection() {
         <div className="absolute bottom-0 left-[-20%] w-[68%] lg:w-[62%] h-[96px] bg-[#08152b] skew-x-[-28deg] z-[1] shadow-[15px_0_30px_rgba(0,0,0,0.6)]" />
 
         {/* 3. The layered translucent cut edge (Also taller) */}
-        <div className="absolute bottom-0 left-[47.5%] lg:left-[41.5%] w-[5%] lg:w-[4%] h-[96px] bg-[#08152b]/50 skew-x-[-28deg] z-[1] border-r-[2px] border-white backdrop-blur-sm" />
+        <div className="absolute bottom-0 left-[47.5%] lg:left-[41.5%] w-[5%] lg:w-[4%] h-[96px] bg-gradient-to-r from-[#082147] to-[#082147]/95 skew-x-[-28deg] z-[1] border-r-[2px] border-white backdrop-blur-sm" />
 
         {/* 4. Content */}
         <Container className="relative z-10 flex w-full h-full justify-between">
@@ -1109,7 +1117,7 @@ function IndustriesSection() {
               key={industry.title}
             >
               {/* Image */}
-              <div className="relative h-[140px] overflow-hidden rounded-t-xl">
+              <div className="relative h-[230px] overflow-hidden rounded-t-xl">
                 <Image
                   alt={industry.title}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1120,24 +1128,24 @@ function IndustriesSection() {
               </div>
 
               {/* Overlapping icon circle */}
-              <div className="flex justify-center -mt-6 relative z-[2]">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-dark text-white ring-[3px] ring-white shadow-[0_4px_12px_rgba(3,27,64,0.2)]">
-                  <Icon name={industry.icon} className="text-white" size={20} />
+              <div className="flex justify-center -mt-8 relative z-[2]">
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-dark text-white ring-[3px] ring-white shadow-[0_4px_12px_rgba(3,27,64,0.2)]">
+                  <Icon name={industry.icon} className="text-white" size={30} />
                 </span>
               </div>
 
               {/* Content */}
-              <div className="px-4 pb-5 pt-3 text-center">
-                <span
-                  aria-hidden
-                  className="mx-auto block h-[2.5px] w-8 bg-secondary"
-                />
-                <h3 className="headline mt-3 text-[12px] tracking-[0.1em] text-primary sm:text-[13px]">
+              <div className="px-4 pb-7 pt-4 text-center">
+                <h3 className="headline text-[12px] tracking-[0.1em] text-primary sm:text-[13px]">
                   {industry.title}
                 </h3>
                 <p className="mt-2 text-[11px] leading-[1.55] text-text-muted sm:text-[12px]">
                   {industry.text}
                 </p>
+                <span
+                  aria-hidden
+                  className="mx-auto block h-[2.5px] w-8 bg-secondary mt-3"
+                />
               </div>
             </article>
           ))}
@@ -1205,7 +1213,20 @@ function ValuesSection() {
         <div className="relative grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           {/* Left Column */}
           <div className="flex flex-col">
-            <Eyebrow>{values.eyebrow}</Eyebrow>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="flex items-center gap-[4px] shrink-0">
+                {[0, 1, 2].map((i) => (
+                  <span
+                    key={i}
+                    aria-hidden
+                    className="inline-block h-[12px] w-[4px] skew-x-[-22deg] bg-secondary"
+                  />
+                ))}
+              </span>
+              <p className="text-sm font-black uppercase tracking-[0.22em] text-secondary whitespace-nowrap">
+                {values.eyebrow}
+              </p>
+            </div>
             <h2 className="headline mt-4 text-[clamp(2rem,4.6vw,3rem)] font-black leading-[1.02] text-primary">
               BUILT ON VALUES.
               <br />
@@ -1217,7 +1238,7 @@ function ValuesSection() {
             </p>
 
             {/* Circular Image Container */}
-            <div className="relative mx-auto mt-9 flex aspect-square w-full max-w-[280px] items-center justify-center lg:mx-0 lg:max-w-[320px]">
+            <div className="relative mx-auto mt-9 flex aspect-square w-full max-w-[280px] items-center justify-center lg:mx-0 lg:max-w-[320px] lg:translate-x-[100px]">
               {/* Concentric rings */}
               <div className="absolute inset-0 rounded-full border border-slate-200/70" />
               <div className="absolute inset-[14px] rounded-full border border-slate-200/90" />
@@ -1274,92 +1295,101 @@ function ValuesSection() {
             <svg className="h-full w-full" viewBox="0 0 1200 800" fill="none">
               {/* Node connecting paths */}
               <path
-                d="M 280 435 C 330 435, 390 140, 520 140"
+                d="M 200 375 L 440 375 L 480 80 L 520 50"
                 stroke="#cbd5e1"
-                strokeWidth="1"
+                strokeWidth="1.2"
                 strokeDasharray="3 3"
               />
               <path
-                d="M 290 445 C 340 445, 385 245, 520 245"
+                d="M 240 445 L 450 445 L 480 245 L 520 200"
                 stroke="#cbd5e1"
-                strokeWidth="1"
+                strokeWidth="1.2"
                 strokeDasharray="3 3"
               />
               <path
-                d="M 295 455 C 345 455, 380 350, 520 350"
+                d="M 260 535 L 460 535 L 480 400 L 520 340"
                 stroke="#cbd5e1"
-                strokeWidth="1"
+                strokeWidth="1.2"
                 strokeDasharray="3 3"
               />
               <path
-                d="M 295 465 C 345 465, 380 455, 520 455"
+                d="M 260 585 L 460 585 L 480 500 L 520 470"
                 stroke="#cbd5e1"
-                strokeWidth="1"
+                strokeWidth="1.2"
                 strokeDasharray="3 3"
               />
               <path
-                d="M 290 475 C 340 475, 385 560, 520 560"
+                d="M 200 725 L 440 725 L 480 760 L 520 770"
                 stroke="#cbd5e1"
-                strokeWidth="1"
+                strokeWidth="1.2"
                 strokeDasharray="3 3"
               />
+
               <path
-                d="M 280 485 C 330 485, 390 665, 520 665"
+                d="M 240 655 L 450 655 L 480 600 L 520 600"
                 stroke="#cbd5e1"
-                strokeWidth="1"
+                strokeWidth="1.2"
                 strokeDasharray="3 3"
               />
 
               {/* Little dots at endpoints */}
-              <circle cx="280" cy="435" r="2.5" fill="#ff5a00" />
-              <circle cx="290" cy="445" r="2.5" fill="#031b40" />
-              <circle cx="295" cy="455" r="2.5" fill="#ff5a00" />
-              <circle cx="295" cy="465" r="2.5" fill="#031b40" />
-              <circle cx="290" cy="475" r="2.5" fill="#ff5a00" />
-              <circle cx="280" cy="485" r="2.5" fill="#031b40" />
+              <circle cx="200" cy="375" r="2.5" fill="#ff5a00" />
+              <circle cx="240" cy="445" r="2.5" fill="#031b40" />
+              <circle cx="260" cy="535" r="2.5" fill="#ff5a00" />
+              <circle cx="260" cy="585" r="2.5" fill="#031b40" />
+              <circle cx="200" cy="725" r="2.5" fill="#ff5a00" />
+              <circle cx="240" cy="655" r="2.5" fill="#031b40" />
             </svg>
           </div>
 
           {/* Right Column (Values List) */}
           <div className="relative z-10 flex flex-col gap-6 lg:pl-12">
-            {values.items.map((item) => (
-              <div
-                className="flex gap-5 items-start border-b border-slate-200/70 last:border-0 pb-6 mb-2 last:pb-0 last:mb-0"
-                key={item.title}
-              >
-                {/* Badge circle with icon */}
-                <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200/80 shadow-[0_6px_16px_rgba(3,27,64,0.04)]">
-                  {/* Rotating decorative orange arc segment */}
-                  <svg
-                    className="absolute -inset-[1px] h-[66px] w-[66px] -rotate-[120deg] pointer-events-none animate-[spin_4.5s_linear_infinite]"
-                    viewBox="0 0 36 36"
+            {values.items.map((item, idx) => {
+              const isLast = idx === values.items.length - 1;
+              return (
+                <div
+                  className="flex gap-5 items-start mb-2 last:mb-0"
+                  key={item.title}
+                >
+                  {/* Badge circle with icon */}
+                  <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200/80 shadow-[0_6px_16px_rgba(3,27,64,0.04)]">
+                    {/* Rotating decorative orange arc segment */}
+                    <svg
+                      className="absolute -inset-[1px] h-[66px] w-[66px] -rotate-[120deg] pointer-events-none animate-[spin_4.5s_linear_infinite]"
+                      viewBox="0 0 36 36"
+                    >
+                      <path
+                        className="text-secondary"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeDasharray="22 100"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
+
+                    <Icon name={item.icon} size={24} className="text-primary" />
+                  </div>
+
+                  {/* Text Content */}
+                  <div
+                    className={cn(
+                      "flex-1 pt-1.5",
+                      isLast ? "" : "border-b border-slate-200/70 pb-6",
+                    )}
                   >
-                    <path
-                      className="text-secondary"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeDasharray="22 100"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                  </svg>
-
-                  <Icon name={item.icon} size={24} className="text-primary" />
+                    <h3 className="text-sm font-black uppercase tracking-[0.12em] text-primary flex items-center">
+                      {item.title}
+                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary ml-2" />
+                    </h3>
+                    <p className="mt-2 text-xs leading-relaxed text-text-muted sm:text-sm">
+                      {item.text}
+                    </p>
+                  </div>
                 </div>
-
-                {/* Text Content */}
-                <div className="flex-1 pt-1.5">
-                  <h3 className="text-sm font-black uppercase tracking-[0.12em] text-primary flex items-center">
-                    {item.title}
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary ml-2" />
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-text-muted sm:text-sm">
-                    {item.text}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </Container>
@@ -2127,13 +2157,13 @@ interface MobileCarouselProps {
 function MobileCarousel({ children, className }: MobileCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
-  
+
   const childrenArray = React.Children.toArray(children);
 
   // Use IntersectionObserver to update currentIndex when user swipes manually
   useEffect(() => {
     if (!scrollRef.current) return;
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -2146,7 +2176,7 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
       {
         root: scrollRef.current,
         threshold: 0.6, // Fire when 60% of the card is visible
-      }
+      },
     );
 
     const childNodes = scrollRef.current.children;
@@ -2166,8 +2196,8 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
         const childWidth = child.offsetWidth;
         const containerWidth = container.offsetWidth;
         // Calculate position to center the child
-        const scrollPosition = childLeft - (containerWidth / 2) + (childWidth / 2);
-        
+        const scrollPosition = childLeft - containerWidth / 2 + childWidth / 2;
+
         container.scrollTo({
           left: scrollPosition,
           behavior: "smooth",
@@ -2181,7 +2211,9 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
   }, [currentIndex, childrenArray.length, scrollToIndex]);
 
   const handlePrev = useCallback(() => {
-    scrollToIndex((currentIndex - 1 + childrenArray.length) % childrenArray.length);
+    scrollToIndex(
+      (currentIndex - 1 + childrenArray.length) % childrenArray.length,
+    );
   }, [currentIndex, childrenArray.length, scrollToIndex]);
 
   // Auto-slide interval
@@ -2189,7 +2221,7 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
     const interval = setInterval(() => {
       handleNext();
     }, 3500); // 3.5 seconds
-    
+
     // Interval restarts when currentIndex changes (manual swipe or auto-slide)
     return () => clearInterval(interval);
   }, [handleNext]);
@@ -2198,27 +2230,25 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
     <>
       {/* Mobile Slider View */}
       <div className="block md:hidden w-full relative group pb-1">
-        <div 
+        <div
           ref={scrollRef}
           className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full no-scrollbar pb-1 items-stretch"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {childrenArray.map((child, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               data-index={idx}
               className="w-full shrink-0 snap-center px-1 flex flex-col"
             >
-              <div className="h-full w-full flex flex-col">
-                {child}
-              </div>
+              <div className="h-full w-full flex flex-col">{child}</div>
             </div>
           ))}
         </div>
-        
+
         {/* Arrows and Dots */}
         <div className="flex justify-center items-center gap-5 mt-2">
-          <button 
+          <button
             onClick={handlePrev}
             className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
           >
@@ -2226,16 +2256,18 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
           </button>
           <div className="flex gap-1.5">
             {childrenArray.map((_, idx) => (
-              <span 
-                key={idx} 
+              <span
+                key={idx}
                 className={cn(
                   "h-1.5 rounded-full transition-all duration-300",
-                  idx === currentIndex ? "bg-secondary w-4" : "bg-slate-300 w-1.5"
+                  idx === currentIndex
+                    ? "bg-secondary w-4"
+                    : "bg-slate-300 w-1.5",
                 )}
               />
             ))}
           </div>
-          <button 
+          <button
             onClick={handleNext}
             className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
           >
@@ -2250,9 +2282,7 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
       </div>
 
       {/* Desktop Grid View */}
-      <div className={cn("hidden md:grid", className)}>
-        {children}
-      </div>
+      <div className={cn("hidden md:grid", className)}>{children}</div>
     </>
   );
 }

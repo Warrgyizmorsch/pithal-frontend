@@ -14,8 +14,9 @@ export function ProductCtaButton({
   iconSize?: number;
   type?: "button" | "submit";
 }) {
-  const hasArrowIcon = cta.icon === "arrow";
-  const leadingIcon = cta.icon && !hasArrowIcon ? cta.icon : undefined;
+  const isRequestButton = cta.label.toLowerCase().includes("request");
+  const hasArrowIcon = cta.icon === "arrow" || isRequestButton;
+  const leadingIcon = cta.icon && cta.icon !== "arrow" ? cta.icon : undefined;
 
   return (
     <Button
