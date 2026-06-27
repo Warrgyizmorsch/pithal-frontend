@@ -514,7 +514,7 @@ export default function CareersPage() {
               src="/careerimg/top.jpg"
             />
             {/* Responsive white gradient overlay: vertical fade on mobile, strong horizontal fade on desktop */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-white/70 lg:bg-gradient-to-r lg:from-white lg:via-white lg:via-[28%] lg:to-transparent z-10 pointer-events-none" />
+            <div className="   lg:to-transparent z-10 pointer-events-none" />
           </div>
 
           <div className="relative z-22 w-full max-w-[1520px] px-5 sm:px-8 lg:px-10 py-6 lg:py-8 flex-grow flex flex-col">
@@ -619,7 +619,7 @@ export default function CareersPage() {
                 WHY JOIN PITHAL MACHINES
               </p>
               <h2 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight font-sans">
-                Advantages That Shape Your Future
+                ADVANTAGES THAT SHAPE YOUR FUTURE
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-base sm:text-lg leading-7 text-slate-500">
                 At Pithal Machines, we empower you with opportunities,
@@ -1137,7 +1137,7 @@ export default function CareersPage() {
                   <select className="border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold text-slate-600 bg-white focus:outline-none cursor-pointer min-w-[140px]">
                     <option>All Locations</option>
                     <option>Rajasthan</option>
-                    <option>Gujarat</option>
+                    
                   </select>
 
                   <button
@@ -1345,7 +1345,7 @@ export default function CareersPage() {
             <div className="text-center mb-10">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
-                <p className="text-[#092a5c] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
+                <p className="text-[#fa5902] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
                   Our Manufacturing Strength
                 </p>
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
@@ -1641,173 +1641,42 @@ export default function CareersPage() {
                   desc: "Attractive pay packages and performance-based incentives.",
                   borderColor: "border-[#fa5902]",
                   accentColor: "#fa5902",
-                  icon: (
-                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                      {/* Wallet/Money Bag Icon */}
-                      <path
-                        d="M12 40h12l14 8h16a4 4 0 000-8H36l-8-4-10-8H12"
-                        stroke="#092a5c"
-                        strokeWidth="3.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <circle cx="42" cy="22" r="10" fill="#fa5902" />
-                      <path
-                        d="M39 19h6M39 22h6M42 19c-2 0-3 1-3 3s1 2 3 2 3 1 3 3-1 3-3 3M42 16v12"
-                        stroke="white"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  ),
+                  icon: <Wallet className="w-14 h-14 text-primary stroke-[1.8]" />,
                 },
                 {
                   title: "Career Growth",
                   desc: "Clear career paths with continuous growth opportunities.",
                   borderColor: "border-blue-600",
                   accentColor: "#2563eb",
-                  icon: (
-                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                      {/* Stairs/Climbing Icon */}
-                      <path
-                        d="M10 50h10V40h10V30h10V20h10"
-                        stroke="#092a5c"
-                        strokeWidth="3.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M40 12l10 8-10 8"
-                        stroke="#fa5902"
-                        strokeWidth="3.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <circle cx="10" cy="50" r="3" fill="#092a5c" />
-                    </svg>
-                  ),
+                  icon: <TrendingUp className="w-14 h-14 text-primary stroke-[1.8]" />,
                 },
                 {
                   title: "Stable Organization",
                   desc: "Be a part of a financially strong and trusted multinational company.",
                   borderColor: "border-emerald-500",
                   accentColor: "#10b981",
-                  icon: (
-                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                      {/* Building/Shield Icon */}
-                      <path
-                        d="M16 50V20l16-8 16 8v30"
-                        stroke="#092a5c"
-                        strokeWidth="3.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M12 50h40"
-                        stroke="#092a5c"
-                        strokeWidth="3.5"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M32 25v15"
-                        stroke="#fa5902"
-                        strokeWidth="3.5"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M26 31l6-6 6 6"
-                        stroke="#fa5902"
-                        strokeWidth="3.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ),
+                  icon: <ShieldCheck className="w-14 h-14 text-primary stroke-[1.8]" />,
                 },
                 {
                   title: "Skill Development",
                   desc: "Regular training, workshops and upskilling to keep you ahead.",
                   borderColor: "border-purple-600",
                   accentColor: "#9333ea",
-                  icon: (
-                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                      {/* Book/Gear Icon */}
-                      <path
-                        d="M18 12h28v40H18z"
-                        stroke="#092a5c"
-                        strokeWidth="3.5"
-                      />
-                      <path d="M18 20h28" stroke="#092a5c" strokeWidth="2" />
-                      <circle
-                        cx="32"
-                        cy="38"
-                        r="8"
-                        stroke="#fa5902"
-                        strokeWidth="3"
-                      />
-                      <path
-                        d="M32 34v8M28 38h8"
-                        stroke="#fa5902"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                  ),
+                  icon: <BookOpen className="w-14 h-14 text-primary stroke-[1.8]" />,
                 },
                 {
                   title: "Modern Infrastructure",
                   desc: "Work with advanced machines and world-class facilities.",
                   borderColor: "border-[#fa5902]",
                   accentColor: "#fa5902",
-                  icon: (
-                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                      {/* Factory/Technology Icon */}
-                      <path
-                        d="M10 50V20l10 10V20l10 10V15l14 10v25H10z"
-                        fill="#092a5c"
-                      />
-                      <rect
-                        x="18"
-                        y="38"
-                        width="6"
-                        height="6"
-                        fill="white"
-                        opacity="0.4"
-                      />
-                      <rect
-                        x="28"
-                        y="38"
-                        width="6"
-                        height="6"
-                        fill="white"
-                        opacity="0.4"
-                      />
-                      <circle cx="44" cy="42" r="6" fill="#fa5902" />
-                    </svg>
-                  ),
+                  icon: <Cpu className="w-14 h-14 text-primary stroke-[1.8]" />,
                 },
                 {
                   title: "Professional Environment",
                   desc: "Collaborative culture focused on respect, integrity and teamwork.",
                   borderColor: "border-blue-600",
                   accentColor: "#2563eb",
-                  icon: (
-                    <svg viewBox="0 0 64 64" className="w-20 h-20" fill="none">
-                      {/* People/Handshake Icon */}
-                      <circle cx="22" cy="24" r="5" fill="#092a5c" />
-                      <circle cx="42" cy="24" r="5" fill="#092a5c" />
-                      <path
-                        d="M14 44c0-5 4-8 8-8s8 3 8 8M34 44c0-5 4-8 8-8s8 3 8 8"
-                        fill="#092a5c"
-                      />
-                      <path
-                        d="M28 30l4 4 4-4"
-                        stroke="#fa5902"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  ),
+                  icon: <Briefcase className="w-14 h-14 text-primary stroke-[1.8]" />,
                 },
               ].map((b, i) => (
                 <div
@@ -2117,22 +1986,7 @@ export default function CareersPage() {
               {/* Left Intro text */}
               <div className="flex items-center gap-5 w-full lg:w-auto shrink-0 justify-center lg:justify-start">
                 <div className="w-16 h-16 rounded-full border-2 border-[#fa5902]/30 flex items-center justify-center relative bg-[#fa5902]/10 shrink-0">
-                  <svg
-                    className="w-8 h-8 text-[#fa5902]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M3 3v18h18" />
-                    <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
-                    <path d="M17 8h3v3" />
-                    <rect x="7" y="16" width="2" height="4" fill="currentColor" />
-                    <rect x="12" y="12" width="2" height="8" fill="currentColor" />
-                    <rect x="17" y="9" width="2" height="11" fill="currentColor" />
-                  </svg>
+                  <TrendingUp className="w-8 h-8 text-[#fa5902] stroke-[2]" />
                 </div>
                 <div>
                   <h4 className="text-white font-extrabold text-[15px] uppercase tracking-wide leading-tight">
@@ -2267,7 +2121,7 @@ export default function CareersPage() {
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
-                <p className="text-[#092a5c] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
+                <p className="text-[#fa5902] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
                   Hiring Process
                 </p>
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
@@ -2358,7 +2212,7 @@ export default function CareersPage() {
                     title: "Screening",
                     desc: "Our HR team reviews your application and shortlists suitable profiles.",
                     borderColor: "border-[#092a5c]",
-                    accentColor: "#092a5c",
+                    accentColor: "#fa5902",
                     icon: (
                       <svg
                         viewBox="0 0 64 64"
@@ -2371,7 +2225,7 @@ export default function CareersPage() {
                           width="28"
                           height="38"
                           rx="3"
-                          stroke="#092a5c"
+                          stroke="#fa5902"
                           strokeWidth="3.5"
                           fill="none"
                         />
@@ -2410,7 +2264,7 @@ export default function CareersPage() {
                     title: "Interview",
                     desc: "Initial HR interview to understand your experience, skills and career aspirations.",
                     borderColor: "border-[#10b981]",
-                    accentColor: "#10b981",
+                    accentColor: "#fa5902",
                     icon: (
                       <svg
                         viewBox="0 0 64 64"
@@ -2421,7 +2275,7 @@ export default function CareersPage() {
                           cx="20"
                           cy="26"
                           r="4.5"
-                          stroke="#092a5c"
+                          stroke="#fa5902"
                           strokeWidth="3.5"
                         />
                         <path
@@ -2467,7 +2321,7 @@ export default function CareersPage() {
                     title: "Technical Round",
                     desc: "Role-specific technical assessment or practical test to evaluate your expertise.",
                     borderColor: "border-[#8b5cf6]",
-                    accentColor: "#8b5cf6",
+                    accentColor: "#fa5902",
                     icon: (
                       <svg
                         viewBox="0 0 64 64"
@@ -2556,7 +2410,7 @@ export default function CareersPage() {
                     title: "Onboarding",
                     desc: "Welcome to Pithal Machines! Get onboarded and begin your journey with us.",
                     borderColor: "border-[#3b82f6]",
-                    accentColor: "#3b82f6",
+                    accentColor: "#fa5902",
                     icon: (
                       <svg
                         viewBox="0 0 64 64"
@@ -2721,7 +2575,7 @@ export default function CareersPage() {
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
-                <p className="text-[#092a5c] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
+                <p className="text-[#fa5902] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
                   Eligibility & Qualifications
                 </p>
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
@@ -2856,9 +2710,9 @@ export default function CareersPage() {
                 >
                   {/* Top Icon & Title Area */}
                   <div className="pt-6 pb-4 px-4 flex flex-col items-center justify-center">
-                    <div className="w-[52px] h-[52px] rounded-full border-2 border-primary/10 flex items-center justify-center text-primary mb-3 transition-all duration-300 qual-icon-box">
+                    <div className="w-[64px] h-[64px] rounded-full border-2 border-primary/10 flex items-center justify-center text-primary mb-3 transition-all duration-300 qual-icon-box">
                       <svg
-                        className="w-6 h-6"
+                        className="w-8 h-8"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -2921,8 +2775,8 @@ export default function CareersPage() {
           </div>
 
           {/* Bottom Banner */}
-          <Container className="w-full my-12">
-            <div className="bg-[#031b40] rounded-3xl shadow-xl overflow-hidden relative flex flex-col lg:flex-row min-h-[340px] items-stretch">
+          <Container className="w-full my-5">
+            <div className="bg-[#031b40] rounded-3xl shadow-xl overflow-hidden relative flex flex-col lg:flex-row min-h-[300px] items-stretch">
               {/* Left side: Image with slanted orange accent line */}
               <div className="w-full lg:w-[28%] relative min-h-[250px] lg:min-h-auto bg-[#fa5902] [clip-path:polygon(0_0,97%_0,100%_100%,0_100%)] overflow-hidden shrink-0">
                 <img
@@ -3074,7 +2928,7 @@ export default function CareersPage() {
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="w-12 h-0.5 bg-secondary inline-block" />
-                <p className="text-[#092a5c] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
+                <p className="text-[#fa5902] text-lg sm:text-xl font-black uppercase tracking-[0.08em]">
                   Employee Testimonials
                 </p>
                 <span className="w-12 h-0.5 bg-secondary inline-block" />

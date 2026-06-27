@@ -9,6 +9,8 @@ import {
   Globe,
   Building2,
   Clock,
+  Users,
+  Calendar,
   Settings,
   Mail,
   TrendingUp,
@@ -290,7 +292,38 @@ const heroFloatingCards = [
 
 const featuredPosts = getFeaturedPosts();
 
-const latestArticles = getLatestArticles();
+const latestArticles = [
+  {
+    tag: "CRUSHING SOLUTIONS",
+    tagIcon: Settings,
+    title: "How to Choose the Right Crusher for Your Application",
+    desc: "A complete guide to selecting the right crusher based on material type, capacity, operating conditions and total cost of ownership.",
+    date: "May 20, 2024",
+    read: "8 min read",
+    img: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    slug: "#"
+  },
+  {
+    tag: "PLANT OPTIMIZATION",
+    tagIcon: TrendingUp,
+    title: "Maximizing Plant Efficiency: Key Strategies That Work",
+    desc: "Explore proven strategies to improve throughput, reduce operational costs and enhance overall plant performance.",
+    date: "May 15, 2024",
+    read: "6 min read",
+    img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    slug: "#"
+  },
+  {
+    tag: "MINING OPERATIONS",
+    tagIcon: Wrench,
+    title: "Reducing Downtime in Mining Operations",
+    desc: "Understand the common causes of equipment downtime and how proactive maintenance can minimize disruptions.",
+    date: "May 10, 2024",
+    read: "7 min read",
+    img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    slug: "#"
+  }
+];
 
 const trendingPosts = getTrendingPosts();
 
@@ -422,56 +455,56 @@ const hubStats = [
 
 const expertQuotes = [
   {
-    quote:
-      "Selecting the right crusher is not just about capacity. It's about matching the equipment to your material, application and long-term operational goals.",
+    quote: "Selecting the right crusher is not just about capacity, it's about matching the equipment to your material, application and long-term operational goals.",
     author: "VIKRAM DESHPANDE",
     role: "Chief Engineering Officer",
     experience: "24+ Years Experience",
-    image: "/testimonials/OIP.webp",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
-    quote:
-      "Plant efficiency is achieved through the right combination of engineering design, equipment reliability and continuous optimization.",
+    quote: "Plant efficiency is achieved through the right combination of engineering design, equipment reliability and continuous optimization.",
     author: "RAHUL SATHE",
     role: "Head of Plant Design",
     experience: "20+ Years Experience",
-    image: "/testimonials/OIP.webp",
+    image: "https://randomuser.me/api/portraits/men/44.jpg"
   },
   {
-    quote:
-      "Preventive maintenance and regular inspections are the key to minimizing downtime and maximizing the life of critical equipment.",
+    quote: "Preventive maintenance and regular inspections are the key to minimizing downtime and maximizing the life of critical equipment.",
     author: "SACHIN KULKARNI",
     role: "Head of Maintenance",
     experience: "22+ Years Experience",
-    image: "/testimonials/OIP.webp",
+    image: "https://randomuser.me/api/portraits/men/55.jpg"
   },
   {
-    quote:
-      "The future of our industry lies in smart engineering, automation and sustainable practices that create value while reducing environmental impact.",
+    quote: "The future of our industry lies in smart engineering, automation and sustainable practices that create value while reducing environmental impact.",
     author: "AMIT MHATRE",
     role: "Head of Technology",
     experience: "18+ Years Experience",
-    image: "/testimonials/OIP.webp",
-  },
+    image: "https://randomuser.me/api/portraits/men/66.jpg"
+  }
 ];
 
 const expertStats = [
   {
+    icon: Users,
     title: "ENGINEERING EXPERTS",
-    subtitle: "20+ Industry Specialists",
+    desc: "20+ Industry Specialists"
   },
   {
+    icon: Settings,
     title: "YEARS OF EXPERIENCE",
-    subtitle: "Average 20+ Years",
+    desc: "Average 20+ Years"
   },
   {
+    icon: Lightbulb,
     title: "TECHNICAL INSIGHTS",
-    subtitle: "Real-world Industry Knowledge",
+    desc: "Real-world Industry Knowledge"
   },
   {
+    icon: TrendingUp,
     title: "PROVEN SOLUTIONS",
-    subtitle: "Delivering Measurable Results",
-  },
+    desc: "Delivering Measurable Results"
+  }
 ];
 
 const resourceGuides = [
@@ -1169,8 +1202,8 @@ export default function BlogPage() {
       <Header />
       <main className="blog-page bg-white text-gray-900 font-sans overflow-x-hidden">
         {/* ══════════════════════════════════════════
-          SECTION 1 — HERO
-          ══════════════════════════════════════════ */}
+            SECTION 1 — HERO
+            ══════════════════════════════════════════ */}
         <section className="relative overflow-hidden">
           <Image
             src="/blogpageimg/top.jpg"
@@ -1185,7 +1218,7 @@ export default function BlogPage() {
 
           <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:py-8">
             <div className="grid lg:grid-cols-12 gap-10 items-center">
-              {/* Left */}
+              {/* Left Column */}
               <div className="lg:col-span-7">
                 <HeroNavigation current="Blog" eyebrow="Blog" />
                 <h1 className="headline text-[clamp(2.15rem,5vw,3.3rem)] text-primary leading-[0.92] mb-4">
@@ -1213,6 +1246,31 @@ export default function BlogPage() {
                     <ArrowRight cls="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </div>
+              </div>
+
+              {/* Right Column: 3 Vertical Floating Cards */}
+              <div className="lg:col-span-5 flex flex-col gap-8 lg:pl-10 lg:max-w-[340px] lg:ml-auto w-full">
+                {heroFloatingCards.map((card, i) => (
+                  <div
+                    key={i}
+                    className="bg-white rounded-xl border border-slate-100 p-4.5 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-md transition-shadow flex items-start gap-4"
+                  >
+                    {/* Icon Circle */}
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-50 border border-orange-100/50 text-secondary">
+                      {i === 0 && <Cog size={18} className="stroke-[2]" />}
+                      {i === 1 && <BookOpen size={18} className="stroke-[2]" />}
+                      {i === 2 && <Lightbulb size={18} className="stroke-[2]" />}
+                    </div>
+                    <div>
+                      <h4 className="text-[12px] font-black text-primary uppercase tracking-wide leading-tight mb-1">
+                        {card.title}
+                      </h4>
+                      <p className="text-[11px] text-slate-500 leading-snug font-medium">
+                        {card.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -1432,7 +1490,7 @@ export default function BlogPage() {
                   <div className="mx-auto mb-3 sm:mb-5 flex h-14 w-14 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-secondary/10 text-primary transition duration-300 group-hover:bg-secondary/20 shrink-0 [&>svg]:!w-7 [&>svg]:!h-7 sm:[&>svg]:!w-10 sm:[&>svg]:!h-10">
                     {cat.icon}
                   </div>
-                  <h3 className="text-[11px] sm:text-sm font-bold uppercase tracking-wider sm:tracking-[0.16em] text-primary mb-2 sm:mb-3 leading-tight">
+                  <h3 className="text-[11px] sm:text-sm font-bold uppercase tracking-wide sm:tracking-wide text-primary mb-2 sm:mb-3 leading-tight">
                     {cat.name}
                   </h3>
                   <p className="text-[10px] sm:text-[0.82rem] leading-[1.4] sm:leading-6 text-text-muted mb-4 sm:mb-6 flex-grow">
@@ -1460,79 +1518,108 @@ export default function BlogPage() {
         </section>
 
         {/* ══════════════════════════════════════════
-          SECTION 5 — LATEST ARTICLES
-      ══════════════════════════════════════════ */}
-        <section id="articles" className="py-6 sm:py-8 bg-bg-light">
+            SECTION 5 — LATEST ARTICLES
+        ══════════════════════════════════════════ */}
+        <section id="articles" className="py-16 lg:py-24 bg-[#f8f9fc]">
           <Container>
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <SectionHeader
-                eyebrow="LATEST ARTICLES"
-                title=""
-                sub="Stay updated with the latest insights, trends and expert perspectives."
-              />
-              <Button
-                variant="outlineNavy"
+            
+            {/* Header Block */}
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-12 lg:mb-14">
+              <div>
+                <div className="flex items-center gap-4 mb-3">
+                  <span className="w-8 h-[2px] bg-secondary"></span>
+                  <h2 className="text-[22px] md:text-[26px] font-black text-primary uppercase tracking-wide">
+                    LATEST ARTICLES
+                  </h2>
+                  <span className="w-8 h-[2px] bg-secondary"></span>
+                </div>
+                <p className="text-slate-500 text-[14px] md:text-[15px] font-medium">
+                  Stay updated with the latest insights, trends and expert perspectives.
+                </p>
+              </div>
+              
+              <a
                 href="#"
-                className="hidden lg:flex h-11 min-h-0 rounded-lg px-5"
+                className="hidden lg:flex items-center gap-2 text-[14px] font-bold text-primary hover:text-secondary transition-colors mt-2"
               >
-                View all articles <ArrowRight cls="w-4 h-4" />
-              </Button>
+                View all articles <ArrowRight cls="w-[18px] h-[18px] text-secondary" />
+              </a>
             </div>
 
-            <div className="mt-6 sm:mt-10 grid gap-6 md:grid-cols-3">
-              {latestArticles.slice(0, 3).map((art, i) => (
-                <div
-                  key={i}
-                  className="group lift overflow-hidden rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(3,27,64,0.07)] flex flex-col h-full"
-                >
-                  <div className="relative h-48 sm:h-72 overflow-hidden flex-shrink-0">
-                    <ImgBox
-                      src={art.img}
-                      alt={art.title}
-                      className="group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                    <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.22em] text-secondary self-start">
-                      {art.tag}
+            {/* Articles Grid */}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {latestArticles.map((art, i) => {
+                const TagIcon = art.tagIcon;
+                return (
+                  <a
+                    href={art.slug}
+                    key={i}
+                    className="group flex flex-col h-full bg-white rounded-[20px] overflow-hidden border border-slate-200 shadow-[0_4px_24px_rgb(0,0,0,0.03)] hover:shadow-lg transition-all duration-300"
+                  >
+                    {/* Image Area */}
+                    <div className="relative h-60 w-full overflow-hidden shrink-0">
+                      <img
+                        src={art.img}
+                        alt={art.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
                     </div>
-                    <h3 className="text-2xl font-extrabold text-primary leading-tight mb-4 group-hover:text-secondary transition-colors">
-                      {art.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-text-muted mb-6 flex-grow">
-                      {art.desc}
-                    </p>
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-base text-slate-500 mt-auto pt-4 border-t border-slate-100">
-                      <div className="flex items-center gap-5">
-                        <span className="flex items-center gap-2 text-slate-500 text-base">
-                          <CalendarIcon />
+
+                    {/* Content Area */}
+                    <div className="p-6 md:p-8 flex flex-col flex-grow">
+                      
+                      {/* Tag */}
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 text-secondary border border-orange-100/50">
+                          <TagIcon size={14} strokeWidth={2} />
+                        </div>
+                        <span className="text-[11px] font-black text-secondary uppercase tracking-widest">
+                          {art.tag}
+                        </span>
+                      </div>
+
+                      {/* Title & Desc */}
+                      <h3 className="text-[19px] font-bold text-primary leading-tight mb-3 group-hover:text-secondary transition-colors">
+                        {art.title}
+                      </h3>
+                      <p className="text-[13px] text-slate-500 leading-relaxed mb-6 flex-grow">
+                        {art.desc}
+                      </p>
+
+                      {/* Meta Info */}
+                      <div className="flex items-center gap-4 text-[12px] text-slate-500 font-medium mb-6">
+                        <span className="flex items-center gap-2">
+                          <Calendar size={14} />
                           {art.date}
                         </span>
-                        <span className="flex items-center gap-2 text-slate-500 text-base">
-                          <ClockIcon />
+                        <span className="w-[1px] h-3 bg-slate-300"></span>
+                        <span className="flex items-center gap-2">
+                          <Clock size={14} />
                           {art.read}
                         </span>
                       </div>
-                      <Button
-                        variant="ghost"
-                        href={`/blog/${art.slug}`}
-                        className="inline-flex items-center gap-2 text-sm font-bold text-secondary hover:text-secondary/80 p-0 min-h-0 border-0"
-                      >
-                        Read More <ArrowRight cls="w-4 h-4" />
-                      </Button>
+
+                      {/* Footer / Read More */}
+                      <div className="pt-5 border-t border-slate-100 flex items-center justify-between mt-auto">
+                        <span className="text-[12px] font-black text-primary uppercase tracking-widest">
+                          READ MORE
+                        </span>
+                        <ArrowRight cls="w-[18px] h-[18px] text-secondary transition-transform group-hover:translate-x-1" />
+                      </div>
                     </div>
-                  </div>
-                </div>
-              ))}
+                  </a>
+                );
+              })}
             </div>
+
+            {/* Mobile View All Button */}
             <div className="mt-8 flex justify-center lg:hidden">
-              <Button
-                variant="outlineNavy"
+              <a
                 href="#"
-                className="h-11 min-h-0 rounded-lg px-5 w-full max-w-xs"
+                className="flex items-center justify-center gap-2 text-[14px] font-bold text-primary hover:text-secondary transition-colors"
               >
-                View all articles <ArrowRight cls="w-4 h-4" />
-              </Button>
+                View all articles <ArrowRight cls="w-[18px] h-[18px] text-secondary" />
+              </a>
             </div>
           </Container>
         </section>
@@ -2005,21 +2092,21 @@ export default function BlogPage() {
           </Container>
 
           {/* Custom guide form - Full width, flat corners, screen touching */}
-          <div className="w-full bg-white border-y border-border py-8 sm:py-10 mt-12 shadow-[0_8px_30px_rgba(3,27,64,0.04)]">
+          <div className="w-full bg-white border-y border-border py-6 sm:py-4 mt-5 shadow-[0_8px_30px_rgba(3,27,64,0.04)]">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
               <form
                 onSubmit={handleGuideSubmit}
                 className="flex flex-col gap-6"
               >
-                <div className="flex flex-col lg:flex-row items-center gap-8 justify-between">
+                <div className="flex flex-col lg:flex-row items-center gap-6 justify-between">
                   <div className="flex items-center gap-5">
-                    <FileText className="w-12 h-12 text-primary flex-shrink-0" />
+                    <FileText className="w-12 h-30 text-primary flex-shrink-0" />
                     <div>
                       <p className="font-black text-primary text-lg sm:text-xl uppercase tracking-wider">
                         NEED A CUSTOM GUIDE?
                       </p>
                       <p className="text-text-muted text-sm sm:text-base mt-1">
-                        Tell us your industry needs and we will send you the
+                        Tell us your industry needs and <br />we will send you the
                         relevant resources.
                       </p>
                     </div>
@@ -2078,92 +2165,125 @@ export default function BlogPage() {
         </section>
 
         {/* ══════════════════════════════════════════
-          SECTION 9 — EXPERT PERSPECTIVES
-      ══════════════════════════════════════════ */}
-        <section className="py-10 bg-white">
-          <Container>
-            <div className="text-center mb-8">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="w-8 h-0.5 bg-secondary inline-block" />
-                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.06em]">
+            SECTION 9 — EXPERT PERSPECTIVES
+        ══════════════════════════════════════════ */}
+        <section className="relative py-16 lg:py-24 bg-white overflow-hidden">
+          {/* Blueprint Pattern Background (Faint overlay mimic) */}
+          <div
+            className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+            style={{
+              backgroundImage:
+                'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%230b172a\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+              backgroundSize: "100px 100px",
+            }}
+          />
+
+          <Container className="relative z-10">
+            {/* Header Section */}
+            <div className="text-center mb-14">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <span className="w-10 h-[2px] bg-secondary inline-block" />
+                <span className="text-secondary text-[13px] md:text-[14px] font-black uppercase tracking-widest">
                   EXPERT INSIGHTS
                 </span>
-                <span className="w-12 h-0.5 bg-secondary" />
+                <span className="w-10 h-[2px] bg-secondary inline-block" />
               </div>
-              <h2 className="headline text-[clamp(1.9rem,4vw,3rem)] text-primary">
-                EXPERT PERSPECTIVES.
-                <br />
-                <span className="text-secondary">
-                  REAL INDUSTRY EXPERIENCE.
-                </span>
+              <h2 className="headline text-[clamp(2rem,4vw,3.25rem)] font-black text-primary leading-[1.1] uppercase">
+                EXPERT PERSPECTIVES. <br />
+                <span className="text-secondary">REAL INDUSTRY EXPERIENCE.</span>
               </h2>
-              <p className="text-gray-500 text-sm mt-3 max-w-md mx-auto font-semibold">
-                Our engineering experts share their insights, technical
-                perspectives and industry observations to help you stay ahead.
+              <p className="text-slate-500 text-[14px] md:text-[15px] mt-4 max-w-2xl mx-auto font-medium leading-relaxed">
+                Our engineering experts share their insights, technical perspectives
+                and industry observations to help you stay ahead.
               </p>
             </div>
 
-            <MobileCarousel className="gap-6 md:grid-cols-3 lg:grid-cols-4 mb-10">
+            {/* 4 Cards Grid / Mobile Carousel */}
+            <MobileCarousel className="gap-6 md:grid-cols-2 lg:grid-cols-4 mb-12">
               {expertQuotes.map((q, i) => (
                 <div
                   key={i}
-                  className="lift rounded-2xl border border-slate-100 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col h-full relative"
+                  className="bg-white rounded-2xl border border-slate-200 flex flex-col h-full shadow-[0_4px_20px_rgb(0,0,0,0.04)] overflow-hidden hover:shadow-xl transition-all duration-300 group"
                 >
-                  {/* Top Orange Quote Mark */}
-                  <div className="text-secondary text-5xl font-serif font-black leading-none mb-3">
-                    “
-                  </div>
-
-                  {/* Quote Text */}
-                  <p className="text-[15px] leading-relaxed text-primary font-medium z-10 relative">
-                    {q.quote}
-                  </p>
-
-                  {/* Bottom Gray Quote Mark */}
-                  <div className="text-slate-100 text-6xl font-serif font-black leading-none text-right -mt-4 mb-2">
-                    ”
-                  </div>
-
-                  {/* Small Divider */}
-                  <div className="w-8 h-[2px] bg-secondary mb-6"></div>
-
-                  {/* Author Card */}
-                  <div className="mt-auto flex items-stretch">
-                    {/* Author Image - Ensure q.image exists in your data */}
-                    <div className="w-24 shrink-0 self-end flex items-end">
-                      {q.image ? (
-                        <img
-                          src={q.image}
-                          alt={q.author}
-                          className="w-full h-auto object-cover rounded-lg"
-                        />
-                      ) : (
-                        <div className="flex h-16 w-full items-center justify-center text-sm font-black text-primary">
-                          {q.author
-                            .split(" ")
-                            .map((name) => name[0])
-                            .join("")
-                            .slice(0, 2)}
-                        </div>
-                      )}
+                  {/* Content Top */}
+                  <div className="p-6 pb-2 flex-grow flex flex-col relative z-10">
+                    {/* Orange Opening Quote */}
+                    <div className="text-secondary text-[60px] font-serif font-black leading-[0.5] mt-4 mb-3 opacity-90">
+                      “
                     </div>
 
-                    {/* Author Details */}
-                    <div className="p-3 pl-5 flex flex-col justify-center min-w-0">
-                      <p className="text-[12px] font-extrabold uppercase tracking-wide text-primary leading-tight mb-1 truncate">
-                        {q.author}
-                      </p>
-                      <p className="text-[11px] font-semibold text-secondary mb-0.5 truncate">
-                        {q.role}
-                      </p>
-                      <p className="text-[10px] text-slate-500 truncate">
-                        {q.experience}
-                      </p>
+                    <p className="text-[14px] leading-[1.65] text-slate-700 font-medium relative z-10">
+                      {q.quote}
+                    </p>
+
+                    {/* Bottom Gray Quote Mark */}
+                    <div className="text-slate-100 text-6xl font-serif font-black leading-none text-right -mt-4 mb-2">
+                      ”
+                    </div>
+
+                    {/* Small Divider */}
+                    <div className="w-8 h-[2px] bg-secondary mb-6"></div>
+
+                    {/* Author Card */}
+                    <div className="mt-auto flex items-stretch">
+                      {/* Author Image */}
+                      <div className="w-24 shrink-0 self-end flex items-end">
+                        {q.image ? (
+                          <img
+                            src={q.image}
+                            alt={q.author}
+                            className="w-full h-auto object-cover rounded-lg"
+                          />
+                        ) : (
+                          <div className="flex h-16 w-full items-center justify-center text-sm font-black text-primary">
+                            {q.author
+                              .split(" ")
+                              .map((name) => name[0])
+                              .join("")
+                              .slice(0, 2)}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Author Details */}
+                      <div className="p-3 pl-5 flex flex-col justify-center min-w-0">
+                        <p className="text-[12px] font-extrabold uppercase tracking-wide text-primary leading-tight mb-1 truncate">
+                          {q.author}
+                        </p>
+                        <p className="text-[11px] font-semibold text-secondary mb-0.5 truncate">
+                          {q.role}
+                        </p>
+                        <p className="text-[10px] text-slate-500 truncate">
+                          {q.experience}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               ))}
             </MobileCarousel>
+
+            {/* Stats Row */}
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 bg-primary text-white rounded-2xl p-8 border border-white/5 shadow-lg relative z-10">
+              {expertStats.map((stat, i) => {
+                const Icon = stat.icon;
+                return (
+                  <div key={i} className="flex items-center gap-4 group">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/10 text-secondary">
+                      <Icon size={22} className="stroke-[1.8]" />
+                    </div>
+                    <div>
+                      <h4 className="text-[12px] font-black text-secondary uppercase tracking-widest leading-none mb-1">
+                        {stat.title}
+                      </h4>
+                      <p className="text-sm font-bold text-white">
+                        {stat.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </Container>
         </section>
 
@@ -2496,27 +2616,10 @@ export default function BlogPage() {
         {/* ══════════════════════════════════════════
           SECTION 12 — FROM INSIGHTS TO SOLUTIONS
       ══════════════════════════════════════════ */}
-        <section className="py-10 bg-white">
+        <section className="py-5 bg-white">
           <Container>
             <div className="rounded-xl border border-border bg-[#fafafa]/50 p-8 sm:p-12 shadow-sm relative overflow-hidden">
-              {/* Background Image on Right */}
-              <div
-                className="absolute right-0 top-0 h-full w-full lg:w-[48%] pointer-events-none select-none opacity-20 lg:opacity-100 z-0"
-                style={{
-                  maskImage:
-                    "linear-gradient(to right, transparent, black 35%)",
-                  WebkitMaskImage:
-                    "linear-gradient(to right, transparent, black 35%)",
-                }}
-              >
-                <Image
-                  src="/solutionspage/challenges we solve 5.jpg"
-                  alt="Crushing Plant Optimization"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
-              </div>
+              
 
               <div className="relative z-10">
                 <div className="flex flex-col lg:grid lg:grid-cols-12 lg:items-center justify-between gap-8">
@@ -2580,7 +2683,7 @@ export default function BlogPage() {
                 <div className="border-t border-slate-200/60 my-8" />
 
                 {/* Horizontal Pills list */}
-                <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-y-3 sm:gap-x-4">
+                <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-evenly sm:gap-y-3 sm:gap-x-4">
                   {/* Pill 1 */}
                   <div className="bg-white rounded-full border border-border/80 px-5 py-2.5 flex items-center justify-center gap-2.5 shadow-sm text-text-dark font-bold text-[11px] uppercase tracking-wide">
                     <svg
