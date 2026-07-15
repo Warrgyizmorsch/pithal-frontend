@@ -14,11 +14,11 @@ import { ScrollToTopButton } from "@/components/layout/ScrollToTopButton";
 import { footerColumns } from "@/data/homeData";
 
 const socialLinks = [
-  { label: "LinkedIn", icon: FaLinkedinIn, href: "#" },
-  { label: "Facebook", icon: FaFacebookF, href: "#" },
-  { label: "YouTube", icon: FaYoutube, href: "#" },
-  { label: "Instagram", icon: FaInstagram, href: "#" },
-  { label: "WhatsApp", icon: FaWhatsapp, href: "#" },
+  // { label: "LinkedIn", icon: FaLinkedinIn, href: "#" },
+  // { label: "Facebook", icon: FaFacebookF, href: "#" },
+  // { label: "YouTube", icon: FaYoutube, href: "#" },
+  { label: "Instagram", icon: FaInstagram, href: "https://www.instagram.com/pithalmachines/?hl=en" },
+  { label: "WhatsApp", icon: FaWhatsapp, href: "https://wa.me/919887537129" },
 ];
 
 const certifications = [
@@ -224,6 +224,8 @@ export function Footer() {
                   className="flex h-[2.3rem] w-[2.3rem] items-center justify-center rounded-full border border-secondary text-primary transition-all duration-500 hover:rotate-[360deg] hover:bg-secondary hover:text-white"
                   href={href}
                   key={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Icon aria-hidden size={20} />
                 </Link>
