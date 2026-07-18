@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -513,55 +514,48 @@ export default function ContactUsPage() {
     setLoading(true);
     setStatusMsg(null);
 
-    const formattedRequirement = `Industry/Sector: ${formData.industry}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Message: ${formData.requirement}`;
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-    try {
-      const response = await fetch("/api/leads", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.fullName,
-          company: formData.companyName,
-          requirement: formattedRequirement,
-          source:
-            typeof window !== "undefined"
-              ? window.location.pathname === "/"
-                ? "Home Page"
-                : `Page: ${window.location.pathname}`
-              : "Contact Us Page",
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        setStatusMsg({
-          type: "success",
-          text: `Thank you ${formData.fullName}. Your inquiry has been submitted successfully!`,
-        });
-        setFormData({
-          fullName: "",
-          companyName: "",
-          email: "",
-          phone: "",
-          industry: "",
-          requirement: "",
-        });
-      } else {
-        setStatusMsg({
-          type: "error",
-          text: data.error || "Failed to submit inquiry. Please try again.",
-        });
-      }
-    } catch (err) {
+    if (!serviceId || !templateId || !publicKey) {
       setStatusMsg({
         type: "error",
-        text: "Something went wrong. Please check your connection and try again.",
+        text: "EmailJS is not configured. Please set the public EmailJS IDs.",
+      });
+      setLoading(false);
+      return;
+    }
+
+    const templateParams = {
+      name: formData.fullName,
+      company: formData.companyName,
+      email: formData.email,
+      phone: formData.phone,
+      industry: formData.industry,
+      message: formData.requirement,
+    };
+
+    try {
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      setStatusMsg({
+        type: "success",
+        text: `Thank you ${formData.fullName}. Your inquiry has been submitted successfully!`,
+      });
+      setFormData({
+        fullName: "",
+        companyName: "",
+        email: "",
+        phone: "",
+        industry: "",
+        requirement: "",
+      });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatusMsg({
+        type: "error",
+        text: "Failed to send your inquiry. Please try again.",
       });
     } finally {
       setLoading(false);
