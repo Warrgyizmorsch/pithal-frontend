@@ -1547,14 +1547,14 @@ export default function ContactUsPage() {
                       CALL US
                     </h4>
                     <p className="text-[13px] text-slate-500 mt-0.5">
-                      +91 281 238 7373
+                      +91 98875 37129
                     </p>
                   </div>
                 </a>
 
                 {/* Email Us */}
                 <a
-                  href="mailto:info@pithalindia.com"
+                  href="mailto:info@pithalmachine.com"
                   className="flex items-center gap-3.5 group"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm text-secondary group-hover:border-secondary transition-colors">
@@ -1565,14 +1565,14 @@ export default function ContactUsPage() {
                       EMAIL US
                     </h4>
                     <p className="text-[13px] text-slate-500 mt-0.5">
-                      info@pithalindia.com
+                      info@pithalmachine.com
                     </p>
                   </div>
                 </a>
 
                 {/* Schedule Meeting */}
                 <a
-                  href="mailto:info@pithalindia.com?subject=Consultation"
+                  href="mailto:info@pithalmachine.com?subject=Consultation"
                   className="flex items-center gap-3.5 group"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200 shadow-sm text-secondary group-hover:border-secondary transition-colors">
@@ -1713,7 +1713,7 @@ export default function ContactUsPage() {
                           href="tel:+912812387373"
                           className="text-[13px] text-white font-medium hover:text-secondary transition-colors"
                         >
-                          +91 281 238 7373
+                          +91 98875 37129
                         </a>
                       </div>
                     </div>
@@ -1728,10 +1728,10 @@ export default function ContactUsPage() {
                           Email
                         </span>
                         <a
-                          href="mailto:info@pithalindia.com"
+                          href="mailto:info@pithalmachine.com"
                           className="text-[13px] text-white font-medium hover:text-secondary transition-colors"
                         >
-                          info@pithalindia.com
+                          info@pithalmachine.com
                         </a>
                       </div>
                     </div>
@@ -1861,7 +1861,7 @@ export default function ContactUsPage() {
                   </div>
                 </div>
                 <a
-                  href="mailto:info@pithalindia.com?subject=Schedule%20a%20Visit"
+                  href="mailto:info@pithalmachine.com?subject=Schedule%20a%20Visit"
                   className="bg-secondary hover:bg-orange-600 text-white text-[12px] font-bold uppercase tracking-wider py-2.5 px-4 rounded transition-colors flex items-center justify-center gap-2"
                 >
                   SCHEDULE A VISIT <ArrowRight size={14} />
