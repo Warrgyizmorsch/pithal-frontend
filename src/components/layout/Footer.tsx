@@ -14,10 +14,10 @@ import { ScrollToTopButton } from "@/components/layout/ScrollToTopButton";
 import { footerColumns } from "@/data/homeData";
 
 const socialLinks = [
-  { label: "Facebook", icon: FaFacebookF, href: "https://www.facebook.com/pithalmachines" },
+  { label: "Facebook", icon: FaFacebookF, href: "https://www.facebook.com/pithalmachines/" },
   { label: "Instagram", icon: FaInstagram, href: "https://www.instagram.com/pithalmachines/?hl=en" },
-  { label: "YouTube", icon: FaYoutube, href: "https://www.youtube.com/@pithalmachines" },
-  { label: "LinkedIn", icon: FaLinkedinIn, href: "https://www.linkedin.com/company/pithalmachines" },
+  { label: "YouTube", icon: FaYoutube, href: "https://www.youtube.com/@PithalMachines" },
+  { label: "LinkedIn", icon: FaLinkedinIn, href: "https://www.linkedin.com/company/pithal-machine/?viewAsMember=true" },
   { label: "WhatsApp", icon: FaWhatsapp, href: "https://wa.me/919887537129" },
 ];
 
@@ -202,10 +202,10 @@ export function Footer() {
                   {column.links
                     .filter((link) => link !== "Projects")
                     .map((link) => (
-                    <FooterLink key={link} href={linkMap[column.title]?.[link] || "#"}>
-                      {link}
-                    </FooterLink>
-                  ))}
+                      <FooterLink key={link} href={linkMap[column.title]?.[link] || "#"}>
+                        {link}
+                      </FooterLink>
+                    ))}
                 </ul>
               </div>
             );
@@ -279,33 +279,33 @@ export function Footer() {
       </div>
       {/* Full width gradient bottom bar */}
 
-        <div className="bg-gradient-to-r from-primary via-[#294385] to-secondary flex flex-col items-center justify-between gap-4 py-4 text-sm text-white sm:flex-row px-5 sm:px-8 lg:px-10">
-          <p className="order-2 mt-2 text-white/90 sm:order-1 sm:mt-0">&copy; 2026 Pithal Machines Ltd. All Rights Reserved.</p>
+      <div className="bg-gradient-to-r from-primary via-[#294385] to-secondary flex flex-col items-center justify-between gap-4 py-4 text-sm text-white sm:flex-row px-5 sm:px-8 lg:px-10">
+        <p className="order-2 mt-2 text-white/90 sm:order-1 sm:mt-0">&copy; 2026 Pithal Machines Ltd. All Rights Reserved.</p>
 
-          <div className="order-1 flex items-center gap-4 sm:order-2">
-            <div className="hidden flex-wrap items-center gap-3 sm:flex">
-              <span className="flex items-center gap-3 text-white/95">
-                <Link className="transition-colors hover:text-white/80" href="#">
-                  Privacy Policy
-                </Link>
-                <span aria-hidden className="text-white/60">|</span>
-              </span>
-              <span className="flex items-center gap-3 text-white/95">
-                <Link className="transition-colors hover:text-white/80" href="#">
-                  Terms & Conditions
-                </Link>
-                <span aria-hidden className="text-white/60">|</span>
-              </span>
-              <span className="flex items-center gap-3 text-white/95">
-                <a className="transition-colors hover:text-white/80 font-bold" href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
-                  Sitemap
-                </a>
-              </span>
-            </div>
-
-            <ScrollToTopButton />
+        <div className="order-1 flex items-center gap-4 sm:order-2">
+          <div className="hidden flex-wrap items-center gap-3 sm:flex">
+            <span className="flex items-center gap-3 text-white/95">
+              <Link className="transition-colors hover:text-white/80" href="#">
+                Privacy Policy
+              </Link>
+              <span aria-hidden className="text-white/60">|</span>
+            </span>
+            <span className="flex items-center gap-3 text-white/95">
+              <Link className="transition-colors hover:text-white/80" href="#">
+                Terms & Conditions
+              </Link>
+              <span aria-hidden className="text-white/60">|</span>
+            </span>
+            <span className="flex items-center gap-3 text-white/95">
+              <a className="transition-colors hover:text-white/80 font-bold" href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
+                Sitemap
+              </a>
+            </span>
           </div>
+
+          <ScrollToTopButton />
         </div>
+      </div>
 
 
     </footer>
