@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Container } from "@/components/common/Container";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -8,6 +9,33 @@ import Link from "next/link";
 import { Clock, Calendar, Eye, Share2 } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import ReactMarkdown from 'react-markdown';
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Blog Post | Pithal Machine Pvt.",
+      alternates: {
+        canonical: `/blog/${slug}`,
+      },
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.desc,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.desc,
+      images: [post.img],
+    },
+  };
+}
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

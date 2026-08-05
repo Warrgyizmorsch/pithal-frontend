@@ -14,10 +14,10 @@ import { ScrollToTopButton } from "@/components/layout/ScrollToTopButton";
 import { footerColumns } from "@/data/homeData";
 
 const socialLinks = [
-  // { label: "LinkedIn", icon: FaLinkedinIn, href: "#" },
-  // { label: "Facebook", icon: FaFacebookF, href: "#" },
-  // { label: "YouTube", icon: FaYoutube, href: "#" },
+  { label: "Facebook", icon: FaFacebookF, href: "https://www.facebook.com/pithalmachines" },
   { label: "Instagram", icon: FaInstagram, href: "https://www.instagram.com/pithalmachines/?hl=en" },
+  { label: "YouTube", icon: FaYoutube, href: "https://www.youtube.com/@pithalmachines" },
+  { label: "LinkedIn", icon: FaLinkedinIn, href: "https://www.linkedin.com/company/pithalmachines" },
   { label: "WhatsApp", icon: FaWhatsapp, href: "https://wa.me/919887537129" },
 ];
 
@@ -255,10 +255,13 @@ export function Footer() {
                   <br />
                   Our experts are ready to help.
                 </p>
-                <Button className="shrink-0 justify-between text-sm px-5" href="/contact">
-                  Contact Us
-                  <ArrowRight aria-hidden size={19} />
-                </Button>
+                <a
+                  className="shrink-0 flex items-center gap-2.5 bg-secondary text-white px-5 py-3 rounded-xl text-sm font-black tracking-wide shadow-md hover:bg-[#ea580c] transition-all duration-300 hover:scale-[1.03]"
+                  href="tel:+919887537129"
+                >
+                  <Phone aria-hidden size={18} className="shrink-0" />
+                  +91 98875 37129
+                </a>
               </div>
             </div>
           </div>
@@ -281,14 +284,23 @@ export function Footer() {
 
           <div className="order-1 flex items-center gap-4 sm:order-2">
             <div className="hidden flex-wrap items-center gap-3 sm:flex">
-              {["Privacy Policy", "Terms & Conditions", "Sitemap"].map((item, index) => (
-                <span className="flex items-center gap-3 text-white/95" key={item}>
-                  <Link className="transition-colors hover:text-white/80" href="#">
-                    {item}
-                  </Link>
-                  {index < 2 && <span aria-hidden className="text-white/60">|</span>}
-                </span>
-              ))}
+              <span className="flex items-center gap-3 text-white/95">
+                <Link className="transition-colors hover:text-white/80" href="#">
+                  Privacy Policy
+                </Link>
+                <span aria-hidden className="text-white/60">|</span>
+              </span>
+              <span className="flex items-center gap-3 text-white/95">
+                <Link className="transition-colors hover:text-white/80" href="#">
+                  Terms & Conditions
+                </Link>
+                <span aria-hidden className="text-white/60">|</span>
+              </span>
+              <span className="flex items-center gap-3 text-white/95">
+                <a className="transition-colors hover:text-white/80 font-bold" href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
+                  Sitemap
+                </a>
+              </span>
             </div>
 
             <ScrollToTopButton />

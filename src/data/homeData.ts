@@ -1,13 +1,10 @@
 export const navigation = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
   { label: "Products", href: "/products" },
   { label: "Solutions", href: "/solutions" },
-  // { label: "Projects", href: "/projects" },
-  // { label: "Global Presence", href: "/global-presence" },
-  { label: "Careers", href: "/careers" },
   { label: "Become a Dealer", href: "/become-a-dealer" },
   { label: "Blog", href: "/blog" },
+  { label: "About Us", href: "/about" },
 ];
 
 export const stats = [

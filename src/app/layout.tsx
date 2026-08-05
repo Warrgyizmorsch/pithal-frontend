@@ -16,9 +16,16 @@ const bodyFont = Roboto_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "Pithal Machine Pvt. | Crushing & Mining Solutions",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.pithalmachine.com"),
+  title: {
+    default: "Pithal Machine Pvt. | Crushing & Mining Solutions",
+    template: "%s | Pithal Machine Pvt.",
+  },
   description:
     "Pithal Machine Pvt. delivers high-performance crushing, screening, mining, and industrial machinery solutions.",
+  alternates: {
+    canonical: "./",
+  },
 };
 
 export default function RootLayout({

@@ -63,7 +63,9 @@ export function ProjectsSection() {
               <article className={`flex gap-3 py-2 ${index ? "border-t border-primary/20 pt-5 md:border-l md:border-t-0 md:pl-5 md:pt-2" : ""}`} key={title}>
                 <Icon aria-hidden className="h-9 w-9 shrink-0 text-primary sm:h-[43px] sm:w-[43px]" strokeWidth={1.55} />
                 <div>
-                  <h3 className="text-[0.7rem] font-bold uppercase tracking-[0.06em] text-primary">{title}</h3>
+                  <p className="text-[0.7rem] font-bold uppercase tracking-[0.06em] text-primary">
+                    <strong>{title}</strong>
+                  </p>
                   <p className="mt-2 text-xs leading-5 text-text-dark">{text}</p>
                 </div>
               </article>

@@ -313,9 +313,9 @@ function WhoWeAreSection() {
                     <Icon name={item.icon} size={26} />
                   </span>
                   <div>
-                    <h3 className="text-[15px] font-black uppercase tracking-[0.07em] text-primary">
-                      {item.title}
-                    </h3>
+                    <p className="text-[15px] font-black uppercase tracking-[0.07em] text-primary">
+                      <strong>{item.title}</strong>
+                    </p>
                     <p className="mt-1.5 max-w-[580px] text-[15px] leading-6 text-text-muted">
                       {item.text}
                     </p>
@@ -370,9 +370,9 @@ function WhoWeAreSection() {
                   <Icon name={metric.icon} size={26} />
                 </span>
                 <div>
-                  <h3 className="text-[14px] font-black uppercase tracking-[0.07em] text-primary">
-                    {metric.title}
-                  </h3>
+                  <p className="text-[14px] font-black uppercase tracking-[0.07em] text-primary">
+                    <strong>{metric.title}</strong>
+                  </p>
                   <p className="mt-2 text-[14px] leading-5 text-text-muted">
                     {metric.text}
                   </p>
@@ -484,9 +484,9 @@ function VisionMissionSection() {
 
                   {/* Content */}
                   <div className="text-center sm:text-left flex-1">
-                    <h3 className="text-2xl font-black tracking-wider text-white uppercase">
-                      {vision.title}
-                    </h3>
+                    <p className="text-2xl font-black tracking-wider text-white uppercase">
+                      <strong>{vision.title}</strong>
+                    </p>
                     <span className="block w-8 h-[3px] bg-[#fa5902] mt-2 mb-4 mx-auto sm:mx-0 transition-all duration-300 group-hover/vision:w-16" />
                     <p className="text-[14px] sm:text-[15px] leading-[1.65] text-white/80 font-medium">
                       {vision.text}
@@ -512,9 +512,9 @@ function VisionMissionSection() {
 
                   {/* Content */}
                   <div className="text-center sm:text-left flex-1">
-                    <h3 className="text-2xl font-black tracking-wider text-[#031b40] uppercase">
-                      {mission.title}
-                    </h3>
+                    <p className="text-2xl font-black tracking-wider text-[#031b40] uppercase">
+                      <strong>{mission.title}</strong>
+                    </p>
                     <span className="block w-8 h-[3px] bg-[#fa5902] mt-2 mb-4 mx-auto sm:mx-0 transition-all duration-300 group-hover/mission:w-16" />
                     <p className="text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/70 font-medium">
                       {mission.text}
@@ -875,9 +875,9 @@ function ManufacturingSection() {
                   aria-hidden
                   className="block h-[3px] w-7 bg-[#fa5902] mb-3"
                 />
-                <h3 className="text-[13.5px] font-black uppercase text-[#031b40] tracking-wide mb-2.5 leading-snug">
-                  {card.title}
-                </h3>
+                <p className="text-[13.5px] font-black uppercase text-[#031b40] tracking-wide mb-2.5 leading-snug">
+                  <strong>{card.title}</strong>
+                </p>
                 <p className="text-[12.5px] leading-[1.55] text-slate-500 font-medium">
                   {card.text}
                 </p>
@@ -1136,9 +1136,9 @@ function IndustriesSection() {
 
               {/* Content */}
               <div className="px-4 pb-7 pt-4 text-center">
-                <h3 className="headline text-[12px] tracking-[0.1em] text-primary sm:text-[13px]">
-                  {industry.title}
-                </h3>
+                <p className="headline text-[12px] tracking-[0.1em] text-primary sm:text-[13px]">
+                  <strong>{industry.title}</strong>
+                </p>
                 <p className="mt-2 text-[11px] leading-[1.55] text-text-muted sm:text-[12px]">
                   {industry.text}
                 </p>
@@ -1379,10 +1379,10 @@ function ValuesSection() {
                       isLast ? "" : "border-b border-slate-200/70 pb-6",
                     )}
                   >
-                    <h3 className="text-sm font-black uppercase tracking-[0.12em] text-primary flex items-center">
-                      {item.title}
+                    <p className="text-sm font-black uppercase tracking-[0.12em] text-primary flex items-center">
+                      <strong>{item.title}</strong>
                       <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary ml-2" />
-                    </h3>
+                    </p>
                     <p className="mt-2 text-xs leading-relaxed text-text-muted sm:text-sm">
                       {item.text}
                     </p>

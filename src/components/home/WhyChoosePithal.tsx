@@ -109,9 +109,9 @@ export default function WhyChoosePithal() {
                     <Icon aria-hidden size={30} strokeWidth={1.55} />
                   </span>
                   <div>
-                    <h3 className="text-[0.72rem] font-bold uppercase tracking-[0.04em] text-primary sm:text-[0.8rem]">
-                      {title}
-                    </h3>
+                    <p className="text-[0.72rem] font-bold uppercase tracking-[0.04em] text-primary sm:text-[0.8rem]">
+                      <strong>{title}</strong>
+                    </p>
                     <span aria-hidden className="my-1.5 block h-0.5 w-6 bg-secondary" />
                     <p className="text-[0.68rem] leading-[1.45] text-primary/85 sm:text-[0.73rem]">
                       {description}

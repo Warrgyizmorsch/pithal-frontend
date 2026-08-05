@@ -38,7 +38,7 @@ export function IndustryCard({
       <div className="absolute inset-x-0 bottom-0 flex items-end gap-3 px-4 pb-4 pt-12 text-white sm:gap-4 sm:px-5 sm:pb-5">
         <Icon aria-hidden className="mb-0.5 h-9 w-9 shrink-0 text-secondary sm:h-[45px] sm:w-[45px]" strokeWidth={1.8} />
         <div>
-          <h3 className="headline text-[1.28rem] leading-none">{title}</h3>
+          <p className="headline text-[1.28rem] leading-none"><strong>{title}</strong></p>
           <span aria-hidden className="mt-2 block h-[3px] w-11 bg-secondary" />
           <p className="mt-2 text-xs leading-[1.55] text-white">{text}</p>
         </div>

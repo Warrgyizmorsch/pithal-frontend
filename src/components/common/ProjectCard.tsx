@@ -27,7 +27,9 @@ export function ProjectCard({
         <div className="flex min-w-0 gap-3">
           <MapPin aria-hidden className="mt-0.5 shrink-0 text-primary" size={27} strokeWidth={1.6} />
           <div>
-            <h3 className="text-[0.8rem] font-bold uppercase text-text-dark sm:text-[0.85rem]">{plant}</h3>
+            <p className="text-[0.8rem] font-bold uppercase text-text-dark sm:text-[0.85rem]">
+              <strong>{plant}</strong>
+            </p>
             <p className="mt-1 text-sm text-text-dark">{location}</p>
           </div>
         </div>

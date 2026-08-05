@@ -985,9 +985,9 @@ export default function SolutionsPage() {
                       {renderCircleStatsIcon(stat.icon)}
                     </div>
                     <div className="min-w-0">
-                      <h4 className="text-[18px] sm:text-[22px] font-black leading-none text-primary md:text-2xl">
-                        {stat.value}
-                      </h4>
+                      <p className="text-[18px] sm:text-[22px] font-black leading-none text-primary md:text-2xl">
+                        <strong>{stat.value}</strong>
+                      </p>
                       <p className="mt-1 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-secondary md:text-xs">
                         {stat.label}
                       </p>
@@ -1341,9 +1341,9 @@ export default function SolutionsPage() {
                           </svg>
                           INDUSTRY CHALLENGE
                         </span>
-                        <h4 className="mt-1 text-sm md:text-base font-extrabold text-slate-800 leading-tight uppercase tracking-wide">
-                          {row.challengeTitle}
-                        </h4>
+                        <p className="mt-1 text-sm md:text-base font-extrabold text-slate-800 leading-tight uppercase tracking-wide">
+                          <strong>{row.challengeTitle}</strong>
+                        </p>
                         <p className="mt-1 text-xs text-slate-500 leading-relaxed font-medium">
                           {row.challengeDesc}
                         </p>
@@ -1379,9 +1379,9 @@ export default function SolutionsPage() {
                           <span className="text-[10px] font-black uppercase text-[#38bdf8] tracking-wider block">
                             PITHAL SOLUTION
                           </span>
-                          <h4 className="mt-0.5 text-sm md:text-base font-extrabold text-primary leading-tight uppercase tracking-wide">
-                            {row.solutionTitle}
-                          </h4>
+                          <p className="mt-0.5 text-sm md:text-base font-extrabold text-primary leading-tight uppercase tracking-wide">
+                            <strong>{row.solutionTitle}</strong>
+                          </p>
                           <p className="mt-1 text-xs text-slate-500 leading-relaxed font-medium">
                             {row.solutionDesc}
                           </p>
@@ -1420,9 +1420,9 @@ export default function SolutionsPage() {
                         />
                       </div>
                       <div className="min-w-0">
-                        <h4 className="text-xs md:text-sm font-black uppercase tracking-wider text-slate-800 leading-tight">
-                          {item.label}
-                        </h4>
+                        <p className="text-xs md:text-sm font-black uppercase tracking-wider text-slate-800 leading-tight">
+                          <strong>{item.label}</strong>
+                        </p>
                         <p className="mt-1 text-xs text-slate-500 leading-normal font-medium truncate">
                           {item.desc}
                         </p>
@@ -1500,9 +1500,9 @@ export default function SolutionsPage() {
                         <div className="flex h-16 w-16 items-center justify-center rounded-full border border-slate-200/80 bg-white text-secondary mb-3 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-secondary transition-all duration-300">
                           <BIcon size={28} className="text-secondary" />
                         </div>
-                        <h4 className="text-[13px] md:text-sm font-black uppercase tracking-wide text-primary leading-tight">
-                          {item.title}
-                        </h4>
+                        <p className="text-[13px] md:text-sm font-black uppercase tracking-wide text-primary leading-tight">
+                          <strong>{item.title}</strong>
+                        </p>
                         <p className="mt-2 text-xs leading-relaxed text-slate-500 font-medium">
                           {item.desc}
                         </p>
@@ -1567,9 +1567,9 @@ export default function SolutionsPage() {
                           />
                         </div>
                       )}
-                      <h4 className="mt-2 text-sm font-black uppercase tracking-wide text-primary leading-tight">
-                        {item.title}
-                      </h4>
+                      <p className="mt-2 text-sm font-black uppercase tracking-wide text-primary leading-tight">
+                        <strong>{item.title}</strong>
+                      </p>
                       <p className="mt-2 text-xs md:text-sm leading-relaxed text-text-muted font-medium">
                         {item.desc}
                       </p>
@@ -2315,9 +2315,9 @@ export default function SolutionsPage() {
                         )}
                       </div>
                       <div className="leading-tight">
-                        <h4 className="text-[28px] font-extrabold text-[#fa5902] tracking-tight">
-                          {item.value}
-                        </h4>
+                        <p className="text-[28px] font-extrabold text-[#fa5902] tracking-tight">
+                          <strong>{item.value}</strong>
+                        </p>
                         <p className="text-[12.5px] font-extrabold text-[#092a5c] uppercase tracking-wider mt-0.5">
                           {item.label}
                         </p>
@@ -2404,9 +2404,9 @@ export default function SolutionsPage() {
                     {i === 5 && <Headphones size={36} />}
                   </div>
 
-                  <h3 className="text-sm font-black uppercase tracking-wider text-primary leading-tight">
-                    {item.title}
-                  </h3>
+                  <p className="text-sm font-black uppercase tracking-wider text-primary leading-tight">
+                    <strong>{item.title}</strong>
+                  </p>
 
                   <p className="mt-2 text-xs md:text-sm leading-relaxed text-slate-500">
                     {item.desc}
@@ -2450,9 +2450,9 @@ export default function SolutionsPage() {
                         <PIcon size={27} />
                       </div>
                       <div>
-                        <h4 className="text-[13px] font-black uppercase text-primary tracking-wide leading-tight">
-                          {item.title}
-                        </h4>
+                        <p className="text-[13px] font-black uppercase text-primary tracking-wide leading-tight">
+                          <strong>{item.title}</strong>
+                        </p>
                         <p className="mt-1.5 text-xs text-slate-500 leading-normal">
                           {item.desc}
                         </p>
@@ -2720,9 +2720,9 @@ export default function SolutionsPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-base font-black uppercase tracking-[0.10em] text-primary group-hover:text-secondary transition-colors duration-300">
-                        {item.title}
-                      </h3>
+                      <p className="text-base font-black uppercase tracking-[0.10em] text-primary group-hover:text-secondary transition-colors duration-300">
+                        <strong>{item.title}</strong>
+                      </p>
 
                       <span className="block h-[1.5px] w-6 bg-secondary my-2" />
 
@@ -2935,11 +2935,13 @@ export default function SolutionsPage() {
                         ></path>
                       </svg>
                     </div>
-                    <h4 className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
-                      Engineering
-                      <br />
-                      Consultation
-                    </h4>
+                    <p className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
+                      <strong>
+                        Engineering
+                        <br />
+                        Consultation
+                      </strong>
+                    </p>
                     <p className="text-[10px] text-slate-500 leading-relaxed">
                       Connect with our experts to discuss your project needs.
                     </p>
@@ -2961,10 +2963,12 @@ export default function SolutionsPage() {
                         ></path>
                       </svg>
                     </div>
-                    <h4 className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
-                      Request a<br />
-                      Quote
-                    </h4>
+                    <p className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
+                      <strong>
+                        Request a<br />
+                        Quote
+                      </strong>
+                    </p>
                     <p className="text-[10px] text-slate-500 leading-relaxed">
                       Get a detailed, customized quote tailored to your
                       requirements.
@@ -2987,11 +2991,13 @@ export default function SolutionsPage() {
                         ></path>
                       </svg>
                     </div>
-                    <h4 className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
-                      Plant Planning
-                      <br />
-                      Support
-                    </h4>
+                    <p className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
+                      <strong>
+                        Plant Planning
+                        <br />
+                        Support
+                      </strong>
+                    </p>
                     <p className="text-[10px] text-slate-500 leading-relaxed">
                       Optimize your plant layout, capacity, and workflow with
                       our experts.
@@ -3014,11 +3020,13 @@ export default function SolutionsPage() {
                         ></path>
                       </svg>
                     </div>
-                    <h4 className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
-                      Expert Engineering
-                      <br />
-                      Help
-                    </h4>
+                    <p className="text-[13px] font-black text-[#0f172a] mb-1.5 leading-snug">
+                      <strong>
+                        Expert Engineering
+                        <br />
+                        Help
+                      </strong>
+                    </p>
                     <p className="text-[10px] text-slate-500 leading-relaxed">
                       End-to-end engineering support for reliable and efficient
                       operations.
