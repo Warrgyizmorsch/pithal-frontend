@@ -178,19 +178,7 @@ export const blogs: BlogPost[] = [
   },
 ];
 
-export const mockLeads: Lead[] = [
-  {
-    id: 'lead-101',
-    fullName: 'Rajesh Kumar',
-    email: 'rajesh@mewar-mining.com',
-    phone: '+91 9876543210',
-    companyName: 'Mewar Mining Corp',
-    productInterest: 'Prime Jaw Crusher 1060',
-    message: 'Looking for a quotation for 250 TPH primary crushing setup in Rajasthan.',
-    status: 'PENDING',
-    createdAt: new Date().toISOString(),
-  },
-];
+export const mockLeads: Lead[] = [];
 
 export const mockDealers: DealerApplication[] = [
   {

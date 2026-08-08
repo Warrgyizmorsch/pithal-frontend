@@ -14,14 +14,12 @@ export async function GET() {
     const conn = await connectDB();
     if (conn) {
       const dbLeads = await LeadModel.find().sort({ createdAt: -1 }).lean();
-      if (dbLeads && dbLeads.length > 0) {
-        return jsonResponse({
-          success: true,
-          count: dbLeads.length,
-          data: dbLeads,
-          source: "MongoDB Database",
-        });
-      }
+      return jsonResponse({
+        success: true,
+        count: dbLeads ? dbLeads.length : 0,
+        data: dbLeads || [],
+        source: "MongoDB Database",
+      });
     }
   } catch (err) {
     console.warn("MongoDB GET leads error, using fallback:", err);
