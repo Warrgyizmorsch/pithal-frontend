@@ -924,9 +924,20 @@ export default function BackendAdminPortal() {
   };
 
   // User Accounts
-  const [users, setUsers] = useState<UserAccount[]>([
-    { id: "u-1", name: "Super Admin", email: "admin@pithalmachine.com", phone: "+91 9876543210", city: "Ahmedabad", password: "admin123", role: "Super Admin", status: "Active", joinedDate: "2026-01-01" },
-  ]);
+  const [users, setUsers] = useState<UserAccount[]>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("pithal_admin_users");
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        } catch { }
+      }
+    }
+    return [
+      { id: "u-1", name: "Super Admin", email: "admin@pithalmachine.com", phone: "+91 9876543210", city: "Ahmedabad", password: "admin123", role: "Super Admin", status: "Active", joinedDate: "2026-01-01" },
+    ];
+  });
 
   useEffect(() => {
     setIsMounted(true);
@@ -978,23 +989,7 @@ export default function BackendAdminPortal() {
     if (isUsersLoaded) {
       safeSetLocalStorage("pithal_admin_users", JSON.stringify(users));
     }
-
-    // Auto-sync logged-in adminUser state with users list or logout if deleted
-    if (isUsersLoaded && isAuthenticated) {
-      const activeMatch = users.find(u => u.email === adminUser.email || u.id === adminUser.id);
-      if (!activeMatch) {
-        // Current logged-in account was deleted! Log out immediately!
-        handleLogout();
-      } else if (
-        activeMatch.name !== adminUser.name ||
-        activeMatch.avatar !== adminUser.avatar ||
-        activeMatch.email !== adminUser.email ||
-        activeMatch.role !== adminUser.role
-      ) {
-        setAdminUser(activeMatch);
-      }
-    }
-  }, [users, isAuthenticated, isUsersLoaded]);
+  }, [users, isUsersLoaded]);
 
   // Real Login History State
   const [loginHistory, setLoginHistory] = useState<LoginHistoryItem[]>([]);
@@ -1210,6 +1205,13 @@ export default function BackendAdminPortal() {
         avatar: savedAvatar || matchedUser.avatar || matchedUser.name.substring(0, 2).toUpperCase(),
         password: matchedUser.password || cleanPass,
       };
+      setUsers((prev) => {
+        const exists = prev.some((u) => u.email.toLowerCase() === matchedUser.email.toLowerCase() || u.id === matchedUser.id);
+        const updated = exists ? prev.map((u) => u.email.toLowerCase() === matchedUser.email.toLowerCase() ? matchedUser : u) : [...prev, matchedUser];
+        safeSetLocalStorage("pithal_admin_users", JSON.stringify(updated));
+        return updated;
+      });
+
       setAdminUser(loggedInAdmin);
       setIsAuthenticated(true);
       safeSetLocalStorage("pithal_admin_auth", "true");
@@ -1963,6 +1965,10 @@ export default function BackendAdminPortal() {
   const isDark = theme === "dark";
 
   // ─── LOGIN SCREEN ──────────────────────────────────────────────────────────
+  if (!isMounted) {
+    return null;
+  }
+
   if (!isAuthenticated) {
     return (
       <div className="admin-portal min-h-screen bg-[#0F172A] flex flex-col items-center justify-center p-4 font-sans text-slate-100">
