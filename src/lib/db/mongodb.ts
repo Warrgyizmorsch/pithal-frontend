@@ -32,9 +32,9 @@ export async function connectDB(): Promise<typeof mongoose | null> {
   if (!cached?.promise || mongoose.connection.readyState !== 1) {
     const opts = {
       bufferCommands: false,
-      serverSelectionTimeoutMS: 5000,
-      connectTimeoutMS: 5000,
-      socketTimeoutMS: 10000,
+      serverSelectionTimeoutMS: 30000,
+      connectTimeoutMS: 30000,
+      socketTimeoutMS: 45000,
     };
 
     cached!.promise = mongoose
