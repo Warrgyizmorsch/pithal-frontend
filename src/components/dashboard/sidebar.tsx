@@ -48,32 +48,32 @@ export function Sidebar({
         )}
       >
         {/* Logo */}
-        <div className="py-4 px-2 border-b border-sidebar-border overflow-hidden flex items-center justify-center">
-          <div className="flex items-center w-full justify-center">
+        <div className="h-16 px-4 border-b border-sidebar-border overflow-hidden flex items-center justify-between shrink-0">
+          <div className="flex items-center w-full justify-start pl-1">
             {collapsed ? (
-              <div className="w-12 h-12 flex items-center justify-center shrink-0">
-                <span className="font-extrabold text-sidebar-foreground text-4xl lg:block hidden">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <span className="font-extrabold text-sidebar-foreground text-2xl lg:block hidden">
                   P
                 </span>
-                <span className="font-extrabold text-sidebar-foreground text-4xl lg:hidden block">
+                <span className="font-extrabold text-sidebar-foreground text-2xl lg:hidden block">
                   <Image
                     alt="Pithal Machines Ltd."
                     src="/images/brand/pithal-logo.png"
-                    width={280}
-                    height={100}
-                    className="h-32 w-auto object-contain"
+                    width={180}
+                    height={40}
+                    className="h-8 w-auto object-contain"
                     priority
                   />
                 </span>
               </div>
             ) : (
-              <div className="flex items-center w-full justify-center animate-in fade-in duration-300">
+              <div className="flex items-center w-full justify-start animate-in fade-in duration-300">
                 <Image
                   alt="Pithal Machines Ltd."
                   src="/images/brand/pithal-logo.png"
-                  width={280}
-                  height={100}
-                  className="h-32 w-auto object-contain -my-10"
+                  width={180}
+                  height={40}
+                  className="h-9 w-auto max-w-[180px] object-contain"
                   priority
                 />
               </div>

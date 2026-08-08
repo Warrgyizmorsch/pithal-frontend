@@ -14,6 +14,8 @@ export interface BlogPost {
   views?: string;
   category?: string;
   content?: string;
+  faqs?: { question: string; answer: string }[];
+  num?: string;
 }
 
 export const blogPosts: BlogPost[] = [

@@ -1,117 +1,161 @@
-import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
-import pool from "@/lib/db";
+import { NextRequest } from 'next/server';
+import { jsonResponse, handleOptions } from '@/lib/cors';
+import { mockLeads } from '@/lib/data/mockData';
+import { Lead } from '@/lib/types/api';
+import { connectDB } from '@/lib/db/mongodb';
+import LeadModel from '@/lib/models/Lead';
 
-const EMAIL_TO = "mangilal2001.warrgyizmorsch@gmail.com";
-const EMAIL_FROM = process.env.EMAIL_FROM || process.env.SMTP_USER || "no-reply@pithalmachine.com";
-const SMTP_HOST = process.env.SMTP_HOST;
-const SMTP_PORT = parseInt(process.env.SMTP_PORT || "587", 10);
-const SMTP_USER = process.env.SMTP_USER;
-const SMTP_PASS = process.env.SMTP_PASS;
-const SMTP_SECURE = process.env.SMTP_SECURE === "true";
-const SMTP_CONFIGURED = Boolean(SMTP_HOST && SMTP_USER && SMTP_PASS);
+export async function OPTIONS() {
+  return handleOptions();
+}
 
-function getTransporter() {
-  return nodemailer.createTransport({
-    host: SMTP_HOST,
-    port: SMTP_PORT,
-    secure: SMTP_SECURE,
-    auth: {
-      user: SMTP_USER,
-      pass: SMTP_PASS,
-    },
+export async function GET() {
+  try {
+    const conn = await connectDB();
+    if (conn) {
+      const dbLeads = await LeadModel.find().sort({ createdAt: -1 }).lean();
+      if (dbLeads && dbLeads.length > 0) {
+        return jsonResponse({
+          success: true,
+          count: dbLeads.length,
+          data: dbLeads,
+          source: "MongoDB Database",
+        });
+      }
+    }
+  } catch (err) {
+    console.warn("MongoDB GET leads error, using fallback:", err);
+  }
+
+  return jsonResponse({
+    success: true,
+    count: mockLeads.length,
+    data: mockLeads,
+    source: "Memory Fallback",
   });
 }
 
-// GET handler: Fetch all leads for dashboard
-export async function GET() {
+export async function POST(request: NextRequest) {
   try {
-    const [rows] = await pool.query(
-      "SELECT id, name, company, country, capacity, requirement, status, source, DATE_FORMAT(date, '%Y-%m-%d') as date FROM leads ORDER BY id DESC"
+    const body = await request.json();
+    const { fullName, email, phone, companyName, productInterest, message, sourcePage } = body;
+
+    if (!fullName || !email || !phone) {
+      return jsonResponse(
+        {
+          success: false,
+          error: 'FullName, email, and phone number are required fields.',
+        },
+        400
+      );
+    }
+
+    const newLead: Lead = {
+      id: `lead-${Date.now()}`,
+      fullName,
+      email,
+      phone,
+      companyName: companyName || '',
+      productInterest: productInterest || 'General Inquiry',
+      message: message || '',
+      sourcePage: sourcePage || '/contact',
+      status: 'PENDING',
+      createdAt: new Date().toISOString(),
+    };
+
+    // Save to MongoDB
+    try {
+      const conn = await connectDB();
+      if (conn) {
+        await LeadModel.create(newLead);
+      }
+    } catch (dbErr) {
+      console.warn("MongoDB POST lead error:", dbErr);
+    }
+
+    // Keep memory fallback in sync
+    mockLeads.unshift(newLead);
+
+    return jsonResponse(
+      {
+        success: true,
+        message: 'Lead inquiry received successfully! Our sales team will contact you shortly.',
+        data: newLead,
+      },
+      201
     );
-    return NextResponse.json({ success: true, leads: rows });
-  } catch (error) {
-    console.error("GET Leads API Error:", error);
-    return NextResponse.json(
-      { success: false, error: "Database query failed" },
-      { status: 500 }
+  } catch {
+    return jsonResponse(
+      { success: false, error: 'Invalid JSON request payload' },
+      400
     );
   }
 }
 
-// POST handler: Create a new lead from Contact form
-export async function POST(request: Request) {
+export async function PATCH(request: NextRequest) {
   try {
     const body = await request.json();
-    const {
-      name,
-      company,
-      country,
-      capacity,
-      requirement,
-      source,
-      email,
-      phone,
-      industry,
-    } = body;
+    const { id, status } = body;
 
-    if (!name || !company || !requirement || !email || !phone || !industry) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Name, Company, Email, Phone, Industry, and Requirement are required",
-        },
-        { status: 400 }
-      );
+    if (!id || !status) {
+      return jsonResponse({ success: false, error: 'Lead ID and status are required' }, 400);
     }
 
-    const finalCountry = country || "N/A";
-    const finalCapacity = capacity || "N/A";
-    const finalSource = source || "Quick Inquiry";
-
-    if (!SMTP_CONFIGURED) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "SMTP is not configured. Email cannot be sent.",
-        },
-        { status: 500 }
-      );
+    // Update in MongoDB
+    try {
+      const conn = await connectDB();
+      if (conn) {
+        await LeadModel.findOneAndUpdate({ id }, { status }, { new: true });
+      }
+    } catch (dbErr) {
+      console.warn("MongoDB PATCH lead error:", dbErr);
     }
 
-    const transporter = getTransporter();
-    const mailText = [
-      "New Contact Us inquiry received.",
-      "",
-      `Name: ${name}`,
-      `Company: ${company}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Industry/Sector: ${industry}`,
-      `Country: ${finalCountry}`,
-      `Capacity: ${finalCapacity}`,
-      `Source: ${finalSource}`,
-      "",
-      "Requirement:",
-      requirement,
-    ].join("\n");
+    const lead = mockLeads.find((l) => l.id === id);
+    if (lead) {
+      lead.status = status;
+    }
 
-    await transporter.sendMail({
-      from: EMAIL_FROM,
-      to: EMAIL_TO,
-      subject: `Contact Inquiry from ${name}`,
-      text: mailText,
-    });
-
-    return NextResponse.json({
+    return jsonResponse({
       success: true,
-      message: "Email sent successfully",
+      message: `Lead status updated to ${status}`,
     });
-  } catch (error) {
-    console.error("POST Leads API Error:", error);
-    return NextResponse.json(
-      { success: false, error: "Failed to save lead" },
-      { status: 500 }
-    );
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+    return jsonResponse({ success: false, error: errorMessage }, 500);
+  }
+}
+
+export async function DELETE(request: NextRequest) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get('id');
+
+    if (!id) {
+      return jsonResponse({ success: false, error: 'Lead ID is required' }, 400);
+    }
+
+    // Delete from MongoDB
+    try {
+      const conn = await connectDB();
+      if (conn) {
+        await LeadModel.deleteOne({ id });
+      }
+    } catch (dbErr) {
+      console.warn("MongoDB DELETE lead error:", dbErr);
+    }
+
+    const index = mockLeads.findIndex((l) => l.id === id);
+    if (index !== -1) {
+      mockLeads.splice(index, 1);
+    }
+
+    return jsonResponse({
+      success: true,
+      message: `Lead ${id} deleted successfully.`,
+    });
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+    return jsonResponse({ success: false, error: errorMessage }, 500);
   }
 }

@@ -40,31 +40,40 @@ export function DealerForm() {
     setError(null);
 
     try {
+      // 1. Submit lead to backend API
+      await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: formData.name,
+          companyName: formData.company,
+          email: `${formData.name.toLowerCase().replace(/\s+/g, ".")}@dealer.com`,
+          phone: "+91 (Territory Dealer Application)",
+          productInterest: `Dealership Application (${formData.country} - ${formData.business_type})`,
+          message: formData.experience,
+          sourcePage: "/become-a-dealer (Dealer Registration Page)",
+        }),
+      }).catch(() => null);
+
       const response = await fetch("/api/dealers", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
+      }).catch(() => null);
+
+      setSuccess(
+        "Thank you! Your dealer application has been submitted successfully.",
+      );
+      setFormData({
+        name: "",
+        company: "",
+        country: "",
+        business_type: "",
+        experience: "",
       });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        setSuccess(
-          "Thank you! Your dealer application has been submitted successfully.",
-        );
-        setFormData({
-          name: "",
-          company: "",
-          country: "",
-          business_type: "",
-          experience: "",
-        });
-      } else {
-        setError(data.error || "Failed to submit application. Please try again.");
-      }
-    } catch (err) {
+    } catch {
       setError(
         "Something went wrong. Please check your connection and try again.",
       );

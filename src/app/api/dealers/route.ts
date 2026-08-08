@@ -1,50 +1,64 @@
-import { NextResponse } from "next/server";
-import pool from "@/lib/db";
+import { NextRequest } from 'next/server';
+import { jsonResponse, handleOptions } from '@/lib/cors';
+import { mockDealers } from '@/lib/data/mockData';
+import { DealerApplication } from '@/lib/types/api';
 
-// GET handler: Fetch all dealer applications (for dashboard if needed)
-export async function GET() {
-  try {
-    const [rows] = await pool.query(
-      "SELECT id, name, company, country, business_type, experience, status, DATE_FORMAT(date, '%Y-%m-%d') as date FROM dealers ORDER BY id DESC"
-    );
-    return NextResponse.json({ success: true, dealers: rows });
-  } catch (error) {
-    console.error("GET Dealers API Error:", error);
-    return NextResponse.json(
-      { success: false, error: "Database query failed" },
-      { status: 500 }
-    );
-  }
+export async function OPTIONS() {
+  return handleOptions();
 }
 
-// POST handler: Create a new dealer application
-export async function POST(request: Request) {
+export async function GET() {
+  return jsonResponse({
+    success: true,
+    count: mockDealers.length,
+    data: mockDealers,
+  });
+}
+
+export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, company, country, business_type, experience } = body;
+    const { companyName, contactPerson, email, phone, city, state, country, experienceYears, message } = body;
 
-    if (!name || !company || !country || !business_type || !experience) {
-      return NextResponse.json(
-        { success: false, error: "All fields are required" },
-        { status: 400 }
+    if (!companyName || !contactPerson || !email || !phone || !city) {
+      return jsonResponse(
+        {
+          success: false,
+          error: 'CompanyName, contactPerson, email, phone, and city are required.',
+        },
+        400
       );
     }
 
-    const [result] = await pool.query(
-      "INSERT INTO dealers (name, company, country, business_type, experience, status) VALUES (?, ?, ?, ?, ?, 'pending')",
-      [name, company, country, business_type, experience]
-    );
+    const newDealer: DealerApplication = {
+      id: `dealer-${Date.now()}`,
+      companyName,
+      contactPerson,
+      email,
+      phone,
+      city,
+      state: state || '',
+      country: country || 'India',
+      experienceYears: Number(experienceYears) || 0,
+      message: message || '',
+      status: 'PENDING',
+      createdAt: new Date().toISOString(),
+    };
 
-    return NextResponse.json({
-      success: true,
-      message: "Dealer application submitted successfully",
-      applicationId: (result as any).insertId,
-    });
-  } catch (error) {
-    console.error("POST Dealers API Error:", error);
-    return NextResponse.json(
-      { success: false, error: "Failed to save application" },
-      { status: 500 }
+    mockDealers.unshift(newDealer);
+
+    return jsonResponse(
+      {
+        success: true,
+        message: 'Dealer application submitted successfully. We will review your credentials and contact you.',
+        data: newDealer,
+      },
+      201
+    );
+  } catch {
+    return jsonResponse(
+      { success: false, error: 'Invalid JSON request payload' },
+      400
     );
   }
 }

@@ -1067,6 +1067,51 @@ export default function BlogPage() {
   const [email, setEmail] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [showPopup, setShowPopup] = useState(false);
+  const [dynamicBlogs, setDynamicBlogs] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function loadBackendBlogs() {
+      try {
+        const res = await fetch("/api/blogs", {
+          cache: "no-store",
+        }).catch(() => null);
+
+        if (res && res.ok) {
+          const json = await res.json();
+          if (json.success && Array.isArray(json.data) && json.data.length > 0) {
+            setDynamicBlogs(json.data);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load backend blogs", err);
+      }
+    }
+    loadBackendBlogs();
+  }, []);
+
+  const publishedDynamicBlogs = dynamicBlogs.filter((b: any) => b.status !== "Draft");
+
+  const publishedMapped = publishedDynamicBlogs.map((b: any, index: number) => ({
+    slug: b.slug,
+    tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
+    title: b.title,
+    desc: b.excerpt || b.title,
+    date: b.publishedAt || "Today",
+    read: b.readTime || "5 min read",
+    views: b.views || "1.2K",
+    category: b.category || "Crushing Solutions",
+    img: b.image || "/blogpageimg/crusherguide.jpg",
+    num: `0${index + 1}`,
+  }));
+
+  const dynamicSlugs = new Set(publishedMapped.map((b: any) => b.slug));
+  const activePosts = [
+    ...publishedMapped,
+    ...blogPosts.filter((p) => !dynamicSlugs.has(p.slug)),
+  ];
+
+  const currentFeatured = activePosts.slice(0, 3);
+  const currentTrending = activePosts;
 
   // Custom Guide Form states
   const [guideName, setGuideName] = useState("");
@@ -1315,8 +1360,8 @@ export default function BlogPage() {
               {/* Large featured card */}
               <div className="relative rounded-xl overflow-hidden group cursor-pointer min-h-[240px] sm:min-h-[300px] shadow-[0_24px_70px_rgba(3,27,64,0.18)]">
                 <ImgBox
-                  src={featuredPosts[0].img}
-                  alt={featuredPosts[0].title}
+                  src={currentFeatured[0]?.img || "/blogpageimg/crusherguide.jpg"}
+                  alt={currentFeatured[0]?.title || "Blog Post"}
                   fill
                   label=""
                   className="group-hover:scale-105 transition-transform duration-500"
@@ -1329,76 +1374,28 @@ export default function BlogPage() {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
                   <span className="text-secondary text-xs font-bold uppercase tracking-wider mb-2 block">
-                    {featuredPosts[0].tag}
+                    {currentFeatured[0]?.tag}
                   </span>
                   <h3 className="text-white text-xl font-extrabold leading-tight mb-2">
-                    {featuredPosts[0].title}
+                    {currentFeatured[0]?.title}
                   </h3>
                   <p className="text-gray-300 text-[11px] leading-relaxed mb-4 max-w-md line-clamp-2">
-                    {featuredPosts[0].desc}
+                    {currentFeatured[0]?.desc}
                   </p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4 text-gray-400 text-[10px]">
                       <span>
                         <CalendarIcon />
-                        {featuredPosts[0].date}
+                        {currentFeatured[0]?.date}
                       </span>
                       <span>
                         <ClockIcon />
-                        {featuredPosts[0].read}
+                        {currentFeatured[0]?.read}
                       </span>
                     </div>
                     <Button
                       variant="primary"
-                      href={`/blog/${featuredPosts[0].slug}`}
-                      className="h-8 min-h-0 text-[10px] px-3 py-1.5 flex items-center gap-2"
-                    >
-                      Read More{" "}
-                      <div className="w-4.5 h-4.5 bg-white/20 rounded-full flex items-center justify-center">
-                        <ArrowRight cls="w-2.5 h-2.5" />
-                      </div>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-              <div className="relative rounded-xl overflow-hidden group cursor-pointer min-h-[240px] sm:min-h-[300px] shadow-[0_24px_70px_rgba(3,27,64,0.18)]">
-                <ImgBox
-                  src={featuredPosts[0].img}
-                  alt={featuredPosts[0].title}
-                  fill
-                  label=""
-                  className="group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary/50 to-transparent" />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-primary text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider">
-                    FEATURED
-                  </span>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
-                  <span className="text-secondary text-xs font-bold uppercase tracking-wider mb-2 block">
-                    {featuredPosts[0].tag}
-                  </span>
-                  <h3 className="text-white text-xl font-extrabold leading-tight mb-2">
-                    {featuredPosts[0].title}
-                  </h3>
-                  <p className="text-gray-300 text-[11px] leading-relaxed mb-4 max-w-md line-clamp-2">
-                    {featuredPosts[0].desc}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-gray-400 text-[10px]">
-                      <span>
-                        <CalendarIcon />
-                        {featuredPosts[0].date}
-                      </span>
-                      <span>
-                        <ClockIcon />
-                        {featuredPosts[0].read}
-                      </span>
-                    </div>
-                    <Button
-                      variant="primary"
-                      href={`/blog/${featuredPosts[0].slug}`}
+                      href={`/blog/${currentFeatured[0]?.slug}`}
                       className="h-8 min-h-0 text-[10px] px-3 py-1.5 flex items-center gap-2"
                     >
                       Read More{" "}
@@ -1412,7 +1409,7 @@ export default function BlogPage() {
 
               {/* Right column — 2 smaller cards */}
               <div className="flex flex-col gap-6">
-                {featuredPosts.slice(1).map((post, i) => (
+                {currentFeatured.slice(1).map((post, i) => (
                   <div
                     key={i}
                     className="relative rounded-xl overflow-hidden group cursor-pointer flex-1 min-h-[110px] sm:min-h-[140px] shadow-[0_18px_45px_rgba(3,27,64,0.14)]"
@@ -1456,6 +1453,7 @@ export default function BlogPage() {
                   </div>
                 ))}
               </div>
+
             </div>
           </Container>
         </section>
@@ -1548,16 +1546,16 @@ export default function BlogPage() {
 
             {/* Articles Grid */}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {latestArticles.map((art, i) => {
-                const TagIcon = art.tagIcon;
+              {activePosts.map((art: any, i: number) => {
+                const postHref = art.slug.startsWith("/") || art.slug.startsWith("http") ? art.slug : `/blog/${art.slug}`;
                 return (
-                  <a
-                    href={art.slug}
+                  <Link
+                    href={postHref}
                     key={i}
                     className="group flex flex-col h-full bg-white rounded-[20px] overflow-hidden border border-slate-200 shadow-[0_4px_24px_rgb(0,0,0,0.03)] hover:shadow-lg transition-all duration-300"
                   >
                     {/* Image Area */}
-                    <div className="relative h-60 w-full overflow-hidden shrink-0">
+                    <div className="relative h-60 w-full overflow-hidden shrink-0 bg-slate-100">
                       <img
                         src={art.img}
                         alt={art.title}
@@ -1571,7 +1569,7 @@ export default function BlogPage() {
                       {/* Tag */}
                       <div className="flex items-center gap-3 mb-4">
                         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 text-secondary border border-orange-100/50">
-                          <TagIcon size={14} strokeWidth={2} />
+                          <Cog size={14} strokeWidth={2} />
                         </div>
                         <span className="text-[11px] font-black text-secondary uppercase tracking-widest">
                           {art.tag}
@@ -1582,7 +1580,7 @@ export default function BlogPage() {
                       <h3 className="text-[19px] font-bold text-primary leading-tight mb-3 group-hover:text-secondary transition-colors">
                         {art.title}
                       </h3>
-                      <p className="text-[13px] text-slate-500 leading-relaxed mb-6 flex-grow">
+                      <p className="text-[13px] text-slate-500 leading-relaxed mb-6 flex-grow line-clamp-3">
                         {art.desc}
                       </p>
 
@@ -1607,7 +1605,7 @@ export default function BlogPage() {
                         <ArrowRight cls="w-[18px] h-[18px] text-secondary transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 );
               })}
             </div>
@@ -1923,10 +1921,10 @@ export default function BlogPage() {
             </div>
 
             <div className="mt-8 overflow-hidden rounded-lg border border-slate-100 bg-bg-light shadow-sm">
-              {trendingPosts.map((post, i) => (
+              {currentTrending.map((post, i) => (
                 <div
                   key={i}
-                  className={`grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-6 items-center p-4 sm:p-6 border-b border-slate-100 last:border-b-0 bg-white ${i === trendingPosts.length - 1 ? "border-b-0" : ""}`}
+                  className={`grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-6 items-center p-4 sm:p-6 border-b border-slate-100 last:border-b-0 bg-white ${i === currentTrending.length - 1 ? "border-b-0" : ""}`}
                 >
                   {/* 1. Left unified badge & image block */}
                   <div

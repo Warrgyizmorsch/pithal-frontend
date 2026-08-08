@@ -1,7 +1,7 @@
 "use client";
 
 import { navigation, products } from "@/data/homeData";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, User, LayoutDashboard } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
@@ -132,14 +132,23 @@ export function MobileMenu() {
             })}
           </div>
 
-          {/* Contact Us button inside drawer */}
-          <Link
-            className="mt-6 flex w-full items-center justify-center gap-2 rounded-[0.3rem] primary-btn min-h-[2.75rem] px-5 text-[11px] font-bold uppercase tracking-[0.12em] text-white"
-            href="/contact"
-            onClick={close}
-          >
-            Contact Us <ArrowRight aria-hidden size={15} />
-          </Link>
+          {/* Action buttons inside drawer */}
+          <div className="mt-6 flex flex-col gap-2.5">
+            <Link
+              className="flex w-full items-center justify-center gap-2 rounded-[0.3rem] primary-btn min-h-[2.75rem] px-5 text-[11px] font-bold uppercase tracking-[0.12em] text-white"
+              href="/contact"
+              onClick={close}
+            >
+              Contact Us <ArrowRight aria-hidden size={15} />
+            </Link>
+            <Link
+              className="flex w-full items-center justify-center gap-2 rounded-[0.3rem] border border-amber-500/50 bg-amber-500/10 min-h-[2.75rem] px-5 text-[11px] font-bold uppercase tracking-[0.12em] text-amber-600 hover:bg-amber-500 hover:text-slate-950 transition-all"
+              href="/admin"
+              onClick={close}
+            >
+              <User aria-hidden size={15} /> Dashboard
+            </Link>
+          </div>
         </nav>
       </div>
     </div>

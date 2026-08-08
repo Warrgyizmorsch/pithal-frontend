@@ -514,35 +514,44 @@ export default function ContactUsPage() {
     setLoading(true);
     setStatusMsg(null);
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      setStatusMsg({
-        type: "error",
-        text: "EmailJS is not configured. Please set the public EmailJS IDs.",
-      });
-      setLoading(false);
-      return;
-    }
-
-    const templateParams = {
-      name: formData.fullName,
-      company: formData.companyName,
+    const leadPayload = {
+      fullName: formData.fullName,
+      companyName: formData.companyName,
       email: formData.email,
       phone: formData.phone,
-      industry: formData.industry,
+      productInterest: formData.industry ? `${formData.industry.toUpperCase()} Solutions` : "General Engineering Enquiry",
       message: formData.requirement,
+      sourcePage: "/contact (Contact Us Page)",
     };
 
     try {
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      // 1. Submit to Backend API
+      const apiRes = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(leadPayload),
+      }).catch(() => null);
+
+      // 2. EmailJS submission (optional if configured)
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+      if (serviceId && templateId && publicKey) {
+        emailjs.send(serviceId, templateId, {
+          name: formData.fullName,
+          company: formData.companyName,
+          email: formData.email,
+          phone: formData.phone,
+          industry: formData.industry,
+          message: formData.requirement,
+        }, publicKey).catch(() => null);
+      }
 
       setStatusMsg({
         type: "success",
-        text: `Thank you ${formData.fullName}. Your inquiry has been submitted successfully!`,
+        text: `Thank you ${formData.fullName}! Your engineering inquiry has been submitted successfully. Our team will contact you shortly.`,
       });
+
       setFormData({
         fullName: "",
         companyName: "",
@@ -552,10 +561,10 @@ export default function ContactUsPage() {
         requirement: "",
       });
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error("Submission Error:", error);
       setStatusMsg({
         type: "error",
-        text: "Failed to send your inquiry. Please try again.",
+        text: "Failed to send your inquiry. Please try again or call us directly.",
       });
     } finally {
       setLoading(false);

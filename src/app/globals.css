@@ -73,15 +73,58 @@ body {
   font-family: var(--font-body), "Arial Narrow", Arial, sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1:not(.admin-portal *),
+h2:not(.admin-portal *),
+h3:not(.admin-portal *),
+h4:not(.admin-portal *) {
   font-family: var(--heading-font), sans-serif !important;
   display: block;
   transform: scaleY(1.12);
   transform-origin: left top;
   margin-bottom: 0.35em; /* Increased spacing to prevent overlapping and create breathing room under the scaled fonts */
+}
+
+/* Reset heading font, transform scaling and force clean modern UI font for admin panel */
+.admin-portal,
+.admin-portal *,
+.admin-portal h1,
+.admin-portal h2,
+.admin-portal h3,
+.admin-portal h4,
+.admin-portal button,
+.admin-portal input,
+.admin-portal select,
+.admin-portal textarea,
+.admin-portal label,
+.admin-portal span,
+.admin-portal p,
+.admin-portal th,
+.admin-portal td,
+.admin-portal a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  transform: none !important;
+  letter-spacing: normal;
+}
+
+.admin-portal h1,
+.admin-portal h2,
+.admin-portal h3,
+.admin-portal h4 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  transform: none !important;
+  margin-bottom: 0 !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+.admin-portal input[type="text"],
+.admin-portal input[type="email"],
+.admin-portal input[type="password"],
+.admin-portal input[type="number"],
+.admin-portal textarea,
+.admin-portal select {
+  font-size: 0.8125rem; /* 13px */
+  line-height: 1.25rem;
 }
 
 @layer base {
@@ -848,3 +891,75 @@ textarea {
   border-color: var(--border);
   outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   BLOG CONTENT TYPOGRAPHY FIX (Force p tags & nested spans to be normal weight)
+   ══════════════════════════════════════════════════════════════════════════════ */
+.blog-rich-content h1,
+.blog-rich-content h2,
+.blog-rich-content h3,
+.blog-rich-content h4,
+.blog-rich-content h5,
+.blog-rich-content h6 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  transform: none !important;
+  font-weight: 700 !important;
+  color: #092a5c !important;
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Blog Rich Content Styling */
+.blog-rich-content p,
+.blog-rich-content p *,
+.blog-rich-content p span,
+.blog-rich-content p strong,
+.blog-rich-content p b,
+.blog-rich-content p:first-of-type,
+.blog-rich-content p:first-child,
+.blog-rich-content .lead {
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #334155 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.85 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.blog-rich-content h1,
+.blog-rich-content h2,
+.blog-rich-content h3,
+.blog-rich-content h4,
+.blog-rich-content h5,
+.blog-rich-content h6 {
+  font-weight: 800 !important;
+  color: #031b40 !important;
+  font-family: var(--font-heading), var(--heading-font), system-ui, sans-serif !important;
+  letter-spacing: -0.01em !important;
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.blog-rich-content h1 { font-size: 1.85rem !important; line-height: 1.25 !important; }
+.blog-rich-content h2 { font-size: 1.55rem !important; line-height: 1.3 !important; }
+.blog-rich-content h3 { font-size: 1.3rem !important; line-height: 1.35 !important; }
+.blog-rich-content h4 { font-size: 1.15rem !important; line-height: 1.4 !important; }
+
+.blog-rich-content ul,
+.blog-rich-content ol {
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.25rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.blog-rich-content li,
+.blog-rich-content li * {
+  font-weight: 400 !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #334155 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+}
+
