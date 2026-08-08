@@ -890,24 +890,7 @@ export default function BackendAdminPortal() {
   const [newRoleCanDelete, setNewRoleCanDelete] = useState(false);
 
   // Notifications State
-  const [notifications, setNotifications] = useState<NotificationItem[]>([
-    {
-      id: "n-1",
-      title: "New Contact Lead Received",
-      message: "Ramesh Patel submitted inquiry from /contact",
-      time: "2 mins ago",
-      type: "lead",
-      read: false,
-    },
-    {
-      id: "n-2",
-      title: "Dealer Application Received",
-      message: "Patel Quarry Works applied for dealership",
-      time: "15 mins ago",
-      type: "lead",
-      read: false,
-    },
-  ]);
+  const [notifications, setNotifications] = useState<NotificationItem[]>([]);
   const [showNotificationMenu, setShowNotificationMenu] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
 

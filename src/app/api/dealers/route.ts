@@ -2,16 +2,34 @@ import { NextRequest } from 'next/server';
 import { jsonResponse, handleOptions } from '@/lib/cors';
 import { mockDealers } from '@/lib/data/mockData';
 import { DealerApplication } from '@/lib/types/api';
+import { connectDB } from '@/lib/db/mongodb';
+import DealerModel from '@/lib/models/Dealer';
 
 export async function OPTIONS() {
   return handleOptions();
 }
 
 export async function GET() {
+  try {
+    const conn = await connectDB();
+    if (conn) {
+      const dbDealers = await DealerModel.find().sort({ createdAt: -1 }).lean();
+      return jsonResponse({
+        success: true,
+        count: dbDealers ? dbDealers.length : 0,
+        data: dbDealers || [],
+        source: "MongoDB Database",
+      });
+    }
+  } catch (err) {
+    console.warn("MongoDB GET dealers error:", err);
+  }
+
   return jsonResponse({
     success: true,
     count: mockDealers.length,
     data: mockDealers,
+    source: "Memory Fallback",
   });
 }
 
@@ -44,6 +62,15 @@ export async function POST(request: NextRequest) {
       status: 'PENDING',
       createdAt: new Date().toISOString(),
     };
+
+    try {
+      const conn = await connectDB();
+      if (conn) {
+        await DealerModel.create(newDealer);
+      }
+    } catch (dbErr) {
+      console.warn("MongoDB POST dealer error:", dbErr);
+    }
 
     mockDealers.unshift(newDealer);
 

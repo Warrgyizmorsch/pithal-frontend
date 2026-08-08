@@ -159,22 +159,7 @@ export const blogs: BlogPost[] = [];
 
 export const mockLeads: Lead[] = [];
 
-export const mockDealers: DealerApplication[] = [
-  {
-    id: 'dealer-201',
-    companyName: 'Apex Machinery Traders',
-    contactPerson: 'Sanjay Sharma',
-    email: 'sanjay@apextraders.in',
-    phone: '+91 9123456789',
-    city: 'Udaipur',
-    state: 'Rajasthan',
-    country: 'India',
-    experienceYears: 12,
-    message: 'We operate heavy equipment dealerships across Western India and want to add Pithal crushers to our portfolio.',
-    status: 'REVIEWED',
-    createdAt: new Date().toISOString(),
-  },
-];
+export const mockDealers: DealerApplication[] = [];
 
 export const careers: CareerOpening[] = [
   {
