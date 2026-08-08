@@ -817,17 +817,28 @@ export default function BackendAdminPortal() {
   const [isUsersLoaded, setIsUsersLoaded] = useState(false);
 
   // Admin Profile Credentials State
-  const [adminUser, setAdminUser] = useState<UserAccount>({
-    id: "u-1",
-    name: "Super Admin",
-    email: "admin@pithalmachine.com",
-    phone: "+91 9876543210",
-    city: "Ahmedabad",
-    role: "Super Admin",
-    status: "Active",
-    joinedDate: "2026-01-01",
-    avatar: "SA",
-    password: "admin123",
+  const [adminUser, setAdminUser] = useState<UserAccount>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("pithal_admin_current_user");
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (parsed && parsed.email) return parsed;
+        } catch {}
+      }
+    }
+    return {
+      id: "u-1",
+      name: "Super Admin",
+      email: "admin@pithalmachine.com",
+      phone: "+91 9876543210",
+      city: "Ahmedabad",
+      role: "Super Admin",
+      status: "Active",
+      joinedDate: "2026-01-01",
+      avatar: "SA",
+      password: "admin123",
+    };
   });
 
   useEffect(() => {
@@ -877,7 +888,12 @@ export default function BackendAdminPortal() {
   const [newResetPassword, setNewResetPassword] = useState("");
 
   // Authentication State
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("pithal_admin_auth") === "true";
+    }
+    return false;
+  });
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [loginError, setLoginError] = useState<string | null>(null);
