@@ -853,13 +853,8 @@ export default function BackendAdminPortal() {
   const [passwordResetUser, setPasswordResetUser] = useState<UserAccount | null>(null);
   const [newResetPassword, setNewResetPassword] = useState("");
 
-  // Authentication State
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("pithal_admin_auth") === "true";
-    }
-    return false;
-  });
+  // Authentication State - always start false on server, useEffect restores from localStorage
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [loginError, setLoginError] = useState<string | null>(null);
@@ -910,8 +905,7 @@ export default function BackendAdminPortal() {
   const [users, setUsers] = useState<UserAccount[]>([]);
 
   useEffect(() => {
-    setIsMounted(true);
-
+    // Restore auth state from localStorage on mount
     if (typeof window !== "undefined") {
       const savedAuth = localStorage.getItem("pithal_admin_auth");
       if (savedAuth === "true") {
@@ -923,7 +917,11 @@ export default function BackendAdminPortal() {
         try {
           const parsedAdmin = JSON.parse(savedAdmin);
           if (parsedAdmin && parsedAdmin.email) {
-            setAdminUser(parsedAdmin);
+            const storedAvatar = localStorage.getItem(`pithal_avatar_${parsedAdmin.email}`);
+            setAdminUser({
+              ...parsedAdmin,
+              avatar: storedAvatar || parsedAdmin.avatar || "AU",
+            });
           }
         } catch { }
       }
@@ -937,12 +935,12 @@ export default function BackendAdminPortal() {
               (h: any) => h.user && !h.user.toLowerCase().includes("jaydeep")
             );
             setLoginHistory(cleanedHistory);
-            safeSetLocalStorage("pithal_login_history", JSON.stringify(cleanedHistory));
           }
         } catch { }
       }
       setIsUsersLoaded(true);
     }
+    setIsMounted(true);
   }, []);
 
   // Real Login History State

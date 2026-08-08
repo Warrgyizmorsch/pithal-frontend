@@ -1,6 +1,5 @@
 import { NextRequest } from 'next/server';
 import { jsonResponse, handleOptions } from '@/lib/cors';
-import { mockLeads } from '@/lib/data/mockData';
 import { Lead } from '@/lib/types/api';
 import { connectDB } from '@/lib/db/mongodb';
 import LeadModel from '@/lib/models/Lead';
@@ -22,14 +21,14 @@ export async function GET() {
       });
     }
   } catch (err) {
-    console.warn("MongoDB GET leads error, using fallback:", err);
+    console.error("[Lead Error] MongoDB GET leads error:", err);
   }
 
   return jsonResponse({
     success: true,
-    count: mockLeads.length,
-    data: mockLeads,
-    source: "Memory Fallback",
+    count: 0,
+    data: [],
+    source: "Clean Fallback",
   });
 }
 
@@ -65,24 +64,27 @@ export async function POST(request: NextRequest) {
       createdAt: new Date().toISOString(),
     };
 
-    // Save to MongoDB
+    // Save to MongoDB - this is the PRIMARY storage
+    let savedToDb = false;
     try {
       const conn = await connectDB();
       if (conn) {
         await LeadModel.create(newLead);
+        savedToDb = true;
+        console.log("[Lead Saved] Successfully saved lead to MongoDB:", newLead.id);
+      } else {
+        console.error("[Lead Error] MongoDB connection returned null for lead:", newLead.id);
       }
     } catch (dbErr) {
-      console.warn("MongoDB POST lead error:", dbErr);
+      console.error("[Lead Error] Failed to save lead to MongoDB:", dbErr);
     }
-
-    // Keep memory fallback in sync
-    mockLeads.unshift(newLead);
 
     return jsonResponse(
       {
         success: true,
         message: 'Lead inquiry received successfully! Our sales team will contact you shortly.',
         data: newLead,
+        savedToDatabase: savedToDb,
       },
       201
     );
@@ -103,19 +105,17 @@ export async function PATCH(request: NextRequest) {
       return jsonResponse({ success: false, error: 'Lead ID and status are required' }, 400);
     }
 
-    // Update in MongoDB
     try {
       const conn = await connectDB();
       if (conn) {
-        await LeadModel.findOneAndUpdate({ id }, { status }, { new: true });
+        await LeadModel.findOneAndUpdate(
+          { $or: [{ id }, { _id: id }] },
+          { status },
+          { new: true }
+        );
       }
     } catch (dbErr) {
-      console.warn("MongoDB PATCH lead error:", dbErr);
-    }
-
-    const lead = mockLeads.find((l) => l.id === id);
-    if (lead) {
-      lead.status = status;
+      console.error("[Lead Error] MongoDB PATCH lead error:", dbErr);
     }
 
     return jsonResponse({
@@ -137,7 +137,6 @@ export async function DELETE(request: NextRequest) {
       return jsonResponse({ success: false, error: 'Lead ID is required' }, 400);
     }
 
-    // Delete from MongoDB permanently
     try {
       const conn = await connectDB();
       if (conn) {
@@ -146,12 +145,7 @@ export async function DELETE(request: NextRequest) {
         });
       }
     } catch (dbErr) {
-      console.warn("MongoDB DELETE lead error:", dbErr);
-    }
-
-    const index = mockLeads.findIndex((l) => l.id === id);
-    if (index !== -1) {
-      mockLeads.splice(index, 1);
+      console.error("[Lead Error] MongoDB DELETE lead error:", dbErr);
     }
 
     return jsonResponse({
