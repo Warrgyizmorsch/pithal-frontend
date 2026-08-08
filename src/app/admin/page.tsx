@@ -794,16 +794,16 @@ export default function BackendAdminPortal() {
       }
     }
     return {
-      id: "u-1",
-      name: "Super Admin",
-      email: "admin@pithalmachine.com",
-      phone: "+91 9876543210",
-      city: "Ahmedabad",
+      id: "",
+      name: "Admin User",
+      email: "",
+      phone: "",
+      city: "",
       role: "Super Admin",
       status: "Active",
-      joinedDate: "2026-01-01",
-      avatar: "SA",
-      password: "admin123",
+      joinedDate: "",
+      avatar: "AU",
+      password: "",
     };
   });
 
@@ -917,9 +917,7 @@ export default function BackendAdminPortal() {
         } catch { }
       }
     }
-    return [
-      { id: "u-1", name: "Super Admin", email: "admin@pithalmachine.com", phone: "+91 9876543210", city: "Ahmedabad", password: "admin123", role: "Super Admin", status: "Active", joinedDate: "2026-01-01" },
-    ];
+    return [];
   });
 
   useEffect(() => {

@@ -2,20 +2,7 @@ import { jsonResponse, handleOptions } from '@/lib/cors';
 import { connectDB } from '@/lib/db/mongodb';
 import UserModel from '@/lib/models/User';
 
-export const DEFAULT_USERS = [
-  {
-    id: "u-1",
-    name: "Super Admin",
-    email: "admin@pithalmachine.com",
-    phone: "+91 9876543210",
-    city: "Ahmedabad",
-    password: "admin123",
-    role: "Super Admin",
-    status: "Active",
-    joinedDate: "2026-01-01",
-    avatar: "SA",
-  },
-];
+export const DEFAULT_USERS: any[] = [];
 
 export async function OPTIONS() {
   return handleOptions();
@@ -34,15 +21,14 @@ export async function GET() {
       });
     }
   } catch (err) {
-    console.warn("MongoDB GET users error, using fallback:", err);
+    console.warn("MongoDB GET users error:", err);
   }
 
-  // Fallback to in-memory default users
   return jsonResponse({
     success: true,
-    count: DEFAULT_USERS.length,
-    data: DEFAULT_USERS,
-    source: "Memory Fallback",
+    count: 0,
+    data: [],
+    source: "Clean Fallback",
   });
 }
 
