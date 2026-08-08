@@ -757,57 +757,17 @@ function InteractiveLeadAnalyticsChart({
 
 
 const sanitizeStorageValue = (key: string, rawValue: string): string => {
-  try {
-    const parsed = JSON.parse(rawValue);
-    if (key === "pithal_admin_users" && Array.isArray(parsed)) {
-      const sanitized = parsed.map((u: any) => ({
-        ...u,
-        avatar: typeof u.avatar === "string" && u.avatar.length > 1000
-          ? (u.name ? u.name.substring(0, 2).toUpperCase() : "U")
-          : u.avatar,
-      }));
-      return JSON.stringify(sanitized);
-    }
-    if (key === "pithal_admin_current_user" && parsed && typeof parsed === "object") {
-      const sanitized = {
-        ...parsed,
-        avatar: typeof parsed.avatar === "string" && parsed.avatar.length > 1000
-          ? (parsed.name ? parsed.name.substring(0, 2).toUpperCase() : "U")
-          : parsed.avatar,
-      };
-      return JSON.stringify(sanitized);
-    }
-  } catch { }
   return rawValue;
 };
 
 const safeSetLocalStorage = (key: string, value: string) => {
   if (typeof window === "undefined") return;
-
-  const processedValue = sanitizeStorageValue(key, value);
-
   try {
-    localStorage.setItem(key, processedValue);
+    localStorage.setItem(key, value);
   } catch (err) {
     try {
-      let stripped = processedValue;
-      if (key === "pithal_admin_users") {
-        const parsed = JSON.parse(processedValue);
-        if (Array.isArray(parsed)) {
-          stripped = JSON.stringify(parsed.map((u: any) => ({ ...u, avatar: u.name?.substring(0, 2).toUpperCase() || "U" })));
-        }
-      } else if (key === "pithal_admin_current_user") {
-        const parsed = JSON.parse(processedValue);
-        if (parsed) {
-          stripped = JSON.stringify({ ...parsed, avatar: parsed.name?.substring(0, 2).toUpperCase() || "U" });
-        }
-      }
-      localStorage.setItem(key, stripped);
-    } catch {
-      try {
-        sessionStorage.setItem(key, processedValue);
-      } catch { }
-    }
+      sessionStorage.setItem(key, value);
+    } catch { }
   }
 };
 
@@ -823,8 +783,14 @@ export default function BackendAdminPortal() {
       if (saved) {
         try {
           const parsed = JSON.parse(saved);
-          if (parsed && parsed.email) return parsed;
-        } catch {}
+          if (parsed && parsed.email) {
+            const storedAvatar = localStorage.getItem(`pithal_avatar_${parsed.email}`);
+            return {
+              ...parsed,
+              avatar: storedAvatar || parsed.avatar || "SA",
+            };
+          }
+        } catch { }
       }
     }
     return {
@@ -1105,6 +1071,10 @@ export default function BackendAdminPortal() {
         const updatedAdmin = { ...adminUser, avatar: newAvatar };
         setAdminUser(updatedAdmin);
 
+        if (typeof window !== "undefined") {
+          localStorage.setItem(`pithal_avatar_${adminUser.email}`, newAvatar);
+        }
+
         setUsers((prev) => {
           const updatedList = prev.map((u) =>
             u.id === adminUser.id || u.email === adminUser.email ? { ...u, avatar: newAvatar } : u
@@ -1112,6 +1082,8 @@ export default function BackendAdminPortal() {
           safeSetLocalStorage("pithal_admin_users", JSON.stringify(updatedList));
           return updatedList;
         });
+
+        safeSetLocalStorage("pithal_admin_current_user", JSON.stringify(updatedAdmin));
 
         try {
           await fetch(`${API_BASE}/users`, {
@@ -1225,6 +1197,7 @@ export default function BackendAdminPortal() {
         setLoginError("Your user account is Inactive. Please contact Super Admin.");
         return;
       }
+      const savedAvatar = typeof window !== "undefined" ? localStorage.getItem(`pithal_avatar_${matchedUser.email}`) : null;
       const loggedInAdmin: UserAccount = {
         id: matchedUser.id,
         name: matchedUser.name,
@@ -1234,7 +1207,7 @@ export default function BackendAdminPortal() {
         role: matchedUser.role,
         status: matchedUser.status || "Active",
         joinedDate: matchedUser.joinedDate || "2026-01-01",
-        avatar: matchedUser.avatar || matchedUser.name.substring(0, 2).toUpperCase(),
+        avatar: savedAvatar || matchedUser.avatar || matchedUser.name.substring(0, 2).toUpperCase(),
         password: matchedUser.password || cleanPass,
       };
       setAdminUser(loggedInAdmin);
