@@ -842,6 +842,18 @@ export default function BackendAdminPortal() {
 
   // Edit & Delete User Modal State (from Users List Table)
   const [userToDeleteModal, setUserToDeleteModal] = useState<UserAccount | null>(null);
+
+  interface DeleteModalState {
+    title: string;
+    subtitle: string;
+    itemTitle?: string;
+    details?: { label: string; value: string }[];
+    warningText?: string;
+    confirmBtnText?: string;
+    onConfirm: () => void | Promise<void>;
+  }
+
+  const [deleteConfirmModal, setDeleteConfirmModal] = useState<DeleteModalState | null>(null);
   const [editingUserModal, setEditingUserModal] = useState<UserAccount | null>(null);
   const [editUserName, setEditUserName] = useState("");
   const [editUserEmail, setEditUserEmail] = useState("");
@@ -1464,18 +1476,78 @@ export default function BackendAdminPortal() {
     }
   };
 
-  const handleDeleteBlog = async (slug: string) => {
-    if (!confirm(`Are you sure you want to delete blog "${slug}"?`)) return;
+  const requestDeleteBlog = (blog: BlogItem) => {
+    setDeleteConfirmModal({
+      title: "Delete Blog Article",
+      subtitle: `Are you sure you want to permanently delete blog article "${blog.title}"?`,
+      itemTitle: blog.title,
+      details: [
+        { label: "Blog Title", value: blog.title },
+        { label: "Category", value: blog.category || "General" },
+        { label: "Author", value: blog.author || "Pithal Team" },
+      ],
+      confirmBtnText: "Delete Article",
+      onConfirm: async () => {
+        try {
+          const res = await fetch(`${API_BASE}/blogs/${blog.slug}`, { method: "DELETE" });
+          if (res.ok) {
+            setBlogs((prev) => prev.filter((b) => b.slug !== blog.slug));
+            setStatusMsg({ text: "Blog post deleted permanently.", type: "success" });
+          }
+        } catch {
+          setStatusMsg({ text: "Failed to delete blog", type: "error" });
+        } finally {
+          setDeleteConfirmModal(null);
+        }
+      },
+    });
+  };
 
-    try {
-      const res = await fetch(`${API_BASE}/blogs/${slug}`, { method: "DELETE" });
-      if (res.ok) {
-        setBlogs(blogs.filter((b) => b.slug !== slug));
-        setStatusMsg({ text: "Blog post deleted permanently.", type: "success" });
-      }
-    } catch {
-      setStatusMsg({ text: "Failed to delete blog", type: "error" });
-    }
+  const requestDeleteLead = (lead: LeadItem) => {
+    setDeleteConfirmModal({
+      title: "Delete Quote Lead",
+      subtitle: `Are you sure you want to permanently delete quote lead from "${lead.fullName}"?`,
+      itemTitle: lead.fullName,
+      details: [
+        { label: "Customer Name", value: lead.fullName },
+        { label: "Company", value: lead.companyName || "N/A" },
+        { label: "Email", value: lead.email || "N/A" },
+        { label: "Phone", value: lead.phone || "N/A" },
+      ],
+      confirmBtnText: "Delete Lead",
+      onConfirm: async () => {
+        try {
+          await fetch(`${API_BASE}/leads?id=${lead.id}`, { method: "DELETE" });
+        } catch {}
+        setLeads((prev) => prev.filter((l) => l.id !== lead.id));
+        if (selectedLeadModal?.id === lead.id) setSelectedLeadModal(null);
+        setStatusMsg({ text: "Quote lead deleted permanently.", type: "success" });
+        setDeleteConfirmModal(null);
+      },
+    });
+  };
+
+  const requestBulkDeleteLeads = () => {
+    if (selectedLeadIds.length === 0) return;
+    const count = selectedLeadIds.length;
+    setDeleteConfirmModal({
+      title: `Delete ${count} Selected Quote Leads`,
+      subtitle: `Are you sure you want to permanently delete ${count} selected lead record(s)? This action cannot be undone.`,
+      confirmBtnText: `Delete ${count} Leads`,
+      onConfirm: async () => {
+        try {
+          await Promise.all(
+            selectedLeadIds.map((id) =>
+              fetch(`${API_BASE}/leads?id=${id}`, { method: "DELETE" }).catch(() => null)
+            )
+          );
+        } catch {}
+        setLeads((prev) => prev.filter((l) => !selectedLeadIds.includes(l.id)));
+        setSelectedLeadIds([]);
+        setStatusMsg({ text: `Deleted ${count} quote lead(s) permanently.`, type: "success" });
+        setDeleteConfirmModal(null);
+      },
+    });
   };
 
   const handleUpdateLeadStatus = async (id: string, newStatus: "PENDING" | "CONTACTED" | "CLOSED") => {
@@ -1497,34 +1569,6 @@ export default function BackendAdminPortal() {
     }
   };
 
-  const handleDeleteLead = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this quote lead permanently?")) return;
-    try {
-      const res = await fetch(`${API_BASE}/leads?id=${id}`, { method: "DELETE" });
-      if (res.ok) {
-        setLeads(leads.filter((l) => l.id !== id));
-        if (selectedLeadModal?.id === id) setSelectedLeadModal(null);
-        setStatusMsg({ text: "Quote lead deleted successfully.", type: "success" });
-      } else {
-        setLeads(leads.filter((l) => l.id !== id));
-        if (selectedLeadModal?.id === id) setSelectedLeadModal(null);
-        setStatusMsg({ text: "Quote lead deleted successfully.", type: "success" });
-      }
-    } catch {
-      setLeads(leads.filter((l) => l.id !== id));
-      if (selectedLeadModal?.id === id) setSelectedLeadModal(null);
-      setStatusMsg({ text: "Quote lead deleted successfully.", type: "success" });
-    }
-  };
-
-  const handleClearAllLeads = () => {
-    if (!confirm("Are you sure you want to clear all sample leads for live deployment setup?")) return;
-    setLeads([]);
-    setSelectedLeadIds([]);
-    if (selectedLeadModal) setSelectedLeadModal(null);
-    setStatusMsg({ text: "All sample leads cleared for live deployment setup.", type: "success" });
-  };
-
   const toggleSelectLead = (id: string) => {
     setSelectedLeadIds((prev) =>
       prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
@@ -1539,21 +1583,56 @@ export default function BackendAdminPortal() {
     }
   };
 
-  const handleBulkDelete = async () => {
-    if (selectedLeadIds.length === 0) return;
-    if (!confirm(`Are you sure you want to delete ${selectedLeadIds.length} selected lead(s) permanently?`)) return;
+  const requestDeleteUser = (targetUser: UserAccount) => {
+    const isSelfDelete =
+      targetUser.id === adminUser.id ||
+      targetUser.email === adminUser.email ||
+      targetUser.name === adminUser.name;
 
-    try {
-      await Promise.all(
-        selectedLeadIds.map((id) =>
-          fetch(`${API_BASE}/leads?id=${id}`, { method: "DELETE" }).catch(() => null)
-        )
-      );
-    } catch {}
+    setDeleteConfirmModal({
+      title: "Delete User Account",
+      subtitle: `Are you sure you want to permanently delete user account "${targetUser.name}"?`,
+      itemTitle: targetUser.name,
+      details: [
+        { label: "User Name", value: targetUser.name },
+        { label: "User Email", value: targetUser.email },
+        { label: "User Role", value: targetUser.role },
+        { label: "Joined Date", value: targetUser.joinedDate },
+      ],
+      warningText: isSelfDelete ? "⚠️ Warning: You are about to delete your own logged-in account. You will be logged out immediately!" : undefined,
+      confirmBtnText: "Delete Account",
+      onConfirm: async () => {
+        const updatedUsers = users.filter((u) => u.id !== targetUser.id && u.email !== targetUser.email);
+        setUsers(updatedUsers);
+        safeSetLocalStorage("pithal_admin_users", JSON.stringify(updatedUsers));
+        setLoginHistory((prev) =>
+          prev.map((lh) =>
+            lh.user.toLowerCase() === targetUser.name.toLowerCase() || lh.user.toLowerCase() === targetUser.email.toLowerCase()
+              ? { ...lh, loggedIn: "No" }
+              : lh
+          )
+        );
 
-    setLeads((prev) => prev.filter((l) => !selectedLeadIds.includes(l.id)));
-    setSelectedLeadIds([]);
-    setStatusMsg({ text: `Deleted ${selectedLeadIds.length} quote lead(s) permanently.`, type: "success" });
+        try {
+          await fetch(`${API_BASE}/users?id=${targetUser.id}&email=${encodeURIComponent(targetUser.email)}`, {
+            method: "DELETE",
+          });
+        } catch (err) {
+          console.warn("Failed to delete user from MongoDB:", err);
+        }
+
+        setDeleteConfirmModal(null);
+
+        if (isSelfDelete) {
+          setStatusMsg({ text: "Your account was deleted. Logging out...", type: "error" });
+          setTimeout(() => {
+            handleLogout();
+          }, 600);
+        } else {
+          setStatusMsg({ text: `User account "${targetUser.name}" deleted permanently.`, type: "success" });
+        }
+      },
+    });
   };
 
   const handleBulkStatusChange = (newStatus: "PENDING" | "CONTACTED" | "CLOSED") => {
@@ -2666,7 +2745,7 @@ export default function BackendAdminPortal() {
                               <Icons.Edit />
                             </button>
                             <button
-                              onClick={() => handleDeleteBlog(b.slug)}
+                              onClick={() => requestDeleteBlog(b)}
                               title="Delete Article"
                               className="p-1 text-rose-500 hover:bg-rose-500/10 rounded transition cursor-pointer"
                             >
@@ -3080,11 +3159,11 @@ export default function BackendAdminPortal() {
 
                   {leads.length > 0 && (
                     <button
-                      onClick={handleClearAllLeads}
-                      className="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200 transition cursor-pointer mr-2"
-                      title="Clear sample leads for live deployment"
+                      onClick={requestBulkDeleteLeads}
+                      className="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200 transition cursor-pointer mr-2 text-xs font-bold"
+                      title="Clear leads"
                     >
-                      Clear Sample Leads
+                      Clear All Leads
                     </button>
                   )}
                   <button
@@ -3150,7 +3229,7 @@ export default function BackendAdminPortal() {
                     <div className="h-4 w-px bg-slate-300 mx-1 hidden sm:block" />
 
                     <button
-                      onClick={handleBulkDelete}
+                      onClick={requestBulkDeleteLeads}
                       className="px-3.5 py-1 text-xs font-extrabold bg-rose-600 hover:bg-rose-700 text-white rounded-lg transition cursor-pointer flex items-center gap-1.5 shadow-xs"
                     >
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
@@ -3266,7 +3345,7 @@ export default function BackendAdminPortal() {
                             {/* Column 4: Actions */}
                             <div className="flex items-center justify-end gap-1.5 shrink-0" onClick={(e) => e.stopPropagation()}>
                               <button
-                                onClick={() => handleDeleteLead(lead.id)}
+                                onClick={() => requestDeleteLead(lead)}
                                 className="p-2 text-slate-400 hover:text-rose-500 hover:bg-rose-50 rounded-xl transition cursor-pointer"
                                 title="Delete Lead"
                               >
@@ -3634,7 +3713,7 @@ export default function BackendAdminPortal() {
                                 <Icons.Key />
                               </button>
                               <button
-                                onClick={() => handleDeleteUser(u.id)}
+                                onClick={() => requestDeleteUser(u)}
                                 className="p-1.5 text-rose-500 hover:text-rose-600 hover:bg-rose-500/10 rounded-lg transition cursor-pointer"
                                 title="Delete User"
                               >
@@ -4375,13 +4454,13 @@ export default function BackendAdminPortal() {
         </div>
       )}
 
-      {/* ─── CUSTOM CONFIRM DELETE USER MODAL ───────────────────────────── */}
-      {userToDeleteModal && (
-        <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-xs flex items-center justify-center p-4">
+      {/* ─── UNIFIED BEAUTIFUL DELETE CONFIRMATION MODAL ───────────────────────── */}
+      {deleteConfirmModal && (
+        <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-200">
           <div className={`w-full max-w-md rounded-3xl border p-6 space-y-5 shadow-2xl ${isDark ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}>
 
-            {/* Modal Header Icon & Badge */}
-            <div className="flex items-center justify-between border-b pb-4 border-slate-200">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between border-b pb-4 border-slate-200 dark:border-slate-800">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-500 flex items-center justify-center font-bold shrink-0">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -4389,15 +4468,15 @@ export default function BackendAdminPortal() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-black text-lg text-rose-600">Delete Account</h3>
-                  <p className="text-[11px] text-slate-400 font-medium">Permanent User Removal</p>
+                  <h3 className="font-extrabold text-base text-rose-600 dark:text-rose-500">{deleteConfirmModal.title}</h3>
+                  <p className="text-[11px] text-slate-400 font-medium">Permanent Removal Confirmation</p>
                 </div>
               </div>
 
               <button
                 type="button"
-                onClick={() => setUserToDeleteModal(null)}
-                className="p-1.5 rounded-full text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition cursor-pointer flex items-center justify-center"
+                onClick={() => setDeleteConfirmModal(null)}
+                className="p-1.5 rounded-full text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-slate-800 transition cursor-pointer flex items-center justify-center"
                 title="Close"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -4406,38 +4485,50 @@ export default function BackendAdminPortal() {
 
             {/* Warning Body */}
             <div className="space-y-3">
-              <p className="text-xs font-semibold leading-relaxed">
-                Are you sure you want to permanently delete user account <span className="font-black text-rose-500 underline">{userToDeleteModal.name}</span>?
+              <p className="text-xs font-semibold leading-relaxed text-slate-700 dark:text-slate-200">
+                {deleteConfirmModal.subtitle}
               </p>
 
-              <div className={`p-3.5 rounded-2xl border text-xs space-y-1.5 ${isDark ? "bg-slate-950 border-slate-800 text-slate-300" : "bg-slate-50 border-slate-200 text-slate-700"}`}>
-                <div className="flex justify-between"><span className="text-slate-400">User Email:</span> <span className="font-mono font-bold">{userToDeleteModal.email}</span></div>
-                <div className="flex justify-between"><span className="text-slate-400">User Role:</span> <span className="font-bold text-amber-500">{userToDeleteModal.role}</span></div>
-                <div className="flex justify-between"><span className="text-slate-400">Joined Date:</span> <span className="font-mono">{userToDeleteModal.joinedDate}</span></div>
-              </div>
+              {deleteConfirmModal.details && deleteConfirmModal.details.length > 0 && (
+                <div className={`p-3.5 rounded-2xl border text-xs space-y-1.5 ${isDark ? "bg-slate-950 border-slate-800 text-slate-300" : "bg-slate-50 border-slate-200 text-slate-700"}`}>
+                  {deleteConfirmModal.details.map((d, i) => (
+                    <div key={i} className="flex justify-between">
+                      <span className="text-slate-400">{d.label}:</span>
+                      <span className="font-bold truncate max-w-[200px]">{d.value}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
 
-              {(userToDeleteModal.id === adminUser.id || userToDeleteModal.email === adminUser.email) && (
+              {deleteConfirmModal.warningText && (
                 <div className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-xl text-rose-500 text-[11px] font-bold">
-                  ⚠️ Warning: You are about to delete your own logged-in account. You will be logged out immediately!
+                  {deleteConfirmModal.warningText}
                 </div>
               )}
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-2 flex items-center justify-end gap-2.5 border-t border-slate-200">
+            <div className="pt-2 flex items-center justify-end gap-2.5 border-t border-slate-200 dark:border-slate-800">
               <button
                 type="button"
-                onClick={() => setUserToDeleteModal(null)}
-                className="px-4 py-2.5 bg-slate-200 text-slate-800 font-extrabold rounded-xl text-xs uppercase tracking-wider hover:bg-slate-300 transition cursor-pointer"
+                onClick={() => setDeleteConfirmModal(null)}
+                className="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold rounded-xl text-xs hover:bg-slate-200 dark:hover:bg-slate-700 transition cursor-pointer border border-slate-200 dark:border-slate-700"
               >
                 Cancel
               </button>
               <button
                 type="button"
-                onClick={confirmDeleteUserAction}
-                className="px-5 py-2.5 bg-rose-600 hover:bg-rose-500 text-white font-black rounded-xl text-xs uppercase tracking-wider transition shadow-lg shadow-rose-600/30 cursor-pointer flex items-center gap-2"
+                onClick={async () => {
+                  if (deleteConfirmModal) {
+                    await deleteConfirmModal.onConfirm();
+                  }
+                }}
+                className="px-5 py-2 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-xl text-xs transition shadow-md shadow-rose-600/30 cursor-pointer flex items-center gap-1.5"
               >
-                <span>Delete Account</span>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+                <span>{deleteConfirmModal.confirmBtnText || "Delete Permanently"}</span>
               </button>
             </div>
 
