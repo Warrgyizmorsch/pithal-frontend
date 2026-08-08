@@ -155,28 +155,7 @@ export const products: Product[] = [
   },
 ];
 
-export const blogs: BlogPost[] = [
-  {
-    id: 'blog-1',
-    slug: 'optimizing-crusher-efficiency-mining',
-    title: 'Optimizing Crusher Efficiency in Aggregate Mining',
-    excerpt: 'Key operational strategies to increase throughput and reduce wear component consumption in primary jaw crushers.',
-    content: 'Crusher efficiency directly impacts quarry profitability. By maintaining correct closed side settings (CSS) and ensuring uniform feed distribution...',
-    author: 'Pithal Engineering Team',
-    category: 'Technology & Innovations',
-    publishedAt: '2026-07-20',
-  },
-  {
-    id: 'blog-2',
-    slug: 'future-of-mobile-crushing-plants',
-    title: 'The Future of Mobile Crushing Plants in Infrastructure Projects',
-    excerpt: 'Why modular and mobile crushing solutions are replacing conventional stationary plants in highway construction.',
-    content: 'Flexibility and swift deployment are mandatory for modern highway and railway projects. Mobile cone and jaw units allow operators to crush on-site...',
-    author: 'Pithal Machinery Insights',
-    category: 'Industry Trends',
-    publishedAt: '2026-08-01',
-  },
-];
+export const blogs: BlogPost[] = [];
 
 export const mockLeads: Lead[] = [];
 

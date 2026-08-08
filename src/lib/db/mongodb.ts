@@ -28,7 +28,7 @@ export async function connectDB(): Promise<typeof mongoose | null> {
   if (!cached?.promise || mongoose.connection.readyState !== 1) {
     const opts = {
       bufferCommands: false,
-      serverSelectionTimeoutMS: 10000,
+      serverSelectionTimeoutMS: 2000,
     };
 
     cached!.promise = mongoose

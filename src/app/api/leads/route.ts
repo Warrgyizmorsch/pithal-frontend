@@ -137,11 +137,13 @@ export async function DELETE(request: NextRequest) {
       return jsonResponse({ success: false, error: 'Lead ID is required' }, 400);
     }
 
-    // Delete from MongoDB
+    // Delete from MongoDB permanently
     try {
       const conn = await connectDB();
       if (conn) {
-        await LeadModel.deleteOne({ id });
+        await LeadModel.deleteOne({
+          $or: [{ id: id }, { _id: id }]
+        });
       }
     } catch (dbErr) {
       console.warn("MongoDB DELETE lead error:", dbErr);

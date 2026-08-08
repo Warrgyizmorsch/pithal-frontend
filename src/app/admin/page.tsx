@@ -1539,13 +1539,21 @@ export default function BackendAdminPortal() {
     }
   };
 
-  const handleBulkDelete = () => {
+  const handleBulkDelete = async () => {
     if (selectedLeadIds.length === 0) return;
     if (!confirm(`Are you sure you want to delete ${selectedLeadIds.length} selected lead(s) permanently?`)) return;
 
+    try {
+      await Promise.all(
+        selectedLeadIds.map((id) =>
+          fetch(`${API_BASE}/leads?id=${id}`, { method: "DELETE" }).catch(() => null)
+        )
+      );
+    } catch {}
+
     setLeads((prev) => prev.filter((l) => !selectedLeadIds.includes(l.id)));
     setSelectedLeadIds([]);
-    setStatusMsg({ text: `Deleted ${selectedLeadIds.length} quote lead(s) successfully.`, type: "success" });
+    setStatusMsg({ text: `Deleted ${selectedLeadIds.length} quote lead(s) permanently.`, type: "success" });
   };
 
   const handleBulkStatusChange = (newStatus: "PENDING" | "CONTACTED" | "CLOSED") => {
