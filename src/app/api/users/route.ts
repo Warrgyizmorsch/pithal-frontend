@@ -5,7 +5,7 @@ import UserModel from '@/lib/models/User';
 export const DEFAULT_USERS = [
   {
     id: "u-1",
-    name: "Jaydeep Vyas",
+    name: "Super Admin",
     email: "admin@pithalmachine.com",
     phone: "+91 9876543210",
     city: "Ahmedabad",
@@ -13,43 +13,7 @@ export const DEFAULT_USERS = [
     role: "Super Admin",
     status: "Active",
     joinedDate: "2026-01-01",
-    avatar: "",
-  },
-  {
-    id: "u-2",
-    name: "Viralkumar Shah",
-    email: "viral@pithalmachine.com",
-    phone: "+91 9116076837",
-    city: "Vadodara",
-    password: "viral123",
-    role: "Content Editor",
-    status: "Active",
-    joinedDate: "2026-02-15",
-    avatar: "",
-  },
-  {
-    id: "u-3",
-    name: "Ramesh Patel",
-    email: "ramesh@pithalmachine.com",
-    phone: "+91 9784710041",
-    city: "Surat",
-    password: "ramesh123",
-    role: "Lead Manager",
-    status: "Active",
-    joinedDate: "2026-03-10",
-    avatar: "",
-  },
-  {
-    id: "u-4",
-    name: "Hardik Kumar",
-    email: "hardik@pithalmachine.com",
-    phone: "+91 9345580269",
-    city: "Rajkot",
-    password: "hardik123",
-    role: "Equipment Manager",
-    status: "Inactive",
-    joinedDate: "2026-04-05",
-    avatar: "",
+    avatar: "SA",
   },
 ];
 
@@ -64,8 +28,8 @@ export async function GET() {
       const dbUsers = await UserModel.find().sort({ createdAt: 1 }).lean();
       return jsonResponse({
         success: true,
-        count: dbUsers.length,
-        data: dbUsers,
+        count: dbUsers ? dbUsers.length : 0,
+        data: dbUsers || [],
         source: "MongoDB Database",
       });
     }
