@@ -907,18 +907,7 @@ export default function BackendAdminPortal() {
   };
 
   // User Accounts
-  const [users, setUsers] = useState<UserAccount[]>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("pithal_admin_users");
-      if (saved) {
-        try {
-          const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-        } catch { }
-      }
-    }
-    return [];
-  });
+  const [users, setUsers] = useState<UserAccount[]>([]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -927,16 +916,6 @@ export default function BackendAdminPortal() {
       const savedAuth = localStorage.getItem("pithal_admin_auth");
       if (savedAuth === "true") {
         setIsAuthenticated(true);
-      }
-
-      const savedUsers = localStorage.getItem("pithal_admin_users");
-      if (savedUsers) {
-        try {
-          const parsed = JSON.parse(savedUsers);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            setUsers(parsed);
-          }
-        } catch { }
       }
 
       const savedAdmin = localStorage.getItem("pithal_admin_current_user");
@@ -965,12 +944,6 @@ export default function BackendAdminPortal() {
       setIsUsersLoaded(true);
     }
   }, []);
-
-  useEffect(() => {
-    if (isUsersLoaded) {
-      safeSetLocalStorage("pithal_admin_users", JSON.stringify(users));
-    }
-  }, [users, isUsersLoaded]);
 
   // Real Login History State
   const [loginHistory, setLoginHistory] = useState<LoginHistoryItem[]>([]);
@@ -1113,7 +1086,7 @@ export default function BackendAdminPortal() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     const cleanEmail = loginEmail.toLowerCase().trim();
     const cleanPass = loginPassword.trim();
@@ -1127,18 +1100,19 @@ export default function BackendAdminPortal() {
       u => u.email.toLowerCase().trim() === cleanEmail && (u.password === cleanPass || cleanPass === "admin123")
     );
 
-    if (!matchedUser && typeof window !== "undefined") {
-      const savedUsersStr = localStorage.getItem("pithal_admin_users");
-      if (savedUsersStr) {
-        try {
-          const parsed = JSON.parse(savedUsersStr);
-          if (Array.isArray(parsed)) {
-            matchedUser = parsed.find(
+    if (!matchedUser) {
+      try {
+        const usersRes = await fetch(`${API_BASE}/users`).catch(() => null);
+        if (usersRes && usersRes.ok) {
+          const data = await usersRes.json();
+          if (data.success && Array.isArray(data.data)) {
+            setUsers(data.data);
+            matchedUser = data.data.find(
               (u: any) => u.email.toLowerCase().trim() === cleanEmail && (u.password === cleanPass || cleanPass === "admin123")
             );
           }
-        } catch {}
-      }
+        }
+      } catch {}
     }
 
     if (!matchedUser && cleanEmail && cleanPass) {
@@ -1155,17 +1129,15 @@ export default function BackendAdminPortal() {
         avatar: "",
       };
 
-      setUsers((prev) => {
-        const updated = [...prev.filter(u => u.email.toLowerCase() !== cleanEmail), matchedUser!];
-        safeSetLocalStorage("pithal_admin_users", JSON.stringify(updated));
-        return updated;
-      });
+      setUsers((prev) => [...prev.filter(u => u.email.toLowerCase() !== cleanEmail), matchedUser!]);
 
-      fetch(`${API_BASE}/users`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(matchedUser),
-      }).catch(() => {});
+      try {
+        await fetch(`${API_BASE}/users`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(matchedUser),
+        });
+      } catch {}
     }
 
     if (matchedUser) {
@@ -1605,7 +1577,7 @@ export default function BackendAdminPortal() {
       avatar: newUserAvatar,
     };
 
-    setUsers((prev) => [...prev, newUser]);
+    setUsers((prev) => [...prev.filter((u) => u.email !== newUser.email), newUser]);
     setNewUserName("");
     setNewUserEmail("");
     setNewUserPhone("");
@@ -1614,16 +1586,28 @@ export default function BackendAdminPortal() {
     setNewUserAvatar("");
 
     try {
-      await fetch(`${API_BASE}/users`, {
+      const res = await fetch(`${API_BASE}/users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),
       });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.success) {
+          const usersRes = await fetch(`${API_BASE}/users`).catch(() => null);
+          if (usersRes && usersRes.ok) {
+            const uData = await usersRes.json();
+            if (uData.success && Array.isArray(uData.data)) {
+              setUsers(uData.data);
+            }
+          }
+        }
+      }
     } catch (err) {
       console.warn("Failed to sync new user to MongoDB:", err);
     }
 
-    setStatusMsg({ text: `Admin User "${newUser.name}" saved with role "${newUser.role}"!`, type: "success" });
+    setStatusMsg({ text: `Admin User "${newUser.name}" saved to MongoDB database with role "${newUser.role}"!`, type: "success" });
     setActiveMenu("users-list");
   };
 
