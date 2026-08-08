@@ -1268,35 +1268,7 @@ export default function BackendAdminPortal() {
       if (usersRes && usersRes.ok) {
         const data = await usersRes.json();
         if (data.success && Array.isArray(data.data)) {
-          const dbUsers: UserAccount[] = data.data;
-
-          let localUsers: UserAccount[] = [];
-          if (typeof window !== "undefined") {
-            const savedStr = localStorage.getItem("pithal_admin_users");
-            if (savedStr) {
-              try {
-                localUsers = JSON.parse(savedStr);
-              } catch {}
-            }
-          }
-
-          const mergedMap = new Map<string, UserAccount>();
-          dbUsers.forEach(u => mergedMap.set(u.email.toLowerCase().trim(), u));
-          localUsers.forEach(u => mergedMap.set(u.email.toLowerCase().trim(), u));
-
-          const mergedUsers = Array.from(mergedMap.values());
-          if (mergedUsers.length > 0) {
-            setUsers(mergedUsers);
-            safeSetLocalStorage("pithal_admin_users", JSON.stringify(mergedUsers));
-
-            localUsers.forEach(u => {
-              fetch(`${API_BASE}/users`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(u),
-              }).catch(() => {});
-            });
-          }
+          setUsers(data.data);
         }
       }
     } catch (e) {
