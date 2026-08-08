@@ -938,6 +938,11 @@ export default function BackendAdminPortal() {
     setIsMounted(true);
 
     if (typeof window !== "undefined") {
+      const savedAuth = localStorage.getItem("pithal_admin_auth");
+      if (savedAuth === "true") {
+        setIsAuthenticated(true);
+      }
+
       const savedUsers = localStorage.getItem("pithal_admin_users");
       if (savedUsers) {
         try {
@@ -1960,10 +1965,6 @@ export default function BackendAdminPortal() {
               <span>Secure Admin Login</span>
             </button>
           </form>
-
-          <div className="bg-slate-950 border border-slate-800/80 p-3 rounded-xl text-[11px] text-slate-400 font-mono text-center">
-            Demo Access: <span className="text-amber-500 font-bold" suppressHydrationWarning>{isMounted ? adminUser.email : "admin@pithalmachine.com"}</span> | Pass: <span className="text-amber-500 font-bold">admin123</span>
-          </div>
         </div>
       </div>
     );

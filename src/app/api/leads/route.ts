@@ -38,13 +38,17 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { fullName, email, phone, companyName, productInterest, message, sourcePage } = body;
+    const { fullName, name, email, phone, companyName, company, country, capacity, requirement, productInterest, message, sourcePage, source } = body;
+    
+    const clientName = fullName || name;
+    const clientEmail = email || 'Not Provided';
+    const clientPhone = phone || 'Not Provided';
 
-    if (!fullName || !email || !phone) {
+    if (!clientName) {
       return jsonResponse(
         {
           success: false,
-          error: 'FullName, email, and phone number are required fields.',
+          error: 'Full Name is a required field.',
         },
         400
       );
@@ -52,13 +56,13 @@ export async function POST(request: NextRequest) {
 
     const newLead: Lead = {
       id: `lead-${Date.now()}`,
-      fullName,
-      email,
-      phone,
-      companyName: companyName || '',
-      productInterest: productInterest || 'General Inquiry',
-      message: message || '',
-      sourcePage: sourcePage || '/contact',
+      fullName: clientName,
+      email: clientEmail,
+      phone: clientPhone,
+      companyName: companyName || company || '',
+      productInterest: productInterest || (capacity ? `Capacity: ${capacity} (${country || 'N/A'})` : 'General Inquiry'),
+      message: requirement || message || '',
+      sourcePage: sourcePage || source || '/contact',
       status: 'PENDING',
       createdAt: new Date().toISOString(),
     };

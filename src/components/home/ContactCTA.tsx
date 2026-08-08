@@ -15,6 +15,8 @@ const labelStyle = "block text-sm font-bold text-primary";
 export function ContactCTA() {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
+    phone: "",
     company: "",
     country: "",
     capacity: "",
@@ -65,6 +67,8 @@ export function ContactCTA() {
         );
         setFormData({
           name: "",
+          email: "",
+          phone: "",
           company: "",
           country: "",
           capacity: "",
@@ -141,6 +145,30 @@ export function ContactCTA() {
                   name="name"
                   placeholder="Your full name"
                   type="text"
+                />
+              </label>
+
+              <label className={labelStyle}>
+                Email Address
+                <input
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={fieldStyle}
+                  name="email"
+                  placeholder="your.email@company.com"
+                  type="email"
+                />
+              </label>
+
+              <label className={labelStyle}>
+                Phone Number
+                <input
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className={fieldStyle}
+                  name="phone"
+                  placeholder="+91 9876543210"
+                  type="tel"
                 />
               </label>
 
