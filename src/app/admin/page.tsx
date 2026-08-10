@@ -858,6 +858,7 @@ export default function BackendAdminPortal() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [loginError, setLoginError] = useState<string | null>(null);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   // Theme State Default set to Light Mode
   const [theme, setTheme] = useState<"dark" | "light">("light");
@@ -1100,6 +1101,9 @@ export default function BackendAdminPortal() {
       setLoginError("Email and password are required!");
       return;
     }
+    
+    setIsLoggingIn(true);
+    setLoginError(null);
 
     let matchedUser = users.find(
       u => u.email.toLowerCase().trim() === cleanEmail && u.password === cleanPass
@@ -1121,12 +1125,14 @@ export default function BackendAdminPortal() {
     }
 
     if (!matchedUser) {
+      setIsLoggingIn(false);
       setLoginError("Invalid email or password! Only registered users can login.");
       return;
     }
 
     if (matchedUser) {
       if (matchedUser.status === "Inactive") {
+        setIsLoggingIn(false);
         setLoginError("Your user account is Inactive. Please contact Super Admin.");
         return;
       }
@@ -1182,8 +1188,10 @@ export default function BackendAdminPortal() {
       });
 
       setLoginError(null);
+      setIsLoggingIn(false);
     } else {
       setLoginError("Invalid email or password!");
+      setIsLoggingIn(false);
     }
   };
 
@@ -1985,10 +1993,23 @@ export default function BackendAdminPortal() {
 
             <button
               type="submit"
-              className="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black uppercase tracking-wider py-3.5 rounded-xl shadow-lg shadow-amber-500/25 transition cursor-pointer text-sm flex items-center justify-center gap-2"
+              disabled={isLoggingIn}
+              className="w-full bg-amber-500 hover:bg-amber-400 disabled:bg-amber-500/50 text-slate-950 font-black uppercase tracking-wider py-3.5 rounded-xl shadow-lg shadow-amber-500/25 transition cursor-pointer disabled:cursor-not-allowed text-sm flex items-center justify-center gap-2"
             >
-              <Icons.Lock />
-              <span>Secure Admin Login</span>
+              {isLoggingIn ? (
+                <>
+                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-slate-950" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span>Verifying...</span>
+                </>
+              ) : (
+                <>
+                  <Icons.Lock />
+                  <span>Secure Admin Login</span>
+                </>
+              )}
             </button>
           </form>
         </div>

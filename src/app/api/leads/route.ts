@@ -4,6 +4,8 @@ import { Lead } from '@/lib/types/api';
 import { connectDB } from '@/lib/db/mongodb';
 import LeadModel from '@/lib/models/Lead';
 
+export const dynamic = 'force-dynamic';
+
 export async function OPTIONS() {
   return handleOptions();
 }

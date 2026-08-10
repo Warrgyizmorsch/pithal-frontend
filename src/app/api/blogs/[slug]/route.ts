@@ -4,6 +4,8 @@ import { blogs as mockBlogs } from '@/lib/data/mockData';
 import { connectDB } from '@/lib/db/mongodb';
 import BlogModel from '@/lib/models/Blog';
 
+export const dynamic = 'force-dynamic';
+
 export async function OPTIONS() {
   return handleOptions();
 }

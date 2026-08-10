@@ -4,6 +4,8 @@ import { BlogPost } from '@/lib/types/api';
 import { connectDB } from '@/lib/db/mongodb';
 import BlogModel from '@/lib/models/Blog';
 
+export const dynamic = 'force-dynamic';
+
 export async function OPTIONS() {
   return handleOptions();
 }

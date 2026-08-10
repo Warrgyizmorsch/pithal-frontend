@@ -4,6 +4,8 @@ import { ContactSubmission } from '@/lib/types/api';
 
 const contactSubmissions: ContactSubmission[] = [];
 
+export const dynamic = 'force-dynamic';
+
 export async function OPTIONS() {
   return handleOptions();
 }

@@ -5,6 +5,8 @@ import { DealerApplication } from '@/lib/types/api';
 import { connectDB } from '@/lib/db/mongodb';
 import DealerModel from '@/lib/models/Dealer';
 
+export const dynamic = 'force-dynamic';
+
 export async function OPTIONS() {
   return handleOptions();
 }

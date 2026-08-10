@@ -2,6 +2,8 @@ import { jsonResponse, handleOptions } from '@/lib/cors';
 import { connectDB } from '@/lib/db/mongodb';
 import UserModel from '@/lib/models/User';
 
+export const dynamic = 'force-dynamic';
+
 export const DEFAULT_USERS: any[] = [];
 
 export async function OPTIONS() {
