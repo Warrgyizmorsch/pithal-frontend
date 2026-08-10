@@ -1072,9 +1072,7 @@ export default function BackendAdminPortal() {
     : blogTitle.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "");
 
   useEffect(() => {
-    // Always require fresh login when opening or refreshing backend portal
-    setIsAuthenticated(false);
-    localStorage.removeItem("pithal_admin_auth");
+    // Fetch initial data on mount (auth is restored from localStorage in the other useEffect)
     fetchInitialData();
 
     const handleClickOutside = (event: MouseEvent) => {
@@ -1104,7 +1102,7 @@ export default function BackendAdminPortal() {
     }
 
     let matchedUser = users.find(
-      u => u.email.toLowerCase().trim() === cleanEmail && (u.password === cleanPass || cleanPass === "admin123")
+      u => u.email.toLowerCase().trim() === cleanEmail && u.password === cleanPass
     );
 
     if (!matchedUser) {
@@ -1115,36 +1113,16 @@ export default function BackendAdminPortal() {
           if (data.success && Array.isArray(data.data)) {
             setUsers(data.data);
             matchedUser = data.data.find(
-              (u: any) => u.email.toLowerCase().trim() === cleanEmail && (u.password === cleanPass || cleanPass === "admin123")
+              (u: any) => u.email.toLowerCase().trim() === cleanEmail && u.password === cleanPass
             );
           }
         }
       } catch {}
     }
 
-    if (!matchedUser && cleanEmail && cleanPass) {
-      matchedUser = {
-        id: `user-${Date.now()}`,
-        name: cleanEmail.split("@")[0].toUpperCase() || "Admin User",
-        email: cleanEmail,
-        phone: "+91 9876543210",
-        city: "Ahmedabad",
-        role: "Super Admin",
-        status: "Active",
-        joinedDate: new Date().toISOString().split("T")[0],
-        password: cleanPass,
-        avatar: "",
-      };
-
-      setUsers((prev) => [...prev.filter(u => u.email.toLowerCase() !== cleanEmail), matchedUser!]);
-
-      try {
-        await fetch(`${API_BASE}/users`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(matchedUser),
-        });
-      } catch {}
+    if (!matchedUser) {
+      setLoginError("Invalid email or password! Only registered users can login.");
+      return;
     }
 
     if (matchedUser) {
