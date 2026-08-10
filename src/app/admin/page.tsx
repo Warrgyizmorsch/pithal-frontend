@@ -934,7 +934,16 @@ export default function BackendAdminPortal() {
             const cleanedHistory = parsedHistory.filter(
               (h: any) => h.user && !h.user.toLowerCase().includes("jaydeep")
             );
-            setLoginHistory(cleanedHistory);
+            // Deduplicate: keep only the latest entry per user
+            const seen = new Set<string>();
+            const dedupedHistory = cleanedHistory.filter((h: any) => {
+              const key = h.user.toLowerCase();
+              if (seen.has(key)) return false;
+              seen.add(key);
+              return true;
+            });
+            safeSetLocalStorage("pithal_login_history", JSON.stringify(dedupedHistory));
+            setLoginHistory(dedupedHistory);
           }
         } catch { }
       }
@@ -1187,7 +1196,9 @@ export default function BackendAdminPortal() {
       };
 
       setLoginHistory((prev) => {
-        const updated = [newLogItem, ...prev.map(lh => lh.user.toLowerCase() === loggedInAdmin.name.toLowerCase() ? { ...lh, loggedIn: "No" as const } : lh)].slice(0, 30);
+        // Remove all previous entries for this user so we only keep the latest one
+        const withoutCurrentUser = prev.filter(lh => lh.user.toLowerCase() !== loggedInAdmin.name.toLowerCase());
+        const updated = [newLogItem, ...withoutCurrentUser].slice(0, 30);
         safeSetLocalStorage("pithal_login_history", JSON.stringify(updated));
         return updated;
       });
@@ -1519,13 +1530,13 @@ export default function BackendAdminPortal() {
         const updatedUsers = users.filter((u) => u.id !== targetUser.id && u.email !== targetUser.email);
         setUsers(updatedUsers);
         safeSetLocalStorage("pithal_admin_users", JSON.stringify(updatedUsers));
-        setLoginHistory((prev) =>
-          prev.map((lh) =>
-            lh.user.toLowerCase() === targetUser.name.toLowerCase() || lh.user.toLowerCase() === targetUser.email.toLowerCase()
-              ? { ...lh, loggedIn: "No" }
-              : lh
-          )
-        );
+        setLoginHistory((prev) => {
+          const updated = prev.filter((lh) =>
+            lh.user.toLowerCase() !== targetUser.name.toLowerCase() && lh.user.toLowerCase() !== targetUser.email.toLowerCase()
+          );
+          safeSetLocalStorage("pithal_login_history", JSON.stringify(updated));
+          return updated;
+        });
 
         try {
           await fetch(`${API_BASE}/users?id=${targetUser.id}&email=${encodeURIComponent(targetUser.email)}`, {
@@ -1681,13 +1692,13 @@ export default function BackendAdminPortal() {
     const updatedUsers = users.filter((u) => u.id !== targetId && u.email !== targetUser.email);
     setUsers(updatedUsers);
     safeSetLocalStorage("pithal_admin_users", JSON.stringify(updatedUsers));
-    setLoginHistory((prev) =>
-      prev.map((lh) =>
-        lh.user.toLowerCase() === targetUser.name.toLowerCase() || lh.user.toLowerCase() === targetUser.email.toLowerCase()
-          ? { ...lh, loggedIn: "No" }
-          : lh
-      )
-    );
+    setLoginHistory((prev) => {
+      const updated = prev.filter((lh) =>
+        lh.user.toLowerCase() !== targetUser.name.toLowerCase() && lh.user.toLowerCase() !== targetUser.email.toLowerCase()
+      );
+      safeSetLocalStorage("pithal_login_history", JSON.stringify(updated));
+      return updated;
+    });
     setUserToDeleteModal(null);
 
     try {
@@ -1880,16 +1891,36 @@ export default function BackendAdminPortal() {
     return matchesSearch && matchesRole && matchesStatus;
   });
 
-  const filteredLoginHistory = loginHistory.filter((h) => {
-    if (h.user.toLowerCase().includes("jaydeep")) return false;
+  const filteredLoginHistory = (() => {
+    // First: filter out deleted users (users not in current users list) and jaydeep
+    const activeHistory = loginHistory.filter((h) => {
+      if (h.user.toLowerCase().includes("jaydeep")) return false;
+      // Only show entries for users that still exist
+      const userExists = users.some((u) =>
+        u.name.toLowerCase() === h.user.toLowerCase() ||
+        u.email.toLowerCase() === h.user.toLowerCase()
+      );
+      return userExists;
+    });
+
+    // Second: deduplicate - keep only the latest entry per user
+    const seen = new Set<string>();
+    const deduped = activeHistory.filter((h) => {
+      const key = h.user.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+
+    // Third: apply search filter
     const query = searchQuery.toLowerCase().trim();
-    return (
+    return deduped.filter((h) =>
       !query ||
       h.user.toLowerCase().includes(query) ||
       h.ip.toLowerCase().includes(query) ||
       h.device.toLowerCase().includes(query)
     );
-  });
+  })();
 
 
   const pendingLeadsCount = leads.filter(l => l.status === "PENDING").length;
@@ -3804,26 +3835,14 @@ export default function BackendAdminPortal() {
                       </tr>
                     ) : (
                       filteredLoginHistory.map((lh) => {
-                        const isUserActive = users.some((u) =>
-                          u.name.toLowerCase() === lh.user.toLowerCase() ||
-                          u.email.toLowerCase() === lh.user.toLowerCase()
-                        );
-
                         return (
                           <tr key={lh.id} className="hover:bg-slate-500/5 transition">
                             <td className="p-3 font-bold">
-                              <div className="flex items-center gap-2">
-                                <span>{lh.user}</span>
-                                {!isUserActive && (
-                                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
-                                    Deleted User
-                                  </span>
-                                )}
-                              </div>
+                              <span>{lh.user}</span>
                             </td>
                             <td className="p-3 text-center">
-                              <span className={`px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase ${isUserActive && lh.loggedIn === "Yes" ? "bg-emerald-500/15 text-emerald-600 border border-emerald-500/30" : "bg-slate-500/15 text-slate-500 border border-slate-500/30"}`}>
-                                {isUserActive && lh.loggedIn === "Yes" ? "YES" : "NO"}
+                              <span className={`px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase ${lh.loggedIn === "Yes" ? "bg-emerald-500/15 text-emerald-600 border border-emerald-500/30" : "bg-slate-500/15 text-slate-500 border border-slate-500/30"}`}>
+                                {lh.loggedIn === "Yes" ? "YES" : "NO"}
                               </span>
                             </td>
                             <td className="p-3 font-mono text-slate-400">{lh.ip}</td>
