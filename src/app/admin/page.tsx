@@ -1111,7 +1111,7 @@ export default function BackendAdminPortal() {
 
     if (!matchedUser) {
       try {
-        const usersRes = await fetch(`${API_BASE}/users`).catch(() => null);
+        const usersRes = await fetch(`${API_BASE}/users?t=${Date.now()}`).catch(() => null);
         if (usersRes && usersRes.ok) {
           const data = await usersRes.json();
           if (data.success && Array.isArray(data.data)) {
@@ -1231,7 +1231,7 @@ export default function BackendAdminPortal() {
         }
       }
 
-      const usersRes = await fetch(`${API_BASE}/users`).catch(() => null);
+      const usersRes = await fetch(`${API_BASE}/users?t=${Date.now()}`).catch(() => null);
       if (usersRes && usersRes.ok) {
         const data = await usersRes.json();
         if (data.success && Array.isArray(data.data)) {
@@ -1589,7 +1589,7 @@ export default function BackendAdminPortal() {
       if (res.ok) {
         const data = await res.json();
         if (data.success) {
-          const usersRes = await fetch(`${API_BASE}/users`).catch(() => null);
+          const usersRes = await fetch(`${API_BASE}/users?t=${Date.now()}`).catch(() => null);
           if (usersRes && usersRes.ok) {
             const uData = await usersRes.json();
             if (uData.success && Array.isArray(uData.data)) {
