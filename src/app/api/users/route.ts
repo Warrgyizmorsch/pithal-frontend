@@ -29,7 +29,7 @@ export async function GET() {
     if (conn) {
       const dbUsers = await UserModel.find().sort({ createdAt: 1 }).lean();
       // Always inject the fallback superadmin so login never fails for this account
-      let allUsers = [...DEFAULT_USERS];
+      let allUsers: any[] = [...DEFAULT_USERS];
       
       if (dbUsers && dbUsers.length > 0) {
         // Filter out any DB user that might conflict with our fallback admin email
