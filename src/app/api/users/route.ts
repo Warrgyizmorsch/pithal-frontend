@@ -28,17 +28,21 @@ export async function GET() {
     const conn = await connectDB();
     if (conn) {
       const dbUsers = await UserModel.find().sort({ createdAt: 1 }).lean();
+      // Always inject the fallback superadmin so login never fails for this account
+      let allUsers = [...DEFAULT_USERS];
       
-      // If DB is connected but empty, let's also return the fallback user
-      // so we always have at least one user to login with.
       if (dbUsers && dbUsers.length > 0) {
-        return jsonResponse({
-          success: true,
-          count: dbUsers.length,
-          data: dbUsers,
-          source: "MongoDB Database",
-        });
+        // Filter out any DB user that might conflict with our fallback admin email
+        const dbUsersFiltered = dbUsers.filter(dbU => !DEFAULT_USERS.some(dU => dU.email === dbU.email));
+        allUsers = [...allUsers, ...dbUsersFiltered];
       }
+      
+      return jsonResponse({
+        success: true,
+        count: allUsers.length,
+        data: allUsers,
+        source: "MongoDB Database + Fallback",
+      });
     }
   } catch (err) {
     console.warn("MongoDB GET users error:", err);
