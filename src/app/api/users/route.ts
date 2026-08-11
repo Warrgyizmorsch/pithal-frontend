@@ -4,7 +4,20 @@ import UserModel from '@/lib/models/User';
 
 export const dynamic = 'force-dynamic';
 
-export const DEFAULT_USERS: any[] = [];
+export const DEFAULT_USERS = [
+  {
+    id: "u-1",
+    name: "Super Admin",
+    email: "ranjit.warrgyizmorsch@gmail.com",
+    phone: "+91 9876543210",
+    city: "Ahmedabad",
+    password: "admin123",
+    role: "Super Admin",
+    status: "Active",
+    joinedDate: "2026-01-01",
+    avatar: "SA",
+  }
+];
 
 export async function OPTIONS() {
   return handleOptions();
@@ -15,12 +28,17 @@ export async function GET() {
     const conn = await connectDB();
     if (conn) {
       const dbUsers = await UserModel.find().sort({ createdAt: 1 }).lean();
-      return jsonResponse({
-        success: true,
-        count: dbUsers ? dbUsers.length : 0,
-        data: dbUsers || [],
-        source: "MongoDB Database",
-      });
+      
+      // If DB is connected but empty, let's also return the fallback user
+      // so we always have at least one user to login with.
+      if (dbUsers && dbUsers.length > 0) {
+        return jsonResponse({
+          success: true,
+          count: dbUsers.length,
+          data: dbUsers,
+          source: "MongoDB Database",
+        });
+      }
     }
   } catch (err) {
     console.warn("MongoDB GET users error:", err);
@@ -28,9 +46,9 @@ export async function GET() {
 
   return jsonResponse({
     success: true,
-    count: 0,
-    data: [],
-    source: "Clean Fallback",
+    count: DEFAULT_USERS.length,
+    data: DEFAULT_USERS,
+    source: "Fallback Admin",
   });
 }
 
