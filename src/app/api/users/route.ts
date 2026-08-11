@@ -97,6 +97,14 @@ export async function POST(request: Request) {
       console.warn("MongoDB POST user error:", dbErr);
     }
 
+    // Memory Fallback: Save to DEFAULT_USERS array
+    const existingIndex = DEFAULT_USERS.findIndex(u => u.email === userData.email);
+    if (existingIndex >= 0) {
+      DEFAULT_USERS[existingIndex] = userData;
+    } else {
+      DEFAULT_USERS.push(userData);
+    }
+
     return jsonResponse({
       success: true,
       message: "User saved (memory fallback)",
@@ -131,6 +139,15 @@ export async function DELETE(request: Request) {
       }
     } catch (dbErr) {
       console.warn("MongoDB DELETE user error:", dbErr);
+    }
+
+    // Memory Fallback: Delete from DEFAULT_USERS array
+    if (email) {
+      const idx = DEFAULT_USERS.findIndex(u => u.email === email);
+      if (idx !== -1) DEFAULT_USERS.splice(idx, 1);
+    } else if (id) {
+      const idx = DEFAULT_USERS.findIndex(u => u.id === id);
+      if (idx !== -1) DEFAULT_USERS.splice(idx, 1);
     }
 
     return jsonResponse({
