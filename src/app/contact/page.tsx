@@ -75,7 +75,7 @@ const contactInformation = [
     channel: "HEAD OFFICE",
     icon: MapPin,
     content:
-      "Pithal Machines Ltd.\nBuilding No. 1, First Floor,\nNational Highway 27, Sukher Road,\nVillage Sukher, Tehsil Badgaon,\nDistrict Udaipur, Rajasthan – 313011, India",
+      "Pithal Machines Limited Industrial Area Plot no G1- 232 Riico Kaladwas Udaipur Rajasthan",
     linkText: "View on Map",
     href: "https://www.google.com/maps/dir//TASS,+National+Highway+27,+Sukher+Rd,+Rajasthan+313011/@24.6422969,73.7165995,16.76z/data=!4m16!1m7!3m6!1s0x3967e44236e80ead:0xbce661d60cd0cf9c!2sTASS!8m2!3d24.6412473!4d73.7172356!16s%2Fg%2F11bt_j7kgp!4m7!1m0!1m5!1m1!1s0x3967e44236e80ead:0xbce661d60cd0cf9c!2m2!1d73.7172679!2d24.641242?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D",
   },
@@ -1695,16 +1695,12 @@ export default function ContactUsPage() {
                         </span>
                         <p className="text-[13px] text-slate-200 leading-relaxed font-medium">
                           <strong className="font-bold text-white">
-                            Pithal Machinery Private Limited
+                            Pithal Machines Limited
                           </strong>
                           <br />
-                          Building No. 1, First Floor,
+                          Industrial Area Plot no G1- 232 Riico Kaladwas,
                           <br />
-                          National Highway 27, Sukher Road, Village Sukher,
-                          <br />
-                          Tehsil Badgaon, District Udaipur, Rajasthan – 313011,
-                          <br />
-                          India
+                          Udaipur Rajasthan
                         </p>
                       </div>
                     </div>

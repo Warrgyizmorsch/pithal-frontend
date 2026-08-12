@@ -131,15 +131,11 @@ export function Footer() {
                   <span className="flex items-start gap-4">
                     <MapPin aria-hidden className="mt-1 shrink-0 text-primary" size={22} />
                     <span>
-                      <strong className="font-bold">Pithal Machines Ltd.</strong>
+                      <strong className="font-bold">Pithal Machines Limited</strong>
                       <br />
-                      Building No. 1, First Floor,
+                      Industrial Area Plot no G1- 232 Riico Kaladwas,
                       <br />
-                      National Highway 27, Sukher Road,
-                      <br />
-                      Village Sukher, Tehsil Badgaon,
-                      <br />
-                      District Udaipur, Rajasthan – 313011, India
+                      Udaipur Rajasthan
                     </span>
                   </span>
                   <a className="flex items-center gap-4 hover:text-secondary" href="tel:+919887537129">
