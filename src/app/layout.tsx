@@ -18,11 +18,11 @@ const bodyFont = Roboto_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.pithalmachine.com"),
   title: {
-    default: "Pithal Machine Pvt. | Crushing & Mining Solutions",
+    default: "Crusher Machine Manufacturers in India | Pithal Machines",
     template: "%s | Pithal Machine Pvt.",
   },
   description:
-    "Pithal Machine Pvt. delivers high-performance crushing, screening, mining, and industrial machinery solutions.",
+    "Pithal Machines is one of the leading crusher machine manufacturers in India. Jaw, cone & VSI crushers, screens, and complete crushing plants. Get a free quote today.",
   alternates: {
     canonical: "./",
   },

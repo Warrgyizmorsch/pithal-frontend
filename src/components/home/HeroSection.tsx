@@ -34,17 +34,15 @@ export function HeroSection() {
         <div className="relative z-20 max-w-[32rem] xl:max-w-[35rem]">
           <HeroNavigation eyebrow="Crushing Strength, Delivering Results." />
           <h1 className="headline text-[clamp(2.45rem,11vw,3.05rem)] leading-[0.96] text-primary italic sm:text-[clamp(3.2rem,5vw,4.45rem)] lg:text-[clamp(3.65rem,4.25vw,4.65rem)]">
-            Engineering the
+            Crusher Machine
             <br />
-            <span className="text-secondary">Future</span>
+            <span className="text-secondary">Manufacturers</span>
             <br />
-            of Crushing &amp;
-            <br />
-            Mining Solutions
+            in India
+
           </h1>
           <p className="mt-3 max-w-[28rem] text-[0.95rem] leading-7 text-[#48576c] sm:text-[clamp(1rem,1.1vw,1.1rem)] pt-5">
-            High-performance crushing, screening &amp; mining machinery trusted
-            by industrial leaders worldwide.
+            High-performance crushing and screening machinery for mining and construction industries.
           </p>
           <div className="mt-4 flex flex-col gap-3 min-[460px]:flex-row sm:mt-5 sm:gap-4">
             <Button
@@ -85,9 +83,8 @@ export function HeroSection() {
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
-                className={`flex items-start gap-4 lg:px-6 ${
-                  index !== 0 ? "lg:border-l lg:border-gray-300/70" : ""
-                } first:lg:px-0`}
+                className={`flex items-start gap-4 lg:px-6 ${index !== 0 ? "lg:border-l lg:border-gray-300/70" : ""
+                  } first:lg:px-0`}
               >
                 <StatCard {...stat} compact />
               </div>

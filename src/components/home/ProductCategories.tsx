@@ -76,9 +76,9 @@ export function ProductCategories() {
       <Container>
         <SectionHeader
           eyebrow="Our Products"
-          highlight="Engineered for Results."
-          subtitle="High-performance crushing and screening solutions designed to deliver maximum productivity, reliability and value in every operation."
-          title="Built for Performance."
+          highlight="SCREENING EQUIPMENT"
+          subtitle="Engineered for maximum productivity, reliability and efficiency across demanding crushing, screening and material-processing operations."
+          title="HIGH-PERFORMANCE CRUSHING &"
           className="max-w-full lg:[&_h2]:whitespace-nowrap [&_h2]:text-[clamp(0.9rem,3.2vw,3.25rem)]"
         />
 
@@ -125,11 +125,10 @@ export function ProductCategories() {
                 key={index}
                 aria-label={`Go to product slide ${index + 1}`}
                 onClick={() => setActiveIndex(index)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  index === activeIndex
+                className={`h-2.5 rounded-full transition-all duration-300 ${index === activeIndex
                     ? "w-8 bg-secondary"
                     : "w-2.5 bg-primary/20"
-                }`}
+                  }`}
                 type="button"
               />
             ))}

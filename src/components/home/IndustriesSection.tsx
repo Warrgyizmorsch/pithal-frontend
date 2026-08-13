@@ -8,10 +8,9 @@ export function IndustriesSection() {
     <section className="section-space bg-white" id="about">
       <Container>
         <SectionHeader
-          eyebrow="Industries We Serve"
-          highlight="Building Nations."
-          subtitle="Our crushing and screening solutions are trusted across a wide range of industries, delivering performance, reliability, and efficiency in every application."
-          title="Powering Industries."
+          highlight="CRUSHING & SCREENING SOLUTIONS"
+          subtitle="At Pithal Machines, we deliver reliable crushing and screening solutions for mining, infrastructure, cement, construction and other material-processing industries, engineered for productivity, efficiency and consistent performance."
+          title="INDUSTRIES WE SERVE WITH"
           underline
           className="[&_h2]:text-[clamp(1.4rem,5vw,2.4rem)] [&_h2]:sm:text-[clamp(1.6rem,3.2vw,2.6rem)] max-w-none"
         />

@@ -87,16 +87,13 @@ export default function WhyChoosePithal() {
             </p>
 
             <h2 className="headline text-[clamp(1.9rem,9vw,2.2rem)] text-primary sm:text-[clamp(2.05rem,3.35vw,3.2rem)] pb-4">
-              Engineered for More.
-              <span className="mt-1 block text-secondary">Built to Last.</span>
+              MACHINES FOR CRUSHING
+              <span className="mt-1 block text-secondary">& SCREENING?</span>
             </h2>
 
             <span aria-hidden className="mt-4 block h-[3px] w-20 bg-secondary" />
             <p className="mt-3 max-w-[34rem] text-[0.8rem] leading-6 text-primary/85 sm:text-sm">
-              At Pithal Machines, we combine innovative engineering, robust
-              manufacturing, and stringent quality standards to deliver
-              crushing and screening solutions that outperform in every
-              condition.
+              At Pithal Machines, we deliver high-performance crushing, screening and material-processing solutions engineered for maximum productivity, reliability and efficiency.
             </p>
 
             <div className="mt-4 grid gap-x-7 sm:grid-cols-2">

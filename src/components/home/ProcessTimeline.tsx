@@ -59,12 +59,12 @@ export function ProcessTimeline() {
   // Synchronize playing and pausing based on the active index
   React.useEffect(() => {
     if (!mounted) return;
-    
+
     // Play/Pause desktop videos
     desktopVideoRefs.current.forEach((video, idx) => {
       if (!video) return;
       if (idx === activeIndex) {
-        video.play().catch(() => {});
+        video.play().catch(() => { });
       } else {
         video.pause();
         video.currentTime = 0;
@@ -75,7 +75,7 @@ export function ProcessTimeline() {
     mobileVideoRefs.current.forEach((video, idx) => {
       if (!video) return;
       if (idx === activeIndex) {
-        video.play().catch(() => {});
+        video.play().catch(() => { });
       } else {
         video.pause();
         video.currentTime = 0;
@@ -89,9 +89,11 @@ export function ProcessTimeline() {
         {/* Section Header */}
         <SectionHeader
           eyebrow="Smart Crushing Process"
-          title="Built for Maximum Efficiency."
-          highlight="Engineered to Perform."
-          subtitle="Our advanced crushing plants are designed to deliver maximum reduction, consistent quality, and higher productivity."
+          title="ENGINEERED FOR EFFICIENT CRUSHING."
+          highlight="BUILT FOR HIGHER PRODUCTIVITY."
+          highlightBlock={true}
+          className="max-w-[95%] md:max-w-4xl lg:max-w-5xl xl:max-w-none [&_h2]:text-[clamp(1.5rem,3.5vw,2.8rem)]"
+          subtitle="Engineered for efficient material reduction, consistent output and reliable performance across demanding crushing applications."
         />
 
         {/* Desktop View (Grid Layout) */}
@@ -102,20 +104,18 @@ export function ProcessTimeline() {
               <div
                 key={step.number}
                 className="relative min-w-0 flex"
-                // onMouseEnter={() => setActiveIndex(index)}
+              // onMouseEnter={() => setActiveIndex(index)}
               >
                 <article
-                  className={`flex h-full min-w-0 flex-1 flex-col rounded-2xl border-2 bg-white px-3 pt-3 pb-2 transition-all duration-300 sm:px-4 sm:pt-4 sm:pb-3 xl:px-2 xl:pt-2 xl:pb-1 ${
-                    isActive
-                      ? "z-20 border-secondary shadow-xl sm:scale-[1.03]"
-                      : "border-primary/20 sm:scale-[0.98] sm:opacity-60"
-                  }`}
+                  className={`flex h-full min-w-0 flex-1 flex-col rounded-2xl border-2 bg-white px-3 pt-3 pb-2 transition-all duration-300 sm:px-4 sm:pt-4 sm:pb-3 xl:px-2 xl:pt-2 xl:pb-1 ${isActive
+                    ? "z-20 border-secondary shadow-xl sm:scale-[1.03]"
+                    : "border-primary/20 sm:scale-[0.98] sm:opacity-60"
+                    }`}
                 >
                   <div className="mb-3 flex items-start gap-2">
                     <div
-                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-lg font-black leading-none text-secondary transition-colors duration-300 ${
-                        isActive ? "border-2 border-secondary bg-white" : "border-2 border-primary/20 bg-white"
-                      }`}
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-lg font-black leading-none text-secondary transition-colors duration-300 ${isActive ? "border-2 border-secondary bg-white" : "border-2 border-primary/20 bg-white"
+                        }`}
                     >
                       {step.number}
                     </div>
@@ -142,13 +142,13 @@ export function ProcessTimeline() {
                         <source
                           src={
                             step.number === "01" ? "/workvideo/magnific_animate-this-image-as-the_LUm7UMHswO.mp4" :
-                            step.number === "02" ? "/workvideo/magnific_animate-this-image-as-the_SOfPNJrUb8.mp4" :
-                            step.number === "03" ? "/workvideo/magnific_animate-this-image-as-the_vunFBBia47.mp4" :
-                            step.number === "04" ? "/workvideo/magnific_animate-this-image-as-the_WMwpnNgcXe.mp4" :
-                            step.number === "05" ? "/workvideo/magnific_animate-this-image-as-the_1soSjUvr4r.mp4" :
-                            step.number === "06" ? "/workvideo/magnific_animate-this-image-as-a-c_kLBgSFq16B.mp4" :
-                            step.number === "07" ? "/workvideo/magnific_animate-this-image-as-a-c_xgIwPatjfW.mp4" :
-                            "/workvideo/magnific_animate-this-image-as-the_vunFBBia47.mp4"
+                              step.number === "02" ? "/workvideo/magnific_animate-this-image-as-the_SOfPNJrUb8.mp4" :
+                                step.number === "03" ? "/workvideo/magnific_animate-this-image-as-the_vunFBBia47.mp4" :
+                                  step.number === "04" ? "/workvideo/magnific_animate-this-image-as-the_WMwpnNgcXe.mp4" :
+                                    step.number === "05" ? "/workvideo/magnific_animate-this-image-as-the_1soSjUvr4r.mp4" :
+                                      step.number === "06" ? "/workvideo/magnific_animate-this-image-as-a-c_kLBgSFq16B.mp4" :
+                                        step.number === "07" ? "/workvideo/magnific_animate-this-image-as-a-c_xgIwPatjfW.mp4" :
+                                          "/workvideo/magnific_animate-this-image-as-the_vunFBBia47.mp4"
                           }
                           type="video/mp4"
                         />
@@ -164,20 +164,20 @@ export function ProcessTimeline() {
                   </div>
                 </article>
 
-            </div>
-          );
-        })}
+              </div>
+            );
+          })}
         </div>
       </Container>
 
       {/* Mobile View (Center-mode Carousel Layout) - outside Container to span full width */}
-      <div 
+      <div
         className="sm:hidden relative w-full overflow-hidden py-4 cursor-grab active:cursor-grabbing"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div 
+        <div
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(calc(15vw - ${activeIndex * 70}vw))` }}
         >
@@ -193,11 +193,10 @@ export function ProcessTimeline() {
                 }}
               >
                 <article
-                  className={`relative flex h-[430px] min-w-0 flex-col justify-end rounded-2xl border-2 overflow-hidden p-3 transition-all duration-300 ${
-                    isActive
-                      ? "border-secondary shadow-2xl"
-                      : "border-primary/20"
-                  }`}
+                  className={`relative flex h-[430px] min-w-0 flex-col justify-end rounded-2xl border-2 overflow-hidden p-3 transition-all duration-300 ${isActive
+                    ? "border-secondary shadow-2xl"
+                    : "border-primary/20"
+                    }`}
                 >
                   {/* Background Video (Fully bright, no dark overlay) */}
                   <div className="absolute inset-0 z-0 bg-white">
@@ -214,13 +213,13 @@ export function ProcessTimeline() {
                         <source
                           src={
                             step.number === "01" ? "/workvideo/magnific_animate-this-image-as-the_LUm7UMHswO.mp4" :
-                            step.number === "02" ? "/workvideo/magnific_animate-this-image-as-the_SOfPNJrUb8.mp4" :
-                            step.number === "03" ? "/workvideo/magnific_animate-this-image-as-the_vunFBBia47.mp4" :
-                            step.number === "04" ? "/workvideo/magnific_animate-this-image-as-the_WMwpnNgcXe.mp4" :
-                            step.number === "05" ? "/workvideo/magnific_animate-this-image-as-the_1soSjUvr4r.mp4" :
-                            step.number === "06" ? "/workvideo/magnific_animate-this-image-as-a-c_kLBgSFq16B.mp4" :
-                            step.number === "07" ? "/workvideo/magnific_animate-this-image-as-a-c_xgIwPatjfW.mp4" :
-                            "/workvideo/magnific_animate-this-image-as-the_vunFBBia47.mp4"
+                              step.number === "02" ? "/workvideo/magnific_animate-this-image-as-the_SOfPNJrUb8.mp4" :
+                                step.number === "03" ? "/workvideo/magnific_animate-this-image-as-the_vunFBBia47.mp4" :
+                                  step.number === "04" ? "/workvideo/magnific_animate-this-image-as-the_WMwpnNgcXe.mp4" :
+                                    step.number === "05" ? "/workvideo/magnific_animate-this-image-as-the_1soSjUvr4r.mp4" :
+                                      step.number === "06" ? "/workvideo/magnific_animate-this-image-as-a-c_kLBgSFq16B.mp4" :
+                                        step.number === "07" ? "/workvideo/magnific_animate-this-image-as-a-c_xgIwPatjfW.mp4" :
+                                          "/workvideo/magnific_animate-this-image-as-the_vunFBBia47.mp4"
                           }
                           type="video/mp4"
                         />
@@ -262,9 +261,8 @@ export function ProcessTimeline() {
             return (
               <button
                 aria-label={`Show process step ${step.number}`}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  isActive ? "w-8 bg-secondary" : "w-2.5 bg-primary/20"
-                }`}
+                className={`h-2.5 rounded-full transition-all duration-300 ${isActive ? "w-8 bg-secondary" : "w-2.5 bg-primary/20"
+                  }`}
                 key={step.number}
                 onClick={() => setActiveIndex(index)}
                 type="button"

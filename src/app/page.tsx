@@ -8,6 +8,7 @@ import { VideoShowcase } from "@/components/home/VideoShowcase";
 import WhyChoosePithal from "@/components/home/WhyChoosePithal";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { FAQSection } from "@/components/home/FAQSection";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <ProjectsSection />
         <ProcessTimeline />
         <VideoShowcase />
+        <FAQSection />
         <ContactCTA />
       </main>
       <Footer />
