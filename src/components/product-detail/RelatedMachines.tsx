@@ -203,7 +203,7 @@ export function RelatedMachines({
     <section className={`bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] ${sectionPadding}`}>
       <Container>
         <div className="mb-10 flex flex-col items-center text-center sm:mb-12">
-          <div className="mb-4 flex items-center justify-center gap-2 sm:gap-3">
+          {/* <div className="mb-4 flex items-center justify-center gap-2 sm:gap-3">
             <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
             <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
             <span className="mr-1 hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
@@ -219,7 +219,7 @@ export function RelatedMachines({
             <span className="ml-1 hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
             <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
             <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
-          </div>
+          </div> */}
 
           <h2 className="headline text-[clamp(2rem,5vw,3.25rem)] font-black uppercase leading-[1.08] tracking-[0.03em] text-primary">
             {section.title} <span className="text-secondary">{section.highlight}</span>

@@ -11,7 +11,7 @@ function HeroDescription({ text, highlight }: { text: string; highlight?: string
   if (!highlight || !text.includes(highlight)) {
     return <>{text}</>;
   }
-  
+
 
   const [before, after] = text.split(highlight);
   return (
@@ -29,11 +29,11 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
     `${data.title} ${data.highlightedTitle}`;
 
   return (
-    <section 
+    <section
       className="relative min-h-[500px] lg:min-h-[600px] xl:min-h-[650px] flex flex-col justify-center overflow-hidden text-white"
       style={{ background: 'linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0d1929 100%)' }}
     >
-      <div 
+      <div
         className="absolute top-auto bottom-0 right-0 w-full h-[50%] md:top-0 md:bottom-auto md:h-full md:w-[65%] lg:w-[88%] pointer-events-none z-0
                    [clip-path:polygon(0_30%,100%_0,100%_100%,0%_100%)]
                    md:[clip-path:polygon(30%_0,100%_0,100%_100%,10%_100%)]
@@ -55,7 +55,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
 
 
       {/* Dots Pattern */}
-      <div 
+      <div
         className="absolute w-[100px] h-[100px] opacity-75 hidden md:block z-0"
         style={{
           backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 2px)',
@@ -64,7 +64,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
           left: '3%'
         }}
       />
-      <div 
+      <div
         className="absolute w-[100px] h-[100px] opacity-75 hidden md:block z-0"
         style={{
           backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 2px)',
@@ -107,19 +107,21 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
           </div>
         </div>
 
-        <div className="mt-12 lg:mt-auto w-full max-w-[820px] rounded-xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
-          <div className="grid grid-cols-2 gap-x-4 gap-y-6 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-white/30">
-            {data.quickStats.map((stat) => (
-              <article className="flex flex-col items-center text-center sm:flex-row sm:text-left gap-2 sm:gap-4 lg:px-6 lg:first:pl-0 lg:last:pr-0" key={stat.label}>
-                <ProductIcon className="shrink-0 text-secondary" name={stat.icon} size={40} strokeWidth={1.55} />
-                <p className="text-[15px] font-bold leading-tight text-white">
-                  <span className="block">{stat.label}</span>
-                  <span className="block">{stat.value}</span>
-                </p>
-              </article>
-            ))}
+        {data.quickStats && data.quickStats.length > 0 && (
+          <div className="mt-12 lg:mt-auto w-full max-w-[820px] rounded-xl border border-white/18 bg-primary-dark/95 lg:bg-primary-dark/60 px-6 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.25)] backdrop-blur-md mx-auto lg:mx-0">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-6 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-white/30">
+              {data.quickStats.map((stat) => (
+                <article className="flex flex-col items-center text-center sm:flex-row sm:text-left gap-2 sm:gap-4 lg:px-6 lg:first:pl-0 lg:last:pr-0" key={stat.label}>
+                  <ProductIcon className="shrink-0 text-secondary" name={stat.icon} size={40} strokeWidth={1.55} />
+                  <p className="text-[15px] font-bold leading-tight text-white">
+                    <span className="block">{stat.label}</span>
+                    <span className="block">{stat.value}</span>
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

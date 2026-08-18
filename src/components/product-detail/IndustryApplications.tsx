@@ -15,9 +15,11 @@ import { actionLinkClass, sectionPadding } from "./styles";
 export function IndustryApplications({
   section,
   industries,
+  hideBottomBanner = false,
 }: {
   section: SectionCopy;
   industries: IndustryApplication[];
+  hideBottomBanner?: boolean;
 }) {
   return (
     <section className={`industrial-grid bg-white ${sectionPadding}`}>
@@ -54,26 +56,28 @@ export function IndustryApplications({
           ))}
         </MobileCarousel>
 
-        <div className="mt-10 rounded-2xl border border-border/70 bg-white px-6 py-6 shadow-sm sm:px-8 lg:px-10">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <span className="flex h-12 w-12 min-w-[3rem] items-center justify-center rounded-full bg-secondary/10 text-secondary">
-                <ProductIcon name="shield" size={20} />
-              </span>
-              <div>
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
-                  One Solution. Multiple Applications. <span className="text-secondary">Maximum Results.</span>
-                </p>
-                <p className="mt-2 text-sm text-text-muted">
-                  Engineered to perform. Built to last.
-                </p>
+        {!hideBottomBanner && (
+          <div className="mt-10 rounded-2xl border border-border/70 bg-white px-6 py-6 shadow-sm sm:px-8 lg:px-10">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <span className="flex h-12 w-12 min-w-[3rem] items-center justify-center rounded-full bg-secondary/10 text-secondary">
+                  <ProductIcon name="shield" size={20} />
+                </span>
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
+                    One Solution. Multiple Applications. <span className="text-secondary">Maximum Results.</span>
+                  </p>
+                  <p className="mt-2 text-sm text-text-muted">
+                    Engineered to perform. Built to last.
+                  </p>
+                </div>
               </div>
+              <Button href="#contact" variant="primary" className="mt-3 min-h-12 sm:mt-0">
+                Request Quote
+              </Button>
             </div>
-            <Button href="#contact" variant="primary" className="mt-3 min-h-12 sm:mt-0">
-              Request Quote
-            </Button>
           </div>
-        </div>
+        )}
       </Container>
     </section>
   );

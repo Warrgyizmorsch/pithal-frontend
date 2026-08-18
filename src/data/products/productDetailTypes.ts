@@ -18,7 +18,7 @@ export type BreadcrumbItem = {
 };
 
 export type SectionCopy = {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   highlight: string;
   subtitle: string;
@@ -32,7 +32,7 @@ export type IconText = {
 
 export type ProductHeroData = {
   breadcrumb: BreadcrumbItem[];
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   highlightedTitle: string;
   subtitle: string;
@@ -40,7 +40,7 @@ export type ProductHeroData = {
   descriptionHighlight?: string;
   image: ImageAsset;
   ctas: ProductCta[];
-  quickStats: Array<{
+  quickStats?: Array<{
     label: string;
     value: string;
     icon: string;
@@ -77,7 +77,7 @@ export type IntroCalloutLayout = {
 };
 
 export type ProductIntroData = {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   highlight: string;
   description: string;
@@ -94,8 +94,8 @@ export type ProductIntroData = {
     position?: IntroCalloutPosition;
     layout?: IntroCalloutLayout;
   }>;
-  applications: {
-    eyebrow: string;
+  applications?: {
+    eyebrow?: string;
     description: string;
     items: Array<{
       label: string;
@@ -162,7 +162,7 @@ export type VideoFeature = {
 };
 
 export type VideoSectionData = {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   highlight: string;
   description: string;
@@ -188,7 +188,7 @@ export type RelatedMachine = {
 
 export type ContactSectionData = {
   id: string;
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   highlight: string;
   description: string;
@@ -238,6 +238,22 @@ export type ResourcesSectionData = SectionCopy & {
   supportCta: ProductCta;
 };
 
+export type ProductFAQItem = {
+  question: string;
+  answer: string;
+};
+
+export type ProductFAQData = {
+  eyebrow?: string;
+  title: string;
+  highlight?: string;
+  faqs: ProductFAQItem[];
+};
+
+export type ProductLongContentData = {
+  content: string;
+};
+
 export type ProductDetailData = {
   slug: string;
   images?: ImageAsset[];
@@ -260,4 +276,6 @@ export type ProductDetailData = {
   resourcesSection: ResourcesSectionData;
   resources: ResourceItem[];
   supportFeatures: IconText[];
+  faqSection?: ProductFAQData;
+  longContent?: ProductLongContentData;
 };

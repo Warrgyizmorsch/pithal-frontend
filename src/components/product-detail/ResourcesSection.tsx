@@ -93,7 +93,7 @@ export function ResourcesSection({
       <Container>
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
-          <div className="flex items-center gap-2 justify-center mb-4">
+          {/* <div className="flex items-center gap-2 justify-center mb-4">
             <span style={{ display: "inline-block", height: "8px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)" }} />
             <span style={{ display: "inline-block", height: "8px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)" }} />
             <span style={{ display: "inline-block", height: "8px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)", marginRight: "4px" }} />
@@ -112,7 +112,7 @@ export function ResourcesSection({
             <span style={{ display: "inline-block", height: "8px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)", marginLeft: "4px" }} />
             <span style={{ display: "inline-block", height: "8px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)" }} />
             <span style={{ display: "inline-block", height: "8px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)" }} />
-          </div>
+          </div> */}
 
           <h2 className="headline text-[clamp(1.8rem,8vw,2.2rem)] sm:text-[clamp(2.2rem,4.6vw,3.25rem)] text-primary">
             {section.title} <span style={{ color: "#fa5902" }}>{section.highlight}</span>
@@ -126,8 +126,8 @@ export function ResourcesSection({
         {/* Resources Grid */}
         <div className="grid gap-6 grid-cols-1 lg:grid-cols-3">
           {resources.map((resource) => (
-            <div 
-              key={resource.title} 
+            <div
+              key={resource.title}
               className="bg-white border border-gray-200/80 rounded-2xl p-5 shadow-sm flex flex-col sm:flex-row gap-5 items-stretch transition-all hover:shadow-md hover:border-gray-300"
             >
               {/* Left Column: Image wrapper */}
@@ -149,15 +149,15 @@ export function ResourcesSection({
                   <span className="mb-2">
                     {renderResourceIcon(resource.title)}
                   </span>
-                  
+
                   {/* Title */}
                   <h3 className="text-primary font-bold uppercase text-left" style={{ fontSize: "0.85rem", letterSpacing: "0.04em", lineHeight: "1.2" }}>
                     {resource.title}
                   </h3>
-                  
+
                   {/* Underline separator */}
                   <div style={{ width: "30px", height: "2px", backgroundColor: "#fa5902", marginTop: "10px", marginBottom: "10px" }} />
-                  
+
                   {/* Description */}
                   <p className="text-text-muted text-left" style={{ fontSize: "0.78rem", lineHeight: "1.4" }}>
                     {resource.description}
@@ -165,7 +165,7 @@ export function ResourcesSection({
                 </div>
 
                 {/* Download PDF button link */}
-                <a 
+                <a
                   href={resource.href}
                   className="secondary-btn inline-flex items-center justify-center gap-2 border border-[#fa5902] text-[#fa5902] hover:bg-[#fa5902]/5 transition-colors font-bold uppercase rounded-lg px-4 py-2 mt-4 text-[11px] tracking-[0.08em] w-fit"
                 >
@@ -222,8 +222,8 @@ export function ResourcesSection({
               </p>
             </div>
           </div>
-          
-          <Button 
+
+          <Button
             href={"#contact1"}
             className="flex items-center gap-2 rounded-lg bg-secondary text-white border-none py-3 px-6 h-12 text-[12px] font-extrabold tracking-[0.06em] shrink-0"
             variant="primary"

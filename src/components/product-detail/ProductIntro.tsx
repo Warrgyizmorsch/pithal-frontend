@@ -34,6 +34,8 @@ const introButtonClass = "min-h-12 w-full sm:w-auto sm:min-w-[190px] justify-cen
 const overviewEyebrowClass = "flex items-center justify-center lg:justify-start gap-2.5 text-lg font-bold uppercase tracking-[0.08em] text-secondary";
 
 function OverviewEyebrow({ children }: { children: React.ReactNode }) {
+  if (!children) return null;
+
   return (
     <p className={overviewEyebrowClass}>
       <span aria-hidden>{"///"}</span>
@@ -201,26 +203,32 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
               ))}
             </div>
 
-            <div className="mt-12 w-full flex flex-col items-center lg:items-start">
-              <div className="flex items-center gap-2.5 justify-center lg:justify-start">
-                <ProductIcon className="text-secondary" name="settings" size={28} />
-                <div>
-                  <h3 className="text-base font-black uppercase tracking-[0.04em] text-primary">{data.applications.eyebrow}</h3>
-                  <span className="mt-1.5 block h-[2px] w-9 bg-secondary mx-auto lg:mx-0" />
+            {data.applications && (
+              <div className="mt-12 w-full flex flex-col items-center lg:items-start">
+                <div className="flex items-center gap-2.5 justify-center lg:justify-start">
+                  <ProductIcon className="text-secondary" name="settings" size={28} />
+                  <div>
+                    {data.applications.eyebrow && (
+                      <>
+                        <h3 className="text-base font-black uppercase tracking-[0.04em] text-primary">{data.applications.eyebrow}</h3>
+                        <span className="mt-1.5 block h-[2px] w-9 bg-secondary mx-auto lg:mx-0" />
+                      </>
+                    )}
+                  </div>
+                </div>
+                <p className="mt-4 max-w-[570px] whitespace-pre-line text-sm leading-6 text-text-dark text-center lg:text-left mx-auto lg:mx-0">
+                  {data.applications.description}
+                </p>
+                <div className="mt-6 grid grid-cols-2 overflow-hidden rounded border-t border-l border-border sm:grid-cols-5 w-full">
+                  {data.applications.items.map((item) => (
+                    <article className="flex min-h-[96px] flex-col items-center justify-center border-b border-r border-border p-3 text-center" key={item.label}>
+                      <ProductIcon className="text-secondary" name={item.icon} size={38} strokeWidth={1.45} />
+                      <h4 className="mt-2.5 text-[10px] font-black uppercase tracking-[0.03em] text-primary">{item.label}</h4>
+                    </article>
+                  ))}
                 </div>
               </div>
-              <p className="mt-4 max-w-[570px] whitespace-pre-line text-sm leading-6 text-text-dark text-center lg:text-left mx-auto lg:mx-0">
-                {data.applications.description}
-              </p>
-              <div className="mt-6 grid grid-cols-2 overflow-hidden rounded border-t border-l border-border sm:grid-cols-5 w-full">
-                {data.applications.items.map((item) => (
-                  <article className="flex min-h-[96px] flex-col items-center justify-center border-b border-r border-border p-3 text-center" key={item.label}>
-                    <ProductIcon className="text-secondary" name={item.icon} size={38} strokeWidth={1.45} />
-                    <h4 className="mt-2.5 text-[10px] font-black uppercase tracking-[0.03em] text-primary">{item.label}</h4>
-                  </article>
-                ))}
-              </div>
-            </div>
+            )}
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row w-full justify-center lg:justify-start">
               {data.ctas.map((cta) => (

@@ -22,7 +22,7 @@ export function HeroNavigation({
   breadcrumbs,
 }: {
   current?: string;
-  eyebrow: string;
+  eyebrow?: string;
   light?: boolean;
   breadcrumbs?: Array<{ label: string; href: string }>;
 }) {
@@ -39,9 +39,8 @@ export function HeroNavigation({
               <React.Fragment key={item.label}>
                 {index === 0 ? (
                   <Link
-                    className={`flex items-center gap-2 transition-colors hover:text-secondary ${
-                      light ? "text-white" : "text-primary"
-                    }`}
+                    className={`flex items-center gap-2 transition-colors hover:text-secondary ${light ? "text-white" : "text-primary"
+                      }`}
                     href={item.href}
                   >
                     <Home aria-hidden size={16} strokeWidth={1.8} />
@@ -51,9 +50,8 @@ export function HeroNavigation({
                   <span className="text-secondary">{item.label}</span>
                 ) : (
                   <Link
-                    className={`transition-colors hover:text-secondary ${
-                      light ? "text-white" : "text-primary"
-                    }`}
+                    className={`transition-colors hover:text-secondary ${light ? "text-white" : "text-primary"
+                      }`}
                     href={item.href}
                   >
                     {item.label}
@@ -78,9 +76,8 @@ export function HeroNavigation({
           className="mb-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs font-semibold leading-none"
         >
           <Link
-            className={`flex items-center gap-2 transition-colors hover:text-secondary ${
-              light ? "text-white" : "text-primary"
-            }`}
+            className={`flex items-center gap-2 transition-colors hover:text-secondary ${light ? "text-white" : "text-primary"
+              }`}
             href="/"
           >
             <Home aria-hidden size={16} strokeWidth={1.8} />
@@ -96,14 +93,16 @@ export function HeroNavigation({
         </nav>
       ) : null}
 
-      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-secondary">
-        <AccentBars />
-        <p className="text-xs font-black uppercase leading-none tracking-[0.16em]">
-          {eyebrow}
-        </p>
-        <AccentBars />
-        <span className="hidden h-px w-20 bg-secondary/35 sm:block" />
-      </div>
+      {eyebrow && (
+        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-secondary">
+          <AccentBars />
+          <p className="text-xs font-black uppercase leading-none tracking-[0.16em]">
+            {eyebrow}
+          </p>
+          <AccentBars />
+          <span className="hidden h-px w-20 bg-secondary/35 sm:block" />
+        </div>
+      )}
     </div>
   );
 }

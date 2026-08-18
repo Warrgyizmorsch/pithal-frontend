@@ -10,14 +10,16 @@ import { RelatedMachines } from "@/components/product-detail/RelatedMachines";
 import { ResourcesSection } from "@/components/product-detail/ResourcesSection";
 import { SpecificationTable } from "@/components/product-detail/SpecificationTable";
 import { VideoSection } from "@/components/product-detail/VideoSection";
+import { ProductFAQ } from "@/components/product-detail/ProductFAQ";
+import { ProductLongContent } from "@/components/product-detail/ProductLongContent";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { jawCrusherData } from "@/data/products/jawCrusherData";
 
 export const metadata: Metadata = {
-  title: "Prime Jaw Crushers | Pithal Machine Pvt.",
+  title: "Jaw Crusher Machine Manufacturer | Pithal Machine",
   description:
-    "Heavy-duty Prime Jaw Crushers engineered for primary crushing, high capacity, and long service life.",
+    "Get a reliable jaw crusher machine from Pithal Machine, designed for efficient crushing of hard materials. Explore durable, high-performance crushing solutions.",
 };
 
 export default function JawCrusherProductPage() {
@@ -28,19 +30,21 @@ export default function JawCrusherProductPage() {
         <ProductHero data={jawCrusherData.hero} />
         <ProductStats section={jawCrusherData.statsSection} stats={jawCrusherData.stats} />
         <ProductIntro data={jawCrusherData.intro} />
-        <FeaturesSection 
-          heading="Engineered For"
-          highlightText="Superior Performance"
-          subtitle="Our Prime Jaw Crushers are built with advanced engineering and premium quality components to deliver unmatched performance, reliability and efficiency."
-          
+        <FeaturesSection
+          heading="Key Features of Prime"
+          highlightText="Jaw Crusher"
+          subtitle="Engineered for powerful and efficient crushing, the Prime Jaw Crusher combines robust construction with reliable performance for demanding industrial applications."
+
         />
         <SpecificationTable rows={jawCrusherData.specifications} section={jawCrusherData.specificationsSection} />
-        <IndustryApplications industries={jawCrusherData.industries} section={jawCrusherData.industriesSection} />
+        <IndustryApplications industries={jawCrusherData.industries} section={jawCrusherData.industriesSection} hideBottomBanner />
         <ProcessTimeline section={jawCrusherData.processSection} steps={jawCrusherData.processSteps} />
         <VideoSection data={jawCrusherData.videoSection} />
         <RelatedMachines section={jawCrusherData.relatedSection} />
         <ContactSolutionSection data={jawCrusherData.contactSection} />
         <ResourcesSection resources={jawCrusherData.resources} section={jawCrusherData.resourcesSection} supportFeatures={jawCrusherData.supportFeatures} />
+        {jawCrusherData.faqSection && <ProductFAQ data={jawCrusherData.faqSection} />}
+        {jawCrusherData.longContent && <ProductLongContent data={jawCrusherData.longContent} />}
       </main>
       <Footer />
     </>
