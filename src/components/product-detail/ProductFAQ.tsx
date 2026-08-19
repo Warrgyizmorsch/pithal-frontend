@@ -26,7 +26,7 @@ export function ProductFAQ({ data }: { data: ProductFAQData }) {
           title={data.title}
           highlight={data.highlight}
           highlightBlock={true}
-          className="max-w-[90%] md:max-w-none [&_h2]:text-[clamp(1.5rem,4vw,2.5rem)]"
+          className="max-w-[90%] md:max-w-none"
         />
         
         <div className="mx-auto max-w-4xl mt-10 sm:mt-14">
@@ -37,7 +37,7 @@ export function ProductFAQ({ data }: { data: ProductFAQData }) {
                 <div 
                   key={index} 
                   className={cn(
-                    "rounded-2xl border transition-all duration-300 overflow-hidden",
+                    "rounded-2xl border transition-all duration-500 overflow-hidden",
                     isOpen ? "border-secondary bg-white shadow-[0_4px_20px_-4px_rgba(239,123,16,0.1)]" : "border-gray-200 bg-white hover:border-primary/30"
                   )}
                 >
@@ -47,24 +47,24 @@ export function ProductFAQ({ data }: { data: ProductFAQData }) {
                     aria-expanded={isOpen}
                   >
                     <span className={cn(
-                      "text-sm sm:text-base md:text-lg font-bold pr-4 transition-colors duration-300",
+                      "text-sm sm:text-base md:text-lg font-bold pr-4 transition-colors duration-500",
                       isOpen ? "text-secondary" : "text-primary"
                     )}>
                       {faq.question}
                     </span>
                     <div className={cn(
-                      "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300",
+                      "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-500",
                       isOpen ? "bg-secondary/10 text-secondary" : "bg-gray-100 text-gray-500"
                     )}>
                       <ChevronDown 
-                        className={cn("h-5 w-5 transition-transform duration-300", isOpen && "rotate-180")} 
+                        className={cn("h-5 w-5 transition-transform duration-500", isOpen && "rotate-180")} 
                         strokeWidth={2.5}
                       />
                     </div>
                   </button>
                   <div 
                     className={cn(
-                      "grid transition-all duration-300 ease-in-out",
+                      "grid transition-all duration-500 ease-in-out",
                       isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                     )}
                   >

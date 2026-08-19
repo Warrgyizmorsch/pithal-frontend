@@ -66,9 +66,8 @@ function ProductsDropdown() {
             <Link
               key={product.title}
               href={product.href || "/products"}
-              className={`block px-6 py-3 text-sm font-medium text-primary hover:bg-secondary/10 hover:text-secondary transition-all relative group/item ${
-                idx !== products.length - 1 ? "border-b border-border/50" : ""
-              }`}
+              className={`block px-6 py-3 text-sm font-medium text-primary hover:bg-secondary/10 hover:text-secondary transition-all relative group/item ${idx !== products.length - 1 ? "border-b border-border/50" : ""
+                }`}
             >
               <span className="flex items-center gap-2">
                 {product.title}

@@ -45,7 +45,7 @@ export function SpecificationTable({
                   {section.eyebrow}
                 </p>
               )}
-              <h2 className="headline text-[clamp(1.45rem,5.5vw,1.9rem)] text-primary sm:text-[clamp(1.65rem,3.3vw,2.35rem)]">
+              <h2 className="headline text-primary">
                 {section.title}
                 {section.highlight && <span className="text-secondary"> {section.highlight}</span>}
               </h2>

@@ -16,11 +16,22 @@ export function ProductLongContent({ data }: { data: ProductLongContentData }) {
         <div className="mx-auto max-w-4xl relative">
           <div
             className={cn(
-              "prose prose-slate max-w-none text-text-dark sm:prose-lg prose-headings:text-primary prose-headings:font-black prose-a:text-secondary hover:prose-a:text-secondary/80 transition-all duration-500 ease-in-out",
-              !isExpanded && "max-h-[250px] overflow-hidden"
+              "prose prose-slate max-w-none text-text-dark sm:prose-lg prose-headings:text-primary prose-headings:font-black prose-a:text-secondary hover:prose-a:text-secondary/80 prose-p:!my-[15px] transition-all duration-700 ease-in-out overflow-hidden",
+              isExpanded ? "max-h-[3000px]" : "max-h-[250px]"
             )}
           >
-            <ReactMarkdown>{data.content}</ReactMarkdown>
+            <ReactMarkdown
+              components={{
+                h3: 'h2',
+                h4: 'h2',
+                h5: 'h2',
+                h6: 'h2',
+                h1: ({ node, ...props }) => <h1 className="!text-[2.5rem] !leading-tight !mt-0 !mb-[15px]" {...props} />,
+                h2: ({ node, ...props }) => <h2 className="!text-[2rem] !leading-tight !mt-[30px] !mb-[15px]" {...props} />
+              }}
+            >
+              {data.content}
+            </ReactMarkdown>
           </div>
 
           {!isExpanded && (

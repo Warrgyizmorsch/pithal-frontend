@@ -7,7 +7,8 @@ export const jawCrusherData: ProductDetailData = {
       { label: "Home", href: "/" },
       { label: "Products", href: "/#products" },
       { label: "Prime Jaw Crushers", href: "/products/jaw-crushers" },
-    ],
+    ],
+
     title: "Prime  Jaw",
     highlightedTitle: "Crusher",
     subtitle: "BUILT FOR POWER. ENGINEERED FOR PERFORMANCE.",
@@ -37,7 +38,8 @@ export const jawCrusherData: ProductDetailData = {
     { label: "Output Size", value: "40 - 150", unit: "mm", description: "Adjustable discharge setting", icon: "layers" },
     { label: "Application", value: "Mining, Aggregates, Construction, Recycling & More", unit: "", description: "", icon: "boxes" },
   ],
-  intro: {
+  intro: {
+
     title: "Prime Jaw Crusher Product",
     highlight: "Overview",
     description:
@@ -110,7 +112,8 @@ export const jawCrusherData: ProductDetailData = {
     ],
 
   },
-  performanceSection: {
+  performanceSection: {
+
     title: "ENGINEERED FOR",
     highlight: "SUPERIOR PERFORMANCE",
     subtitle:
@@ -164,7 +167,8 @@ export const jawCrusherData: ProductDetailData = {
     { title: "Construction", description: "Crushing equipment for infrastructure, roads, and large civil projects.", image: { src: "/images/industries/construction.jpg", alt: "Construction site with industrial equipment" }, icon: "hardHat", href: "#", actionLabel: "Explore" },
     { title: "Recycling", description: "Strong processing for demolition waste and recyclable construction material.", image: { src: "/images/industries/recycling.jpg", alt: "Recycling facility material processing" }, icon: "recycle", href: "#", actionLabel: "Explore" },
   ],
-  processSection: {
+  processSection: {
+
     title: "Jaw Crusher",
     highlight: "Working Process",
     subtitle:
@@ -263,7 +267,8 @@ export const jawCrusherData: ProductDetailData = {
     { title: "PRIME BELT CONVEYOR", description: "Efficient material handling with robust design and long service life.", image: { src: "/images/products/related-products/belt-conveyor.png", alt: "Belt Conveyor" }, category: "Conveying", icon: "conveyor", href: "/products/conveyor-systems", actionLabel: "VIEW DETAILS" },
   ],
   contactSection: {
-    id: "contact",
+    id: "contact",
+
     title: "LET'S BUILD THE RIGHT",
     highlight: "SOLUTION FOR YOU.",
     description:
@@ -342,7 +347,8 @@ export const jawCrusherData: ProductDetailData = {
     { title: "MAKE INFORMED DECISIONS", text: "All the data you need to choose the right equipment.", icon: "target" },
     { title: "EXPERT SUPPORT", text: "Our team is here to help with any questions.", icon: "headphones" },
   ],
-  faqSection: {
+  faqSection: {
+
     title: "Prime Jaw Crusher",
     highlight: "FAQs",
     faqs: [
@@ -385,7 +391,7 @@ export const jawCrusherData: ProductDetailData = {
     ]
   },
   longContent: {
-    content: `### Prime Jaw Crusher Machine for Efficient Primary Crushing
+    content: `# Prime Jaw Crusher Machine for Efficient Primary Crushing
 The Prime Jaw Crusher Machine is designed for efficient primary crushing of hard, abrasive, and large-sized materials. With a robust construction and reliable crushing mechanism, it is suitable for demanding applications in mining, quarrying, construction, aggregate production, and material processing.
 
 The crusher is designed to handle challenging feed materials while maintaining consistent crushing performance. Its heavy-duty design makes it a dependable solution for industries that require continuous crushing and efficient material reduction.

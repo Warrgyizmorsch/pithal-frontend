@@ -114,7 +114,7 @@ export function ResourcesSection({
             <span style={{ display: "inline-block", height: "8px", width: "3.5px", backgroundColor: "#fa5902", transform: "skewX(-30deg)" }} />
           </div> */}
 
-          <h2 className="headline text-[clamp(1.8rem,8vw,2.2rem)] sm:text-[clamp(2.2rem,4.6vw,3.25rem)] text-primary">
+          <h2 className="headline text-primary">
             {section.title} <span style={{ color: "#fa5902" }}>{section.highlight}</span>
           </h2>
 

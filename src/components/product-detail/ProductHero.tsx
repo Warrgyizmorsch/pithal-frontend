@@ -84,7 +84,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
             breadcrumbs={data.breadcrumb}
           />
 
-          <h1 className="headline text-[clamp(2rem,6.2vw,4.8rem)] leading-[0.95] text-white">
+          <h1 className="headline leading-[0.95] text-white">
             {data.title} <span className="text-secondary">{data.highlightedTitle}</span>
           </h1>
           <p className="mt-2 text-[clamp(1.1rem,1.8vw,1.4rem)] font-black uppercase leading-tight tracking-[0.12em] text-white">

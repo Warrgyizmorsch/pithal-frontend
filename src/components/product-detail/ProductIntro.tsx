@@ -184,7 +184,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
             <div className="w-full">
               <OverviewEyebrow>{data.eyebrow}</OverviewEyebrow>
             </div>
-            <h2 className="headline mt-5 text-[clamp(2.4rem,4.35vw,4rem)] leading-[0.96] text-primary text-center lg:text-left">
+            <h2 className="headline mt-5 leading-[0.96] text-primary text-center lg:text-left">
               {data.title}
               <span className="block text-secondary">{data.highlight}</span>
             </h2>

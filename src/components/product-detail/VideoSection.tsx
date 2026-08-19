@@ -63,7 +63,6 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
             <h2
               className="headline text-primary"
               style={{
-                fontSize: "clamp(2rem, 5.5vw, 3.8rem)",
                 lineHeight: "0.95",
                 fontWeight: 900,
                 letterSpacing: "0.035em",

@@ -25,12 +25,12 @@ export function SectionHeader({
       align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-xl",
       className,
     )}>
-      {eyebrow && (
+      {/* {eyebrow && (
         <p className="accent-bars mb-4 text-lg font-bold uppercase tracking-[0.08em] text-secondary sm:text-xl sm:tracking-[0.1em]">
           {eyebrow}
         </p>
-      )}
-      <h2 className="headline text-[clamp(1.8rem,9vw,2.2rem)] text-primary sm:text-[clamp(2rem,4.6vw,3.25rem)]">
+      )} */}
+      <h2 className="headline text-primary">
         {title}
         {highlight && (
           <span className={cn("text-secondary", highlightBlock ? "block" : "inline")}>{highlightBlock ? highlight : ` ${highlight}`}</span>

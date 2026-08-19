@@ -130,7 +130,6 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
               <h2
                 className="headline text-center text-primary sm:text-left"
                 style={{
-                  fontSize: "clamp(2rem, 5.5vw, 3.8rem)",
                   lineHeight: "0.95",
                   fontWeight: 900,
                   letterSpacing: "0.035em",

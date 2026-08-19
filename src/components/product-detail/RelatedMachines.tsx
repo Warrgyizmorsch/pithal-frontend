@@ -221,7 +221,7 @@ export function RelatedMachines({
             <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
           </div> */}
 
-          <h2 className="headline text-[clamp(2rem,5vw,3.25rem)] font-black uppercase leading-[1.08] tracking-[0.03em] text-primary">
+          <h2 className="headline font-black uppercase leading-[1.08] tracking-[0.03em] text-primary">
             {section.title} <span className="text-secondary">{section.highlight}</span>
           </h2>
           {section.subtitle && (

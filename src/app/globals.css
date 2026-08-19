@@ -58,6 +58,17 @@
   box-sizing: border-box;
 }
 
+@layer base {
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6.25rem;
