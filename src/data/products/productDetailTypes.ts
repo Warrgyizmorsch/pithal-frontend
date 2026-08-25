@@ -127,7 +127,7 @@ export type SpecificationRow = {
 
 export type SpecificationColumn = {
   label: string;
-  key: keyof SpecificationRow;
+  key: string;
   emphasis?: "primary" | "secondary";
 };
 

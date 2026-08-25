@@ -60,15 +60,15 @@ function BrandMark() {
   return (
     <Link
       aria-label="Pithal Machines Ltd. home"
-      className="relative block h-[5.7rem] w-full max-w-[20.5rem] overflow-hidden"
+      className="block w-full max-w-[210px] sm:max-w-[230px]"
       href="/"
     >
       <Image
         alt="Pithal Machines Ltd. - Solutions That Drive Growth"
-        className="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2 scale-[1.08]"
-        height={140}
+        className="h-auto w-full"
+        height={220}
         src="/images/brand/pithal-logo.png"
-        width={354}
+        width={947}
       />
     </Link>
   );

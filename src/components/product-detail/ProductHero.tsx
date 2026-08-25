@@ -79,7 +79,6 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
         <div className="max-w-[650px] flex flex-col items-center lg:items-start text-center lg:text-left">
           <HeroNavigation
             current={currentLabel}
-            eyebrow={data.eyebrow}
             light
             breadcrumbs={data.breadcrumb}
           />

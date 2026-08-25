@@ -103,19 +103,6 @@ export function DealerForm() {
               className="absolute inset-0 hidden bg-[linear-gradient(90deg,transparent_55%,#fff_98%)] lg:block"
             />
             <div className="relative px-5 pb-8 pt-7 min-[380px]:px-7 sm:px-10 sm:pt-10 lg:px-10 lg:pt-10">
-              <p className="mb-4 flex items-center gap-2.5 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-primary min-[380px]:gap-3 min-[380px]:tracking-[0.2em] sm:text-[0.76rem]">
-                <span aria-hidden className="flex gap-1">
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
-                </span>
-                Partner with Excellence
-                <span aria-hidden className="hidden gap-1 sm:flex">
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
-                </span>
-              </p>
               <h2 className="headline text-[clamp(2.05rem,11.6vw,2.85rem)] text-primary sm:text-[clamp(2.55rem,3.5vw,3.7rem)]">
                 Become an
                 <span className="mt-1 block text-secondary">

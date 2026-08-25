@@ -24,10 +24,10 @@ function Logo() {
     <Image
       alt="Pithal Machines Ltd."
       className="h-auto w-[160px] min-[380px]:w-[180px] sm:w-[210px] xl:w-[230px] 2xl:w-[240px]"
-      height={140}
+      height={220}
       priority
       src="/images/brand/pithal-logo.png"
-      width={394}
+      width={947}
     />
   );
 }
@@ -91,10 +91,9 @@ export function Header() {
       <div className="flex h-[4.25rem] items-center justify-between gap-4 border-b border-border/70 sm:h-[4.75rem] sm:gap-6 xl:h-[5.25rem] px-5 sm:px-8 lg:px-10">
         <Link
           aria-label="Pithal Machines home"
-          className="block shrink-0"
+          className="flex items-center shrink-0"
           href="/"
         >
-          {" "}
           <Logo />
         </Link>
         <nav

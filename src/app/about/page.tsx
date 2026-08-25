@@ -100,24 +100,7 @@ function Icon({
   );
 }
 
-function Eyebrow({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <p
-      className={cn(
-        "accent-bars text-lg font-black uppercase tracking-[0.24em] text-secondary",
-        className,
-      )}
-    >
-      {children}
-    </p>
-  );
-}
+
 
 function HeroSection() {
   const { hero, stats } = aboutPageData;
@@ -151,7 +134,7 @@ function HeroSection() {
       <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:justify-between lg:py-8">
         <div className="z-20">
           <div className="max-w-[650px] flex flex-col items-center lg:items-start text-center lg:text-left w-full mx-auto lg:mx-0">
-            <HeroNavigation current="About Us" eyebrow={hero.eyebrow} />
+            <HeroNavigation current="About Us" />
             <h1 className="headline mb-4 text-[clamp(2.2rem,5.6vw,4.3rem)] leading-[1.05] text-primary text-center lg:text-left sm:mb-5">
               {hero.title}
               <span className="block text-secondary">{hero.highlight}</span>
@@ -263,32 +246,6 @@ function WhoWeAreSection() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           {/* ── Left Column ── */}
           <div>
-            {/* Eyebrow: /// WHO WE ARE /// ——————— */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="flex items-center gap-[4px]">
-                {[0, 1, 2].map((i) => (
-                  <span
-                    key={i}
-                    aria-hidden
-                    className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-secondary"
-                  />
-                ))}
-              </span>
-              <p className="text-lg font-black uppercase tracking-[0.22em] text-secondary whitespace-nowrap">
-                {experience.eyebrow}
-              </p>
-              <span className="flex items-center gap-[4px]">
-                {[0, 1, 2].map((i) => (
-                  <span
-                    key={i}
-                    aria-hidden
-                    className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-secondary"
-                  />
-                ))}
-              </span>
-              <span aria-hidden className="flex-1 h-[1.5px] bg-secondary/20" />
-            </div>
-
             {/* Headline */}
             <h2 className="headline text-[clamp(2rem,4.6vw,3.35rem)] leading-[0.94] text-primary">
               {experience.title}
@@ -416,31 +373,7 @@ function VisionMissionSection() {
 
       <Container className="relative z-10">
         {/* ── Header ── */}
-        <div className="mx-auto max-w-2xl text-center mb-12">
-          {/* Eyebrow: /// OUR DIRECTION /// */}
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
-                />
-              ))}
-            </span>
-            <p className="text-lg font-black uppercase tracking-[0.22em] text-[#fa5902]">
-              {visionMission.eyebrow}
-            </p>
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
-                />
-              ))}
-            </span>
-          </div>
+        <div className="mx-auto max-w-2xl text-center mb-10">
           <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] text-[#031b40] font-black tracking-tight uppercase">
             {visionMission.title}
           </h2>
@@ -609,38 +542,12 @@ function WhyChooseSection() {
 
       <Container className="relative">
         {/* ── Header ── */}
-        <div className="mx-auto max-w-3xl text-center mb-12">
-          {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
-                />
-              ))}
-            </span>
-            <p className="text-lg font-black uppercase tracking-[0.22em] text-[#fa5902]">
-              {whyChoose.eyebrow}
-            </p>
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
-                />
-              ))}
-            </span>
-          </div>
-
-          {/* Headline */}
+        <div className="mx-auto max-w-3xl text-center mb-10">
           <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] font-black uppercase tracking-tight text-[#031b40]">
             {whyChoose.title}{" "}
             <span className="text-[#fa5902]">{whyChoose.highlight}</span>
           </h2>
-          <p className="mt-5 max-w-2xl mx-auto text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/75 font-medium">
+          <p className="mt-4 max-w-2xl mx-auto text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/75 font-medium">
             {whyChoose.subtitle}
           </p>
         </div>
@@ -786,32 +693,7 @@ function ManufacturingSection() {
 
       <Container className="relative">
         {/* ── Header ── */}
-        <div className="mx-auto max-w-3xl text-center mb-12">
-          {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
-                />
-              ))}
-            </span>
-            <p className="text-lg font-black uppercase tracking-[0.22em] text-[#fa5902]">
-              {manufacturing.eyebrow}
-            </p>
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[7px] w-[3.5px] skew-x-[-28deg] bg-[#fa5902]"
-                />
-              ))}
-            </span>
-          </div>
-
+        <div className="mx-auto max-w-3xl text-center mb-10">
           <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] font-black uppercase tracking-tight text-[#031b40]">
             {manufacturing.title}{" "}
             <span className="text-[#fa5902]">{manufacturing.highlight}</span>
@@ -820,7 +702,7 @@ function ManufacturingSection() {
             aria-hidden
             className="mx-auto mt-4 block h-[3px] w-12 bg-[#fa5902]"
           />
-          <p className="mx-auto mt-5 max-w-3xl text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/75 font-medium">
+          <p className="mx-auto mt-4 max-w-3xl text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/75 font-medium">
             {manufacturing.subtitle}
           </p>
         </div>
@@ -930,32 +812,7 @@ function GlobalSection() {
 
       <Container className="relative">
         {/* ── Header ── */}
-        <div className="mx-auto max-w-3xl text-center">
-          {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-3 mb-5">
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2, 3].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[8px] w-[4px] skew-x-[-28deg] bg-secondary"
-                />
-              ))}
-            </span>
-            <p className="text-lg font-black uppercase tracking-[0.22em] text-secondary">
-              {globalData.eyebrow}
-            </p>
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2, 3].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[8px] w-[4px] skew-x-[-28deg] bg-secondary"
-                />
-              ))}
-            </span>
-          </div>
-
+        <div className="mx-auto max-w-3xl text-center mb-8">
           <h2 className="headline text-[clamp(2.15rem,5.2vw,3.45rem)] leading-[0.94] text-primary">
             {globalData.title}{" "}
             <span className="text-secondary">{globalData.highlight}</span>
@@ -964,7 +821,7 @@ function GlobalSection() {
             aria-hidden
             className="mx-auto mt-4 block h-[3px] w-14 bg-secondary"
           />
-          <p className="mt-5 text-sm leading-7 text-text-muted sm:text-[15px] whitespace-pre-line">
+          <p className="mt-4 text-sm leading-7 text-text-muted sm:text-[15px] whitespace-pre-line">
             {globalData.subtitle}
           </p>
         </div>
@@ -1070,32 +927,7 @@ function IndustriesSection() {
 
       <Container className="relative">
         {/* ── Header ── */}
-        <div className="mx-auto max-w-3xl text-center">
-          {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-3 mb-5">
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2, 3].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[8px] w-[4px] skew-x-[-28deg] bg-secondary"
-                />
-              ))}
-            </span>
-            <p className="text-lg font-black uppercase tracking-[0.22em] text-secondary">
-              {industries.eyebrow}
-            </p>
-            <span className="flex items-center gap-[4px]">
-              {[0, 1, 2, 3].map((i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="inline-block h-[8px] w-[4px] skew-x-[-28deg] bg-secondary"
-                />
-              ))}
-            </span>
-          </div>
-
+        <div className="mx-auto max-w-3xl text-center mb-8">
           <h2 className="headline text-[clamp(2.15rem,5.2vw,3.45rem)] leading-[0.94] text-primary">
             {industries.title}{" "}
             <span className="text-secondary">{industries.highlight}</span>
@@ -1104,7 +936,7 @@ function IndustriesSection() {
             aria-hidden
             className="mx-auto mt-4 block h-[3px] w-14 bg-secondary"
           />
-          <p className="mt-5 text-sm leading-7 text-text-muted sm:text-[15px] whitespace-pre-line">
+          <p className="mt-4 text-sm leading-7 text-text-muted sm:text-[15px] whitespace-pre-line">
             {industries.subtitle}
           </p>
         </div>
@@ -1213,21 +1045,7 @@ function ValuesSection() {
         <div className="relative grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           {/* Left Column */}
           <div className="flex flex-col">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="flex items-center gap-[4px] shrink-0">
-                {[0, 1, 2].map((i) => (
-                  <span
-                    key={i}
-                    aria-hidden
-                    className="inline-block h-[12px] w-[4px] skew-x-[-22deg] bg-secondary"
-                  />
-                ))}
-              </span>
-              <p className="text-sm font-black uppercase tracking-[0.22em] text-secondary whitespace-nowrap">
-                {values.eyebrow}
-              </p>
-            </div>
-            <h2 className="headline mt-4 text-[clamp(2rem,4.6vw,3rem)] font-black leading-[1.02] text-primary">
+            <h2 className="headline text-[clamp(2rem,4.6vw,3rem)] font-black leading-[1.02] text-primary">
               BUILT ON VALUES.
               <br />
               <span className="text-secondary">DRIVEN BY PURPOSE.</span>
@@ -1508,27 +1326,6 @@ function ImpactSection() {
 
         <Container className="relative z-10">
           <div className="mx-auto max-w-[1040px] text-center">
-            <div className="mb-4 flex items-center justify-center gap-4 text-secondary">
-              <span className="flex items-center gap-[5px]" aria-hidden>
-                {[0, 1, 2].map((index) => (
-                  <span
-                    className="block h-[9px] w-[6px] skew-x-[-30deg] bg-current"
-                    key={index}
-                  />
-                ))}
-              </span>
-              <p className="text-sm font-black uppercase tracking-[0.06em] sm:text-lg">
-                {impact.eyebrow}
-              </p>
-              <span className="flex items-center gap-[5px]" aria-hidden>
-                {[0, 1, 2].map((index) => (
-                  <span
-                    className="block h-[9px] w-[6px] skew-x-[-30deg] bg-current"
-                    key={index}
-                  />
-                ))}
-              </span>
-            </div>
             <h2 className="headline text-[clamp(2.45rem,6.5vw,4.25rem)] leading-[0.94] text-primary">
               {impact.title}{" "}
               <span className="text-secondary">{impact.highlight}</span>
@@ -1885,27 +1682,6 @@ function CertificationsSection() {
 
         <Container className="relative z-10">
           <div className="mx-auto max-w-[860px] text-center">
-            <div className="mb-5 flex items-center justify-center gap-4 text-secondary">
-              <span className="flex items-center gap-[5px]" aria-hidden>
-                {[0, 1, 2].map((index) => (
-                  <span
-                    className="block h-[8px] w-[6px] skew-x-[-30deg] bg-current"
-                    key={index}
-                  />
-                ))}
-              </span>
-              <p className="text-[12px] font-black uppercase tracking-[0.05em] sm:text-base">
-                Our Standards
-              </p>
-              <span className="flex items-center gap-[5px]" aria-hidden>
-                {[0, 1, 2].map((index) => (
-                  <span
-                    className="block h-[8px] w-[6px] skew-x-[-30deg] bg-current"
-                    key={index}
-                  />
-                ))}
-              </span>
-            </div>
             <h2 className="headline text-[clamp(2.45rem,6.3vw,4rem)] leading-[0.94] text-primary">
               Certified. <span className="text-secondary">Committed.</span>
             </h2>

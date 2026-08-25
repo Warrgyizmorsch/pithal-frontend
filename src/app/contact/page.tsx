@@ -675,33 +675,12 @@ export default function ContactUsPage() {
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-10 lg:mb-12">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
-                <span className="text-xs md:text-sm font-black uppercase tracking-[0.24em] text-secondary">
-                  GET IN TOUCH
-                </span>
-                <span className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="h-3 w-1.5 skew-x-[-28deg] bg-secondary"
-                    />
-                  ))}
-                </span>
-              </div>
               <h2 className="headline text-center text-[clamp(2rem,4.2vw,3rem)] font-black leading-[1.1] text-primary">
                 CONTACT INFORMATION
               </h2>
               <span
                 aria-hidden
-                className="mx-auto mt-5 block h-[2.5px] w-12 bg-secondary"
+                className="mx-auto mt-4 block h-[2.5px] w-12 bg-secondary"
               />
               <p className="mx-auto mt-5 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
                 We&apos;re here to help you with tailored industrial solutions.

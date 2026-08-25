@@ -77,15 +77,6 @@ export default function WhyChoosePithal() {
         {/* Left Side: Content Column */}
         <div className="py-9 px-0 lg:col-span-6 lg:py-[clamp(2.3rem,3vw,3.1rem)] z-10">
           <div className="max-w-[42rem]">
-            <p className="mb-4 flex items-center gap-3  text-lg font-bold uppercase tracking-[0.12em] text-secondary">
-              <span aria-hidden className="flex gap-1 ">
-                <span className="h-[6px] w-4 -skew-x-[32deg] bg-secondary" />
-                <span className="h-[6px] w-4 -skew-x-[32deg] bg-secondary" />
-                <span className="h-[6px] w-4 -skew-x-[32deg] bg-secondary" />
-              </span>
-              Why Choose Pithal
-            </p>
-
             <h2 className="headline text-[clamp(1.9rem,9vw,2.2rem)] text-primary sm:text-[clamp(2.05rem,3.35vw,3.2rem)] pb-4">
               MACHINES FOR CRUSHING
               <span className="mt-1 block text-secondary">& SCREENING?</span>

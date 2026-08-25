@@ -31,19 +31,6 @@ const calloutDotPositions: Record<IntroCalloutPosition, string> = {
 };
 
 const introButtonClass = "min-h-12 w-full sm:w-auto sm:min-w-[190px] justify-center sm:justify-between gap-3 rounded-md px-5 text-[11px] font-black uppercase tracking-wider";
-const overviewEyebrowClass = "flex items-center justify-center lg:justify-start gap-2.5 text-lg font-bold uppercase tracking-[0.08em] text-secondary";
-
-function OverviewEyebrow({ children }: { children: React.ReactNode }) {
-  if (!children) return null;
-
-  return (
-    <p className={overviewEyebrowClass}>
-      <span aria-hidden>{"///"}</span>
-      <span>{children}</span>
-      <span aria-hidden>{"///"}</span>
-    </p>
-  );
-}
 
 interface LinePath {
   label: string;
@@ -181,10 +168,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
       <Container className="max-w-[1480px]">
         <div className="grid gap-8 lg:grid-cols-[0.78fr_1fr] lg:items-center">
           <div className="relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <div className="w-full">
-              <OverviewEyebrow>{data.eyebrow}</OverviewEyebrow>
-            </div>
-            <h2 className="headline mt-5 leading-[0.96] text-primary text-center lg:text-left">
+            <h2 className="headline leading-[0.96] text-primary text-center lg:text-left">
               {data.title}
               <span className="block text-secondary">{data.highlight}</span>
             </h2>

@@ -73,22 +73,6 @@ export function ProductStats({
 
         <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
           <header className="relative mx-auto mb-6 max-w-4xl text-center">
-            <div className="mb-4 flex items-center justify-center gap-3">
-              {/* <span className="hidden h-px flex-1 bg-secondary/75 md:block" />
-              {section.eyebrow && (
-                <span className="flex items-center gap-4 text-lg font-bold uppercase tracking-[0.08em] text-primary sm:text-xl sm:tracking-[0.1em]">
-                  <span className="text-secondary">{"///"}</span>
-                  <span>
-                    <span className="text-secondary">
-                      {section.eyebrow.split(" ")[0]}
-                    </span>{" "}
-                    {section.eyebrow.split(" ").slice(1).join(" ")}
-                  </span>
-                  <span className="text-secondary">{"///"}</span>
-                </span>
-              )}
-              <span className="hidden h-px flex-1 bg-secondary/75 md:block" /> */}
-            </div>
             <h2 className="headline text-primary">
               {section.title}{" "}
               <span className="text-secondary">{section.highlight}</span>

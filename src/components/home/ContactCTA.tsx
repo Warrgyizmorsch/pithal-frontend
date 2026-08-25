@@ -92,19 +92,6 @@ export function ContactCTA() {
         <div className="overflow-hidden rounded-[1.15rem] border border-primary/80 lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:max-h-[900px]">
           <div className="flex flex-col bg-white overflow-hidden lg:h-full lg:min-h-0">
             <div className="relative z-10 px-5 pb-3 pt-7 min-[380px]:px-7 sm:px-10 sm:pt-10 sm:pb-4 lg:px-10 lg:pt-10">
-              <p className="mb-4 flex items-center gap-2.5 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-primary min-[380px]:gap-3 min-[380px]:tracking-[0.2em] sm:text-[0.76rem]">
-                <span aria-hidden className="flex gap-1">
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
-                </span>
-                Get the Right Solution
-                <span aria-hidden className="hidden gap-1 sm:flex">
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
-                  <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
-                </span>
-              </p>
               <h2 className="headline text-[clamp(1.5rem,8vw,2.2rem)] text-primary sm:text-[clamp(1.8rem,3vw,2.6rem)]">
                 Looking for the
                 <span className="mt-1 block text-secondary">

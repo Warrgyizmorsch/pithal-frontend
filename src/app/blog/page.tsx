@@ -48,7 +48,6 @@ import {
   getTrendingPosts,
 } from "@/data/blogData";
 
-// ─── ICONS ───────────────────────────────────────────────────────────────────
 
 const CalendarIcon = () => (
   <svg viewBox="0 0 16 16" fill="none" className="w-5 h-5 inline-block mr-1">
@@ -212,31 +211,31 @@ const heroSectionStats: {
   desc: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }[] = [
-  {
-    value: "Trusted",
-    label: "Quality Commitment",
-    desc: "Over the Expectation",
-    icon: Globe,
-  },
-  {
-    value: "Custom",
-    label: "SOlutions",
-    desc: "Perfect Solutions for Everyone",
-    icon: Building2,
-  },
-  {
-    value: "24/7",
-    label: "SUPPORT",
-    desc: "Round-the-clock support across time zones",
-    icon: Clock,
-  },
-  {
-    value: "All India",
-    label: "ENGINEERING ASSISTANCE",
-    desc: "Expert engineering support wherever you are",
-    icon: Settings,
-  },
-];
+    {
+      value: "Trusted",
+      label: "Quality Commitment",
+      desc: "Over the Expectation",
+      icon: Globe,
+    },
+    {
+      value: "Custom",
+      label: "SOlutions",
+      desc: "Perfect Solutions for Everyone",
+      icon: Building2,
+    },
+    {
+      value: "24/7",
+      label: "SUPPORT",
+      desc: "Round-the-clock support across time zones",
+      icon: Clock,
+    },
+    {
+      value: "All India",
+      label: "ENGINEERING ASSISTANCE",
+      desc: "Expert engineering support wherever you are",
+      icon: Settings,
+    },
+  ];
 
 const heroFloatingCards = [
   {
@@ -545,13 +544,13 @@ const resourceGuides = [
       "Process Optimization",
       "Efficiency Improvement",
       "Cost Reduction Strategies",
-      "KPI Monitoring",
     ],
     icon: Globe,
     img: "/blogpageimg/operationaloptimization.jpg",
   },
 ];
 
+// ─── ICONS ───────────────────────────────────────────────────────────────────
 // ─── BLUEPRINT ICON SVGS ──────────────────────────────────────────────────────
 const CrushingSystemsIcon = () => (
   <svg
@@ -1520,7 +1519,7 @@ export default function BlogPage() {
         ══════════════════════════════════════════ */}
         <section id="articles" className="py-16 lg:py-24 bg-[#f8f9fc]">
           <Container>
-            
+
             {/* Header Block */}
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-12 lg:mb-14">
               <div>
@@ -1535,7 +1534,7 @@ export default function BlogPage() {
                   Stay updated with the latest insights, trends and expert perspectives.
                 </p>
               </div>
-              
+
               <a
                 href="#"
                 className="hidden lg:flex items-center gap-2 text-[14px] font-bold text-primary hover:text-secondary transition-colors mt-2"
@@ -1565,7 +1564,7 @@ export default function BlogPage() {
 
                     {/* Content Area */}
                     <div className="p-6 md:p-8 flex flex-col flex-grow">
-                      
+
                       {/* Tag */}
                       <div className="flex items-center gap-3 mb-4">
                         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 text-secondary border border-orange-100/50">
@@ -2617,7 +2616,7 @@ export default function BlogPage() {
         <section className="py-5 bg-white">
           <Container>
             <div className="rounded-xl border border-border bg-[#fafafa]/50 p-8 sm:p-12 shadow-sm relative overflow-hidden">
-              
+
 
               <div className="relative z-10">
                 <div className="flex flex-col lg:grid lg:grid-cols-12 lg:items-center justify-between gap-8">
@@ -2769,11 +2768,10 @@ export default function BlogPage() {
           POPUP STRIP — LET'S ENGINEER
       ══════════════════════════════════════════ */}
         <section
-          className={`fixed inset-x-0 bottom-0 z-50 transition-all duration-500 ease-out ${
-            showPopup
-              ? "translate-y-0 opacity-100"
-              : "translate-y-full opacity-0 pointer-events-none"
-          }`}
+          className={`fixed inset-x-0 bottom-0 z-50 transition-all duration-500 ease-out ${showPopup
+            ? "translate-y-0 opacity-100"
+            : "translate-y-full opacity-0 pointer-events-none"
+            }`}
           aria-hidden={!showPopup}
         >
           <div className="relative border-t border-border bg-white/95 p-5 pr-12 shadow-[0_-8px_30px_rgba(15,23,42,0.12)] backdrop-blur-md sm:p-6 sm:px-8 sm:pr-16 flex flex-col lg:flex-row lg:items-center justify-between gap-6 w-full">
@@ -2881,13 +2879,13 @@ interface MobileCarouselProps {
 function MobileCarousel({ children, className }: MobileCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
-  
+
   const childrenArray = React.Children.toArray(children);
 
   // Use IntersectionObserver to update currentIndex when user swipes manually
   useEffect(() => {
     if (!scrollRef.current) return;
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -2921,7 +2919,7 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
         const containerWidth = container.offsetWidth;
         // Calculate position to center the child
         const scrollPosition = childLeft - (containerWidth / 2) + (childWidth / 2);
-        
+
         container.scrollTo({
           left: scrollPosition,
           behavior: "smooth",
@@ -2943,7 +2941,7 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
     const interval = setInterval(() => {
       handleNext();
     }, 3500); // 3.5 seconds
-    
+
     // Interval restarts when currentIndex changes (manual swipe or auto-slide)
     return () => clearInterval(interval);
   }, [handleNext]);
@@ -2952,14 +2950,14 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
     <>
       {/* Mobile Slider View */}
       <div className="block md:hidden w-full relative group pb-1">
-        <div 
+        <div
           ref={scrollRef}
           className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full no-scrollbar pb-1 items-stretch"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {childrenArray.map((child, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               data-index={idx}
               className="w-full shrink-0 snap-center px-1 flex flex-col"
             >
@@ -2969,10 +2967,10 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
             </div>
           ))}
         </div>
-        
+
         {/* Arrows and Dots */}
         <div className="flex justify-center items-center gap-5 mt-2">
-          <button 
+          <button
             onClick={handlePrev}
             className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
           >
@@ -2980,8 +2978,8 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
           </button>
           <div className="flex gap-1.5">
             {childrenArray.map((_, idx) => (
-              <span 
-                key={idx} 
+              <span
+                key={idx}
                 className={cn(
                   "h-1.5 rounded-full transition-all duration-300",
                   idx === currentIndex ? "bg-secondary w-4" : "bg-slate-300 w-1.5"
@@ -2989,7 +2987,7 @@ function MobileCarousel({ children, className }: MobileCarouselProps) {
               />
             ))}
           </div>
-          <button 
+          <button
             onClick={handleNext}
             className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-primary hover:bg-secondary hover:text-white transition-colors"
           >

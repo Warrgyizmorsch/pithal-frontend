@@ -2844,6 +2844,21 @@ export default function BackendAdminPortal() {
                   </div>
                 </div>
 
+                {/* Blog Description */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+                  <label className="text-xs font-bold text-slate-400 pt-2">Blog Description</label>
+                  <div className="md:col-span-2 space-y-1">
+                    <textarea
+                      rows={3}
+                      placeholder="Enter Short Blog Description / Excerpt"
+                      value={blogExcerpt}
+                      onChange={(e) => setBlogExcerpt(e.target.value)}
+                      className={`w-full border rounded-lg px-3 py-2 text-xs ${isDark ? "bg-slate-950 border-slate-800 text-white" : "bg-slate-50 border-slate-300 text-slate-900"}`}
+                    />
+                    <span className="text-[10px] text-slate-400 block">Short description / excerpt displayed on blog cards and overview sections</span>
+                  </div>
+                </div>
+
                 {/* Author Selection */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                   <label className="text-xs font-bold text-slate-400">Author</label>

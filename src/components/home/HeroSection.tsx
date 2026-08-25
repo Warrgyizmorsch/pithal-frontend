@@ -32,7 +32,6 @@ export function HeroSection() {
 
       <div className="relative flex flex-1 flex-col gap-3 px-5 sm:px-8 lg:px-10 pt-7 pb-6 sm:pt-10 sm:pb-8 lg:pt-[2.25rem] lg:pb-8">
         <div className="relative z-20 max-w-[32rem] xl:max-w-[35rem]">
-          <HeroNavigation eyebrow="Crushing Strength, Delivering Results." />
           <h1 className="headline text-[clamp(2.45rem,11vw,3.05rem)] leading-[0.96] text-primary italic sm:text-[clamp(3.2rem,5vw,4.45rem)] lg:text-[clamp(3.65rem,4.25vw,4.65rem)]">
             Crusher Machine
             <br />

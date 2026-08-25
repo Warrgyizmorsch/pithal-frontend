@@ -41,46 +41,57 @@ function cleanBlogContentHtml(html: string, title?: string): string {
   return cleaned;
 }
 
+import { connectDB } from "@/lib/db/mongodb";
+import BlogModel from "@/lib/models/Blog";
+
+async function getBlogPost(slug: string) {
+  try {
+    const conn = await connectDB();
+    if (conn) {
+      const b: any = await BlogModel.findOne({ slug }).lean();
+      if (b) {
+        return {
+          slug: b.slug,
+          tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
+          title: b.title,
+          desc: b.excerpt || b.title,
+          date: b.publishedAt || "Today",
+          read: b.readTime || "5 min read",
+          views: b.views || "1.2K",
+          img: b.image || "/blogpageimg/crusherguide.jpg",
+          content: b.content,
+          faqs: b.faqs || [],
+        };
+      }
+    }
+  } catch (err) {
+    console.warn("Direct DB blog fetch error, using fallback:", err);
+  }
+  return getPostBySlug(slug) || null;
+}
+
+async function getAllBackendBlogs() {
+  try {
+    const conn = await connectDB();
+    if (conn) {
+      const blogs: any = await BlogModel.find({ status: { $ne: "Draft" } }).sort({ createdAt: -1 }).lean();
+      if (blogs && blogs.length > 0) {
+        return blogs;
+      }
+    }
+  } catch (err) {
+    console.warn("Direct DB all blogs fetch error:", err);
+  }
+  return [];
+}
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  let post: any = null;
-
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
-
-  try {
-    const res = await fetch(`${baseUrl}/api/blogs/${slug}`, {
-      cache: "no-store",
-      signal: AbortSignal.timeout(1500),
-    }).catch(() => null);
-
-    if (res && res.ok) {
-      const json = await res.json();
-      if (json.success && json.data) {
-        const apiBlog = json.data;
-        post = {
-          slug: apiBlog.slug,
-          tag: apiBlog.tag || apiBlog.category?.toUpperCase() || "CRUSHING SOLUTIONS",
-          title: apiBlog.title,
-          desc: apiBlog.excerpt || apiBlog.title,
-          date: apiBlog.publishedAt || "Today",
-          read: apiBlog.readTime || "5 min read",
-          img: apiBlog.image || "/blogpageimg/crusherguide.jpg",
-          content: apiBlog.content,
-          faqs: apiBlog.faqs || [],
-        };
-      }
-    }
-  } catch {
-    // ignore
-  }
-
-  if (!post) {
-    post = getPostBySlug(slug);
-  }
+  const post = await getBlogPost(slug);
 
   if (!post) {
     return {
@@ -111,58 +122,10 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  let post: any = null;
-  let allBackendBlogs: any[] = [];
-
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
-
-  // Fetch post details and all blogs in parallel for instant page load
-  try {
-    const [postRes, allBlogsRes] = await Promise.all([
-      fetch(`${baseUrl}/api/blogs/${slug}`, {
-        cache: "no-store",
-        signal: AbortSignal.timeout(1500),
-      }).catch(() => null),
-      fetch(`${baseUrl}/api/blogs`, {
-        cache: "no-store",
-        signal: AbortSignal.timeout(1500),
-      }).catch(() => null),
-    ]);
-
-    if (postRes && postRes.ok) {
-      const json = await postRes.json();
-      if (json.success && json.data) {
-        const b = json.data;
-        post = {
-          slug: b.slug,
-          tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
-          title: b.title,
-          desc: b.excerpt || b.title,
-          date: b.publishedAt || "Today",
-          read: b.readTime || "5 min read",
-          views: b.views || "1.2K",
-          img: b.image || "/blogpageimg/crusherguide.jpg",
-          content: b.content,
-          faqs: b.faqs || [],
-        };
-      }
-    }
-
-    if (allBlogsRes && allBlogsRes.ok) {
-      const jsonAll = await allBlogsRes.json();
-      if (jsonAll.success && Array.isArray(jsonAll.data)) {
-        allBackendBlogs = jsonAll.data.filter(
-          (b: any) => b.status !== "Draft"
-        );
-      }
-    }
-  } catch (e) {
-    console.error("Error fetching dynamic blogs from backend", e);
-  }
-
-  if (!post) {
-    post = getPostBySlug(slug);
-  }
+  const [post, allBackendBlogs] = await Promise.all([
+    getBlogPost(slug),
+    getAllBackendBlogs(),
+  ]);
 
   if (!post) {
     notFound();

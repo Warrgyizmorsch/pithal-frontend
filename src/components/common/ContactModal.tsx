@@ -183,13 +183,6 @@ export function ContactModal() {
           />
           
           <div className="relative z-10">
-            <p className="mb-2.5 flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.15em] text-primary sm:text-[0.7rem]">
-              <span aria-hidden className="flex gap-1">
-                <span className="h-[5px] w-2.5 -skew-x-[30deg] bg-secondary" />
-                <span className="h-[5px] w-2.5 -skew-x-[30deg] bg-primary" />
-              </span>
-              Get the Right Solution
-            </p>
             <h2 className="headline text-[clamp(1.5rem,6vw,2.2rem)] text-primary leading-tight">
               Looking for the
               <span className="mt-0.5 block text-secondary">

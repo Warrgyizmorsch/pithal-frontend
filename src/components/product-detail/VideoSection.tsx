@@ -26,37 +26,6 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
   return (
     <section className={`bg-white ${sectionPadding}`}>
       <Container>
-        {/* Section Header with line and slashes */}
-        {data.eyebrow && (
-          <div className="flex items-center justify-center w-full mb-10">
-            <div className="hidden sm:block flex-1 h-[1.5px] bg-secondary/25" />
-            <div className="flex items-center gap-1.5 px-0 sm:px-6">
-              {/* 3 orange accent bars on left */}
-              <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
-              <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
-              <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg] mr-1" />
-
-              {/* Cogwheel icon */}
-              <span className="inline-flex items-center text-secondary shrink-0">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="3" />
-                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-                </svg>
-              </span>
-
-              <span className="text-base sm:text-lg font-black uppercase text-secondary tracking-widest ml-1 font-heading">
-                {data.eyebrow}
-              </span>
-
-              {/* 3 orange accent bars on right */}
-              <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg] ml-2" />
-              <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
-              <span className="hidden sm:inline-block h-[7px] w-[3.5px] bg-secondary -skew-x-[30deg]" />
-            </div>
-            <div className="hidden sm:block flex-1 h-[1.5px] bg-secondary/25" />
-          </div>
-        )}
-
         <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr]">
           {/* Left Column: Title & Benefits */}
           <div>

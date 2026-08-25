@@ -62,10 +62,10 @@ export function MobileMenu() {
           <Link href="/" onClick={close} className="block shrink-0">
             <Image
               alt="Pithal Machines Ltd."
-              className="h-auto w-[120px]"
-              height={140}
+              className="h-auto w-[140px]"
+              height={220}
               src="/images/brand/pithal-logo.png"
-              width={394}
+              width={947}
             />
           </Link>
           <button

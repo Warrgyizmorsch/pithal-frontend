@@ -32,14 +32,6 @@ export function ProjectsSection() {
       <Container className="relative">
         <div className="mb-8 grid items-end gap-8 lg:grid-cols-[0.86fr_1.32fr]">
           <header>
-            <p className="mb-4 flex items-center gap-3 text-lg font-bold uppercase tracking-[0.1em] text-primary sm:mb-5 sm:text-lg sm:tracking-[0.25em]">
-              <span aria-hidden className="flex gap-1">
-                <span className="h-[6px] w-3 -skew-x-[30deg] bg-secondary" />
-                <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
-                <span className="h-[6px] w-3 -skew-x-[30deg] bg-primary" />
-              </span>
-              Proven Performance
-            </p>
             <h2 className="headline text-[clamp(1.5rem,11vw,2.5rem)] text-primary">
               CRUSHING & SCREENING SOLUTIONS
               <span className="mt-1 block text-secondary">BUILT FOR PERFORMANCE</span>

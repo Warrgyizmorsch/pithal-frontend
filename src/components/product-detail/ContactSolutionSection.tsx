@@ -105,28 +105,6 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
           <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             {/* Left Column: Information, Benefits & Image Banner */}
             <div className="flex min-w-0 flex-col h-full">
-              {/* Section Header with line and slashes */}
-              {data.eyebrow && (
-                <div className="mb-5 flex w-full flex-wrap items-center justify-center gap-1.5 sm:justify-start">
-                  <span className="inline-flex shrink-0 items-center rounded-full border border-secondary/15 bg-secondary/10 p-2 text-secondary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="3" />
-                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-                    </svg>
-                  </span>
-
-                  <span className="ml-1 font-heading text-base font-black uppercase tracking-[0.25em] text-secondary sm:text-lg">
-                    {data.eyebrow}
-                  </span>
-
-                  <span className="ml-2 hidden h-[7px] w-[3.5px] -skew-x-[30deg] bg-secondary sm:inline-block" />
-                  <span className="hidden h-[7px] w-[3.5px] -skew-x-[30deg] bg-secondary sm:inline-block" />
-                  <span className="hidden h-[7px] w-[3.5px] -skew-x-[30deg] bg-secondary sm:inline-block" />
-
-                  <div className="hidden h-[1.5px] flex-1 bg-secondary/25 sm:block" />
-                </div>
-              )}
-
               <h2
                 className="headline text-center text-primary sm:text-left"
                 style={{

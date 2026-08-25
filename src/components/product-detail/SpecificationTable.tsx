@@ -10,16 +10,43 @@ const columnIconMap: Record<string, string> = {
   feedOpening: "feeder",
   maxFeedSize: "layers",
   capacity: "gauge",
+  recommendedCapacity: "gauge",
   motorPower: "zap",
   weight: "weight",
   dimension: "ruler",
   coneType: "cone",
   application: "layout",
+  cssRange: "sliders",
+  trampRelease: "shield",
+  lubrication: "wrench",
+  excavatorSize: "truck",
+  bucketCapacity: "boxes",
+  outputSize: "ruler",
+  oilFlow: "gauge",
+  operatingPressure: "sliders",
+  feederSize: "ruler",
+  noOfMotors: "zap",
+  speed: "gauge",
+  beltWidth: "ruler",
+  conveyorLength: "ruler",
+  beltSpeed: "gauge",
+  maxLumpSize: "layers",
+  idlerSize: "sliders",
+  screenSize: "ruler",
+  decks: "layers",
+  machineType: "settings",
+  crushingPrinciple: "settings",
+  rotorDiameter: "ruler",
+  rotorSpeed: "gauge",
+  cascadeRatio: "sliders",
+  hydraulicOpening: "wrench",
+  production: "gauge",
+  reductionRatio: "trending",
 };
 
 function getCellClass(column: SpecificationColumn) {
   return cn(
-    "px-4 py-3",
+    "px-4 py-3 whitespace-nowrap",
     column.emphasis === "primary" && "font-bold text-primary",
     column.emphasis === "secondary" && "font-bold text-secondary",
     !column.emphasis && "text-text-muted",
@@ -40,11 +67,6 @@ export function SpecificationTable({
         <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
           <div className="border-b border-border px-4 py-5 sm:px-6 lg:px-7">
             <header className="max-w-4xl">
-              {section.eyebrow && (
-                <p className="accent-bars mb-2 text-lg font-bold uppercase tracking-[0.08em] text-secondary sm:text-xl sm:tracking-[0.1em]">
-                  {section.eyebrow}
-                </p>
-              )}
               <h2 className="headline text-primary">
                 {section.title}
                 {section.highlight && <span className="text-secondary"> {section.highlight}</span>}
@@ -58,7 +80,7 @@ export function SpecificationTable({
               <thead className="bg-primary-dark text-white">
                 <tr>
                   {section.columns.map((column) => (
-                    <th className="border-r border-white/15 px-4 py-3.5 text-[10.5px] sm:text-[11.5px] font-bold uppercase tracking-[0.12em] last:border-r-0" key={column.key}>
+                    <th className="border-r border-white/15 px-4 py-3.5 text-[10.5px] sm:text-[11.5px] font-bold uppercase tracking-[0.12em] whitespace-nowrap last:border-r-0" key={column.key}>
                       <div className="flex items-center gap-2">
                         <ProductIcon
                           name={columnIconMap[column.key] ?? "circle"}

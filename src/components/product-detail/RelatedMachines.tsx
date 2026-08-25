@@ -203,24 +203,6 @@ export function RelatedMachines({
     <section className={`bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] ${sectionPadding}`}>
       <Container>
         <div className="mb-10 flex flex-col items-center text-center sm:mb-12">
-          {/* <div className="mb-4 flex items-center justify-center gap-2 sm:gap-3">
-            <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
-            <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
-            <span className="mr-1 hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
-            <span className="inline-flex items-center text-secondary">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-              </svg>
-            </span>
-            <span className="text-base font-black uppercase tracking-[0.2em] text-secondary sm:text-lg">
-              {section.eyebrow}
-            </span>
-            <span className="ml-1 hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
-            <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
-            <span className="hidden h-2 w-1.5 skew-x-[-30deg] bg-secondary sm:inline-block" />
-          </div> */}
-
           <h2 className="headline font-black uppercase leading-[1.08] tracking-[0.03em] text-primary">
             {section.title} <span className="text-secondary">{section.highlight}</span>
           </h2>
