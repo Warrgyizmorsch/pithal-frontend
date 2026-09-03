@@ -72,7 +72,7 @@ export function ProductCategories() {
   }, [activeIndex]);
 
   return (
-    <section className="section-space bg-bg-light" id="products">
+    <section className="section-space !pt-4 sm:!pt-6 lg:!pt-8 bg-bg-light" id="products">
       <Container>
         <SectionHeader
           eyebrow="Our Products"

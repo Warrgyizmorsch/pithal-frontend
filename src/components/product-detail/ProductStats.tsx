@@ -73,9 +73,9 @@ export function ProductStats({
 
         <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
           <header className="relative mx-auto mb-6 max-w-4xl text-center">
-            <h2 className="headline text-primary">
-              {section.title}{" "}
-              <span className="text-secondary">{section.highlight}</span>
+            <h2 className="headline text-primary text-[clamp(1.65rem,5.5vw,1.95rem)] sm:text-[2.5rem] leading-[1.02] sm:leading-tight">
+              <span className="block sm:inline">{section.title}</span>{" "}
+              <span className="block sm:inline text-secondary">{section.highlight}</span>
             </h2>
             <p className="mt-4 text-sm leading-7 text-text-muted sm:text-base">
               <SplitSubtitle text={section.subtitle} />

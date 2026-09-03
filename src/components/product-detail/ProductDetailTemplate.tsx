@@ -9,6 +9,8 @@ import { RelatedMachines } from "@/components/product-detail/RelatedMachines";
 import { ResourcesSection } from "@/components/product-detail/ResourcesSection";
 import { SpecificationTable } from "@/components/product-detail/SpecificationTable";
 import { VideoSection } from "@/components/product-detail/VideoSection";
+import { ProductFAQ } from "@/components/product-detail/ProductFAQ";
+import { ProductLongContent } from "@/components/product-detail/ProductLongContent";
 import type { ProductDetailData } from "@/data/products/productDetailTypes";
 
 export function ProductDetailTemplate({ data }: { data: ProductDetailData }) {
@@ -25,6 +27,8 @@ export function ProductDetailTemplate({ data }: { data: ProductDetailData }) {
       <RelatedMachines section={data.relatedSection} />
       <ContactSolutionSection data={data.contactSection} />
       <ResourcesSection resources={data.resources} section={data.resourcesSection} supportFeatures={data.supportFeatures} />
+      {data.faqSection && <ProductFAQ data={data.faqSection} />}
+      {data.longContent && <ProductLongContent data={data.longContent} />}
     </main>
   );
 }

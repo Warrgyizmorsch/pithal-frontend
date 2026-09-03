@@ -81,7 +81,7 @@ export function FeaturesSection({
           className="!max-w-none lg:[&_h2]:whitespace-nowrap w-full"
         />
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))] xl:gap-8">
+        <div className="mt-5 sm:mt-7 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))] xl:gap-8">
           {features.map((feature, idx) => (
             <div
               key={feature.title}

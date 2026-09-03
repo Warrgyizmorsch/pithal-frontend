@@ -125,7 +125,7 @@ export function CrushingProcessTimeline() {
   }, [activeIndex, mounted]);
 
   return (
-    <section className="section-space bg-white">
+    <section className="section-space !pb-4 sm:!pb-6 bg-white">
       <Container>
         {/* Section Header */}
         <SectionHeader

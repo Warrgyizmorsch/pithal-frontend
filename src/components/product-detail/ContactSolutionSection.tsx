@@ -106,7 +106,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
             {/* Left Column: Information, Benefits & Image Banner */}
             <div className="flex min-w-0 flex-col h-full">
               <h2
-                className="headline text-center text-primary sm:text-left"
+                className="headline text-center text-primary sm:text-left text-[clamp(1.65rem,5.5vw,1.95rem)] sm:text-[2.5rem]"
                 style={{
                   lineHeight: "0.95",
                   fontWeight: 900,
@@ -114,8 +114,8 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   textTransform: "uppercase"
                 }}
               >
-                {data.title}<br />
-                <span style={{ color: "#fa5902" }}>{data.highlight}</span>
+                <span className="block sm:inline">{data.title}</span>{" "}
+                <span className="block sm:inline text-secondary">{data.highlight}</span>
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-7 text-text-muted sm:mx-0 sm:text-left sm:text-base" style={{ lineHeight: "1.7" }}>
                 {data.description}

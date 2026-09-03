@@ -142,7 +142,7 @@ export function ProcessTimeline({
         />
 
         {/* Desktop View (Grid Layout) */}
-        <div className="hidden sm:grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 xl:items-stretch xl:gap-4 mt-12">
+        <div className="hidden sm:grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 xl:items-stretch xl:gap-4 mt-6 sm:mt-8">
           {videoProcessSteps.map((step, index) => {
             const isActive = index === activeIndex;
             return (

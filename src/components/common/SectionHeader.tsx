@@ -21,18 +21,20 @@ export function SectionHeader({
 }) {
   return (
     <header className={cn(
-      "mb-6 sm:mb-8",
+      "mb-5 sm:mb-6",
       align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-xl",
       className,
     )}>
-      <h2 className="headline text-primary">
-        {title}
+      <h2 className="headline text-primary text-[clamp(1.65rem,5.5vw,1.95rem)] sm:text-[2.5rem] leading-[1.02] sm:leading-tight">
+        <span className="block sm:inline">{title}</span>{" "}
         {highlight && (
-          <span className={cn("text-secondary", highlightBlock ? "block" : "inline")}>{highlightBlock ? highlight : ` ${highlight}`}</span>
+          <span className={cn("text-secondary", highlightBlock ? "block" : "block sm:inline")}>
+            {highlight}
+          </span>
         )}
       </h2>
-      {underline && <span aria-hidden className="mx-auto mt-3 block h-[3px] w-14 bg-secondary" />}
-      {subtitle && <p className="mt-4 text-sm leading-7 text-text-muted sm:text-base">{subtitle}</p>}
+      {underline && <span aria-hidden className="mx-auto mt-2.5 block h-[3px] w-14 bg-secondary" />}
+      {subtitle && <p className="mt-3 sm:mt-3.5 text-sm leading-6 sm:leading-7 text-text-muted sm:text-base">{subtitle}</p>}
     </header>
   );
 }

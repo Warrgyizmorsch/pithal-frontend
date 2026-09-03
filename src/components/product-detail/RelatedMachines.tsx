@@ -202,9 +202,10 @@ export function RelatedMachines({
   return (
     <section className={`bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] ${sectionPadding}`}>
       <Container>
-        <div className="mb-10 flex flex-col items-center text-center sm:mb-12">
-          <h2 className="headline font-black uppercase leading-[1.08] tracking-[0.03em] text-primary">
-            {section.title} <span className="text-secondary">{section.highlight}</span>
+        <div className="mb-6 sm:mb-8 flex flex-col items-center text-center">
+          <h2 className="headline font-black uppercase leading-[1.08] tracking-[0.03em] text-primary text-[clamp(1.65rem,5.5vw,1.95rem)] sm:text-[2.5rem]">
+            <span className="block sm:inline">{section.title}</span>{" "}
+            <span className="block sm:inline text-secondary">{section.highlight}</span>
           </h2>
           {section.subtitle && (
             <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-text-muted sm:text-base">

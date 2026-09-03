@@ -1357,7 +1357,10 @@ export default function BlogPage() {
 
             <div className="grid md:grid-cols-2 gap-6 min-h-0 md:min-h-[320px]">
               {/* Large featured card */}
-              <div className="relative rounded-xl overflow-hidden group cursor-pointer min-h-[240px] sm:min-h-[300px] shadow-[0_24px_70px_rgba(3,27,64,0.18)]">
+              <Link
+                href={`/blog/${currentFeatured[0]?.slug}`}
+                className="relative rounded-xl overflow-hidden group cursor-pointer min-h-[240px] sm:min-h-[300px] shadow-[0_24px_70px_rgba(3,27,64,0.18)] block"
+              >
                 <ImgBox
                   src={currentFeatured[0]?.img || "/blogpageimg/crusherguide.jpg"}
                   alt={currentFeatured[0]?.title || "Blog Post"}
@@ -1375,7 +1378,7 @@ export default function BlogPage() {
                   <span className="text-secondary text-xs font-bold uppercase tracking-wider mb-2 block">
                     {currentFeatured[0]?.tag}
                   </span>
-                  <h3 className="text-white text-xl font-extrabold leading-tight mb-2">
+                  <h3 className="text-white text-xl font-extrabold leading-tight mb-2 group-hover:text-secondary transition-colors">
                     {currentFeatured[0]?.title}
                   </h3>
                   <p className="text-gray-300 text-[11px] leading-relaxed mb-4 max-w-md line-clamp-2">
@@ -1392,26 +1395,23 @@ export default function BlogPage() {
                         {currentFeatured[0]?.read}
                       </span>
                     </div>
-                    <Button
-                      variant="primary"
-                      href={`/blog/${currentFeatured[0]?.slug}`}
-                      className="h-8 min-h-0 text-[10px] px-3 py-1.5 flex items-center gap-2"
-                    >
+                    <div className="h-8 min-h-0 text-[10px] px-3 py-1.5 flex items-center gap-2 bg-secondary text-white font-bold rounded-full group-hover:bg-secondary/90 transition-colors">
                       Read More{" "}
                       <div className="w-4.5 h-4.5 bg-white/20 rounded-full flex items-center justify-center">
                         <ArrowRight cls="w-2.5 h-2.5" />
                       </div>
-                    </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Right column — 2 smaller cards */}
               <div className="flex flex-col gap-6">
                 {currentFeatured.slice(1).map((post, i) => (
-                  <div
+                  <Link
                     key={i}
-                    className="relative rounded-xl overflow-hidden group cursor-pointer flex-1 min-h-[110px] sm:min-h-[140px] shadow-[0_18px_45px_rgba(3,27,64,0.14)]"
+                    href={`/blog/${post.slug}`}
+                    className="relative rounded-xl overflow-hidden group cursor-pointer flex-1 min-h-[110px] sm:min-h-[140px] shadow-[0_18px_45px_rgba(3,27,64,0.14)] block"
                   >
                     <ImgBox
                       src={post.img}
@@ -1423,7 +1423,7 @@ export default function BlogPage() {
                       <span className="text-secondary text-[9px] font-bold uppercase tracking-wider mb-1 block">
                         {post.tag}
                       </span>
-                      <h3 className="text-white text-sm font-extrabold leading-tight mb-2 line-clamp-1">
+                      <h3 className="text-white text-sm font-extrabold leading-tight mb-2 line-clamp-1 group-hover:text-secondary transition-colors">
                         {post.title}
                       </h3>
                       <div className="flex items-center justify-between">
@@ -1437,19 +1437,15 @@ export default function BlogPage() {
                             {post.read}
                           </span>
                         </div>
-                        <Button
-                          variant="ghost"
-                          href={`/blog/${post.slug}`}
-                          className="text-white text-[9px] font-bold flex items-center gap-1 hover:text-secondary p-0 min-h-0 border-0"
-                        >
+                        <div className="text-white text-[9px] font-bold flex items-center gap-1 group-hover:text-secondary p-0 min-h-0 border-0 transition-colors">
                           Read More{" "}
                           <div className="w-4.5 h-4.5 bg-secondary rounded-full flex items-center justify-center">
                             <ArrowRight cls="w-2.5 h-2.5" />
                           </div>
-                        </Button>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
 
@@ -1926,8 +1922,9 @@ export default function BlogPage() {
                   className={`grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-6 items-center p-4 sm:p-6 border-b border-slate-100 last:border-b-0 bg-white ${i === currentTrending.length - 1 ? "border-b-0" : ""}`}
                 >
                   {/* 1. Left unified badge & image block */}
-                  <div
-                    className="flex rounded-lg overflow-hidden flex-shrink-0 border border-slate-100 w-full lg:w-auto"
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="flex rounded-lg overflow-hidden flex-shrink-0 border border-slate-100 w-full lg:w-auto hover:opacity-90 transition-opacity cursor-pointer group/img"
                     style={{ height: 110 }}
                   >
                     {/* Number Badge */}
@@ -1935,15 +1932,15 @@ export default function BlogPage() {
                       {post.num}
                     </div>
                     {/* Image */}
-                    <div className="flex-1 lg:w-48 relative bg-slate-100">
+                    <div className="flex-1 lg:w-48 relative bg-slate-100 overflow-hidden">
                       <ImgBox
                         src={post.img}
                         alt={post.title}
                         fill
-                        className="object-cover"
+                        className="object-cover group-hover/img:scale-105 transition-transform duration-500"
                       />
                     </div>
-                  </div>
+                  </Link>
 
                   {/* 2. Middle Text Block with vertical divider on the right */}
                   <div className="min-w-0 lg:pr-8 lg:border-r lg:border-slate-100 h-full flex flex-col justify-center">

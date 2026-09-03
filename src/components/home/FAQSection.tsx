@@ -59,7 +59,7 @@ export function FAQSection() {
           className="max-w-[90%] md:max-w-none [&_h2]:text-[clamp(1.5rem,4vw,2.5rem)]"
         />
         
-        <div className="mx-auto max-w-4xl mt-10 sm:mt-14">
+        <div className="mx-auto max-w-4xl mt-6 sm:mt-8">
           <div className="grid gap-4">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;

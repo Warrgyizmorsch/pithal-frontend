@@ -10,14 +10,16 @@ import { RelatedMachines } from "@/components/product-detail/RelatedMachines";
 import { ResourcesSection } from "@/components/product-detail/ResourcesSection";
 import { SpecificationTable } from "@/components/product-detail/SpecificationTable";
 import { VideoSection } from "@/components/product-detail/VideoSection";
+import { ProductFAQ } from "@/components/product-detail/ProductFAQ";
+import { ProductLongContent } from "@/components/product-detail/ProductLongContent";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { primeBucketData } from "@/data/products/primeBucketData";
 
 export const metadata: Metadata = {
-  title: "Prime Bucket Crusher | Pithal Machine Pvt.",
+  title: "Crusher bucket Manufacturer |Pithal Machine",
   description:
-    "Heavy-duty bucket systems designed for maximum capacity and durability in material handling.",
+    "Get a high-performance bucket crusher for excavators from Pithal Machine. Explore durable bucket crushers designed for efficient on-site crushing and material processing.",
 };
 
 export default function PrimeBucketProductPage() {
@@ -32,9 +34,9 @@ export default function PrimeBucketProductPage() {
         />
         <ProductIntro data={primeBucketData.intro} />
         <FeaturesSection
-          heading="Engineered For"
-          highlightText="Maximum Efficiency"
-          subtitle="Our PrimeBucket systems are built with advanced engineering and premium quality components to deliver unmatched material handling performance."
+          heading="Key Features of"
+          highlightText="Prime Bucket Crusher"
+          subtitle="Engineered for versatile on-site crushing, the Prime Bucket Crusher combines robust construction with practical operation to support reliable material processing across demanding applications."
         />
         <SpecificationTable
           rows={primeBucketData.specifications}
@@ -56,6 +58,8 @@ export default function PrimeBucketProductPage() {
           section={primeBucketData.resourcesSection}
           supportFeatures={primeBucketData.supportFeatures}
         />
+        {primeBucketData.faqSection && <ProductFAQ data={primeBucketData.faqSection} />}
+        {primeBucketData.longContent && <ProductLongContent data={primeBucketData.longContent} />}
       </main>
       <Footer />
     </>

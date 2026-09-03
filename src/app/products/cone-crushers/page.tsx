@@ -10,14 +10,16 @@ import { RelatedMachines } from "@/components/product-detail/RelatedMachines";
 import { ResourcesSection } from "@/components/product-detail/ResourcesSection";
 import { SpecificationTable } from "@/components/product-detail/SpecificationTable";
 import { VideoSection } from "@/components/product-detail/VideoSection";
+import { ProductFAQ } from "@/components/product-detail/ProductFAQ";
+import { ProductLongContent } from "@/components/product-detail/ProductLongContent";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { coneCrusherData } from "@/data/products/coneCrusherData";
 
 export const metadata: Metadata = {
-  title: "Prime Cone Crushers | Pithal Machine Pvt.",
+  title: "Prime Cone Crusher | High-Performance Cone Crusher India",
   description:
-    "High-efficiency secondary and tertiary Prime Cone Crushers engineered for mining, aggregates, cement, and infrastructure industries.",
+    "Explore Pithal Prime Cone Crusher for efficient secondary and tertiary crushing. Built for reliable performance in mining, quarrying, construction and aggregate applications.",
 };
 
 export default function ConeCrusherProductPage() {
@@ -29,9 +31,9 @@ export default function ConeCrusherProductPage() {
         <ProductStats section={coneCrusherData.statsSection} stats={coneCrusherData.stats} />
         <ProductIntro data={coneCrusherData.intro} />
         <FeaturesSection 
-          heading="Engineered For"
-          highlightText="Superior Performance"
-          subtitle="Our Prime Cone Crushers are built with advanced engineering and premium quality components to deliver unmatched performance, reliability and efficiency."
+          heading="Key Features of"
+          highlightText="Prime Cone Crusher"
+          subtitle="Engineered for efficient and reliable crushing, the Prime Cone Crusher combines robust construction with dependable performance for demanding industrial applications."
         />
         <SpecificationTable rows={coneCrusherData.specifications} section={coneCrusherData.specificationsSection} />
         <IndustryApplications industries={coneCrusherData.industries} section={coneCrusherData.industriesSection} />
@@ -40,6 +42,8 @@ export default function ConeCrusherProductPage() {
         <RelatedMachines section={coneCrusherData.relatedSection} />
         <ContactSolutionSection data={coneCrusherData.contactSection} />
         <ResourcesSection resources={coneCrusherData.resources} section={coneCrusherData.resourcesSection} supportFeatures={coneCrusherData.supportFeatures} />
+        {coneCrusherData.faqSection && <ProductFAQ data={coneCrusherData.faqSection} />}
+        {coneCrusherData.longContent && <ProductLongContent data={coneCrusherData.longContent} />}
       </main>
       <Footer />
     </>

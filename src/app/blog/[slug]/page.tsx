@@ -17,15 +17,12 @@ function cleanBlogContentHtml(html: string, title?: string): string {
 
   let cleaned = html;
 
-  // 1. Remove duplicate H1/H2 at the start of HTML content matching the main post title or redundant H1
+  // 1. Only remove duplicate H1/H2 at the start of HTML content if it literally matches the main post title
   if (title) {
     const escaped = title.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const titleRegex = new RegExp(`^\\s*<h[12][^>]*>\\s*(${escaped}|[^<]+)?\\s*</h[12]>`, "i");
+    const titleRegex = new RegExp(`^\\s*<h[12][^>]*>\\s*${escaped}\\s*</h[12]>`, "i");
     cleaned = cleaned.replace(titleRegex, "");
   }
-
-  // Strip any standalone leading <h1> tag at the start of body content (since title is already in Hero header)
-  cleaned = cleaned.replace(/^\s*<h1[^>]*>[\s\S]*?<\/h1>/i, "");
 
   // 2. Strip hardcoded inline font-weight & font-family from inline styles inside paragraphs
   cleaned = cleaned
@@ -153,67 +150,58 @@ export default async function BlogPostPage({
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-slate-50 font-sans">
-        {/* HERO SECTION */}
-        <section className="relative overflow-hidden bg-primary-dark text-white">
-          <Image
-            alt={post.title}
-            className="object-cover object-center opacity-35"
-            fill
-            priority
-            sizes="100vw"
-            src={post.img}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/95 to-primary-dark/70" />
-          <div className="pointer-events-none absolute inset-0 industrial-grid opacity-15" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-50 via-slate-50/40 to-transparent" />
-
-          <div className="relative z-10 flex w-full max-w-[1520px] flex-col px-5 sm:px-8 lg:px-10 pt-8 pb-20 lg:pt-12 lg:pb-28">
-            <div className="max-w-[860px]">
-              <HeroNavigation current="Blog" eyebrow={post.tag} light />
-              
-              <div className="mb-6 flex flex-wrap items-center gap-4">
-                <span className="flex items-center gap-1.5 text-xs font-semibold text-orange-400 bg-orange-400/10 px-3 py-1 rounded-full border border-orange-400/20">
-                  <Calendar size={13} /> {post.date}
-                </span>
-                <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-300">
-                  <Clock size={13} /> {post.read}
-                </span>
-                {post.views && (
-                  <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-300">
-                    <Eye size={13} /> {post.views} Views
-                  </span>
-                )}
+      <main className="min-h-screen bg-white font-sans py-6 sm:py-8 lg:py-10">
+        <Container>
+          <div className="max-w-[1240px] mx-auto">
+            {/* HEADER: Breadcrumbs, Title, Sub-heading (aligned with below content, wrapped in 2 lines) */}
+            <div className="text-left mb-6 sm:mb-8">
+              <div className="[&_nav]:!justify-start text-left mb-3">
+                <HeroNavigation current="Blog" eyebrow={post.tag} />
               </div>
 
-              <h1 className="text-[clamp(2rem,4vw,3.5rem)] font-extrabold leading-[1.1] text-white mb-6 uppercase tracking-wide">
+              <h1 className="max-w-[840px] text-[clamp(1.75rem,3.4vw,3rem)] font-extrabold leading-[1.14] text-primary mb-3 uppercase tracking-wide text-left">
                 {post.title}
               </h1>
               
-              <p className="max-w-3xl text-base font-normal leading-relaxed text-slate-300 md:text-lg">
-                {post.desc}
-              </p>
+              {post.desc && (
+                <p className="max-w-[760px] text-[15px] sm:text-[17px] font-bold leading-relaxed text-primary text-left">
+                  {post.desc}
+                </p>
+              )}
             </div>
-          </div>
-        </section>
 
-        {/* MAIN ARTICLE & SIDEBAR SECTION */}
-        <section className="py-10 lg:py-16">
-          <Container>
-            <div className="max-w-[1240px] mx-auto">
-              <div className="grid lg:grid-cols-[1fr_340px] gap-10 lg:gap-14 items-start">
+            {/* MAIN ARTICLE & SIDEBAR SECTION */}
+            <div className="grid lg:grid-cols-[1fr_340px] gap-8 lg:gap-12 items-start">
+              
+              {/* ARTICLE CONTENT COLUMN */}
+              <div className="min-w-0 bg-white rounded-2xl p-5 sm:p-8 lg:p-10 border border-slate-200 shadow-sm space-y-8">
                 
-                {/* ARTICLE CONTENT COLUMN */}
-                <div className="min-w-0 bg-white rounded-2xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-10">
-                  
-                  {/* Banner Image inside post */}
+                {/* Banner Image inside post */}
+                <div className="space-y-4">
                   <div className="relative w-full h-[280px] sm:h-[400px] rounded-xl overflow-hidden shadow-inner">
                     <Image
                       src={post.img}
                       alt={post.title}
                       fill
                       className="object-cover"
+                      priority
                     />
+                  </div>
+
+                    {/* Date, Time, Views - shifted below product/banner image on the right side above introduction */}
+                    <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4 pt-1">
+                      <span className="flex items-center gap-1.5 text-xs font-semibold text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
+                        <Calendar size={13} /> {post.date}
+                      </span>
+                      <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-600">
+                        <Clock size={13} className="text-secondary" /> {post.read.toLowerCase().includes("min") ? post.read : `${post.read} min read`}
+                      </span>
+                      {post.views && (
+                        <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-600">
+                          <Eye size={13} className="text-secondary" /> {post.views} Views
+                        </span>
+                      )}
+                    </div>
                   </div>
 
                   {/* Body Content */}
@@ -319,9 +307,8 @@ export default async function BlogPostPage({
               </div>
             </div>
           </Container>
-        </section>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
     </>
   );
 }

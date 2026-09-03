@@ -68,7 +68,7 @@ export default function ProductsPage() {
           </div>
         </section>
 
-        <section className="bg-white py-14 lg:py-20">
+        <section className="bg-white py-8 lg:py-12">
           <Container>
             <SectionHeader
               eyebrow="Product Families"
@@ -77,13 +77,13 @@ export default function ProductsPage() {
               subtitle="Choose the machine family that fits your material, capacity and site conditions."
             />
 
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 sm:mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {products.map((product) => (
                 <ProductCard key={product.title} {...product} />
               ))}
             </div>
 
-            <div className="mt-20">
+            <div className="mt-12 sm:mt-14">
               <h3 className="mb-8 text-3xl font-bold text-primary">Product Features</h3>
               <div className="grid md:grid-cols-3 gap-8">
                 {[

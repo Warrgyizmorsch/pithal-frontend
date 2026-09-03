@@ -30,7 +30,7 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
           {/* Left Column: Title & Benefits */}
           <div>
             <h2
-              className="headline text-primary"
+              className="headline text-primary text-[clamp(1.65rem,5.5vw,1.95rem)] sm:text-[2.5rem]"
               style={{
                 lineHeight: "0.95",
                 fontWeight: 900,

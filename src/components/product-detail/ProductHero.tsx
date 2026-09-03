@@ -54,25 +54,7 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
 
 
 
-      {/* Dots Pattern */}
-      <div
-        className="absolute w-[100px] h-[100px] opacity-75 hidden md:block z-0"
-        style={{
-          backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 2px)',
-          backgroundSize: '15px 15px',
-          top: '20%',
-          left: '3%'
-        }}
-      />
-      <div
-        className="absolute w-[100px] h-[100px] opacity-75 hidden md:block z-0"
-        style={{
-          backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 2px)',
-          backgroundSize: '15px 15px',
-          bottom: '25%',
-          left: '40%'
-        }}
-      />
+
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-secondary/45 z-10" />
 
       <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-8 lg:justify-between lg:py-10 mx-auto">

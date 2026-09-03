@@ -166,10 +166,10 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
   return (
     <section className={`relative overflow-hidden bg-white ${sectionPadding}`}>
       <Container className="max-w-[1480px]">
-        <div className="grid gap-8 lg:grid-cols-[0.78fr_1fr] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[0.78fr_1fr] items-start">
           <div className="relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h2 className="headline leading-[0.96] text-primary text-center lg:text-left">
-              {data.title}
+            <h2 className="headline text-[clamp(1.65rem,5.5vw,1.95rem)] sm:text-[2.5rem] leading-[1.02] sm:leading-[0.96] text-primary text-center lg:text-left">
+              <span className="block">{data.title}</span>
               <span className="block text-secondary">{data.highlight}</span>
             </h2>
             <p className="mt-5 max-w-[560px] text-sm leading-7 text-text-dark sm:text-[15px] text-center lg:text-left mx-auto lg:mx-0">

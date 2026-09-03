@@ -92,9 +92,10 @@ export function ResourcesSection({
     <section className={`bg-[#f8fafc] ${sectionPadding}`} id={section.id}>
       <Container>
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
-          <h2 className="headline text-primary">
-            {section.title} <span style={{ color: "#fa5902" }}>{section.highlight}</span>
+        <div className="flex flex-col items-center text-center mb-6 sm:mb-8">
+          <h2 className="headline text-primary text-[clamp(1.65rem,5.5vw,1.95rem)] sm:text-[2.5rem] leading-[1.02] sm:leading-tight">
+            <span className="block sm:inline">{section.title}</span>{" "}
+            <span className="block sm:inline text-secondary">{section.highlight}</span>
           </h2>
 
           <p className="mt-4 text-sm sm:text-base leading-7 text-text-muted max-w-2xl mx-auto" style={{ lineHeight: "1.6" }}>

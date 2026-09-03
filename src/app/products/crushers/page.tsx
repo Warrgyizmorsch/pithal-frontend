@@ -21,8 +21,6 @@ export default function CrushersPage() {
             src="/images/products/cone-crusher/plant-bg.jpg"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,19,45,.98)_0%,rgba(3,27,64,.94)_34%,rgba(3,27,64,.62)_54%,rgba(3,27,64,.12)_78%,rgba(3,27,64,0)_100%)]" />
-          <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_2px_2px,rgba(255,255,255,.28)_1px,transparent_0)] [background-size:20px_20px]" />
-
           <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
             <div>
               <div className="max-w-[720px]">
@@ -60,7 +58,7 @@ export default function CrushersPage() {
           </div>
         </section>
 
-        <section className="bg-white py-14 lg:py-20" id="details">
+        <section className="bg-white py-8 lg:py-12" id="details">
           <Container>
             <div className="grid gap-12 md:grid-cols-2">
               <div className="relative h-80 overflow-hidden rounded-lg border border-border bg-bg-light">

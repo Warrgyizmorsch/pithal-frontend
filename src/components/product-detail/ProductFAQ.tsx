@@ -29,7 +29,7 @@ export function ProductFAQ({ data }: { data: ProductFAQData }) {
           className="max-w-[90%] md:max-w-none"
         />
         
-        <div className="mx-auto max-w-4xl mt-10 sm:mt-14">
+        <div className="mx-auto max-w-4xl mt-6 sm:mt-8">
           <div className="grid gap-4">
             {data.faqs.map((faq, index) => {
               const isOpen = openIndex === index;

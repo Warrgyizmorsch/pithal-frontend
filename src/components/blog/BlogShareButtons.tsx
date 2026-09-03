@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Share2, Link as LinkIcon, Check } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
@@ -11,21 +11,21 @@ interface BlogShareButtonsProps {
 
 export function BlogShareButtons({ title, slug }: BlogShareButtonsProps) {
   const [copied, setCopied] = useState(false);
+  const [shareUrl, setShareUrl] = useState(`https://pithal.com/blog/${slug}`);
 
-  const getShareUrl = () => {
+  useEffect(() => {
     if (typeof window !== "undefined") {
-      return `${window.location.origin}/blog/${slug}`;
+      setShareUrl(`${window.location.origin}/blog/${slug}`);
     }
-    return `https://pithal.com/blog/${slug}`;
-  };
+  }, [slug]);
 
-  const shareUrl = getShareUrl();
   const encodedUrl = encodeURIComponent(shareUrl);
   const encodedTitle = encodeURIComponent(title);
 
   const handleCopyLink = () => {
+    const url = typeof window !== "undefined" ? `${window.location.origin}/blog/${slug}` : shareUrl;
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(shareUrl);
+      navigator.clipboard.writeText(url);
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     }

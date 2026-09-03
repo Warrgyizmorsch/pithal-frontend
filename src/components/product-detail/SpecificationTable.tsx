@@ -67,9 +67,11 @@ export function SpecificationTable({
         <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
           <div className="border-b border-border px-4 py-5 sm:px-6 lg:px-7">
             <header className="max-w-4xl">
-              <h2 className="headline text-primary">
-                {section.title}
-                {section.highlight && <span className="text-secondary"> {section.highlight}</span>}
+              <h2 className="headline text-primary text-[clamp(1.65rem,5.5vw,1.95rem)] sm:text-[2.5rem] leading-[1.02] sm:leading-tight">
+                <span className="block sm:inline">{section.title}</span>{" "}
+                {section.highlight && (
+                  <span className="block sm:inline text-secondary">{section.highlight}</span>
+                )}
               </h2>
               {section.subtitle && <p className="mt-2 max-w-3xl text-xs leading-6 text-text-muted sm:text-sm">{section.subtitle}</p>}
             </header>

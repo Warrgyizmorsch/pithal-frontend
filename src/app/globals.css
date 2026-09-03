@@ -164,7 +164,8 @@ textarea {
 }
 
 .section-space {
-  padding-block: clamp(2.5rem, 5.5vw, 4.75rem);
+  padding-top: clamp(1.75rem, 3.8vw, 3.25rem);
+  padding-bottom: clamp(2.25rem, 4.8vw, 4.25rem);
 }
 
 .headline {

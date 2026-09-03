@@ -1583,7 +1583,7 @@ export default function ContactUsPage() {
         {/* ========================================================================= */}
         {/* SECTION 10: VISIT OUR FACILITY FIRSTHAND */}
         {/* ========================================================================= */}
-        <section className="bg-[#f8f9fc] py-16 lg:py-24" id="facility">
+        <section className="bg-[#f8f9fc] py-12 lg:py-16" id="facility">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-12">
@@ -1858,7 +1858,7 @@ export default function ContactUsPage() {
         {/* ========================================================================= */}
         {/* SECTION 11: FINAL CTA BANNER */}
         {/* ========================================================================= */}
-        <section className="bg-[#f8f9fc] py-16 lg:pb-24">
+        <section className="bg-[#f8f9fc] pt-4 pb-12 lg:pt-6 lg:pb-16">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg min-h-[280px] lg:min-h-[340px] flex flex-col justify-center border border-slate-200">
               {/* Right Side Background Image */}

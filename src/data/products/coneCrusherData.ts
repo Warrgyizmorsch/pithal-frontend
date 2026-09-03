@@ -8,13 +8,13 @@ export const coneCrusherData: ProductDetailData = {
       { label: "Products", href: "/#products" },
       { label: "Prime Cone Crushers", href: "/products/cone-crushers" },
     ],
-    eyebrow: "Secondary & Tertiary Crushing",
-    title: "CONE",
-    highlightedTitle: "CRUSHERS",
-    subtitle: "High Efficiency. Excellent Product Shape.",
+    eyebrow: "Prime Cone Crusher",
+    title: "PRIME CONE",
+    highlightedTitle: "CRUSHER",
+    subtitle: "BUILT FOR POWER. ENGINEERED FOR PRECISION.",
     description:
-      "Cone crushers are designed for secondary and tertiary crushing applications, delivering high reduction ratio, uniform product size, hydraulic adjustment, and stable performance for mining, aggregates, cement, and infrastructure industries.",
-    descriptionHighlight: "secondary and tertiary crushing",
+      "Prime Cone Crusher is engineered for efficient secondary and tertiary crushing, delivering reliable performance and consistent material reduction across demanding mining, quarrying and aggregate applications.",
+    descriptionHighlight: "efficient secondary and tertiary crushing",
     image: {
       src: "/product-hero/new Cone Crusher banner.webp",
       alt: "Pithal cone crusher operating in a quarry crushing plant",
@@ -32,10 +32,10 @@ export const coneCrusherData: ProductDetailData = {
   },
   statsSection: {
     eyebrow: "Technical Highlights",
-    title: "PERFORMANCE IN",
-    highlight: "EVERY DETAIL",
+    title: "PRIME CONE CRUSHER",
+    highlight: "PERFORMANCE AND KEY TECHNICAL DETAILS",
     subtitle:
-      "Engineered for high crushing efficiency, uniform output size, and reliable operation.",
+      "Discover the engineering and technical details behind efficient crushing, consistent output and reliable performance.",
     ctaText: "Built for Performance. Engineered for Results.",
     cta: { label: "Talk to Technical Expert", href: "#contact", variant: "primary", icon: "arrow" },
   },
@@ -48,10 +48,10 @@ export const coneCrusherData: ProductDetailData = {
   ],
   intro: {
     eyebrow: "Product Overview",
-    title: "BUILT FOR PRECISION.",
-    highlight: "CRUSHES WITH POWER.",
+    title: "PRIME CONE CRUSHER",
+    highlight: "PRODUCT OVERVIEW",
     description:
-      "Pithal Cone Crushers are engineered for high reduction ratio, excellent particle shape, and consistent performance in demanding secondary and tertiary crushing operations. Built with a robust frame, hydraulic adjustment, and wear-resistant liners, these machines deliver long-term productivity with reduced downtime.",
+      "Prime Cone Crusher is designed to deliver efficient secondary and tertiary crushing of hard and abrasive materials. Built for demanding applications, this cone crusher machine supports consistent material reduction across mining, quarrying, aggregate production, construction and material-processing operations.",
     image: {
       src: "/images/products/cone-crusher/main-machine.png",
       alt: "Cone crusher machine with technical part callouts",
@@ -154,11 +154,11 @@ export const coneCrusherData: ProductDetailData = {
     { title: "Low Maintenance", description: "Easy access and durable liners help reduce maintenance downtime.", icon: "wrench" },
   ],
   specificationsSection: {
-    eyebrow: "Technical Data",
-    title: "PRIME GP SERIES HYDRAULIC",
-    highlight: "CONE CRUSHER",
+    eyebrow: "Technical Specifications",
+    title: "PRIME CONE CRUSHER",
+    highlight: "TECHNICAL DATA",
     subtitle:
-      "Select the right Prime GP Series Hydraulic Cone Crusher model for your capacity, feed size, and reduction requirements.",
+      "Explore the technical details behind the Prime Cone Crusher’s crushing performance, capacity, operating requirements and reliable operation.",
     columns: [
       { label: "Model", key: "model", emphasis: "primary" },
       { label: "Recommended Capacity", key: "recommendedCapacity", emphasis: "primary" },
@@ -234,11 +234,11 @@ export const coneCrusherData: ProductDetailData = {
     },
   ],
   industriesSection: {
-    eyebrow: "Applications",
-    title: "BUILT FOR",
-    highlight: "EVERY INDUSTRY.",
+    eyebrow: "Market Sectors",
+    title: "PRIME CONE CRUSHER",
+    highlight: "APPLICATIONS",
     subtitle:
-      "Cone crushing solutions engineered for secondary and tertiary applications across demanding industries.",
+      "Engineered for efficient secondary and tertiary crushing across mining, quarrying, aggregate production, construction and material-processing applications.",
   },
   industries: [
     { title: "Mining", description: "Reliable secondary crushing for hard rock and mineral processing.", image: { src: "/images/industries/mining.jpg", alt: "Mining site with crushing equipment" }, icon: "pickaxe", href: "#", actionLabel: "Explore" },
@@ -248,11 +248,11 @@ export const coneCrusherData: ProductDetailData = {
     { title: "Recycling", description: "Suitable for processing recycled construction and demolition materials.", image: { src: "/images/industries/recycling.jpg", alt: "Recycling facility material processing" }, icon: "recycle", href: "#", actionLabel: "Explore" },
   ],
   processSection: {
-    eyebrow: "Working Process",
-    title: "FROM ROCK TO",
-    highlight: "RESULTS.",
+    eyebrow: "Working Principle",
+    title: "PRIME CONE CRUSHER",
+    highlight: "WORKING PROCESS",
     subtitle:
-      "A controlled crushing flow designed to deliver high reduction, uniform shape, and classified final aggregates.",
+      "A powerful crushing process designed to reduce hard materials efficiently and deliver consistent output with reliable performance.",
   },
   processSteps: [
     {
@@ -335,11 +335,11 @@ export const coneCrusherData: ProductDetailData = {
     button: { label: "WATCH FULL VIDEO", href: "#", variant: "primary", icon: "arrow" },
   },
   relatedSection: {
-    eyebrow: "RELATED PRODUCTS",
-    title: "COMPLETE YOUR",
-    highlight: "CRUSHING SOLUTION.",
+    eyebrow: "CRUSHING EQUIPMENT",
+    title: "EXPLORE OUR",
+    highlight: "CRUSHING EQUIPMENT",
     subtitle:
-      "Explore machines designed to work seamlessly with cone crushers for feeding, primary crushing, screening, conveying, and final plant output.",
+      "Explore Pithal Machines’ range of reliable crushing and screening solutions engineered to meet diverse material-processing requirements and demanding industrial applications.",
   },
   relatedMachines: [
     { title: "PRIME JAW CRUSHER", description: "Heavy-duty primary crushing for hard rock and large feed material.", image: { src: "/images/products/related-products/jaw-crusher.png", alt: "Prime Jaw Crusher" }, category: "Primary", icon: "jaw", href: "/products/jaw-crushers", actionLabel: "VIEW DETAILS" },
@@ -392,10 +392,10 @@ export const coneCrusherData: ProductDetailData = {
   resourcesSection: {
     id: "resources",
     eyebrow: "Downloads",
-    title: "RESOURCES TO",
-    highlight: "SUPPORT YOUR SUCCESS.",
+    title: "Prime Cone Crusher",
+    highlight: "Downloads",
     subtitle:
-      "Access cone crusher brochures, technical datasheets, installation references, and maintenance guidance.",
+      "Access product brochures, technical specifications and detailed documentation to explore the Prime Cone Crusher’s features, capabilities, applications and operating requirements.",
     supportCta: { label: "VISIT SUPPORT CENTER", href: "#", variant: "primary", icon: "arrow" },
   },
   // TODO: Replace document preview artwork with final Cone Crusher brochure/datasheet/manual covers when supplied.
@@ -439,6 +439,104 @@ export const coneCrusherData: ProductDetailData = {
     { title: "SPARE PARTS SUPPORT", text: "Support for liners, wear parts, and critical spares.", icon: "target" },
     { title: "WARRANTY SUPPORT", text: "Reliable assistance throughout equipment lifecycle.", icon: "headphones" },
   ],
+  faqSection: {
+    eyebrow: "FAQ",
+    title: "Frequently Asked",
+    highlight: "Questions",
+    faqs: [
+      {
+        question: "1. What is a Cone Crusher?",
+        answer: "Prime Cone Crusher is designed for efficient secondary and tertiary crushing of hard and abrasive materials in mining, quarrying, construction and aggregate applications."
+      },
+      {
+        question: "2. What materials can a Cone Crusher process?",
+        answer: "It can process suitable hard and abrasive materials such as rocks, stones and aggregates, depending on the model and application."
+      },
+      {
+        question: "3. Where is Prime Cone Crusher used?",
+        answer: "Prime Cone Crusher is suitable for mining, quarrying, aggregate production, construction, road projects and other material-processing applications."
+      },
+      {
+        question: "4. How does a cone crusher work?",
+        answer: "A cone crusher reduces material through compression between the mantle and concave inside the crushing chamber, producing smaller and controlled-sized output."
+      },
+      {
+        question: "5. What are the benefits of using a cone crusher?",
+        answer: "A cone crusher provides efficient material reduction, consistent product sizing and reliable performance for secondary and tertiary crushing applications."
+      },
+      {
+        question: "6. How do I choose the right Cone Crusher?",
+        answer: "Selection depends on feed size, material type, required production capacity, desired output size and the overall crushing plant configuration."
+      },
+      {
+        question: "7. Can Prime Cone Crusher be used in a complete crushing plant?",
+        answer: "Yes. Prime Cone Crusher can be integrated with jaw crushers, vibrating screens and conveyor systems to create an efficient multi-stage crushing and screening plant."
+      }
+    ]
+  },
+  longContent: {
+    content: `# Prime Cone Crusher for Efficient Secondary and Tertiary Crushing
+
+The Prime Cone Crusher is designed for efficient secondary and tertiary crushing of hard, abrasive and high-strength materials. This reliable cone crusher machine is suitable for demanding applications in mining, quarrying, construction, aggregate production and material processing.
+
+With robust construction and a dependable crushing mechanism, the Prime Cone Crusher delivers consistent material reduction and controlled product sizing. Its heavy-duty design makes it a suitable solution for industries requiring continuous crushing and efficient material processing.
+
+### Why Choose Prime Cone Crusher Machine from Pithal Machine
+
+Choosing the right cone crusher machine can directly impact productivity, operating efficiency, product quality and overall plant performance. The Pithal Prime Cone Crusher is engineered to provide a combination of crushing efficiency, durability and dependable operation.
+
+Its strong construction allows the machine to perform effectively in demanding working environments, while its practical design supports consistent output and efficient material reduction. This makes Prime Cone Crusher a reliable choice for businesses looking for high-performance crushing equipment.
+
+### Cone Crusher Machine for Mining and Quarrying
+
+Mining and quarrying operations often require equipment capable of processing hard and abrasive materials. The Prime cone crusher is designed for secondary and tertiary crushing applications where material needs to be reduced further after primary crushing.
+
+Its robust construction and powerful compression-crushing action make the cone crusher suitable for processing rocks, aggregates and other hard materials for demanding industrial applications.
+
+### Efficient Material Reduction
+
+The primary function of a cone crusher is to further reduce material after primary crushing and produce smaller, manageable aggregate sizes. The Prime Cone Crusher uses a compression-based crushing mechanism to efficiently reduce suitable feed material.
+
+The material is crushed between the mantle and concave as it passes through the crushing chamber, helping achieve controlled size reduction and consistent output. The machine can be integrated into a wider cone crusher plant where material is further screened, conveyed or processed according to project requirements.
+
+### Built for Demanding Industrial Applications
+
+Our cone crusher machine is designed for industries where reliable equipment performance is essential. From mining and quarrying to aggregate production, construction and infrastructure development, the machine can support a wide range of secondary and tertiary crushing requirements.
+
+Its heavy-duty design helps provide dependable operation under demanding conditions while supporting consistent production and efficient material processing.
+
+### Reliable Cone Crusher Machine for Long-Term Operation
+
+Durability is an important consideration when selecting industrial crushing equipment. Pithal Cone Crusher is manufactured with a focus on structural strength, reliable components and long-term operational performance.
+
+With appropriate installation, maintenance and operating practices, the machine can provide dependable service while helping businesses maintain efficient crushing operations.
+
+### Cone Crusher Plant for Efficient Material Processing
+
+The Prime Cone Crusher can be integrated into a complete cone crusher plant according to specific production and material-processing requirements. It can work alongside primary crushers, vibrating screens and conveyor systems to create an efficient multi-stage crushing solution.
+
+A properly configured plant helps maintain an effective flow of material from primary crushing through secondary and tertiary stages, screening and final stockpiling.
+
+### Cone Crusher Price and Machine Cost
+
+The cone crusher price depends on factors such as the crusher model, production capacity, configuration, application requirements and plant setup. The overall cone crusher machine price may also vary depending on additional equipment and customization requirements.
+
+When evaluating the cost of a cone crusher, businesses should consider not only the initial investment but also production capacity, operating efficiency, maintenance requirements, durability and long-term performance.
+
+Pithal Machines can provide pricing based on the specific crusher configuration and application requirements.
+
+### Choose Reliable Cone Crusher Manufacturers
+
+Selecting experienced cone crusher manufacturers is important when investing in heavy-duty crushing equipment. The right manufacturer can provide suitable equipment configuration, technical guidance, application support and after-sales assistance.
+
+Pithal Machines focuses on providing reliable crushing and screening solutions designed for demanding mining, quarrying, construction and aggregate-processing applications.
+
+### Get the Right Cone Crusher Machine for Your Application
+
+Every crushing operation has different requirements based on material type, feed size, required output, production capacity and crushing stage. Selecting the appropriate cone crusher machine configuration is therefore important for achieving efficient plant performance.
+
+[Pithal Machine](https://www.pithalmachine.com/) can help you identify a suitable Prime Cone Crusher configuration based on your application and crushing requirements. Contact our team to discuss your requirements and get detailed technical information and the latest cone crusher machine price.`
+  }
 };
 
 export type ConeCrusherData = ProductDetailData;

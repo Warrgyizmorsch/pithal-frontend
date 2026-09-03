@@ -1006,7 +1006,7 @@ export default function SolutionsPage() {
         {/* SECTION 2: SOLUTIONS THAT POWER EVERY INDUSTRY */}
         {/* ========================================================================= */}
         <section
-          className="relative overflow-hidden bg-white py-[25px] sm:py-[60px]"
+          className="relative overflow-hidden bg-white pt-[25px] sm:pt-[45px] pb-[15px] sm:pb-[25px]"
           id="industries"
         >
           {/* Faint Gears Blueprint Schematic on Left */}
@@ -1209,7 +1209,7 @@ export default function SolutionsPage() {
         {/* SECTION 3: CHALLENGES WE SOLVE (Every Challenge. Engineered Solution.) */}
         {/* ========================================================================= */}
         <section
-          className="relative overflow-hidden bg-white py-[25px] sm:py-[60px]"
+          className="relative overflow-hidden bg-white pt-[15px] sm:pt-[25px] pb-[25px] sm:pb-[40px]"
           id="challenges"
         >
           {/* Faint Gears Blueprint Schematic on Left */}
@@ -1278,7 +1278,7 @@ export default function SolutionsPage() {
 
           <Container className="relative z-10">
             {/* Header Block */}
-            <div className="mx-auto max-w-full text-center mb-8 sm:mb-12 px-4">
+            <div className="mx-auto max-w-full text-center mb-6 sm:mb-8 px-4">
               <div className="flex items-center justify-center gap-2 mb-4 text-xs md:text-sm font-black uppercase tracking-[0.08em] text-secondary">
                 <span className="h-[2px] w-8 bg-secondary rounded-full" />
                 <span className="text-lg">CHALLENGES WE SOLVE</span>
@@ -1444,7 +1444,7 @@ export default function SolutionsPage() {
         {/* SECTION 5: ENGINEERED AROUND YOUR OPERATION */}
         {/* ========================================================================= */}
         <section
-          className="relative overflow-hidden bg-white pt-[25px] sm:pt-[60px] pb-[10px]"
+          className="relative overflow-hidden bg-white pt-2 sm:pt-4 pb-[10px]"
           id="engineering"
         >
 
@@ -1471,7 +1471,7 @@ export default function SolutionsPage() {
             <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center mb-4">
               {/* Left Column info */}
               <div className="max-w-2xl relative z-10">
-                <div className="flex items-center gap-2 mb-4 text-xs font-black uppercase tracking-[0.24em] text-secondary">
+                <div className="flex items-center gap-2 mb-2 text-xs font-black uppercase tracking-[0.24em] text-secondary">
                   <span className="h-[1.5px] w-6 bg-secondary rounded-full" />
                   <span className="text-lg">CUSTOM ENGINEERING SOLUTIONS</span>
                   <span className="h-[1.5px] w-6 bg-secondary rounded-full" />
@@ -1521,7 +1521,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 5B: OUR ENGINEERING SERVICES */}
         {/* ========================================================================= */}
-        <section className="bg-white pt-[15px] sm:pt-[20px] pb-[25px] sm:pb-[60px]">
+        <section className="bg-white pt-[10px] sm:pt-[15px] pb-[20px] sm:pb-[40px]">
           <Container>
             {/* Bottom block: Our Engineering Services */}
             <div className="pt-0">
@@ -1702,7 +1702,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 7: MEASURABLE PERFORMANCE. MAXIMUM RESULTS. */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[25px] sm:py-[60px] relative overflow-hidden">
+        <section className="bg-white py-[20px] sm:py-[35px] relative overflow-hidden">
           {/* Blueprint gears background motif */}
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none z-0">
             {/* Left Gear */}
@@ -2336,7 +2336,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 8: INTELLIGENT SMART PROCESS WORKFLOW */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[25px] sm:py-[60px]">
+        <section className="bg-white py-[20px] sm:py-[35px]">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-full text-center mb-8 sm:mb-16 px-4">
@@ -2655,7 +2655,7 @@ export default function SolutionsPage() {
         {/* ========================================================================= */}
         {/* SECTION 10: SOLUTIONS BUILT AROUND YOUR SUCCESS */}
         {/* ========================================================================= */}
-        <section className="bg-white py-[25px] sm:py-[60px]">
+        <section className="bg-white py-[20px] sm:py-[35px]">
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-full text-center mb-8 sm:mb-16 px-4">
@@ -2878,7 +2878,7 @@ export default function SolutionsPage() {
         {/* SECTION 12: LET'S ENGINEER YOUR NEXT CRUSHING SOLUTION (CTA) */}
         {/* ========================================================================= */}
         <section
-          className="relative bg-[#f4f7fb] py-16 lg:py-24 overflow-hidden font-sans"
+          className="relative bg-[#f4f7fb] py-12 lg:py-16 overflow-hidden font-sans"
           id="contact"
         >
           {/* Faint blueprint background pattern */}
