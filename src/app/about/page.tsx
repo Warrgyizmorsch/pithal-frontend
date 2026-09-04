@@ -1849,7 +1849,7 @@ function FinalCtaSection() {
           <div>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-[2px] w-5 bg-secondary" />
-              <span className="text-lg font-black uppercase tracking-[0.08em] text-secondary">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-secondary whitespace-nowrap">
                 LET&apos;S BUILD
               </span>
             </div>

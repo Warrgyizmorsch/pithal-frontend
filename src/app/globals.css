@@ -84,6 +84,12 @@ body {
   font-family: var(--font-body), "Arial Narrow", Arial, sans-serif;
 }
 
+html.dark,
+html.dark body {
+  background-color: #090D16 !important;
+  color: #F1F5F9;
+}
+
 h1:not(.admin-portal *),
 h2:not(.admin-portal *),
 h3:not(.admin-portal *),

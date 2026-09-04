@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Sidebar, type Section } from "@/components/dashboard/sidebar";
 import { Header } from "@/components/dashboard/header";
 import { LeadsSection } from "@/components/dashboard/sections/leads";
@@ -10,7 +10,40 @@ export default function DashboardPage() {
   const [activeSection, setActiveSection] = useState<Section>("Leads");
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [theme, setTheme] = useState<"dark" | "light">("light");
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("pithal_admin_theme") || localStorage.getItem("pithal_theme");
+      if (saved === "dark" || saved === "light") return saved;
+    }
+    return "light";
+  });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("pithal_admin_theme") || localStorage.getItem("pithal_theme");
+      if (saved === "dark" || saved === "light") {
+        setTheme(saved);
+        if (saved === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+    }
+  }, []);
+
+  const handleThemeChange = (newTheme: "dark" | "light") => {
+    setTheme(newTheme);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("pithal_admin_theme", newTheme);
+      localStorage.setItem("pithal_theme", newTheme);
+      if (newTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  };
 
   return (
     <div
@@ -32,7 +65,7 @@ export default function DashboardPage() {
         <Header
           activeSection={activeSection}
           theme={theme}
-          onThemeChange={setTheme}
+          onThemeChange={handleThemeChange}
           onMenuClick={() => setMobileOpen(true)}
         />
         <main className="flex-1 p-6 overflow-auto">

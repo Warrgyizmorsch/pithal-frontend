@@ -1,6 +1,94 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useMemo } from "react";
+import { usePathname, useRouter } from "next/navigation";
+
+export type AdminMenu =
+  | "dashboard"
+  | "blogs-list"
+  | "blogs-add"
+  | "leads-list"
+  | "users-add"
+  | "users-list"
+  | "users-roles"
+  | "users-history";
+
+export const MENU_TO_ROUTE: Record<AdminMenu, string> = {
+  "dashboard": "/admin",
+  "blogs-list": "/admin/allblogpost",
+  "blogs-add": "/admin/addnewblog",
+  "leads-list": "/admin/allquoteleads",
+  "users-add": "/admin/adduser",
+  "users-list": "/admin/listusers",
+  "users-roles": "/admin/roles",
+  "users-history": "/admin/loginhistory",
+};
+
+export function resolveMenuFromPathname(pathname: string | null | undefined): AdminMenu {
+  if (!pathname) return "dashboard";
+  const clean = pathname.toLowerCase().replace(/\/+$/, "").trim();
+  const segments = clean.split("/").filter(Boolean);
+
+  if (segments.length <= 1) return "dashboard";
+
+  const sub = segments[1];
+
+  switch (sub) {
+    case "allblogpost":
+    case "allblogposts":
+    case "all-blog-posts":
+    case "blogs-list":
+    case "blogs":
+      return "blogs-list";
+
+    case "addnewblog":
+    case "add-new-blog":
+    case "blogs-add":
+    case "addblog":
+    case "newblog":
+      return "blogs-add";
+
+    case "allquoteleads":
+    case "quoteleads":
+    case "quote-leads":
+    case "leads-list":
+    case "leads":
+    case "all-quote-leads":
+      return "leads-list";
+
+    case "adduser":
+    case "add-user":
+    case "users-add":
+    case "newuser":
+      return "users-add";
+
+    case "listusers":
+    case "list-users":
+    case "users-list":
+    case "users":
+      return "users-list";
+
+    case "roles":
+    case "roles-rights":
+    case "rolesandrights":
+    case "users-roles":
+    case "roles-and-rights":
+      return "users-roles";
+
+    case "loginhistory":
+    case "login-history":
+    case "users-history":
+    case "history":
+      return "users-history";
+
+    case "dashboard":
+    case "overview":
+      return "dashboard";
+
+    default:
+      return "dashboard";
+  }
+}
 
 const API_BASE = "/api";
 const DEFAULT_FALLBACK_IMAGE = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&auto=format&fit=crop&q=60";
@@ -447,7 +535,15 @@ function CustomSelectDropdown({
 }
 
 // ─── HIGH-END CUSTOM SMOOTH REACT DROPDOWN FOR LEAD STATUS ─────────────────
-function CustomLeadStatusDropdown({ status, onChange }: { status: "PENDING" | "CONTACTED" | "CLOSED"; onChange: (s: "PENDING" | "CONTACTED" | "CLOSED") => void }) {
+function CustomLeadStatusDropdown({
+  status,
+  onChange,
+  isDark = false,
+}: {
+  status: "PENDING" | "CONTACTED" | "CLOSED";
+  onChange: (s: "PENDING" | "CONTACTED" | "CLOSED") => void;
+  isDark?: boolean;
+}) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -470,10 +566,16 @@ function CustomLeadStatusDropdown({ status, onChange }: { status: "PENDING" | "C
           setOpen(!open);
         }}
         className={`text-[11px] font-bold px-2.5 py-1 rounded-lg border cursor-pointer flex items-center gap-1.5 transition-all duration-200 shadow-2xs ${status === "PENDING"
-            ? "bg-rose-50 text-rose-600 border-rose-200/80 hover:bg-rose-100/80"
+            ? isDark
+              ? "bg-rose-500/20 text-rose-400 border-rose-500/40 hover:bg-rose-500/30"
+              : "bg-rose-50 text-rose-600 border-rose-200/80 hover:bg-rose-100/80"
             : status === "CONTACTED"
-              ? "bg-blue-50 text-blue-600 border-blue-200/80 hover:bg-blue-100/80"
-              : "bg-emerald-50 text-emerald-600 border-emerald-200/80 hover:bg-emerald-100/80"
+              ? isDark
+                ? "bg-blue-500/20 text-blue-400 border-blue-500/40 hover:bg-blue-500/30"
+                : "bg-blue-50 text-blue-600 border-blue-200/80 hover:bg-blue-100/80"
+              : isDark
+                ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/40 hover:bg-emerald-500/30"
+                : "bg-emerald-50 text-emerald-600 border-emerald-200/80 hover:bg-emerald-100/80"
           }`}
       >
         <span>{status}</span>
@@ -485,36 +587,43 @@ function CustomLeadStatusDropdown({ status, onChange }: { status: "PENDING" | "C
       {open && (
         <div
           onClick={(e) => e.stopPropagation()}
-          className="absolute right-0 top-full mt-1.5 w-32 bg-white border border-slate-200 rounded-xl shadow-lg z-50 p-1 space-y-0.5 animate-in fade-in zoom-in-95 ring-1 ring-black/5"
+          className={`absolute right-0 top-full mt-1.5 w-32 border rounded-xl shadow-xl z-50 p-1 space-y-0.5 animate-in fade-in zoom-in-95 ring-1 ring-black/5 ${isDark ? "bg-slate-900 border-slate-700 text-slate-100" : "bg-white border-slate-200 text-slate-800"
+            }`}
         >
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); onChange("PENDING"); setOpen(false); }}
-            className={`w-full text-left px-2.5 py-1.5 text-xs font-semibold rounded-lg transition flex items-center justify-between cursor-pointer ${status === "PENDING" ? "bg-rose-50 text-rose-600 font-bold" : "text-slate-700 hover:bg-slate-50"
+            className={`w-full text-left px-2.5 py-1.5 text-xs font-semibold rounded-lg transition flex items-center justify-between cursor-pointer ${status === "PENDING"
+                ? isDark ? "bg-rose-500/25 text-rose-300 font-bold" : "bg-rose-50 text-rose-600 font-bold"
+                : isDark ? "text-slate-300 hover:bg-slate-800" : "text-slate-700 hover:bg-slate-50"
               }`}
           >
             <span>PENDING</span>
-            {status === "PENDING" && <span className="text-rose-600 font-bold text-xs">✓</span>}
+            {status === "PENDING" && <span className={isDark ? "text-rose-400 font-bold text-xs" : "text-rose-600 font-bold text-xs"}>✓</span>}
           </button>
 
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); onChange("CONTACTED"); setOpen(false); }}
-            className={`w-full text-left px-2.5 py-1.5 text-xs font-semibold rounded-lg transition flex items-center justify-between cursor-pointer ${status === "CONTACTED" ? "bg-blue-50 text-blue-600 font-bold" : "text-slate-700 hover:bg-slate-50"
+            className={`w-full text-left px-2.5 py-1.5 text-xs font-semibold rounded-lg transition flex items-center justify-between cursor-pointer ${status === "CONTACTED"
+                ? isDark ? "bg-blue-500/25 text-blue-300 font-bold" : "bg-blue-50 text-blue-600 font-bold"
+                : isDark ? "text-slate-300 hover:bg-slate-800" : "text-slate-700 hover:bg-slate-50"
               }`}
           >
             <span>CONTACTED</span>
-            {status === "CONTACTED" && <span className="text-blue-600 font-bold text-xs">✓</span>}
+            {status === "CONTACTED" && <span className={isDark ? "text-blue-400 font-bold text-xs" : "text-blue-600 font-bold text-xs"}>✓</span>}
           </button>
 
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); onChange("CLOSED"); setOpen(false); }}
-            className={`w-full text-left px-2.5 py-1.5 text-xs font-semibold rounded-lg transition flex items-center justify-between cursor-pointer ${status === "CLOSED" ? "bg-emerald-50 text-emerald-600 font-bold" : "text-slate-700 hover:bg-slate-50"
+            className={`w-full text-left px-2.5 py-1.5 text-xs font-semibold rounded-lg transition flex items-center justify-between cursor-pointer ${status === "CLOSED"
+                ? isDark ? "bg-emerald-500/25 text-emerald-300 font-bold" : "bg-emerald-50 text-emerald-600 font-bold"
+                : isDark ? "text-slate-300 hover:bg-slate-800" : "text-slate-700 hover:bg-slate-50"
               }`}
           >
             <span>CLOSED</span>
-            {status === "CLOSED" && <span className="text-emerald-600 font-bold text-xs">✓</span>}
+            {status === "CLOSED" && <span className={isDark ? "text-emerald-400 font-bold text-xs" : "text-emerald-600 font-bold text-xs"}>✓</span>}
           </button>
         </div>
       )}
@@ -586,13 +695,13 @@ function InteractiveLeadAnalyticsChart({
         </div>
 
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="flex items-center gap-1.5 text-[11px] font-extrabold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200/80 shadow-2xs">
+          <span className={`flex items-center gap-1.5 text-[11px] font-extrabold px-2.5 py-1 rounded-full border shadow-2xs ${isDark ? "text-amber-400 bg-amber-500/15 border-amber-500/30" : "text-amber-800 bg-amber-50 border-amber-200/80"}`}>
             <span className="w-2 h-2 rounded-full bg-amber-500"></span> Pending ({leads.filter((l) => l.status === "PENDING").length})
           </span>
-          <span className="flex items-center gap-1.5 text-[11px] font-extrabold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200/80 shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-slate-600"></span> Contacted ({leads.filter((l) => l.status === "CONTACTED").length})
+          <span className={`flex items-center gap-1.5 text-[11px] font-extrabold px-2.5 py-1 rounded-full border shadow-2xs ${isDark ? "text-slate-200 bg-slate-800 border-slate-700" : "text-slate-700 bg-slate-100 border-slate-200/80"}`}>
+            <span className="w-2 h-2 rounded-full bg-slate-500"></span> Contacted ({leads.filter((l) => l.status === "CONTACTED").length})
           </span>
-          <span className="flex items-center gap-1.5 text-[11px] font-extrabold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/80 shadow-2xs">
+          <span className={`flex items-center gap-1.5 text-[11px] font-extrabold px-2.5 py-1 rounded-full border shadow-2xs ${isDark ? "text-emerald-400 bg-emerald-500/15 border-emerald-500/30" : "text-emerald-800 bg-emerald-50 border-emerald-200/80"}`}>
             <span className="w-2 h-2 rounded-full bg-emerald-600"></span> Closed ({leads.filter((l) => l.status === "CLOSED").length})
           </span>
         </div>
@@ -643,19 +752,19 @@ function InteractiveLeadAnalyticsChart({
                     </div>
 
                     <div className="space-y-1.5 text-[11px] font-bold">
-                      <div className="flex justify-between items-center text-amber-700">
+                      <div className={`flex justify-between items-center ${isDark ? "text-amber-400" : "text-amber-700"}`}>
                         <span className="flex items-center gap-1.5">
                           <span className="w-2 h-2 rounded-full bg-amber-500"></span> Pending:
                         </span>
                         <span className="font-black">{d.pending}</span>
                       </div>
-                      <div className="flex justify-between items-center text-slate-700">
+                      <div className={`flex justify-between items-center ${isDark ? "text-slate-300" : "text-slate-700"}`}>
                         <span className="flex items-center gap-1.5">
-                          <span className="w-2 h-2 rounded-full bg-slate-600"></span> Contacted:
+                          <span className="w-2 h-2 rounded-full bg-slate-500"></span> Contacted:
                         </span>
                         <span className="font-black">{d.contacted}</span>
                       </div>
-                      <div className="flex justify-between items-center text-emerald-700">
+                      <div className={`flex justify-between items-center ${isDark ? "text-emerald-400" : "text-emerald-700"}`}>
                         <span className="flex items-center gap-1.5">
                           <span className="w-2 h-2 rounded-full bg-emerald-600"></span> Closed:
                         </span>
@@ -860,13 +969,66 @@ export default function BackendAdminPortal() {
   const [loginError, setLoginError] = useState<string | null>(null);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
-  // Theme State Default set to Light Mode
-  const [theme, setTheme] = useState<"dark" | "light">("light");
+  // Theme State - restores from localStorage so dark mode stays persistent across all page routes and reloads
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("pithal_admin_theme") || localStorage.getItem("pithal_theme");
+      if (saved === "dark" || saved === "light") return saved;
+    }
+    return "light";
+  });
 
-  // Navigation State
-  const [activeMenu, setActiveMenu] = useState<"dashboard" | "blogs-list" | "blogs-add" | "leads-list" | "users-add" | "users-list" | "users-roles" | "users-history">("dashboard");
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Navigation State - initialized directly from URL pathname so direct visits and reloads open correct tab
+  const [activeMenu, setActiveMenu] = useState<AdminMenu>(() => resolveMenuFromPathname(pathname));
   const [openSubmenu, setOpenSubmenu] = useState<{ [key: string]: boolean }>({ blogs: true, leads: true, users: true });
 
+  // Keep activeMenu in sync with pathname changes (e.g. direct Next.js navigation)
+  useEffect(() => {
+    const menuFromUrl = resolveMenuFromPathname(pathname);
+    setActiveMenu(menuFromUrl);
+    if (menuFromUrl.startsWith("blogs")) {
+      setOpenSubmenu((prev) => ({ ...prev, blogs: true }));
+    } else if (menuFromUrl.startsWith("leads")) {
+      setOpenSubmenu((prev) => ({ ...prev, leads: true }));
+    } else if (menuFromUrl.startsWith("users")) {
+      setOpenSubmenu((prev) => ({ ...prev, users: true }));
+    }
+  }, [pathname]);
+
+  // Handle browser back/forward buttons seamlessly without full unmount or reloads
+  useEffect(() => {
+    const handlePopState = () => {
+      const menuFromUrl = resolveMenuFromPathname(window.location.pathname);
+      setActiveMenu(menuFromUrl);
+      if (menuFromUrl.startsWith("blogs")) {
+        setOpenSubmenu((prev) => ({ ...prev, blogs: true }));
+      } else if (menuFromUrl.startsWith("leads")) {
+        setOpenSubmenu((prev) => ({ ...prev, leads: true }));
+      } else if (menuFromUrl.startsWith("users")) {
+        setOpenSubmenu((prev) => ({ ...prev, users: true }));
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const navigateToMenu = (menu: AdminMenu) => {
+    setActiveMenu(menu);
+    if (menu.startsWith("blogs")) {
+      setOpenSubmenu((prev) => ({ ...prev, blogs: true }));
+    } else if (menu.startsWith("leads")) {
+      setOpenSubmenu((prev) => ({ ...prev, leads: true }));
+    } else if (menu.startsWith("users")) {
+      setOpenSubmenu((prev) => ({ ...prev, users: true }));
+    }
+    const targetRoute = MENU_TO_ROUTE[menu] || "/admin";
+    if (typeof window !== "undefined" && window.location.pathname !== targetRoute) {
+      window.history.pushState({ menu }, "", targetRoute);
+    }
+  };
   // Dynamic Roles & Permissions Management State
   const [rolesList, setRolesList] = useState<RolePermission[]>([
     { roleName: "Super Admin", description: "Full system access & right permissions across all modules.", canAccessBlogs: true, canAccessLeads: true, canAccessUsers: true, canDeleteItems: true, userCount: 1 },
@@ -906,8 +1068,18 @@ export default function BackendAdminPortal() {
   const [users, setUsers] = useState<UserAccount[]>([]);
 
   useEffect(() => {
-    // Restore auth state from localStorage on mount
+    // Restore auth state and theme from localStorage on mount
     if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("pithal_admin_theme") || localStorage.getItem("pithal_theme");
+      if (savedTheme === "dark" || savedTheme === "light") {
+        setTheme(savedTheme);
+        if (savedTheme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+
       const savedAuth = localStorage.getItem("pithal_admin_auth");
       if (savedAuth === "true") {
         setIsAuthenticated(true);
@@ -953,9 +1125,21 @@ export default function BackendAdminPortal() {
     setIsMounted(true);
   }, []);
 
+  // Automatically sync theme changes to localStorage and documentElement
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      safeSetLocalStorage("pithal_admin_theme", theme);
+      safeSetLocalStorage("pithal_theme", theme);
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  }, [theme]);
+
   // Real Login History State
   const [loginHistory, setLoginHistory] = useState<LoginHistoryItem[]>([]);
-
   // Form State for Adding User
   const [newUserName, setNewUserName] = useState("");
   const [newUserEmail, setNewUserEmail] = useState("");
@@ -1313,7 +1497,7 @@ export default function BackendAdminPortal() {
     setMetaTags(blog.metaTags || "");
     setMetaDescription(blog.metaDescription || "");
     setFaqs(blog.faqs && blog.faqs.length ? blog.faqs : [{ question: "", answer: "" }]);
-    setActiveMenu("blogs-add");
+    navigateToMenu("blogs-add");
   };
 
   const resetBlogForm = () => {
@@ -1378,7 +1562,7 @@ export default function BackendAdminPortal() {
         }
 
         resetBlogForm();
-        setActiveMenu("blogs-list");
+        navigateToMenu("blogs-list");
       } else {
         setStatusMsg({ text: data.error || "Failed to save blog post", type: "error" });
       }
@@ -1603,7 +1787,7 @@ export default function BackendAdminPortal() {
     }
 
     setStatusMsg({ text: `Admin User "${newUser.name}" saved to MongoDB database with role "${newUser.role}"!`, type: "success" });
-    setActiveMenu("users-list");
+    navigateToMenu("users-list");
   };
 
   // Create New Role Function
@@ -1918,7 +2102,12 @@ export default function BackendAdminPortal() {
 
   // ─── LOGIN SCREEN ──────────────────────────────────────────────────────────
   if (!isMounted) {
-    return null;
+    return (
+      <div
+        className="admin-portal min-h-screen bg-[#F8FAFC] dark:bg-[#090D16]"
+        suppressHydrationWarning
+      />
+    );
   }
 
   if (!isAuthenticated) {
@@ -2026,14 +2215,16 @@ export default function BackendAdminPortal() {
         } ${isDark ? "bg-[#0F172A] border-slate-800 text-slate-300" : "bg-white border-slate-200 text-slate-700 shadow-xs"}`}>
         <div>
           {/* LOGO HEADER MATCHING FRONTEND WEBSITE EXACTLY */}
-          <div className={`h-16 px-5 border-b flex items-center justify-between shrink-0 ${isDark ? "border-slate-800 bg-[#0F172A]" : "border-slate-200 bg-white"}`}>
-            <div className="flex items-center w-full justify-start pl-1">
-              <img
-                src="/images/brand/pithal-admin-logo.png"
-                alt="Pithal Machines Ltd."
-                onError={(e) => { e.currentTarget.src = "/images/brand/pithal-logo.png"; }}
-                className="h-10 w-auto max-w-[200px] object-contain"
-              />
+          <div className={`h-16 px-4 border-b flex items-center justify-between shrink-0 ${isDark ? "border-slate-800 bg-[#0F172A]" : "border-slate-200 bg-white"}`}>
+            <div className="flex items-center w-full justify-center">
+              <div className={`transition-all rounded-xl p-1.5 flex items-center justify-center ${isDark ? "bg-white/95 shadow-sm" : ""}`}>
+                <img
+                  src="/images/brand/pithal-admin-logo.png"
+                  alt="Pithal Machines Ltd."
+                  onError={(e) => { e.currentTarget.src = "/images/brand/pithal-logo.png"; }}
+                  className="h-8.5 w-auto max-w-[190px] object-contain"
+                />
+              </div>
             </div>
             <button onClick={() => setMobileSidebarOpen(false)} className="lg:hidden text-slate-400 hover:text-slate-600 dark:hover:text-white p-1 ml-2">
               ✕
@@ -2045,10 +2236,10 @@ export default function BackendAdminPortal() {
 
             {/* Dashboard */}
             <button
-              onClick={() => { setActiveMenu("dashboard"); setMobileSidebarOpen(false); }}
+              onClick={() => { navigateToMenu("dashboard"); setMobileSidebarOpen(false); }}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition cursor-pointer font-bold ${activeMenu === "dashboard"
-                  ? "bg-slate-900 text-white shadow-md shadow-slate-950/20 border-l-4 border-amber-500"
-                  : isDark ? "text-slate-300 hover:bg-slate-800 hover:text-white" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                  ? isDark ? "bg-slate-800 text-amber-400 font-black shadow-md border-l-4 border-amber-500" : "bg-slate-900 text-white shadow-md shadow-slate-950/20 border-l-4 border-amber-500"
+                  : isDark ? "text-slate-200 hover:bg-slate-800 hover:text-white font-bold" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                 }`}
             >
               <Icons.Dashboard />
@@ -2062,7 +2253,7 @@ export default function BackendAdminPortal() {
                   onClick={() => setOpenSubmenu({ ...openSubmenu, blogs: !openSubmenu.blogs })}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer font-bold ${activeMenu.startsWith("blogs")
                       ? isDark ? "bg-slate-800 text-amber-400 border-l-4 border-amber-500" : "bg-slate-900 text-white shadow-sm border-l-4 border-amber-500"
-                      : isDark ? "text-slate-300 hover:bg-slate-800 hover:text-white" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                      : isDark ? "text-slate-200 hover:bg-slate-800 hover:text-white" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                     }`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
@@ -2070,7 +2261,7 @@ export default function BackendAdminPortal() {
                     <span className="truncate">Blog Articles</span>
                   </div>
                   <svg
-                    className={`w-4 h-4 transform transition-transform duration-200 shrink-0 ${openSubmenu.blogs ? "rotate-180 text-amber-500" : activeMenu.startsWith("blogs") ? "text-amber-400" : "text-slate-400"
+                    className={`w-4 h-4 transform transition-transform duration-200 shrink-0 ${openSubmenu.blogs ? "rotate-180 text-amber-500" : activeMenu.startsWith("blogs") ? "text-amber-400" : isDark ? "text-slate-300" : "text-slate-400"
                       }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -2082,22 +2273,22 @@ export default function BackendAdminPortal() {
                 </button>
 
                 <div className={`transition-all duration-300 ease-in-out overflow-hidden ${openSubmenu.blogs ? "max-h-40 opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
-                  <div className="ml-5 space-y-1 border-l-2 border-slate-200 pl-3 py-1">
+                  <div className={`ml-5 space-y-1 border-l-2 ${isDark ? "border-slate-700" : "border-slate-200"} pl-3 py-1`}>
                     <button
-                      onClick={() => { setActiveMenu("blogs-list"); setMobileSidebarOpen(false); }}
+                      onClick={() => { navigateToMenu("blogs-list"); setMobileSidebarOpen(false); }}
                       className={`w-full text-left px-3 py-2 rounded-xl text-xs transition cursor-pointer flex items-center gap-2.5 ${activeMenu === "blogs-list"
-                          ? "bg-amber-500/15 text-amber-600 font-extrabold border-l-2 border-amber-500"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-semibold"
+                          ? isDark ? "bg-amber-500/20 text-amber-400 font-black border-l-2 border-amber-500" : "bg-amber-500/15 text-amber-700 font-black border-l-2 border-amber-500"
+                          : isDark ? "text-slate-200 hover:text-white hover:bg-slate-800/80 font-bold" : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 font-semibold"
                         }`}
                     >
                       <Icons.List />
                       <span>All Blog Posts</span>
                     </button>
                     <button
-                      onClick={() => { resetBlogForm(); setActiveMenu("blogs-add"); setMobileSidebarOpen(false); }}
+                      onClick={() => { resetBlogForm(); navigateToMenu("blogs-add"); setMobileSidebarOpen(false); }}
                       className={`w-full text-left px-3 py-2 rounded-xl text-xs transition cursor-pointer flex items-center gap-2.5 ${activeMenu === "blogs-add"
-                          ? "bg-amber-500/15 text-amber-600 font-extrabold border-l-2 border-amber-500"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-semibold"
+                          ? isDark ? "bg-amber-500/20 text-amber-400 font-black border-l-2 border-amber-500" : "bg-amber-500/15 text-amber-700 font-black border-l-2 border-amber-500"
+                          : isDark ? "text-slate-200 hover:text-white hover:bg-slate-800/80 font-bold" : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 font-semibold"
                         }`}
                     >
                       <Icons.Plus />
@@ -2115,7 +2306,7 @@ export default function BackendAdminPortal() {
                   onClick={() => setOpenSubmenu({ ...openSubmenu, leads: !openSubmenu.leads })}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer font-bold ${activeMenu.startsWith("leads")
                       ? isDark ? "bg-slate-800 text-amber-400 border-l-4 border-amber-500" : "bg-slate-900 text-white shadow-sm border-l-4 border-amber-500"
-                      : isDark ? "text-slate-300 hover:bg-slate-800 hover:text-white" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                      : isDark ? "text-slate-200 hover:bg-slate-800 hover:text-white" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                     }`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
@@ -2123,7 +2314,7 @@ export default function BackendAdminPortal() {
                     <span className="truncate">Quote Requests</span>
                   </div>
                   <svg
-                    className={`w-4 h-4 transform transition-transform duration-200 shrink-0 ${openSubmenu.leads ? "rotate-180 text-amber-500" : activeMenu.startsWith("leads") ? "text-amber-400" : "text-slate-400"
+                    className={`w-4 h-4 transform transition-transform duration-200 shrink-0 ${openSubmenu.leads ? "rotate-180 text-amber-500" : activeMenu.startsWith("leads") ? "text-amber-400" : isDark ? "text-slate-300" : "text-slate-400"
                       }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -2135,12 +2326,12 @@ export default function BackendAdminPortal() {
                 </button>
 
                 <div className={`transition-all duration-300 ease-in-out overflow-hidden ${openSubmenu.leads ? "max-h-40 opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
-                  <div className="ml-5 space-y-1 border-l-2 border-slate-200 pl-3 py-1">
+                  <div className={`ml-5 space-y-1 border-l-2 ${isDark ? "border-slate-700" : "border-slate-200"} pl-3 py-1`}>
                     <button
-                      onClick={() => { setActiveMenu("leads-list"); setMobileSidebarOpen(false); }}
+                      onClick={() => { navigateToMenu("leads-list"); setMobileSidebarOpen(false); }}
                       className={`w-full text-left px-3 py-2 rounded-xl text-xs transition cursor-pointer flex items-center gap-2.5 ${activeMenu === "leads-list"
-                          ? "bg-amber-500/15 text-amber-600 font-extrabold border-l-2 border-amber-500"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-semibold"
+                          ? isDark ? "bg-amber-500/20 text-amber-400 font-black border-l-2 border-amber-500" : "bg-amber-500/15 text-amber-700 font-black border-l-2 border-amber-500"
+                          : isDark ? "text-slate-200 hover:text-white hover:bg-slate-800/80 font-bold" : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 font-semibold"
                         }`}
                     >
                       <Icons.Inbox />
@@ -2158,7 +2349,7 @@ export default function BackendAdminPortal() {
                   onClick={() => setOpenSubmenu({ ...openSubmenu, users: !openSubmenu.users })}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer font-bold ${activeMenu.startsWith("users")
                       ? isDark ? "bg-slate-800 text-amber-400 border-l-4 border-amber-500" : "bg-slate-900 text-white shadow-sm border-l-4 border-amber-500"
-                      : isDark ? "text-slate-300 hover:bg-slate-800 hover:text-white" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                      : isDark ? "text-slate-200 hover:bg-slate-800 hover:text-white" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                     }`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
@@ -2166,7 +2357,7 @@ export default function BackendAdminPortal() {
                     <span className="truncate">Users Management</span>
                   </div>
                   <svg
-                    className={`w-4 h-4 transform transition-transform duration-200 shrink-0 ${openSubmenu.users ? "rotate-180 text-amber-500" : activeMenu.startsWith("users") ? "text-amber-400" : "text-slate-400"
+                    className={`w-4 h-4 transform transition-transform duration-200 shrink-0 ${openSubmenu.users ? "rotate-180 text-amber-500" : activeMenu.startsWith("users") ? "text-amber-400" : isDark ? "text-slate-300" : "text-slate-400"
                       }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -2178,42 +2369,42 @@ export default function BackendAdminPortal() {
                 </button>
 
                 <div className={`transition-all duration-300 ease-in-out overflow-hidden ${openSubmenu.users ? "max-h-60 opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
-                  <div className="ml-5 space-y-1 border-l-2 border-slate-200 pl-3 py-1">
+                  <div className={`ml-5 space-y-1 border-l-2 ${isDark ? "border-slate-700" : "border-slate-200"} pl-3 py-1`}>
                     <button
-                      onClick={() => { setActiveMenu("users-add"); setMobileSidebarOpen(false); }}
+                      onClick={() => { navigateToMenu("users-add"); setMobileSidebarOpen(false); }}
                       className={`w-full text-left px-3 py-2 rounded-xl text-xs transition cursor-pointer flex items-center gap-2.5 ${activeMenu === "users-add"
-                          ? "bg-amber-500/15 text-amber-600 font-extrabold border-l-2 border-amber-500"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-semibold"
+                          ? isDark ? "bg-amber-500/20 text-amber-400 font-black border-l-2 border-amber-500" : "bg-amber-500/15 text-amber-700 font-black border-l-2 border-amber-500"
+                          : isDark ? "text-slate-200 hover:text-white hover:bg-slate-800/80 font-bold" : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 font-semibold"
                         }`}
                     >
                       <Icons.Plus />
                       <span>Add User</span>
                     </button>
                     <button
-                      onClick={() => { setActiveMenu("users-list"); setMobileSidebarOpen(false); }}
+                      onClick={() => { navigateToMenu("users-list"); setMobileSidebarOpen(false); }}
                       className={`w-full text-left px-3 py-2 rounded-xl text-xs transition cursor-pointer flex items-center gap-2.5 ${activeMenu === "users-list"
-                          ? "bg-amber-500/15 text-amber-600 font-extrabold border-l-2 border-amber-500"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-semibold"
+                          ? isDark ? "bg-amber-500/20 text-amber-400 font-black border-l-2 border-amber-500" : "bg-amber-500/15 text-amber-700 font-black border-l-2 border-amber-500"
+                          : isDark ? "text-slate-200 hover:text-white hover:bg-slate-800/80 font-bold" : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 font-semibold"
                         }`}
                     >
                       <Icons.List />
                       <span>List Users</span>
                     </button>
                     <button
-                      onClick={() => { setActiveMenu("users-roles"); setMobileSidebarOpen(false); }}
+                      onClick={() => { navigateToMenu("users-roles"); setMobileSidebarOpen(false); }}
                       className={`w-full text-left px-3 py-2 rounded-xl text-xs transition cursor-pointer flex items-center gap-2.5 ${activeMenu === "users-roles"
-                          ? "bg-amber-500/15 text-amber-600 font-extrabold border-l-2 border-amber-500"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-semibold"
+                          ? isDark ? "bg-amber-500/20 text-amber-400 font-black border-l-2 border-amber-500" : "bg-amber-500/15 text-amber-700 font-black border-l-2 border-amber-500"
+                          : isDark ? "text-slate-200 hover:text-white hover:bg-slate-800/80 font-bold" : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 font-semibold"
                         }`}
                     >
                       <Icons.ShieldCheck />
                       <span>Roles & Rights</span>
                     </button>
                     <button
-                      onClick={() => { setActiveMenu("users-history"); setMobileSidebarOpen(false); }}
+                      onClick={() => { navigateToMenu("users-history"); setMobileSidebarOpen(false); }}
                       className={`w-full text-left px-3 py-2 rounded-xl text-xs transition cursor-pointer flex items-center gap-2.5 ${activeMenu === "users-history"
-                          ? "bg-amber-500/15 text-amber-600 font-extrabold border-l-2 border-amber-500"
-                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-semibold"
+                          ? isDark ? "bg-amber-500/20 text-amber-400 font-black border-l-2 border-amber-500" : "bg-amber-500/15 text-amber-700 font-black border-l-2 border-amber-500"
+                          : isDark ? "text-slate-200 hover:text-white hover:bg-slate-800/80 font-bold" : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 font-semibold"
                         }`}
                     >
                       <Icons.History />
@@ -2280,7 +2471,7 @@ export default function BackendAdminPortal() {
 
             {/* Global Search Bar */}
             <div className="relative w-48 sm:w-80">
-              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 pointer-events-none">
+              <span className={`absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none ${isDark ? "text-slate-300" : "text-slate-400"}`}>
                 <Icons.Search />
               </span>
               <input
@@ -2288,7 +2479,7 @@ export default function BackendAdminPortal() {
                 placeholder="Search blogs, leads..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className={`w-full border rounded-xl pl-9 pr-3 py-2 text-xs focus:outline-none focus:border-amber-500 transition ${isDark ? "bg-slate-950 border-slate-800 text-white placeholder-slate-500" : "bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400"
+                className={`w-full border rounded-xl pl-9 pr-3 py-2 text-xs focus:outline-none transition ${isDark ? "bg-slate-800/90 border-slate-700 text-white placeholder-slate-300 focus:bg-slate-800 focus:border-amber-400" : "bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-500 focus:border-amber-500"
                   }`}
               />
             </div>
@@ -2299,7 +2490,19 @@ export default function BackendAdminPortal() {
 
             {/* Theme Toggle Button */}
             <button
-              onClick={() => setTheme(isDark ? "light" : "dark")}
+              onClick={() => {
+                const nextTheme = isDark ? "light" : "dark";
+                setTheme(nextTheme);
+                safeSetLocalStorage("pithal_admin_theme", nextTheme);
+                safeSetLocalStorage("pithal_theme", nextTheme);
+                if (typeof window !== "undefined") {
+                  if (nextTheme === "dark") {
+                    document.documentElement.classList.add("dark");
+                  } else {
+                    document.documentElement.classList.remove("dark");
+                  }
+                }
+              }}
               className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition cursor-pointer flex items-center gap-1.5 ${isDark ? "bg-slate-800 border-slate-700 text-amber-400 hover:bg-slate-700" : "bg-slate-100 border-slate-300 text-slate-800 hover:bg-slate-200"
                 }`}
             >
@@ -2344,7 +2547,7 @@ export default function BackendAdminPortal() {
                       leads.filter(l => l.status === "PENDING").map((lead) => (
                         <div
                           key={lead.id}
-                          onClick={() => { setActiveMenu("leads-list"); setShowNotificationMenu(false); }}
+                          onClick={() => { navigateToMenu("leads-list"); setShowNotificationMenu(false); }}
                           className={`p-3 rounded-xl border space-y-1 transition cursor-pointer hover:border-amber-500 ${isDark ? "bg-slate-950 border-slate-800 hover:bg-slate-900" : "bg-slate-50 border-slate-200 hover:bg-amber-50/50"
                             }`}
                         >
@@ -2362,7 +2565,7 @@ export default function BackendAdminPortal() {
 
                   {pendingLeadsCount > 0 && (
                     <button
-                      onClick={() => { setActiveMenu("leads-list"); setShowNotificationMenu(false); }}
+                      onClick={() => { navigateToMenu("leads-list"); setShowNotificationMenu(false); }}
                       className="w-full py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black rounded-xl transition uppercase tracking-wider cursor-pointer"
                     >
                       View All Quote Inquiries ({leads.length})
@@ -2545,11 +2748,11 @@ export default function BackendAdminPortal() {
 
                       <div>
                         <div className="flex justify-between text-slate-500 mb-1">
-                          <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-slate-600"></span> Contacted</span>
-                          <span className="text-slate-700 font-extrabold">{contactedLeadsCount} ({leads.length ? Math.round((contactedLeadsCount / leads.length) * 100) : 0}%)</span>
+                          <span className={`flex items-center gap-1.5 ${isDark ? "text-slate-300" : "text-slate-600"}`}><span className="w-2.5 h-2.5 rounded-full bg-slate-500"></span> Contacted</span>
+                          <span className={`font-extrabold ${isDark ? "text-slate-200" : "text-slate-700"}`}>{contactedLeadsCount} ({leads.length ? Math.round((contactedLeadsCount / leads.length) * 100) : 0}%)</span>
                         </div>
-                        <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                          <div className="h-full bg-slate-600 rounded-full transition-all duration-500" style={{ width: `${leads.length ? (contactedLeadsCount / leads.length) * 100 : 0}%` }}></div>
+                        <div className={`w-full h-2.5 rounded-full overflow-hidden ${isDark ? "bg-slate-800" : "bg-slate-100"}`}>
+                          <div className="h-full bg-slate-500 rounded-full transition-all duration-500" style={{ width: `${leads.length ? (contactedLeadsCount / leads.length) * 100 : 0}%` }}></div>
                         </div>
                       </div>
 
@@ -2572,7 +2775,7 @@ export default function BackendAdminPortal() {
                         Recent Inquiries Feed
                       </h3>
                       {canAccessLeads && (
-                        <button onClick={() => setActiveMenu("leads-list")} className="text-[10px] text-amber-500 font-bold hover:underline cursor-pointer">View All →</button>
+                        <button onClick={() => navigateToMenu("leads-list")} className="text-[10px] text-amber-500 font-bold hover:underline cursor-pointer">View All →</button>
                       )}
                     </div>
 
@@ -2602,7 +2805,7 @@ export default function BackendAdminPortal() {
           {/* ─── MODULE 2: BLOGS LIST TABLE ─────────────────────────────────── */}
           {activeMenu === "blogs-list" && canAccessBlogs && (
             <div className={`rounded-2xl border p-6 space-y-5 ${isDark ? "bg-slate-900 border-slate-800" : "bg-white border-slate-200 shadow-sm"}`}>
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-4 border-slate-200">
+              <div className={`flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-4 ${isDark ? "border-slate-800" : "border-slate-200"}`}>
                 <div>
                   <h2 className={`text-base font-bold ${isDark ? "text-white" : "text-slate-900"}`}>
                     Published Blog Articles ({filteredBlogs.length})
@@ -2617,34 +2820,34 @@ export default function BackendAdminPortal() {
                       placeholder="Search blogs..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className={`px-3.5 py-1.5 pl-8 border rounded-xl text-xs focus:outline-none focus:border-amber-500 w-44 font-normal transition ${isDark ? "bg-slate-950 border-slate-800 text-white placeholder-slate-500" : "bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400"}`}
+                      className={`px-3.5 py-1.5 pl-8 border rounded-xl text-xs focus:outline-none w-44 font-normal transition ${isDark ? "bg-slate-800/90 border-slate-700 text-white placeholder-slate-300 focus:bg-slate-800 focus:border-amber-400" : "bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400 focus:border-amber-500"}`}
                     />
-                    <svg className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className={`w-3.5 h-3.5 absolute left-2.5 top-2.5 ${isDark ? "text-slate-300" : "text-slate-400"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   </div>
 
                   <button
                     onClick={() => setBlogStatusFilter("ALL")}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${blogStatusFilter === "ALL" ? "bg-slate-900 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${blogStatusFilter === "ALL" ? isDark ? "bg-amber-500 text-slate-950 font-black shadow-xs" : "bg-slate-900 text-white" : isDark ? "bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
                   >
                     All ({blogs.length})
                   </button>
                   <button
                     onClick={() => setBlogStatusFilter("Publish")}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${blogStatusFilter === "Publish" ? "bg-emerald-600 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${blogStatusFilter === "Publish" ? "bg-emerald-600 text-white" : isDark ? "bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
                   >
                     Published
                   </button>
                   <button
                     onClick={() => setBlogStatusFilter("Draft")}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${blogStatusFilter === "Draft" ? "bg-amber-500 text-slate-950" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer ${blogStatusFilter === "Draft" ? "bg-amber-500 text-slate-950 font-bold" : isDark ? "bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
                   >
                     Drafts
                   </button>
 
                   <button
-                    onClick={() => { resetBlogForm(); setActiveMenu("blogs-add"); }}
+                    onClick={() => { resetBlogForm(); navigateToMenu("blogs-add"); }}
                     className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-xl text-xs uppercase tracking-wider transition cursor-pointer shadow-xs ml-1 flex items-center gap-1.5"
                   >
                     <Icons.Plus />
@@ -2656,7 +2859,7 @@ export default function BackendAdminPortal() {
               {/* Data Table */}
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className={`uppercase text-[11px] font-bold border-b ${isDark ? "bg-slate-950 text-slate-400 border-slate-800" : "bg-slate-100 text-slate-600 border-slate-200"}`}>
+                  <thead className={`uppercase text-[11px] font-black border-b ${isDark ? "bg-slate-950 text-slate-300 border-slate-800" : "bg-slate-100 text-slate-600 border-slate-200"}`}>
                     <tr>
                       <th className="p-3">Thumbnail</th>
                       <th className="p-3">Title</th>
@@ -2691,7 +2894,7 @@ export default function BackendAdminPortal() {
                           </span>
                         </td>
 
-                        <td className="p-3 text-center font-mono text-slate-400">
+                        <td className={`p-3 text-center font-mono ${isDark ? "text-slate-300" : "text-slate-500"}`}>
                           {b.publishedAt}
                         </td>
 
@@ -2743,7 +2946,7 @@ export default function BackendAdminPortal() {
                 </div>
 
                 <button
-                  onClick={() => setActiveMenu("blogs-list")}
+                  onClick={() => navigateToMenu("blogs-list")}
                   className="bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold px-3.5 py-1.5 rounded-xl text-xs transition cursor-pointer border border-slate-200 dark:border-slate-700 shadow-2xs flex items-center gap-1.5"
                 >
                   ← Back to Blog List
@@ -2987,7 +3190,7 @@ export default function BackendAdminPortal() {
                 <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-200 dark:border-slate-800">
                   <button
                     type="button"
-                    onClick={() => setActiveMenu("blogs-list")}
+                    onClick={() => navigateToMenu("blogs-list")}
                     className="bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold px-4 py-2 rounded-xl text-xs transition cursor-pointer border border-slate-200 dark:border-slate-700"
                   >
                     Cancel
@@ -3024,9 +3227,9 @@ export default function BackendAdminPortal() {
                       placeholder="Search leads..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="px-3.5 py-1.5 pl-8 border border-slate-300 rounded-xl text-xs bg-slate-50 focus:outline-none focus:border-amber-500 w-44 font-normal"
+                      className={`px-3.5 py-1.5 pl-8 border rounded-xl text-xs focus:outline-none w-44 font-normal transition ${isDark ? "bg-slate-800/90 border-slate-700 text-white placeholder-slate-300 focus:bg-slate-800 focus:border-amber-400" : "bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400 focus:border-amber-500"}`}
                     />
-                    <svg className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className={`w-3.5 h-3.5 absolute left-2.5 top-2.5 ${isDark ? "text-slate-300" : "text-slate-400"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   </div>
@@ -3036,8 +3239,8 @@ export default function BackendAdminPortal() {
                     <button
                       onClick={() => setShowFilterPopover(!showFilterPopover)}
                       className={`px-3 py-1.5 rounded-xl border flex items-center gap-1.5 transition cursor-pointer ${leadEquipmentFilter !== "ALL" || leadDateSort !== "NEWEST"
-                          ? "bg-amber-500 text-white border-amber-500 shadow-xs"
-                          : "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200"
+                          ? "bg-amber-500 text-slate-950 font-black border-amber-500 shadow-xs"
+                          : isDark ? "bg-slate-800 text-slate-200 border-slate-700 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200"
                         }`}
                       title="Open Filters"
                     >
@@ -3052,9 +3255,9 @@ export default function BackendAdminPortal() {
 
                     {/* Filter Popover Content */}
                     {showFilterPopover && (
-                      <div className="absolute right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 z-50 text-slate-800 space-y-4 text-xs">
-                        <div className="flex items-center justify-between border-b pb-2">
-                          <h4 className="font-extrabold text-slate-900 uppercase tracking-wide">Filter Quote Leads</h4>
+                      <div className={`absolute right-0 mt-2 w-72 rounded-2xl shadow-2xl border p-4 z-50 space-y-4 text-xs ${isDark ? "bg-slate-900 border-slate-700 text-slate-100" : "bg-white border-slate-200 text-slate-800"}`}>
+                        <div className={`flex items-center justify-between border-b pb-2 ${isDark ? "border-slate-800" : "border-slate-200"}`}>
+                          <h4 className={`font-extrabold uppercase tracking-wide ${isDark ? "text-white" : "text-slate-900"}`}>Filter Quote Leads</h4>
                           <button
                             onClick={() => {
                               setLeadFilter("ALL");
@@ -3062,7 +3265,7 @@ export default function BackendAdminPortal() {
                               setLeadDateSort("NEWEST");
                               setSearchQuery("");
                             }}
-                            className="text-[11px] font-bold text-amber-600 hover:underline cursor-pointer"
+                            className="text-[11px] font-bold text-amber-500 hover:underline cursor-pointer"
                           >
                             Reset All
                           </button>
@@ -3070,15 +3273,15 @@ export default function BackendAdminPortal() {
 
                         {/* Filter by Status */}
                         <div className="space-y-1.5">
-                          <label className="font-bold text-slate-500 uppercase text-[10px]">Filter By Status</label>
+                          <label className={`font-bold uppercase text-[10px] ${isDark ? "text-slate-300" : "text-slate-500"}`}>Filter By Status</label>
                           <div className="grid grid-cols-2 gap-1.5">
                             {(["ALL", "PENDING", "CONTACTED", "CLOSED"] as const).map((st) => (
                               <button
                                 key={st}
                                 onClick={() => setLeadFilter(st)}
                                 className={`px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition text-center cursor-pointer ${leadFilter === st
-                                    ? "bg-slate-900 text-white"
-                                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                                    ? isDark ? "bg-amber-500 text-slate-950 font-black" : "bg-slate-900 text-white"
+                                    : isDark ? "bg-slate-800 text-slate-300 hover:bg-slate-700" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                                   }`}
                               >
                                 {st}
@@ -3089,15 +3292,15 @@ export default function BackendAdminPortal() {
 
                         {/* Filter by Equipment Interest */}
                         <div className="space-y-1.5">
-                          <label className="font-bold text-slate-500 uppercase text-[10px]">Filter By Equipment</label>
+                          <label className={`font-bold uppercase text-[10px] ${isDark ? "text-slate-300" : "text-slate-500"}`}>Filter By Equipment</label>
                           <select
                             value={leadEquipmentFilter}
                             onChange={(e) => setLeadEquipmentFilter(e.target.value)}
-                            className="w-full px-3 py-1.5 rounded-lg border border-slate-300 bg-slate-50 text-slate-800 font-medium focus:outline-none focus:border-amber-500"
+                            className={`w-full px-3 py-1.5 rounded-lg border font-medium focus:outline-none focus:border-amber-500 ${isDark ? "bg-slate-800 border-slate-700 text-white" : "bg-slate-50 border-slate-300 text-slate-800"}`}
                           >
                             <option value="ALL">All Equipment Types</option>
                             {uniqueEquipments.map((eq) => (
-                              <option key={eq} value={eq}>
+                              <option key={eq} value={eq} className={isDark ? "bg-slate-900 text-white" : "bg-white text-slate-900"}>
                                 {eq}
                               </option>
                             ))}
@@ -3106,13 +3309,13 @@ export default function BackendAdminPortal() {
 
                         {/* Sort Order */}
                         <div className="space-y-1.5">
-                          <label className="font-bold text-slate-500 uppercase text-[10px]">Sort Order</label>
+                          <label className={`font-bold uppercase text-[10px] ${isDark ? "text-slate-300" : "text-slate-500"}`}>Sort Order</label>
                           <div className="grid grid-cols-2 gap-1.5">
                             <button
                               onClick={() => setLeadDateSort("NEWEST")}
                               className={`px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition text-center cursor-pointer ${leadDateSort === "NEWEST"
-                                  ? "bg-amber-500 text-white"
-                                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                                  ? "bg-amber-500 text-slate-950 font-black"
+                                  : isDark ? "bg-slate-800 text-slate-300 hover:bg-slate-700" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                                 }`}
                             >
                               Newest First
@@ -3120,8 +3323,8 @@ export default function BackendAdminPortal() {
                             <button
                               onClick={() => setLeadDateSort("OLDEST")}
                               className={`px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition text-center cursor-pointer ${leadDateSort === "OLDEST"
-                                  ? "bg-amber-500 text-white"
-                                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                                  ? "bg-amber-500 text-slate-950 font-black"
+                                  : isDark ? "bg-slate-800 text-slate-300 hover:bg-slate-700" : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                                 }`}
                             >
                               Oldest First
@@ -3135,7 +3338,7 @@ export default function BackendAdminPortal() {
                   {leads.length > 0 && (
                     <button
                       onClick={requestBulkDeleteLeads}
-                      className="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200 transition cursor-pointer mr-2 text-xs font-bold"
+                      className={`px-3 py-1.5 rounded-xl transition cursor-pointer mr-2 text-xs font-bold border ${isDark ? "bg-slate-800 text-slate-200 border-slate-700 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200"}`}
                       title="Clear leads"
                     >
                       Clear All Leads
@@ -3143,25 +3346,25 @@ export default function BackendAdminPortal() {
                   )}
                   <button
                     onClick={() => setLeadFilter("ALL")}
-                    className={`px-3.5 py-1.5 rounded-xl transition cursor-pointer ${leadFilter === "ALL" ? "bg-slate-900 text-white shadow-xs" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                    className={`px-3.5 py-1.5 rounded-xl transition cursor-pointer font-bold ${leadFilter === "ALL" ? isDark ? "bg-amber-500 text-slate-950 font-black shadow-xs" : "bg-slate-900 text-white shadow-xs" : isDark ? "bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
                   >
                     All ({leads.length})
                   </button>
                   <button
                     onClick={() => setLeadFilter("PENDING")}
-                    className={`px-3.5 py-1.5 rounded-xl transition cursor-pointer ${leadFilter === "PENDING" ? "bg-rose-600 text-white shadow-xs" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                    className={`px-3.5 py-1.5 rounded-xl transition cursor-pointer font-bold ${leadFilter === "PENDING" ? "bg-rose-600 text-white shadow-xs" : isDark ? "bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
                   >
                     Pending ({pendingLeadsCount})
                   </button>
                   <button
                     onClick={() => setLeadFilter("CONTACTED")}
-                    className={`px-3.5 py-1.5 rounded-xl transition cursor-pointer ${leadFilter === "CONTACTED" ? "bg-blue-600 text-white shadow-xs" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                    className={`px-3.5 py-1.5 rounded-xl transition cursor-pointer font-bold ${leadFilter === "CONTACTED" ? "bg-blue-600 text-white shadow-xs" : isDark ? "bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
                   >
                     Contacted ({contactedLeadsCount})
                   </button>
                   <button
                     onClick={() => setLeadFilter("CLOSED")}
-                    className={`px-3.5 py-1.5 rounded-xl transition cursor-pointer ${leadFilter === "CLOSED" ? "bg-emerald-600 text-white shadow-xs" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                    className={`px-3.5 py-1.5 rounded-xl transition cursor-pointer font-bold ${leadFilter === "CLOSED" ? "bg-emerald-600 text-white shadow-xs" : isDark ? "bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
                   >
                     Closed ({closedLeadsCount})
                   </button>
@@ -3230,7 +3433,7 @@ export default function BackendAdminPortal() {
                 ) : (
                   <>
                     {/* Column Headers */}
-                    <div className={`hidden md:grid grid-cols-[36px_2.5fr_1.5fr_140px_110px] gap-4 items-center px-5 py-2.5 rounded-xl text-[10px] font-extrabold uppercase tracking-wider ${isDark ? "bg-slate-950 text-slate-500" : "bg-slate-100 text-slate-500"}`}>
+                    <div className={`hidden md:grid grid-cols-[36px_2.5fr_1.5fr_140px_110px] gap-4 items-center px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider ${isDark ? "bg-slate-950/90 text-slate-300 border border-slate-800/80" : "bg-slate-100 text-slate-600"}`}>
                       <div className="flex items-center justify-center">
                         <input
                           type="checkbox"
@@ -3277,7 +3480,7 @@ export default function BackendAdminPortal() {
 
                             {/* Column 1: Avatar + Name + Contact */}
                             <div className="flex items-center gap-3.5 min-w-0">
-                              <div className="w-9 h-9 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-extrabold text-xs flex items-center justify-center shrink-0">
+                              <div className={`w-9 h-9 rounded-full border text-xs font-extrabold flex items-center justify-center shrink-0 ${isDark ? "bg-slate-800 border-slate-700 text-amber-400" : "bg-slate-100 border-slate-200 text-slate-700"}`}>
                                 {lead.fullName.substring(0, 2).toUpperCase()}
                               </div>
 
@@ -3286,25 +3489,25 @@ export default function BackendAdminPortal() {
                                   <h3 className={`font-bold text-sm truncate ${isDark ? "text-white" : "text-slate-900"}`}>
                                     {lead.fullName}
                                   </h3>
-                                  <span className="text-[10px] font-mono text-slate-400 bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200">
+                                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full border ${isDark ? "text-slate-300 bg-slate-800 border-slate-700" : "text-slate-400 bg-slate-50 border-slate-200"}`}>
                                     #{lead.id.substring(lead.id.length - 4)}
                                   </span>
                                 </div>
 
-                                <div className="flex items-center gap-3 text-xs text-slate-500 font-medium">
+                                <div className={`flex items-center gap-3 text-xs font-medium ${isDark ? "text-slate-300" : "text-slate-500"}`}>
                                   <span className="flex items-center gap-1">
-                                    <svg className="w-3 h-3 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                                    <svg className={`w-3 h-3 shrink-0 ${isDark ? "text-slate-400" : "text-slate-400"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                                     {lead.phone}
                                   </span>
-                                  <span className="hidden sm:inline text-slate-300">•</span>
-                                  <span className="hidden sm:inline truncate text-slate-400">{lead.email}</span>
+                                  <span className={`hidden sm:inline ${isDark ? "text-slate-600" : "text-slate-300"}`}>•</span>
+                                  <span className={`hidden sm:inline truncate ${isDark ? "text-slate-300" : "text-slate-400"}`}>{lead.email}</span>
                                 </div>
                               </div>
                             </div>
 
                             {/* Column 2: Equipment Interest */}
                             <div className="hidden md:block min-w-0" onClick={(e) => e.stopPropagation()}>
-                              <span className="text-[11px] font-mono text-slate-700 bg-slate-100 px-3 py-1 rounded-xl border border-slate-200 font-medium inline-block truncate max-w-full">
+                              <span className={`text-[11px] font-mono px-3 py-1 rounded-xl border font-semibold inline-block truncate max-w-full ${isDark ? "text-slate-200 bg-slate-800/90 border-slate-700" : "text-slate-700 bg-slate-100 border-slate-200 font-medium"}`}>
                                 {lead.productInterest || "General Inquiry"}
                               </span>
                             </div>
@@ -3313,6 +3516,7 @@ export default function BackendAdminPortal() {
                             <div className="hidden md:flex justify-center" onClick={(e) => e.stopPropagation()}>
                               <CustomLeadStatusDropdown
                                 status={lead.status}
+                                isDark={isDark}
                                 onChange={(newStatus) => handleUpdateLeadStatus(lead.id, newStatus)}
                               />
                             </div>
@@ -3347,12 +3551,13 @@ export default function BackendAdminPortal() {
                             </div>
 
                             {/* Mobile View Status */}
-                            <div className="md:hidden flex items-center justify-between pt-2 border-t border-slate-100 gap-3" onClick={(e) => e.stopPropagation()}>
-                              <span className="text-[11px] font-mono text-slate-700 bg-slate-100 px-3 py-1 rounded-xl border border-slate-200 font-medium truncate">
+                            <div className={`md:hidden flex items-center justify-between pt-2 gap-3 border-t ${isDark ? "border-slate-800" : "border-slate-100"}`} onClick={(e) => e.stopPropagation()}>
+                              <span className={`text-[11px] font-mono px-3 py-1 rounded-xl border font-semibold truncate ${isDark ? "text-slate-200 bg-slate-800/90 border-slate-700" : "text-slate-700 bg-slate-100 border-slate-200"}`}>
                                 {lead.productInterest || "General Inquiry"}
                               </span>
                               <CustomLeadStatusDropdown
                                 status={lead.status}
+                                isDark={isDark}
                                 onChange={(newStatus) => handleUpdateLeadStatus(lead.id, newStatus)}
                               />
                             </div>
@@ -3361,41 +3566,41 @@ export default function BackendAdminPortal() {
                           {/* Smooth Dropdown Accordion Expand Body */}
                           <div
                             className={`grid transition-all duration-300 ease-in-out ${isExpanded
-                                ? "grid-rows-[1fr] opacity-100 border-t border-slate-200"
+                                ? `grid-rows-[1fr] opacity-100 border-t ${isDark ? "border-slate-800" : "border-slate-200"}`
                                 : "grid-rows-[0fr] opacity-0 border-t-0"
                               }`}
                           >
                             <div className="overflow-hidden">
                               <div
                                 className={`p-5 space-y-4 text-xs ${isDark
-                                    ? "bg-slate-950/60 text-slate-200"
+                                    ? "bg-slate-950/80 text-slate-200"
                                     : "bg-slate-50/80 text-slate-800"
                                   }`}
                               >
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                   <div>
-                                    <span className="font-bold text-slate-400 block mb-0.5">Company / Business Name</span>
-                                    <span className="font-bold text-slate-900">{lead.companyName || "Individual Inquiry"}</span>
+                                    <span className={`font-bold block mb-0.5 ${isDark ? "text-slate-400" : "text-slate-500"}`}>Company / Business Name</span>
+                                    <span className={`font-bold ${isDark ? "text-white" : "text-slate-900"}`}>{lead.companyName || "Individual Inquiry"}</span>
                                   </div>
                                   <div>
-                                    <span className="font-bold text-slate-400 block mb-0.5">Equipment / Product Interest</span>
-                                    <span className="font-bold text-amber-600">{lead.productInterest || "General Machinery Quote"}</span>
+                                    <span className={`font-bold block mb-0.5 ${isDark ? "text-slate-400" : "text-slate-500"}`}>Equipment / Product Interest</span>
+                                    <span className="font-bold text-amber-500">{lead.productInterest || "General Machinery Quote"}</span>
                                   </div>
                                   <div>
-                                    <span className="font-bold text-slate-400 block mb-0.5">Captured From Page</span>
-                                    <span className="font-mono text-blue-600 font-bold">{lead.sourcePage || "/contact"}</span>
+                                    <span className={`font-bold block mb-0.5 ${isDark ? "text-slate-400" : "text-slate-500"}`}>Captured From Page</span>
+                                    <span className={`font-mono font-bold ${isDark ? "text-sky-400" : "text-blue-600"}`}>{lead.sourcePage || "/contact"}</span>
                                   </div>
                                 </div>
 
                                 {lead.message && (
-                                  <div className="p-3.5 bg-white border border-slate-200 rounded-xl space-y-1">
-                                    <span className="font-bold text-slate-400 block text-[11px]">Customer Requirement Message:</span>
-                                    <p className="text-slate-900 leading-relaxed font-medium italic">"{lead.message}"</p>
+                                  <div className={`p-3.5 rounded-xl space-y-1 border ${isDark ? "bg-slate-900 border-slate-800 text-slate-200" : "bg-white border-slate-200 text-slate-800"}`}>
+                                    <span className={`font-bold block text-[11px] ${isDark ? "text-slate-400" : "text-slate-500"}`}>Customer Requirement Message:</span>
+                                    <p className={`leading-relaxed font-medium italic ${isDark ? "text-slate-100" : "text-slate-900"}`}>"{lead.message}"</p>
                                   </div>
                                 )}
 
-                                <div className="flex items-center justify-between pt-2 border-t border-slate-200/80">
-                                  <span className="text-[10px] text-slate-400 font-mono">Date Received: {lead.createdAt ? new Date(lead.createdAt).toLocaleString() : "Today"}</span>
+                                <div className={`flex items-center justify-between pt-2 border-t ${isDark ? "border-slate-800" : "border-slate-200/80"}`}>
+                                  <span className={`text-[10px] font-mono ${isDark ? "text-slate-400" : "text-slate-500"}`}>Date Received: {lead.createdAt ? new Date(lead.createdAt).toLocaleString() : "Today"}</span>
                                   <div className="flex items-center gap-2">
                                     <button
                                       onClick={() => handleUpdateLeadStatus(lead.id, "CONTACTED")}
@@ -3432,7 +3637,7 @@ export default function BackendAdminPortal() {
                   <span className="text-xs text-slate-400">Home &gt; Add User</span>
                 </div>
                 <button
-                  onClick={() => setActiveMenu("users-list")}
+                  onClick={() => navigateToMenu("users-list")}
                   className="bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold px-3.5 py-1.5 rounded-xl text-xs transition cursor-pointer border border-slate-200 dark:border-slate-700 shadow-2xs flex items-center gap-1.5"
                 >
                   ← List Users
@@ -3574,7 +3779,7 @@ export default function BackendAdminPortal() {
           {/* ─── MODULE 5B: LIST USERS TABLE ─────────────────────────────────── */}
           {activeMenu === "users-list" && canAccessUsers && (
             <div className={`rounded-2xl border p-6 space-y-6 ${isDark ? "bg-slate-900 border-slate-800" : "bg-white border-slate-200 shadow-sm"}`}>
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-4 border-slate-200">
+              <div className={`flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-4 ${isDark ? "border-slate-800" : "border-slate-200"}`}>
                 <div>
                   <h2 className={`text-base font-bold ${isDark ? "text-white" : "text-slate-900"}`}>
                     User Accounts ({filteredUsers.length})
@@ -3589,34 +3794,34 @@ export default function BackendAdminPortal() {
                       placeholder="Search users..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className={`px-3.5 py-1.5 pl-8 border rounded-xl text-xs focus:outline-none focus:border-amber-500 w-44 font-normal transition ${isDark ? "bg-slate-950 border-slate-800 text-white placeholder-slate-500" : "bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400"}`}
+                      className={`px-3.5 py-1.5 pl-8 border rounded-xl text-xs focus:outline-none w-44 font-normal transition ${isDark ? "bg-slate-800/90 border-slate-700 text-white placeholder-slate-300 focus:bg-slate-800 focus:border-amber-400" : "bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400 focus:border-amber-500"}`}
                     />
-                    <svg className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className={`w-3.5 h-3.5 absolute left-2.5 top-2.5 ${isDark ? "text-slate-300" : "text-slate-400"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   </div>
 
                   <button
                     onClick={() => setUserStatusFilter("ALL")}
-                    className={`px-3 py-1.5 rounded-xl transition cursor-pointer ${userStatusFilter === "ALL" ? "bg-slate-900 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+                    className={`px-3 py-1.5 rounded-xl transition cursor-pointer ${userStatusFilter === "ALL" ? isDark ? "bg-amber-500 text-slate-950 font-black shadow-xs" : "bg-slate-900 text-white" : isDark ? "bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
                   >
                     All ({users.length})
                   </button>
                   <button
                     onClick={() => setUserStatusFilter("Active")}
-                    className={`px-3 py-1.5 rounded-xl transition cursor-pointer ${userStatusFilter === "Active" ? "bg-emerald-600 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+                    className={`px-3 py-1.5 rounded-xl transition cursor-pointer ${userStatusFilter === "Active" ? "bg-emerald-600 text-white" : isDark ? "bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
                   >
                     Active
                   </button>
                   <button
                     onClick={() => setUserStatusFilter("Inactive")}
-                    className={`px-3 py-1.5 rounded-xl transition cursor-pointer ${userStatusFilter === "Inactive" ? "bg-rose-600 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
+                    className={`px-3 py-1.5 rounded-xl transition cursor-pointer ${userStatusFilter === "Inactive" ? "bg-rose-600 text-white" : isDark ? "bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"}`}
                   >
                     Inactive
                   </button>
 
                   <button
-                    onClick={() => setActiveMenu("users-add")}
+                    onClick={() => navigateToMenu("users-add")}
                     className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-4 py-1.5 rounded-xl text-xs uppercase tracking-wider transition shadow cursor-pointer ml-1"
                   >
                     + ADD USER
@@ -3626,7 +3831,7 @@ export default function BackendAdminPortal() {
 
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className={`uppercase text-[11px] font-bold border-b ${isDark ? "bg-slate-950 text-slate-400 border-slate-800" : "bg-slate-100 text-slate-600"}`}>
+                  <thead className={`uppercase text-[11px] font-black border-b ${isDark ? "bg-slate-950 text-slate-300 border-slate-800" : "bg-slate-100 text-slate-600"}`}>
                     <tr>
                       <th className="p-3">Avatar</th>
                       <th className="p-3">Name</th>
@@ -3646,10 +3851,10 @@ export default function BackendAdminPortal() {
                         </td>
                       </tr>
                     ) : (
-                      filteredUsers.map((u) => (
-                        <tr key={u.id} className="hover:bg-slate-500/5 transition">
+                      filteredUsers.map((u, idx) => (
+                        <tr key={u.id ? `${u.id}-${idx}` : `user-${idx}`} className="hover:bg-slate-500/5 transition">
                           <td className="p-3">
-                            <div className="w-8 h-8 rounded-full bg-slate-200 overflow-hidden flex items-center justify-center font-bold text-slate-700">
+                            <div className={`w-8 h-8 rounded-full overflow-hidden flex items-center justify-center font-bold text-xs border ${isDark ? "bg-slate-800 border-slate-700 text-amber-400" : "bg-slate-200 border-slate-300 text-slate-700"}`}>
                               {u.avatar && (u.avatar.startsWith("data:") || u.avatar.startsWith("http") || u.avatar.startsWith("/")) ? (
                                 <img src={u.avatar} alt={u.name} className="w-full h-full object-cover" />
                               ) : (
@@ -3657,11 +3862,11 @@ export default function BackendAdminPortal() {
                               )}
                             </div>
                           </td>
-                          <td className="p-3 font-bold">{u.name}</td>
-                          <td className="p-3 font-mono text-slate-400">{u.email}</td>
+                          <td className={`p-3 font-bold ${isDark ? "text-white" : "text-slate-900"}`}>{u.name}</td>
+                          <td className={`p-3 font-mono ${isDark ? "text-slate-300" : "text-slate-500"}`}>{u.email}</td>
                           <td className="p-3 font-extrabold text-amber-500">{u.role}</td>
-                          <td className="p-3 font-mono">{u.phone || "+91 9876543210"}</td>
-                          <td className="p-3 font-mono text-slate-400">{u.joinedDate}</td>
+                          <td className={`p-3 font-mono ${isDark ? "text-slate-300" : "text-slate-700"}`}>{u.phone || "+91 9876543210"}</td>
+                          <td className={`p-3 font-mono ${isDark ? "text-slate-300" : "text-slate-500"}`}>{u.joinedDate}</td>
                           <td className="p-3 text-center">
                             <button
                               onClick={() => handleToggleUserStatus(u.id)}
@@ -3739,8 +3944,8 @@ export default function BackendAdminPortal() {
                         </span>
                       </div>
 
-                      <div className="space-y-2 text-xs font-semibold pt-4 border-t border-slate-200">
-                        <label className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                      <div className={`space-y-2 text-xs font-semibold pt-4 border-t ${isDark ? "border-slate-800" : "border-slate-200"}`}>
+                        <label className={`flex items-center justify-between p-2.5 rounded-xl border shadow-2xs cursor-pointer ${isDark ? "bg-slate-900 border-slate-800 text-slate-200" : "bg-white border-slate-200 text-slate-800"}`}>
                           <span>Access Blog Module</span>
                           <input
                             type="checkbox"
@@ -3755,7 +3960,7 @@ export default function BackendAdminPortal() {
                           />
                         </label>
 
-                        <label className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                        <label className={`flex items-center justify-between p-2.5 rounded-xl border shadow-2xs cursor-pointer ${isDark ? "bg-slate-900 border-slate-800 text-slate-200" : "bg-white border-slate-200 text-slate-800"}`}>
                           <span>Access Customer Leads</span>
                           <input
                             type="checkbox"
@@ -3770,7 +3975,7 @@ export default function BackendAdminPortal() {
                           />
                         </label>
 
-                        <label className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                        <label className={`flex items-center justify-between p-2.5 rounded-xl border shadow-2xs cursor-pointer ${isDark ? "bg-slate-900 border-slate-800 text-slate-200" : "bg-white border-slate-200 text-slate-800"}`}>
                           <span>Access User Accounts</span>
                           <input
                             type="checkbox"
@@ -3785,7 +3990,7 @@ export default function BackendAdminPortal() {
                           />
                         </label>
 
-                        <label className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                        <label className={`flex items-center justify-between p-2.5 rounded-xl border shadow-2xs cursor-pointer ${isDark ? "bg-slate-900 border-slate-800 text-slate-200" : "bg-white border-slate-200 text-slate-800"}`}>
                           <span>Delete Permissions</span>
                           <input
                             type="checkbox"
@@ -3810,7 +4015,7 @@ export default function BackendAdminPortal() {
           {/* ─── MODULE 5D: LOGIN HISTORY ────────────────────────────────────── */}
           {activeMenu === "users-history" && canAccessUsers && (
             <div className={`rounded-2xl border p-6 space-y-6 ${isDark ? "bg-slate-900 border-slate-800" : "bg-white border-slate-200 shadow-sm"}`}>
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-4 border-slate-200">
+              <div className={`flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-4 ${isDark ? "border-slate-800" : "border-slate-200"}`}>
                 <div>
                   <h2 className={`text-lg font-black uppercase ${isDark ? "text-white" : "text-slate-900"}`}>
                     Login History ({filteredLoginHistory.length})
@@ -3824,14 +4029,14 @@ export default function BackendAdminPortal() {
                     placeholder="Search history, IP, device..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="px-3.5 py-1.5 border border-slate-300 rounded-xl text-xs bg-slate-50 focus:outline-none focus:border-amber-500 w-56 font-normal"
+                    className={`px-3.5 py-1.5 border rounded-xl text-xs focus:outline-none w-56 font-normal transition ${isDark ? "bg-slate-800/90 border-slate-700 text-white placeholder-slate-300 focus:bg-slate-800 focus:border-amber-400" : "bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400 focus:border-amber-500"}`}
                   />
                 </div>
               </div>
 
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className={`uppercase text-[11px] font-bold border-b ${isDark ? "bg-slate-950 text-slate-400 border-slate-800" : "bg-slate-100 text-slate-600"}`}>
+                  <thead className={`uppercase text-[11px] font-black border-b ${isDark ? "bg-slate-950 text-slate-300 border-slate-800" : "bg-slate-100 text-slate-600 border-slate-200"}`}>
                     <tr>
                       <th className="p-3">User</th>
                       <th className="p-3 text-center">Logged In?</th>
@@ -3852,16 +4057,16 @@ export default function BackendAdminPortal() {
                         return (
                           <tr key={lh.id} className="hover:bg-slate-500/5 transition">
                             <td className="p-3 font-bold">
-                              <span>{lh.user}</span>
+                              <span className={isDark ? "text-white" : "text-slate-900"}>{lh.user}</span>
                             </td>
                             <td className="p-3 text-center">
-                              <span className={`px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase ${lh.loggedIn === "Yes" ? "bg-emerald-500/15 text-emerald-600 border border-emerald-500/30" : "bg-slate-500/15 text-slate-500 border border-slate-500/30"}`}>
+                              <span className={`px-2.5 py-0.5 rounded text-[10px] font-extrabold uppercase ${lh.loggedIn === "Yes" ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30" : "bg-slate-500/15 text-slate-400 border border-slate-500/30"}`}>
                                 {lh.loggedIn === "Yes" ? "YES" : "NO"}
                               </span>
                             </td>
-                            <td className="p-3 font-mono text-slate-400">{lh.ip}</td>
-                            <td className="p-3">{lh.device}</td>
-                            <td className="p-3 font-mono text-slate-400">{lh.lastLogin}</td>
+                            <td className={`p-3 font-mono ${isDark ? "text-slate-300" : "text-slate-500"}`}>{lh.ip}</td>
+                            <td className={`p-3 ${isDark ? "text-white font-medium" : "text-slate-800"}`}>{lh.device}</td>
+                            <td className={`p-3 font-mono ${isDark ? "text-slate-300" : "text-slate-500"}`}>{lh.lastLogin}</td>
                           </tr>
                         );
                       })
@@ -4376,10 +4581,10 @@ export default function BackendAdminPortal() {
       {/* ─── POPUP MODAL: DETAILED LEAD INFORMATION ──────────────────────── */}
       {selectedLeadModal && (
         <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="w-full max-w-lg rounded-3xl border p-6 space-y-5 bg-white border-slate-200 text-slate-900 shadow-2xl">
-            <div className="flex items-center justify-between border-b pb-3 border-slate-200">
+          <div className={`w-full max-w-lg rounded-3xl border p-6 space-y-5 shadow-2xl ${isDark ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}>
+            <div className={`flex items-center justify-between border-b pb-3 ${isDark ? "border-slate-800" : "border-slate-200"}`}>
               <div>
-                <h3 className="font-black text-lg">Lead Details - {selectedLeadModal.fullName}</h3>
+                <h3 className={`font-black text-lg ${isDark ? "text-white" : "text-slate-900"}`}>Lead Details - {selectedLeadModal.fullName}</h3>
                 <span className="text-xs text-slate-400">Captured from website forms</span>
               </div>
               <button
@@ -4393,25 +4598,25 @@ export default function BackendAdminPortal() {
             </div>
 
             <div className="space-y-3 text-xs">
-              <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1.5 text-slate-800">
-                <p><span className="font-bold text-slate-500">Full Name:</span> {selectedLeadModal.fullName}</p>
-                {selectedLeadModal.companyName && <p><span className="font-bold text-slate-500">Company:</span> {selectedLeadModal.companyName}</p>}
-                <p><span className="font-bold text-slate-500">Email:</span> <a href={`mailto:${selectedLeadModal.email}`} className="text-blue-600 font-bold">{selectedLeadModal.email}</a></p>
-                <p><span className="font-bold text-slate-500">Phone:</span> <a href={`tel:${selectedLeadModal.phone}`} className="text-blue-600 font-bold">{selectedLeadModal.phone}</a></p>
-                <p><span className="font-bold text-slate-500">Interest:</span> <span className="text-amber-600 font-bold">{selectedLeadModal.productInterest}</span></p>
+              <div className={`p-3 rounded-xl space-y-1.5 border ${isDark ? "bg-slate-950 border-slate-800 text-slate-200" : "bg-slate-50 border-slate-200 text-slate-800"}`}>
+                <p><span className={`font-bold ${isDark ? "text-slate-400" : "text-slate-500"}`}>Full Name:</span> {selectedLeadModal.fullName}</p>
+                {selectedLeadModal.companyName && <p><span className={`font-bold ${isDark ? "text-slate-400" : "text-slate-500"}`}>Company:</span> {selectedLeadModal.companyName}</p>}
+                <p><span className={`font-bold ${isDark ? "text-slate-400" : "text-slate-500"}`}>Email:</span> <a href={`mailto:${selectedLeadModal.email}`} className="text-blue-500 hover:underline font-bold">{selectedLeadModal.email}</a></p>
+                <p><span className={`font-bold ${isDark ? "text-slate-400" : "text-slate-500"}`}>Phone:</span> <a href={`tel:${selectedLeadModal.phone}`} className="text-blue-500 hover:underline font-bold">{selectedLeadModal.phone}</a></p>
+                <p><span className={`font-bold ${isDark ? "text-slate-400" : "text-slate-500"}`}>Interest:</span> <span className="text-amber-500 font-bold">{selectedLeadModal.productInterest}</span></p>
               </div>
 
               {selectedLeadModal.message && (
-                <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
-                  <span className="font-bold text-slate-600 block mb-1">Customer Requirement Message:</span>
-                  <p className="text-slate-900 font-medium leading-relaxed">"{selectedLeadModal.message}"</p>
+                <div className={`p-3 rounded-xl border ${isDark ? "bg-slate-950 border-slate-800 text-slate-200" : "bg-slate-50 border-slate-200 text-slate-800"}`}>
+                  <span className={`font-bold block mb-1 ${isDark ? "text-slate-400" : "text-slate-600"}`}>Customer Requirement Message:</span>
+                  <p className={`font-medium leading-relaxed italic ${isDark ? "text-slate-100" : "text-slate-900"}`}>"{selectedLeadModal.message}"</p>
                 </div>
               )}
             </div>
 
-            <div className="flex items-center justify-between pt-2">
-              <button onClick={() => handleUpdateLeadStatus(selectedLeadModal.id, "CONTACTED")} className="px-4 py-2 bg-blue-600 text-white font-bold rounded-xl text-xs">Mark Contacted</button>
-              <button onClick={() => setSelectedLeadModal(null)} className="px-4 py-2 bg-slate-200 text-slate-800 font-bold rounded-xl text-xs">Close</button>
+            <div className={`flex items-center justify-between pt-2 border-t ${isDark ? "border-slate-800" : "border-slate-200"}`}>
+              <button onClick={() => handleUpdateLeadStatus(selectedLeadModal.id, "CONTACTED")} className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs cursor-pointer shadow-xs">Mark Contacted</button>
+              <button onClick={() => setSelectedLeadModal(null)} className={`px-4 py-2 rounded-xl text-xs font-bold cursor-pointer ${isDark ? "bg-slate-800 hover:bg-slate-700 text-slate-200" : "bg-slate-200 hover:bg-slate-300 text-slate-800"}`}>Close</button>
             </div>
           </div>
         </div>

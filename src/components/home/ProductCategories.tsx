@@ -79,7 +79,7 @@ export function ProductCategories() {
           highlight="SCREENING EQUIPMENT"
           subtitle="Engineered for maximum productivity, reliability and efficiency across demanding crushing, screening and material-processing operations."
           title="HIGH-PERFORMANCE CRUSHING &"
-          className="max-w-full lg:[&_h2]:whitespace-nowrap [&_h2]:text-[clamp(0.9rem,3.2vw,3.25rem)]"
+          className="max-w-full lg:[&_h2]:whitespace-nowrap lg:[&_h2]:text-[clamp(2rem,3.2vw,3.25rem)]"
         />
 
         {/* Desktop View (Grid Layout) */}

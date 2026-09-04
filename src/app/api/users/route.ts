@@ -28,15 +28,53 @@ export async function GET() {
     const conn = await connectDB();
     if (conn) {
       const dbUsers = await UserModel.find().sort({ createdAt: 1 }).lean();
-      // Always inject the fallback superadmin so login never fails for this account
-      let allUsers: any[] = [...DEFAULT_USERS];
       
-      if (dbUsers && dbUsers.length > 0) {
-        // Filter out any DB user that might conflict with our fallback admin email
-        const dbUsersFiltered = dbUsers.filter(dbU => !DEFAULT_USERS.some(dU => dU.email === dbU.email));
-        allUsers = [...allUsers, ...dbUsersFiltered];
+      const seenIds = new Set<string>();
+      const seenEmails = new Set<string>();
+      const allUsers: any[] = [];
+
+      // 1. First add DEFAULT_USERS
+      for (const du of DEFAULT_USERS) {
+        seenIds.add(du.id);
+        seenEmails.add(du.email.toLowerCase().trim());
+        allUsers.push(du);
       }
-      
+
+      // 2. Merge dbUsers, avoiding duplicate emails or IDs
+      if (dbUsers && dbUsers.length > 0) {
+        for (let i = 0; i < dbUsers.length; i++) {
+          const dbU: any = dbUsers[i];
+          const cleanEmail = (dbU.email || "").toLowerCase().trim();
+
+          // If email already exists in DEFAULT_USERS, merge DB attributes
+          if (cleanEmail && seenEmails.has(cleanEmail)) {
+            const existingIndex = allUsers.findIndex(
+              u => (u.email || "").toLowerCase().trim() === cleanEmail
+            );
+            if (existingIndex >= 0) {
+              allUsers[existingIndex] = {
+                ...allUsers[existingIndex],
+                ...dbU,
+                id: allUsers[existingIndex].id, // Keep unique id
+              };
+            }
+            continue;
+          }
+
+          let uid = String(dbU.id || dbU._id || `user-${i + 1}`);
+          if (seenIds.has(uid)) {
+            uid = String(dbU._id || `${uid}-${i + 1}`);
+          }
+
+          seenIds.add(uid);
+          if (cleanEmail) seenEmails.add(cleanEmail);
+          allUsers.push({
+            ...dbU,
+            id: uid,
+          });
+        }
+      }
+
       return jsonResponse({
         success: true,
         count: allUsers.length,

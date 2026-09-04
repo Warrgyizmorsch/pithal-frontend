@@ -138,7 +138,7 @@ export default function BecomeADealerPage() {
             <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="h-1 w-8 bg-secondary rounded-full" />
-                <span className="text-secondary font-bold uppercase tracking-widest text-sm">
+                <span className="text-secondary font-bold uppercase tracking-[0.16em] text-xs sm:text-sm whitespace-nowrap">
                   Dealer Benefits
                 </span>
                 <span className="h-1 w-8 bg-secondary rounded-full" />

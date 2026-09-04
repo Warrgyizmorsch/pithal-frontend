@@ -14,26 +14,32 @@ export async function GET() {
   try {
     const conn = await connectDB();
     if (conn) {
-      const dbBlogs = await BlogModel.find().sort({ createdAt: -1 }).lean();
-      if (dbBlogs && dbBlogs.length > 0) {
-        return jsonResponse({
+      const dbBlogs = await BlogModel.find()
+        .select("-content -faqs")
+        .sort({ createdAt: -1 })
+        .lean();
+      return jsonResponse(
+        {
           success: true,
-          count: dbBlogs.length,
-          data: dbBlogs,
+          count: dbBlogs ? dbBlogs.length : 0,
+          data: dbBlogs || [],
           source: "MongoDB Database",
-        });
-      }
+        },
+        200,
+        {
+          "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+        }
+      );
     }
   } catch (err) {
-    console.warn("MongoDB GET blogs error, using fallback:", err);
+    console.warn("MongoDB GET blogs error:", err);
   }
 
-  // Fallback to in-memory mock data
   return jsonResponse({
     success: true,
-    count: mockBlogs.length,
-    data: mockBlogs,
-    source: "Memory Fallback",
+    count: 0,
+    data: [],
+    source: "MongoDB Database",
   });
 }
 

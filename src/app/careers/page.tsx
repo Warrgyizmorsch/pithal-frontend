@@ -715,7 +715,7 @@ export default function CareersPage() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <span className="h-[3px] w-8 bg-secondary rounded-full" />
-                  <span className="text-lg font-black uppercase tracking-[0.08em] text-secondary">
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-secondary whitespace-nowrap">
                     LIFE AT PITHAL
                   </span>
                 </div>

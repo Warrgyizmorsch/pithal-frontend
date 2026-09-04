@@ -65,7 +65,7 @@ function SectionTitle({
         </div>
         <div
           className={cn(
-            "relative px-6 z-10 font-black uppercase text-[17px] tracking-[0.24em] text-secondary",
+            "relative px-3 sm:px-6 z-10 font-bold uppercase text-xs sm:text-sm tracking-[0.16em] text-secondary whitespace-nowrap",
             light ? "bg-slate-900" : bgClass,
           )}
         >

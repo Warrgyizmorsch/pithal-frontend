@@ -28,22 +28,13 @@ export async function GET(
       }
     }
   } catch (err) {
-    console.warn("MongoDB GET blog by slug error, using fallback:", err);
+    console.warn("MongoDB GET blog by slug error:", err);
   }
 
-  const blog = mockBlogs.find((b) => b.slug === slug);
-
-  if (!blog) {
-    return jsonResponse(
-      { success: false, error: `Blog post '${slug}' not found` },
-      404
-    );
-  }
-
-  return jsonResponse({
-    success: true,
-    data: blog,
-  });
+  return jsonResponse(
+    { success: false, error: `Blog post '${slug}' not found` },
+    404
+  );
 }
 
 export async function PUT(

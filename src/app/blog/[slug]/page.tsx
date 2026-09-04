@@ -4,7 +4,6 @@ import { Container } from "@/components/common/Container";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroNavigation } from "@/components/common/HeroNavigation";
-import { getPostBySlug, getTrendingPosts } from "@/data/blogData";
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, Calendar, Eye, Flame, ArrowRight } from "lucide-react";
@@ -12,7 +11,9 @@ import ReactMarkdown from "react-markdown";
 import { BlogFaqAccordion } from "@/components/blog/BlogFaqAccordion";
 import { BlogShareButtons } from "@/components/blog/BlogShareButtons";
 
-function cleanBlogContentHtml(html: string, title?: string): string {
+export const revalidate = 60;
+
+function cleanBlogContentHtml(html: string, title?: string, desc?: string): string {
   if (!html) return "";
 
   let cleaned = html;
@@ -22,6 +23,18 @@ function cleanBlogContentHtml(html: string, title?: string): string {
     const escaped = title.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const titleRegex = new RegExp(`^\\s*<h[12][^>]*>\\s*${escaped}\\s*</h[12]>`, "i");
     cleaned = cleaned.replace(titleRegex, "");
+  }
+
+  // 1b. Remove duplicate opening paragraph if it literally matches post.desc
+  if (desc && desc.trim()) {
+    const cleanDesc = desc.trim().replace(/\s+/g, " ");
+    const pMatch = cleaned.match(/^\s*<p[^>]*>([\s\S]*?)<\/p>/i);
+    if (pMatch) {
+      const pText = pMatch[1].replace(/<[^>]+>/g, "").trim().replace(/\s+/g, " ");
+      if (pText === cleanDesc) {
+        cleaned = cleaned.replace(/^\s*<p[^>]*>[\s\S]*?<\/p>/i, "");
+      }
+    }
   }
 
   // 2. Strip hardcoded inline font-weight & font-family from inline styles inside paragraphs
@@ -48,30 +61,39 @@ async function getBlogPost(slug: string) {
       const b: any = await BlogModel.findOne({ slug }).lean();
       if (b) {
         return {
-          slug: b.slug,
-          tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
-          title: b.title,
-          desc: b.excerpt || b.title,
-          date: b.publishedAt || "Today",
-          read: b.readTime || "5 min read",
-          views: b.views || "1.2K",
-          img: b.image || "/blogpageimg/crusherguide.jpg",
-          content: b.content,
-          faqs: b.faqs || [],
+          slug: String(b.slug || ""),
+          tag: String(b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS"),
+          title: String(b.title || ""),
+          desc: String(b.excerpt || b.title || ""),
+          date: String(b.publishedAt || "Today"),
+          read: String(b.readTime || "5 min read"),
+          views: String(b.views || "1.2K"),
+          img: String(b.image || "/blogpageimg/crusherguide.jpg"),
+          content: String(b.content || ""),
+          faqs: Array.isArray(b.faqs)
+            ? b.faqs.map((f: any) => ({
+                question: String(f.question || ""),
+                answer: String(f.answer || ""),
+              }))
+            : [],
         };
       }
     }
   } catch (err) {
-    console.warn("Direct DB blog fetch error, using fallback:", err);
+    console.warn("Direct DB blog fetch error:", err);
   }
-  return getPostBySlug(slug) || null;
+  return null;
 }
 
 async function getAllBackendBlogs() {
   try {
     const conn = await connectDB();
     if (conn) {
-      const blogs: any = await BlogModel.find({ status: { $ne: "Draft" } }).sort({ createdAt: -1 }).lean();
+      const blogs: any = await BlogModel.find({ status: { $ne: "Draft" } })
+        .select("slug title readTime publishedAt image tag category createdAt")
+        .sort({ createdAt: -1 })
+        .limit(6)
+        .lean();
       if (blogs && blogs.length > 0) {
         return blogs;
       }
@@ -143,9 +165,7 @@ export default async function BlogPostPage({
             tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
             num: `0${index + 1}`,
           }))
-      : getTrendingPosts()
-          .filter((p) => p.slug !== slug)
-          .slice(0, 4);
+      : [];
 
   return (
     <>
@@ -153,21 +173,9 @@ export default async function BlogPostPage({
       <main className="min-h-screen bg-white font-sans py-6 sm:py-8 lg:py-10">
         <Container>
           <div className="max-w-[1240px] mx-auto">
-            {/* HEADER: Breadcrumbs, Title, Sub-heading (aligned with below content, wrapped in 2 lines) */}
-            <div className="text-left mb-6 sm:mb-8">
-              <div className="[&_nav]:!justify-start text-left mb-3">
-                <HeroNavigation current="Blog" eyebrow={post.tag} />
-              </div>
-
-              <h1 className="max-w-[840px] text-[clamp(1.75rem,3.4vw,3rem)] font-extrabold leading-[1.14] text-primary mb-3 uppercase tracking-wide text-left">
-                {post.title}
-              </h1>
-              
-              {post.desc && (
-                <p className="max-w-[760px] text-[15px] sm:text-[17px] font-bold leading-relaxed text-primary text-left">
-                  {post.desc}
-                </p>
-              )}
+            {/* Breadcrumb Navigation */}
+            <div className="[&_nav]:!justify-start text-left mb-4 sm:mb-6">
+              <HeroNavigation current="Blog" eyebrow={post.tag} />
             </div>
 
             {/* MAIN ARTICLE & SIDEBAR SECTION */}
@@ -178,53 +186,66 @@ export default async function BlogPostPage({
                 
                 {/* Banner Image inside post */}
                 <div className="space-y-4">
-                  <div className="relative w-full h-[280px] sm:h-[400px] rounded-xl overflow-hidden shadow-inner">
+                  <div className="relative w-full aspect-[24/13] rounded-xl overflow-hidden shadow-inner bg-slate-100">
                     <Image
                       src={post.img}
                       alt={post.title}
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                       priority
                     />
                   </div>
 
-                    {/* Date, Time, Views - shifted below product/banner image on the right side above introduction */}
-                    <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4 pt-1">
-                      <span className="flex items-center gap-1.5 text-xs font-semibold text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
-                        <Calendar size={13} /> {post.date}
-                      </span>
+                  {/* Date, Time, Views */}
+                  <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4 pt-1">
+                    <span className="flex items-center gap-1.5 text-xs font-semibold text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
+                      <Calendar size={13} /> {post.date}
+                    </span>
+                    <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-600">
+                      <Clock size={13} className="text-secondary" /> {post.read.toLowerCase().includes("min") ? post.read : `${post.read} min read`}
+                    </span>
+                    {post.views && (
                       <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-600">
-                        <Clock size={13} className="text-secondary" /> {post.read.toLowerCase().includes("min") ? post.read : `${post.read} min read`}
+                        <Eye size={13} className="text-secondary" /> {post.views} Views
                       </span>
-                      {post.views && (
-                        <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-600">
-                          <Eye size={13} className="text-secondary" /> {post.views} Views
-                        </span>
-                      )}
-                    </div>
+                    )}
                   </div>
+                </div>
 
-                  {/* Body Content */}
-                  <article className="prose prose-lg max-w-none text-slate-800">
-                    {post.content && post.content.includes("<") ? (
-                      <div
-                        className="blog-rich-content font-sans text-slate-800 space-y-4 leading-relaxed overflow-x-hidden
-                          [&_p]:font-normal [&_p]:text-slate-700 [&_p]:text-[16.5px] md:[&_p]:text-[17.5px] [&_p]:leading-[1.85] [&_p]:mb-5
-                          [&_p_*]:font-normal [&_p_strong]:font-normal [&_p_b]:font-normal
-                          [&_h1]:text-3xl [&_h1]:font-black [&_h1]:text-primary [&_h1]:mt-8 [&_h1]:mb-4 [&_h1]:tracking-tight [&_h1]:leading-tight
-                          [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-primary [&_h2]:mt-8 [&_h2]:mb-4 [&_h2]:tracking-tight [&_h2]:leading-tight
-                          [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-primary [&_h3]:mt-6 [&_h3]:mb-3 [&_h3]:leading-tight
-                          [&_h4]:text-lg [&_h4]:font-bold [&_h4]:text-primary [&_h4]:mt-5 [&_h4]:mb-2
-                          [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-4 [&_ul]:space-y-2.5 [&_li]:text-slate-700 [&_li]:font-normal [&_li]:text-[16px]
-                          [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:my-4 [&_ol]:space-y-2.5 [&_li]:text-slate-700 [&_li]:font-normal [&_li]:text-[16px]
-                          [&_blockquote]:border-l-4 [&_blockquote]:border-secondary [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:my-6 [&_blockquote]:text-slate-600 [&_blockquote]:bg-orange-50/40 [&_blockquote]:py-3 [&_blockquote]:rounded-r-lg
-                          [&_table]:w-full [&_table]:min-w-[520px] [&_table]:border-collapse [&_table]:my-6
-                          [&_td]:border [&_td]:border-slate-200 [&_td]:p-3 [&_td]:text-sm [&_td]:font-normal
-                          [&_th]:border [&_th]:border-slate-200 [&_th]:p-3 [&_th]:bg-slate-100 [&_th]:font-bold [&_th]:text-primary [&_th]:text-sm
-                          [&_a]:text-secondary [&_a]:font-bold [&_a]:underline hover:[&_a]:text-primary
-                          [&_div:has(table)]:overflow-x-auto [&_div:has(table)]:max-w-full [&_div:has(table)]:my-6 [&_div:has(table)]:rounded-xl [&_div:has(table)]:border [&_div:has(table)]:border-slate-200"
-                        dangerouslySetInnerHTML={{ __html: cleanBlogContentHtml(post.content, post.title) }}
-                      />
+                {/* Heading and Description placed below image */}
+                <div className="text-left space-y-2.5 pt-1">
+                  <h1 className="text-xl sm:text-2xl lg:text-[1.65rem] font-extrabold leading-snug sm:leading-[1.25] text-primary uppercase text-left">
+                    {post.title}
+                  </h1>
+                  
+                  {post.desc && (
+                    <p className="text-[14px] sm:text-[16px] font-bold leading-relaxed text-[#48576c] text-left">
+                      {post.desc}
+                    </p>
+                  )}
+                </div>
+
+                {/* Body Content */}
+                <article className="prose prose-lg max-w-none text-slate-800">
+                  {post.content && post.content.includes("<") ? (
+                    <div
+                      className="blog-rich-content font-sans text-slate-800 space-y-4 leading-relaxed overflow-x-hidden
+                        [&_p]:font-normal [&_p]:text-slate-700 [&_p]:text-[16.5px] md:[&_p]:text-[17.5px] [&_p]:leading-[1.85] [&_p]:mb-5
+                        [&_p_*]:font-normal [&_p_strong]:font-normal [&_p_b]:font-normal
+                        [&_h1]:text-3xl [&_h1]:font-black [&_h1]:text-primary [&_h1]:mt-8 [&_h1]:mb-4 [&_h1]:tracking-tight [&_h1]:leading-tight
+                        [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-primary [&_h2]:mt-8 [&_h2]:mb-4 [&_h2]:tracking-tight [&_h2]:leading-tight
+                        [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-primary [&_h3]:mt-6 [&_h3]:mb-3 [&_h3]:leading-tight
+                        [&_h4]:text-lg [&_h4]:font-bold [&_h4]:text-primary [&_h4]:mt-5 [&_h4]:mb-2
+                        [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-4 [&_ul]:space-y-2.5 [&_li]:text-slate-700 [&_li]:font-normal [&_li]:text-[16px]
+                        [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:my-4 [&_ol]:space-y-2.5 [&_li]:text-slate-700 [&_li]:font-normal [&_li]:text-[16px]
+                        [&_blockquote]:border-l-4 [&_blockquote]:border-secondary [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:my-6 [&_blockquote]:text-slate-600 [&_blockquote]:bg-orange-50/40 [&_blockquote]:py-3 [&_blockquote]:rounded-r-lg
+                        [&_table]:w-full [&_table]:min-w-[520px] [&_table]:border-collapse [&_table]:my-6
+                        [&_td]:border [&_td]:border-slate-200 [&_td]:p-3 [&_td]:text-sm [&_td]:font-normal
+                        [&_th]:border [&_th]:border-slate-200 [&_th]:p-3 [&_th]:bg-slate-100 [&_th]:font-bold [&_th]:text-primary [&_th]:text-sm
+                        [&_a]:text-secondary [&_a]:font-bold [&_a]:underline hover:[&_a]:text-primary
+                        [&_div:has(table)]:overflow-x-auto [&_div:has(table)]:max-w-full [&_div:has(table)]:my-6 [&_div:has(table)]:rounded-xl [&_div:has(table)]:border [&_div:has(table)]:border-slate-200"
+                      dangerouslySetInnerHTML={{ __html: cleanBlogContentHtml(post.content, post.title, post.desc) }}
+                    />
                     ) : (
                       <div className="blog-rich-content overflow-x-auto max-w-full
                         [&_p]:font-normal [&_p]:text-slate-700 [&_p]:text-[16.5px] md:[&_p]:text-[17.5px] [&_p]:leading-[1.85] [&_p]:mb-5
@@ -241,7 +262,12 @@ export default async function BlogPostPage({
                   {/* FAQ Section */}
                   {post.faqs && post.faqs.length > 0 && (
                     <div className="pt-8 border-t border-slate-200">
-                      <BlogFaqAccordion faqs={post.faqs} />
+                      <BlogFaqAccordion
+                        faqs={post.faqs.map((f: any) => ({
+                          question: String(f.question || ""),
+                          answer: String(f.answer || ""),
+                        }))}
+                      />
                     </div>
                   )}
                 </div>

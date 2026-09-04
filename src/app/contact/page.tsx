@@ -1104,7 +1104,7 @@ export default function ContactUsPage() {
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-12 lg:mb-16">
               <div className="flex items-center justify-center mb-4">
-                <span className="text-sm font-bold uppercase tracking-wider text-secondary">
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-secondary whitespace-nowrap">
                   OUR TEAM. YOUR SUPPORT.
                 </span>
               </div>
@@ -1230,7 +1230,7 @@ export default function ContactUsPage() {
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-12 lg:mb-16">
-              <span className="text-sm font-bold uppercase tracking-wider text-secondary block mb-4">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-secondary block mb-3 whitespace-nowrap">
                 WHY CLIENTS CONTACT PITHAL
               </span>
               <h2 className="headline text-[clamp(2rem,4vw,2.75rem)] font-black leading-[1.2] text-primary uppercase">
@@ -1313,7 +1313,7 @@ export default function ContactUsPage() {
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-16">
-              <span className="text-sm font-bold uppercase tracking-wider text-secondary block mb-3">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-secondary block mb-3 whitespace-nowrap">
                 OUR PROCESS
               </span>
               <div className="h-[2px] w-12 bg-secondary mx-auto mb-6"></div>
@@ -1587,7 +1587,7 @@ export default function ContactUsPage() {
           <Container>
             {/* Header Block */}
             <div className="mx-auto max-w-3xl text-center mb-12">
-              <span className="text-sm font-bold uppercase tracking-wider text-secondary block mb-4">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-secondary block mb-3 whitespace-nowrap">
                 VISIT OUR FACILITY
               </span>
               <h2 className="headline text-[clamp(1.75rem,3.5vw,2.75rem)] font-black leading-[1.2] text-primary uppercase mb-4">
