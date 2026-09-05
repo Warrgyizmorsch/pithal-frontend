@@ -1067,18 +1067,28 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
 
   const publishedDynamicBlogs = dynamicBlogs.filter((b: any) => b.status !== "Draft");
 
-  const publishedMapped = publishedDynamicBlogs.map((b: any, index: number) => ({
-    slug: b.slug,
-    tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
-    title: b.title,
-    desc: b.excerpt || b.title,
-    date: b.publishedAt || "Today",
-    read: b.readTime || "5 min read",
-    views: b.views || "1.2K",
-    category: b.category || "Crushing Solutions",
-    img: b.image || "/blogpageimg/crusherguide.jpg",
-    num: `0${index + 1}`,
-  }));
+  const publishedMapped = publishedDynamicBlogs.map((b: any, index: number) => {
+    const rawExcerpt = String(b.excerpt || "").trim();
+    const rawTitle = String(b.title || "").trim();
+    const hasValidDesc = Boolean(
+      rawExcerpt &&
+      rawExcerpt.toLowerCase() !== rawTitle.toLowerCase() &&
+      !rawExcerpt.toLowerCase().startsWith(rawTitle.toLowerCase() + "...")
+    );
+
+    return {
+      slug: b.slug,
+      tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
+      title: b.title,
+      desc: hasValidDesc ? rawExcerpt : "",
+      date: b.publishedAt || "Today",
+      read: b.readTime || "5 min read",
+      views: b.views || "1.2K",
+      category: b.category || "Crushing Solutions",
+      img: b.image || "/blogpageimg/crusherguide.jpg",
+      num: `0${index + 1}`,
+    };
+  });
 
   const activePosts = publishedMapped;
 
@@ -1342,9 +1352,6 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                     onLoad={(e: React.SyntheticEvent<HTMLImageElement>) => handleCardImageLoad(i, e)}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 sm:p-6 flex flex-col justify-end text-white z-10">
-                    <span className="self-start px-2.5 py-1 rounded bg-secondary text-white text-[10px] font-bold uppercase tracking-wider mb-2">
-                      {post.tag}
-                    </span>
                     <h3 className="font-heading font-black text-base sm:text-xl md:text-2xl leading-snug line-clamp-2 text-white group-hover:text-secondary transition-colors mb-3">
                       {post.title}
                     </h3>
@@ -1507,12 +1514,14 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                       <h3 className="text-[19px] font-bold text-primary leading-tight mb-3 group-hover:text-secondary transition-colors">
                         {art.title}
                       </h3>
-                      <p className="text-[13px] text-slate-500 leading-relaxed mb-6 flex-grow line-clamp-3">
-                        {art.desc}
-                      </p>
+                      {art.desc && (
+                        <p className="text-[13px] text-slate-500 leading-relaxed mb-6 line-clamp-3">
+                          {art.desc}
+                        </p>
+                      )}
 
                       {/* Meta Info */}
-                      <div className="flex items-center gap-4 text-[12px] text-slate-500 font-medium mb-6">
+                      <div className="flex items-center gap-4 text-[12px] text-slate-500 font-medium mb-6 mt-auto">
                         <span className="flex items-center gap-2">
                           <Calendar size={14} />
                           {art.date}
@@ -1525,7 +1534,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                       </div>
 
                       {/* Footer / Read More */}
-                      <div className="pt-5 border-t border-slate-100 flex items-center justify-between mt-auto">
+                      <div className="pt-5 border-t border-slate-100 flex items-center justify-between">
                         <span className="text-[12px] font-black text-primary uppercase tracking-widest">
                           READ MORE
                         </span>
@@ -1886,9 +1895,11 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                         {post.title}
                       </h3>
                     </Link>
-                    <p className="text-[14px] sm:text-[15px] leading-relaxed text-slate-500 font-medium">
-                      {post.desc}
-                    </p>
+                    {post.desc && (
+                      <p className="text-[14px] sm:text-[15px] leading-relaxed text-slate-500 font-medium">
+                        {post.desc}
+                      </p>
+                    )}
                   </div>
 
                   {/* 3. Right Stats Columns */}

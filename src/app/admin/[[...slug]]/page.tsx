@@ -1529,7 +1529,7 @@ export default function BackendAdminPortal() {
       category: blogCategory,
       tag: blogTag,
       author: blogAuthor,
-      excerpt: blogExcerpt || blogTitle,
+      excerpt: blogExcerpt.trim(),
       content: blogContent,
       image: blogImage || DEFAULT_FALLBACK_IMAGE,
       status: blogStatus,

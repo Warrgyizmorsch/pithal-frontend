@@ -66,7 +66,7 @@ export async function POST(request: Request) {
       id: body.id || `blog-${Date.now()}`,
       slug: generatedSlug || `blog-${Date.now()}`,
       title: String(title),
-      excerpt: excerpt ? String(excerpt) : String(title),
+      excerpt: excerpt ? String(excerpt).trim() : '',
       content: String(content),
       author: author ? String(author) : 'Pithal Machinery Team',
       category: categoryStr,
