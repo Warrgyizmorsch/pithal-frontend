@@ -17,7 +17,7 @@ import { Header } from "@/components/layout/Header";
 import { jawCrusherData } from "@/data/products/jawCrusherData";
 
 export const metadata: Metadata = {
-  title: "Jaw Crusher Machine Manufacturer | Pithal Machine",
+  title: "Jaw Crusher Manufacturer",
   description:
     "Get a reliable jaw crusher machine from Pithal Machine, designed for efficient crushing of hard materials. Explore durable, high-performance crushing solutions.",
 };

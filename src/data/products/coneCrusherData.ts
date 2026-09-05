@@ -475,7 +475,7 @@ export const coneCrusherData: ProductDetailData = {
     ]
   },
   longContent: {
-    content: `# Prime Cone Crusher for Efficient Secondary and Tertiary Crushing
+    content: `## Prime Cone Crusher for Efficient Secondary and Tertiary Crushing
 
 The Prime Cone Crusher is designed for efficient secondary and tertiary crushing of hard, abrasive and high-strength materials. This reliable cone crusher machine is suitable for demanding applications in mining, quarrying, construction, aggregate production and material processing.
 

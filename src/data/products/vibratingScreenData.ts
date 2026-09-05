@@ -394,7 +394,7 @@ export const vibratingScreenData: ProductDetailData = {
     ]
   },
   longContent: {
-    content: `# Prime Vibrating Screens for Efficient Material Separation
+    content: `## Prime Vibrating Screens for Efficient Material Separation
 
 The Prime Vibrating Screens are designed for efficient screening, accurate material separation and reliable performance across demanding mining, quarrying, construction and aggregate-processing applications. This versatile vibro screener helps separate materials according to size while maintaining consistent material flow.
 

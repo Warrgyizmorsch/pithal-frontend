@@ -411,7 +411,7 @@ export const conveyorSystemData: ProductDetailData = {
     ]
   },
   longContent: {
-    content: `# Prime Conveyor System for Efficient Material Handling
+    content: `## Prime Conveyor System for Efficient Material Handling
 
 The Prime Conveyor System is designed for efficient and continuous transportation of bulk materials. With robust construction and reliable material-handling performance, it is suitable for demanding applications in mining, quarrying, construction, aggregate production and material processing.
 

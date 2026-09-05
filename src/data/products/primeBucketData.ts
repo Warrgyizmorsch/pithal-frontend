@@ -442,7 +442,7 @@ export const primeBucketData: ProductDetailData = {
     ]
   },
   longContent: {
-    content: `# Prime Crusher Bucket for Efficient On-Site Crushing
+    content: `## Prime Crusher Bucket for Efficient On-Site Crushing
 
 The Prime Crusher Bucket is designed for efficient on-site crushing of concrete, rocks, asphalt, demolition waste and other suitable materials. Mounted directly onto a compatible excavator, the crusher bucket allows material to be processed at the job site without requiring a separate crushing machine for suitable applications.
 

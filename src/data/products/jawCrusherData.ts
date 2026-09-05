@@ -432,7 +432,7 @@ export const jawCrusherData: ProductDetailData = {
     ]
   },
   longContent: {
-    content: `# Prime Jaw Crusher Machine for Efficient Primary Crushing
+    content: `## Prime Jaw Crusher Machine for Efficient Primary Crushing
 The Prime Jaw Crusher Machine is designed for efficient primary crushing of hard, abrasive, and large-sized materials. With a robust construction and reliable crushing mechanism, it is suitable for demanding applications in mining, quarrying, construction, aggregate production, and material processing.
 
 The crusher is designed to handle challenging feed materials while maintaining consistent crushing performance. Its heavy-duty design makes it a dependable solution for industries that require continuous crushing and efficient material reduction.

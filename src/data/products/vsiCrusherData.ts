@@ -417,7 +417,7 @@ export const vsiCrusherData: ProductDetailData = {
     ]
   },
   longContent: {
-    content: `# Prime Vertical Shaft Impactor for Efficient Crushing and Particle Shaping
+    content: `## Prime Vertical Shaft Impactor for Efficient Crushing and Particle Shaping
 
 The Prime Vertical Shaft Impactor is designed for efficient crushing, particle shaping and size reduction of suitable hard and abrasive materials. With a robust construction and reliable impact crushing mechanism, it is suitable for demanding applications in mining, quarrying, construction, aggregate production and manufactured sand processing.
 

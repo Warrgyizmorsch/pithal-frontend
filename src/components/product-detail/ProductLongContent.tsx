@@ -24,12 +24,12 @@ export function ProductLongContent({ data }: { data: ProductLongContentData }) {
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
-                h3: 'h2',
-                h4: 'h2',
-                h5: 'h2',
-                h6: 'h2',
-                h1: ({ node: _node, ...props }: any) => <h1 className="!text-[2.5rem] !leading-tight !mt-0 !mb-[15px]" {...props} />,
-                h2: ({ node: _node, ...props }: any) => <h2 className="!text-[2rem] !leading-tight !mt-[30px] !mb-[15px]" {...props} />,
+                h1: ({ node: _node, ...props }: any) => <h2 className="!text-[2rem] sm:!text-[2.5rem] !leading-tight !mt-0 !mb-[15px]" {...props} />,
+                h2: ({ node: _node, ...props }: any) => <h2 className="!text-[2rem] sm:!text-[2.5rem] !leading-tight !mt-[30px] first:!mt-0 !mb-[15px]" {...props} />,
+                h3: ({ node: _node, ...props }: any) => <h3 className="!text-[1.5rem] sm:!text-[2rem] !leading-tight !mt-[30px] !mb-[15px] font-black text-primary" {...props} />,
+                h4: 'h3',
+                h5: 'h3',
+                h6: 'h3',
                 table: ({ node: _node, ...props }: any) => (
                   <div className="not-prose my-6 w-full">
                     <div className="flex items-center gap-1.5 text-xs text-text-muted mb-2 sm:hidden px-1">
