@@ -12,6 +12,9 @@ import ReactMarkdown from "react-markdown";
 import { BlogFaqAccordion } from "@/components/blog/BlogFaqAccordion";
 import { BlogShareButtons } from "@/components/blog/BlogShareButtons";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 function cleanBlogContentHtml(html: string, title?: string): string {
   if (!html) return "";
 

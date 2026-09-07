@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     "Explore expert insights, equipment selection guides, operational best practices, and technological innovations in aggregate and mining operations.",
 };
 
-// Incremental Static Regeneration: cache on edge/server for 60s, revalidate in background
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 async function getInitialBlogs() {
   try {

@@ -3,6 +3,8 @@ import { jsonResponse, handleOptions } from '@/lib/cors';
 import { blogs as mockBlogs } from '@/lib/data/mockData';
 import { connectDB } from '@/lib/db/mongodb';
 import BlogModel from '@/lib/models/Blog';
+import { revalidatePath } from 'next/cache';
+import mongoose from 'mongoose';
 
 export const dynamic = 'force-dynamic';
 
@@ -19,12 +21,24 @@ export async function GET(
   try {
     const conn = await connectDB();
     if (conn) {
-      const dbBlog = await BlogModel.findOne({ slug }).lean();
+      const dbBlog = await BlogModel.findOne({
+        $or: [
+          { slug },
+          { id: slug },
+          ...(mongoose.Types.ObjectId.isValid(slug) ? [{ _id: slug }] : []),
+        ],
+      }).lean();
       if (dbBlog) {
-        return jsonResponse({
-          success: true,
-          data: dbBlog,
-        });
+        return jsonResponse(
+          {
+            success: true,
+            data: dbBlog,
+          },
+          200,
+          {
+            "Cache-Control": "no-store, no-cache, must-revalidate",
+          }
+        );
       }
     }
   } catch (err) {
@@ -48,17 +62,45 @@ export async function PUT(
     try {
       const conn = await connectDB();
       if (conn) {
+        const orConditions: any[] = [{ slug }, { id: slug }];
+        if (body.id) {
+          orConditions.push({ id: body.id });
+        }
+        if (body.slug) {
+          orConditions.push({ slug: body.slug });
+        }
+        if (mongoose.Types.ObjectId.isValid(slug)) {
+          orConditions.push({ _id: new mongoose.Types.ObjectId(slug) });
+        }
+
         const updatedDb = await BlogModel.findOneAndUpdate(
-          { $or: [{ slug }, { id: slug }] },
-          body,
+          { $or: orConditions },
+          { $set: body },
           { new: true }
         ).lean();
+
         if (updatedDb) {
-          return jsonResponse({
-            success: true,
-            message: 'Blog post updated successfully',
-            data: updatedDb,
-          });
+          try {
+            revalidatePath('/blog');
+            revalidatePath(`/blog/${slug}`);
+            if (body.slug && body.slug !== slug) {
+              revalidatePath(`/blog/${body.slug}`);
+            }
+          } catch (e) {
+            console.warn("revalidatePath error:", e);
+          }
+
+          return jsonResponse(
+            {
+              success: true,
+              message: 'Blog post updated successfully',
+              data: updatedDb,
+            },
+            200,
+            {
+              "Cache-Control": "no-store, no-cache, must-revalidate",
+            }
+          );
         }
       }
     } catch (dbErr) {
@@ -74,11 +116,24 @@ export async function PUT(
       };
     }
 
-    return jsonResponse({
-      success: true,
-      message: 'Blog post updated successfully',
-      data: body,
-    });
+    try {
+      revalidatePath('/blog');
+      revalidatePath(`/blog/${slug}`);
+    } catch (e) {
+      console.warn("revalidatePath error:", e);
+    }
+
+    return jsonResponse(
+      {
+        success: true,
+        message: 'Blog post updated successfully',
+        data: body,
+      },
+      200,
+      {
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+      }
+    );
   } catch (err: unknown) {
     const errorMessage = err instanceof Error ? err.message : 'Unknown error';
     return jsonResponse({ success: false, error: errorMessage }, 500);
@@ -90,27 +145,46 @@ export async function DELETE(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
+  let deletedFromDb = false;
 
   try {
     const conn = await connectDB();
     if (conn) {
-      await BlogModel.deleteOne({ $or: [{ slug }, { id: slug }] });
+      const orConditions: any[] = [{ slug }, { id: slug }];
+      if (mongoose.Types.ObjectId.isValid(slug)) {
+        orConditions.push({ _id: new mongoose.Types.ObjectId(slug) });
+      }
+      const res = await BlogModel.deleteOne({ $or: orConditions });
+      deletedFromDb = res.deletedCount > 0;
+
+      try {
+        revalidatePath('/blog');
+        revalidatePath(`/blog/${slug}`);
+      } catch (e) {
+        console.warn("revalidatePath error:", e);
+      }
     }
   } catch (dbErr) {
     console.warn("MongoDB DELETE blog error:", dbErr);
   }
 
   const index = mockBlogs.findIndex((b) => b.slug === slug || b.id === slug);
-
-  if (index === -1) {
-    return jsonResponse({ success: false, error: 'Blog not found' }, 404);
+  if (index !== -1) {
+    mockBlogs.splice(index, 1);
   }
 
-  const deleted = mockBlogs.splice(index, 1)[0];
+  try {
+    revalidatePath('/blog');
+  } catch (e) {
+    console.warn("revalidatePath error:", e);
+  }
 
-  return jsonResponse({
-    success: true,
-    message: 'Blog post deleted successfully',
-    data: deleted,
-  });
+  if (deletedFromDb || index !== -1) {
+    return jsonResponse({
+      success: true,
+      message: 'Blog post deleted successfully',
+    });
+  }
+
+  return jsonResponse({ success: false, error: 'Blog not found' }, 404);
 }

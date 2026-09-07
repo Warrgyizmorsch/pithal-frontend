@@ -3,6 +3,7 @@ import { blogs as mockBlogs } from '@/lib/data/mockData';
 import { BlogPost } from '@/lib/types/api';
 import { connectDB } from '@/lib/db/mongodb';
 import BlogModel from '@/lib/models/Blog';
+import { revalidatePath } from 'next/cache';
 
 export const dynamic = 'force-dynamic';
 
@@ -118,6 +119,12 @@ export async function POST(request: Request) {
       mockBlogs[existingIdx] = { ...mockBlogs[existingIdx], ...newBlog };
     } else {
       mockBlogs.unshift(newBlog);
+    }
+
+    try {
+      revalidatePath('/blog');
+    } catch (e) {
+      console.warn("revalidatePath error:", e);
     }
 
     return jsonResponse({

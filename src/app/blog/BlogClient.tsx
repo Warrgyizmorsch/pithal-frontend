@@ -33,6 +33,7 @@ import {
   GraduationCap,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   Eye,
   Folder,
 } from "lucide-react";
@@ -1029,6 +1030,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
   const [dynamicBlogs, setDynamicBlogs] = useState<any[]>(initialBlogs);
   const [loading, setLoading] = useState(initialBlogs.length === 0);
   const [cardPositions, setCardPositions] = useState<Record<number, string>>({});
+  const [showAllArticles, setShowAllArticles] = useState(false);
 
   const handleCardImageLoad = (index: number, e: React.SyntheticEvent<HTMLImageElement>) => {
     const img = e.currentTarget;
@@ -1045,7 +1047,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
   useEffect(() => {
     async function loadBackendBlogs() {
       try {
-        const res = await fetch("/api/blogs").catch(() => null);
+        const res = await fetch("/api/blogs", { cache: "no-store" }).catch(() => null);
 
         if (res && res.ok) {
           const json = await res.json();
@@ -1060,10 +1062,14 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
       }
     }
 
-    if (initialBlogs.length === 0) {
-      loadBackendBlogs();
+    loadBackendBlogs();
+  }, []);
+
+  useEffect(() => {
+    if (initialBlogs && initialBlogs.length > 0) {
+      setDynamicBlogs(initialBlogs);
     }
-  }, [initialBlogs.length]);
+  }, [initialBlogs]);
 
   const publishedDynamicBlogs = dynamicBlogs.filter((b: any) => b.status !== "Draft");
 
@@ -1445,26 +1451,17 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
           <Container>
 
             {/* Header Block */}
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-12 lg:mb-14">
-              <div>
-                <div className="flex items-center gap-4 mb-3">
-                  <span className="w-8 h-[2px] bg-secondary"></span>
-                  <h2 className="text-[22px] md:text-[26px] font-black text-primary uppercase tracking-wide">
-                    LATEST ARTICLES
-                  </h2>
-                  <span className="w-8 h-[2px] bg-secondary"></span>
-                </div>
-                <p className="text-slate-500 text-[14px] md:text-[15px] font-medium">
-                  Stay updated with the latest insights, trends and expert perspectives.
-                </p>
+            <div className="mb-12 lg:mb-14">
+              <div className="flex items-center gap-4 mb-3">
+                <span className="w-8 h-[2px] bg-secondary"></span>
+                <h2 className="text-[22px] md:text-[26px] font-black text-primary uppercase tracking-wide">
+                  LATEST ARTICLES
+                </h2>
+                <span className="w-8 h-[2px] bg-secondary"></span>
               </div>
-
-              <a
-                href="#"
-                className="hidden lg:flex items-center gap-2 text-[14px] font-bold text-primary hover:text-secondary transition-colors mt-2"
-              >
-                View all articles <ArrowRight cls="w-[18px] h-[18px] text-secondary" />
-              </a>
+              <p className="text-slate-500 text-[14px] md:text-[15px] font-medium">
+                Stay updated with the latest insights, trends and expert perspectives.
+              </p>
             </div>
 
             {/* Articles Grid */}
@@ -1477,85 +1474,110 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                 No articles published yet.
               </div>
             ) : (
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {activePosts.map((art: any, i: number) => {
-                const postHref = art.slug.startsWith("/") || art.slug.startsWith("http") ? art.slug : `/blog/${art.slug}`;
-                return (
-                  <Link
-                    href={postHref}
-                    key={i}
-                    className="group flex flex-col h-full bg-white rounded-[20px] overflow-hidden border border-slate-200 shadow-[0_4px_24px_rgb(0,0,0,0.03)] hover:shadow-lg transition-all duration-300"
-                  >
-                    {/* Image Area */}
-                    <div className="relative h-60 w-full overflow-hidden shrink-0 bg-slate-100">
-                      <img
-                        src={art.img}
-                        alt={art.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                    </div>
-
-                    {/* Content Area */}
-                    <div className="p-6 md:p-8 flex flex-col flex-grow">
-
-                      {/* Tag */}
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 text-secondary border border-orange-100/50">
-                          <Cog size={14} strokeWidth={2} />
+              <>
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {(showAllArticles ? activePosts : activePosts.slice(0, 6)).map((art: any, i: number) => {
+                    const postHref = art.slug.startsWith("/") || art.slug.startsWith("http") ? art.slug : `/blog/${art.slug}`;
+                    return (
+                      <Link
+                        href={postHref}
+                        key={i}
+                        className="group flex flex-col h-full bg-white rounded-[20px] overflow-hidden border border-slate-200 shadow-[0_4px_24px_rgb(0,0,0,0.03)] hover:shadow-lg transition-all duration-300"
+                      >
+                        {/* Image Area */}
+                        <div className="relative h-60 w-full overflow-hidden shrink-0 bg-slate-100">
+                          <img
+                            src={art.img}
+                            alt={art.title}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
                         </div>
-                        <span className="text-[11px] font-black text-secondary uppercase tracking-widest">
-                          {art.tag}
-                        </span>
-                      </div>
 
-                      {/* Title & Desc */}
-                      <h3 className="text-[19px] font-bold text-primary leading-tight mb-3 group-hover:text-secondary transition-colors">
-                        {art.title}
-                      </h3>
-                      {art.desc && (
-                        <p className="text-[13px] text-slate-500 leading-relaxed mb-6 line-clamp-3">
-                          {art.desc}
-                        </p>
+                        {/* Content Area */}
+                        <div className="p-6 md:p-8 flex flex-col flex-grow">
+
+                          {/* Tag */}
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 text-secondary border border-orange-100/50">
+                              <Cog size={14} strokeWidth={2} />
+                            </div>
+                            <span className="text-[11px] font-black text-secondary uppercase tracking-widest">
+                              {art.tag}
+                            </span>
+                          </div>
+
+                          {/* Title & Desc */}
+                          <h3 className="text-[19px] font-bold text-primary leading-tight mb-3 group-hover:text-secondary transition-colors">
+                            {art.title}
+                          </h3>
+                          {art.desc && (
+                            <p className="text-[13px] text-slate-500 leading-relaxed mb-6 line-clamp-3">
+                              {art.desc}
+                            </p>
+                          )}
+
+                          {/* Meta Info */}
+                          <div className="flex items-center gap-4 text-[12px] text-slate-500 font-medium mb-6 mt-auto">
+                            <span className="flex items-center gap-2">
+                              <Calendar size={14} />
+                              {art.date}
+                            </span>
+                            <span className="w-[1px] h-3 bg-slate-300"></span>
+                            <span className="flex items-center gap-2">
+                              <Clock size={14} />
+                              {art.read}
+                            </span>
+                          </div>
+
+                          {/* Footer / Read More */}
+                          <div className="pt-5 border-t border-slate-100 flex items-center justify-between">
+                            <span className="text-[12px] font-black text-primary uppercase tracking-widest">
+                              READ MORE
+                            </span>
+                            <ArrowRight cls="w-[18px] h-[18px] text-secondary transition-transform group-hover:translate-x-1" />
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+
+                {/* Centered View All / View Less Button */}
+                {activePosts.length > 6 && (
+                  <div className="mt-12 flex justify-center">
+                    <Button
+                      variant="primary"
+                      onClick={() => {
+                        if (showAllArticles) {
+                          setShowAllArticles(false);
+                          const el = document.getElementById("articles");
+                          if (el) {
+                            el.scrollIntoView({ behavior: "smooth" });
+                          }
+                        } else {
+                          setShowAllArticles(true);
+                        }
+                      }}
+                      className="min-h-12 rounded-[0.3rem] px-8 text-xs font-bold uppercase tracking-wider group shadow-md cursor-pointer transition-all"
+                    >
+                      {showAllArticles ? (
+                        <>
+                          View Less
+                          <ChevronUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
+                        </>
+                      ) : (
+                        <>
+                          View All Articles
+                          <ArrowRight cls="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </>
                       )}
-
-                      {/* Meta Info */}
-                      <div className="flex items-center gap-4 text-[12px] text-slate-500 font-medium mb-6 mt-auto">
-                        <span className="flex items-center gap-2">
-                          <Calendar size={14} />
-                          {art.date}
-                        </span>
-                        <span className="w-[1px] h-3 bg-slate-300"></span>
-                        <span className="flex items-center gap-2">
-                          <Clock size={14} />
-                          {art.read}
-                        </span>
-                      </div>
-
-                      {/* Footer / Read More */}
-                      <div className="pt-5 border-t border-slate-100 flex items-center justify-between">
-                        <span className="text-[12px] font-black text-primary uppercase tracking-widest">
-                          READ MORE
-                        </span>
-                        <ArrowRight cls="w-[18px] h-[18px] text-secondary transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          )}
-
-            {/* Mobile View All Button */}
-            <div className="mt-8 flex justify-center lg:hidden">
-              <a
-                href="#"
-                className="flex items-center justify-center gap-2 text-[14px] font-bold text-primary hover:text-secondary transition-colors"
-              >
-                View all articles <ArrowRight cls="w-[18px] h-[18px] text-secondary" />
-              </a>
-            </div>
+                    </Button>
+                  </div>
+                )}
+              </>
+            )}
           </Container>
         </section>
 
