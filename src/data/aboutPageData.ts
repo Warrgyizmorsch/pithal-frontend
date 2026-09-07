@@ -1,10 +1,10 @@
 export const aboutPageData = {
   hero: {
     eyebrow: "About Us",
-    title: "Engineering Strength.",
-    highlight: "Delivering Results.",
+    title: "Pithal Machines – ",
+    highlight: "Crushing & Screening Machines Manufacturer",
     subtitle:
-      "Pithal Machines is a leading manufacturer of high-performance crushing solutions built for industries that shape the world.",
+      "Engineering Strength. Delivering Reliable Crushing Solutions.",
     image: {
       src: "/images/about/factory-hero.png",
       alt: "Pithal Machines modern manufacturing facility with cone crushers on the assembly floor",
@@ -27,12 +27,14 @@ export const aboutPageData = {
   ],
   experience: {
     eyebrow: "Who We Are",
-    title: "Built on Experience.",
-    highlight: "Driven by Engineering.",
+    title: "Engineering Strength.",
+    highlight: "Delivering Reliable Crushing Solutions.",
     description1:
-      "Pithal Machines Pvt. Ltd. is a premier manufacturer of high-performance crushing and screening solutions, serving industries that build the infrastructure of tomorrow.",
+      "Pithal Machines Pvt. Ltd. is an Indian manufacturer of crushing and screening equipment designed for demanding applications across mining, aggregates, construction, infrastructure, cement and recycling. We develop and manufacture reliable material-processing solutions with a focus on engineering strength, consistent performance and practical operation.",
     description2:
-      "With decades of engineering expertise and a commitment to innovation, we deliver robust, efficient, and reliable machinery designed to perform in the toughest conditions.",
+      "From individual crushing machines to complete crushing and screening plants, our equipment is developed to meet the requirements of modern material-processing operations. Our product range includes jaw crushers, cone crushers, crusher buckets, VSI crushers, vibrating screens and complete crushing plant solutions.",
+    description3:
+      "At Pithal Machines, we understand that every crushing application is different. Material characteristics, feed size, required output, production capacity and operating conditions all influence equipment selection. Our approach is therefore focused on developing practical solutions that match the actual requirements of each application.",
     philosophy: [
       {
         icon: "settings",
@@ -59,19 +61,19 @@ export const aboutPageData = {
   },
   visionMission: {
     eyebrow: "Our Direction",
-    title: "Vision & Mission",
+    title: "Our Vision & Mission",
     subtitle:
       "Our vision defines where we are headed.\nOur mission drives everything we do.",
     items: [
       {
-        title: "Vision",
-        text: "To lead the world in engineering advanced crushing solutions and empower industries to build a better tomorrow.",
+        title: "Our Vision",
+        text: "To become a trusted global engineering partner for reliable, efficient and responsible crushing and material-processing solutions.",
         icon: "vision",
         dark: true,
       },
       {
-        title: "Mission",
-        text: "To provide reliable, high-performance crushing solutions with uncompromising quality and exceptional service.",
+        title: "Our Mission",
+        text: "To design and manufacture dependable crushing and screening equipment that helps customers improve productivity, address material-processing challenges and build long-term operational value.",
         icon: "mission",
         dark: false,
       },
@@ -82,7 +84,7 @@ export const aboutPageData = {
     title: "Why Choose",
     highlight: "Pithal Machines",
     subtitle:
-      "We combine engineering excellence with a customer-first approach to deliver reliable, efficient, and future-ready solutions.",
+      "Pithal Machines combines practical engineering, robust construction and reliable performance to deliver crushing and screening solutions suited to demanding material-processing applications.",
     bottomBar:
       "Engineered for Performance. Built for Reliability. Delivered Worldwide.",
     cards: [
@@ -99,7 +101,7 @@ export const aboutPageData = {
     title: "Manufacturing",
     highlight: "Excellence",
     subtitle:
-      "State-of-the-art infrastructure, advanced technology, and stringent quality standards ensure superior performance in every machine we build.",
+      "From engineering and fabrication to machining, assembly and quality control, we build reliable crushing and screening machines with a focus on precision, durability and consistent performance.",
     heroImage: "/images/about/manufacturing-exelilence-1.png",
     steps: [
       { title: "Advanced Manufacturing", icon: "settings" },
@@ -141,7 +143,7 @@ export const aboutPageData = {
     title: "Industries",
     highlight: "We Serve",
     subtitle:
-      "Our robust and reliable equipment is engineered to perform in the most demanding applications across diverse industries.",
+      "Pithal Machines provides crushing and screening solutions for industries where efficient material processing is essential to daily operations.",
     cards: [
       { title: "Mining", text: "Engineered for tough mining operations with high capacity, durability and maximum uptime.", image: "/images/industries/mining.jpg", icon: "pickaxe" },
       { title: "Aggregates", text: "Reliable solutions for crushing, screening and material processing with consistent performance.", image: "/images/industries/aggregates.jpg", icon: "mountain" },
@@ -152,24 +154,83 @@ export const aboutPageData = {
     ],
   },
   values: {
-    eyebrow: "Our Core Values",
-    title: "Built on Values.",
-    highlight: "Driven by Purpose.",
+    title: "Our Core",
+    highlight: "Values",
     description:
       "Our core values define who we are, guide our actions, and shape the quality of every machine we build.",
     image: "/images/about/core-values.png",
     items: [
-      { title: "Innovation", text: "We embrace new ideas and advanced technologies to create smarter, more efficient solutions for tomorrow.", icon: "lightbulb" },
-      { title: "Reliability", text: "We build machines that our customers can depend on, delivering consistent performance, every time.", icon: "shield" },
-      { title: "Performance", text: "We are committed to engineering excellence and continuous improvement in everything we do.", icon: "trending" },
-      { title: "Integrity", text: "We operate with honesty, transparency, and fairness in our relationships and business practices.", icon: "scale" },
-      { title: "Sustainability", text: "We care for the environment and build sustainable solutions that support a better future.", icon: "leaf" },
-      { title: "Customer Success", text: "Our customers' success is our success. We listen, adapt, and deliver solutions that create lasting value.", icon: "users" },
+      {
+        title: "Innovation",
+        text: "We continuously work to improve machine design, engineering processes and material-processing solutions to meet changing industry requirements.",
+        icon: "lightbulb",
+      },
+      {
+        title: "Reliability",
+        text: "We focus on building equipment designed for consistent performance in demanding operating environments.",
+        icon: "shield",
+      },
+      {
+        title: "Performance",
+        text: "We develop crushing and screening solutions with attention to efficient material processing, productivity and dependable operation.",
+        icon: "trending",
+      },
+      {
+        title: "Integrity",
+        text: "We believe in transparent communication, responsible business practices and long-term relationships with our customers and partners.",
+        icon: "scale",
+      },
+      {
+        title: "Sustainability",
+        text: "We support efficient material utilization, recycling and responsible processing practices wherever our equipment can contribute to better resource use.",
+        icon: "leaf",
+      },
+      {
+        title: "Customer Success",
+        text: "Our success is closely connected to the performance and satisfaction of the customers who rely on our equipment. We focus on providing practical solutions and continued support throughout the equipment lifecycle.",
+        icon: "users",
+      },
     ],
     bottomItems: [
       { title: "Strong Values", text: "The foundation of everything we do.", icon: "award" },
       { title: "Stronger Machines", text: "Engineered with precision and passion.", icon: "cog" },
       { title: "Stronger Partnerships", text: "Built on trust. Focused on growth.", icon: "handshake" },
+    ],
+  },
+  faqSection: {
+    title: "Frequently Asked",
+    highlight: "Questions",
+    faqs: [
+      {
+        question: "1. What does Pithal Machines manufacture?",
+        answer:
+          "Pithal Machines manufactures crushing and screening equipment including jaw crushers, cone crushers, crusher buckets, VSI crushers, vibrating screens and complete crushing plant solutions.",
+      },
+      {
+        question: "2. Where is Pithal Machines located?",
+        answer:
+          "Pithal Machines is based in Rajasthan, India. The company operates from its manufacturing facility in the RIICO Industrial Area, Kaladwas, Udaipur.",
+      },
+      {
+        question: "3. What industries does Pithal Machines serve?",
+        answer:
+          "Pithal Machines serves industries including mining, aggregates, construction, cement, infrastructure and recycling, providing equipment for different material-processing requirements.",
+      },
+      {
+        question: "4. Does Pithal Machines provide complete crushing plants?",
+        answer:
+          "Yes. Pithal Machines provides complete crushing plant solutions that can integrate crushing, screening and material-handling equipment according to project requirements.",
+      },
+      {
+        question: "5. What factors should be considered when selecting crushing equipment?",
+        answer:
+          "Material type, hardness, abrasiveness, feed size, required output size, production capacity and the overall processing configuration should all be considered when selecting crushing equipment. The right combination depends on the specific application.",
+      },
+      {
+        question: "6. How can I contact Pithal Machines for a crushing equipment requirement?",
+        answer:
+          "You can contact the Pithal Machines team to discuss your material, production capacity, application and equipment requirements. Our team can help identify a suitable crushing or screening solution for your project.",
+      },
     ],
   },
   impact: {
@@ -195,11 +256,11 @@ export const aboutPageData = {
     { title: "Sustainability", text: "Responsible manufacturing practices that support a sustainable and efficient future.", icon: "leaf" },
   ],
   cta: {
-    title: "Let's Build Industrial Solutions",
-    highlight: "Together.",
-    text: "Whether it's a new project, a complex challenge, or a long-term partnership, we're ready to engineer solutions that drive real impact.",
-    primary: { label: "Let's Work Together", href: "#contact1" },
-    // secondary: { label: "Get In Touch", href: "#" },
+    title: "Looking for the Right",
+    highlight: "Crushing Solution?",
+    text: "Tell us about your application, material and production requirements and our team can help you identify a practical crushing and screening solution.",
+    primary: { label: "Discuss Your Requirement", href: "#contact1" },
+    secondary: { label: "Explore Our Products", href: "/products" },
   },
 };
 

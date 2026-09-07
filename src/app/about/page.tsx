@@ -44,6 +44,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { aboutPageData } from "@/data/aboutPageData";
+import { ProductFAQ } from "@/components/product-detail/ProductFAQ";
 import { cn } from "@/lib/utils";
 
 const icons: Record<string, LucideIcon> = {
@@ -133,13 +134,13 @@ function HeroSection() {
       />
       <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:justify-between lg:py-8">
         <div className="z-20">
-          <div className="max-w-[650px] flex flex-col items-center lg:items-start text-center lg:text-left w-full mx-auto lg:mx-0">
+          <div className="max-w-[760px] flex flex-col items-center lg:items-start text-center lg:text-left w-full mx-auto lg:mx-0">
             <HeroNavigation current="About Us" />
-            <h1 className="headline mb-4 text-[clamp(2.2rem,5.6vw,4.3rem)] leading-[1.05] text-primary text-center lg:text-left sm:mb-5">
+            <h1 className="headline mb-4 text-[clamp(1.9rem,4.4vw,3.6rem)] leading-[1.05] text-primary text-center lg:text-left sm:mb-5">
               {hero.title}
               <span className="block text-secondary">{hero.highlight}</span>
             </h1>
-            <p className="mt-4 max-w-[560px] text-sm font-medium leading-6 text-text-dark sm:text-[16px] lg:leading-7 text-center lg:text-left mx-auto lg:mx-0">
+            <p className="mt-4 max-w-[620px] text-sm font-medium leading-6 text-text-dark sm:text-[16px] lg:leading-7 text-center lg:text-left mx-auto lg:mx-0">
               {hero.subtitle}
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:mt-7 w-full sm:w-auto justify-center lg:justify-start">
@@ -261,6 +262,11 @@ function WhoWeAreSection() {
             <p className="mt-3 max-w-[680px] text-base leading-7 text-text-muted sm:text-[17px]">
               {experience.description2}
             </p>
+            {experience.description3 && (
+              <p className="mt-3 max-w-[680px] text-base leading-7 text-text-muted sm:text-[17px]">
+                {experience.description3}
+              </p>
+            )}
 
             {/* Philosophy / Capability callout items */}
             <div className="mt-8 space-y-5">
@@ -381,6 +387,11 @@ function VisionMissionSection() {
             aria-hidden
             className="mx-auto mt-4 block h-[3px] w-12 bg-[#fa5902]"
           />
+          {visionMission.subtitle && (
+            <p className="mt-4 text-base text-text-muted whitespace-pre-line">
+              {visionMission.subtitle}
+            </p>
+          )}
         </div>
 
         {/* ── Cards Container with relative positioning for the bottom tab ── */}
@@ -1045,10 +1056,9 @@ function ValuesSection() {
         <div className="relative grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           {/* Left Column */}
           <div className="flex flex-col">
-            <h2 className="headline text-[clamp(2rem,4.6vw,3rem)] font-black leading-[1.02] text-primary">
-              BUILT ON VALUES.
-              <br />
-              <span className="text-secondary">DRIVEN BY PURPOSE.</span>
+            <h2 className="headline text-[clamp(2.2rem,4.8vw,3.25rem)] font-black leading-[1.05] text-primary uppercase">
+              {values.title}{" "}
+              <span className="text-secondary">{values.highlight}</span>
             </h2>
             <span className="mt-6 block h-[1px] w-full bg-slate-200/80" />
             <p className="mt-6 text-sm leading-relaxed text-text-muted max-w-md">
@@ -1847,55 +1857,34 @@ function FinalCtaSection() {
       <Container className="relative z-10">
         <div className="grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <div className="mb-4 flex items-center gap-3">
-              <span className="h-[2px] w-5 bg-secondary" />
-              <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-secondary whitespace-nowrap">
-                LET&apos;S BUILD
-              </span>
-            </div>
             <h2 className="max-w-4xl text-[clamp(2rem,4.5vw,3.25rem)] font-black leading-[1.05] text-primary">
               {cta.title}{" "}
               <span className="text-secondary">{cta.highlight}</span>
             </h2>
-            <p className="mt-4 max-w-3xl text-sm font-medium leading-6 text-primary-dark">
-              Whether it&apos;s a new project, a complex challenge, or a
-              long-term partnership, we&apos;re ready to engineer solutions that
-              drive{" "}
-              <span className="font-black italic text-secondary">
-                real impact.
-              </span>
+            <p className="mt-4 max-w-3xl text-sm font-medium leading-6 text-primary-dark sm:text-base">
+              {cta.text}
             </p>
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row lg:pb-1">
             <Button
-              className="min-h-[46px] justify-center rounded-md px-5 text-[10px]"
+              className="min-h-[48px] justify-center rounded-md px-6 text-[11px] sm:text-[12px]"
               href={cta.primary.href}
               variant="primary"
             >
               {cta.primary.label}
-              <ArrowRight aria-hidden size={15} />
+              <ArrowRight aria-hidden size={16} />
             </Button>
-            {/* <Button
-              className="min-h-[46px] justify-center rounded-md border-primary/45 bg-white/70 px-5 text-[10px]"
-              // href={cta.secondary.href}
-              variant="outlineNavy"
-            >
-              <svg
-                aria-hidden
-                className="h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
+            {cta.secondary && (
+              <Button
+                className="min-h-[48px] justify-center rounded-md border-secondary/35 bg-white/95 px-6 text-[11px] sm:text-[12px]"
+                href={cta.secondary.href}
+                variant="outlineNavy"
               >
-                <line x1="22" x2="11" y1="2" y2="13" />
-                <polygon points="22 2 15 22 11 13 2 9 22 2" />
-              </svg>
-              {/* {cta.secondary.label}
-            </Button> */}
+                {cta.secondary.label}
+                <ArrowRight aria-hidden size={16} />
+              </Button>
+            )}
           </div>
         </div>
       </Container>
@@ -1916,6 +1905,9 @@ export default function AboutPage() {
         {/* <GlobalSection /> */}
         <IndustriesSection />
         <ValuesSection />
+        {aboutPageData.faqSection && (
+          <ProductFAQ data={aboutPageData.faqSection} />
+        )}
         {/* <ImpactSection /> */}
         {/* <CertificationsSection /> */}
         <FinalCtaSection />

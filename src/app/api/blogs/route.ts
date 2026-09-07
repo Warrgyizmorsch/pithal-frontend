@@ -14,33 +14,50 @@ export async function GET() {
   try {
     const conn = await connectDB();
     if (conn) {
-      const dbBlogs = await BlogModel.find()
-        .select("-content -faqs")
-        .sort({ createdAt: -1 })
-        .lean();
-      return jsonResponse(
-        {
-          success: true,
-          count: dbBlogs ? dbBlogs.length : 0,
-          data: dbBlogs || [],
-          source: "MongoDB Database",
-        },
-        200,
-        {
-          "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
-        }
-      );
+      let dbBlogs: any[] = [];
+      try {
+        dbBlogs = await BlogModel.find().sort({ createdAt: -1 }).lean();
+      } catch (sortErr) {
+        console.warn("Mongoose sort error, falling back to unsorted fetch:", sortErr);
+        dbBlogs = await BlogModel.find().lean();
+      }
+      if (dbBlogs && dbBlogs.length > 0) {
+        dbBlogs.sort(
+          (a: any, b: any) =>
+            new Date(b.createdAt || b.publishedAt || 0).getTime() -
+            new Date(a.createdAt || a.publishedAt || 0).getTime()
+        );
+        return jsonResponse(
+          {
+            success: true,
+            count: dbBlogs.length,
+            data: dbBlogs,
+            source: "MongoDB Database",
+          },
+          200,
+          {
+            "Cache-Control": "no-store, no-cache, must-revalidate",
+          }
+        );
+      }
     }
   } catch (err) {
-    console.warn("MongoDB GET blogs error:", err);
+    console.warn("MongoDB GET blogs error, using fallback:", err);
   }
 
-  return jsonResponse({
-    success: true,
-    count: 0,
-    data: [],
-    source: "MongoDB Database",
-  });
+  // Fallback to in-memory mock data
+  return jsonResponse(
+    {
+      success: true,
+      count: mockBlogs.length,
+      data: mockBlogs,
+      source: "Memory Fallback",
+    },
+    200,
+    {
+      "Cache-Control": "no-store, no-cache, must-revalidate",
+    }
+  );
 }
 
 export async function POST(request: Request) {
@@ -66,7 +83,7 @@ export async function POST(request: Request) {
       id: body.id || `blog-${Date.now()}`,
       slug: generatedSlug || `blog-${Date.now()}`,
       title: String(title),
-      excerpt: excerpt ? String(excerpt).trim() : '',
+      excerpt: excerpt ? String(excerpt) : String(title),
       content: String(content),
       author: author ? String(author) : 'Pithal Machinery Team',
       category: categoryStr,

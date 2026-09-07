@@ -34,6 +34,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`} suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(typeof window!=='undefined'&&window.performance){if(typeof window.performance.measure==='function'){var m=window.performance.measure.bind(window.performance);window.performance.measure=function(){try{return m.apply(window.performance,arguments)}catch(e){return undefined}}}if(typeof window.performance.mark==='function'){var k=window.performance.mark.bind(window.performance);window.performance.mark=function(){try{return k.apply(window.performance,arguments)}catch(e){return undefined}}}}}())`,
+          }}
+        />
         <Script
           id="gtm-script"
           strategy="afterInteractive"
