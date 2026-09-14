@@ -70,7 +70,12 @@ const getBlogPost = cache(async (rawSlug: string) => {
           views: b.views || "1.2K",
           img: b.image || "/blogpageimg/crusherguide.jpg",
           content: b.content,
-          faqs: b.faqs || [],
+          faqs: Array.isArray(b.faqs)
+            ? b.faqs.map((f: any) => ({
+                question: String(f.question || ""),
+                answer: String(f.answer || ""),
+              }))
+            : [],
         };
       }
     }
