@@ -2,18 +2,14 @@ import mongoose from "mongoose";
 
 // SRV connection string (works on Vercel/cloud platforms with DNS resolution)
 const SRV_MONGODB_URI =
-  "mongodb+srv://ranjitwarrgyizmorsch_db_user:HHk01PfKPFSx89A7@cluster0.pivoizu.mongodb.net/pithal_db?retryWrites=true&w=majority&appName=Cluster0&readPreference=primaryPreferred";
+  "mongodb+srv://ranjitwarrgyizmorsch_db_user:HHk01PfKPFSx89A7@cluster0.pivoizu.mongodb.net/pithal_db?retryWrites=true&w=majority&appName=Cluster0";
 
 // Direct connection string (fallback for environments without SRV DNS support)
 const DIRECT_MONGODB_URI =
-  "mongodb://ranjitwarrgyizmorsch_db_user:HHk01PfKPFSx89A7@ac-nb7call-shard-00-00.pivoizu.mongodb.net:27017,ac-nb7call-shard-00-01.pivoizu.mongodb.net:27017,ac-nb7call-shard-00-02.pivoizu.mongodb.net:27017/pithal_db?ssl=true&replicaSet=atlas-542r28-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0&readPreference=primaryPreferred";
+  "mongodb://ranjitwarrgyizmorsch_db_user:HHk01PfKPFSx89A7@ac-nb7call-shard-00-00.pivoizu.mongodb.net:27017,ac-nb7call-shard-00-01.pivoizu.mongodb.net:27017,ac-nb7call-shard-00-02.pivoizu.mongodb.net:27017/pithal_db?ssl=true&replicaSet=atlas-542r28-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0";
 
 function getMongoUri(): string {
-  let uri = process.env.MONGODB_URI || SRV_MONGODB_URI;
-  if (!uri.includes("readPreference=")) {
-    uri += (uri.includes("?") ? "&" : "?") + "readPreference=primaryPreferred";
-  }
-  return uri;
+  return process.env.MONGODB_URI || SRV_MONGODB_URI;
 }
 
 interface MongooseCache {
@@ -37,13 +33,9 @@ export async function connectDB(): Promise<typeof mongoose | null> {
   // If a connection is not already being established, initiate one
   if (!cached.promise) {
     const opts: mongoose.ConnectOptions = {
-      bufferCommands: false,
-      serverSelectionTimeoutMS: 5000,
-      connectTimeoutMS: 5000,
-      socketTimeoutMS: 30000,
-      maxPoolSize: 10,
-      minPoolSize: 1,
-      readPreference: "primaryPreferred",
+      bufferCommands: true,
+      serverSelectionTimeoutMS: 30000,
+      maxPoolSize: 5,
     };
 
     const targetUri = getMongoUri();

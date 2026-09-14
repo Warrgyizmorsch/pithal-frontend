@@ -1431,16 +1431,48 @@ export default function BackendAdminPortal() {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    if (file.size > 5 * 1024 * 1024) {
-      alert("Image size should be less than 5MB");
+    if (file.size > 15 * 1024 * 1024) {
+      alert("Image size should be less than 15MB");
       return;
     }
 
     const reader = new FileReader();
-    reader.onloadend = () => {
-      if (typeof reader.result === "string") {
-        setBlogImage(reader.result);
-      }
+    reader.onload = (event) => {
+      const img = document.createElement("img");
+      img.src = event.target?.result as string;
+      img.onload = () => {
+        const maxWidth = 1200;
+        const maxHeight = 800;
+        let width = img.width;
+        let height = img.height;
+
+        if (width > maxWidth || height > maxHeight) {
+          if (width / height > maxWidth / maxHeight) {
+            height = Math.round((height * maxWidth) / width);
+            width = maxWidth;
+          } else {
+            width = Math.round((width * maxHeight) / height);
+            height = maxHeight;
+          }
+        }
+
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        ctx?.drawImage(img, 0, 0, width, height);
+
+        let compressedDataUrl = canvas.toDataURL("image/webp", 0.8);
+        if (!compressedDataUrl.startsWith("data:image/webp")) {
+          compressedDataUrl = canvas.toDataURL("image/jpeg", 0.8);
+        }
+        setBlogImage(compressedDataUrl);
+      };
+      img.onerror = () => {
+        if (typeof event.target?.result === "string") {
+          setBlogImage(event.target.result);
+        }
+      };
     };
     reader.readAsDataURL(file);
   };

@@ -9,11 +9,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock, Calendar, Eye, Flame, ArrowRight } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { cache } from "react";
 import { BlogFaqAccordion } from "@/components/blog/BlogFaqAccordion";
 import { BlogShareButtons } from "@/components/blog/BlogShareButtons";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+// Incremental Static Regeneration: cache on edge/server, revalidated in background
+// Admin panel updates flush this instantly via revalidatePath
+export const revalidate = 60;
 
 function cleanBlogContentHtml(html: string, title?: string): string {
   if (!html) return "";
@@ -44,11 +46,19 @@ function cleanBlogContentHtml(html: string, title?: string): string {
 import { connectDB } from "@/lib/db/mongodb";
 import BlogModel from "@/lib/models/Blog";
 
-async function getBlogPost(slug: string) {
+const getBlogPost = cache(async (rawSlug: string) => {
+  const slug = decodeURIComponent(rawSlug).trim();
   try {
-    const conn = await connectDB();
+    const conn = await Promise.race([
+      connectDB(),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 2500)),
+    ]);
     if (conn) {
-      const b: any = await BlogModel.findOne({ slug }).lean();
+      const b: any = await BlogModel.findOne({
+        $or: [{ slug }, { id: slug }],
+      })
+        .maxTimeMS(3000)
+        .lean();
       if (b) {
         return {
           slug: b.slug,
@@ -68,13 +78,21 @@ async function getBlogPost(slug: string) {
     console.warn("Direct DB blog fetch error, using fallback:", err);
   }
   return getPostBySlug(slug) || null;
-}
+});
 
-async function getAllBackendBlogs() {
+const getAllBackendBlogs = cache(async () => {
   try {
-    const conn = await connectDB();
+    const conn = await Promise.race([
+      connectDB(),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 2500)),
+    ]);
     if (conn) {
-      const blogs: any = await BlogModel.find({ status: { $ne: "Draft" } }).sort({ createdAt: -1 }).lean();
+      const blogs: any = await BlogModel.find({ status: { $ne: "Draft" } })
+        .select("slug title readTime publishedAt image")
+        .maxTimeMS(3000)
+        .limit(6)
+        .sort({ createdAt: -1 })
+        .lean();
       if (blogs && blogs.length > 0) {
         return blogs;
       }
@@ -83,7 +101,7 @@ async function getAllBackendBlogs() {
     console.warn("Direct DB all blogs fetch error:", err);
   }
   return [];
-}
+});
 
 export async function generateMetadata({
   params,

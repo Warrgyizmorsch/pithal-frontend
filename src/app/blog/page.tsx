@@ -9,15 +9,20 @@ export const metadata: Metadata = {
     "Explore expert insights, equipment selection guides, operational best practices, and technological innovations in aggregate and mining operations.",
 };
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+// Incremental Static Regeneration: cache on edge/server, revalidated in background
+// Admin panel updates flush this instantly via revalidatePath('/blog')
+export const revalidate = 60;
 
 async function getInitialBlogs() {
   try {
-    const conn = await connectDB();
+    const conn = await Promise.race([
+      connectDB(),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 3500)),
+    ]);
     if (conn) {
       const blogs = await BlogModel.find({ status: { $ne: "Draft" } })
         .select("-content -faqs")
+        .maxTimeMS(3000)
         .sort({ createdAt: -1 })
         .lean();
 

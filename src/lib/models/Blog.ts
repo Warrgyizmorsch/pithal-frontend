@@ -50,7 +50,7 @@ const BlogSchema = new Schema<IBlog>(
     metaDescription: { type: String, default: "" },
     faqs: [BlogFaqSchema],
   },
-  { timestamps: true }
+  { timestamps: true, autoIndex: false }
 );
 
 export const BlogModel: Model<IBlog> =
