@@ -2542,7 +2542,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                 {/* Circle with Book icon */}
                 <div className="flex h-11 w-11 items-center justify-center rounded-full border border-secondary/30 bg-secondary/5 text-secondary flex-shrink-0 shadow-sm">
                   <svg
-                    viewBox="0 0 30"
+                    viewBox="0 0 24 24"
                     fill="none"
                     className="w-5 h-5 stroke-secondary"
                     strokeWidth="1.8"
