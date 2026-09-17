@@ -33,8 +33,9 @@ export async function connectDB(): Promise<typeof mongoose | null> {
   // If a connection is not already being established, initiate one
   if (!cached.promise) {
     const opts: mongoose.ConnectOptions = {
-      bufferCommands: true,
-      serverSelectionTimeoutMS: 30000,
+      bufferCommands: false,
+      serverSelectionTimeoutMS: 3000,
+      connectTimeoutMS: 3000,
       maxPoolSize: 5,
     };
 
@@ -49,11 +50,10 @@ export async function connectDB(): Promise<typeof mongoose | null> {
         const errMsg = err instanceof Error ? err.message : String(err);
         console.warn("[MongoDB Warning] Primary connection failed:", errMsg);
 
-        // Try direct URI fallback if primary failed
         if (targetUri !== DIRECT_MONGODB_URI) {
           try {
             console.log("[MongoDB Log] Retrying with direct connection string...");
-            const directM = await mongoose.connect(DIRECT_MONGODB_URI, opts);
+            const directM = await mongoose.connect(DIRECT_MONGODB_URI, { ...opts, serverSelectionTimeoutMS: 2000 });
             console.log("[MongoDB Log] Connected successfully via direct connection string!");
             return directM;
           } catch (directErr: unknown) {

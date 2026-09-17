@@ -52,12 +52,14 @@ const getBlogPost = cache(async (rawSlug: string) => {
     const conn = await Promise.race([
       connectDB(),
       new Promise<null>((resolve) => setTimeout(() => resolve(null), 2500)),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
     ]);
     if (conn) {
       const b: any = await BlogModel.findOne({
         $or: [{ slug }, { id: slug }],
       })
         .maxTimeMS(3000)
+        .maxTimeMS(1500)
         .lean();
       if (b) {
         return {
@@ -90,11 +92,13 @@ const getAllBackendBlogs = cache(async () => {
     const conn = await Promise.race([
       connectDB(),
       new Promise<null>((resolve) => setTimeout(() => resolve(null), 2500)),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
     ]);
     if (conn) {
       const blogs: any = await BlogModel.find({ status: { $ne: "Draft" } })
         .select("slug title readTime publishedAt image")
         .maxTimeMS(3000)
+        .maxTimeMS(1500)
         .limit(6)
         .sort({ createdAt: -1 })
         .lean();
@@ -106,6 +110,7 @@ const getAllBackendBlogs = cache(async () => {
     console.warn("Direct DB all blogs fetch error:", err);
   }
   return [];
+  return getTrendingPosts();
 });
 
 export async function generateMetadata({

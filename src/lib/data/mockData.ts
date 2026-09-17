@@ -155,7 +155,24 @@ export const products: Product[] = [
   },
 ];
 
-export const blogs: BlogPost[] = [];
+import { blogPosts } from '@/data/blogData';
+
+export const blogs: BlogPost[] = blogPosts.map((b) => ({
+  id: b.slug,
+  slug: b.slug,
+  title: b.title,
+  excerpt: b.desc,
+  content: b.content || '',
+  author: 'Pithal Machinery Team',
+  category: b.category || 'Crushing Solutions',
+  tag: b.tag,
+  readTime: b.read,
+  views: b.views || '1.2K',
+  image: b.img,
+  status: 'Publish',
+  faqs: b.faqs || [],
+  publishedAt: b.date,
+}));
 
 export const mockLeads: Lead[] = [];
 

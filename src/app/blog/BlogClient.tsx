@@ -42,6 +42,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
 import { HeroNavigation } from "@/components/common/HeroNavigation";
+import { SafeBlogImage } from "@/components/blog/SafeBlogImage";
+import { getResolvedBlogImageUrl } from "@/lib/blogImage";
 
 
 const CalendarIcon = () => (
@@ -901,13 +903,11 @@ function ImgBox({
     <div
       className={`${fill ? "absolute inset-0 w-full h-full" : "relative"} bg-slate-900 overflow-hidden ${className}`}
     >
-      <img
+      <SafeBlogImage
         src={src}
         alt={alt}
         onLoad={onLoad}
         className={cn("w-full h-full object-cover", fill ? "absolute inset-0" : "", imgClassName)}
-        onError={(e) => {
-        }}
       />
       {label && (
         <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-xs font-medium pointer-events-none">
@@ -1082,6 +1082,9 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
       !rawExcerpt.toLowerCase().startsWith(rawTitle.toLowerCase() + "...")
     );
 
+    const rawImg = b.image || b.img || "/blogpageimg/crusherguide.jpg";
+    const resolvedImg = getResolvedBlogImageUrl(rawImg);
+
     return {
       slug: b.slug,
       tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
@@ -1091,7 +1094,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
       read: b.readTime || "5 min read",
       views: b.views || "1.2K",
       category: b.category || "Crushing Solutions",
-      img: b.image || "/blogpageimg/crusherguide.jpg",
+      img: resolvedImg,
       num: `0${index + 1}`,
     };
   });
@@ -1486,11 +1489,9 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                       >
                         {/* Image Area */}
                         <div className="relative h-60 w-full overflow-hidden shrink-0 bg-slate-100">
-                          <img
+                          <SafeBlogImage
                             src={art.img}
                             alt={art.title}
-                            loading="lazy"
-                            decoding="async"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           />
                         </div>
