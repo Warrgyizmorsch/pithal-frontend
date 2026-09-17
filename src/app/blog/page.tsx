@@ -18,11 +18,13 @@ async function getInitialBlogs() {
   try {
     const conn = await Promise.race([
       connectDB(),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 3500)),
       new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
     ]);
     if (conn) {
       const blogs = await BlogModel.find({ status: { $ne: "Draft" } })
         .select("-content -faqs")
+        .maxTimeMS(3000)
         .maxTimeMS(1500)
         .sort({ createdAt: -1 })
         .lean();
@@ -35,6 +37,7 @@ async function getInitialBlogs() {
   } catch (err) {
     console.warn("Server prefetch blogs error in /blog:", err);
   }
+  return [];
   // Instant baseline fallback — never hangs or delays page load!
   return blogPosts;
 }

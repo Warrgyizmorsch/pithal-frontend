@@ -156,6 +156,7 @@ export const products: Product[] = [
 ];
 
 import { blogPosts } from '@/data/blogData';
+import { getResolvedBlogImageUrl } from '@/lib/blogImage';
 
 export const blogs: BlogPost[] = blogPosts.map((b) => ({
   id: b.slug,
@@ -168,7 +169,7 @@ export const blogs: BlogPost[] = blogPosts.map((b) => ({
   tag: b.tag,
   readTime: b.read,
   views: b.views || '1.2K',
-  image: b.img,
+  image: getResolvedBlogImageUrl(b.image || b.img),
   status: 'Publish',
   faqs: b.faqs || [],
   publishedAt: b.date,

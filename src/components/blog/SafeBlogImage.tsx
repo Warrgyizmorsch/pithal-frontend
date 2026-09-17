@@ -1,14 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { getResolvedBlogImageUrl } from "@/lib/blogImage";
 
 interface SafeBlogImageProps {
   src?: string;
   alt: string;
   className?: string;
   priority?: boolean;
-  onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
 }
 
 export function SafeBlogImage({
@@ -16,28 +14,27 @@ export function SafeBlogImage({
   alt,
   className = "",
   priority = false,
-  onLoad,
 }: SafeBlogImageProps) {
-  const [imgSrc, setImgSrc] = useState<string>(() => getResolvedBlogImageUrl(src));
-  const [hasSwapped, setHasSwapped] = useState<boolean>(false);
+  const [imgSrc, setImgSrc] = useState<string>(src || "/blogpageimg/crusherguide.jpg");
+  const [triedAlt, setTriedAlt] = useState<boolean>(false);
 
   useEffect(() => {
-    setImgSrc(getResolvedBlogImageUrl(src));
-    setHasSwapped(false);
+    setImgSrc(src || "/blogpageimg/crusherguide.jpg");
+    setTriedAlt(false);
   }, [src]);
 
   const handleError = () => {
-    if (!hasSwapped) {
-      setHasSwapped(true);
-      // If local /blogpageimg/ failed, try GitHub raw CDN
-      if (imgSrc.startsWith("/blogpageimg/") || (imgSrc.includes("/blogpageimg/") && !imgSrc.includes("raw.githubusercontent.com"))) {
+    if (!triedAlt) {
+      setTriedAlt(true);
+      // If failed on local, try GitHub raw CDN
+      if (imgSrc.includes("/blogpageimg/") && !imgSrc.includes("raw.githubusercontent.com")) {
         const filename = imgSrc.split("/blogpageimg/")[1]?.split("?")[0];
         if (filename) {
           setImgSrc(`https://raw.githubusercontent.com/Warrgyizmorsch/pithal-frontend/main/public/blogpageimg/${filename}`);
           return;
         }
       }
-      // If GitHub raw CDN failed, try local /blogpageimg/
+      // If failed on GitHub raw CDN, try local /blogpageimg/
       if (imgSrc.includes("raw.githubusercontent.com") && imgSrc.includes("/blogpageimg/")) {
         const filename = imgSrc.split("/blogpageimg/")[1]?.split("?")[0];
         if (filename) {
@@ -46,7 +43,7 @@ export function SafeBlogImage({
         }
       }
     }
-    // Ultimate fallback to default existing guide image
+    // Final safe fallback
     setImgSrc("/blogpageimg/crusherguide.jpg");
   };
 
@@ -56,11 +53,9 @@ export function SafeBlogImage({
       alt={alt}
       loading={priority ? "eager" : "lazy"}
       decoding="async"
-      onLoad={onLoad}
       onError={handleError}
       className={className}
     />
   );
 }
 
-export { getResolvedBlogImageUrl };

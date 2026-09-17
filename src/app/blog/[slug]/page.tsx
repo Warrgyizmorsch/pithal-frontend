@@ -40,6 +40,12 @@ function cleanBlogContentHtml(html: string, title?: string): string {
     return `<p${pAttr}>${cleanInner}</p>`;
   });
 
+  // 4. Convert any GitHub raw URLs pointing to blogpageimg to direct local paths
+  cleaned = cleaned.replace(
+    /https?:\/\/raw\.githubusercontent\.com\/[^\/]+\/[^\/]+\/[^\/]+\/public\/blogpageimg\//gi,
+    "/blogpageimg/"
+  );
+
   return cleaned;
 }
 
@@ -51,7 +57,6 @@ const getBlogPost = cache(async (rawSlug: string) => {
   try {
     const conn = await Promise.race([
       connectDB(),
-      new Promise<null>((resolve) => setTimeout(() => resolve(null), 2500)),
       new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
     ]);
     if (conn) {
@@ -91,13 +96,11 @@ const getAllBackendBlogs = cache(async () => {
   try {
     const conn = await Promise.race([
       connectDB(),
-      new Promise<null>((resolve) => setTimeout(() => resolve(null), 2500)),
       new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
     ]);
     if (conn) {
       const blogs: any = await BlogModel.find({ status: { $ne: "Draft" } })
         .select("slug title readTime publishedAt image")
-        .maxTimeMS(3000)
         .maxTimeMS(1500)
         .limit(6)
         .sort({ createdAt: -1 })
@@ -109,7 +112,6 @@ const getAllBackendBlogs = cache(async () => {
   } catch (err) {
     console.warn("Direct DB all blogs fetch error:", err);
   }
-  return [];
   return getTrendingPosts();
 });
 
