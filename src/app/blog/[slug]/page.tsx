@@ -13,9 +13,9 @@ import { cache } from "react";
 import { BlogFaqAccordion } from "@/components/blog/BlogFaqAccordion";
 import { BlogShareButtons } from "@/components/blog/BlogShareButtons";
 
-// Incremental Static Regeneration: cache on edge/server, revalidated in background
-// Admin panel updates flush this instantly via revalidatePath
-export const revalidate = 60;
+// Ensure detail page is always dynamically fetched from MongoDB on every request/reload
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 function cleanBlogContentHtml(html: string, title?: string): string {
   if (!html) return "";
@@ -55,17 +55,12 @@ import BlogModel from "@/lib/models/Blog";
 const getBlogPost = cache(async (rawSlug: string) => {
   const slug = decodeURIComponent(rawSlug).trim();
   try {
-    const conn = await Promise.race([
-      connectDB(),
-      new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
-    ]);
+    const conn = await connectDB();
     if (conn) {
       const b: any = await BlogModel.findOne({
         $or: [{ slug }, { id: slug }],
-      })
-        .maxTimeMS(3000)
-        .maxTimeMS(1500)
-        .lean();
+      }).lean();
+
       if (b) {
         return {
           slug: b.slug,
@@ -87,21 +82,17 @@ const getBlogPost = cache(async (rawSlug: string) => {
       }
     }
   } catch (err) {
-    console.warn("Direct DB blog fetch error, using fallback:", err);
+    console.warn("[Blog Log] Direct DB blog fetch error, checking static fallback:", err);
   }
   return getPostBySlug(slug) || null;
 });
 
 const getAllBackendBlogs = cache(async () => {
   try {
-    const conn = await Promise.race([
-      connectDB(),
-      new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
-    ]);
+    const conn = await connectDB();
     if (conn) {
       const blogs: any = await BlogModel.find({ status: { $ne: "Draft" } })
         .select("slug title readTime publishedAt image")
-        .maxTimeMS(1500)
         .limit(6)
         .sort({ createdAt: -1 })
         .lean();
@@ -110,7 +101,7 @@ const getAllBackendBlogs = cache(async () => {
       }
     }
   } catch (err) {
-    console.warn("Direct DB all blogs fetch error:", err);
+    console.warn("[Blog Log] Direct DB all blogs fetch error:", err);
   }
   return getTrendingPosts();
 });
@@ -141,7 +132,11 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.desc,
-      images: [post.img],
+      images: [
+        post.img && !post.img.startsWith("data:")
+          ? post.img
+          : "/blogpageimg/crusherguide.jpg",
+      ],
     },
   };
 }
@@ -209,6 +204,7 @@ export default async function BlogPostPage({
                       fill
                       className="object-cover object-center"
                       priority
+                      unoptimized={Boolean(post.img && post.img.startsWith("data:"))}
                     />
                   </div>
 
@@ -308,6 +304,7 @@ export default async function BlogPostPage({
                               alt={sp.title}
                               fill
                               className="object-cover group-hover:scale-110 transition-transform duration-300"
+                              unoptimized={Boolean(sp.img && sp.img.startsWith("data:"))}
                             />
                           </div>
                           <div className="min-w-0 flex-1">

@@ -77,7 +77,7 @@ const contactInformation = [
     content:
       "Pithal Machines Limited Industrial Area Plot no G1- 232 Riico Kaladwas Udaipur Rajasthan",
     linkText: "View on Map",
-    href: "https://www.google.com/maps/dir//TASS,+National+Highway+27,+Sukher+Rd,+Rajasthan+313011/@24.6422969,73.7165995,16.76z/data=!4m16!1m7!3m6!1s0x3967e44236e80ead:0xbce661d60cd0cf9c!2sTASS!8m2!3d24.6412473!4d73.7172356!16s%2Fg%2F11bt_j7kgp!4m7!1m0!1m5!1m1!1s0x3967e44236e80ead:0xbce661d60cd0cf9c!2m2!1d73.7172679!2d24.641242?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D",
+    href: "https://maps.google.com/?q=Pithal+Machine,+Industrial+Area,+Plot+no+G1-+232,+Riico,+Kaladwas,+Udaipur,+Rajasthan+313003",
   },
   {
     channel: "PHONE NUMBER",
@@ -1742,7 +1742,7 @@ export default function ContactUsPage() {
                 {/* Visual Map Mimic */}
                 <div className="mt-8 relative h-48 w-full rounded-xl overflow-hidden border border-white/10">
                   <iframe
-                    src="https://maps.google.com/maps?q=TASS,%20National%20Highway%2027,%20Sukher%20Rd,%20Rajasthan%20313011&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Pithal%20Machine,%20Industrial%20Area,%20Plot%20no%20G1-%20232,%20Riico,%20Kaladwas,%20Udaipur,%20Rajasthan%20313003&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     className="absolute inset-0 w-full h-full border-0"
                     allowFullScreen
                     loading="lazy"

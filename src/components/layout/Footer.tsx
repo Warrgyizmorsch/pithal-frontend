@@ -105,7 +105,7 @@ export function Footer() {
                   <p className="text-xs text-text-dark/80 -mt-2">Scan to Open Google Maps</p> */}
 
                   <a
-                    href="https://www.google.com/maps/dir//TASS,+National+Highway+27,+Sukher+Rd,+Rajasthan+313011/@24.6412473,73.7172356,18z/data=!4m16!1m7!3m6!1s0x3967e44236e80ead:0xbce661d60cd0cf9c!2sTASS!8m2!3d24.6412473!4d73.7172356!16s%2Fg%2F11bt_j7kgp!4m7!1m0!1m5!1m1!1s0x3967e44236e80ead:0xbce661d60cd0cf9c!2m2!1d73.7172679!2d24.641242?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+                    href="https://maps.google.com/?q=Pithal+Machine,+Industrial+Area,+Plot+no+G1-+232,+Riico,+Kaladwas,+Udaipur,+Rajasthan+313003"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Open factory location in Google Maps"
@@ -113,10 +113,12 @@ export function Footer() {
                   >
                     <div className="w-[90px] h-[90px] sm:w-[100px] sm:h-[100px] xl:w-[120px] xl:h-[120px] bg-white p-2 rounded-xl hover:scale-[1.05] transition-all duration-300 ease-in-out flex items-center justify-center border border-gray-100">
                       <Image
-                        src="/images/location-qr.png"
+                        src="/images/pithal-factory-location-qr.png"
                         alt="Pithal Machines Ltd. Factory Location QR Code"
                         width={104}
                         height={104}
+                        unoptimized
+                        priority
                         className="w-full h-full object-contain"
                       />
                     </div>

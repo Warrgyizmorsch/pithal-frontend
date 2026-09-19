@@ -10,35 +10,26 @@ export const metadata: Metadata = {
     "Explore expert insights, equipment selection guides, operational best practices, and technological innovations in aggregate and mining operations.",
 };
 
-// Incremental Static Regeneration: cache on edge/server, revalidated in background
-// Admin panel updates flush this instantly via revalidatePath('/blog')
-export const revalidate = 60;
+// Ensure page is always dynamically fetched from MongoDB on every request/reload
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 async function getInitialBlogs() {
   try {
-    const conn = await Promise.race([
-      connectDB(),
-      new Promise<null>((resolve) => setTimeout(() => resolve(null), 3500)),
-      new Promise<null>((resolve) => setTimeout(() => resolve(null), 1500)),
-    ]);
+    const conn = await connectDB();
     if (conn) {
       const blogs = await BlogModel.find({ status: { $ne: "Draft" } })
         .select("-content -faqs")
-        .maxTimeMS(3000)
-        .maxTimeMS(1500)
         .sort({ createdAt: -1 })
         .lean();
 
       if (blogs && blogs.length > 0) {
-        // Sanitize Mongoose objects to plain serializable JSON
         return JSON.parse(JSON.stringify(blogs));
       }
     }
   } catch (err) {
-    console.warn("Server prefetch blogs error in /blog:", err);
+    console.warn("[Blog Log] Server prefetch blogs error in /blog:", err);
   }
-  return [];
-  // Instant baseline fallback — never hangs or delays page load!
   return blogPosts;
 }
 

@@ -42,6 +42,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
 import { HeroNavigation } from "@/components/common/HeroNavigation";
+import { handleBlogImageError, RAW_GITHUB_IMG_BASE } from "@/lib/blogImage";
 
 
 const CalendarIcon = () => (
@@ -897,21 +898,48 @@ function ImgBox({
   imgClassName?: string;
   onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
 }) {
+  const [imgSrc, setImgSrc] = useState(src || "/blogpageimg/crusherguide.jpg");
+  const [fallbackAttempted, setFallbackAttempted] = useState(false);
+
+  useEffect(() => {
+    setImgSrc(src || "/blogpageimg/crusherguide.jpg");
+    setFallbackAttempted(false);
+  }, [src]);
+
+  const handleError = () => {
+    if (!fallbackAttempted) {
+      setFallbackAttempted(true);
+      // 1. If pointing to local /blogpageimg/ and it failed (e.g. on Hostinger), fallback to GitHub CDN
+      if (imgSrc.includes("/blogpageimg/") && !imgSrc.includes("raw.githubusercontent.com")) {
+        const filename = imgSrc.split("/blogpageimg/")[1]?.split("?")[0];
+        if (filename) {
+          setImgSrc(`${RAW_GITHUB_IMG_BASE}${filename}`);
+          return;
+        }
+      }
+      // 2. If pointing to GitHub CDN and it failed, fallback to local /blogpageimg/
+      if (imgSrc.includes("raw.githubusercontent.com") && imgSrc.includes("/blogpageimg/")) {
+        const filename = imgSrc.split("/blogpageimg/")[1]?.split("?")[0];
+        if (filename) {
+          setImgSrc(`/blogpageimg/${filename}`);
+          return;
+        }
+      }
+    }
+    // 3. Fallback to standard placeholder
+    setImgSrc("/blogpageimg/crusherguide.jpg");
+  };
+
   return (
     <div
       className={`${fill ? "absolute inset-0 w-full h-full" : "relative"} bg-slate-900 overflow-hidden ${className}`}
     >
       <img
-        src={src}
+        src={imgSrc}
         alt={alt}
         onLoad={onLoad}
         className={cn("w-full h-full object-cover", fill ? "absolute inset-0" : "", imgClassName)}
-        onError={(e) => {
-          const target = e.currentTarget;
-          if (!target.src.includes("crusherguide.jpg")) {
-            target.src = "/blogpageimg/crusherguide.jpg";
-          }
-        }}
+        onError={handleError}
       />
       {label && (
         <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-xs font-medium pointer-events-none">
@@ -1056,7 +1084,9 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
         if (res && res.ok) {
           const json = await res.json();
           if (json.success && Array.isArray(json.data) && json.data.length > 0) {
-            setDynamicBlogs(json.data);
+            if (json.source !== "Memory Fallback" || dynamicBlogs.length === 0) {
+              setDynamicBlogs(json.data);
+            }
           }
         }
       } catch (err) {
@@ -1087,6 +1117,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
     );
 
     return {
+      id: b.id || b._id || b.slug,
       slug: b.slug,
       tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
       title: b.title,
@@ -1349,7 +1380,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
             <MobileCarousel autoSlideInterval={2000} className="md:grid-cols-2 gap-6">
               {currentFeatured.map((post, i) => (
                 <Link
-                  key={i}
+                  key={post.slug || post.id || i}
                   href={`/blog/${post.slug}`}
                   className="relative rounded-xl overflow-hidden group cursor-pointer shadow-[0_18px_45px_rgba(3,27,64,0.14)] block aspect-[16/9.2] w-full bg-slate-900"
                 >
@@ -1485,23 +1516,16 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                     return (
                       <Link
                         href={postHref}
-                        key={i}
+                        key={art.slug || art.id || i}
                         className="group flex flex-col h-full bg-white rounded-[20px] overflow-hidden border border-slate-200 shadow-[0_4px_24px_rgb(0,0,0,0.03)] hover:shadow-lg transition-all duration-300"
                       >
                         {/* Image Area */}
                         <div className="relative h-60 w-full overflow-hidden shrink-0 bg-slate-100">
-                          <img
+                          <ImgBox
                             src={art.img}
                             alt={art.title}
-                            loading="lazy"
-                            decoding="async"
-                            onError={(e) => {
-                              const target = e.currentTarget;
-                              if (!target.src.includes("crusherguide.jpg")) {
-                                target.src = "/blogpageimg/crusherguide.jpg";
-                              }
-                            }}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            fill
+                            className="transition-transform duration-700 group-hover:scale-105"
                           />
                         </div>
 
@@ -1893,7 +1917,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
             <div className="mt-8 overflow-hidden rounded-lg border border-slate-100 bg-bg-light shadow-sm">
               {currentTrending.map((post, i) => (
                 <div
-                  key={i}
+                  key={post.slug || post.id || i}
                   className={`grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-6 items-center p-4 sm:p-6 border-b border-slate-100 last:border-b-0 bg-white ${i === currentTrending.length - 1 ? "border-b-0" : ""}`}
                 >
                   {/* 1. Left unified badge & image block */}

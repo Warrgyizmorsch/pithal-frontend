@@ -4,6 +4,8 @@ import { BlogPost } from '@/lib/types/api';
 import { connectDB } from '@/lib/db/mongodb';
 import BlogModel from '@/lib/models/Blog';
 import { revalidatePath } from 'next/cache';
+import fs from 'fs';
+import path from 'path';
 
 export const dynamic = 'force-dynamic';
 
@@ -80,6 +82,26 @@ export async function POST(request: Request) {
     const rawSlug = body.slug || title;
     const generatedSlug = String(rawSlug).toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
 
+    let finalImageUrl = image ? String(image) : '/blogpageimg/crusherguide.jpg';
+    if (finalImageUrl.startsWith('data:image/')) {
+      try {
+        const match = finalImageUrl.match(/^data:image\/([a-zA-Z0-9+]+);base64,(.+)$/);
+        if (match) {
+          const ext = match[1] === 'jpeg' ? 'jpg' : match[1].replace('svg+xml', 'svg');
+          const imgBuffer = Buffer.from(match[2], 'base64');
+          const fileName = `${generatedSlug || `blog-${Date.now()}`}.${ext}`;
+          const publicDir = path.join(process.cwd(), 'public', 'blogpageimg');
+          if (!fs.existsSync(publicDir)) {
+            fs.mkdirSync(publicDir, { recursive: true });
+          }
+          fs.writeFileSync(path.join(publicDir, fileName), imgBuffer);
+          console.log(`[Blog Log] Saved local backup image to /blogpageimg/${fileName}`);
+        }
+      } catch (imgErr) {
+        console.warn('[Blog Warning] Could not persist local backup image:', imgErr);
+      }
+    }
+
     const newBlog: BlogPost = {
       id: body.id || `blog-${Date.now()}`,
       slug: generatedSlug || `blog-${Date.now()}`,
@@ -91,7 +113,7 @@ export async function POST(request: Request) {
       tag: tagStr,
       readTime: readTime ? String(readTime) : '5 min read',
       views: '1',
-      image: image ? String(image) : '/blogpageimg/crusherguide.jpg',
+      image: finalImageUrl,
       status: status || 'Publish',
       publishedAt: new Date().toISOString().split('T')[0],
       metaTags: metaTags || '',

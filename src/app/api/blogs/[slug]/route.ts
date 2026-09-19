@@ -5,6 +5,8 @@ import { connectDB } from '@/lib/db/mongodb';
 import BlogModel from '@/lib/models/Blog';
 import { revalidatePath } from 'next/cache';
 import mongoose from 'mongoose';
+import fs from 'fs';
+import path from 'path';
 
 export const dynamic = 'force-dynamic';
 
@@ -58,6 +60,25 @@ export async function PUT(
   try {
     const { slug } = await params;
     const body = await request.json();
+
+    if (body.image && typeof body.image === 'string' && body.image.startsWith('data:image/')) {
+      try {
+        const match = body.image.match(/^data:image\/([a-zA-Z0-9+]+);base64,(.+)$/);
+        if (match) {
+          const ext = match[1] === 'jpeg' ? 'jpg' : match[1].replace('svg+xml', 'svg');
+          const imgBuffer = Buffer.from(match[2], 'base64');
+          const fileName = `${body.slug || slug}.${ext}`;
+          const publicDir = path.join(process.cwd(), 'public', 'blogpageimg');
+          if (!fs.existsSync(publicDir)) {
+            fs.mkdirSync(publicDir, { recursive: true });
+          }
+          fs.writeFileSync(path.join(publicDir, fileName), imgBuffer);
+          console.log(`[Blog Log] Saved local backup of updated blog image to /blogpageimg/${fileName}`);
+        }
+      } catch (imgErr) {
+        console.warn('[Blog Warning] Could not persist local backup image:', imgErr);
+      }
+    }
 
     try {
       const conn = await connectDB();

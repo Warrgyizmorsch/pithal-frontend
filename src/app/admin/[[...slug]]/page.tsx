@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { handleBlogImageError } from "@/lib/blogImage";
 
 export type AdminMenu =
   | "dashboard"
@@ -1441,8 +1442,8 @@ export default function BackendAdminPortal() {
       const img = document.createElement("img");
       img.src = event.target?.result as string;
       img.onload = () => {
-        const maxWidth = 1200;
-        const maxHeight = 800;
+        const maxWidth = 960;
+        const maxHeight = 540;
         let width = img.width;
         let height = img.height;
 
@@ -1462,9 +1463,9 @@ export default function BackendAdminPortal() {
         const ctx = canvas.getContext("2d");
         ctx?.drawImage(img, 0, 0, width, height);
 
-        let compressedDataUrl = canvas.toDataURL("image/webp", 0.8);
+        let compressedDataUrl = canvas.toDataURL("image/webp", 0.75);
         if (!compressedDataUrl.startsWith("data:image/webp")) {
-          compressedDataUrl = canvas.toDataURL("image/jpeg", 0.8);
+          compressedDataUrl = canvas.toDataURL("image/jpeg", 0.75);
         }
         setBlogImage(compressedDataUrl);
       };
@@ -2908,7 +2909,7 @@ export default function BackendAdminPortal() {
                             <img
                               src={b.image || DEFAULT_FALLBACK_IMAGE}
                               alt={b.title}
-                              onError={(e) => { e.currentTarget.src = DEFAULT_FALLBACK_IMAGE; }}
+                              onError={(e) => handleBlogImageError(e, DEFAULT_FALLBACK_IMAGE)}
                               className="w-full h-full object-cover"
                             />
                           </div>
@@ -2997,7 +2998,12 @@ export default function BackendAdminPortal() {
                     <div className="flex items-center gap-4">
                       <div className="w-36 h-24 bg-slate-100 rounded-xl border border-dashed border-slate-300 overflow-hidden shrink-0 flex flex-col items-center justify-center">
                         {blogImage ? (
-                          <img src={blogImage} alt="Thumbnail Preview" className="w-full h-full object-cover" />
+                          <img
+                            src={blogImage}
+                            alt="Thumbnail Preview"
+                            onError={(e) => handleBlogImageError(e, DEFAULT_FALLBACK_IMAGE)}
+                            className="w-full h-full object-cover"
+                          />
                         ) : (
                           <div className="flex flex-col items-center justify-center text-slate-400 p-2 text-center">
                             <Icons.Upload />
