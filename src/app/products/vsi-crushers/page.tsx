@@ -17,9 +17,9 @@ import { Header } from "@/components/layout/Header";
 import { vsiCrusherData } from "@/data/products/vsiCrusherData";
 
 export const metadata: Metadata = {
-  title: "Prime VSI Crusher | Vertical Shaft Impact Crusher India",
+  title: "VSI Crusher Manufacturer in India | Sand Making Machine | Pithal Machines",
   description:
-    "Explore Pithal Prime VSI Crusher for efficient shaping and fine crushing of aggregates. Designed for reliable performance in mining, quarrying, construction and material processing.",
+    "Vertical shaft impact (VSI) sand making machines for manufactured sand and aggregate shaping. High efficiency, cubical product and reliable operation from Pithal Machines.",
 };
 
 export default function VsiCrushersPage() {

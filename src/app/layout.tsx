@@ -18,11 +18,11 @@ const bodyFont = Roboto_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.pithalmachine.com"),
   title: {
-    default: "Crusher Machine Manufacturers in India | Pithal Machines",
-    template: "%s | Pithal Machine Pvt.",
+    default: "Stone Crusher Machine Manufacturer in India | Pithal Machines",
+    template: "%s",
   },
   description:
-    "Pithal Machines is one of the leading crusher machine manufacturers in India. Jaw, cone & VSI crushers, screens, and complete crushing plants. Get a free quote today.",
+    "Pithal Machines designs and manufactures jaw crushers, cone crusher, vibrating screens and complete crushing plants for mining, quarrying and aggregate production in India.",
   alternates: {
     canonical: "./",
   },

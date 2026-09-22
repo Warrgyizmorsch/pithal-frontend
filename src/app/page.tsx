@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ContactCTA } from "@/components/home/ContactCTA";
 import { HeroSection } from "@/components/home/HeroSection";
 import { IndustriesSection } from "@/components/home/IndustriesSection";
@@ -9,6 +10,12 @@ import WhyChoosePithal from "@/components/home/WhyChoosePithal";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { FAQSection } from "@/components/home/FAQSection";
+
+export const metadata: Metadata = {
+  title: "Stone Crusher Machine Manufacturer in India | Pithal Machines",
+  description:
+    "Pithal Machines designs and manufactures jaw crushers, cone crusher, vibrating screens and complete crushing plants for mining, quarrying and aggregate production in India.",
+};
 
 export default function Home() {
   return (

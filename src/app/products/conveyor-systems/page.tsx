@@ -17,9 +17,9 @@ import { Header } from "@/components/layout/Header";
 import { conveyorSystemData } from "@/data/products/conveyorSystemData";
 
 export const metadata: Metadata = {
-  title: "conveyor system manufacturer| Prime Conveyor System",
+  title: "Conveyor System for Crushing Plants | Belt Conveyors | Pithal Machines",
   description:
-    "Prime Conveyor Systems are designed for efficient material handling in mining, quarrying and crushing plants, offering reliable performance and high-capacity material transfer.",
+    "Heavy-duty belt conveyor systems for crushing and screening plants. Engineered for mining, quarrying and aggregate handling with high reliability from Pithal Machines.",
 };
 
 export default function ConveyorSystemsPage() {

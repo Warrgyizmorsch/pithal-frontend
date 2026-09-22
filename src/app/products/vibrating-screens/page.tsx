@@ -17,9 +17,9 @@ import { Header } from "@/components/layout/Header";
 import { vibratingScreenData } from "@/data/products/vibratingScreenData";
 
 export const metadata: Metadata = {
-  title: "Vibrating Screen Machine | Prime Vibrating Screens",
+  title: "Vibrating Screen Manufacturer in India | 80–700 TPH | Pithal Machines",
   description:
-    "Get a reliable jaw crusher machine from Pithal Machine, designed for efficient crushing of hard materials. Explore durable, high-performance crushing solutions.",
+    "High-performance vibrating screens from 80–700 TPH for mining, quarrying and aggregate plants. View models, specifications and applications from Pithal Machines.",
 };
 
 export default function VibratingScreensPage() {

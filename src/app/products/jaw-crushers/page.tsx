@@ -17,9 +17,9 @@ import { Header } from "@/components/layout/Header";
 import { jawCrusherData } from "@/data/products/jawCrusherData";
 
 export const metadata: Metadata = {
-  title: "Jaw Crusher Manufacturer",
+  title: "Jaw Crusher Manufacturer in India | 80–600 TPH | Pithal Machine",
   description:
-    "Get a reliable jaw crusher machine from Pithal Machine, designed for efficient crushing of hard materials. Explore durable, high-performance crushing solutions.",
+    "Heavy-duty jaw crushers from 80–600 TPH for mining, quarrying and road aggregates. Explore specifications, models and applications from Pithal Machine.",
 };
 
 export default function JawCrusherProductPage() {

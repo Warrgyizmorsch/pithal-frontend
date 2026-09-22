@@ -17,9 +17,9 @@ import { Header } from "@/components/layout/Header";
 import { coneCrusherData } from "@/data/products/coneCrusherData";
 
 export const metadata: Metadata = {
-  title: "Prime Cone Crusher | High-Performance Cone Crusher India",
+  title: "Cone Crusher Manufacturer in India | 80–600 TPH | Pithal Machines",
   description:
-    "Explore Pithal Prime Cone Crusher for efficient secondary and tertiary crushing. Built for reliable performance in mining, quarrying, construction and aggregate applications.",
+    "Secondary and tertiary cone crushers from 80–600 TPH for hard rock, granite and basalt. View models, specifications and applications from Pithal Machine.",
 };
 
 export default function ConeCrusherProductPage() {
