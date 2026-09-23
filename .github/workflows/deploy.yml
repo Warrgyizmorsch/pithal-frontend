@@ -89,8 +89,7 @@ jobs:
             mkdir -p "$APP_DIR/hbuilds/current/nodejs/tmp"
             touch "$APP_DIR/hbuilds/current/nodejs/tmp/restart.txt"
 
-            # Gracefully stop running next-server worker so LiteSpeed Passenger spawns new version immediately
-            pkill -u "${{ secrets.SSH_USER }}" -f next-server || true
+            # Passenger reloads the application on next request when restart.txt timestamp is updated
 
             # Cleanup older releases (keep latest 5)
             cd "$APP_DIR/hbuilds/versions"
