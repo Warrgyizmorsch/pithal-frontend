@@ -31,7 +31,8 @@ jobs:
       - name: Prepare standalone release bundle
         run: |
           echo "Bundling standalone release..."
-          cp -r public .next/standalone/public
+          mkdir -p .next/standalone/public
+          cp -a public/. .next/standalone/public/
           cp -r .next/static .next/standalone/.next/static
           mkdir -p .next/standalone/tmp
           touch .next/standalone/tmp/restart.txt
@@ -89,7 +90,10 @@ jobs:
             mkdir -p "$APP_DIR/hbuilds/current/nodejs/tmp"
             touch "$APP_DIR/hbuilds/current/nodejs/tmp/restart.txt"
 
-            # Passenger reloads the application on next request when restart.txt timestamp is updated
+            # Recycle active next-server workers so new static file map is reloaded immediately
+            for p in $(pgrep -u "${{ secrets.SSH_USER }}" "next-server" 2>/dev/null); do
+              kill "$p" 2>/dev/null || true
+            done
 
             # Cleanup older releases (keep latest 5)
             cd "$APP_DIR/hbuilds/versions"
