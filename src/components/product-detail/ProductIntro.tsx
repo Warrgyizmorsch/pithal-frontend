@@ -237,7 +237,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
               <div className="absolute inset-0 bg-white/62 [clip-path:polygon(8%_0,100%_0,100%_88%,92%_100%,16%_100%,0_86%,0_16%)]" />
               <Image
                 alt={data.image.alt}
-                className="z-10 object-contain object-center p-5 drop-shadow-[0_24px_38px_rgba(3,27,64,0.16)] lg:p-8"
+                className="z-10 object-contain object-center p-5 drop-shadow-[0_24px_38px_rgba(12, 40, 98,0.16)] lg:p-8"
                 fill
                 sizes="(max-width: 1023px) 100vw, 55vw"
                 src={data.image.src}
@@ -288,7 +288,7 @@ export function ProductIntro({ data }: { data: ProductIntroData }) {
                         }
                       }}
                       className={cn(
-                        "absolute z-20 hidden w-[160px] rounded-xl border border-border bg-white/95 p-3 shadow-[0_12px_28px_rgba(3,27,64,0.1)] lg:block",
+                        "absolute z-20 hidden w-[160px] rounded-xl border border-border bg-white/95 p-3 shadow-[0_12px_28px_rgba(12, 40, 98,0.1)] lg:block",
                         cardClass,
                       )}
                     >

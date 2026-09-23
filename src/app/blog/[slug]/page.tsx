@@ -244,7 +244,7 @@ export default async function BlogPostPage({
                           [&_h4]:text-lg [&_h4]:font-bold [&_h4]:text-primary [&_h4]:mt-5 [&_h4]:mb-2
                           [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-4 [&_ul]:space-y-2.5 [&_li]:text-slate-700 [&_li]:font-normal [&_li]:text-[16px]
                           [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:my-4 [&_ol]:space-y-2.5 [&_li]:text-slate-700 [&_li]:font-normal [&_li]:text-[16px]
-                          [&_blockquote]:border-l-4 [&_blockquote]:border-secondary [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:my-6 [&_blockquote]:text-slate-600 [&_blockquote]:bg-orange-50/40 [&_blockquote]:py-3 [&_blockquote]:rounded-r-lg
+                          [&_blockquote]:border-l-4 [&_blockquote]:border-secondary [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:my-6 [&_blockquote]:text-slate-600 [&_blockquote]:bg-secondary/5 [&_blockquote]:py-3 [&_blockquote]:rounded-r-lg
                           [&_table]:w-full [&_table]:min-w-[520px] [&_table]:border-collapse [&_table]:my-6
                           [&_td]:border [&_td]:border-slate-200 [&_td]:p-3 [&_td]:text-sm [&_td]:font-normal
                           [&_th]:border [&_th]:border-slate-200 [&_th]:p-3 [&_th]:bg-slate-100 [&_th]:font-bold [&_th]:text-primary [&_th]:text-sm

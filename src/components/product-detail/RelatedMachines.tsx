@@ -218,7 +218,7 @@ export function RelatedMachines({
           {originalLength > visibleCards && (
             <button
               aria-label="Show previous related products"
-              className="absolute left-0 z-20 hidden h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-secondary shadow-[0_10px_25px_rgba(3,27,64,0.08)] transition hover:border-secondary hover:bg-secondary/5 lg:flex"
+              className="absolute left-0 z-20 hidden h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-secondary shadow-[0_10px_25px_rgba(12, 40, 98,0.08)] transition hover:border-secondary hover:bg-secondary/5 lg:flex"
               onClick={goToPreviousSlide}
             >
               <ChevronLeft size={22} strokeWidth={2.5} />
@@ -235,7 +235,7 @@ export function RelatedMachines({
                   key={`${machine.title}-${machine.href}-${idx}`}
                   className={`${cardWidthClass} shrink-0 px-2`}
                 >
-                  <div className="group flex h-full flex-col justify-between rounded-3xl border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#fcfdff_100%)] p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-secondary/30 hover:shadow-[0_15px_40px_rgba(3,27,64,0.05)]">
+                  <div className="group flex h-full flex-col justify-between rounded-3xl border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#fcfdff_100%)] p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-secondary/30 hover:shadow-[0_15px_40px_rgba(12, 40, 98,0.05)]">
                     <div>
                       <div className="relative flex h-45 items-center justify-center overflow-hidden rounded-[18px] border border-slate-100 bg-[radial-gradient(circle_at_top_left,#ffffff_0%,#f7fbff_60%,#eef4fb_100%)] transition-transform duration-300 group-hover:scale-[1.03]">
                         <Image
@@ -279,7 +279,7 @@ export function RelatedMachines({
           {originalLength > visibleCards && (
             <button
               aria-label="Show next related products"
-              className="absolute right-0 z-20 hidden h-11 w-11 translate-x-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-secondary shadow-[0_10px_25px_rgba(3,27,64,0.08)] transition hover:border-secondary hover:bg-secondary/5 lg:flex"
+              className="absolute right-0 z-20 hidden h-11 w-11 translate-x-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-secondary shadow-[0_10px_25px_rgba(12, 40, 98,0.08)] transition hover:border-secondary hover:bg-secondary/5 lg:flex"
               onClick={goToNextSlide}
             >
               <ChevronRight size={22} strokeWidth={2.5} />

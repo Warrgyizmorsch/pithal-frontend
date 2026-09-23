@@ -98,7 +98,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
             backgroundColor: "#ffffff",
             border: "1px solid rgba(229, 231, 235, 0.8)",
             borderRadius: "28px",
-            boxShadow: "0 25px 70px rgba(3, 27, 64, 0.06)",
+            boxShadow: "0 25px 70px rgba(12, 40, 98, 0.06)",
           }}
           className="overflow-hidden bg-[linear-gradient(135deg,#ffffff_0%,#f9fbff_100%)] px-4 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10"
         >
@@ -151,16 +151,16 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 className="relative mt-8 h-[220px] w-full overflow-hidden p-3 sm:h-[260px] sm:p-4 lg:h-[320px] lg:p-5"
                 style={{
                   borderRadius: "22px",
-                  boxShadow: "0 15px 35px rgba(3, 27, 64, 0.05)",
+                  boxShadow: "0 15px 35px rgba(12, 40, 98, 0.05)",
                   backgroundImage: `url(${CONTACT_SECTION_BACKGROUND})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center 25%",
                   backgroundRepeat: "no-repeat"
                 }}
               >
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,27,64,0.12)_0%,rgba(3,27,64,0.64)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12, 40, 98,0.12)_0%,rgba(12, 40, 98,0.64)_100%)]" />
                 <div
-                  className="absolute bottom-3 left-3 right-3 z-20 flex w-auto flex-col gap-3 rounded-[28px] border border-white/10 bg-[#031b40]/95 p-3 text-white shadow-[0_14px_35px_rgba(3,27,64,0.35)] backdrop-blur-xl sm:bottom-4 sm:left-4 sm:right-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:p-4"
+                  className="absolute bottom-3 left-3 right-3 z-20 flex w-auto flex-col gap-3 rounded-[28px] border border-white/10 bg-[#0C2862]/95 p-3 text-white shadow-[0_14px_35px_rgba(12, 40, 98,0.35)] backdrop-blur-xl sm:bottom-4 sm:left-4 sm:right-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:p-4"
                 >
                   <div
                     className="absolute text-white pointer-events-none"
@@ -190,7 +190,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                       className="flex shrink-0 items-center justify-center rounded-full bg-white/95 text-secondary"
                       style={{ width: 50, height: 50, minWidth: 50, minHeight: 50 }}
                     >
-                      <Phone size={20} fill="#fa5902" stroke="none" />
+                      <Phone size={20} fill="#ABB000" stroke="none" />
                     </div>
                     <div>
                       <h4 style={{ fontSize: "0.85rem", fontWeight: 700, margin: 0, lineHeight: 1.2 }}>
@@ -213,7 +213,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                       style={{
                         fontSize: "1.25rem",
                         fontWeight: 800,
-                        color: "#fa5902",
+                        color: "#ABB000",
                         lineHeight: 1.2,
                         marginTop: "2px"
                       }}
@@ -227,7 +227,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
 
             {/* Right Column: Premium Form Card */}
             <div
-              className="w-full h-full min-w-0 rounded-[20px] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#fdfefe_100%)] p-4 shadow-[0_20px_45px_rgba(3,27,64,0.06)] sm:p-7 lg:p-8"
+              className="w-full h-full min-w-0 rounded-[20px] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#fdfefe_100%)] p-4 shadow-[0_20px_45px_rgba(12, 40, 98,0.06)] sm:p-7 lg:p-8"
             >
               <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-start sm:gap-4">
                 <div
@@ -235,7 +235,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   style={{
                     width: 56,
                     height: 56,
-                    backgroundColor: "#031b40",
+                    backgroundColor: "#0C2862",
                     color: "#ffffff"
                   }}
                 >
@@ -249,14 +249,14 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                     />
                   </div>
                   <div
-                    className="absolute flex items-center justify-center rounded-full bg-[#031b40]"
+                    className="absolute flex items-center justify-center rounded-full bg-[#0C2862]"
                     style={{
                       bottom: "6px",
                       right: "6px",
                       width: "16px",
                       height: "16px",
-                      border: "1.5px solid #031b40",
-                      color: "#fa5902"
+                      border: "1.5px solid #0C2862",
+                      color: "#ABB000"
                     }}
                   >
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -287,7 +287,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
               </div>
 
               {/* Underline separator */}
-              <div style={{ width: "100%", height: "1px", backgroundColor: "#fa5902", opacity: 0.15, marginTop: "16px", marginBottom: "20px" }} />
+              <div style={{ width: "100%", height: "1px", backgroundColor: "#ABB000", opacity: 0.15, marginTop: "16px", marginBottom: "20px" }} />
 
               {/* Form */}
               <form className="space-y-3 flex flex-col gap-3 sm:space-y-4" onSubmit={handleSubmit}>
@@ -314,7 +314,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   </div>
                   <div className="flex-1 flex flex-col  justify-center px-3 sm:px-4">
                     <label style={{ fontSize: "8.5px", fontWeight: 800, color: "#6b7280", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                      FULL NAME <span style={{ color: "#fa5902" }}>*</span>
+                      FULL NAME <span style={{ color: "#ABB000" }}>*</span>
                     </label>
                     <input
                       required
@@ -352,7 +352,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   </div>
                   <div className="flex-1 flex flex-col justify-center px-3 sm:px-4">
                     <label style={{ fontSize: "8.5px", fontWeight: 800, color: "#6b7280", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                      COMPANY NAME <span style={{ color: "#fa5902" }}>*</span>
+                      COMPANY NAME <span style={{ color: "#ABB000" }}>*</span>
                     </label>
                     <input
                       required
@@ -390,7 +390,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   </div>
                   <div className="flex-1 flex flex-col justify-center px-3 sm:px-4 relative">
                     <label style={{ fontSize: "8.5px", fontWeight: 800, color: "#6b7280", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                      COUNTRY <span style={{ color: "#fa5902" }}>*</span>
+                      COUNTRY <span style={{ color: "#ABB000" }}>*</span>
                     </label>
                     <select
                       required
@@ -419,7 +419,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
 
                 {/* Requirement / Application Textarea */}
                 <div
-                  className="flex items-start transition-all duration-200 focus-within:border-secondary/50 focus-within:shadow-[0_0_0_3px_rgba(250,89,2,0.12)]"
+                  className="flex items-start transition-all duration-200 focus-within:border-secondary/50 focus-within:shadow-[0_0_0_3px_rgba(171, 176, 0,0.12)]"
                   style={{
                     border: "1.5px solid #e5e7eb",
                     borderRadius: "10px",
@@ -441,7 +441,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   </div>
                   <div className="flex-1 flex flex-col justify-center px-3 py-2 sm:px-4">
                     <label style={{ fontSize: "8.5px", fontWeight: 800, color: "#6b7280", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                      {data.form.dropdown.label} <span style={{ color: "#fa5902" }}>*</span>
+                      {data.form.dropdown.label} <span style={{ color: "#ABB000" }}>*</span>
                     </label>
                     <textarea
                       required
@@ -478,7 +478,7 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                   </div>
                   <div className="flex-1 flex flex-col justify-center px-3 sm:px-4">
                     <label style={{ fontSize: "8.5px", fontWeight: 800, color: "#6b7280", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                      {data.form.textarea.label} <span style={{ color: "#fa5902" }}>*</span>
+                      {data.form.textarea.label} <span style={{ color: "#ABB000" }}>*</span>
                     </label>
                     <input
                       required
@@ -500,13 +500,13 @@ export function ContactSolutionSection({ data }: { data: ContactSectionData }) {
                 <div
                   className="flex flex-col items-start gap-3 sm:flex-row sm:items-center"
                   style={{
-                    border: "1.5px solid rgba(9, 42, 92, 0.05)",
+                    border: "1.5px solid rgba(12, 40, 98, 0.05)",
                     borderRadius: "8px",
                     padding: "10px 14px",
                     backgroundColor: "#f8fafc"
                   }}
                 >
-                  <span style={{ color: "#092a5c" }}>
+                  <span style={{ color: "#0C2862" }}>
                     <ShieldCheck size={18} strokeWidth={2.2} />
                   </span>
                   <p style={{ fontSize: "10.5px", color: "#6b7280", lineHeight: "1.4", margin: 0 }}>

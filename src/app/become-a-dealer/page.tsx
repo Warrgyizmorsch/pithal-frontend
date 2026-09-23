@@ -196,7 +196,7 @@ export default function BecomeADealerPage() {
             className="pointer-events-none absolute inset-0 opacity-[0.05]"
             style={{
               backgroundImage:
-                "radial-gradient(#092a5c 1.5px, transparent 1.5px)",
+                "radial-gradient(#0C2862 1.5px, transparent 1.5px)",
               backgroundSize: "32px 32px",
             }}
           />

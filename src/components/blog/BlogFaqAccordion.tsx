@@ -18,7 +18,7 @@ export function BlogFaqAccordion({ faqs }: { faqs: FaqItem[] }) {
   return (
     <div className="pt-8 border-t border-gray-200 space-y-6">
       <div className="flex items-center gap-3">
-        <div className="p-2.5 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-600">
+        <div className="p-2.5 rounded-xl bg-secondary/10 border border-secondary/20 text-secondary">
           <HelpCircle size={24} />
         </div>
         <div>

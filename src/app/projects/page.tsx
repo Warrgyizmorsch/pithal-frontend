@@ -213,7 +213,7 @@ export default function CaseStudyPage() {
             </div>
 
             {/* Bottom Stats row */}
-            <div className="mt-4 lg:mt-2 bg-white text-slate-800 rounded-2xl p-4 sm:p-6 md:p-8 lg:py-6 lg:px-6 shadow-[0_8px_30px_rgba(3,27,64,0.06)] relative z-20">
+            <div className="mt-4 lg:mt-2 bg-white text-slate-800 rounded-2xl p-4 sm:p-6 md:p-8 lg:py-6 lg:px-6 shadow-[0_8px_30px_rgba(12, 40, 98,0.06)] relative z-20">
               <div className="grid gap-x-4 gap-y-6 lg:gap-y-0 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-start lg:divide-x lg:divide-slate-100">
                 <div className="flex flex-col items-center text-center min-[420px]:flex-row min-[420px]:items-center min-[420px]:text-left gap-2.5 min-[420px]:gap-4 lg:gap-3 lg:px-2 group">
                   <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-14 lg:w-14 shrink-0 items-center justify-center text-secondary transition-all duration-300">
@@ -531,7 +531,7 @@ export default function CaseStudyPage() {
                 </div>
 
                 {/* Warning Card */}
-                <div className="bg-[#031b40] rounded-2xl p-8 md:p-10 text-white border border-white/5 shadow-md flex items-center gap-6">
+                <div className="bg-[#0C2862] rounded-2xl p-8 md:p-10 text-white border border-white/5 shadow-md flex items-center gap-6">
                   <AlertTriangle
                     size={96}
                     className="text-secondary animate-pulse shrink-0"
@@ -567,12 +567,12 @@ export default function CaseStudyPage() {
               {/* Left checklist */}
               <div className="lg:col-span-5">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-[17px] font-black uppercase tracking-[0.24em] text-[#fa5902]">
+                  <span className="text-[17px] font-black uppercase tracking-[0.24em] text-[#ABB000]">
                     OUR SOLUTION
                   </span>
-                  <span className="h-[2px] w-16 bg-[#fa5902]/60" />
+                  <span className="h-[2px] w-16 bg-[#ABB000]/60" />
                 </div>
-                <h2 className="text-[clamp(1.75rem,4.5vw,2.75rem)] font-extrabold text-[#092a5c] leading-[1.1] mb-5">
+                <h2 className="text-[clamp(1.75rem,4.5vw,2.75rem)] font-extrabold text-[#0C2862] leading-[1.1] mb-5">
                   <span className="lg:whitespace-nowrap">Pithal Engineering Solution</span>
                 </h2>
                 <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed mb-8">
@@ -589,7 +589,7 @@ export default function CaseStudyPage() {
                       desc: "Selected high-efficiency crushers, screens and conveyors to handle zinc ore with optimal crushing and throughput.",
                       icon: (
                         <svg
-                          className="w-5 h-5 text-[#fa5902]"
+                          className="w-5 h-5 text-[#ABB000]"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -610,7 +610,7 @@ export default function CaseStudyPage() {
                       desc: "Engineered a smooth material flow with ideal crushing, screening and conveying sequence to eliminate bottlenecks.",
                       icon: (
                         <svg
-                          className="w-5 h-5 text-[#fa5902]"
+                          className="w-5 h-5 text-[#ABB000]"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -632,7 +632,7 @@ export default function CaseStudyPage() {
                       desc: "Applied proven engineering principles and innovative designs to ensure durability, safety and performance.",
                       icon: (
                         <svg
-                          className="w-5 h-5 text-[#fa5902]"
+                          className="w-5 h-5 text-[#ABB000]"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -670,7 +670,7 @@ export default function CaseStudyPage() {
                       desc: "Fine-tuned equipment settings and system parameters to maximize output while minimizing energy consumption.",
                       icon: (
                         <svg
-                          className="w-5 h-5 text-[#fa5902]"
+                          className="w-5 h-5 text-[#ABB000]"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -689,7 +689,7 @@ export default function CaseStudyPage() {
                       desc: "Designed a compact, future-ready plant layout for efficient operations, easy maintenance and scalability.",
                       icon: (
                         <svg
-                          className="w-5 h-5 text-[#fa5902]"
+                          className="w-5 h-5 text-[#ABB000]"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -705,11 +705,11 @@ export default function CaseStudyPage() {
                   ].map((item, i, arr) => (
                     <div key={i} className="flex flex-col w-full">
                       <div className="flex gap-4.5 items-start">
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white border border-[#fa5902]/20 text-[#fa5902] shadow-sm">
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white border border-[#ABB000]/20 text-[#ABB000] shadow-sm">
                           {item.icon}
                         </div>
                         <div>
-                          <h4 className="text-sm sm:text-base font-extrabold text-[#092a5c] leading-tight mb-1">
+                          <h4 className="text-sm sm:text-base font-extrabold text-[#0C2862] leading-tight mb-1">
                             {item.title}
                           </h4>
                           <p className="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed">
@@ -730,7 +730,7 @@ export default function CaseStudyPage() {
                 {/* Visual Card (Flowchart + Image) */}
                 <div className="bg-[#f8fafc] border border-slate-100 rounded-3xl p-6 md:p-8 flex flex-col gap-6 shadow-sm">
                   <div className="text-center">
-                    <h3 className="text-sm sm:text-base font-extrabold text-[#092a5c] tracking-wide mb-5">
+                    <h3 className="text-sm sm:text-base font-extrabold text-[#0C2862] tracking-wide mb-5">
                       Integrated & Optimized Plant Flow
                     </h3>
 
@@ -741,7 +741,7 @@ export default function CaseStudyPage() {
                           step: "Raw Material Feed",
                           icon: (
                             <svg
-                              className="w-5 h-5 text-[#fa5902]"
+                              className="w-5 h-5 text-[#ABB000]"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
@@ -758,7 +758,7 @@ export default function CaseStudyPage() {
                           step: "Primary Crushing",
                           icon: (
                             <svg
-                              className="w-5 h-5 text-[#fa5902]"
+                              className="w-5 h-5 text-[#ABB000]"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
@@ -775,7 +775,7 @@ export default function CaseStudyPage() {
                           step: "Secondary Crushing",
                           icon: (
                             <svg
-                              className="w-5 h-5 text-[#fa5902]"
+                              className="w-5 h-5 text-[#ABB000]"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
@@ -792,7 +792,7 @@ export default function CaseStudyPage() {
                           step: "Screening Process",
                           icon: (
                             <svg
-                              className="w-5 h-5 text-[#fa5902]"
+                              className="w-5 h-5 text-[#ABB000]"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
@@ -809,7 +809,7 @@ export default function CaseStudyPage() {
                           step: "Final Product Output",
                           icon: (
                             <svg
-                              className="w-5 h-5 text-[#fa5902]"
+                              className="w-5 h-5 text-[#ABB000]"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="currentColor"
@@ -829,7 +829,7 @@ export default function CaseStudyPage() {
                       ].map((item, i) => (
                         <React.Fragment key={i}>
                           <div className="flex flex-col items-center text-center flex-1">
-                            <div className="h-11 w-11 rounded-full bg-white border border-[#fa5902]/20 flex items-center justify-center shadow-sm">
+                            <div className="h-11 w-11 rounded-full bg-white border border-[#ABB000]/20 flex items-center justify-center shadow-sm">
                               {item.icon}
                             </div>
                             <span className="text-[9px] font-extrabold uppercase tracking-wider text-slate-700 mt-2.5 max-w-[75px] leading-tight">
@@ -866,7 +866,7 @@ export default function CaseStudyPage() {
                       text: "Engineered for continuous operation with minimal downtime.",
                       icon: (
                         <svg
-                          className="w-5 h-5 text-[#fa5902]"
+                          className="w-5 h-5 text-[#ABB000]"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -884,7 +884,7 @@ export default function CaseStudyPage() {
                       text: "Higher throughput with optimized power consumption.",
                       icon: (
                         <svg
-                          className="w-5 h-5 text-[#fa5902]"
+                          className="w-5 h-5 text-[#ABB000]"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -906,7 +906,7 @@ export default function CaseStudyPage() {
                       text: "Uniform output quality for improved process performance.",
                       icon: (
                         <svg
-                          className="w-5 h-5 text-[#fa5902]"
+                          className="w-5 h-5 text-[#ABB000]"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -925,7 +925,7 @@ export default function CaseStudyPage() {
                       text: "Future-ready design to support capacity expansion.",
                       icon: (
                         <svg
-                          className="w-5 h-5 text-[#fa5902]"
+                          className="w-5 h-5 text-[#ABB000]"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -942,10 +942,10 @@ export default function CaseStudyPage() {
                       key={i}
                       className="flex flex-col items-start md:border-r md:border-slate-200/80 md:last:border-r-0 md:pr-3 md:pl-2"
                     >
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#fa5902]/5 text-[#fa5902] mb-2 shadow-sm">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#ABB000]/5 text-[#ABB000] mb-2 shadow-sm">
                         {val.icon}
                       </div>
-                      <h4 className="text-[13px] sm:text-sm font-extrabold text-[#092a5c] mb-1">
+                      <h4 className="text-[13px] sm:text-sm font-extrabold text-[#0C2862] mb-1">
                         {val.title}
                       </h4>
                       <p className="text-[10px] sm:text-[11px] leading-relaxed text-slate-500 font-medium">
@@ -957,9 +957,9 @@ export default function CaseStudyPage() {
 
                 {/* Footnote Bar */}
                 <div className="bg-[#fff9f6] border border-[#fbe5da] rounded-2xl p-4.5 flex gap-4 items-center">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white border border-[#fbe5da] text-[#fa5902] shadow-sm">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white border border-[#fbe5da] text-[#ABB000] shadow-sm">
                     <svg
-                      className="w-5 h-5 text-[#fa5902]"
+                      className="w-5 h-5 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -992,12 +992,12 @@ export default function CaseStudyPage() {
           <Container>
             {/* Custom Section Header */}
             <div className="mx-auto max-w-5xl text-center mb-12">
-              <div className="flex items-center justify-center gap-3 mb-3 text-[17px] font-black uppercase tracking-[0.24em] text-[#fa5902]">
-                <span className="h-[1.5px] w-12 bg-[#fa5902]/60" />
+              <div className="flex items-center justify-center gap-3 mb-3 text-[17px] font-black uppercase tracking-[0.24em] text-[#ABB000]">
+                <span className="h-[1.5px] w-12 bg-[#ABB000]/60" />
                 PLANT WORKFLOW
-                <span className="h-[1.5px] w-12 bg-[#fa5902]/60" />
+                <span className="h-[1.5px] w-12 bg-[#ABB000]/60" />
               </div>
-              <h2 className="text-[clamp(1.75rem,4.5vw,2.75rem)] font-extrabold text-[#092a5c] leading-[1.1] mb-4">
+              <h2 className="text-[clamp(1.75rem,4.5vw,2.75rem)] font-extrabold text-[#0C2862] leading-[1.1] mb-4">
                 <span className="lg:whitespace-nowrap">ENGINEERED FLOW. OPTIMIZED PERFORMANCE.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-sm md:text-base text-slate-500 font-medium leading-relaxed">
@@ -1133,7 +1133,7 @@ export default function CaseStudyPage() {
                   )}
 
                   {/* Circle Number */}
-                  <div className="h-12 w-12 rounded-full bg-white border border-[#fa5902]/25 text-[#fa5902] flex items-center justify-center font-extrabold text-sm sm:text-base shadow-sm mb-3">
+                  <div className="h-12 w-12 rounded-full bg-white border border-[#ABB000]/25 text-[#ABB000] flex items-center justify-center font-extrabold text-sm sm:text-base shadow-sm mb-3">
                     {step.number}
                   </div>
 
@@ -1141,7 +1141,7 @@ export default function CaseStudyPage() {
                   {step.icon}
 
                   {/* Step Title & Desc */}
-                  <h4 className="text-xs font-black uppercase tracking-wider text-[#092a5c] mt-2 mb-1">
+                  <h4 className="text-xs font-black uppercase tracking-wider text-[#0C2862] mt-2 mb-1">
                     {step.name}
                   </h4>
                   <p className="text-[11px] leading-relaxed text-slate-500 font-medium px-2 max-w-[170px]">
@@ -1150,8 +1150,8 @@ export default function CaseStudyPage() {
 
                   {/* Vertical Dotted Connector Lines pointing down to the main workflow image below */}
                   <div className="hidden lg:flex flex-col items-center mt-5 h-20 pointer-events-none z-20">
-                    <div className="w-[1px] h-full border-l border-dashed border-[#fa5902]/60" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#fa5902] shadow-[0_0_8px_rgba(250,89,2,0.9)]" />
+                    <div className="w-[1px] h-full border-l border-dashed border-[#ABB000]/60" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#ABB000] shadow-[0_0_8px_rgba(171, 176, 0,0.9)]" />
                   </div>
                 </div>
               ))}
@@ -1178,7 +1178,7 @@ export default function CaseStudyPage() {
                     desc: "Smooth material flow at every stage",
                     icon: (
                       <svg
-                        className="w-5 h-5 text-[#fa5902]"
+                        className="w-5 h-5 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -1197,7 +1197,7 @@ export default function CaseStudyPage() {
                     desc: "Maximized throughput with minimal downtime",
                     icon: (
                       <svg
-                        className="w-5 h-5 text-[#fa5902]"
+                        className="w-5 h-5 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -1215,7 +1215,7 @@ export default function CaseStudyPage() {
                     desc: "Uniform output with precise screening",
                     icon: (
                       <svg
-                        className="w-5 h-5 text-[#fa5902]"
+                        className="w-5 h-5 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -1233,7 +1233,7 @@ export default function CaseStudyPage() {
                     desc: "Reduced wear, energy & maintenance",
                     icon: (
                       <svg
-                        className="w-5 h-5 text-[#fa5902]"
+                        className="w-5 h-5 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -1251,11 +1251,11 @@ export default function CaseStudyPage() {
                     key={i}
                     className="flex gap-4 items-center px-4 first:pl-0 last:pr-0"
                   >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#fa5902]/5 text-[#fa5902] shadow-sm">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#ABB000]/5 text-[#ABB000] shadow-sm">
                       {pill.icon}
                     </div>
                     <div>
-                      <h4 className="text-[13px] sm:text-sm font-extrabold text-[#092a5c] leading-tight mb-1">
+                      <h4 className="text-[13px] sm:text-sm font-extrabold text-[#0C2862] leading-tight mb-1">
                         {pill.title}
                       </h4>
                       <p className="text-xs text-slate-500 font-medium leading-normal">
@@ -1276,12 +1276,12 @@ export default function CaseStudyPage() {
           <Container>
             {/* Custom Section Header */}
             <div className="mx-auto max-w-5xl text-center mb-12">
-              <div className="flex items-center justify-center gap-3 mb-3 text-[17px] font-black uppercase tracking-[0.24em] text-[#fa5902]">
-                <span className="h-[1.5px] w-12 bg-[#fa5902]/60" />
+              <div className="flex items-center justify-center gap-3 mb-3 text-[17px] font-black uppercase tracking-[0.24em] text-[#ABB000]">
+                <span className="h-[1.5px] w-12 bg-[#ABB000]/60" />
                 MACHINES & EQUIPMENT
-                <span className="h-[1.5px] w-12 bg-[#fa5902]/60" />
+                <span className="h-[1.5px] w-12 bg-[#ABB000]/60" />
               </div>
-              <h2 className="text-[clamp(1.75rem,4.5vw,2.75rem)] font-extrabold text-[#092a5c] leading-[1.1] mb-4">
+              <h2 className="text-[clamp(1.75rem,4.5vw,2.75rem)] font-extrabold text-[#0C2862] leading-[1.1] mb-4">
                 <span className="lg:whitespace-nowrap">ADVANCED MACHINES. SUPERIOR PERFORMANCE.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-sm md:text-base text-slate-500 font-medium leading-relaxed">
@@ -1301,7 +1301,7 @@ export default function CaseStudyPage() {
                   role: "Primary crushing of run-of-mine material into manageable size.",
                   roleIcon: (
                     <svg
-                      className="w-5.5 h-5.5 text-[#fa5902]"
+                      className="w-5.5 h-5.5 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -1326,7 +1326,7 @@ export default function CaseStudyPage() {
                   role: "Secondary crushing for further size reduction and shape control.",
                   roleIcon: (
                     <svg
-                      className="w-5.5 h-5.5 text-[#fa5902]"
+                      className="w-5.5 h-5.5 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -1351,7 +1351,7 @@ export default function CaseStudyPage() {
                   role: "Tertiary crushing & shaping for high-quality, cubical products.",
                   roleIcon: (
                     <svg
-                      className="w-5.5 h-5.5 text-[#fa5902]"
+                      className="w-5.5 h-5.5 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -1383,7 +1383,7 @@ export default function CaseStudyPage() {
                   role: "Separation and classification of material by size.",
                   roleIcon: (
                     <svg
-                      className="w-5.5 h-5.5 text-[#fa5902]"
+                      className="w-5.5 h-5.5 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -1409,7 +1409,7 @@ export default function CaseStudyPage() {
                   role: "Efficient material transfer between different stages of the plant.",
                   roleIcon: (
                     <svg
-                      className="w-5.5 h-5.5 text-[#fa5902]"
+                      className="w-5.5 h-5.5 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -1435,11 +1435,11 @@ export default function CaseStudyPage() {
                   <div>
                     {/* Circle counter + Titles */}
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="h-7 w-7 rounded-full bg-white border border-[#fa5902]/20 text-[#fa5902] flex items-center justify-center font-extrabold text-xs shrink-0 shadow-sm">
+                      <div className="h-7 w-7 rounded-full bg-white border border-[#ABB000]/20 text-[#ABB000] flex items-center justify-center font-extrabold text-xs shrink-0 shadow-sm">
                         {card.number}
                       </div>
                       <div>
-                        <h4 className="text-[13px] sm:text-sm font-extrabold text-[#092a5c] leading-tight">
+                        <h4 className="text-[13px] sm:text-sm font-extrabold text-[#0C2862] leading-tight">
                           {card.name}
                         </h4>
                         <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider leading-none mt-1">
@@ -1460,11 +1460,11 @@ export default function CaseStudyPage() {
 
                     {/* Role Section */}
                     <div className="mt-4 pt-4 border-t border-slate-100/80 flex gap-2.5 items-start">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#fa5902]/5 text-[#fa5902] shadow-sm">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#ABB000]/5 text-[#ABB000] shadow-sm">
                         {card.roleIcon}
                       </div>
                       <div>
-                        <p className="text-[9px] font-black text-[#092a5c] uppercase tracking-widest leading-none">
+                        <p className="text-[9px] font-black text-[#0C2862] uppercase tracking-widest leading-none">
                           Role In Plant:
                         </p>
                         <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500 font-medium">
@@ -1476,9 +1476,9 @@ export default function CaseStudyPage() {
 
                   {/* Specs Section */}
                   <div className="mt-4 pt-4 border-t border-slate-100/80 flex gap-2.5 items-start">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#fa5902]/5 text-[#fa5902] shadow-sm">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#ABB000]/5 text-[#ABB000] shadow-sm">
                       <svg
-                        className="w-5.5 h-5.5 text-[#fa5902]"
+                        className="w-5.5 h-5.5 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -1489,7 +1489,7 @@ export default function CaseStudyPage() {
                       </svg>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[9px] font-black text-[#092a5c] uppercase tracking-widest leading-none mb-2.5">
+                      <p className="text-[9px] font-black text-[#0C2862] uppercase tracking-widest leading-none mb-2.5">
                         Key Specifications:
                       </p>
                       <div className="space-y-1.5">
@@ -1501,7 +1501,7 @@ export default function CaseStudyPage() {
                             <span className="text-slate-400 font-medium">
                               {sp.label}
                             </span>
-                            <span className="text-[#092a5c] font-black">
+                            <span className="text-[#0C2862] font-black">
                               {sp.val}
                             </span>
                           </div>
@@ -1517,7 +1517,7 @@ export default function CaseStudyPage() {
             <div className="bg-white border border-slate-100/90 rounded-3xl p-6 shadow-sm mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:divide-x lg:divide-slate-150">
               {/* Left Quality block */}
               <div className="lg:col-span-5 flex gap-4.5 items-start">
-                <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-2xl bg-[#fa5902]/5 text-[#fa5902] shadow-sm">
+                <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-2xl bg-[#ABB000]/5 text-[#ABB000] shadow-sm">
                   <svg
                     className="w-8 h-8"
                     viewBox="0 0 24 24"
@@ -1535,7 +1535,7 @@ export default function CaseStudyPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-sm font-extrabold text-[#092a5c] leading-tight mb-2">
+                  <h4 className="text-sm font-extrabold text-[#0C2862] leading-tight mb-2">
                     BUILT FOR DURABILITY. ENGINEERED FOR RESULTS.
                   </h4>
                   <p className="text-xs text-slate-500 font-medium leading-relaxed">
@@ -1554,7 +1554,7 @@ export default function CaseStudyPage() {
                     desc: "Maximized output with low energy consumption",
                     icon: (
                       <svg
-                        className="w-6.5 h-6.5 text-[#fa5902]"
+                        className="w-6.5 h-6.5 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -1570,7 +1570,7 @@ export default function CaseStudyPage() {
                     desc: "Designed for continuous operation",
                     icon: (
                       <svg
-                        className="w-6.5 h-6.5 text-[#fa5902]"
+                        className="w-6.5 h-6.5 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -1586,7 +1586,7 @@ export default function CaseStudyPage() {
                     desc: "Easy access design for quick inspection & servicing",
                     icon: (
                       <svg
-                        className="w-6.5 h-6.5 text-[#fa5902]"
+                        className="w-6.5 h-6.5 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -1601,7 +1601,7 @@ export default function CaseStudyPage() {
                     desc: "Globally trusted equipment with local support",
                     icon: (
                       <svg
-                        className="w-6.5 h-6.5 text-[#fa5902]"
+                        className="w-6.5 h-6.5 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -1614,10 +1614,10 @@ export default function CaseStudyPage() {
                   },
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col items-start pl-2">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#fa5902]/5 text-[#fa5902] mb-2 shadow-sm">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#ABB000]/5 text-[#ABB000] mb-2 shadow-sm">
                       {stat.icon}
                     </div>
-                    <h5 className="text-[12px] sm:text-[13px] font-extrabold text-[#092a5c] leading-tight mb-1">
+                    <h5 className="text-[12px] sm:text-[13px] font-extrabold text-[#0C2862] leading-tight mb-1">
                       {stat.title}
                     </h5>
                     <p className="text-[10px] leading-relaxed text-slate-500 font-medium">
@@ -1731,12 +1731,12 @@ export default function CaseStudyPage() {
           <Container>
             {/* Custom Section Header */}
             <div className="mx-auto max-w-5xl text-center mb-12">
-              <div className="flex items-center justify-center gap-3 mb-3 text-[17px] font-black uppercase tracking-[0.24em] text-[#fa5902]">
-                <span className="h-[1.5px] w-12 bg-[#fa5902]/60" />
+              <div className="flex items-center justify-center gap-3 mb-3 text-[17px] font-black uppercase tracking-[0.24em] text-[#ABB000]">
+                <span className="h-[1.5px] w-12 bg-[#ABB000]/60" />
                 RESULTS & PERFORMANCE
-                <span className="h-[1.5px] w-12 bg-[#fa5902]/60" />
+                <span className="h-[1.5px] w-12 bg-[#ABB000]/60" />
               </div>
-              <h2 className="text-[clamp(1.75rem,4.5vw,2.75rem)] font-extrabold text-[#092a5c] leading-[1.1] mb-4">
+              <h2 className="text-[clamp(1.75rem,4.5vw,2.75rem)] font-extrabold text-[#0C2862] leading-[1.1] mb-4">
                 <span className="lg:whitespace-nowrap">MEASURABLE RESULTS. MAXIMUM IMPACT.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-sm md:text-base text-slate-500 font-medium leading-relaxed">
@@ -1755,7 +1755,7 @@ export default function CaseStudyPage() {
                   desc: "Increased throughput with optimized crushing & screening process.",
                   icon: (
                     <svg
-                      className="w-9 h-9 text-[#fa5902]"
+                      className="w-9 h-9 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -1772,7 +1772,7 @@ export default function CaseStudyPage() {
                   desc: "Enhanced equipment reliability and reduced breakdowns.",
                   icon: (
                     <svg
-                      className="w-9 h-9 text-[#fa5902]"
+                      className="w-9 h-9 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -1790,7 +1790,7 @@ export default function CaseStudyPage() {
                   desc: "Uniform output quality with precise screening & reduction.",
                   icon: (
                     <svg
-                      className="w-9 h-9 text-[#fa5902]"
+                      className="w-9 h-9 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -1814,7 +1814,7 @@ export default function CaseStudyPage() {
                   desc: "Lower power consumption with efficient equipment integration.",
                   icon: (
                     <svg
-                      className="w-9 h-9 text-[#fa5902]"
+                      className="w-9 h-9 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -1830,7 +1830,7 @@ export default function CaseStudyPage() {
                   desc: "Built for nonstop performance and maximum uptime.",
                   icon: (
                     <svg
-                      className="w-9 h-9 text-[#fa5902]"
+                      className="w-9 h-9 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -1856,15 +1856,15 @@ export default function CaseStudyPage() {
                   className="bg-[#f8fafc]/40 border border-slate-100 hover:border-slate-200 rounded-3xl p-5 flex gap-4 items-center shadow-sm"
                 >
                   {/* Left Icon circle */}
-                  <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-full bg-[#fa5902]/5 text-[#fa5902] shadow-sm">
+                  <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-full bg-[#ABB000]/5 text-[#ABB000] shadow-sm">
                     {card.icon}
                   </div>
                   {/* Right content */}
                   <div>
-                    <span className="text-xl sm:text-2xl font-extrabold text-[#fa5902] leading-none block">
+                    <span className="text-xl sm:text-2xl font-extrabold text-[#ABB000] leading-none block">
                       {card.pct}
                     </span>
-                    <h4 className="text-[10px] font-black uppercase text-[#092a5c] mt-1.5 leading-tight">
+                    <h4 className="text-[10px] font-black uppercase text-[#0C2862] mt-1.5 leading-tight">
                       {card.title}
                     </h4>
                     <p className="mt-1 text-[10px] leading-relaxed text-slate-500 font-medium">
@@ -1878,7 +1878,7 @@ export default function CaseStudyPage() {
             {/* Middle comparative barchart & Outcomes grid */}
             <div className="grid gap-8 lg:grid-cols-12 mb-12">
               {/* Comparative barchart block */}
-              <div className="lg:col-span-6 bg-[#031b40] rounded-3xl p-6.5 text-white border border-white/5 shadow-md flex flex-col justify-between">
+              <div className="lg:col-span-6 bg-[#0C2862] rounded-3xl p-6.5 text-white border border-white/5 shadow-md flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-center mb-6">
                     <h3 className="text-xs font-black uppercase tracking-widest text-slate-350">
@@ -1894,7 +1894,7 @@ export default function CaseStudyPage() {
                         </span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <span className="w-2.5 h-2.5 bg-[#fa5902] rounded-sm" />
+                        <span className="w-2.5 h-2.5 bg-[#ABB000] rounded-sm" />
                         <span className="text-slate-300">
                           AFTER (Pithal Solution)
                         </span>
@@ -1970,9 +1970,9 @@ export default function CaseStudyPage() {
 
                             {/* After Bar */}
                             <div
-                              className={`w-full ${bar.afterHt} bg-[#fa5902] rounded-t-sm relative flex flex-col justify-end items-center group`}
+                              className={`w-full ${bar.afterHt} bg-[#ABB000] rounded-t-sm relative flex flex-col justify-end items-center group`}
                             >
-                              <span className="absolute -top-5 text-[9px] font-black text-[#fa5902]">
+                              <span className="absolute -top-5 text-[9px] font-black text-[#ABB000]">
                                 {bar.after}%
                               </span>
                             </div>
@@ -2014,7 +2014,7 @@ export default function CaseStudyPage() {
                 {/* Left side checklist */}
                 <div className="md:col-span-7 p-6.5 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xs font-black uppercase tracking-widest text-[#092a5c] mb-6">
+                    <h3 className="text-xs font-black uppercase tracking-widest text-[#0C2862] mb-6">
                       KEY OUTCOMES DELIVERED
                     </h3>
 
@@ -2027,7 +2027,7 @@ export default function CaseStudyPage() {
                         "Higher ROI with short-term payback",
                       ].map((item, i) => (
                         <div key={i} className="flex gap-3 items-center">
-                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fa5902] text-white shadow-sm">
+                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ABB000] text-white shadow-sm">
                             <svg
                               className="w-5.5 h-5.5 stroke-[3]"
                               viewBox="0 0 24 24"
@@ -2037,7 +2037,7 @@ export default function CaseStudyPage() {
                               <path d="M20 6L9 17l-5-5" />
                             </svg>
                           </div>
-                          <span className="text-[11px] sm:text-xs font-extrabold text-[#092a5c] tracking-wide uppercase">
+                          <span className="text-[11px] sm:text-xs font-extrabold text-[#0C2862] tracking-wide uppercase">
                             {item}
                           </span>
                         </div>
@@ -2066,7 +2066,7 @@ export default function CaseStudyPage() {
             <div className="bg-[#fff9f6] border border-[#fbe5da] rounded-3xl p-6 shadow-sm mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center divide-y md:divide-y-0 md:divide-x md:divide-[#fbe5da]">
               {/* Left Block */}
               <div className="md:col-span-4 flex gap-4 items-center pl-0">
-                <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-2xl bg-white border border-[#fbe5da] text-[#fa5902] shadow-sm">
+                <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-2xl bg-white border border-[#fbe5da] text-[#ABB000] shadow-sm">
                   <svg
                     className="w-8.5 h-8.5"
                     viewBox="0 0 24 24"
@@ -2084,7 +2084,7 @@ export default function CaseStudyPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-[11px] sm:text-xs font-black uppercase text-[#092a5c] leading-tight">
+                  <h4 className="text-[11px] sm:text-xs font-black uppercase text-[#0C2862] leading-tight">
                     ENGINEERED FOR PERFORMANCE.
                   </h4>
                   <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5 leading-none">
@@ -2100,7 +2100,7 @@ export default function CaseStudyPage() {
                   higher efficiency, consistent output and exceptional
                   reliability. ”
                 </blockquote>
-                <cite className="text-[10px] text-[#fa5902] font-black uppercase tracking-wider not-italic mt-1.5 block">
+                <cite className="text-[10px] text-[#ABB000] font-black uppercase tracking-wider not-italic mt-1.5 block">
                   — Plant Head, Leading Mining Company
                 </cite>
               </div>
@@ -2108,14 +2108,14 @@ export default function CaseStudyPage() {
               {/* Right Block */}
               <div className="md:col-span-4 flex gap-4 items-center justify-end pr-0 pl-4">
                 <div>
-                  <h4 className="text-[11px] sm:text-xs font-black uppercase text-[#092a5c] leading-tight text-right">
+                  <h4 className="text-[11px] sm:text-xs font-black uppercase text-[#0C2862] leading-tight text-right">
                     BUILT TO DELIVER.
                   </h4>
                   <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5 leading-none text-right">
                     DESIGNED TO PERFORM.
                   </p>
                 </div>
-                <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-2xl bg-white border border-[#fbe5da] text-[#fa5902] shadow-sm">
+                <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-2xl bg-white border border-[#fbe5da] text-[#ABB000] shadow-sm">
                   <svg
                     className="w-8.5 h-8.5"
                     viewBox="0 0 24 24"
@@ -2168,13 +2168,13 @@ export default function CaseStudyPage() {
                 <div>
                   {/* Orange Quote Icon */}
                   <div className="text-secondary mb-2 flex items-center select-none">
-                    <span className="text-[64px] font-serif leading-none h-8 text-[#fa5902] font-black">
+                    <span className="text-[64px] font-serif leading-none h-8 text-[#ABB000] font-black">
                       “
                     </span>
                   </div>
 
                   {/* Testimonial Quote */}
-                  <blockquote className="text-lg sm:text-[20px] font-bold text-[#092a5c] leading-relaxed italic pr-4">
+                  <blockquote className="text-lg sm:text-[20px] font-bold text-[#0C2862] leading-relaxed italic pr-4">
                     &ldquo; Pithal delivered a reliable crushing solution
                     tailored to our operational requirements with excellent
                     support throughout installation and commissioning. &rdquo;
@@ -2196,9 +2196,9 @@ export default function CaseStudyPage() {
                   {/* Author / Company */}
                   <div className="flex items-center gap-4">
                     {/* Circle N Logo Avatar */}
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white border border-[#fa5902]/20 shadow-sm relative overflow-hidden">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white border border-[#ABB000]/20 shadow-sm relative overflow-hidden">
                       <svg
-                        className="w-7 h-7 text-[#fa5902]"
+                        className="w-7 h-7 text-[#ABB000]"
                         viewBox="0 0 100 100"
                         fill="currentColor"
                       >
@@ -2206,7 +2206,7 @@ export default function CaseStudyPage() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-sm font-black text-[#092a5c] leading-none">
+                      <h4 className="text-sm font-black text-[#0C2862] leading-none">
                         Ravi Sharma
                       </h4>
                       <p className="text-[11px] text-slate-500 font-bold uppercase tracking-wider mt-1">
@@ -2220,11 +2220,11 @@ export default function CaseStudyPage() {
                   {/* Location & Date */}
                   <div className="flex gap-4 text-[11px] font-bold uppercase text-slate-500 leading-none">
                     <span className="flex items-center gap-1.5">
-                      <MapPin size={13} className="text-[#fa5902]" /> Rajasthan,
+                      <MapPin size={13} className="text-[#ABB000]" /> Rajasthan,
                       India
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <Calendar size={13} className="text-[#fa5902]" /> 2024
+                      <Calendar size={13} className="text-[#ABB000]" /> 2024
                     </span>
                   </div>
                 </div>
@@ -2237,14 +2237,14 @@ export default function CaseStudyPage() {
               <div className="lg:col-span-9 bg-white border border-[#e2e8f0] rounded-3xl p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
                 {/* Shield */}
                 <div className="flex items-center gap-4 md:pl-2">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#fff9f6] text-[#fa5902]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#fff9f6] text-[#ABB000]">
                     <Shield className="w-7 h-7 stroke-[1.5]" />
                   </div>
                   <div className="text-left">
-                    <span className="text-[22px] font-black text-[#092a5c] leading-none block">
+                    <span className="text-[22px] font-black text-[#0C2862] leading-none block">
                       98%
                     </span>
-                    <span className="text-[11px] font-black text-[#092a5c] uppercase tracking-wider block mt-1 leading-tight">
+                    <span className="text-[11px] font-black text-[#0C2862] uppercase tracking-wider block mt-1 leading-tight">
                       Client Satisfaction
                     </span>
                     <span className="text-[10px] text-slate-400 font-medium mt-0.5 block leading-none">
@@ -2255,14 +2255,14 @@ export default function CaseStudyPage() {
 
                 {/* Handshake */}
                 <div className="flex items-center gap-4 md:pl-6 pt-4 md:pt-0">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#fff9f6] text-[#fa5902]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#fff9f6] text-[#ABB000]">
                     <Handshake className="w-7 h-7 stroke-[1.5]" />
                   </div>
                   <div className="text-left">
-                    <span className="text-[22px] font-black text-[#092a5c] leading-none block">
+                    <span className="text-[22px] font-black text-[#0C2862] leading-none block">
                       150+
                     </span>
-                    <span className="text-[11px] font-black text-[#092a5c] uppercase tracking-wider block mt-1 leading-tight">
+                    <span className="text-[11px] font-black text-[#0C2862] uppercase tracking-wider block mt-1 leading-tight">
                       Successful Projects
                     </span>
                     <span className="text-[10px] text-slate-400 font-medium mt-0.5 block leading-none">
@@ -2273,14 +2273,14 @@ export default function CaseStudyPage() {
 
                 {/* Users */}
                 <div className="flex items-center gap-4 md:pl-6 pt-4 md:pt-0">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#fff9f6] text-[#fa5902]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#fff9f6] text-[#ABB000]">
                     <Users className="w-7 h-7 stroke-[1.5]" />
                   </div>
                   <div className="text-left">
-                    <span className="text-[22px] font-black text-[#092a5c] leading-none block">
+                    <span className="text-[22px] font-black text-[#0C2862] leading-none block">
                       100+
                     </span>
-                    <span className="text-[11px] font-black text-[#092a5c] uppercase tracking-wider block mt-1 leading-tight">
+                    <span className="text-[11px] font-black text-[#0C2862] uppercase tracking-wider block mt-1 leading-tight">
                       Happy Clients
                     </span>
                     <span className="text-[10px] text-slate-400 font-medium mt-0.5 block leading-none">
@@ -2291,14 +2291,14 @@ export default function CaseStudyPage() {
 
                 {/* Headphones */}
                 <div className="flex items-center gap-4 md:pl-6 pt-4 md:pt-0">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#fff9f6] text-[#fa5902]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#fff9f6] text-[#ABB000]">
                     <Headphones className="w-7 h-7 stroke-[1.5]" />
                   </div>
                   <div className="text-left">
-                    <span className="text-[22px] font-black text-[#092a5c] leading-none block">
+                    <span className="text-[22px] font-black text-[#0C2862] leading-none block">
                       24/7
                     </span>
-                    <span className="text-[11px] font-black text-[#092a5c] uppercase tracking-wider block mt-1 leading-tight">
+                    <span className="text-[11px] font-black text-[#0C2862] uppercase tracking-wider block mt-1 leading-tight">
                       After-Sales Support
                     </span>
                     <span className="text-[10px] text-slate-400 font-medium mt-0.5 block leading-none">
@@ -2316,16 +2316,16 @@ export default function CaseStudyPage() {
                       <Star
                         key={s}
                         size={16}
-                        fill="#fa5902"
-                        className="text-[#fa5902]"
+                        fill="#ABB000"
+                        className="text-[#ABB000]"
                       />
                     ))}
                   </div>
-                  <span className="text-[18px] font-black text-[#092a5c] ml-1">
+                  <span className="text-[18px] font-black text-[#0C2862] ml-1">
                     4.9/5
                   </span>
                 </div>
-                <span className="text-[12px] font-black text-[#092a5c] uppercase tracking-wider block leading-tight">
+                <span className="text-[12px] font-black text-[#0C2862] uppercase tracking-wider block leading-tight">
                   Average Client Rating
                 </span>
                 <span className="text-[10px] text-slate-400 font-medium mt-1 block leading-none">
@@ -2336,13 +2336,13 @@ export default function CaseStudyPage() {
 
             {/* Logo Carousel Container */}
             <div className="bg-slate-50 border border-[#e2e8f0] rounded-[24px] p-5 flex flex-col items-center">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#092a5c]/60 mb-5">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0C2862]/60 mb-5">
                 PROUD TO PARTNER WITH INDUSTRY LEADERS
               </p>
 
               <div className="w-full flex items-center justify-between gap-6 px-2">
                 {/* Left Arrow */}
-                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-400 hover:text-[#fa5902] transition-colors shadow-sm cursor-pointer shrink-0">
+                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-400 hover:text-[#ABB000] transition-colors shadow-sm cursor-pointer shrink-0">
                   <svg
                     className="w-5 h-5"
                     viewBox="0 0 24 24"
@@ -2364,7 +2364,7 @@ export default function CaseStudyPage() {
                 </div>
 
                 {/* Right Arrow */}
-                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-400 hover:text-[#fa5902] transition-colors shadow-sm cursor-pointer shrink-0">
+                <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-400 hover:text-[#ABB000] transition-colors shadow-sm cursor-pointer shrink-0">
                   <svg
                     className="w-5 h-5"
                     viewBox="0 0 24 24"
@@ -2414,12 +2414,12 @@ export default function CaseStudyPage() {
               {/* Right Column: 4 vertical cards */}
               <div className="lg:col-span-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
                 {/* Card 1: EXPORT READINESS */}
-                <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-[0_4px_15px_-3px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#fa5902]/20 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
+                <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-[0_4px_15px_-3px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#ABB000]/20 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
                   <div>
                     {/* Dark Blue Circle containing Orange Globe Icon */}
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#031b40] mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#0C2862] mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
                       <svg
-                        className="w-8 h-8 text-[#fa5902]"
+                        className="w-8 h-8 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -2430,10 +2430,10 @@ export default function CaseStudyPage() {
                       </svg>
                     </div>
 
-                    <h4 className="text-center text-xs font-black uppercase text-[#031b40] tracking-wider">
+                    <h4 className="text-center text-xs font-black uppercase text-[#0C2862] tracking-wider">
                       EXPORT READINESS
                     </h4>
-                    <span className="mx-auto mt-2 mb-4 block h-[2px] w-6 bg-[#fa5902]" />
+                    <span className="mx-auto mt-2 mb-4 block h-[2px] w-6 bg-[#ABB000]" />
 
                     <ul className="space-y-3 mt-4 text-left">
                       {[
@@ -2448,7 +2448,7 @@ export default function CaseStudyPage() {
                         >
                           <CheckCircle2
                             size={13}
-                            className="text-[#fa5902] shrink-0 mt-0.5"
+                            className="text-[#ABB000] shrink-0 mt-0.5"
                           />
                           <span>{bullet}</span>
                         </li>
@@ -2470,12 +2470,12 @@ export default function CaseStudyPage() {
                 </div>
 
                 {/* Card 2: AFTER-SALES SUPPORT */}
-                <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-[0_4px_15px_-3px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#fa5902]/20 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
+                <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-[0_4px_15px_-3px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#ABB000]/20 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
                   <div>
                     {/* Dark Blue Circle containing Orange Headphones Icon */}
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#031b40] mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#0C2862] mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
                       <svg
-                        className="w-8 h-8 text-[#fa5902]"
+                        className="w-8 h-8 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -2486,10 +2486,10 @@ export default function CaseStudyPage() {
                       </svg>
                     </div>
 
-                    <h4 className="text-center text-xs font-black uppercase text-[#031b40] tracking-wider">
+                    <h4 className="text-center text-xs font-black uppercase text-[#0C2862] tracking-wider">
                       AFTER-SALES SUPPORT
                     </h4>
-                    <span className="mx-auto mt-2 mb-4 block h-[2px] w-6 bg-[#fa5902]" />
+                    <span className="mx-auto mt-2 mb-4 block h-[2px] w-6 bg-[#ABB000]" />
 
                     <ul className="space-y-3 mt-4 text-left">
                       {[
@@ -2504,7 +2504,7 @@ export default function CaseStudyPage() {
                         >
                           <CheckCircle2
                             size={13}
-                            className="text-[#fa5902] shrink-0 mt-0.5"
+                            className="text-[#ABB000] shrink-0 mt-0.5"
                           />
                           <span>{bullet}</span>
                         </li>
@@ -2526,12 +2526,12 @@ export default function CaseStudyPage() {
                 </div>
 
                 {/* Card 3: ENGINEERING ASSISTANCE */}
-                <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-[0_4px_15px_-3px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#fa5902]/20 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
+                <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-[0_4px_15px_-3px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#ABB000]/20 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
                   <div>
                     {/* Dark Blue Circle containing Engineer Avatar Icon */}
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#031b40] mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#0C2862] mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
                       <svg
-                        className="w-8 h-8 text-[#fa5902]"
+                        className="w-8 h-8 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -2544,10 +2544,10 @@ export default function CaseStudyPage() {
                       </svg>
                     </div>
 
-                    <h4 className="text-center text-xs font-black uppercase text-[#031b40] tracking-wider">
+                    <h4 className="text-center text-xs font-black uppercase text-[#0C2862] tracking-wider">
                       ENGINEERING ASSISTANCE
                     </h4>
-                    <span className="mx-auto mt-2 mb-4 block h-[2px] w-6 bg-[#fa5902]" />
+                    <span className="mx-auto mt-2 mb-4 block h-[2px] w-6 bg-[#ABB000]" />
 
                     <ul className="space-y-3 mt-4 text-left">
                       {[
@@ -2562,7 +2562,7 @@ export default function CaseStudyPage() {
                         >
                           <CheckCircle2
                             size={13}
-                            className="text-[#fa5902] shrink-0 mt-0.5"
+                            className="text-[#ABB000] shrink-0 mt-0.5"
                           />
                           <span>{bullet}</span>
                         </li>
@@ -2586,12 +2586,12 @@ export default function CaseStudyPage() {
                 </div>
 
                 {/* Card 4: OPERATIONAL GUIDANCE */}
-                <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-[0_4px_15px_-3px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#fa5902]/20 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
+                <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-[0_4px_15px_-3px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#ABB000]/20 transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
                   <div>
                     {/* Dark Blue Circle containing Orange Chart & Magnifying Glass Icon */}
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#031b40] mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#0C2862] mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
                       <svg
-                        className="w-8 h-8 text-[#fa5902]"
+                        className="w-8 h-8 text-[#ABB000]"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -2605,10 +2605,10 @@ export default function CaseStudyPage() {
                       </svg>
                     </div>
 
-                    <h4 className="text-center text-xs font-black uppercase text-[#031b40] tracking-wider">
+                    <h4 className="text-center text-xs font-black uppercase text-[#0C2862] tracking-wider">
                       OPERATIONAL GUIDANCE
                     </h4>
-                    <span className="mx-auto mt-2 mb-4 block h-[2px] w-6 bg-[#fa5902]" />
+                    <span className="mx-auto mt-2 mb-4 block h-[2px] w-6 bg-[#ABB000]" />
 
                     <ul className="space-y-3 mt-4 text-left">
                       {[
@@ -2623,7 +2623,7 @@ export default function CaseStudyPage() {
                         >
                           <CheckCircle2
                             size={13}
-                            className="text-[#fa5902] shrink-0 mt-0.5"
+                            className="text-[#ABB000] shrink-0 mt-0.5"
                           />
                           <span>{bullet}</span>
                         </li>
@@ -2654,7 +2654,7 @@ export default function CaseStudyPage() {
                 {/* Country Stat */}
                 <div className="flex flex-col items-center justify-center pt-0">
                   <svg
-                    className="w-7 h-7 text-[#fa5902] mx-auto mb-1"
+                    className="w-7 h-7 text-[#ABB000] mx-auto mb-1"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -2663,10 +2663,10 @@ export default function CaseStudyPage() {
                     <circle cx="12" cy="12" r="10" />
                     <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                   </svg>
-                  <span className="text-[22px] font-black text-[#092a5c] leading-none block">
+                  <span className="text-[22px] font-black text-[#0C2862] leading-none block">
                     35+
                   </span>
-                  <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#092a5c] leading-tight">
+                  <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#0C2862] leading-tight">
                     COUNTRIES
                   </span>
                   <span className="text-[10px] text-slate-400 font-medium mt-0.5 leading-none">
@@ -2677,7 +2677,7 @@ export default function CaseStudyPage() {
                 {/* Installations Stat */}
                 <div className="flex flex-col items-center justify-center pt-4 sm:pt-0">
                   <svg
-                    className="w-7 h-7 text-[#fa5902] mx-auto mb-1"
+                    className="w-7 h-7 text-[#ABB000] mx-auto mb-1"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -2686,10 +2686,10 @@ export default function CaseStudyPage() {
                     <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
                     <path d="M9 22V12h6v10M8 6h2M14 6h2M8 10h2M14 10h2" />
                   </svg>
-                  <span className="text-[22px] font-black text-[#092a5c] leading-none block">
+                  <span className="text-[22px] font-black text-[#0C2862] leading-none block">
                     TRUSTED
                   </span>
-                  <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#092a5c] leading-tight">
+                  <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#0C2862] leading-tight">
                     INSTALLATIONS
                   </span>
                   <span className="text-[10px] text-slate-400 font-medium mt-0.5 leading-none">
@@ -2700,7 +2700,7 @@ export default function CaseStudyPage() {
                 {/* Support Stat */}
                 <div className="flex flex-col items-center justify-center pt-4 sm:pt-0">
                   <svg
-                    className="w-7 h-7 text-[#fa5902] mx-auto mb-1"
+                    className="w-7 h-7 text-[#ABB000] mx-auto mb-1"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -2711,10 +2711,10 @@ export default function CaseStudyPage() {
                     <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                   </svg>
-                  <span className="text-[22px] font-black text-[#092a5c] leading-none block">
+                  <span className="text-[22px] font-black text-[#0C2862] leading-none block">
                     24/7
                   </span>
-                  <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#092a5c] leading-tight">
+                  <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#0C2862] leading-tight">
                     SUPPORT
                   </span>
                   <span className="text-[10px] text-slate-400 font-medium mt-0.5 leading-none">
@@ -2725,7 +2725,7 @@ export default function CaseStudyPage() {
                 {/* Experts Stat */}
                 <div className="flex flex-col items-center justify-center pt-4 sm:pt-0">
                   <svg
-                    className="w-7 h-7 text-[#fa5902] mx-auto mb-1"
+                    className="w-7 h-7 text-[#ABB000] mx-auto mb-1"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -2734,10 +2734,10 @@ export default function CaseStudyPage() {
                     <circle cx="12" cy="12" r="3" />
                     <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82" />
                   </svg>
-                  <span className="text-[22px] font-black text-[#092a5c] leading-none block">
+                  <span className="text-[22px] font-black text-[#0C2862] leading-none block">
                     100+
                   </span>
-                  <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#092a5c] leading-tight">
+                  <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#0C2862] leading-tight">
                     EXPERTS
                   </span>
                   <span className="text-[10px] text-slate-400 font-medium mt-0.5 leading-none">
@@ -2748,7 +2748,7 @@ export default function CaseStudyPage() {
                 {/* Response Stat */}
                 <div className="flex flex-col items-center justify-center pt-4 sm:pt-0">
                   <svg
-                    className="w-7 h-7 text-[#fa5902] mx-auto mb-1"
+                    className="w-7 h-7 text-[#ABB000] mx-auto mb-1"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -2757,10 +2757,10 @@ export default function CaseStudyPage() {
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
-                  <span className="text-[22px] font-black text-[#092a5c] leading-none block">
+                  <span className="text-[22px] font-black text-[#0C2862] leading-none block">
                     48 HRS
                   </span>
-                  <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#092a5c] leading-tight">
+                  <span className="mt-1 text-[10px] font-black uppercase tracking-wider text-[#0C2862] leading-tight">
                     RESPONSE TIME
                   </span>
                   <span className="text-[10px] text-slate-400 font-medium mt-0.5 leading-none">
@@ -2772,7 +2772,7 @@ export default function CaseStudyPage() {
               {/* Right Partner & ARC Map Actions */}
               <div className="lg:col-span-4 pl-0 lg:pl-6 border-t lg:border-t-0 lg:border-l border-slate-150 flex items-center justify-between gap-4 pt-6 lg:pt-0">
                 <div className="flex-1 text-left">
-                  <span className="text-xs font-black uppercase text-[#fa5902] tracking-wider block">
+                  <span className="text-xs font-black uppercase text-[#ABB000] tracking-wider block">
                     PARTNER WITH PITHAL ENGINEERING
                   </span>
                   <p className="text-[11px] leading-relaxed text-slate-500 font-bold uppercase tracking-wider mt-1">
@@ -2782,7 +2782,7 @@ export default function CaseStudyPage() {
                   <Button
                     href="#contact"
                     variant="primary"
-                    className="bg-[#031b40] hover:bg-[#031b40]/90 text-white rounded-lg mt-4 flex items-center gap-2 text-xs font-black uppercase tracking-wider py-3.5 px-5 transition-colors"
+                    className="bg-[#0C2862] hover:bg-[#0C2862]/90 text-white rounded-lg mt-4 flex items-center gap-2 text-xs font-black uppercase tracking-wider py-3.5 px-5 transition-colors"
                   >
                     LET&apos;S BUILD YOUR SUCCESS STORY <ArrowRight size={14} />
                   </Button>
@@ -2814,20 +2814,20 @@ export default function CaseStudyPage() {
                   {/* Orange connection lines */}
                   <path
                     d="M25,25 Q55,5 85,20"
-                    stroke="#fa5902"
+                    stroke="#ABB000"
                     strokeWidth="1.2"
                     fill="none"
                   />
                   <path
                     d="M25,25 Q65,45 100,35"
-                    stroke="#fa5902"
+                    stroke="#ABB000"
                     strokeWidth="1.2"
                     fill="none"
                   />
                   {/* Dots */}
-                  <circle cx="25" cy="25" r="2" fill="#fa5902" />
-                  <circle cx="85" cy="20" r="2" fill="#fa5902" />
-                  <circle cx="100" cy="35" r="2" fill="#fa5902" />
+                  <circle cx="25" cy="25" r="2" fill="#ABB000" />
+                  <circle cx="85" cy="20" r="2" fill="#ABB000" />
+                  <circle cx="100" cy="35" r="2" fill="#ABB000" />
                 </svg>
               </div>
             </div>
@@ -3005,7 +3005,7 @@ export default function CaseStudyPage() {
         {/* SECTION 12: LET'S BUILD YOUR NEXT INDUSTRIAL SUCCESS STORY (CTA PART 1) */}
         {/* ========================================================================= */}
         <section
-          className="relative overflow-hidden bg-[#031b40] pt-12 pb-16 sm:pb-32 text-white"
+          className="relative overflow-hidden bg-[#0C2862] pt-12 pb-16 sm:pb-32 text-white"
           id="contact"
         >
           {/* Background Dusk Crushing Plant Image on Right */}
@@ -3017,27 +3017,27 @@ export default function CaseStudyPage() {
               className="object-cover object-right"
             />
             {/* Dark overlay to tone down image brightness */}
-            <div className="absolute inset-0 bg-[#031b40]/30 z-10" />
+            <div className="absolute inset-0 bg-[#0C2862]/30 z-10" />
             {/* Gradient Overlay to blend the image into dark blue on the left */}
-            <div className="absolute inset-y-0 left-0 w-full lg:w-1/3 bg-gradient-to-r from-[#031b40] via-[#031b40]/80 to-transparent z-20 hidden lg:block" />
-            <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-[#031b40] to-transparent z-20 lg:hidden" />
+            <div className="absolute inset-y-0 left-0 w-full lg:w-1/3 bg-gradient-to-r from-[#0C2862] via-[#0C2862]/80 to-transparent z-20 hidden lg:block" />
+            <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-[#0C2862] to-transparent z-20 lg:hidden" />
           </div>
 
           <Container className="relative z-10">
             {/* Header Block */}
             <div className="max-w-3xl mb-8 text-left relative">
               <div className="flex items-center gap-2 mb-4">
-                <span className="h-[2px] w-6 bg-[#fa5902]" />
-                <span className="text-xs sm:text-sm font-black uppercase tracking-[0.24em] text-[#fa5902]">
+                <span className="h-[2px] w-6 bg-[#ABB000]" />
+                <span className="text-xs sm:text-sm font-black uppercase tracking-[0.24em] text-[#ABB000]">
                   YOUR VISION. OUR ENGINEERING.
                 </span>
               </div>
 
               <h2 className="text-[clamp(1.85rem,5.5vw,3.5rem)] font-black uppercase leading-[1.1] tracking-tight text-white mt-4">
                 Let&apos;s Build Your Next <br />
-                <span className="text-[#fa5902] relative inline-block">
+                <span className="text-[#ABB000] relative inline-block">
                   Industrial Success Story.
-                  <span className="absolute bottom-0 left-0 w-24 h-[3.5px] bg-[#fa5902]" />
+                  <span className="absolute bottom-0 left-0 w-24 h-[3.5px] bg-[#ABB000]" />
                 </span>
               </h2>
 
@@ -3056,7 +3056,7 @@ export default function CaseStudyPage() {
                   text: "Decades of experience in heavy engineering",
                   icon: (
                     <svg
-                      className="w-8 h-8 text-[#fa5902]"
+                      className="w-8 h-8 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3074,7 +3074,7 @@ export default function CaseStudyPage() {
                   text: "Custom-built for your operational needs",
                   icon: (
                     <svg
-                      className="w-8 h-8 text-[#fa5902]"
+                      className="w-8 h-8 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3099,7 +3099,7 @@ export default function CaseStudyPage() {
                   text: "Optimized performance that delivers results",
                   icon: (
                     <svg
-                      className="w-8 h-8 text-[#fa5902]"
+                      className="w-8 h-8 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3117,7 +3117,7 @@ export default function CaseStudyPage() {
                   text: "We partner with you at every stage",
                   icon: (
                     <svg
-                      className="w-8 h-8 text-[#fa5902]"
+                      className="w-8 h-8 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3166,7 +3166,7 @@ export default function CaseStudyPage() {
                   btn: "SCHEDULE CONSULTATION",
                   icon: (
                     <svg
-                      className="w-10 h-10 text-[#fa5902]"
+                      className="w-10 h-10 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3185,7 +3185,7 @@ export default function CaseStudyPage() {
                   btn: "PLAN YOUR PROJECT",
                   icon: (
                     <svg
-                      className="w-10 h-10 text-[#fa5902]"
+                      className="w-10 h-10 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3203,7 +3203,7 @@ export default function CaseStudyPage() {
                   btn: "OPTIMIZE YOUR PLANT",
                   icon: (
                     <svg
-                      className="w-10 h-10 text-[#fa5902]"
+                      className="w-10 h-10 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3220,7 +3220,7 @@ export default function CaseStudyPage() {
                   btn: "REQUEST PROPOSAL",
                   icon: (
                     <svg
-                      className="w-10 h-10 text-[#fa5902]"
+                      className="w-10 h-10 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3235,10 +3235,10 @@ export default function CaseStudyPage() {
               ].map((card, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#0b1c36] border border-white/10 rounded-2xl p-6 lg:p-7 flex flex-col justify-between hover:border-[#fa5902]/50 transition-all duration-300 shadow-xl group text-white"
+                  className="bg-[#0b1c36] border border-white/10 rounded-2xl p-6 lg:p-7 flex flex-col justify-between hover:border-[#ABB000]/50 transition-all duration-300 shadow-xl group text-white"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-[#fa5902] group-hover:border-[#fa5902]/40 transition-colors">
+                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-[#ABB000] group-hover:border-[#ABB000]/40 transition-colors">
                       {card.icon}
                     </div>
                     <div>
@@ -3253,7 +3253,7 @@ export default function CaseStudyPage() {
                   <Button
                     href="#contact"
                     variant="outlineOrange"
-                    className="mt-6 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-widest py-2.5 px-4 border-[#fa5902] text-[#fa5902] hover:bg-[#fa5902] hover:text-white transition-all leading-none"
+                    className="mt-6 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-widest py-2.5 px-4 border-[#ABB000] text-[#ABB000] hover:bg-[#ABB000] hover:text-white transition-all leading-none"
                   >
                     {card.btn} <ArrowRight size={14} />
                   </Button>
@@ -3268,7 +3268,7 @@ export default function CaseStudyPage() {
                   text: "Trusted by Industry Leaders Worldwide",
                   icon: (
                     <svg
-                      className="w-4 h-4 text-[#fa5902]"
+                      className="w-4 h-4 text-[#ABB000]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -3283,7 +3283,7 @@ export default function CaseStudyPage() {
                   text: "35+ Countries",
                   icon: (
                     <svg
-                      className="w-4 h-4 text-[#fa5902]"
+                      className="w-4 h-4 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3298,7 +3298,7 @@ export default function CaseStudyPage() {
                   text: "TRUSTED Installations",
                   icon: (
                     <svg
-                      className="w-4 h-4 text-[#fa5902]"
+                      className="w-4 h-4 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3313,7 +3313,7 @@ export default function CaseStudyPage() {
                   text: "24/7 Support",
                   icon: (
                     <svg
-                      className="w-4 h-4 text-[#fa5902]"
+                      className="w-4 h-4 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -3327,7 +3327,7 @@ export default function CaseStudyPage() {
                   text: "Safety. Quality. Reliability.",
                   icon: (
                     <svg
-                      className="w-4 h-4 text-[#fa5902]"
+                      className="w-4 h-4 text-[#ABB000]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"

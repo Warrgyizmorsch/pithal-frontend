@@ -43,7 +43,7 @@ const defaultFeatures: Feature[] = [
 
 function FeatureIcon({ feature }: { feature: FeatureInput }) {
   if (typeof feature.icon === "string") {
-    return <ProductIcon className="text-blue-600" name={feature.icon} size={48} strokeWidth={1.8} />;
+    return <ProductIcon className="text-primary" name={feature.icon} size={48} strokeWidth={1.8} />;
   }
 
   return feature.icon;

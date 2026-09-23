@@ -130,18 +130,18 @@ const heroStats = [
           width="22"
           height="28"
           rx="2"
-          stroke="#E8762C"
+          stroke="#ABB000"
           strokeWidth="1.8"
         />
         <path
           d="M10 12h14M10 17h14M10 22h9"
-          stroke="#E8762C"
+          stroke="#ABB000"
           strokeWidth="1.5"
           strokeLinecap="round"
         />
         <path
           d="M32 25l-5 5-2-2"
-          stroke="#E8762C"
+          stroke="#ABB000"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -155,10 +155,10 @@ const heroStats = [
   {
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-9 h-9">
-        <circle cx="20" cy="20" r="14" stroke="#E8762C" strokeWidth="1.8" />
+        <circle cx="20" cy="20" r="14" stroke="#ABB000" strokeWidth="1.8" />
         <path
           d="M20 6c0 0-8 6-8 14s8 14 8 14M20 6c0 0 8 6 8 14s-8 14-8 14M6 20h28"
-          stroke="#E8762C"
+          stroke="#ABB000"
           strokeWidth="1.4"
         />
       </svg>
@@ -170,10 +170,10 @@ const heroStats = [
   {
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-9 h-9">
-        <circle cx="20" cy="14" r="7" stroke="#E8762C" strokeWidth="1.8" />
+        <circle cx="20" cy="14" r="7" stroke="#ABB000" strokeWidth="1.8" />
         <path
           d="M8 34c0-6.627 5.373-12 12-12s12 5.373 12 12"
-          stroke="#E8762C"
+          stroke="#ABB000"
           strokeWidth="1.8"
           strokeLinecap="round"
         />
@@ -186,10 +186,10 @@ const heroStats = [
   {
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-9 h-9">
-        <circle cx="20" cy="20" r="13" stroke="#E8762C" strokeWidth="1.8" />
+        <circle cx="20" cy="20" r="13" stroke="#ABB000" strokeWidth="1.8" />
         <path
           d="M20 10l2.5 5 5.5.8-4 3.9.9 5.5L20 22.5l-4.9 2.7.9-5.5-4-3.9 5.5-.8L20 10z"
-          stroke="#E8762C"
+          stroke="#ABB000"
           strokeWidth="1.4"
           fill="none"
         />
@@ -239,13 +239,13 @@ const heroFloatingCards = [
       <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
         <path
           d="M12 3l1.5 3 3.5.5-2.5 2.4.6 3.5L12 11l-3.1 1.4.6-3.5L7 6.5l3.5-.5L12 3z"
-          stroke="#E8762C"
+          stroke="#ABB000"
           strokeWidth="1.5"
           fill="none"
         />
         <path
           d="M5 20h14M8 17h8"
-          stroke="#E8762C"
+          stroke="#ABB000"
           strokeWidth="1.5"
           strokeLinecap="round"
         />
@@ -259,7 +259,7 @@ const heroFloatingCards = [
       <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
         <path
           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-          stroke="#E8762C"
+          stroke="#ABB000"
           strokeWidth="1.5"
           strokeLinecap="round"
         />
@@ -271,10 +271,10 @@ const heroFloatingCards = [
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7">
-        <circle cx="12" cy="12" r="3" stroke="#E8762C" strokeWidth="1.5" />
+        <circle cx="12" cy="12" r="3" stroke="#ABB000" strokeWidth="1.5" />
         <path
           d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-          stroke="#E8762C"
+          stroke="#ABB000"
           strokeWidth="1.5"
           strokeLinecap="round"
         />
@@ -974,7 +974,7 @@ function SectionHeader({
           <div className="flex items-center gap-3 mb-3">
             <span className="w-8 h-0.5 bg-secondary inline-block" />
             <span
-              className={`text-xs sm:text-sm font-bold uppercase tracking-[0.16em] whitespace-nowrap ${dark ? "text-secondary" : "text-[#092a5c]"}`}
+              className={`text-xs sm:text-sm font-bold uppercase tracking-[0.16em] whitespace-nowrap ${dark ? "text-secondary" : "text-[#0C2862]"}`}
             >
               {eyebrow}
             </span>
@@ -1324,7 +1324,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                     className="bg-white rounded-xl border border-slate-100 p-4.5 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-md transition-shadow flex items-start gap-4"
                   >
                     {/* Icon Circle */}
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-50 border border-orange-100/50 text-secondary">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 border border-secondary/20 text-secondary">
                       {i === 0 && <Cog size={18} className="stroke-[2]" />}
                       {i === 1 && <BookOpen size={18} className="stroke-[2]" />}
                       {i === 2 && <Lightbulb size={18} className="stroke-[2]" />}
@@ -1343,7 +1343,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
             </div>
 
             {/* Stats strip */}
-            <div className="mt-8 sm:mt-12 grid grid-cols-2 gap-x-3 gap-y-5 sm:gap-6 rounded-xl border border-border bg-white/90 p-4 sm:p-6 shadow-[0_24px_70px_rgba(3,27,64,0.12)] backdrop-blur-sm lg:grid-cols-4">
+            <div className="mt-8 sm:mt-12 grid grid-cols-2 gap-x-3 gap-y-5 sm:gap-6 rounded-xl border border-border bg-white/90 p-4 sm:p-6 shadow-[0_24px_70px_rgba(12, 40, 98,0.12)] backdrop-blur-sm lg:grid-cols-4">
               {heroSectionStats.map((s, i) => (
                 <div key={i} className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-center sm:items-start text-center sm:text-left">
                   <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-secondary/20 bg-secondary/5 flex items-center justify-center text-secondary flex-shrink-0">
@@ -1382,7 +1382,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                 <Link
                   key={post.slug || post.id || i}
                   href={`/blog/${post.slug}`}
-                  className="relative rounded-xl overflow-hidden group cursor-pointer shadow-[0_18px_45px_rgba(3,27,64,0.14)] block aspect-[16/9.2] w-full bg-slate-900"
+                  className="relative rounded-xl overflow-hidden group cursor-pointer shadow-[0_18px_45px_rgba(12, 40, 98,0.14)] block aspect-[16/9.2] w-full bg-slate-900"
                 >
                   <ImgBox
                     src={post.img}
@@ -1447,7 +1447,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                 <Link
                   key={i}
                   href="#"
-                  className="group lift rounded-xl border border-border bg-white p-3 sm:p-6 text-center shadow-[0_12px_32px_rgba(3,27,64,0.06)] flex flex-col h-full"
+                  className="group lift rounded-xl border border-border bg-white p-3 sm:p-6 text-center shadow-[0_12px_32px_rgba(12, 40, 98,0.06)] flex flex-col h-full"
                 >
                   <div className="mx-auto mb-3 sm:mb-5 flex h-14 w-14 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-secondary/10 text-primary transition duration-300 group-hover:bg-secondary/20 shrink-0 [&>svg]:!w-7 [&>svg]:!h-7 sm:[&>svg]:!w-10 sm:[&>svg]:!h-10">
                     {cat.icon}
@@ -1534,7 +1534,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
 
                           {/* Tag */}
                           <div className="flex items-center gap-3 mb-4">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 text-secondary border border-orange-100/50">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary/10 text-secondary border border-secondary/20">
                               <Cog size={14} strokeWidth={2} />
                             </div>
                             <span className="text-[11px] font-black text-secondary uppercase tracking-widest">
@@ -1624,7 +1624,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
             <div className="text-center mb-6 sm:mb-10">
               <div className="flex items-center justify-center gap-3.5 mb-4">
                 <span className="w-10 h-0.5 bg-secondary" />
-                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.06em]">
+                <span className="text-[#0C2862] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.06em]">
                   INDUSTRIAL KNOWLEDGE HUB
                 </span>
                 <span className="w-10 h-0.5 bg-secondary" />
@@ -1648,7 +1648,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                 {knowledgeHubTopics.slice(0, 2).map((topic, i) => (
                   <div
                     key={i}
-                    className="lift rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(3,27,64,0.07)] overflow-hidden"
+                    className="lift rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(12, 40, 98,0.07)] overflow-hidden"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-stretch min-h-[220px]">
                       <div className="p-5 sm:p-7 flex flex-col justify-between">
@@ -1791,7 +1791,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                 {knowledgeHubTopics.slice(2, 4).map((topic, i) => (
                   <div
                     key={i}
-                    className="lift rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(3,27,64,0.07)] overflow-hidden"
+                    className="lift rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(12, 40, 98,0.07)] overflow-hidden"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] items-stretch min-h-[220px]">
                       <div className="p-5 sm:p-7 flex flex-col justify-between">
@@ -1855,7 +1855,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
           </Container>
 
           {/* Unified Bottom stats banner (Full Width, Flat Corners) */}
-          <div className="mt-8 sm:mt-12 bg-white border-y border-border p-4 sm:p-5 sm:py-8 shadow-[0_8px_30px_rgba(3,27,64,0.04)] w-full">
+          <div className="mt-8 sm:mt-12 bg-white border-y border-border p-4 sm:p-5 sm:py-8 shadow-[0_8px_30px_rgba(12, 40, 98,0.04)] w-full">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-2 gap-y-6 gap-x-2 sm:gap-6 md:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-slate-100">
                 {hubStats.map((s, i) => (
@@ -1895,7 +1895,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
               <div>
                 <div className="flex items-center gap-3 mb-2.5">
                   <span className="w-8 h-0.5 bg-secondary" />
-                  <h2 className="text-xl sm:text-2xl font-black uppercase tracking-[0.06em] text-[#092a5c]">
+                  <h2 className="text-xl sm:text-2xl font-black uppercase tracking-[0.06em] text-[#0C2862]">
                     TRENDING INSIGHTS
                   </h2>
                   <span className="w-8 h-0.5 bg-secondary" />
@@ -2035,7 +2035,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
                 return (
                   <div
                     key={i}
-                    className="group lift relative overflow-hidden rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(3,27,64,0.07)] flex flex-col h-full"
+                    className="group lift relative overflow-hidden rounded-lg border border-border bg-white shadow-[0_14px_38px_rgba(12, 40, 98,0.07)] flex flex-col h-full"
                   >
                     <div className="relative h-52 overflow-hidden flex-shrink-0">
                       <ImgBox
@@ -2088,7 +2088,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
           </Container>
 
           {/* Custom guide form - Full width, flat corners, screen touching */}
-          <div className="w-full bg-white border-y border-border py-6 sm:py-4 mt-5 shadow-[0_8px_30px_rgba(3,27,64,0.04)]">
+          <div className="w-full bg-white border-y border-border py-6 sm:py-4 mt-5 shadow-[0_8px_30px_rgba(12, 40, 98,0.04)]">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
               <form
                 onSubmit={handleGuideSubmit}
@@ -2486,7 +2486,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-3 mb-3">
                 <span className="w-8 h-0.5 bg-secondary inline-block" />
-                <span className="text-[#092a5c] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.06em]">
+                <span className="text-[#0C2862] text-[16px] sm:text-[18px] font-black uppercase tracking-[0.06em]">
                   INDUSTRY TOPICS
                 </span>
                 <span className="w-8 h-0.5 bg-secondary inline-block" />

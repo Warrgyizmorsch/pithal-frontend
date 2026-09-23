@@ -16,7 +16,7 @@ export function ResourcesSection({
   supportFeatures: IconText[];
 }) {
   const renderResourceIcon = (title: string) => {
-    const strokeColor = "#fa5902";
+    const strokeColor = "#ABB000";
     if (title.toUpperCase().includes("BROCHURE")) {
       return (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={strokeColor} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -44,7 +44,7 @@ export function ResourcesSection({
   };
 
   const renderSupportIcon = (iconName: string) => {
-    const strokeColor = "#fa5902";
+    const strokeColor = "#ABB000";
     switch (iconName.toLowerCase()) {
       case "shield":
         return (
@@ -136,7 +136,7 @@ export function ResourcesSection({
                   </h3>
 
                   {/* Underline separator */}
-                  <div style={{ width: "30px", height: "2px", backgroundColor: "#fa5902", marginTop: "10px", marginBottom: "10px" }} />
+                  <div style={{ width: "30px", height: "2px", backgroundColor: "#ABB000", marginTop: "10px", marginBottom: "10px" }} />
 
                   {/* Description */}
                   <p className="text-text-muted text-left" style={{ fontSize: "0.78rem", lineHeight: "1.4" }}>
@@ -147,7 +147,7 @@ export function ResourcesSection({
                 {/* Download PDF button link */}
                 <a
                   href={resource.href}
-                  className="secondary-btn inline-flex items-center justify-center gap-2 border border-[#fa5902] text-[#fa5902] hover:bg-[#fa5902]/5 transition-colors font-bold uppercase rounded-lg px-4 py-2 mt-4 text-[11px] tracking-[0.08em] w-fit"
+                  className="secondary-btn inline-flex items-center justify-center gap-2 border border-[#ABB000] text-[#ABB000] hover:bg-[#ABB000]/5 transition-colors font-bold uppercase rounded-lg px-4 py-2 mt-4 text-[11px] tracking-[0.08em] w-fit"
                 >
                   {resource.actionLabel}
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -186,11 +186,11 @@ export function ResourcesSection({
         <div className="mt-6 border border-gray-200/60 bg-gray-50/50 p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
           <div className="flex items-center gap-4">
             <div className="flex shrink-0 items-center justify-center rounded-2xl bg-white border border-gray-200 shadow-sm" style={{ width: 52, height: 52 }}>
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#092a5c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0C2862" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
                 <path d="M2 10h20" />
-                <path d="M12 5h4" stroke="#fa5902" strokeWidth="1.5" />
-                <path d="M12 8h6" stroke="#fa5902" strokeWidth="1.5" />
+                <path d="M12 5h4" stroke="#ABB000" strokeWidth="1.5" />
+                <path d="M12 8h6" stroke="#ABB000" strokeWidth="1.5" />
               </svg>
             </div>
             <div className="text-left">

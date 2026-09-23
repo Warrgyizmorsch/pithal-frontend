@@ -5,8 +5,8 @@
   <path d="M0 560h610L351 346Z" fill="#293a48"/>
   <path d="M64 544h501L329 376Z" fill="#596570"/>
   <path d="M590 408h403v97H590Z" fill="#102a43"/>
-  <path d="M663 319h62v92h-62Zm137 37h66v55h-66Z" fill="#092a5c"/>
-  <path d="m557 418 370-219 18 24-351 238Z" fill="#092a5c"/>
-  <path d="m570 418 356-207" stroke="#fa5902" stroke-width="7"/>
-  <path d="M596 506h472" stroke="#fa5902" stroke-width="9"/>
+  <path d="M663 319h62v92h-62Zm137 37h66v55h-66Z" fill="#0C2862"/>
+  <path d="m557 418 370-219 18 24-351 238Z" fill="#0C2862"/>
+  <path d="m570 418 356-207" stroke="#ABB000" stroke-width="7"/>
+  <path d="M596 506h472" stroke="#ABB000" stroke-width="9"/>
 </svg>

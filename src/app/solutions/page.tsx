@@ -704,7 +704,7 @@ function renderCircleStatsIcon(name: string) {
           className="text-primary w-full h-full p-2 sm:p-3 lg:p-4"
         >
           <circle cx="12" cy="12" r="10" />
-          <circle cx="12" cy="12" r="4" stroke="#ff5a00" />
+          <circle cx="12" cy="12" r="4" stroke="#ABB000" />
         </svg>
       );
     case "countries":
@@ -721,7 +721,7 @@ function renderCircleStatsIcon(name: string) {
           <circle cx="12" cy="12" r="10" />
           <path
             d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-            stroke="#ff5a00"
+            stroke="#ABB000"
             strokeWidth="1"
           />
         </svg>
@@ -740,7 +740,7 @@ function renderCircleStatsIcon(name: string) {
           <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
           <path
             d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
-            stroke="#ff5a00"
+            stroke="#ABB000"
           />
         </svg>
       );
@@ -756,7 +756,7 @@ function renderCircleStatsIcon(name: string) {
           className="text-primary w-full h-full p-2 sm:p-3 lg:p-4"
         >
           <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-          <circle cx="12" cy="12" r="3" fill="#ff5a00" stroke="#ff5a00" />
+          <circle cx="12" cy="12" r="3" fill="#ABB000" stroke="#ABB000" />
         </svg>
       );
     default:
@@ -772,11 +772,11 @@ function renderWhyChooseIcon(icon: string) {
           className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#031b40"
+          stroke="#0C2862"
           strokeWidth="1.5"
         >
           <path d="M11.75 3a2.25 2.25 0 0 1 2.25 2.25v.75H19a2 2 0 0 1 2 2v5a2.25 2.25 0 0 1-2.25 2.25h-.75V19a2 2 0 0 1-2 2h-5a2.25 2.25 0 0 1-2.25-2.25v-.75H5a2 2 0 0 1-2-2v-5H3a2.25 2.25 0 0 1-2.25-2.25v-1.5A2.25 2.25 0 0 1 3 8h.75V5a2 2 0 0 1 2-2h6z" />
-          <path d="M12 9v6" stroke="#ff5a00" strokeWidth="2" />
+          <path d="M12 9v6" stroke="#ABB000" strokeWidth="2" />
         </svg>
       );
     case "stopwatch":
@@ -785,11 +785,11 @@ function renderWhyChooseIcon(icon: string) {
           className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#031b40"
+          stroke="#0C2862"
           strokeWidth="1.5"
         >
           <circle cx="12" cy="13" r="8" />
-          <path d="M12 5V2M9 2h6M12 9v4l3 2" stroke="#ff5a00" strokeWidth="2" />
+          <path d="M12 5V2M9 2h6M12 9v4l3 2" stroke="#ABB000" strokeWidth="2" />
         </svg>
       );
     case "engineer":
@@ -798,12 +798,12 @@ function renderWhyChooseIcon(icon: string) {
           className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#031b40"
+          stroke="#0C2862"
           strokeWidth="1.5"
         >
           <path
             d="M14.7 12.5a4 4 0 0 0-5.4 0M12 2v3M8.5 4.5l2 2M15.5 4.5l-2 2"
-            stroke="#ff5a00"
+            stroke="#ABB000"
             strokeWidth="1.5"
           />
           <path d="M5 21a7 7 0 0 1 14 0" />
@@ -816,7 +816,7 @@ function renderWhyChooseIcon(icon: string) {
           className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#031b40"
+          stroke="#0C2862"
           strokeWidth="1.5"
         >
           <path d="M3.34 19a10 10 0 1 1 17.32 0" />
@@ -825,10 +825,10 @@ function renderWhyChooseIcon(icon: string) {
             y1="12"
             x2="19"
             y2="8"
-            stroke="#ff5a00"
+            stroke="#ABB000"
             strokeWidth="2"
           />
-          <circle cx="12" cy="12" r="2" fill="#031b40" />
+          <circle cx="12" cy="12" r="2" fill="#0C2862" />
         </svg>
       );
     case "handshake":
@@ -837,13 +837,13 @@ function renderWhyChooseIcon(icon: string) {
           className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#031b40"
+          stroke="#0C2862"
           strokeWidth="1.5"
         >
           <path d="m11 17 2 2c.6.6 1.5.6 2 0l5-5c.6-.6.6-1.5 0-2l-2-2" />
           <path
             d="m13 14-2-2-4 4c-.6.6-.6 1.5 0 2l2 2c.6.6 1.5.6 2 0l2-2"
-            stroke="#ff5a00"
+            stroke="#ABB000"
             strokeWidth="2"
           />
           <path d="m14 8-1.5-1.5c-.8-.8-2-.8-2.8 0L3 13c-.6.6-.6 1.5 0 2l1.5 1.5" />
@@ -855,13 +855,13 @@ function renderWhyChooseIcon(icon: string) {
           className="w-7 h-7 sm:w-[38px] sm:h-[38px]"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#031b40"
+          stroke="#0C2862"
           strokeWidth="1.5"
         >
           <path d="M3 3v18h18" />
           <path
             d="m18.7 8-5.1 5.2-2.8-2.7-4.8 4.8"
-            stroke="#ff5a00"
+            stroke="#ABB000"
             strokeWidth="2"
           />
           <path d="M19 5h-4v4" />
@@ -974,7 +974,7 @@ export default function SolutionsPage() {
             </div>
 
             {/* Stats row below Hero */}
-            <div className="relative z-20 rounded-xl bg-white p-3 text-slate-800 shadow-[0_14px_34px_rgba(3,27,64,0.08)] sm:rounded-2xl sm:p-4 md:px-5 md:py-4">
+            <div className="relative z-20 rounded-xl bg-white p-3 text-slate-800 shadow-[0_14px_34px_rgba(12, 40, 98,0.08)] sm:rounded-2xl sm:p-4 md:px-5 md:py-4">
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4">
                 {stats.map((stat, i) => (
                   <div
@@ -1128,7 +1128,7 @@ export default function SolutionsPage() {
                     <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent z-10" />
 
                     {/* Dark blue square/rounded box with orange/white icon */}
-                    <div className="absolute left-4 top-4 sm:left-5 sm:top-5 z-20 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-xl bg-[#092a5c] border border-white/10 shadow-lg group-hover:bg-secondary transition-all duration-350">
+                    <div className="absolute left-4 top-4 sm:left-5 sm:top-5 z-20 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-xl bg-[#0C2862] border border-white/10 shadow-lg group-hover:bg-secondary transition-all duration-350">
                       {renderIndustryIcon(item.icon)}
                     </div>
 
@@ -1308,8 +1308,8 @@ export default function SolutionsPage() {
                       className="group relative flex flex-col md:flex-row items-stretch rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
                     >
                       {/* Left: Thumbnail Image Box */}
-                      <div className="p-3 shrink-0 flex items-center justify-center bg-#fa5902/10">
-                        <div className="relative w-full md:w-[170px] aspect-[16/10] md:h-[110px] overflow-hidden rounded-xl border border-slate-200/60 shadow-sm bg-#fa5902/10">
+                      <div className="p-3 shrink-0 flex items-center justify-center bg-#ABB000/10">
+                        <div className="relative w-full md:w-[170px] aspect-[16/10] md:h-[110px] overflow-hidden rounded-xl border border-slate-200/60 shadow-sm bg-#ABB000/10">
                           <Image
                             src={row.image}
                             alt={row.challengeTitle}
@@ -1318,14 +1318,14 @@ export default function SolutionsPage() {
                             sizes="170px"
                           />
                           {/* Step Badge */}
-                          <div className="absolute top-2 left-2 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-[#031b40] text-[10px] font-black text-white border border-white/20">
+                          <div className="absolute top-2 left-2 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-[#0C2862] text-[10px] font-black text-white border border-white/20">
                             {row.step}
                           </div>
                         </div>
                       </div>
 
                       {/* Middle: Challenge Box */}
-                      <div className="relative flex-1 bg-[#fa5902]/10 p-5 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#fa5902]/15">
+                      <div className="relative flex-1 bg-[#ABB000]/10 p-5 flex flex-col justify-center border-b md:border-b-0 md:border-r border-[#ABB000]/15">
                         <span className="inline-flex gap-1.5 items-center text-[10px] font-black uppercase text-secondary tracking-wider">
                           <svg
                             viewBox="0 0 24 24"
@@ -1366,8 +1366,8 @@ export default function SolutionsPage() {
                       </div>
 
                       {/* Right: Solution Box */}
-                      <div className="flex-1 bg-[#031b40]/10 p-5 md:pl-8 flex gap-4 items-center">
-                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[#092a5c] border border-white/10 shadow text-white">
+                      <div className="flex-1 bg-[#0C2862]/10 p-5 md:pl-8 flex gap-4 items-center">
+                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[#0C2862] border border-white/10 shadow text-white">
                           <SolIcon
                             size={32}
                             className="text-white"
@@ -1411,7 +1411,7 @@ export default function SolutionsPage() {
                   const BIcon = item.icon;
                   return (
                     <div key={i} className="flex items-center gap-3.5">
-                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-orange-100 bg-[#fdfbf9] text-secondary shadow-[inset_0_1.5px_3px_rgba(250,89,2,0.04)]">
+                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-secondary/20 bg-[#fdfbf9] text-secondary shadow-[inset_0_1.5px_3px_rgba(171, 176, 0,0.04)]">
                         <BIcon
                           size={28}
                           className="text-secondary"
@@ -1545,7 +1545,7 @@ export default function SolutionsPage() {
                     className="group bg-white border border-slate-200/60 p-5 pt-12 rounded-2xl flex flex-col justify-between relative shadow-sm hover:shadow-md transition-all duration-300"
                   >
                     {/* Step Badge on Top Left */}
-                    <div className="absolute top-4 left-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-[#e6effc] text-xs font-black text-[#092a5c]">
+                    <div className="absolute top-4 left-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-[#e6effc] text-xs font-black text-[#0C2862]">
                       {item.step}
                     </div>
 
@@ -1709,7 +1709,7 @@ export default function SolutionsPage() {
               className="absolute left-[-100px] top-[10%] w-[350px] h-[350px] animate-[spin_60s_linear_infinite]"
               viewBox="0 0 100 100"
               fill="none"
-              stroke="#092a5c"
+              stroke="#0C2862"
               strokeWidth="0.5"
             >
               <circle cx="50" cy="50" r="30" />
@@ -1727,7 +1727,7 @@ export default function SolutionsPage() {
               className="absolute right-[-120px] top-[5%] w-[450px] h-[450px]"
               viewBox="0 0 200 200"
               fill="none"
-              stroke="#092a5c"
+              stroke="#0C2862"
               strokeWidth="0.5"
             >
               {/* Gear 1 */}
@@ -1810,21 +1810,21 @@ export default function SolutionsPage() {
                             {/* Needle */}
                             <path
                               d="M27 27 L 33 21"
-                              stroke="#092a5c"
+                              stroke="#0C2862"
                               strokeWidth="2.5"
                               strokeLinecap="round"
                             />
-                            <circle cx="27" cy="27" r="3" fill="#092a5c" />
+                            <circle cx="27" cy="27" r="3" fill="#0C2862" />
                             {/* Gear bottom right */}
                             <circle
                               cx="39"
                               cy="35"
                               r="4.5"
                               fill="#fff"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="1.5"
                             />
-                            <circle cx="39" cy="35" r="1.5" fill="#fa5902" />
+                            <circle cx="39" cy="35" r="1.5" fill="#ABB000" />
                           </svg>
                         )}
                         {i === 1 && (
@@ -1846,27 +1846,27 @@ export default function SolutionsPage() {
                               cx="27"
                               cy="25"
                               r="13"
-                              stroke="#092a5c"
+                              stroke="#0C2862"
                               strokeWidth="2.2"
                               fill="none"
                             />
                             {/* Ticks */}
                             <path
                               d="M27 12 L27 14 M27 36 L27 38 M14 25 L16 25 M38 25 L40 25"
-                              stroke="#092a5c"
+                              stroke="#0C2862"
                               strokeWidth="1.5"
                             />
                             {/* Hands */}
                             <path
                               d="M27 25 L27 18 M27 25 L32 25"
-                              stroke="#092a5c"
+                              stroke="#0C2862"
                               strokeWidth="2"
                               strokeLinecap="round"
                             />
                             {/* Down arrow inside bottom right */}
                             <path
                               d="M37 28 L37 36 M34 33 L37 36 L40 33"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -1892,7 +1892,7 @@ export default function SolutionsPage() {
                               cx="25"
                               cy="25"
                               r="11"
-                              stroke="#092a5c"
+                              stroke="#0C2862"
                               strokeWidth="2"
                               fill="none"
                             />
@@ -1900,7 +1900,7 @@ export default function SolutionsPage() {
                               <path
                                 key={idx}
                                 d="M 25 11 L 25 14"
-                                stroke="#092a5c"
+                                stroke="#0C2862"
                                 strokeWidth="2.2"
                                 strokeLinecap="round"
                                 transform={`rotate(${idx * 45} 25 25)`}
@@ -1910,7 +1910,7 @@ export default function SolutionsPage() {
                             {/* Rupee symbol */}
                             <path
                               d="M22 20 H28 M22 23 H28 M25 20 C28 20 28 25 25 25 H22 M24 25 L28 30"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="1.8"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -1918,7 +1918,7 @@ export default function SolutionsPage() {
                             {/* Up arrow right */}
                             <path
                               d="M36 26 L36 34 M33 31 L36 34 L39 31"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -1949,7 +1949,7 @@ export default function SolutionsPage() {
                             />
                             <path
                               d="M17 33 A 12 12 0 1 1 35 24"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="2.5"
                               fill="none"
                               strokeLinecap="round"
@@ -1957,17 +1957,17 @@ export default function SolutionsPage() {
                             {/* Leaf or energy symbol */}
                             <path
                               d="M24 28 C24 22 28 20 30 20 C30 24 26 28 24 28 Z"
-                              fill="#fa5902"
+                              fill="#ABB000"
                               opacity="0.8"
                             />
                             <path
                               d="M22 30 C22 25 25 23 27 23 C27 27 24 30 22 30 Z"
-                              fill="#092a5c"
+                              fill="#0C2862"
                             />
                             {/* Up arrow */}
                             <path
                               d="M37 26 L37 33 M34 30 L37 33 L40 30"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -1995,7 +1995,7 @@ export default function SolutionsPage() {
                               width="3.5"
                               height="8"
                               rx="1"
-                              fill="#092a5c"
+                              fill="#0C2862"
                             />
                             <rect
                               x="24"
@@ -2003,7 +2003,7 @@ export default function SolutionsPage() {
                               width="3.5"
                               height="12"
                               rx="1"
-                              fill="#092a5c"
+                              fill="#0C2862"
                             />
                             <rect
                               x="30"
@@ -2011,7 +2011,7 @@ export default function SolutionsPage() {
                               width="3.5"
                               height="16"
                               rx="1"
-                              fill="#092a5c"
+                              fill="#0C2862"
                             />
                             <rect
                               x="36"
@@ -2019,12 +2019,12 @@ export default function SolutionsPage() {
                               width="3.5"
                               height="21"
                               rx="1"
-                              fill="#fa5902"
+                              fill="#ABB000"
                             />
                             {/* Up arrow diagonal */}
                             <path
                               d="M41 14 L41 22 M37 18 L41 14 L45 18"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -2034,21 +2034,21 @@ export default function SolutionsPage() {
                       </div>
 
                       <div className="flex items-baseline gap-1">
-                        <span className="text-[28px] font-extrabold text-[#fa5902] leading-none tracking-tight">
+                        <span className="text-[28px] font-extrabold text-[#ABB000] leading-none tracking-tight">
                           {item.pct}
                         </span>
-                        <span className="text-[18px] font-bold text-[#fa5902]">
+                        <span className="text-[18px] font-bold text-[#ABB000]">
                           ↑
                         </span>
                       </div>
                     </div>
 
-                    <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-[#092a5c]">
+                    <h3 className="text-[13px] font-extrabold uppercase tracking-wider text-[#0C2862]">
                       {item.label}
                     </h3>
 
                     {/* Thin horizontal separator line */}
-                    <div className="w-8 h-[2px] bg-[#fa5902] my-3.5 group-hover:w-16 transition-all duration-300" />
+                    <div className="w-8 h-[2px] bg-[#ABB000] my-3.5 group-hover:w-16 transition-all duration-300" />
 
                     <p className="text-[12px] leading-relaxed text-slate-500 font-medium">
                       {item.desc}
@@ -2073,14 +2073,14 @@ export default function SolutionsPage() {
                   />
                   {/* Text Overlay Box (aligned to the left) */}
                   <div className="absolute inset-0 bg-gradient-to-r from-white/98 via-white/85 to-transparent flex flex-col justify-center p-6 md:p-8 max-w-[80%] sm:max-w-[70%] z-10">
-                    <h3 className="text-[20px] md:text-[22px] font-extrabold uppercase tracking-wide text-[#092a5c] leading-tight">
+                    <h3 className="text-[20px] md:text-[22px] font-extrabold uppercase tracking-wide text-[#0C2862] leading-tight">
                       PERFORMANCE THAT
                       <br />
-                      <span className="text-[#fa5902]">
+                      <span className="text-[#ABB000]">
                         DRIVES YOUR SUCCESS
                       </span>
                     </h3>
-                    <div className="w-10 h-[2px] bg-[#fa5902] my-3" />
+                    <div className="w-10 h-[2px] bg-[#ABB000] my-3" />
                     <p className="text-[12px] md:text-[13px] leading-relaxed text-slate-600 font-medium">
                       Our solutions are designed to maximize every aspect of your operations – from efficiency and productivity to cost savings and sustainability.
                     </p>
@@ -2109,18 +2109,18 @@ export default function SolutionsPage() {
                             />
                             <path
                               d="M15 34 A 14 14 0 1 1 37 34"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="2.8"
                               strokeLinecap="round"
                               fill="none"
                             />
                             <path
                               d="M26 26 L 33 19"
-                              stroke="#092a5c"
+                              stroke="#0C2862"
                               strokeWidth="2.5"
                               strokeLinecap="round"
                             />
-                            <circle cx="26" cy="26" r="3" fill="#092a5c" />
+                            <circle cx="26" cy="26" r="3" fill="#0C2862" />
                           </svg>
                         )}
                         {i === 1 && (
@@ -2141,19 +2141,19 @@ export default function SolutionsPage() {
                               cx="26"
                               cy="25"
                               r="11"
-                              stroke="#092a5c"
+                              stroke="#0C2862"
                               strokeWidth="2.5"
                               fill="none"
                             />
                             <path
                               d="M26 25 L 26 19 M26 25 L 30 25"
-                              stroke="#092a5c"
+                              stroke="#0C2862"
                               strokeWidth="2"
                               strokeLinecap="round"
                             />
                             <path
                               d="M35 29 L35 36 M32 33 L35 36 L38 33"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="2.2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -2178,19 +2178,19 @@ export default function SolutionsPage() {
                               cx="23"
                               cy="23"
                               r="10"
-                              stroke="#092a5c"
+                              stroke="#0C2862"
                               strokeWidth="2.2"
                               fill="none"
                             />
                             <path
                               d="M20 19 H26 M20 23 H26 M23 19 C26 19 26 23 23 23 M22 23 L26 28"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="2"
                               strokeLinecap="round"
                             />
                             <path
                               d="M34 26 L34 34 M31 31 L34 34 L37 31"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="2.2"
                               strokeLinecap="round"
                             />
@@ -2212,12 +2212,12 @@ export default function SolutionsPage() {
                             />
                             <path
                               d="M23 31 C23 24 28 22 30 22 C30 26 26 31 23 31 Z"
-                              fill="#fa5902"
+                              fill="#ABB000"
                               opacity="0.8"
                             />
                             <path
                               d="M20 33 C20 28 24 25 25 25 C25 29 22 33 20 33 Z"
-                              fill="#092a5c"
+                              fill="#0C2862"
                             />
                           </svg>
                         )}
@@ -2241,7 +2241,7 @@ export default function SolutionsPage() {
                               width="3"
                               height="8"
                               rx="0.5"
-                              fill="#092a5c"
+                              fill="#0C2862"
                             />
                             <rect
                               x="23"
@@ -2249,7 +2249,7 @@ export default function SolutionsPage() {
                               width="3"
                               height="12"
                               rx="0.5"
-                              fill="#092a5c"
+                              fill="#0C2862"
                             />
                             <rect
                               x="28"
@@ -2257,11 +2257,11 @@ export default function SolutionsPage() {
                               width="3"
                               height="16"
                               rx="0.5"
-                              fill="#fa5902"
+                              fill="#ABB000"
                             />
                             <path
                               d="M33 19 L33 26 M30 22 L33 19 L36 22"
-                              stroke="#fa5902"
+                              stroke="#ABB000"
                               strokeWidth="2"
                               strokeLinecap="round"
                             />
@@ -2271,7 +2271,7 @@ export default function SolutionsPage() {
 
                       {/* Title, Progress Bar, and Percent */}
                       <div className="flex-1">
-                        <div className="flex justify-between items-center text-[12.5px] font-extrabold text-[#092a5c] tracking-wide mb-1.5">
+                        <div className="flex justify-between items-center text-[12.5px] font-extrabold text-[#0C2862] tracking-wide mb-1.5">
                           <span>{slider.label}</span>
                         </div>
                         <div className="flex items-center gap-3.5">
@@ -2282,10 +2282,10 @@ export default function SolutionsPage() {
                               style={{ width: `${slider.value}%` }}
                             >
                               {/* Glowing/Border Circle Point Handle */}
-                              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4.5 h-4.5 bg-white border-[4px] border-[#092a5c] rounded-full shadow-md z-10" />
+                              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4.5 h-4.5 bg-white border-[4px] border-[#0C2862] rounded-full shadow-md z-10" />
                             </div>
                           </div>
-                          <span className="text-[13.5px] font-black text-[#092a5c] w-9 text-right shrink-0">
+                          <span className="text-[13.5px] font-black text-[#0C2862] w-9 text-right shrink-0">
                             {slider.value}%
                           </span>
                         </div>
@@ -2304,20 +2304,20 @@ export default function SolutionsPage() {
                       {/* Round icon badge */}
                       <div className="flex h-15 w-15 shrink-0 items-center justify-center rounded-full bg-[#fdf2eb] transition-all duration-300 icon-badge-inner">
                         {i === 0 && (
-                          <Building2 size={26} className="text-[#fa5902]" />
+                          <Building2 size={26} className="text-[#ABB000]" />
                         )}
                         {i === 1 && (
-                          <Globe size={26} className="text-[#fa5902]" />
+                          <Globe size={26} className="text-[#ABB000]" />
                         )}
                         {i === 2 && (
-                          <Headphones size={26} className="text-[#fa5902]" />
+                          <Headphones size={26} className="text-[#ABB000]" />
                         )}
                       </div>
                       <div className="leading-tight">
-                        <p className="text-[28px] font-extrabold text-[#fa5902] tracking-tight">
+                        <p className="text-[28px] font-extrabold text-[#ABB000] tracking-tight">
                           <strong>{item.value}</strong>
                         </p>
-                        <p className="text-[12.5px] font-extrabold text-[#092a5c] uppercase tracking-wider mt-0.5">
+                        <p className="text-[12.5px] font-extrabold text-[#0C2862] uppercase tracking-wider mt-0.5">
                           {item.label}
                         </p>
                         <p className="text-[12px] text-slate-500 font-medium mt-0.5">
@@ -2385,7 +2385,7 @@ export default function SolutionsPage() {
                       )}
                     </div>
 
-                    <div className="absolute bottom-[-16px] left-1/2 -translate-x-1/2 bg-white border-2 border-[#fa5902] text-[#fa5902] text-[13.5px] font-black uppercase w-8 h-8 flex items-center justify-center rounded-full shadow-md z-30 transition-all duration-300 step-badge">
+                    <div className="absolute bottom-[-16px] left-1/2 -translate-x-1/2 bg-white border-2 border-[#ABB000] text-[#ABB000] text-[13.5px] font-black uppercase w-8 h-8 flex items-center justify-center rounded-full shadow-md z-30 transition-all duration-300 step-badge">
                       {item.step}
                     </div>
                   </div>
@@ -2433,7 +2433,7 @@ export default function SolutionsPage() {
                   <span className="absolute inline-flex h-6 w-6 rounded-full bg-secondary/30 animate-ping" />
 
                   {/* Core Pin Dot */}
-                  <div className="relative h-3 w-3 rounded-full bg-[#fa5902] shadow-md border-2 border-white" />
+                  <div className="relative h-3 w-3 rounded-full bg-[#ABB000] shadow-md border-2 border-white" />
                 </div>
               ))}
             </div>
@@ -2496,13 +2496,13 @@ export default function SolutionsPage() {
                         key={i}
                         className="text-center flex flex-col items-center group"
                       >
-                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white border border-slate-200/80 text-[#fa5902] shadow-sm mb-3.5 group-hover:scale-105 transition-transform duration-300">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white border border-slate-200/80 text-[#ABB000] shadow-sm mb-3.5 group-hover:scale-105 transition-transform duration-300">
                           <RIcon size={24} className="stroke-[2]" />
                         </div>
-                        <h4 className="text-[12px] font-extrabold uppercase tracking-wide text-[#092a5c] mb-1">
+                        <h4 className="text-[12px] font-extrabold uppercase tracking-wide text-[#0C2862] mb-1">
                           {item.title}
                         </h4>
-                        <span className="block w-6 h-[1.5px] bg-[#fa5902] mb-1.5 mx-auto" />
+                        <span className="block w-6 h-[1.5px] bg-[#ABB000] mb-1.5 mx-auto" />
                         <p className="text-[11px] leading-relaxed text-slate-500 font-medium">
                           {item.desc}
                         </p>
@@ -2543,7 +2543,7 @@ export default function SolutionsPage() {
                         />
                       )}
                     </div>
-                    <div className="bg-[#092a5c] p-4 text-left flex-1 flex flex-col justify-between">
+                    <div className="bg-[#0C2862] p-4 text-left flex-1 flex flex-col justify-between">
                       <div className="flex items-center gap-3">
                         <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-white border border-white/20 shadow-inner group-hover:scale-105 transition-all duration-300">
                           {card.flag.startsWith("/") ? (
@@ -2574,7 +2574,7 @@ export default function SolutionsPage() {
               })}
             </div>
 
-            <div className="bg-gradient-to-br from-[#092a5c] to-[#041630] border border-white/10 p-6 sm:p-8 md:p-10 shadow-[0_20px_50px_rgba(3,27,64,0.3)] mb-8 text-white relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#0C2862] to-[#041630] border border-white/10 p-6 sm:p-8 md:p-10 shadow-[0_20px_50px_rgba(12, 40, 98,0.3)] mb-8 text-white relative overflow-hidden">
               <div className="absolute inset-0 pointer-events-none opacity-5 industrial-grid" />
               <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-0 lg:divide-x lg:divide-white/10">
                 {globalNavyBarMetrics.map((item, i) => {
@@ -2583,40 +2583,40 @@ export default function SolutionsPage() {
                       key={i}
                       className="group/stat flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-4 pl-0 lg:pl-6 first:pl-0"
                     >
-                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-[#fa5902] group-hover/stat:border-[#fa5902]/30 group-hover/stat:bg-[#fa5902]/10 transition-all duration-300">
+                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-[#ABB000] group-hover/stat:border-[#ABB000]/30 group-hover/stat:bg-[#ABB000]/10 transition-all duration-300">
                         {i === 0 && (
                           <Globe
                             size={30}
-                            className="text-[#fa5902] stroke-[1.8]"
+                            className="text-[#ABB000] stroke-[1.8]"
                           />
                         )}
                         {i === 1 && (
                           <Building2
                             size={30}
-                            className="text-[#fa5902] stroke-[1.8]"
+                            className="text-[#ABB000] stroke-[1.8]"
                           />
                         )}
                         {i === 2 && (
                           <Settings
                             size={30}
-                            className="text-[#fa5902] stroke-[1.8]"
+                            className="text-[#ABB000] stroke-[1.8]"
                           />
                         )}
                         {i === 3 && (
                           <Users
                             size={30}
-                            className="text-[#fa5902] stroke-[1.8]"
+                            className="text-[#ABB000] stroke-[1.8]"
                           />
                         )}
                         {i === 4 && (
                           <Headphones
                             size={30}
-                            className="text-[#fa5902] stroke-[1.8]"
+                            className="text-[#ABB000] stroke-[1.8]"
                           />
                         )}
                       </div>
                       <div className="text-center sm:text-left">
-                        <h4 className="text-3xl font-black text-[#fa5902] leading-none tracking-tight group-hover/stat:translate-x-0.5 transition-transform duration-300">
+                        <h4 className="text-3xl font-black text-[#ABB000] leading-none tracking-tight group-hover/stat:translate-x-0.5 transition-transform duration-300">
                           {item.value}
                         </h4>
                         <p className="text-[11px] font-black text-white uppercase tracking-widest mt-2">
@@ -2636,9 +2636,9 @@ export default function SolutionsPage() {
                 return (
                   <div key={i} className="flex items-center gap-3">
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#fdf2eb]">
-                      <VIcon size={18} className="text-[#fa5902] stroke-[2]" />
+                      <VIcon size={18} className="text-[#ABB000] stroke-[2]" />
                     </div>
-                    <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#092a5c]">
+                    <span className="text-[12px] font-extrabold uppercase tracking-wide text-[#0C2862]">
                       {item.title}
                     </span>
                   </div>
@@ -2676,8 +2676,8 @@ export default function SolutionsPage() {
             {/* Grid of 6 cards with orange circular arcs */}
             <style>{`
               @keyframes arc-spin {
-                0%   { stroke-dashoffset: 0;    filter: drop-shadow(0 0 4px #ff5a00); }
-                100% { stroke-dashoffset: -370; filter: drop-shadow(0 0 4px #ff5a00); }
+                0%   { stroke-dashoffset: 0;    filter: drop-shadow(0 0 4px #ABB000); }
+                100% { stroke-dashoffset: -370; filter: drop-shadow(0 0 4px #ABB000); }
               }
               .why-card:hover .arc-circle {
                 animation: arc-spin 0.7s cubic-bezier(0.4,0,0.2,1) forwards;
@@ -2705,7 +2705,7 @@ export default function SolutionsPage() {
                           cx="50"
                           cy="50"
                           r="47"
-                          stroke="#ff5a00"
+                          stroke="#ABB000"
                           strokeWidth="2.5"
                           fill="none"
                           strokeLinecap="round"
@@ -2890,20 +2890,20 @@ export default function SolutionsPage() {
                 {/* Tagline */}
                 <div className="flex items-center gap-3 mb-6">
                   <div className="flex items-center">
-                    <span className="w-10 h-[2px] bg-[#ea580c]"></span>
+                    <span className="w-10 h-[2px] bg-[#ABB000]"></span>
                   </div>
-                  <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#ea580c] whitespace-nowrap">
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#ABB000] whitespace-nowrap">
                     Ready to Build. Ready to Perform.
                   </span>
                   <div className="flex items-center">
-                    <span className="w-10 h-[2px] bg-[#ea580c]"></span>
+                    <span className="w-10 h-[2px] bg-[#ABB000]"></span>
                   </div>
                 </div>
 
                 {/* Heading */}
                 <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-black leading-[1.05] text-[#0f172a] tracking-tight mb-6">
                   Let&apos;s Engineer Your <br />
-                  <span className="text-[#ea580c]">
+                  <span className="text-[#ABB000]">
                     Next Crushing Solution.
                   </span>
                 </h2>
@@ -2919,7 +2919,7 @@ export default function SolutionsPage() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                   {/* Card 1 */}
                   <div className="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-                    <div className="mb-3 text-[#ea580c]">
+                    <div className="mb-3 text-[#ABB000]">
                       <svg
                         className="w-11 h-11"
                         fill="none"
@@ -2947,7 +2947,7 @@ export default function SolutionsPage() {
                   </div>
                   {/* Card 2 */}
                   <div className="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-                    <div className="mb-3 text-[#ea580c]">
+                    <div className="mb-3 text-[#ABB000]">
                       <svg
                         className="w-11 h-11"
                         fill="none"
@@ -2975,7 +2975,7 @@ export default function SolutionsPage() {
                   </div>
                   {/* Card 3 */}
                   <div className="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-                    <div className="mb-3 text-[#ea580c]">
+                    <div className="mb-3 text-[#ABB000]">
                       <svg
                         className="w-11 h-11"
                         fill="none"
@@ -3004,7 +3004,7 @@ export default function SolutionsPage() {
                   </div>
                   {/* Card 4 */}
                   <div className="bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-                    <div className="mb-3 text-[#ea580c]">
+                    <div className="mb-3 text-[#ABB000]">
                       <svg
                         className="w-11 h-11"
                         fill="none"
@@ -3039,7 +3039,7 @@ export default function SolutionsPage() {
                     {/* Orange Solid Button */}
                     <Button
                       href="#contact1"
-                      className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#ea580c] hover:bg-[#d44d0a] text-white px-8 py-4 rounded-xl text-[13px] font-black tracking-wide transition-colors"
+                      className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#ABB000] hover:bg-[#8F9300] text-white px-8 py-4 rounded-xl text-[13px] font-black tracking-wide transition-colors"
                     >
                       <svg
                         className="w-4 h-4"
@@ -3124,7 +3124,7 @@ export default function SolutionsPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-700/60 p-2 py-3">
                 <div className="flex flex-col items-center justify-center p-3.5 text-center gap-2.5 hover:bg-slate-800/30 transition-colors">
                   <svg
-                    className="w-10 h-10 text-[#ea580c]"
+                    className="w-10 h-10 text-[#ABB000]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -3145,7 +3145,7 @@ export default function SolutionsPage() {
 
                 <div className="flex flex-col items-center justify-center p-3.5 text-center gap-2.5 hover:bg-slate-800/30 transition-colors">
                   <svg
-                    className="w-10 h-10 text-[#ea580c]"
+                    className="w-10 h-10 text-[#ABB000]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -3171,7 +3171,7 @@ export default function SolutionsPage() {
 
                 <div className="flex flex-col items-center justify-center p-3.5 text-center gap-2.5 hover:bg-slate-800/30 transition-colors">
                   <svg
-                    className="w-10 h-10 text-[#ea580c]"
+                    className="w-10 h-10 text-[#ABB000]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -3192,7 +3192,7 @@ export default function SolutionsPage() {
 
                 <div className="flex flex-col items-center justify-center p-3.5 text-center gap-2.5 hover:bg-slate-800/30 transition-colors">
                   <svg
-                    className="w-10 h-10 text-[#ea580c]"
+                    className="w-10 h-10 text-[#ABB000]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

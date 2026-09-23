@@ -76,7 +76,7 @@ const regionsData = [
     id: "middle-east",
     name: "Middle East",
     countriesCount: "15+",
-    color: "#FA5902",
+    color: "#ABB000",
     countries: ["UAE", "Oman", "Saudi Arabia", "Qatar", "Kuwait", "Bahrain"],
     desc: "Serving major aggregate, mining, and large-scale infrastructure projects.",
     coords: { x: 550, y: 165 },
@@ -85,7 +85,7 @@ const regionsData = [
     id: "africa",
     name: "Africa",
     countriesCount: "12+",
-    color: "#FA5902",
+    color: "#ABB000",
     countries: [
       "South Africa",
       "Kenya",
@@ -126,7 +126,7 @@ const regionsData = [
     id: "south-america",
     name: "South America",
     countriesCount: "6+",
-    color: "#FA5902",
+    color: "#ABB000",
     countries: ["Brazil", "Chile", "Peru", "Colombia", "Argentina"],
     desc: "Heavy-duty mining installations supported by regional sales partners.",
     coords: { x: 300, y: 250 },
@@ -339,7 +339,7 @@ export default function GlobalPresencePage() {
             </div>
 
             {/* Stats bar */}
-            <div className="mt-4 rounded-2xl border border-white/60 bg-white/90 p-0.5 shadow-[0_20px_50px_rgba(3,27,64,0.1)] backdrop-blur-md">
+            <div className="mt-4 rounded-2xl border border-white/60 bg-white/90 p-0.5 shadow-[0_20px_50px_rgba(12, 40, 98,0.1)] backdrop-blur-md">
               <div className="grid grid-cols-1 divide-y divide-slate-100 sm:grid-cols-2 sm:divide-y-0 sm:divide-x lg:grid-cols-4">
                 {heroStats.map((s, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 lg:p-5">
@@ -482,7 +482,7 @@ export default function GlobalPresencePage() {
                     <div className="flex items-center gap-3">
                       <Globe
                         className="w-6 h-6 flex-shrink-0 stroke-[1.8]"
-                        style={{ color: reg.color || "#FA5902" }}
+                        style={{ color: reg.color || "#ABB000" }}
                       />
                       <div>
                         <div className="text-sm font-black text-primary uppercase leading-tight">
@@ -615,7 +615,7 @@ export default function GlobalPresencePage() {
                     >
                       <div>
                         <div className="flex items-start gap-2.5 sm:gap-3">
-                          <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFECE0] text-[#FA5902]">
+                          <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFECE0] text-[#ABB000]">
                             <it.icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.7]" />
                           </div>
                           <div className="min-w-0 flex-1">
@@ -708,8 +708,8 @@ export default function GlobalPresencePage() {
                     },
                   ].map((c, i) => (
                     <div key={i} className="px-3 text-center">
-                      <c.icon className="mx-auto mb-3 h-10 w-10 stroke-[1.65] text-[#fa5902]" />
-                      <div className="mx-auto max-w-[112px] text-[12px] font-black leading-[1.25] text-[#061f49] max-lg:drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                      <c.icon className="mx-auto mb-3 h-10 w-10 stroke-[1.65] text-[#ABB000]" />
+                      <div className="mx-auto max-w-[112px] text-[12px] font-black leading-[1.25] text-[#0C2862] max-lg:drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
                         {c.title}
                       </div>
                       <div className="mx-auto mt-3 max-w-[120px] text-[12px] font-semibold leading-5 text-[#40516d] max-lg:drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
@@ -732,7 +732,7 @@ export default function GlobalPresencePage() {
             </div>
 
             <div className="mx-auto max-w-[1520px] bg-white px-4 pb-7 sm:px-8 lg:px-10">
-              <div className="relative overflow-hidden rounded-[10px] bg-[#061f49] px-5 py-4 text-white shadow-[0_18px_35px_rgba(9,31,66,0.18)] sm:px-8 lg:grid lg:min-h-[156px] lg:grid-cols-[1.36fr_repeat(4,1fr)] lg:items-center lg:px-9">
+              <div className="relative overflow-hidden rounded-[10px] bg-[#0C2862] px-5 py-4 text-white shadow-[0_18px_35px_rgba(9,31,66,0.18)] sm:px-8 lg:grid lg:min-h-[156px] lg:grid-cols-[1.36fr_repeat(4,1fr)] lg:items-center lg:px-9">
                 <div className="relative mb-5 min-h-[124px] overflow-hidden lg:mb-0 lg:h-[128px] lg:min-h-0 lg:pr-8">
                   <Image
                     src="/images/global-presense/export-route-map.png"
@@ -741,7 +741,7 @@ export default function GlobalPresencePage() {
                     sizes="(min-width: 1024px) 34vw, 100vw"
                     className="object-cover object-left opacity-95"
                   />
-                  <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#061f49] to-transparent" />
+                  <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0C2862] to-transparent" />
                 </div>
 
                 {[
@@ -778,7 +778,7 @@ export default function GlobalPresencePage() {
                       <s.icon className="h-8 w-8 stroke-[1.45] text-white" />
                     </div>
                     <div>
-                      <div className="text-[clamp(1.85rem,2.25vw,2.2rem)] font-black leading-none text-[#fa5902]">
+                      <div className="text-[clamp(1.85rem,2.25vw,2.2rem)] font-black leading-none text-[#ABB000]">
                         {s.value}
                       </div>
                       <div className="mt-1 text-[12px] font-black uppercase leading-[1.25] tracking-[0.04em] text-white">
@@ -794,7 +794,7 @@ export default function GlobalPresencePage() {
 
               <div className="mt-3 grid min-h-[268px] gap-0 overflow-hidden rounded-[10px] border border-[#e6ebf3] bg-white shadow-[0_15px_36px_rgba(9,31,66,0.08)] lg:grid-cols-12">
                 <div className="border-b border-[#e0e6ef] p-5 lg:col-span-5 lg:border-b-0 lg:border-r lg:p-5">
-                  <h3 className="mb-6 text-[15px] font-black uppercase leading-none text-[#061f49]">
+                  <h3 className="mb-6 text-[15px] font-black uppercase leading-none text-[#0C2862]">
                     OUR EXPORT WORKFLOW
                   </h3>
                   <div className="grid grid-cols-2 gap-x-2 gap-y-5 sm:grid-cols-3 lg:grid-cols-6">
@@ -808,22 +808,22 @@ export default function GlobalPresencePage() {
                     ].map((step, i) => (
                       <div key={i} className="relative text-center">
                         {i < 5 && (
-                          <ArrowRight className="absolute -right-3 top-7 hidden h-4 w-4 text-[#061f49]/65 lg:block" />
+                          <ArrowRight className="absolute -right-3 top-7 hidden h-4 w-4 text-[#0C2862]/65 lg:block" />
                         )}
-                        <div className="mx-auto flex h-[56px] w-[56px] items-center justify-center rounded-full bg-[#f8fafc] text-[#061f49] shadow-[inset_0_0_0_4px_#fff,0_0_0_1px_rgba(9,31,73,0.08),0_6px_14px_rgba(9,31,66,0.04)]">
+                        <div className="mx-auto flex h-[56px] w-[56px] items-center justify-center rounded-full bg-[#f8fafc] text-[#0C2862] shadow-[inset_0_0_0_4px_#fff,0_0_0_1px_rgba(9,31,73,0.08),0_6px_14px_rgba(9,31,66,0.04)]">
                           <step.icon className="h-6 w-6 stroke-[1.55]" />
                         </div>
-                        <div className="mt-3 text-[15px] font-black leading-none text-[#fa5902]">
+                        <div className="mt-3 text-[15px] font-black leading-none text-[#ABB000]">
                           0{i + 1}
                         </div>
-                        <div className="mx-auto mt-2 max-w-[76px] text-[10px] font-black uppercase leading-4 text-[#061f49]">
+                        <div className="mx-auto mt-2 max-w-[76px] text-[10px] font-black uppercase leading-4 text-[#0C2862]">
                           {step.title}
                         </div>
                       </div>
                     ))}
                   </div>
                   <div className="mt-6 flex items-center gap-4 rounded-[6px] bg-[#f3f6fa] px-4 py-3 text-[12px] font-semibold leading-5 text-[#273b5a] shadow-[inset_0_0_0_1px_rgba(9,31,66,0.03)]">
-                    <Shield className="h-8 w-8 shrink-0 stroke-[1.65] text-[#fa5902]" />
+                    <Shield className="h-8 w-8 shrink-0 stroke-[1.65] text-[#ABB000]" />
                     <span>
                       Every step is executed with precision to ensure quality,
                       compliance &amp; on-time global delivery.
@@ -832,7 +832,7 @@ export default function GlobalPresencePage() {
                 </div>
 
                 <div className="relative overflow-hidden border-b border-[#e0e6ef] bg-[#fbfcfe] p-5 lg:col-span-2 lg:border-b-0 lg:border-r lg:p-5">
-                  <h3 className="mb-5 text-[14px] font-black uppercase leading-tight text-[#061f49]">
+                  <h3 className="mb-5 text-[14px] font-black uppercase leading-tight text-[#0C2862]">
                     DOCUMENTATION SUPPORT
                   </h3>
                   <div className="relative z-10 max-w-[155px] space-y-3">
@@ -848,7 +848,7 @@ export default function GlobalPresencePage() {
                         key={item}
                         className="flex items-center gap-2 text-[11px] font-bold leading-4 text-[#273b5a]"
                       >
-                        <Check className="h-3.5 w-3.5 shrink-0 rounded-full bg-[#fa5902] p-0.5 text-white" />
+                        <Check className="h-3.5 w-3.5 shrink-0 rounded-full bg-[#ABB000] p-0.5 text-white" />
                         {item}
                       </div>
                     ))}
@@ -863,7 +863,7 @@ export default function GlobalPresencePage() {
                 </div>
 
                 <div className="relative overflow-hidden border-b border-[#e0e6ef] p-5 lg:col-span-2 lg:border-b-0 lg:border-r lg:p-5">
-                  <h3 className="mb-5 text-[14px] font-black uppercase leading-tight text-[#061f49]">
+                  <h3 className="mb-5 text-[14px] font-black uppercase leading-tight text-[#0C2862]">
                     INTERNATIONAL COMPLIANCE
                   </h3>
                   <div className="relative z-10 max-w-[166px] space-y-3">
@@ -879,7 +879,7 @@ export default function GlobalPresencePage() {
                         key={item}
                         className="flex items-center gap-2 text-[11px] font-bold leading-4 text-[#273b5a]"
                       >
-                        <Check className="h-3.5 w-3.5 shrink-0 rounded-full bg-[#fa5902] p-0.5 text-white" />
+                        <Check className="h-3.5 w-3.5 shrink-0 rounded-full bg-[#ABB000] p-0.5 text-white" />
                         {item}
                       </div>
                     ))}
@@ -895,7 +895,7 @@ export default function GlobalPresencePage() {
 
                 <div className="flex flex-col justify-between bg-[#fbfcfe] p-5 lg:col-span-3 lg:p-5">
                   <div>
-                    <h3 className="mb-4 text-[14px] font-black uppercase leading-tight text-[#061f49]">
+                    <h3 className="mb-4 text-[14px] font-black uppercase leading-tight text-[#0C2862]">
                       SHIPPING &amp; LOGISTICS PARTNERS
                     </h3>
                     <p className="mb-5 max-w-[250px] text-[12px] font-semibold leading-5 text-[#40516d]">
@@ -912,7 +912,7 @@ export default function GlobalPresencePage() {
                   </div>
                   <Button
                     href="/contact"
-                    className="group mt-6 h-10 w-full justify-between rounded-[6px] bg-[#061f49] px-4 text-[11px] font-black tracking-wide shadow-[0_8px_16px_rgba(9,31,66,0.14)] hover:bg-[#fa5902]"
+                    className="group mt-6 h-10 w-full justify-between rounded-[6px] bg-[#0C2862] px-4 text-[11px] font-black tracking-wide shadow-[0_8px_16px_rgba(9,31,66,0.14)] hover:bg-[#ABB000]"
                   >
                     GLOBAL REACH. RELIABLE DELIVERY.
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -947,11 +947,11 @@ export default function GlobalPresencePage() {
                     key={i}
                     className="flex items-center justify-center gap-4 px-5 py-3 lg:border-r lg:border-[#dfe5ee] lg:last:border-r-0"
                   >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#fff3ec] text-[#fa5902]">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#fff3ec] text-[#ABB000]">
                       <f.icon className="h-7 w-7 stroke-[1.65]" />
                     </div>
                     <div>
-                      <div className="text-[13px] font-black leading-none text-[#061f49]">
+                      <div className="text-[13px] font-black leading-none text-[#0C2862]">
                         {f.t}
                       </div>
                       <div className="mt-1 text-[12px] font-semibold leading-4 text-[#40516d]">
@@ -1578,7 +1578,7 @@ export default function GlobalPresencePage() {
                           className="h-5 w-5 shrink-0 object-contain"
                         />
                         <div>
-                          <h3 className="text-[11.5px] font-black uppercase tracking-wide text-[#061f49]">
+                          <h3 className="text-[11.5px] font-black uppercase tracking-wide text-[#0C2862]">
                             {item.title}
                           </h3>
                           <p className="mt-1 text-[10px] font-medium leading-tight text-[#5c6e8c]">
@@ -1590,7 +1590,7 @@ export default function GlobalPresencePage() {
                                 key={bullet}
                                 className="flex items-center gap-1.5 text-[9.5px] font-bold text-[#273b5a]"
                               >
-                                <CheckCircle2 className="h-3 w-3 shrink-0 fill-[#fa5902] stroke-white stroke-[2.5]" />
+                                <CheckCircle2 className="h-3 w-3 shrink-0 fill-[#ABB000] stroke-white stroke-[2.5]" />
                                 {bullet}
                               </li>
                             ))}
@@ -1623,10 +1623,10 @@ export default function GlobalPresencePage() {
                         alt="Pithal Machines Ltd"
                         className="h-auto w-[110px] object-contain"
                       />
-                      <div className="mt-2.5 text-[8.5px] font-black tracking-wider uppercase leading-3 text-[#061f49]">
+                      <div className="mt-2.5 text-[8.5px] font-black tracking-wider uppercase leading-3 text-[#0C2862]">
                         SUPPORTING YOUR SUCCESS.
                         <br />
-                        <span className="text-[#fa5902]">
+                        <span className="text-[#ABB000]">
                           EVERY STEP OF THE WAY.
                         </span>
                       </div>
@@ -1645,7 +1645,7 @@ export default function GlobalPresencePage() {
                 ].map((node, idx) => (
                   <div
                     key={idx}
-                    className="absolute flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#061f49] shadow-[0_4px_10px_rgba(6,31,73,0.25)] ring-[4px] ring-white transition-transform duration-300 hover:scale-110"
+                    className="absolute flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#0C2862] shadow-[0_4px_10px_rgba(6,31,73,0.25)] ring-[4px] ring-white transition-transform duration-300 hover:scale-110"
                     style={{
                       top: node.top,
                       left: node.left,
@@ -1712,7 +1712,7 @@ export default function GlobalPresencePage() {
                           className="h-5 w-5 shrink-0 object-contain"
                         />
                         <div>
-                          <h3 className="text-[11.5px] font-black uppercase tracking-wide text-[#061f49]">
+                          <h3 className="text-[11.5px] font-black uppercase tracking-wide text-[#0C2862]">
                             {item.title}
                           </h3>
                           <p className="mt-1 text-[10px] font-medium leading-tight text-[#5c6e8c]">
@@ -1724,7 +1724,7 @@ export default function GlobalPresencePage() {
                                 key={bullet}
                                 className="flex items-center gap-1.5 text-[9.5px] font-bold text-[#273b5a]"
                               >
-                                <CheckCircle2 className="h-3 w-3 shrink-0 fill-[#fa5902] stroke-white stroke-[2.5]" />
+                                <CheckCircle2 className="h-3 w-3 shrink-0 fill-[#ABB000] stroke-white stroke-[2.5]" />
                                 {bullet}
                               </li>
                             ))}

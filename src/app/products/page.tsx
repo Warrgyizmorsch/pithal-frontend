@@ -48,7 +48,7 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div className="relative z-20 rounded-xl bg-white p-3 text-slate-800 shadow-[0_18px_44px_rgba(3,27,64,0.12)] sm:rounded-2xl sm:p-4 md:px-5 md:py-4">
+            <div className="relative z-20 rounded-xl bg-white p-3 text-slate-800 shadow-[0_18px_44px_rgba(12, 40, 98,0.12)] sm:rounded-2xl sm:p-4 md:px-5 md:py-4">
               <div className="grid grid-cols-2 divide-y-0 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
                 {productHeroStats.map((stat) => (
                   <article className="p-2 sm:p-4 lg:p-5 flex flex-col items-center text-center sm:items-start sm:text-left" key={stat.label}>

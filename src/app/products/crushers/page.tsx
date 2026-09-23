@@ -20,7 +20,7 @@ export default function CrushersPage() {
             sizes="100vw"
             src="/images/products/cone-crusher/plant-bg.jpg"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,19,45,.98)_0%,rgba(3,27,64,.94)_34%,rgba(3,27,64,.62)_54%,rgba(3,27,64,.12)_78%,rgba(3,27,64,0)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(1,19,45,.98)_0%,rgba(12, 40, 98,.94)_34%,rgba(12, 40, 98,.62)_54%,rgba(12, 40, 98,.12)_78%,rgba(12, 40, 98,0)_100%)]" />
           <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-10 py-6 lg:min-h-[calc(100svh-4.25rem)] lg:justify-between lg:py-8 xl:min-h-[calc(100svh-5.25rem)]">
             <div>
               <div className="max-w-[720px]">

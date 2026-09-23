@@ -66,7 +66,7 @@ export function ProductStats({
   return (
     <section className="relative bg-white pb-8 pt-0 lg:pb-10">
       <div className="pointer-events-none absolute inset-0 industrial-grid opacity-80" />
-      <div className="relative -mt-1 w-full border-y border-border/90 bg-white/96 py-7 shadow-[0_10px_24px_rgba(3,27,64,0.08)] lg:py-8">
+      <div className="relative -mt-1 w-full border-y border-border/90 bg-white/96 py-7 shadow-[0_10px_24px_rgba(12, 40, 98,0.08)] lg:py-8">
         <div className="pointer-events-none absolute right-0 top-0 hidden h-48 w-[38%] opacity-[0.06] lg:block">
           <div className="h-full w-full bg-[url('/images/hero/video-showcase-photo.jpg')] bg-cover bg-center" />
         </div>
@@ -85,7 +85,7 @@ export function ProductStats({
           <div className="relative grid gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {stats.map((stat, index) => (
               <Card
-                className="relative min-h-[210px] overflow-visible rounded-xl border-border bg-white px-3 py-4 text-center shadow-[0_6px_16px_rgba(3,27,64,0.1)]"
+                className="relative min-h-[210px] overflow-visible rounded-xl border-border bg-white px-3 py-4 text-center shadow-[0_6px_16px_rgba(12, 40, 98,0.1)]"
                 key={stat.label}
               >
                 <div className="mx-auto mb-4 flex h-[80px] w-[80px] items-center justify-center rounded-full border border-dashed border-secondary bg-white text-primary">

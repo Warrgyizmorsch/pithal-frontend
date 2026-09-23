@@ -27,7 +27,7 @@ export function IndustryApplications({
         <SectionHeader eyebrow={section.eyebrow} highlight={section.highlight} subtitle={section.subtitle} title={section.title} />
         <MobileCarousel className="gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {industries.map((industry) => (
-            <article className="group relative min-h-[360px] overflow-hidden rounded-2xl bg-slate-950 text-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_rgba(3,27,64,0.35)]" key={industry.title}>
+            <article className="group relative min-h-[360px] overflow-hidden rounded-2xl bg-slate-950 text-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_rgba(12, 40, 98,0.35)]" key={industry.title}>
               <Image
                 alt={industry.image.alt}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
