@@ -1,0 +1,99 @@
+name: Deploy to Production (Hostinger)
+
+on:
+  push:
+    branches:
+      - deployment
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy to Hostinger
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Build Next.js application
+        run: npm run build
+
+      - name: Prepare standalone release bundle
+        run: |
+          echo "Bundling standalone release..."
+          cp -r public .next/standalone/public
+          cp -r .next/static .next/standalone/.next/static
+          mkdir -p .next/standalone/tmp
+          touch .next/standalone/tmp/restart.txt
+
+          cd .next/standalone
+          tar -czf ../../deployment.tar.gz .
+          cd ../..
+          echo "Bundle size:"
+          ls -lh deployment.tar.gz
+
+      - name: Upload bundle to server via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "deployment.tar.gz"
+          target: "/home/${{ secrets.SSH_USER }}"
+
+      - name: Activate release and reload Passenger
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            set -e
+            APP_DIR="/home/${{ secrets.SSH_USER }}/domains/pithalmachine.com"
+            VERSION_ID="gh-${{ github.run_id }}-${{ github.run_number }}"
+            RELEASE_DIR="$APP_DIR/hbuilds/versions/$VERSION_ID"
+
+            echo "=== Creating release: $VERSION_ID ==="
+            mkdir -p "$RELEASE_DIR/nodejs"
+
+            echo "=== Extracting release bundle ==="
+            tar -xzf "/home/${{ secrets.SSH_USER }}/deployment.tar.gz" -C "$RELEASE_DIR/nodejs"
+            rm -f "/home/${{ secrets.SSH_USER }}/deployment.tar.gz"
+
+            # Retain public_html if present in current
+            if [ -d "$APP_DIR/hbuilds/current/public_html" ]; then
+              cp -a "$APP_DIR/hbuilds/current/public_html" "$RELEASE_DIR/public_html"
+            fi
+
+            # Save deployment metadata
+            printf '{"build_id":"%s","git_ref":"%s","git_commit":"%s","deployed_at":"%s"}\n' \
+              "$VERSION_ID" "${{ github.ref_name }}" "${{ github.sha }}" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$RELEASE_DIR/.metadata.json"
+
+            # Atomically switch current symlink to new version
+            ln -sfn "versions/$VERSION_ID" "$APP_DIR/hbuilds/current.new"
+            mv -Tf "$APP_DIR/hbuilds/current.new" "$APP_DIR/hbuilds/current"
+
+            # Signal Passenger to restart Node.js server
+            mkdir -p "$APP_DIR/hbuilds/current/nodejs/tmp"
+            touch "$APP_DIR/hbuilds/current/nodejs/tmp/restart.txt"
+
+            # Gracefully stop running next-server worker so LiteSpeed Passenger spawns new version immediately
+            pkill -u "${{ secrets.SSH_USER }}" -f next-server || true
+
+            # Cleanup older releases (keep latest 5)
+            cd "$APP_DIR/hbuilds/versions"
+            ls -dt gh-* manual-* 2>/dev/null | tail -n +6 | xargs rm -rf 2>/dev/null || true
+
+            echo "=== Deployment $VERSION_ID is now LIVE! ==="
