@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import pithalLogo from "../../../public/images/brand/pithal-logo.png";
 import { ArrowRight, ChevronRight, Globe, Mail, MapPin, Phone } from "lucide-react";
 import {
   FaFacebookF,
@@ -66,9 +67,7 @@ function BrandMark() {
       <Image
         alt="Pithal Machines Ltd. - Solutions That Drive Growth"
         className="h-auto w-full"
-        height={220}
-        src="/images/brand/pithal-logo.png"
-        width={947}
+        src={pithalLogo}
       />
     </Link>
   );
@@ -254,7 +253,7 @@ export function Footer() {
                   Our experts are ready to help.
                 </p>
                 <a
-                  className="shrink-0 flex items-center gap-2.5 bg-secondary text-white px-5 py-3 rounded-xl text-sm font-black tracking-wide shadow-md hover:bg-[#ea580c] transition-all duration-300 hover:scale-[1.03]"
+                  className="shrink-0 flex items-center gap-2.5 bg-secondary text-white px-5 py-3 rounded-xl text-sm font-black tracking-wide shadow-md hover:bg-[#ABB000] transition-all duration-300 hover:scale-[1.03]"
                   href="tel:+919887537129"
                 >
                   <Phone aria-hidden size={18} className="shrink-0" />

@@ -698,7 +698,7 @@ export default function ContactUsPage() {
                     className="group relative overflow-hidden flex flex-col bg-white border border-slate-200 p-6 rounded-xl hover:shadow-xl transition-all duration-500 hover:border-primary justify-between min-h-[220px]"
                   >
                     {/* Sliding Background */}
-                    <div className="absolute inset-0 bg-[#092a5c]/95 backdrop-blur-sm -translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:translate-y-0 z-0" />
+                    <div className="absolute inset-0 bg-[#0C2862]/95 backdrop-blur-sm -translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:translate-y-0 z-0" />
 
                     <div className="space-y-4 relative z-10">
                       {/* Top icon in orange outlined circle */}
@@ -1128,7 +1128,7 @@ export default function ContactUsPage() {
                   >
                     {/* Top Row: Icon + Department */}
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-50 text-secondary shrink-0">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary/10 text-secondary shrink-0">
                         <DIcon size={26} strokeWidth={1.5} />
                       </div>
                       <div className="flex flex-col">
@@ -1248,10 +1248,10 @@ export default function ContactUsPage() {
               {industryNeeds.map((need, i) => (
                 <div
                   key={i}
-                  className="group relative overflow-hidden bg-white p-8 rounded-2xl border border-slate-200/60 shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(3,27,64,0.08)] hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center"
+                  className="group relative overflow-hidden bg-white p-8 rounded-2xl border border-slate-200/60 shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(12, 40, 98,0.08)] hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center"
                 >
                   {/* Sliding Accent Background */}
-                  <div className="absolute top-0 left-0 w-full h-[4px] bg-[#fa5902] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <div className="absolute top-0 left-0 w-full h-[4px] bg-[#ABB000] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
                   {/* Icon circle */}
                   <div className="flex h-20 w-20 items-center justify-center rounded-full bg-slate-50 border border-slate-100/80 mb-6 shrink-0 group-hover:bg-primary group-hover:border-primary transition-all duration-500">
@@ -1342,7 +1342,7 @@ export default function ContactUsPage() {
                       className="flex flex-col items-center text-center relative group cursor-pointer"
                     >
                       {/* Main Circle Icon Box */}
-                      <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-white mb-5 shrink-0 z-10 group-hover:scale-105 group-hover:shadow-[0_10px_30px_rgba(250,89,2,0.12)] transition-all duration-500">
+                      <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-white mb-5 shrink-0 z-10 group-hover:scale-105 group-hover:shadow-[0_10px_30px_rgba(171, 176, 0,0.12)] transition-all duration-500">
                         {/* Full gray border */}
                         <div className="absolute inset-0 rounded-full border border-slate-200"></div>
                         {/* Partial Orange Arc (Top-Left) - Rotates on hover */}
@@ -1846,7 +1846,7 @@ export default function ContactUsPage() {
                 </div>
                 <a
                   href="mailto:info@pithalmachine.com?subject=Schedule%20a%20Visit"
-                  className="bg-secondary hover:bg-orange-600 text-white text-[12px] font-bold uppercase tracking-wider py-2.5 px-4 rounded transition-colors flex items-center justify-center gap-2"
+                  className="bg-secondary hover:opacity-90 text-white text-[12px] font-bold uppercase tracking-wider py-2.5 px-4 rounded transition-colors flex items-center justify-center gap-2"
                 >
                   SCHEDULE A VISIT <ArrowRight size={14} />
                 </a>
@@ -1886,7 +1886,7 @@ export default function ContactUsPage() {
               {/* Content Box */}
               <div className="relative z-20 p-6 md:p-8 lg:p-10 max-w-3xl text-left">
                 {/* Orange Icon Badge */}
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-50 text-secondary mb-6">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary/10 text-secondary mb-6">
                   <MessageSquare
                     size={28}
                     fill="currentColor"
@@ -1922,7 +1922,7 @@ export default function ContactUsPage() {
                   {/* Send Inquiry Button */}
                   <a
                     href="#contact1"
-                    className="flex items-center justify-center gap-2.5 bg-white border border-secondary text-secondary hover:bg-orange-50 text-[12px] font-bold tracking-wide px-6 py-3.5 rounded-md transition-colors shadow-sm"
+                    className="flex items-center justify-center gap-2.5 bg-white border border-secondary text-secondary hover:bg-secondary/10 text-[12px] font-bold tracking-wide px-6 py-3.5 rounded-md transition-colors shadow-sm"
                   >
                     <Mail size={16} strokeWidth={2} />
                     SEND INQUIRY

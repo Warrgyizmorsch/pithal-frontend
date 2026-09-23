@@ -23,7 +23,7 @@ export default function BlogLoading() {
                 className="animate-pulse bg-white border border-slate-200 rounded-2xl overflow-hidden p-6 space-y-4 shadow-sm"
               >
                 <div className="h-48 bg-slate-100 rounded-xl w-full"></div>
-                <div className="h-4 w-1/4 bg-orange-100 rounded"></div>
+                <div className="h-4 w-1/4 bg-secondary/20 rounded"></div>
                 <div className="h-6 w-5/6 bg-slate-200 rounded"></div>
                 <div className="h-4 w-full bg-slate-100 rounded"></div>
                 <div className="h-4 w-2/3 bg-slate-100 rounded"></div>

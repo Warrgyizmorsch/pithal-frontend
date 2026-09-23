@@ -6,6 +6,7 @@ import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
+import pithalLogo from "../../../public/images/brand/pithal-logo.png";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,9 +64,8 @@ export function MobileMenu() {
             <Image
               alt="Pithal Machines Ltd."
               className="h-auto w-[140px]"
-              height={220}
-              src="/images/brand/pithal-logo.png"
-              width={947}
+              priority
+              src={pithalLogo}
             />
           </Link>
           <button

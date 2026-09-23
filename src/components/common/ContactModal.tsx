@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/common/Button";
 
 const fieldStyle =
-  "mt-2 h-11 w-full rounded-lg border border-primary/20 bg-white px-3 text-xs md:text-sm font-normal text-text-dark outline-none transition-[border-color,box-shadow] placeholder:text-text-muted focus:border-secondary focus:shadow-[0_0_0_3px_rgba(250,89,2,0.10)]";
+  "mt-2 h-11 w-full rounded-lg border border-primary/20 bg-white px-3 text-xs md:text-sm font-normal text-text-dark outline-none transition-[border-color,box-shadow] placeholder:text-text-muted focus:border-secondary focus:shadow-[0_0_0_3px_rgba(171, 176, 0,0.10)]";
 
 const labelStyle = "block text-xs md:text-sm font-bold text-primary";
 

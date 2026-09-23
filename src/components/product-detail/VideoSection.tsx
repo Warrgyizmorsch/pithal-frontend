@@ -49,12 +49,12 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
                 <li key={feature.title} className="flex items-start gap-5">
                   {/* Icon Box */}
                   <div
-                    className="flex shrink-0 items-center justify-center rounded-xl bg-[#fa5902]/[0.03]"
+                    className="flex shrink-0 items-center justify-center rounded-xl bg-[#ABB000]/[0.03]"
                     style={{
                       width: 60,
                       height: 60,
-                      border: "1.5px solid rgba(250, 89, 2, 0.15)",
-                      color: "#fa5902"
+                      border: "1.5px solid rgba(171, 176, 0, 0.15)",
+                      color: "#ABB000"
                     }}
                   >
                     {(() => {
@@ -102,7 +102,7 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
             className="border border-border bg-[#f8fafc] p-3.5 self-start"
             style={{
               borderRadius: "16px",
-              boxShadow: "0 20px 45px rgba(3, 27, 64, 0.06)",
+              boxShadow: "0 20px 45px rgba(12, 40, 98, 0.06)",
             }}
           >
             {/* Video Player */}
@@ -119,12 +119,12 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
               {/* Large central play button */}
               <button
                 aria-label={data.button.label}
-                className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#fa5902] text-white shadow-2xl transition-transform hover:scale-105"
+                className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#ABB000] text-white shadow-2xl transition-transform hover:scale-105"
                 style={{
                   width: 76,
                   height: 76,
                   border: "4px solid #ffffff",
-                  boxShadow: "0 10px 30px rgba(250, 89, 2, 0.5)",
+                  boxShadow: "0 10px 30px rgba(171, 176, 0, 0.5)",
                 }}
               >
                 <Play fill="#ffffff" stroke="none" style={{ width: 28, height: 28, marginLeft: "4px" }} />
@@ -134,7 +134,7 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
               <div
                 className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-5 py-3"
                 style={{
-                  background: "linear-gradient(to top, rgba(3, 27, 64, 0.95) 0%, rgba(3, 27, 64, 0.4) 70%, transparent 100%)",
+                  background: "linear-gradient(to top, rgba(12, 40, 98, 0.95) 0%, rgba(12, 40, 98, 0.4) 70%, transparent 100%)",
                 }}
               >
                 {/* Left Controls */}
@@ -157,7 +157,7 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
                   {/* Background track */}
                   <div style={{ width: "100%", height: "4px", backgroundColor: "rgba(255, 255, 255, 0.2)", borderRadius: "2px" }} />
                   {/* Filled track */}
-                  <div style={{ position: "absolute", left: 0, top: "50%", transform: "translateY(-50%)", width: "40%", height: "4px", backgroundColor: "#fa5902", borderRadius: "2px" }} />
+                  <div style={{ position: "absolute", left: 0, top: "50%", transform: "translateY(-50%)", width: "40%", height: "4px", backgroundColor: "#ABB000", borderRadius: "2px" }} />
                   {/* Handle */}
                   <div
                     style={{
@@ -167,9 +167,9 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
                       transform: "translate(-50%, -50%)",
                       width: "10px",
                       height: "10px",
-                      backgroundColor: "#fa5902",
+                      backgroundColor: "#ABB000",
                       borderRadius: "50%",
-                      boxShadow: "0 0 6px rgba(250, 89, 2, 0.8)"
+                      boxShadow: "0 0 6px rgba(171, 176, 0, 0.8)"
                     }}
                   />
                 </div>
@@ -206,12 +206,12 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
             <div className="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3 flex-1 min-w-0">
                 <div
-                  className="flex shrink-0 items-center justify-center rounded-xl bg-[#fa5902]/[0.05]"
+                  className="flex shrink-0 items-center justify-center rounded-xl bg-[#ABB000]/[0.05]"
                   style={{
                     width: 44,
                     height: 44,
-                    border: "1.5px solid rgba(250, 89, 2, 0.15)",
-                    color: "#fa5902"
+                    border: "1.5px solid rgba(171, 176, 0, 0.15)",
+                    color: "#ABB000"
                   }}
                 >
                   <Film size={20} strokeWidth={2} />
@@ -250,7 +250,7 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
                     whiteSpace: "nowrap"
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "rgba(250, 89, 2, 0.05)";
+                    e.currentTarget.style.backgroundColor = "rgba(171, 176, 0, 0.05)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = "transparent";

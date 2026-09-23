@@ -145,7 +145,7 @@ function HeroSection() {
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:mt-7 w-full sm:w-auto justify-center lg:justify-start">
               <Button
-                className="min-h-[50px] rounded-md px-5 text-[11px] shadow-[0_14px_28px_rgba(250,89,2,0.24)] sm:min-h-[52px] sm:px-6 sm:text-[12px] w-full sm:w-auto justify-center"
+                className="min-h-[50px] rounded-md px-5 text-[11px] shadow-[0_14px_28px_rgba(171, 176, 0,0.24)] sm:min-h-[52px] sm:px-6 sm:text-[12px] w-full sm:w-auto justify-center"
                 href={hero.ctas[0].href}
                 variant="primary"
               >
@@ -156,7 +156,7 @@ function HeroSection() {
                 <ArrowRight aria-hidden size={19} />
               </Button>
               <Button
-                className="min-h-[50px] rounded-md border-secondary/35 bg-white/95 px-5 text-[11px] shadow-[0_12px_22px_rgba(3,27,64,0.09)] sm:min-h-[52px] sm:px-6 sm:text-[12px] w-full sm:w-auto justify-center"
+                className="min-h-[50px] rounded-md border-secondary/35 bg-white/95 px-5 text-[11px] shadow-[0_12px_22px_rgba(12, 40, 98,0.09)] sm:min-h-[52px] sm:px-6 sm:text-[12px] w-full sm:w-auto justify-center"
                 href={hero.ctas[1].href}
                 variant="outlineNavy"
               >
@@ -168,7 +168,7 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="overflow-hidden z-20 rounded-xl bg-white shadow-[0_18px_42px_rgba(3,27,64,0.18)] sm:rounded-2xl">
+        <div className="overflow-hidden z-20 rounded-xl bg-white shadow-[0_18px_42px_rgba(12, 40, 98,0.18)] sm:rounded-2xl">
           <div className="grid grid-cols-2 divide-x divide-y divide-border sm:grid-cols-3 lg:grid-cols-[repeat(5,minmax(0,1fr))_1.75fr] lg:divide-y-0">
             {stats.map((stat) => (
               <article
@@ -195,10 +195,10 @@ function HeroSection() {
             <article className="relative col-span-2 min-h-[76px] overflow-hidden bg-primary-dark text-white sm:col-span-1 sm:min-h-[82px] lg:min-h-[92px]">
               <div
                 aria-hidden
-                className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(250,89,2,0.18),transparent_35%)]"
+                className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(171, 176, 0,0.18),transparent_35%)]"
               />
               <div className="relative flex h-full min-h-[76px] items-center gap-3 p-3 sm:min-h-[82px] sm:p-4 lg:min-h-[92px] lg:p-2 lg:gap-2 xl:p-4 xl:gap-3">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary text-white shadow-[0_12px_22px_rgba(250,89,2,0.25)] lg:h-9 lg:w-9 xl:h-11 xl:w-11">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary text-white shadow-[0_12px_22px_rgba(171, 176, 0,0.25)] lg:h-9 lg:w-9 xl:h-11 xl:w-11">
                   <Play
                     fill="currentColor"
                     size={17}
@@ -291,7 +291,7 @@ function WhoWeAreSection() {
           {/* ── Right Column: Image Grid ── */}
           <div className="flex flex-col gap-2">
             {/* Top wide image */}
-            <div className="image-hover relative h-[320px] overflow-hidden rounded-lg shadow-[0_16px_36px_rgba(3,27,64,0.12)] sm:h-[380px] group/img1">
+            <div className="image-hover relative h-[320px] overflow-hidden rounded-lg shadow-[0_16px_36px_rgba(12, 40, 98,0.12)] sm:h-[380px] group/img1">
               <Image
                 alt="Pithal Machines manufacturing floor with crushing equipment"
                 className="object-cover transition-transform duration-700 group-hover/img1:scale-[1.03]"
@@ -302,7 +302,7 @@ function WhoWeAreSection() {
             </div>
             {/* Bottom row: two images side-by-side */}
             <div className="grid grid-cols-2 gap-2">
-              <div className="image-hover relative h-[190px] overflow-hidden rounded-lg shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[220px] group/img2">
+              <div className="image-hover relative h-[190px] overflow-hidden rounded-lg shadow-[0_10px_24px_rgba(12, 40, 98,0.10)] sm:h-[220px] group/img2">
                 <Image
                   alt="Pithal Machines facility exterior"
                   className="object-cover transition-transform duration-700 group-hover/img2:scale-[1.04]"
@@ -311,7 +311,7 @@ function WhoWeAreSection() {
                   src="/images/about/our-foundation-2.png"
                 />
               </div>
-              <div className="image-hover relative h-[190px] overflow-hidden rounded-lg shadow-[0_10px_24px_rgba(3,27,64,0.10)] sm:h-[220px] group/img3">
+              <div className="image-hover relative h-[190px] overflow-hidden rounded-lg shadow-[0_10px_24px_rgba(12, 40, 98,0.10)] sm:h-[220px] group/img3">
                 <Image
                   alt="Pithal engineers reviewing technical blueprints"
                   className="object-cover transition-transform duration-700 group-hover/img3:scale-[1.04]"
@@ -325,7 +325,7 @@ function WhoWeAreSection() {
         </div>
 
         {/* ── Bottom Feature Cards Row ── */}
-        <div className="mt-9 overflow-hidden rounded-2xl border border-border bg-white shadow-[0_10px_30px_rgba(3,27,64,0.07)]">
+        <div className="mt-9 overflow-hidden rounded-2xl border border-border bg-white shadow-[0_10px_30px_rgba(12, 40, 98,0.07)]">
           <div className="grid divide-y divide-border sm:grid-cols-2 sm:divide-y-0 sm:divide-x lg:grid-cols-4">
             {experience.metrics.map((metric) => (
               <article className="flex gap-4 p-6" key={metric.title}>
@@ -362,7 +362,7 @@ function VisionMissionSection() {
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #092a5c 1px, transparent 1px), linear-gradient(to bottom, #092a5c 1px, transparent 1px)",
+            "linear-gradient(to right, #0C2862 1px, transparent 1px), linear-gradient(to bottom, #0C2862 1px, transparent 1px)",
           backgroundSize: "44px 44px",
         }}
       />
@@ -380,12 +380,12 @@ function VisionMissionSection() {
       <Container className="relative z-10">
         {/* ── Header ── */}
         <div className="mx-auto max-w-2xl text-center mb-10">
-          <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] text-[#031b40] font-black tracking-tight uppercase">
+          <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] text-[#0C2862] font-black tracking-tight uppercase">
             {visionMission.title}
           </h2>
           <span
             aria-hidden
-            className="mx-auto mt-4 block h-[3px] w-12 bg-[#fa5902]"
+            className="mx-auto mt-4 block h-[3px] w-12 bg-[#ABB000]"
           />
           {visionMission.subtitle && (
             <p className="mt-4 text-base text-text-muted whitespace-pre-line">
@@ -399,10 +399,10 @@ function VisionMissionSection() {
           <div className="grid md:grid-cols-2 gap-5 items-stretch">
             {/* ▌ Vision Card (Dark Navy) */}
             <div className="relative z-[2] flex">
-              <div className="w-full bg-[#031b40] text-white border-l-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pr-16 shadow-lg md:clip-vision transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl group/vision">
+              <div className="w-full bg-[#0C2862] text-white border-l-[6px] border-[#ABB000] flex items-center p-8 md:p-12 md:pr-16 shadow-lg md:clip-vision transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl group/vision">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 w-full">
                   {/* Custom Double Ring Icon Container */}
-                  <div className="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-[#fa5902]/40 p-2">
+                  <div className="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-[#ABB000]/40 p-2">
                     <div className="w-full h-full rounded-full border border-white/10 flex items-center justify-center bg-white/[0.02]">
                       {/* Custom Mountain with Flag SVG */}
                       <svg
@@ -417,8 +417,8 @@ function VisionMissionSection() {
                         <line x1="12" y1="3" x2="12" y2="12" />
                         <path
                           d="M12 3l6 2.5-6 2.5V3z"
-                          fill="#fa5902"
-                          stroke="#fa5902"
+                          fill="#ABB000"
+                          stroke="#ABB000"
                         />
                         <path d="M3 20l7-9 5 5 2-2 4 6" />
                         <path d="M2 20h20" />
@@ -431,7 +431,7 @@ function VisionMissionSection() {
                     <p className="text-2xl font-black tracking-wider text-white uppercase">
                       <strong>{vision.title}</strong>
                     </p>
-                    <span className="block w-8 h-[3px] bg-[#fa5902] mt-2 mb-4 mx-auto sm:mx-0 transition-all duration-300 group-hover/vision:w-16" />
+                    <span className="block w-8 h-[3px] bg-[#ABB000] mt-2 mb-4 mx-auto sm:mx-0 transition-all duration-300 group-hover/vision:w-16" />
                     <p className="text-[14px] sm:text-[15px] leading-[1.65] text-white/80 font-medium">
                       {vision.text}
                     </p>
@@ -442,13 +442,13 @@ function VisionMissionSection() {
 
             {/* ▌ Mission Card (White) */}
             <div className="relative z-[1] flex">
-              <div className="w-full bg-white text-[#031b40] border-r-[6px] border-[#fa5902] flex items-center p-8 md:p-12 md:pl-16 shadow-lg md:clip-mission-card transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl group/mission">
+              <div className="w-full bg-white text-[#0C2862] border-r-[6px] border-[#ABB000] flex items-center p-8 md:p-12 md:pl-16 shadow-lg md:clip-mission-card transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl group/mission">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 w-full">
                   {/* Custom Double Ring Icon Container */}
-                  <div className="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-dashed border-[#fa5902]/30 p-2">
-                    <div className="w-full h-full rounded-full border border-[#031b40]/10 flex items-center justify-center bg-gray-50/50">
+                  <div className="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-dashed border-[#ABB000]/30 p-2">
+                    <div className="w-full h-full rounded-full border border-[#0C2862]/10 flex items-center justify-center bg-gray-50/50">
                       <Cog
-                        className="w-[72px] h-[72px] text-[#031b40] animate-[spin_8s_linear_infinite] group-hover/mission:animate-[spin_1.5s_linear_infinite]"
+                        className="w-[72px] h-[72px] text-[#0C2862] animate-[spin_8s_linear_infinite] group-hover/mission:animate-[spin_1.5s_linear_infinite]"
                         strokeWidth={1.5}
                       />
                     </div>
@@ -456,11 +456,11 @@ function VisionMissionSection() {
 
                   {/* Content */}
                   <div className="text-center sm:text-left flex-1">
-                    <p className="text-2xl font-black tracking-wider text-[#031b40] uppercase">
+                    <p className="text-2xl font-black tracking-wider text-[#0C2862] uppercase">
                       <strong>{mission.title}</strong>
                     </p>
-                    <span className="block w-8 h-[3px] bg-[#fa5902] mt-2 mb-4 mx-auto sm:mx-0 transition-all duration-300 group-hover/mission:w-16" />
-                    <p className="text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/70 font-medium">
+                    <span className="block w-8 h-[3px] bg-[#ABB000] mt-2 mb-4 mx-auto sm:mx-0 transition-all duration-300 group-hover/mission:w-16" />
+                    <p className="text-[14px] sm:text-[15px] leading-[1.65] text-[#0C2862]/70 font-medium">
                       {mission.text}
                     </p>
                   </div>
@@ -471,11 +471,11 @@ function VisionMissionSection() {
 
           {/* ▌ Center Bottom Skewed Navy Tab with Orange Slashes */}
           <div className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[2px] z-10">
-            <div className="bg-[#031b40] border-[3px] border-white px-8 py-3.5 skew-x-[-28deg] flex items-center gap-[5px] shadow-md rounded-tl-sm">
+            <div className="bg-[#0C2862] border-[3px] border-white px-8 py-3.5 skew-x-[-28deg] flex items-center gap-[5px] shadow-md rounded-tl-sm">
               {[0, 1, 2].map((i) => (
                 <span
                   key={i}
-                  className="block h-[11px] w-[5.5px] bg-[#fa5902] skew-x-[-5deg]"
+                  className="block h-[11px] w-[5.5px] bg-[#ABB000] skew-x-[-5deg]"
                 />
               ))}
             </div>
@@ -524,7 +524,7 @@ function WhyChooseSection() {
         className="pointer-events-none absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #092a5c 1px, transparent 1px), linear-gradient(to bottom, #092a5c 1px, transparent 1px)",
+            "linear-gradient(to right, #0C2862 1px, transparent 1px), linear-gradient(to bottom, #0C2862 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -542,11 +542,11 @@ function WhyChooseSection() {
         >
           <path
             d="M100 30a70 70 0 1 1 0 140 70 70 0 0 1 0-140Zm0 20a50 50 0 1 0 0 100 50 50 0 0 0 0-100Z"
-            fill="#092a5c"
+            fill="#0C2862"
           />
           <path
             d="M93 0h14v30H93V0Zm0 170h14v30H93v-30ZM0 93h30v14H0V93Zm170 0h30v14h-30V93ZM28 28l10 10-21 21-10-10L28 28Zm134 134 10 10-21 21-10-10 21-21ZM162 28l-10 10 21 21 10-10-21-21ZM28 162l-10 10 21 21 10-10-21-21Z"
-            fill="#092a5c"
+            fill="#0C2862"
           />
         </svg>
       </div>
@@ -554,11 +554,11 @@ function WhyChooseSection() {
       <Container className="relative">
         {/* ── Header ── */}
         <div className="mx-auto max-w-3xl text-center mb-10">
-          <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] font-black uppercase tracking-tight text-[#031b40]">
+          <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] font-black uppercase tracking-tight text-[#0C2862]">
             {whyChoose.title}{" "}
-            <span className="text-[#fa5902]">{whyChoose.highlight}</span>
+            <span className="text-[#ABB000]">{whyChoose.highlight}</span>
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/75 font-medium">
+          <p className="mt-4 max-w-2xl mx-auto text-[14px] sm:text-[15px] leading-[1.65] text-[#0C2862]/75 font-medium">
             {whyChoose.subtitle}
           </p>
         </div>
@@ -567,18 +567,18 @@ function WhyChooseSection() {
         <MobileCarousel className="mx-auto mt-9 gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-[1520px]">
           {whyChoose.cards.map((card) => (
             <article
-              className="group relative flex items-start gap-6 rounded-xl border border-slate-100 bg-white p-8 md:p-9 shadow-[0_12px_38px_rgba(3,27,64,0.04)] transition-all duration-300 hover:shadow-[0_16px_44px_rgba(3,27,64,0.08)] hover:-translate-y-1.5 overflow-hidden"
+              className="group relative flex items-start gap-6 rounded-xl border border-slate-100 bg-white p-8 md:p-9 shadow-[0_12px_38px_rgba(12, 40, 98,0.04)] transition-all duration-300 hover:shadow-[0_16px_44px_rgba(12, 40, 98,0.08)] hover:-translate-y-1.5 overflow-hidden"
               key={card.title}
             >
               {/* Bottom sliding train line */}
-              <div className="absolute bottom-0 inset-x-0 h-[4px] bg-[#fa5902] overflow-hidden">
+              <div className="absolute bottom-0 inset-x-0 h-[4px] bg-[#ABB000] overflow-hidden">
                 <span className="absolute inset-0 bg-primary translate-x-[-100%] transition-transform duration-500 ease-out group-hover:translate-x-0" />
               </div>
               {/* Hexagon Container */}
               <div className="relative shrink-0 w-28 h-28 flex items-center justify-center">
                 <svg
                   viewBox="0 0 100 100"
-                  className="absolute inset-0 w-full h-full text-[#031b40]/5 fill-[#f8fafc] transition-colors duration-300 group-hover:text-[#fa5902]/10"
+                  className="absolute inset-0 w-full h-full text-[#0C2862]/5 fill-[#f8fafc] transition-colors duration-300 group-hover:text-[#ABB000]/10"
                 >
                   <polygon
                     points="50,3 97,27 97,73 50,97 3,73 3,27"
@@ -600,12 +600,12 @@ function WhyChooseSection() {
 
               {/* Content */}
               <div className="min-w-0 flex-1">
-                <h3 className="text-lg font-black uppercase tracking-wider text-[#031b40] leading-[1.3]">
+                <h3 className="text-lg font-black uppercase tracking-wider text-[#0C2862] leading-[1.3]">
                   {card.title}
                 </h3>
                 <span
                   aria-hidden
-                  className="mt-2 block h-[3px] w-6 bg-[#fa5902]"
+                  className="mt-2 block h-[3px] w-6 bg-[#ABB000]"
                 />
                 <p className="mt-3 text-[15px] leading-[1.65] text-slate-500 font-medium">
                   {card.text}
@@ -639,7 +639,7 @@ function WhyChooseSection() {
                 <span
                   key={i}
                   aria-hidden
-                  className="inline-block h-[34px] w-[9px] skew-x-[-22deg] bg-[#fa5902]"
+                  className="inline-block h-[34px] w-[9px] skew-x-[-22deg] bg-[#ABB000]"
                 />
               ))}
             </span>
@@ -658,7 +658,7 @@ function WhyChooseSection() {
               {Array.from({ length: 36 }).map((_, i) => (
                 <span
                   key={i}
-                  className="inline-block h-[3px] w-[3px] rounded-full bg-[#fa5902]"
+                  className="inline-block h-[3px] w-[3px] rounded-full bg-[#ABB000]"
                 />
               ))}
             </div>
@@ -693,11 +693,11 @@ function ManufacturingSection() {
         <svg className="h-full w-full" fill="none" viewBox="0 0 200 200">
           <path
             d="M100 30a70 70 0 1 1 0 140 70 70 0 0 1 0-140Zm0 20a50 50 0 1 0 0 100 50 50 0 0 0 0-100Z"
-            fill="#092a5c"
+            fill="#0C2862"
           />
           <path
             d="M93 0h14v30H93V0Zm0 170h14v30H93v-30ZM0 93h30v14H0V93Zm170 0h30v14h-30V93ZM28 28l10 10-21 21-10-10L28 28Zm134 134 10 10-21 21-10-10 21-21ZM162 28l-10 10 21 21 10-10-21-21ZM28 162l-10 10 21 21 10-10-21-21Z"
-            fill="#092a5c"
+            fill="#0C2862"
           />
         </svg>
       </div>
@@ -705,27 +705,27 @@ function ManufacturingSection() {
       <Container className="relative">
         {/* ── Header ── */}
         <div className="mx-auto max-w-3xl text-center mb-10">
-          <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] font-black uppercase tracking-tight text-[#031b40]">
+          <h2 className="headline text-[38px] md:text-[46px] leading-[1.1] font-black uppercase tracking-tight text-[#0C2862]">
             {manufacturing.title}{" "}
-            <span className="text-[#fa5902]">{manufacturing.highlight}</span>
+            <span className="text-[#ABB000]">{manufacturing.highlight}</span>
           </h2>
           <span
             aria-hidden
-            className="mx-auto mt-4 block h-[3px] w-12 bg-[#fa5902]"
+            className="mx-auto mt-4 block h-[3px] w-12 bg-[#ABB000]"
           />
-          <p className="mx-auto mt-4 max-w-3xl text-[14px] sm:text-[15px] leading-[1.65] text-[#031b40]/75 font-medium">
+          <p className="mx-auto mt-4 max-w-3xl text-[14px] sm:text-[15px] leading-[1.65] text-[#0C2862]/75 font-medium">
             {manufacturing.subtitle}
           </p>
         </div>
 
         {/* ── Steps Horizontal Block ── */}
-        <div className="mx-auto mt-8 grid grid-cols-2 md:grid-cols-5 border border-slate-100 bg-white shadow-[0_8px_30px_rgba(3,27,64,0.03)] rounded-xl py-6 divide-y md:divide-y-0 md:divide-x divide-slate-100 max-w-[1520px]">
+        <div className="mx-auto mt-8 grid grid-cols-2 md:grid-cols-5 border border-slate-100 bg-white shadow-[0_8px_30px_rgba(12, 40, 98,0.03)] rounded-xl py-6 divide-y md:divide-y-0 md:divide-x divide-slate-100 max-w-[1520px]">
           {manufacturing.steps.map((step) => (
             <div
               className="group/step flex flex-col items-center gap-4 px-3 py-3 text-center transition-all duration-300 hover:bg-slate-50/30 cursor-default"
               key={step.title}
             >
-              <span className="flex h-24 w-24 items-center justify-center rounded-full bg-slate-50/50 transition-all duration-300 group-hover/step:-translate-y-1.5 group-hover/step:shadow-sm group-hover/step:bg-[#fa5902]/5">
+              <span className="flex h-24 w-24 items-center justify-center rounded-full bg-slate-50/50 transition-all duration-300 group-hover/step:-translate-y-1.5 group-hover/step:shadow-sm group-hover/step:bg-[#ABB000]/5">
                 <Image
                   src={
                     stepFlaticons[step.icon] ?? "/icons/reliable-performace.png"
@@ -736,7 +736,7 @@ function ManufacturingSection() {
                   className="object-contain transition-transform duration-300 group-hover/step:scale-110"
                 />
               </span>
-              <p className="text-[11px] font-black uppercase tracking-wider text-[#031b40] leading-[1.3] px-2 transition-colors duration-300 group-hover/step:text-[#fa5902]">
+              <p className="text-[11px] font-black uppercase tracking-wider text-[#0C2862] leading-[1.3] px-2 transition-colors duration-300 group-hover/step:text-[#ABB000]">
                 {step.title}
               </p>
             </div>
@@ -747,11 +747,11 @@ function ManufacturingSection() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5 max-w-[1520px] mx-auto">
           {manufacturing.cards.map((card) => (
             <article
-              className="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm md:shadow-[0_12px_38px_rgba(3,27,64,0.03)] hover:shadow-md md:hover:shadow-[0_16px_44px_rgba(3,27,64,0.06)] transition-all duration-300 hover:-translate-y-1 relative flex flex-col h-full"
+              className="group overflow-hidden rounded-xl border border-slate-100 bg-white shadow-sm md:shadow-[0_12px_38px_rgba(12, 40, 98,0.03)] hover:shadow-md md:hover:shadow-[0_16px_44px_rgba(12, 40, 98,0.06)] transition-all duration-300 hover:-translate-y-1 relative flex flex-col h-full"
               key={card.title}
             >
               {/* Bottom sliding train line */}
-              <div className="absolute bottom-0 inset-x-0 h-[4px] bg-[#fa5902] overflow-hidden">
+              <div className="absolute bottom-0 inset-x-0 h-[4px] bg-[#ABB000] overflow-hidden">
                 <span className="absolute inset-0 bg-primary translate-x-[-100%] transition-transform duration-500 ease-out group-hover:translate-x-0" />
               </div>
               <div className="image-hover relative aspect-square w-full overflow-hidden shrink-0">
@@ -766,9 +766,9 @@ function ManufacturingSection() {
               <div className="p-5 flex-1 flex flex-col">
                 <span
                   aria-hidden
-                  className="block h-[3px] w-7 bg-[#fa5902] mb-3"
+                  className="block h-[3px] w-7 bg-[#ABB000] mb-3"
                 />
-                <p className="text-[13.5px] font-black uppercase text-[#031b40] tracking-wide mb-2.5 leading-snug">
+                <p className="text-[13.5px] font-black uppercase text-[#0C2862] tracking-wide mb-2.5 leading-snug">
                   <strong>{card.title}</strong>
                 </p>
                 <p className="text-[12.5px] leading-[1.55] text-slate-500 font-medium">
@@ -807,7 +807,7 @@ function GlobalSection() {
         className="pointer-events-none absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #092a5c 1px, transparent 1px), linear-gradient(to bottom, #092a5c 1px, transparent 1px)",
+            "linear-gradient(to right, #0C2862 1px, transparent 1px), linear-gradient(to bottom, #0C2862 1px, transparent 1px)",
           backgroundSize: "44px 44px",
         }}
       />
@@ -851,7 +851,7 @@ function GlobalSection() {
           </div>
 
           {/* Right callout card */}
-          <div className="rounded-xl border border-border/80 bg-white p-6 shadow-[0_8px_28px_rgba(3,27,64,0.08)]">
+          <div className="rounded-xl border border-border/80 bg-white p-6 shadow-[0_8px_28px_rgba(12, 40, 98,0.08)]">
             <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-primary/15 text-secondary">
               <Icon name={globalData.callout.icon} size={28} />
             </span>
@@ -868,7 +868,7 @@ function GlobalSection() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {globalData.cards.map((card) => (
             <article
-              className="group relative flex gap-4 rounded-xl border border-border/80 bg-white p-5 shadow-sm md:shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-md md:hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
+              className="group relative flex gap-4 rounded-xl border border-border/80 bg-white p-5 shadow-sm md:shadow-[0_6px_24px_rgba(12, 40, 98,0.06)] transition-shadow duration-300 hover:shadow-md md:hover:shadow-[0_14px_36px_rgba(12, 40, 98,0.10)]"
               key={card.title}
             >
               {/* Orange top bar */}
@@ -910,7 +910,7 @@ function IndustriesSection() {
         className="pointer-events-none absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #092a5c 1px, transparent 1px), linear-gradient(to bottom, #092a5c 1px, transparent 1px)",
+            "linear-gradient(to right, #0C2862 1px, transparent 1px), linear-gradient(to bottom, #0C2862 1px, transparent 1px)",
           backgroundSize: "44px 44px",
         }}
       />
@@ -927,11 +927,11 @@ function IndustriesSection() {
         >
           <path
             d="M100 30a70 70 0 1 1 0 140 70 70 0 0 1 0-140Zm0 20a50 50 0 1 0 0 100 50 50 0 0 0 0-100Z"
-            fill="#092a5c"
+            fill="#0C2862"
           />
           <path
             d="M93 0h14v30H93V0Zm0 170h14v30H93v-30ZM0 93h30v14H0V93Zm170 0h30v14h-30V93ZM28 28l10 10-21 21-10-10L28 28Zm134 134 10 10-21 21-10-10 21-21ZM162 28l-10 10 21 21 10-10-21-21ZM28 162l-10 10 21 21 10-10-21-21Z"
-            fill="#092a5c"
+            fill="#0C2862"
           />
         </svg>
       </div>
@@ -956,7 +956,7 @@ function IndustriesSection() {
         <MobileCarousel className="mt-9 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {industries.cards.map((industry) => (
             <article
-              className="group relative overflow-visible rounded-xl border border-border/80 bg-white shadow-sm md:shadow-[0_6px_24px_rgba(3,27,64,0.06)] transition-shadow duration-300 hover:shadow-md md:hover:shadow-[0_14px_36px_rgba(3,27,64,0.10)]"
+              className="group relative overflow-visible rounded-xl border border-border/80 bg-white shadow-sm md:shadow-[0_6px_24px_rgba(12, 40, 98,0.06)] transition-shadow duration-300 hover:shadow-md md:hover:shadow-[0_14px_36px_rgba(12, 40, 98,0.10)]"
               key={industry.title}
             >
               {/* Image */}
@@ -972,7 +972,7 @@ function IndustriesSection() {
 
               {/* Overlapping icon circle */}
               <div className="flex justify-center -mt-8 relative z-[2]">
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-dark text-white ring-[3px] ring-white shadow-[0_4px_12px_rgba(3,27,64,0.2)]">
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-dark text-white ring-[3px] ring-white shadow-[0_4px_12px_rgba(12, 40, 98,0.2)]">
                   <Icon name={industry.icon} className="text-white" size={30} />
                 </span>
               </div>
@@ -1079,7 +1079,7 @@ function ValuesSection() {
                     cx="50"
                     cy="50"
                     r="45"
-                    stroke="#031b40"
+                    stroke="#0C2862"
                     strokeWidth="1.5"
                     strokeDasharray="35 180"
                     fill="none"
@@ -1089,7 +1089,7 @@ function ValuesSection() {
                     cx="50"
                     cy="50"
                     r="45"
-                    stroke="#ff5a00"
+                    stroke="#ABB000"
                     strokeWidth="1.5"
                     strokeDasharray="55 180"
                     strokeDashoffset="-115"
@@ -1105,7 +1105,7 @@ function ValuesSection() {
               <span className="absolute top-[50%] left-[2%] h-1 w-1 rounded-full bg-slate-300" />
 
               {/* The Image inside */}
-              <div className="absolute inset-[36px] overflow-hidden rounded-full border-[6px] border-white shadow-[0_16px_36px_rgba(3,27,64,0.12)] bg-white">
+              <div className="absolute inset-[36px] overflow-hidden rounded-full border-[6px] border-white shadow-[0_16px_36px_rgba(12, 40, 98,0.12)] bg-white">
                 <Image
                   alt="Pithal manufacturing plant floor values"
                   className="object-cover"
@@ -1161,12 +1161,12 @@ function ValuesSection() {
               />
 
               {/* Little dots at endpoints */}
-              <circle cx="200" cy="375" r="2.5" fill="#ff5a00" />
-              <circle cx="240" cy="445" r="2.5" fill="#031b40" />
-              <circle cx="260" cy="535" r="2.5" fill="#ff5a00" />
-              <circle cx="260" cy="585" r="2.5" fill="#031b40" />
-              <circle cx="200" cy="725" r="2.5" fill="#ff5a00" />
-              <circle cx="240" cy="655" r="2.5" fill="#031b40" />
+              <circle cx="200" cy="375" r="2.5" fill="#ABB000" />
+              <circle cx="240" cy="445" r="2.5" fill="#0C2862" />
+              <circle cx="260" cy="535" r="2.5" fill="#ABB000" />
+              <circle cx="260" cy="585" r="2.5" fill="#0C2862" />
+              <circle cx="200" cy="725" r="2.5" fill="#ABB000" />
+              <circle cx="240" cy="655" r="2.5" fill="#0C2862" />
             </svg>
           </div>
 
@@ -1180,7 +1180,7 @@ function ValuesSection() {
                   key={item.title}
                 >
                   {/* Badge circle with icon */}
-                  <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200/80 shadow-[0_6px_16px_rgba(3,27,64,0.04)]">
+                  <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white border border-slate-200/80 shadow-[0_6px_16px_rgba(12, 40, 98,0.04)]">
                     {/* Rotating decorative orange arc segment */}
                     <svg
                       className="absolute -inset-[1px] h-[66px] w-[66px] -rotate-[120deg] pointer-events-none animate-[spin_4.5s_linear_infinite]"
@@ -1223,7 +1223,7 @@ function ValuesSection() {
       </Container>
 
       {/* Navy Bottom Banner */}
-      <div className="relative z-10 border-t border-white/10 bg-[#031b40] py-6 text-white">
+      <div className="relative z-10 border-t border-white/10 bg-[#0C2862] py-6 text-white">
         <Container>
           <div className="grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-white/15">
             {values.bottomItems.map((item, idx) => {
@@ -1380,10 +1380,10 @@ function renderCertIcon(iconName: string) {
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle cx="32" cy="32" r="26" fill="#f8fafc" />
-          <circle cx="32" cy="32" r="22" stroke="#071c3b" strokeWidth="2.5" />
+          <circle cx="32" cy="32" r="22" stroke="#0C2862" strokeWidth="2.5" />
           <path
             d="M10 32h44M32 10c7 7 10.5 14.4 10.5 22S39 47 32 54M32 10C25 17 21.5 24.4 21.5 32S25 47 32 54M14 20.5h36M14 43.5h36"
-            stroke="#071c3b"
+            stroke="#0C2862"
             strokeLinecap="round"
             strokeWidth="1.8"
           />
@@ -1393,7 +1393,7 @@ function renderCertIcon(iconName: string) {
             width="39"
             height="19"
             rx="2.5"
-            fill="#071c3b"
+            fill="#0C2862"
           />
           <text
             x="32"
@@ -1419,22 +1419,22 @@ function renderCertIcon(iconName: string) {
         >
           <path
             d="m21 39.5-4.7 16.8L32 48l15.7 8.3L43 39.5"
-            fill="#fa5902"
-            stroke="#071c3b"
+            fill="#ABB000"
+            stroke="#0C2862"
             strokeWidth="2.4"
             strokeLinejoin="round"
           />
-          <path d="m26.8 42.3-2 7 7.2-3.8 7.2 3.8-2-7" fill="#071c3b" />
-          <circle cx="32" cy="27" r="20" fill="#071c3b" />
+          <path d="m26.8 42.3-2 7 7.2-3.8 7.2 3.8-2-7" fill="#0C2862" />
+          <circle cx="32" cy="27" r="20" fill="#0C2862" />
           <circle
             cx="32"
             cy="27"
             r="15.2"
-            stroke="#fa5902"
+            stroke="#ABB000"
             strokeDasharray="3 3"
             strokeWidth="2"
           />
-          <circle cx="32" cy="27" r="8.5" fill="#fa5902" />
+          <circle cx="32" cy="27" r="8.5" fill="#ABB000" />
           <path
             d="m27.7 26.8 3 3.2 6.5-6.8"
             stroke="white"
@@ -1454,31 +1454,31 @@ function renderCertIcon(iconName: string) {
         >
           <path
             d="M13 29C14.8 16 25 9.5 32 9.5S49.2 16 51 29H13Z"
-            fill="#fa5902"
-            stroke="#071c3b"
+            fill="#ABB000"
+            stroke="#0C2862"
             strokeLinejoin="round"
             strokeWidth="2.3"
           />
           <path
             d="M26 10.8c3.8-1.2 8.2-1.2 12 0v10H26v-10Z"
             fill="white"
-            stroke="#071c3b"
+            stroke="#0C2862"
             strokeWidth="2"
           />
           <path
             d="M32 9v12"
-            stroke="#fa5902"
+            stroke="#ABB000"
             strokeLinecap="round"
             strokeWidth="2"
           />
           <path
             d="M10 29h44v5H10v-5Z"
             fill="white"
-            stroke="#071c3b"
+            stroke="#0C2862"
             strokeLinejoin="round"
             strokeWidth="2.3"
           />
-          <rect x="16" y="36" width="32" height="13" rx="6.5" fill="#071c3b" />
+          <rect x="16" y="36" width="32" height="13" rx="6.5" fill="#0C2862" />
           <circle cx="25" cy="42.5" r="3.2" fill="white" />
           <circle cx="39" cy="42.5" r="3.2" fill="white" />
           <path
@@ -1497,12 +1497,12 @@ function renderCertIcon(iconName: string) {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle cx="25" cy="36" r="15" fill="#071c3b" />
+          <circle cx="25" cy="36" r="15" fill="#0C2862" />
           {Array.from({ length: 10 }).map((_, index) => (
             <path
               d="M25 16v6"
               key={index}
-              stroke="#071c3b"
+              stroke="#0C2862"
               strokeLinecap="round"
               strokeWidth="4"
               transform={`rotate(${index * 36} 25 36)`}
@@ -1511,7 +1511,7 @@ function renderCertIcon(iconName: string) {
           <circle cx="25" cy="36" r="6" fill="#eef3f8" />
           <path
             d="M25 27v9l7 4"
-            stroke="#fa5902"
+            stroke="#ABB000"
             strokeLinecap="round"
             strokeWidth="2.4"
           />
@@ -1522,22 +1522,22 @@ function renderCertIcon(iconName: string) {
             height="38"
             rx="3.5"
             fill="white"
-            stroke="#071c3b"
+            stroke="#0C2862"
             strokeWidth="2.2"
           />
           <path
             d="M39 22h12M39 30h12M39 38h7"
-            stroke="#071c3b"
+            stroke="#0C2862"
             strokeLinecap="round"
             strokeWidth="2"
           />
           <path
             d="M39 22h8M39 38h5"
-            stroke="#fa5902"
+            stroke="#ABB000"
             strokeLinecap="round"
             strokeWidth="2.5"
           />
-          <circle cx="53" cy="46" r="7" fill="#fa5902" />
+          <circle cx="53" cy="46" r="7" fill="#ABB000" />
           <path
             d="m49.7 45.8 2.3 2.3 4-4.4"
             stroke="white"
@@ -1560,26 +1560,26 @@ function renderCertIcon(iconName: string) {
             cy="32"
             r="24"
             fill="white"
-            stroke="#fa5902"
+            stroke="#ABB000"
             strokeWidth="3"
           />
           <path
             d="M14 46c11-4.5 18-15.5 22-31 3 13.5 8.5 23.5 15.5 30"
-            stroke="#071c3b"
+            stroke="#0C2862"
             strokeLinecap="round"
             strokeWidth="2.4"
           />
           <path
             d="M35 20c-8.6-6.7-18.2-8.4-29-5.2 1.2 10.2 6.2 17.6 15 22.2 4.2-6.5 8.9-12 14-17Z"
             fill="#59b83f"
-            stroke="#071c3b"
+            stroke="#0C2862"
             strokeLinejoin="round"
             strokeWidth="2"
           />
           <path
             d="M35 20c7.2-4.2 14.8-5 23-2.5-1.1 8.3-5.1 14.3-12 18-3.2-5.5-6.9-10.7-11-15.5Z"
             fill="#7ed957"
-            stroke="#071c3b"
+            stroke="#0C2862"
             strokeLinejoin="round"
             strokeWidth="2"
           />
@@ -1711,7 +1711,7 @@ function CertificationsSection() {
         </Container>
       </div>
 
-      <div className="relative border-y border-white/70 bg-[#edf2f7] pb-[35px] shadow-[inset_0_18px_38px_rgba(3,27,64,0.08)]">
+      <div className="relative border-y border-white/70 bg-[#edf2f7] pb-[35px] shadow-[inset_0_18px_38px_rgba(12, 40, 98,0.08)]">
         <Container className="relative z-10">
           <div className="relative mx-auto flex w-full max-w-[820px] items-center justify-center py-3">
             <span className="absolute inset-x-0 top-1/2 h-px bg-primary/10" />
@@ -1728,8 +1728,8 @@ function CertificationsSection() {
                 className="relative flex flex-col items-center px-4 text-center lg:min-h-[178px] lg:border-r lg:border-primary/10 lg:last:border-r-0"
                 key={item.title}
               >
-                <div className="relative flex h-[86px] w-[86px] items-center justify-center rounded-full border border-white bg-[#f4f7fb] shadow-[inset_0_2px_8px_rgba(3,27,64,0.05),0_12px_26px_rgba(3,27,64,0.09)]">
-                  <span className="absolute inset-[8px] rounded-full border border-primary/5 bg-white shadow-[0_7px_15px_rgba(3,27,64,0.08)]" />
+                <div className="relative flex h-[86px] w-[86px] items-center justify-center rounded-full border border-white bg-[#f4f7fb] shadow-[inset_0_2px_8px_rgba(12, 40, 98,0.05),0_12px_26px_rgba(12, 40, 98,0.09)]">
+                  <span className="absolute inset-[8px] rounded-full border border-primary/5 bg-white shadow-[0_7px_15px_rgba(12, 40, 98,0.08)]" />
                   <svg
                     aria-hidden
                     className="absolute inset-[-3px] h-[92px] w-[92px] -rotate-90"
@@ -1740,7 +1740,7 @@ function CertificationsSection() {
                       cy="55"
                       fill="none"
                       r="51"
-                      stroke="#fa5902"
+                      stroke="#ABB000"
                       strokeDasharray="74 260"
                       strokeLinecap="round"
                       strokeWidth="2.2"
@@ -1779,7 +1779,7 @@ function CertificationsSection() {
             ))}
           </div>
 
-          <div className="relative mt-6 overflow-hidden rounded-2xl border border-white bg-white/86 px-5 py-4 shadow-[0_18px_34px_rgba(3,27,64,0.12)] sm:px-7">
+          <div className="relative mt-6 overflow-hidden rounded-2xl border border-white bg-white/86 px-5 py-4 shadow-[0_18px_34px_rgba(12, 40, 98,0.12)] sm:px-7">
             <div className="relative z-10 grid gap-5 lg:grid-cols-[1fr_0.88fr] lg:items-center">
               <div className="flex gap-5">
                 <span className="headline shrink-0 text-[4.25rem] leading-[0.8] text-secondary">

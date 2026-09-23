@@ -16,7 +16,7 @@ export default function BlogPostLoading() {
               {/* Main Article skeleton */}
               <div className="bg-white rounded-2xl p-5 sm:p-8 lg:p-10 border border-slate-200 shadow-sm space-y-6">
                 {/* Badge */}
-                <div className="h-6 w-32 bg-orange-100 rounded-full"></div>
+                <div className="h-6 w-32 bg-secondary/20 rounded-full"></div>
                 {/* Title */}
                 <div className="h-10 w-4/5 bg-slate-200 rounded-lg"></div>
                 <div className="h-6 w-2/3 bg-slate-100 rounded"></div>

@@ -9,6 +9,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { Container } from "@/components/common/Container";
 
+import pithalLogo from "../../../public/images/brand/pithal-logo.png";
+
 const navLinkClass =
   "relative flex shrink-0 items-center gap-1.5 whitespace-nowrap bg-transparent py-5 text-primary transition-colors after:absolute after:bottom-[1rem] after:left-0 after:h-[3px] after:w-0 after:bg-secondary after:transition-all hover:text-secondary hover:after:w-full 2xl:gap-2";
 
@@ -24,10 +26,8 @@ function Logo() {
     <Image
       alt="Pithal Machines Ltd."
       className="h-auto w-[160px] min-[380px]:w-[180px] sm:w-[210px] xl:w-[230px] 2xl:w-[240px]"
-      height={220}
       priority
-      src="/images/brand/pithal-logo.png"
-      width={947}
+      src={pithalLogo}
     />
   );
 }
