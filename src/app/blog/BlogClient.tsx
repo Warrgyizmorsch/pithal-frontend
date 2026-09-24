@@ -418,28 +418,28 @@ const expertQuotes = [
     author: "VIKRAM DESHPANDE",
     role: "Chief Engineering Officer",
     experience: "24+ Years Experience",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
+    image: "/images/blog/vikram-deshpande.jpg"
   },
   {
     quote: "Plant efficiency is achieved through the right combination of engineering design, equipment reliability and continuous optimization.",
     author: "RAHUL SATHE",
     role: "Head of Plant Design",
     experience: "20+ Years Experience",
-    image: "https://randomuser.me/api/portraits/men/44.jpg"
+    image: "/images/blog/rahul-sathe.jpg"
   },
   {
     quote: "Preventive maintenance and regular inspections are the key to minimizing downtime and maximizing the life of critical equipment.",
     author: "SACHIN KULKARNI",
     role: "Head of Maintenance",
     experience: "22+ Years Experience",
-    image: "https://randomuser.me/api/portraits/men/55.jpg"
+    image: "/images/blog/sachin-kulkarni.jpg"
   },
   {
     quote: "The future of our industry lies in smart engineering, automation and sustainable practices that create value while reducing environmental impact.",
     author: "AMIT MHATRE",
     role: "Head of Technology",
     experience: "18+ Years Experience",
-    image: "https://randomuser.me/api/portraits/men/66.jpg"
+    image: "/images/blog/amit-mhatre.jpg"
   }
 ];
 
