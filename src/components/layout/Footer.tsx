@@ -222,7 +222,7 @@ export function Footer() {
                   href={href}
                   key={label}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                 >
                   <Icon aria-hidden size={20} />
                 </Link>

@@ -3,6 +3,7 @@ import { Oswald, Roboto_Condensed } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ContactModal } from "@/components/common/ContactModal";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 
 const headingFont = Oswald({
   subsets: ["latin"],
@@ -64,6 +65,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* End Google Tag Manager (noscript) */}
         {children}
         <ContactModal />
+        <WhatsAppButton />
       </body>
     </html>
   );
