@@ -10,11 +10,13 @@ import WhyChoosePithal from "@/components/home/WhyChoosePithal";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { FAQSection } from "@/components/home/FAQSection";
+import { ProductLongContent } from "@/components/product-detail/ProductLongContent";
+import { homeLongContent } from "@/data/homeData";
 
 export const metadata: Metadata = {
-  title: "Stone Crusher Machine Manufacturer in India | Pithal Machines",
+  title: "Stone Crusher Manufacturer In India | Industrial Stone Crusher Machines – Pithal Machines",
   description:
-    "Pithal Machines designs and manufactures jaw crushers, cone crusher, vibrating screens and complete crushing plants for mining, quarrying and aggregate production in India.",
+    "Leading stone crusher manufacturer in India. Get best prices on 150 TPH, 250 TPH & 500 TPH stone crushers. Industrial-grade, reliable & affordable.",
 };
 
 export default function Home() {
@@ -30,6 +32,7 @@ export default function Home() {
         <ProcessTimeline />
         <VideoShowcase />
         <FAQSection />
+        <ProductLongContent data={homeLongContent} />
         <ContactCTA />
       </main>
       <Footer />

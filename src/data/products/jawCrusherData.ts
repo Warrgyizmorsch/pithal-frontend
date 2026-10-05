@@ -389,83 +389,135 @@ export const jawCrusherData: ProductDetailData = {
     { title: "EXPERT SUPPORT", text: "Our team is here to help with any questions.", icon: "headphones" },
   ],
   faqSection: {
-
     title: "Prime Jaw Crusher",
     highlight: "FAQs",
     faqs: [
       {
-        question: "What is a Prime Jaw Crusher Machine?",
-        answer: "A Prime Jaw Crusher Machine is a heavy-duty primary crushing machine designed to reduce large rocks and hard materials into smaller, manageable sizes. It is commonly used in mining, quarrying, aggregate production and construction applications."
+        question: "What is a jaw crusher used for?",
+        answer:
+          "A jaw crusher reduces large rocks, minerals, concrete and other hard materials into smaller sizes. It is commonly used in mining, quarrying, construction, recycling and aggregate production.",
       },
       {
-        question: "What materials can a Prime Jaw Crusher crush?",
-        answer: "The Prime Jaw Crusher is designed to handle hard and abrasive materials such as rocks, stones and various mineral materials. The suitable material depends on the machine configuration and application requirements."
+        question: "Is a jaw crusher suitable for mining?",
+        answer:
+          "Yes. A jaw crusher for mining is suitable for many hard and abrasive ores, including iron ore, copper ore, gold-bearing rock and manganese ore.",
       },
       {
-        question: "What is the capacity of the Prime Jaw Crusher Machine?",
-        answer: "The capacity can vary depending on the selected model and configuration. Prime Jaw Crusher Machines can be configured for different production requirements, so the appropriate model should be selected based on feed material, feed size and required output."
+        question: "What affects jaw crusher price?",
+        answer:
+          "Jaw crusher price depends on machine size, capacity, feed opening, motor power, jaw plates, mobility, automation, transport and installation requirements.",
       },
       {
-        question: "Where is the Prime Jaw Crusher used?",
-        answer: "Prime Jaw Crushers are commonly used in mining, quarrying, aggregate production, construction, cement and other industries that require efficient primary crushing."
+        question: "Can a jaw crusher process granite?",
+        answer:
+          "Yes. Jaw crushers are commonly used for primary granite crushing. A suitable heavy-duty model and wear-resistant jaw plates may be required.",
       },
       {
-        question: "How does a Prime Jaw Crusher Machine work?",
-        answer: "The machine uses compressive force between a fixed jaw and a moving jaw to crush incoming material. Large rocks are fed through the crusher, reduced in size and discharged through the bottom of the crushing chamber."
+        question: "Can a jaw crusher crush concrete?",
+        answer:
+          "Yes, selected concrete and demolition material can be processed. Reinforcing steel and other contaminants should be managed before crushing.",
       },
       {
-        question: "What are the benefits of using a Prime Jaw Crusher?",
-        answer: "Key benefits include efficient primary crushing, robust construction, reliable performance, reduced maintenance requirements and suitability for demanding industrial applications."
+        question: "How do I request a quotation?",
+        answer:
+          "Share your material type, maximum feed size, required capacity, desired output size, project location and preferred stationary or mobile configuration.",
       },
-      {
-        question: "How do I choose the right Prime Jaw Crusher Machine?",
-        answer: "The right machine depends on factors such as material type, feed size, required capacity, desired output size and operating conditions. Pithal Machine can help recommend a suitable configuration based on your specific requirements."
-      },
-      {
-        question: "How can I get the price of a Prime Jaw Crusher Machine?",
-        answer: "The price depends on the model, capacity, configuration and application requirements. Contact Pithal Machine with your crushing requirements to get a suitable machine recommendation and quotation."
-      },
-      {
-        question: "How can I request a quotation for the Prime Jaw Crusher?",
-        answer: "You can contact Pithal Machine directly through the enquiry form or contact details provided on the website. Share your required capacity, material type, feed size and application to receive a suitable recommendation and quotation."
-      }
-    ]
+    ],
   },
   longContent: {
-    content: `## Prime Jaw Crusher Machine for Efficient Primary Crushing
-The Prime Jaw Crusher Machine is designed for efficient primary crushing of hard, abrasive, and large-sized materials. With a robust construction and reliable crushing mechanism, it is suitable for demanding applications in mining, quarrying, construction, aggregate production, and material processing.
+    content: `## Jaw Crusher Manufacturer for Mining and Quarrying
 
-The crusher is designed to handle challenging feed materials while maintaining consistent crushing performance. Its heavy-duty design makes it a dependable solution for industries that require continuous crushing and efficient material reduction.
+When you need to crush hard rock, minerals, concrete or natural stone, choosing the right machine is essential. A reliable jaw crusher reduces large materials into smaller sizes for construction, aggregate production and further processing.
 
-### Why Choose Prime Jaw Crusher Machine
-Choosing the right jaw crusher can have a direct impact on productivity, operating costs, and overall plant performance. The Prime Jaw Crusher is engineered to provide a combination of crushing efficiency, durability, and dependable operation.
+As an experienced jaw crusher manufacturer, we supply durable crushing equipment for mining, quarrying, construction, recycling and infrastructure projects. Our machines are designed for dependable performance, easy maintenance and long service life in demanding working conditions.
 
-Its strong construction allows the machine to perform effectively in demanding working environments, while its practical design supports easier operation and maintenance. This makes the Prime Jaw Crusher a suitable choice for businesses looking for reliable primary crushing equipment.
+Whether you need a primary jaw crusher for mining or a jaw stone crusher machine for a quarry, we can recommend a suitable solution based on your material, capacity and output requirements.
 
-### Jaw Crusher Machine for Mining and Quarrying
-Mining and quarrying operations often require equipment capable of processing hard and abrasive materials. The Prime Jaw Crusher Machine is designed for primary crushing applications where large feed material needs to be reduced to a manageable size for further processing.
+### What Is a Jaw Crusher?
 
-Its robust construction and powerful crushing action make it suitable for processing materials such as rocks, aggregates and other hard materials used in industrial applications.
+A jaw crusher is a compression-type crushing machine used to break large rocks and other hard materials. It works with two jaw plates: one fixed and one moving.
 
-### Efficient Material Reduction
-The primary function of a jaw crusher is to reduce large-sized feed material into smaller and more manageable pieces. The Jaw Crusher uses a powerful jaw crushing mechanism to apply compressive force to the material, helping achieve efficient size reduction.
+Material enters the crushing chamber through the top opening. The moving jaw presses the material against the fixed jaw, breaking it into smaller pieces. The crushed material then moves downward and exits through the discharge opening.
 
-The machine can be integrated into a wider crushing plant where crushed material is further processed using secondary and tertiary crushing equipment.
+The final output depends on the crusher model, jaw plate design, material type, feed size and discharge setting. Jaw crushers are commonly used as primary crushers because they can handle large feed material and tough rocks.
 
-### Built for Demanding Industrial Applications
-Our Jaw Crusher is designed for industries where reliable equipment performance is essential. From mining and quarrying to aggregate production and construction material processing, the machine can support a wide range of primary crushing requirements.
+### Our Prime Jaw Crusher Machine
 
-Its heavy-duty design helps provide dependable operation under demanding conditions while supporting consistent production requirements.
+Our Prime jaw crusher machine range is designed for mines, quarries, aggregate plants and construction sites. Each model is selected based on the application, including material hardness, maximum feed size, required capacity and desired output.
 
-### Reliable Jaw Crusher Machine for Long-Term Operation
-Durability is an important consideration when selecting industrial crushing equipment. Pithal Jaw Crusher is manufactured with a focus on structural strength, reliable component and long-term operational performance.
+Strong frames, durable jaw plates, reliable shafts and heavy-duty bearings support stable operation. The equipment can be supplied as a standalone crusher or integrated with feeders, conveyors, vibrating screens and secondary crushers.
 
-With appropriate maintenance and operating practices, the machine can provide dependable service while helping businesses maintain efficient crushing operations.
+A properly selected jaw crusher helps improve plant productivity while reducing blockages, excessive wear and unexpected downtime.
 
-### Get the Right Jaw Crusher Machine for Your Application
-Every crushing operation has different requirements based on material type, feed size, required output and production capacity. Selecting the appropriate jaw crusher configuration is therefore important for achieving efficient plant performance.
+### Primary Jaw Crusher Applications
 
-[Pithal Machine](https://www.pithalmachine.com/) can help you identify a suitable Prime Jaw Crusher configuration based on your application and crushing requirements. Contact our team to discuss your requirements and get detailed technical information and pricing.`
+A primary jaw crusher is installed at the first stage of a crushing plant. It receives large blasted rock, run-of-mine ore or quarry material and reduces it before secondary crushing and screening.
+
+Primary jaw crushers are used for granite, basalt, limestone, sandstone, river stone, iron ore, copper ore, manganese ore and quartz. The crusher size should be selected according to the maximum feed size, material properties, production capacity and required output.
+
+The correct primary crusher improves the performance of the complete plant. An undersized machine may cause overloading, while an unnecessarily large machine can increase investment and operating costs.
+
+### Jaw Crusher for Mining
+
+A jaw crusher for mining must operate reliably under heavy loads and challenging conditions. Mining operations often process hard and abrasive materials for long working hours.
+
+Our jaw crushers can be used for the initial crushing of iron ore, copper ore, gold-bearing rock, manganese ore and other minerals. The crushed material can then move to secondary crushers, screens, grinding equipment or mineral processing systems.
+
+Hard and abrasive ores may require heavy-duty construction and wear-resistant jaw plates. The right selection depends on the ore characteristics, feed size, required capacity and plant design.
+
+### Jaw Stone Crusher for Quarrying
+
+A jaw stone crusher is widely used in quarries to reduce large natural rocks into useful aggregate sizes. It can process granite, basalt, limestone, sandstone, gravel and river stone.
+
+The crushed material may be used for road construction, concrete, asphalt, railway ballast, drainage systems and general building work.
+
+A quarry operator should select a jaw stone crusher based on the largest feed material size and required production. Compact models are suitable for smaller projects, while large quarries usually need heavy-duty machines with wide feed openings and higher capacity.
+
+### Jaw Crusher Price and Cost
+
+The jaw crusher price depends on the machine size, feed opening, capacity, motor power and configuration. A small crusher for a low-capacity plant will cost less than a heavy-duty primary crusher designed for continuous mining operation.
+
+The total jaw crusher cost may also include transport, installation, electrical connection, feeders, conveyors, screens, spare parts and wear components.
+
+Mobile jaw crushers may have a higher initial price than stationary models because they include a chassis, tracks or wheels and additional controls. However, they can reduce material transportation and installation requirements on projects where mobility is important.
+
+The lowest purchase price does not always provide the best value. Power consumption, jaw plate life, maintenance requirements, production capacity and technical support should also be considered.
+
+### Choosing the Right Machine
+
+Before selecting a jaw crusher machine, identify the material you want to process. Granite, basalt, limestone, iron ore and recycled concrete may require different jaw plates and operating settings.
+
+The maximum feed size must be suitable for the crusher opening. As a general operating guideline, the largest feed should be kept below the full opening capacity; some manufacturers recommend approximately 80% of the feed opening for effective operation.
+
+You should also confirm the required tonnes-per-hour capacity, desired output size, operating hours and downstream equipment. Moisture and clay content should be reviewed because sticky material may reduce capacity or cause blockages.
+
+A stationary jaw crusher is suitable for a fixed quarry or mining plant. A mobile machine may be better for road construction, demolition recycling or projects where the crushing location changes.
+
+### Maintenance and Safety
+
+Regular maintenance helps extend equipment life and reduce downtime. Operators should inspect jaw plates, cheek plates, toggle components, bearings, belts, fasteners and lubrication points.
+
+Worn jaw plates should be replaced before they affect product size or damage other components. Unusual noise, vibration, overheating or oil leakage should be investigated immediately.
+
+Before maintenance or blockage removal, the machine must be stopped, isolated and secured according to the site’s lockout procedure. Operators should never enter the crushing chamber while the equipment is running.
+
+Correct feed size, steady feeding and avoiding overloading are important for safe and efficient performance.
+
+### Why Choose Pithal Machines?
+
+Pithal Machines is a trusted jaw crusher manufacturer offering durable and efficient crushing solutions for mining, quarrying, construction and aggregate applications.
+
+We help customers select the right jaw crusher based on material type, feed size, capacity, output and plant layout. Along with manufacturing, we provide technical guidance, spare parts support and after-sales service.
+
+From primary jaw crushers to complete plants with feeders, screens and conveyors, [Pithal Machines](https://www.pithalmachine.com/) delivers practical solutions designed for reliable performance and long-term value.
+
+### Request a Quote
+
+Are you looking for reliable jaw crusher manufacturers for mining, quarrying, construction or recycling?
+
+Contact us with your project details. Whether you need a jaw crusher for mining, a primary jaw crusher for a quarry or a jaw stone crusher machine for construction work, our team can recommend a practical solution.
+
+Get in touch today for product information, technical support and a customised jaw crusher price based on your actual requirements.`
   }
 };
 

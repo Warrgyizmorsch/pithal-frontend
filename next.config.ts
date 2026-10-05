@@ -26,6 +26,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/products/m-sand-crusher-plant",
+        destination: "/products/m-sand-plant",
+        permanent: true,
+      },
+      {
+        source: "/products/crusher-machines",
+        destination: "/products/crusher-machine",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
