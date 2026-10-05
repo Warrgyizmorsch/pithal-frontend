@@ -6,7 +6,7 @@ export const mSandPlantData: ProductDetailData = {
     breadcrumb: [
       { label: "Home", href: "/" },
       { label: "Products", href: "/products" },
-      { label: "M-Sand Crusher Plant", href: "/products/m-sand-plant" },
+      { label: "Prime M-Sand Crusher Plant", href: "/products/m-sand-plant" },
     ],
     eyebrow: "M-Sand Manufacturing Solutions",
     title: "M-Sand Crusher",

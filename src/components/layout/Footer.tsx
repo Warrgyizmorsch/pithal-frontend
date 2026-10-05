@@ -166,6 +166,8 @@ export function Footer() {
                 "Prime Vibrating Feeders": "/products/feeders",
                 "Prime Vibrating Screens": "/products/screening-solutions",
                 "Prime Complete Plants": "/products/complete-plants",
+                "Prime M-Sand Crusher Plant": "/products/m-sand-plant",
+                "Prime Crusher Machine": "/products/crusher-machine",
                 "M-Sand Crusher Plant": "/products/m-sand-plant",
                 "Crusher Machine": "/products/crusher-machine",
                 "Spare Parts": "/products",
