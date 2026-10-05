@@ -8,33 +8,35 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "What types of crushing equipment does Pithal Machines offer?",
-    answer: "Pithal Machines provides crushing solutions designed for different material-processing requirements, including crushing plants and equipment for applications such as mining, quarrying, construction and aggregate processing."
+    question: "What is a stone crusher machine?",
+    answer:
+      "A stone crusher machine is equipment used to reduce large rocks and stones into smaller sizes for mining, quarrying, aggregate production, construction and infrastructure applications.",
   },
   {
-    question: "What capacity crushing plants does Pithal Machines provide?",
-    answer: "Our crushing plant solutions can be configured for different production requirements and capacities. Contact our team with your required output, material type and application to discuss the most suitable solution."
+    question: "What factors affect stone crusher machine cost?",
+    answer:
+      "The stone crusher machine cost depends on crusher type, production capacity, material characteristics, feed size, output requirements, number of crushing stages, screening, conveyors and the overall plant configuration.",
   },
   {
-    question: "How do I choose the right crushing plant for my application?",
-    answer: "The right crushing plant depends on factors such as material type, feed size, required output, desired product size, production capacity and application. Our team can help determine a suitable configuration based on your requirements."
+    question: "Which type of stone crusher is suitable for hard rock?",
+    answer:
+      "Jaw crushers are commonly used for primary crushing of hard rock. Cone crushers or other equipment may be used for further reduction depending on the required product size and crushing circuit.",
   },
   {
-    question: "What is the difference between crushing and screening?",
-    answer: "Crushing reduces large rocks and other materials into smaller sizes, while screening separates processed material into different sizes. A combined crushing and screening plant can perform both processes as part of an efficient material-processing operation."
+    question: "What is the difference between a jaw crusher, cone crusher and VSI crusher?",
+    answer:
+      "A jaw crusher is generally used for primary crushing, a cone crusher is commonly used for secondary or tertiary crushing and a VSI crusher is used for fine crushing and particle shaping. The appropriate combination depends on the material and final product requirements.",
   },
   {
-    question: "Can Pithal Machines provide customized crushing plant solutions?",
-    answer: "Yes. Crushing and screening solutions can be configured according to production requirements, material characteristics, application and desired output. Contact Pithal Machines to discuss your specific plant requirements."
+    question: "What should I consider before buying a stone crusher?",
+    answer:
+      "Consider the material type, hardness, abrasiveness, maximum feed size, required production capacity, final product size, number of crushing stages and screening requirements before selecting a stone crusher.",
   },
   {
-    question: "Do Pithal Machines provide after-sales support?",
-    answer: "Pithal Machines provides after-sales support to help customers maintain reliable equipment performance and minimize operational downtime. Contact the team for information about available service and support."
+    question: "Can Pithal Machines provide a complete crushing plant?",
+    answer:
+      "Yes. Pithal Machines provides crushing and screening solutions that can integrate crushers, vibrating screens and conveyor systems according to the production capacity and material-processing requirements of the project.",
   },
-  {
-    question: "How can I get a quote for a crushing or screening plant?",
-    answer: "You can contact Pithal Machines with details such as your required production capacity, material type, application and location. Our team can then discuss the appropriate crushing or screening solution for your requirements."
-  }
 ];
 
 export function FAQSection() {

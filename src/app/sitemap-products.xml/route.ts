@@ -14,8 +14,10 @@ export async function GET() {
     '/products/vibrating-screens',
     '/products/conveyor-systems',
     '/products/complete-plants',
+    '/products/m-sand-plant',
     '/products/feeders',
     '/products/crushers',
+    '/products/crusher-machine',
     '/products/screening-solutions',
   ];
 

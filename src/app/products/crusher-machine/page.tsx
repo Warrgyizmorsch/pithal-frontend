@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Explore reliable crusher machines from Pithal Machines for mining, quarrying and aggregate production. Compare crushing solutions and request a quote today.",
 };
 
-export default function CrushersPage() {
+export default function CrusherMachinePage() {
   return (
     <>
       <Header />
