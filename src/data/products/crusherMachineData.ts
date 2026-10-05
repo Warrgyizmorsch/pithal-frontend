@@ -6,7 +6,7 @@ export const crusherMachineData: ProductDetailData = {
     breadcrumb: [
       { label: "Home", href: "/" },
       { label: "Products", href: "/products" },
-      { label: "Crusher Machine", href: "/products/crusher-machine" },
+      { label: "Prime Crusher Machine", href: "/products/crusher-machine" },
     ],
     title: "Crusher Machine",
     highlightedTitle: "Manufacturer in India",

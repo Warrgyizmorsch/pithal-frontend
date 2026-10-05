@@ -71,13 +71,13 @@ export const products = [
     href: "/products/complete-plants",
   },
   {
-    title: "M-Sand Crusher Plant",
+    title: "Prime M-Sand Crusher Plant",
     description: "Integrated manufactured sand plants engineered for consistent quality and high productivity.",
     image: "/images/products/complete-plants/product-review.png",
     href: "/products/m-sand-plant",
   },
   {
-    title: "Crusher Machine",
+    title: "Prime Crusher Machine",
     description: "Powerful crushing solutions built for high performance, durability and maximum output.",
     image: "/images/products/jaw-crusher/main-machine.png",
     href: "/products/crusher-machine",
@@ -189,7 +189,7 @@ export const processFeatures = [
 ];
 
 export const footerColumns = [
-  { title: "Products", links: ["Prime Jaw Crushers", "Prime UltraRock", "Prime Bucket Crusher", "Prime Cone Crushers", "Prime VSI Crushers", "Prime Vibrating Feeders", "Prime Vibrating Screens", "Prime Complete Plants", "M-Sand Crusher Plant", "Crusher Machine"] },
+  { title: "Products", links: ["Prime Jaw Crushers", "Prime UltraRock", "Prime Bucket Crusher", "Prime Cone Crushers", "Prime VSI Crushers", "Prime Vibrating Feeders", "Prime Vibrating Screens", "Prime Complete Plants", "Prime M-Sand Crusher Plant", "Prime Crusher Machine"] },
   // { title: "Solutions", links: ["Aggregate Production", "Mining & Quarrying", "Construction & Demolition", "Sand & Gravel", "Metallurgy", "Recycling Solutions", "Custom Solutions", "Turnkey Projects"] },
   { title: "Quick Links", links: ["About Us", "Blog", "Careers", "Become a Dealer", "Contact Us"] },
   { title: "Downloads", links: ["Product Brochures", "Technical Catalogues", "User Manuals", "Case Studies", "Product Videos", "Installation Guides"] },
