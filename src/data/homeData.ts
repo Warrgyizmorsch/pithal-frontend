@@ -197,11 +197,7 @@ export const footerColumns = [
 ];
 
 export const homeLongContent = {
-  content: `## Stone Crusher Manufacturer in India
-
-Pithal Machines delivers high-performance industrial stone crushers from 150 TPH to 600 TPH at the best stone crusher machine cost, helping quarries, contractors and infrastructure projects across India buy stone crusher equipment with confidence.
-
-### Stone Crusher Manufacturer in India | Pithal Machines
+  content: `## Stone Crusher Manufacturer in India | Pithal Machines
 
 Pithal Machines is a stone crusher and crushing equipment manufacturer in India, providing crushing and screening solutions for mining, quarrying, aggregate production, construction and infrastructure projects. Our equipment range includes jaw crushers, cone crushers, VSI crushers, vibrating screens and complete crushing plant solutions.
 

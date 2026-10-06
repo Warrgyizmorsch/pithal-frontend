@@ -31,17 +31,16 @@ export function HeroSection() {
       <div className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,.98)_25%,rgba(255,255,255,.78)_43%,rgba(255,255,255,.16)_66%,rgba(255,255,255,0)_100%)] lg:block" />
 
       <div className="relative flex flex-1 flex-col gap-3 px-5 sm:px-8 lg:px-10 pt-7 pb-6 sm:pt-10 sm:pb-8 lg:pt-[2.25rem] lg:pb-8">
-        <div className="relative z-20 max-w-[32rem] xl:max-w-[35rem]">
-          <h1 className="headline text-[clamp(2.45rem,11vw,3.05rem)] leading-[0.96] text-primary italic sm:text-[clamp(3.2rem,5vw,4.45rem)] lg:text-[clamp(3.65rem,4.25vw,4.65rem)]">
-            Crusher Machine
+        <div className="relative z-20 max-w-[32rem] xl:max-w-[36rem]">
+          <h1 className="headline text-[clamp(2.325rem,11vw,2.925rem)] leading-[0.96] text-primary italic sm:text-[clamp(3.2rem,5vw,4.45rem)] lg:text-[clamp(3.65rem,4.25vw,4.65rem)]">
+            Stone Crusher
             <br />
-            <span className="text-secondary">Manufacturers</span>
+            <span className="text-secondary">Manufacturer</span>
             <br />
             in India
-
           </h1>
-          <p className="mt-3 max-w-[28rem] text-[0.95rem] leading-7 text-[#48576c] sm:text-[clamp(1rem,1.1vw,1.1rem)] pt-5">
-            High-performance crushing and screening machinery for mining and construction industries.
+          <p className="mt-3 max-w-[32rem] text-[0.825rem] leading-6 text-[#48576c] sm:text-[clamp(1rem,1.1vw,1.1rem)] sm:leading-7 pt-3 sm:pt-4">
+            Pithal Machines delivers high-performance industrial stone crushers from 150 TPH to 600 TPH at the best stone crusher machine cost, helping quarries, contractors and infrastructure projects across India buy stone crusher equipment with confidence.
           </p>
           <div className="mt-4 flex flex-col gap-3 min-[460px]:flex-row sm:mt-5 sm:gap-4">
             <Button
