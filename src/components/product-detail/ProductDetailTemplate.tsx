@@ -12,10 +12,13 @@ import { VideoSection } from "@/components/product-detail/VideoSection";
 import { ProductFAQ } from "@/components/product-detail/ProductFAQ";
 import { ProductLongContent } from "@/components/product-detail/ProductLongContent";
 import type { ProductDetailData } from "@/data/products/productDetailTypes";
+import { ProductPageSchemas } from "@/components/seo";
 
 export function ProductDetailTemplate({ data }: { data: ProductDetailData }) {
   return (
-    <main>
+    <>
+      <ProductPageSchemas data={data} />
+      <main>
       <ProductHero data={data.hero} />
       <ProductStats section={data.statsSection} stats={data.stats} />
       <ProductIntro data={data.intro} />
@@ -30,5 +33,6 @@ export function ProductDetailTemplate({ data }: { data: ProductDetailData }) {
       {data.faqSection && <ProductFAQ data={data.faqSection} />}
       {data.longContent && <ProductLongContent data={data.longContent} />}
     </main>
+    </>
   );
 }

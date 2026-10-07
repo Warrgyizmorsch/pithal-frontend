@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/common/Button";
 
 const fieldStyle =
-  "mt-2 h-11 w-full rounded-lg border border-primary/20 bg-white px-3 text-xs md:text-sm font-normal text-text-dark outline-none transition-[border-color,box-shadow] placeholder:text-text-muted focus:border-secondary focus:shadow-[0_0_0_3px_rgba(171, 176, 0,0.10)]";
+  "mt-1.5 h-10 sm:h-10.5 w-full rounded-lg border border-primary/20 bg-white px-3 text-xs md:text-sm font-normal text-text-dark outline-none transition-[border-color,box-shadow] placeholder:text-text-muted focus:border-secondary focus:shadow-[0_0_0_3px_rgba(171, 176, 0,0.10)]";
 
 const labelStyle = "block text-xs md:text-sm font-bold text-primary";
 
@@ -17,6 +17,8 @@ export function ContactModal() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
+    phone: "",
     company: "",
     country: "",
     capacity: "",
@@ -93,6 +95,8 @@ export function ContactModal() {
         setSuccess("Thank you! Your quote request has been submitted successfully.");
         setFormData({
           name: "",
+          email: "",
+          phone: "",
           company: "",
           country: "",
           capacity: "",
@@ -154,7 +158,7 @@ export function ContactModal() {
       {/* Modal Content */}
       <div
         className={cn(
-          "relative w-full max-w-4xl max-h-[calc(100dvh-2rem)] overflow-y-auto lg:max-h-[90vh] lg:overflow-visible rounded-2xl border border-primary/30 bg-white shadow-2xl modal-card-scale lg:grid lg:grid-cols-[0.85fr_1.15fr]",
+          "relative w-full max-w-4xl max-h-[calc(100dvh-2rem)] lg:max-h-[92vh] overflow-y-auto rounded-2xl border border-primary/30 bg-white shadow-2xl modal-card-scale lg:grid lg:grid-cols-[0.85fr_1.15fr]",
           isAnimating ? "modal-card-show" : "modal-card-hidden"
         )}
       >
@@ -202,7 +206,7 @@ export function ContactModal() {
           className="bg-white p-6 md:p-8 flex flex-col justify-between"
         >
           <div className="space-y-4">
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2">
               <label className={labelStyle}>
                 Name
                 <input
@@ -230,7 +234,35 @@ export function ContactModal() {
               </label>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className={labelStyle}>
+                Email ID
+                <input
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={fieldStyle}
+                  name="email"
+                  placeholder="your.email@company.com"
+                  type="email"
+                />
+              </label>
+
+              <label className={labelStyle}>
+                Contact No.
+                <input
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className={fieldStyle}
+                  name="phone"
+                  placeholder="+91 98765 43210"
+                  type="tel"
+                />
+              </label>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
               <label className={labelStyle}>
                 Country
                 <select
@@ -278,7 +310,7 @@ export function ContactModal() {
                 required
                 value={formData.requirement}
                 onChange={handleChange}
-                className={`${fieldStyle} h-24 sm:h-20 resize-none py-2`}
+                className={`${fieldStyle} h-20 resize-none py-2`}
                 name="requirement"
                 placeholder="Briefly describe your requirement"
               />

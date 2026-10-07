@@ -15,6 +15,7 @@ import { ProductLongContent } from "@/components/product-detail/ProductLongConte
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { vsiCrusherData } from "@/data/products/vsiCrusherData";
+import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "VSI Crusher Manufacturer in India | Sand Making Machine | Pithal Machines",
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 export default function VsiCrushersPage() {
   return (
     <>
+      <ProductPageSchemas data={vsiCrusherData} />
       <Header />
       <main>
         <ProductHero data={vsiCrusherData.hero} />

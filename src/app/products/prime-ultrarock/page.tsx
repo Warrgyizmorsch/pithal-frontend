@@ -13,6 +13,7 @@ import { VideoSection } from "@/components/product-detail/VideoSection";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { primeUltraRockData } from "@/data/products/primeUltraRockData";
+import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Prime UltraRock | Pithal Machine Pvt.",
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 export default function PrimeUltraRockProductPage() {
   return (
     <>
+      <ProductPageSchemas data={primeUltraRockData} />
       <Header />
       <main>
         <ProductHero data={primeUltraRockData.hero} />

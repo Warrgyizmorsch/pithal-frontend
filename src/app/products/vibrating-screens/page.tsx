@@ -15,6 +15,7 @@ import { ProductLongContent } from "@/components/product-detail/ProductLongConte
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { vibratingScreenData } from "@/data/products/vibratingScreenData";
+import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Vibrating Screen Manufacturer in India | 80–700 TPH | Pithal Machines",
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 export default function VibratingScreensPage() {
   return (
     <>
+      <ProductPageSchemas data={vibratingScreenData} />
       <Header />
       <main>
         <ProductHero data={vibratingScreenData.hero} />

@@ -15,6 +15,7 @@ import { ProductLongContent } from "@/components/product-detail/ProductLongConte
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { primeBucketData } from "@/data/products/primeBucketData";
+import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Bucket Crusher Manufacturer in India | Pithal Machines",
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 export default function PrimeBucketProductPage() {
   return (
     <>
+      <ProductPageSchemas data={primeBucketData} />
       <Header />
       <main>
         <ProductHero data={primeBucketData.hero} />

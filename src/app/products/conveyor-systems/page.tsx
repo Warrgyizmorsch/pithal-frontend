@@ -15,6 +15,7 @@ import { ProductLongContent } from "@/components/product-detail/ProductLongConte
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { conveyorSystemData } from "@/data/products/conveyorSystemData";
+import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Conveyor System for Crushing Plants | Belt Conveyors | Pithal Machines",
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 export default function ConveyorSystemsPage() {
   return (
     <>
+      <ProductPageSchemas data={conveyorSystemData} />
       <Header />
       <main>
         <ProductHero data={conveyorSystemData.hero} />
