@@ -6,6 +6,7 @@ import { ProductCard } from "@/components/common/ProductCard";
 import { HeroNavigation } from "@/components/common/HeroNavigation";
 import { products } from "@/data/homeData";
 import Image from "next/image";
+import { BreadcrumbSchema, WebPageSchema } from "@/components/seo";
 
 const productHeroStats = [
   { value: "8+", label: "Machine Families", desc: "Crushers, screens, feeders and plants" },
@@ -17,6 +18,17 @@ const productHeroStats = [
 export default function ProductsPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Products", href: "/products" },
+        ]}
+      />
+      <WebPageSchema
+        title="Industrial Crushing & Screening Machinery Products | Pithal Machines"
+        description="Explore our complete range of crushing and screening equipment, engineered for reliable output across mining, aggregates, infrastructure and recycling applications."
+        url="/products"
+      />
       <Header />
       <main className="min-h-screen bg-white">
         <section className="relative overflow-hidden bg-white text-primary lg:min-h-[calc(100svh-4.25rem)] xl:min-h-[calc(100svh-5.25rem)]">

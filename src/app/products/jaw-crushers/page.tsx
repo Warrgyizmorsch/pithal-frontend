@@ -15,6 +15,7 @@ import { ProductLongContent } from "@/components/product-detail/ProductLongConte
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { jawCrusherData } from "@/data/products/jawCrusherData";
+import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Jaw Crusher Manufacturer in India| Pithal Machines",
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 export default function JawCrusherProductPage() {
   return (
     <>
+      <ProductPageSchemas data={jawCrusherData} />
       <Header />
       <main>
         <ProductHero data={jawCrusherData.hero} />

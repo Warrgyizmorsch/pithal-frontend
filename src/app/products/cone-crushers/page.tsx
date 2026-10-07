@@ -15,6 +15,7 @@ import { ProductLongContent } from "@/components/product-detail/ProductLongConte
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { coneCrusherData } from "@/data/products/coneCrusherData";
+import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Cone Crusher Manufacturer in India | 80–600 TPH | Pithal Machines",
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 export default function ConeCrusherProductPage() {
   return (
     <>
+      <ProductPageSchemas data={coneCrusherData} />
       <Header />
       <main>
         <ProductHero data={coneCrusherData.hero} />

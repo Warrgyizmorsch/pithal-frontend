@@ -45,6 +45,7 @@ import { Header } from "@/components/layout/Header";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { aboutPageData } from "@/data/aboutPageData";
 import { ProductFAQ } from "@/components/product-detail/ProductFAQ";
+import { AboutPageSchema, BreadcrumbSchema } from "@/components/seo";
 import { cn } from "@/lib/utils";
 
 const icons: Record<string, LucideIcon> = {
@@ -1895,6 +1896,13 @@ function FinalCtaSection() {
 export default function AboutPage() {
   return (
     <>
+      <AboutPageSchema />
+      <BreadcrumbSchema
+        items={[
+          { label: "Home", href: "/" },
+          { label: "About Us", href: "/about" },
+        ]}
+      />
       <Header />
       <main className="min-h-screen bg-white">
         <HeroSection />

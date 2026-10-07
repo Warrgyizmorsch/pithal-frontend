@@ -41,6 +41,7 @@ import { Container } from "@/components/common/Container";
 import { HeroNavigation } from "@/components/common/HeroNavigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ContactPageSchema, BreadcrumbSchema } from "@/components/seo";
 import { cn } from "@/lib/utils";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -573,6 +574,13 @@ export default function ContactUsPage() {
 
   return (
     <>
+      <ContactPageSchema />
+      <BreadcrumbSchema
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Contact Us", href: "/contact" },
+        ]}
+      />
       <Header />
       <main className="min-h-screen bg-slate-50 text-slate-800">
         {/* ========================================================================= */}
