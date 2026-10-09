@@ -53,7 +53,7 @@ export const conveyorSystemData: ProductDetailData = {
     description:
       "Prime Conveyor System is designed to deliver efficient and continuous transportation of bulk materials. Built for demanding applications, this conveyor system supports reliable material movement across mining, quarrying, aggregate production, construction and material-processing operations.",
     image: {
-      src: "/images/products/belt-conveyor/product-review.png",
+      src: "/images/products/prime-conveyor-system.png",
       alt: "Prime Belt Conveyor system product view",
     },
     ctas: [

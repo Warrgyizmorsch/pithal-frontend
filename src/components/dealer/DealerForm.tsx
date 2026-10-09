@@ -92,7 +92,7 @@ export function DealerForm() {
               className="object-cover object-center"
               fill
               sizes="(max-width: 1024px) 100vw, 48vw"
-              src="/images/contact/crushing-plant-contact1.jpg"
+              src="/images/dealer/become-authorized-pithal-dealer.jpg"
             />
             <div
               aria-hidden

@@ -80,7 +80,7 @@ export default function BecomeADealerPage() {
         <section className="relative min-h-[500px] flex items-center overflow-hidden bg-white">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/solutionspage/challenges we solve 14operations.jpg"
+              src="/images/dealer/grow-your-business-with-pithal.png"
               alt="Crushing Plant Blueprint"
               fill
               className="object-cover object-center"

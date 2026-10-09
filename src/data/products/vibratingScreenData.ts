@@ -53,7 +53,7 @@ export const vibratingScreenData: ProductDetailData = {
     description:
       "Prime Vibrating Screens are designed for efficient material separation, high throughput and reliable operation in demanding mining, quarrying, aggregate and crushing applications.",
     image: {
-      src: "/images/products/vibrating-screen/product-review.png",
+      src: "/images/products/prime-vibrating-screen.png",
       alt: "Vibrating screen machine product view",
     },
     ctas: [

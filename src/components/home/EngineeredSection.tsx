@@ -21,7 +21,7 @@ export function EngineeredSection() {
           </div>
         </div>
         <div className="relative min-h-[18rem] border-t-4 border-secondary sm:min-h-[25rem] lg:-mr-10 lg:min-h-full lg:border-l-4 lg:border-t-0 lg:[clip-path:polygon(11%_0,100%_0,100%_100%,0_100%)]">
-          <Image alt="Engineered heavy duty crusher" className="object-cover" fill sizes="(max-width: 1024px) 100vw, 50vw" src="/images/hero/engineered-machine.png" />
+          <Image alt="Engineered heavy duty crusher" className="object-cover" fill sizes="(max-width: 1024px) 100vw, 50vw" src="/images/home/machines-for-crushing-and-screening.png" />
         </div>
       </Container>
     </section>

@@ -922,7 +922,7 @@ export default function SolutionsPage() {
             fill
             preload
             sizes="100vw"
-            src="/solutionspage/ffirst page.jpg"
+            src="/images/solutions/engineered-solutions-for-every-industry.png"
           />
           <div 
             aria-hidden
@@ -1394,7 +1394,7 @@ export default function SolutionsPage() {
               {/* Right Column: Large plant visual */}
               <div className="relative hidden lg:block w-full min-h-[450px] overflow-hidden rounded-2xl border border-slate-200/60 shadow-md">
                 <Image
-                  src="/solutionspage/challenges we solve 5.jpg"
+                  src="/images/solutions/every-challenge-engineered-solution.png"
                   alt="Pithal Machines Crushing Plant"
                   fill
                   className="object-cover"
@@ -1460,7 +1460,7 @@ export default function SolutionsPage() {
             }}
           >
             <Image
-              src="/solutionspage/blueprint_1440x780.png"
+              src="/images/solutions/engineered-around-your-operation.png"
               alt="Engineering Blueprint Background"
               fill
               className="object-contain object-right"
@@ -2065,7 +2065,7 @@ export default function SolutionsPage() {
                 <div className="lg:col-span-5 relative min-h-[320px] sm:min-h-0 sm:aspect-[16/11] w-full rounded-2xl border border-slate-200/60 overflow-hidden shadow-sm">
                   {/* Background Image - positioned properly to prevent cutting off */}
                   <Image
-                    src="/solutionspage/our performance your advantage.jpg"
+                    src="/images/solutions/performance-that-drives-your-success.png"
                     alt="Crushing Plant Equipment"
                     fill
                     className="object-cover object-right-bottom"
@@ -3112,7 +3112,7 @@ export default function SolutionsPage() {
               {/* RIGHT COLUMN: Image */}
               <div className="lg:w-[45%] relative w-full h-[400px] lg:h-[650px] rounded-tl-[100px] rounded-tr-[20px] rounded-b-[20px] overflow-hidden shadow-xl mt-8 lg:mt-0">
                 <img
-                  src="/solutionspage/ready to build ready to perform.jpg"
+                  src="/images/solutions/lets-engineer-your-next-crushing-solution.png"
                   alt="Engineering Professional"
                   className="w-full h-full object-cover"
                 />

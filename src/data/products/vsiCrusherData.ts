@@ -53,7 +53,7 @@ export const vsiCrusherData: ProductDetailData = {
     description:
       "Prime Vertical Shaft Impactor is engineered for efficient crushing, improved particle shape and consistent output. Built to process suitable hard and abrasive materials across mining, quarrying, aggregate production and construction applications.",
     image: {
-      src: "/images/products/vsi-crusher/product-review.png",
+      src: "/images/products/prime-vsi-crusher.png",
       alt: "VSI crusher machine product view",
     },
     ctas: [
