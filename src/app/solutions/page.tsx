@@ -978,12 +978,15 @@ export default function SolutionsPage() {
           <div className="pointer-events-none absolute inset-0 industrial-grid opacity-45" />
           <div className="relative z-10 flex w-full max-w-[1520px] flex-col gap-10 px-5 sm:px-8 lg:px-10 py-6 lg:justify-between lg:py-8">
             <div className="z-20">
-              <div className="max-w-[650px] py-0 lg:py-2">
+              <div className="max-w-[720px] py-0 lg:py-2">
                 <HeroNavigation current="Solutions & Applications" eyebrow="Solutions" />
 
-                <h1 className="headline mb-4 text-[clamp(2.15rem,5.2vw,3.8rem)] uppercase leading-[1.05] tracking-tight text-primary sm:mb-6">
-                  CRUSHING SOLUTIONS FOR <br />
-                  <span className="text-secondary">MINING, AGGREGATES</span> &amp; CONSTRUCTION
+                <h1 className="headline mb-4 text-[clamp(2rem,4.5vw,3.5rem)] uppercase leading-[1.05] tracking-tight text-primary sm:mb-6">
+                  <span className="block sm:whitespace-nowrap">CRUSHING SOLUTIONS</span>
+                  <span className="block sm:whitespace-nowrap">
+                    FOR <span className="text-secondary">MINING, AGGREGATES</span>
+                  </span>
+                  <span className="block sm:whitespace-nowrap">&amp; CONSTRUCTION</span>
                 </h1>
 
                 <p className="mt-8 max-w-[560px] text-sm font-medium leading-6 text-primary md:text-[16px] lg:leading-7">
