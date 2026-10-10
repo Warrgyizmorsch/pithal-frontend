@@ -172,20 +172,20 @@ export const projects = [
 ];
 
 export const processSteps = [
-  { number: "01", title: "Material Input", text: "Raw material is loaded into the hopper by dump trucks or loaders.", image: "/images/process/raw.png", icon: "/icons/material-input.png" },
-  { number: "02", title: "Feed Hopper", text: "Feeder hopper regulates the continuous and uniform flow of materials.", image: "/images/process/feed-hopper.png", icon: "/icons/material-input.png" },
-  { number: "03", title: "Primary Crushing", text: "Prime Jaw Crusher reduces large rocks into smaller, manageable sizes.", image: "/images/process/jaw-crusher.png", icon: "/icons/primary-crushing.png" },
-  { number: "04", title: "Secondary Crushing", text: "Further size reduction using Prime Cone Crusher for consistent output.", image: "/images/process/cone.png", icon: "/icons/secondary-crushing.png" },
-  { number: "05", title: "Screening", text: "Prime Vibrating Screens separate material into different sizes.", image: "/images/process/screen1.png", icon: "/icons/screening.png" },
-  { number: "06", title: "Conveyer Belt", text: "Carries materials to the desired location.", image: "/images/process/stockpile.png", icon: "/icons/stockpile.png" },
-  { number: "07", title: "Final Output", text: "High-quality aggregates ready for various applications.", image: "/images/process/output.png", icon: "/icons/final-output.png" },
+  { number: "01", title: "Material Input", text: "Raw material is loaded into the hopper by dump trucks or loaders.", image: "/images/process/raw.png", icon: "/icons/material-input.png?v=2" },
+  { number: "02", title: "Feed Hopper", text: "Feeder hopper regulates the continuous and uniform flow of materials.", image: "/images/process/feed-hopper.png", icon: "/icons/material-input.png?v=2" },
+  { number: "03", title: "Primary Crushing", text: "Prime Jaw Crusher reduces large rocks into smaller, manageable sizes.", image: "/images/process/jaw-crusher.png", icon: "/icons/primary-crushing.png?v=2" },
+  { number: "04", title: "Secondary Crushing", text: "Further size reduction using Prime Cone Crusher for consistent output.", image: "/images/process/cone.png", icon: "/icons/secondary-crushing.png?v=2" },
+  { number: "05", title: "Screening", text: "Prime Vibrating Screens separate material into different sizes.", image: "/images/process/screen1.png", icon: "/icons/screening.png?v=2" },
+  { number: "06", title: "Conveyer Belt", text: "Carries materials to the desired location.", image: "/images/process/stockpile.png", icon: "/icons/stockpile.png?v=2" },
+  { number: "07", title: "Final Output", text: "High-quality aggregates ready for various applications.", image: "/images/process/output.png", icon: "/icons/final-output.png?v=2" },
 ];
 
 export const processFeatures = [
-  { title: "High Efficiency", text: "Optimized process flow for maximum productivity.", icon: "/icons/high-efficiency.png" },
-  { title: "Reliable Performance", text: "Engineered for continuous operation in tough conditions.", icon: "/icons/reliable-performace.png" },
-  { title: "Consistent Quality", text: "Precise crushing & screening for uniform output.", icon: "/icons/consistance-quality.png" },
-  { title: "Cost Effective", text: "Lower operating cost with higher return on investment.", icon: "/icons/cost-effective.png" },
+  { title: "High Efficiency", text: "Optimized process flow for maximum productivity.", icon: "/icons/high-efficiency.png?v=2" },
+  { title: "Reliable Performance", text: "Engineered for continuous operation in tough conditions.", icon: "/icons/reliable-performace.png?v=2" },
+  { title: "Consistent Quality", text: "Precise crushing & screening for uniform output.", icon: "/icons/consistance-quality.png?v=2" },
+  { title: "Cost Effective", text: "Lower operating cost with higher return on investment.", icon: "/icons/cost-effective.png?v=2" },
 ];
 
 export const footerColumns = [

@@ -1011,7 +1011,7 @@ export default function ContactUsPage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  src="/contactus/manufacturingfcility.jpg"
+                  src="/contactus/manufacturing-facility.png"
                 />
 
                 {/* Bottom Left Label Banner */}
@@ -1617,7 +1617,7 @@ export default function ContactUsPage() {
                   <img
                     alt="Pithal Anand Plant Building exterior"
                     className="w-full h-full object-cover"
-                    src="/contactus/manufacturingfcility.jpg"
+                    src="/contactus/manufacturing-facility.png"
                   />
                 </div>
 

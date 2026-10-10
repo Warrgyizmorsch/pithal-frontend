@@ -44,8 +44,9 @@ export function ProductHero({ data }: { data: ProductHeroData }) {
           className="object-contain object-center md:object-right"
           fill
           preload
+          unoptimized
           sizes="(max-width: 768px) 100vw, 65vw"
-          src={data.image.src}
+          src={`${data.image.src}?v=2`}
         />
         {/* Overlay fade effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628] via-[#0a1628]/80 to-transparent hidden md:block" />

@@ -509,12 +509,12 @@ function WhyChooseSection() {
   const { whyChoose } = aboutPageData;
 
   const flaticonMap: Record<string, string> = {
-    gauge: "/icons/high-efficiency.png",
-    factory: "/icons/primary-crushing.png",
-    wrench: "/icons/cost-effective.png",
-    users: "/icons/reliable-performace.png",
-    globe: "/icons/screening.png",
-    shield: "/icons/consistance-quality.png",
+    gauge: "/icons/high-efficiency.png?v=2",
+    factory: "/icons/primary-crushing.png?v=2",
+    wrench: "/icons/cost-effective.png?v=2",
+    users: "/icons/reliable-performace.png?v=2",
+    globe: "/icons/screening.png?v=2",
+    shield: "/icons/consistance-quality.png?v=2",
   };
 
   return (
@@ -590,10 +590,11 @@ function WhyChooseSection() {
                 </svg>
                 <div className="relative z-10 flex items-center justify-center">
                   <Image
-                    src={flaticonMap[card.icon] ?? "/icons/high-efficiency.png"}
+                    src={flaticonMap[card.icon] ?? "/icons/high-efficiency.png?v=2"}
                     alt={card.title}
                     width={80}
                     height={80}
+                    unoptimized
                     className="object-contain"
                   />
                 </div>
@@ -674,11 +675,11 @@ function ManufacturingSection() {
   const { manufacturing } = aboutPageData;
 
   const stepFlaticons: Record<string, string> = {
-    settings: "/icons/reliable-performace.png",
-    shield: "/icons/consistance-quality.png",
-    wrench: "/icons/high-efficiency.png",
-    building: "/icons/primary-crushing.png",
-    award: "/icons/final-output.png",
+    settings: "/icons/reliable-performace.png?v=2",
+    shield: "/icons/consistance-quality.png?v=2",
+    wrench: "/icons/high-efficiency.png?v=2",
+    building: "/icons/primary-crushing.png?v=2",
+    award: "/icons/final-output.png?v=2",
   };
 
   return (
@@ -729,11 +730,12 @@ function ManufacturingSection() {
               <span className="flex h-24 w-24 items-center justify-center rounded-full bg-slate-50/50 transition-all duration-300 group-hover/step:-translate-y-1.5 group-hover/step:shadow-sm group-hover/step:bg-[#ABB000]/5">
                 <Image
                   src={
-                    stepFlaticons[step.icon] ?? "/icons/reliable-performace.png"
+                    stepFlaticons[step.icon] ?? "/icons/reliable-performace.png?v=2"
                   }
                   alt={step.title}
                   width={96}
                   height={96}
+                  unoptimized
                   className="object-contain transition-transform duration-300 group-hover/step:scale-110"
                 />
               </span>
