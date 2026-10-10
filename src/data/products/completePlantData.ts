@@ -52,7 +52,7 @@ export const completePlantData: ProductDetailData = {
     description:
       "Complete Crusher Plant is designed to deliver end-to-end material processing from raw feed to finished aggregates, enabling operators to run fully integrated crushing and screening operations with single-vendor support.",
     image: {
-      src: "/images/products/complete-plants/product-review.png",
+      src: "/images/products/prime-complete-plant.png",
       alt: "Complete Crusher Plant system overview",
     },
     ctas: [

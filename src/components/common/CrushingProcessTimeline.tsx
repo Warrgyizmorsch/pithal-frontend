@@ -129,10 +129,9 @@ export function CrushingProcessTimeline() {
       <Container>
         {/* Section Header */}
         <SectionHeader
-          eyebrow="COMPLETE PLANT SOLUTIONS"
-          title="INTELLIGENT SYSTEMS."
-          highlight="SEAMLESS PERFORMANCE."
-          subtitle="From raw material to final product, our complete plant solutions are engineered for maximum efficiency, reliability, and productivity."
+          title="COMPLETE CRUSHING"
+          highlight="PLANT SOLUTIONS"
+          subtitle="A complete crushing plant works as an integrated system. The exact circuit varies according to material type, feed size, production capacity and final product requirements."
           className="!max-w-none lg:[&_h2]:whitespace-nowrap lg:[&_h2]:!text-[clamp(2rem,3.2vw,3.25rem)] w-full"
         />
 

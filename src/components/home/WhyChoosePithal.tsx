@@ -69,7 +69,7 @@ export default function WhyChoosePithal() {
           fill
           priority
           sizes="65vw"
-          src="/images/hero/engineered-machine.png"
+          src="/images/home/machines-for-crushing-and-screening.png"
         />
       </div>
 

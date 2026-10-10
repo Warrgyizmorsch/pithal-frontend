@@ -18,38 +18,38 @@ export const products = [
   {
     title: "Prime Jaw Crushers",
     description: "Robust and reliable crushers built for high capacity and maximum efficiency.",
-    image: "/images/products/jaw-crusher/main-machine.png",
+    image: "/images/products/prime-jaw-crusher.png",
     href: "/products/jaw-crushers",
   },
   {
     title: "Prime UltraRock",
     description: "Advanced crushing technology for extreme durability and performance.",
-    image: "/ultrarock/primeultravideo.png",
+    image: "/images/products/prime-ultrarock.png",
     href: "/products/prime-ultrarock",
   },
   {
     title: "Prime Bucket Crusher",
     description: "Heavy-duty bucket systems for high-capacity material handling.",
-    image: "/primebucket/overview1.png",
+    image: "/images/products/prime-bucket-crusher.png",
     href: "/products/prime-bucket",
   },
   {
     title: "Prime Cone Crushers",
     description: "High efficiency screening equipment for accurate separation and productivity.",
-    image: "/images/products/cone-crusher/cone-crusher-card.png",
+    image: "/images/products/prime-cone-crusher.png",
     href: "/products/cone-crushers",
   },
   {
     title: "Prime VSI Crushers",
     description: "High efficiency screening equipment for accurate separation and productivity.",
-    image: "/images/products/vsi-crusher/vsi-crusher-card.png",
+    image: "/images/products/prime-vsi-crusher.png",
     href: "/products/vsi-crushers",
   },
 
   {
     title: "Prime Vibrating Screens",
     description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",
-    image: "/images/products/vibrating-screen/product-review.png",
+    image: "/images/products/prime-vibrating-screen.png",
     href: "/products/vibrating-screens",
   },
   // {
@@ -61,25 +61,25 @@ export const products = [
   {
     title: "Prime Conveyor Systems",
     description: "Strong and consistent feeding solutions for smooth and uninterrupted operations.",
-    image: "/images/products/belt-conveyor/product-review.png",
+    image: "/images/products/prime-conveyor-system.png",
     href: "/products/conveyor-systems",
   },
   {
     title: "Prime Complete Plants",
     description: "Custom-built complete crushing plants tailored to your specific needs and applications.",
-    image: "/images/products/complete-plants/product-review.png",
+    image: "/images/products/prime-complete-plant.png",
     href: "/products/complete-plants",
   },
   {
     title: "Prime M-Sand Crusher Plant",
     description: "Integrated manufactured sand plants engineered for consistent quality and high productivity.",
-    image: "/images/products/complete-plants/product-review.png",
+    image: "/images/products/prime-m-sand-plant.png",
     href: "/products/m-sand-plant",
   },
   {
     title: "Prime Crusher Machine",
     description: "Powerful crushing solutions built for high performance, durability and maximum output.",
-    image: "/images/products/jaw-crusher/main-machine.png",
+    image: "/images/products/prime-crusher-machine.png",
     href: "/products/crusher-machine",
   },
 ];

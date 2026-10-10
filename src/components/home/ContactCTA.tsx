@@ -110,7 +110,7 @@ export function ContactCTA() {
                 className="object-cover object-[center_80%] rounded-bl-[1.15rem] lg:rounded-bl-[1.15rem]"
                 fill
                 sizes="(max-width: 1024px) 100vw, 48vw"
-                src="/images/contact/crushing-plant-contact1.jpg"
+                src="/images/home/looking-for-right-crushing.png"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,#fff_0%,transparent_25%)] pointer-events-none" />
               <div className="absolute inset-0 bg-[linear-gradient(270deg,#fff_0%,transparent_25%)] pointer-events-none" />

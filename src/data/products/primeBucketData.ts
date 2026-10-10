@@ -63,7 +63,7 @@ export const primeBucketData: ProductDetailData = {
     description:
       "Prime Bucket Crusher is designed to deliver crushing directly to the job site, enabling operators to process materials efficiently with an excavator-mounted solution. Built for demanding applications, it supports practical material reduction across construction, quarrying, mining, demolition and recycling operations.",
     image: {
-      src: "/primebucket/overview1.png",
+      src: "/images/products/prime-bucket-crusher.png",
       alt: "Prime Bucket Crusher excavator attachment system",
     },
     ctas: [

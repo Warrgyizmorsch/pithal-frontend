@@ -22,7 +22,7 @@ export function VideoShowcase() {
             className="object-cover object-center"
             fill
             sizes="(max-width: 639px) calc(100vw - 2.5rem), (max-width: 1023px) calc(100vw - 4rem), 1160px"
-            src="/images/hero/video-showcase-photo.jpg"
+            src="/images/home/powerful-machines-video-preview.jpg"
           />
           <button
             aria-label="Play machinery performance video"

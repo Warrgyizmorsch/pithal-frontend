@@ -53,7 +53,7 @@ export const coneCrusherData: ProductDetailData = {
     description:
       "Prime Cone Crusher is designed to deliver efficient secondary and tertiary crushing of hard and abrasive materials. Built for demanding applications, this cone crusher machine supports consistent material reduction across mining, quarrying, aggregate production, construction and material-processing operations.",
     image: {
-      src: "/images/products/cone-crusher/main-machine.png",
+      src: "/images/products/prime-cone-crusher.png",
       alt: "Cone crusher machine with technical part callouts",
     },
     ctas: [

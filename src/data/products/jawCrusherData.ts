@@ -45,7 +45,7 @@ export const jawCrusherData: ProductDetailData = {
     description:
       "Prime Jaw Crusher is engineered for powerful crushing performance, high durability, and cost-effective operation. Built to handle tough and abrasive materials across mining, quarrying, and construction applications.",
     image: {
-      src: "/images/products/jaw-crusher/main-machine.png",
+      src: "/images/products/prime-jaw-crusher.png",
       alt: "Jaw crusher machine with technical part callouts",
     },
     ctas: [

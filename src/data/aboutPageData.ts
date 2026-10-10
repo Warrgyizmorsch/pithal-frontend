@@ -6,7 +6,7 @@ export const aboutPageData = {
     subtitle:
       "Engineering Strength. Delivering Reliable Crushing Solutions.",
     image: {
-      src: "/images/about/factory-hero.png",
+      src: "/images/about/about-hero.png",
       alt: "Pithal Machines modern manufacturing facility with cone crushers on the assembly floor",
     },
     ctas: [

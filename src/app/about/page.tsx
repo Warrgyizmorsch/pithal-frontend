@@ -115,7 +115,7 @@ function HeroSection() {
         fill
         preload
         sizes="100vw"
-        src="/images/about/about-hero-industrial-generated.png"
+        src="/images/about/about-hero.png"
       />
       <div
         aria-hidden

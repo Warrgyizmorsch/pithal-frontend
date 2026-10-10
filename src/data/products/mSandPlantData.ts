@@ -52,7 +52,7 @@ export const mSandPlantData: ProductDetailData = {
     description:
       "M-Sand Crusher Plant is designed to process hard rock into high-quality manufactured sand with integrated crushing, shaping and screening operations.",
     image: {
-      src: "/images/products/complete-plants/product-review.png",
+      src: "/images/products/prime-m-sand-plant.png",
       alt: "M-Sand Crusher Plant system overview",
     },
     ctas: [

@@ -43,7 +43,7 @@ export const crusherMachineData: ProductDetailData = {
     description:
       "Crusher Machine is designed to break large stones, rocks and minerals into smaller, uniform sizes for further processing or direct use.",
     image: {
-      src: "/images/products/jaw-crusher/main-machine.png",
+      src: "/images/products/prime-crusher-machine.png",
       alt: "Crusher machine with technical part callouts",
     },
     ctas: [

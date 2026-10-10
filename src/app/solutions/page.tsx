@@ -54,6 +54,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
 import { CrushingProcessTimeline } from "@/components/common/CrushingProcessTimeline";
+import { ProductFAQ } from "@/components/product-detail/ProductFAQ";
+import { BreadcrumbSchema, FAQSchema, WebPageSchema } from "@/components/seo";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // DATA CONFIGURATION (MATCHING SCREENSHOTS EXACTLY)
@@ -142,73 +144,73 @@ const challengesSolve = [
   {
     step: "01",
     image: "/solutionspage/challenges we solve 1.jpg",
-    challengeTitle: "High Wear & Frequent Downtime",
+    challengeTitle: "HIGH WEAR & FREQUENT DOWNTIME",
     challengeDesc:
-      "Heavy wear parts lead to breakdowns, production loss, and higher costs.",
-    solutionTitle: "Built Tough. Built to Last.",
+      "Abrasive materials can accelerate wear on crushing components, increasing maintenance requirements and production interruptions.",
+    solutionTitle: "APPLICATION-MATCHED EQUIPMENT",
     solutionDesc:
-      "Wear-resistant design, premium materials, and robust engineering for long life.",
+      "Equipment and crushing stages are selected according to material hardness, abrasiveness, feed characteristics and operating requirements to support dependable performance and practical maintenance.",
     icon: Shield,
   },
   {
     step: "02",
     image: "/solutionspage/challenges we solve 2.jpg",
-    challengeTitle: "Inconsistent Output Quality",
+    challengeTitle: "INCONSISTENT OUTPUT QUALITY",
     challengeDesc:
-      "Irregular size, shape, and gradation affect final product quality.",
-    solutionTitle: "Precision Crushing & Screening",
+      "Incorrect crushing stages, unsuitable settings or inadequate screening can result in inconsistent product size, shape and gradation.",
+    solutionTitle: "CONTROLLED CRUSHING & SCREENING",
     solutionDesc:
-      "Advanced technology ensures uniform output with accurate particle shape.",
+      "A properly configured crushing circuit combines suitable reduction stages with screening to separate material according to the required product sizes and specifications.",
     icon: Layers,
   },
   {
     step: "03",
     image: "/solutionspage/challenges we solve 3.jpg",
-    challengeTitle: "Low Productivity & High Costs",
+    challengeTitle: "LOW PRODUCTIVITY & HIGH OPERATING COSTS",
     challengeDesc:
-      "High energy consumption and inefficient processes increase OPEX.",
-    solutionTitle: "High Efficiency, Lower Operating Cost",
+      "An unbalanced plant can create unnecessary material handling, recirculation, energy consumption and equipment downtime.",
+    solutionTitle: "OPTIMIZED MATERIAL FLOW",
     solutionDesc:
-      "Energy-efficient machines and optimized designs to maximize productivity.",
+      "We consider the complete process from feeding and crushing to screening and conveying to develop plant configurations suited to production capacity and material requirements.",
     icon: TrendingUp,
   },
   {
     step: "04",
     image: "/solutionspage/challenges we solve 14operations.jpg",
-    challengeTitle: "Complex Operations & Maintenance",
+    challengeTitle: "COMPLEX OPERATIONS & MAINTENANCE",
     challengeDesc:
-      "Difficult maintenance and complex operations lead to delays.",
-    solutionTitle: "Easy Operation, Hassle-Free Maintenance",
+      "Poorly planned layouts and difficult equipment access can make inspection, servicing and maintenance more time-consuming.",
+    solutionTitle: "PRACTICAL PLANT DESIGN",
     solutionDesc:
-      "User-friendly machines with easy access for quick maintenance and minimal downtime.",
+      "Plant layouts are developed with material flow, equipment accessibility, maintenance requirements and operational practicality in mind.",
     icon: Wrench,
   },
 ];
 
 const challengesBottomBar = [
   {
-    label: "Reduced Downtime",
-    desc: "Maximum uptime, uninterrupted operations.",
+    label: "REDUCED DOWNTIME",
+    desc: "Reliable operation",
     icon: Shield,
   },
   {
-    label: "Better Productivity",
-    desc: "Higher output with optimized performance.",
+    label: "BETTER PRODUCTIVITY",
+    desc: "Efficient processing",
     icon: TrendingUp,
   },
   {
-    label: "Lower Operating Cost",
-    desc: "Energy-efficient solutions that save more.",
-    icon: DollarSign,
+    label: "CONSISTENT OUTPUT",
+    desc: "Precise sizing",
+    icon: Layers,
   },
   {
-    label: "Reliable Performance",
-    desc: "Engineered for durability and consistent results.",
+    label: "RELIABLE PERFORMANCE",
+    desc: "Built tough",
     icon: Shield,
   },
   {
-    label: "Expert Support",
-    desc: "End-to-end support whenever you need.",
+    label: "EXPERT SUPPORT",
+    desc: "Technical assistance",
     icon: Headphones,
   },
 ];
@@ -313,31 +315,31 @@ const engineeringServices = [
   {
     step: "01",
     title: "PLANT PLANNING",
-    desc: "We plan your entire crushing plant for optimal workflow, safety, and future scalability.",
+    desc: "We plan the crushing circuit around material characteristics, production targets, equipment requirements and overall process flow.",
     image: "/solutionspage/our services 4 (2).png",
   },
   {
     step: "02",
     title: "MACHINE SELECTION",
-    desc: "The right machine for the right application — chosen for performance, efficiency & durability.",
+    desc: "The right combination of jaw crushers, cone crushers, VSI crushers, vibrating screens, feeders and conveyors is selected according to the application.",
     image: "/solutionspage/our our services (3).png",
   },
   {
     step: "03",
     title: "LAYOUT OPTIMIZATION",
-    desc: "We design smart layouts that maximize space utilization, material flow & operational efficiency.",
+    desc: "We develop practical equipment layouts that consider material movement, available space, accessibility and operational efficiency.",
     image: "/solutionspage/our services 5.png",
   },
   {
     step: "04",
     title: "CAPACITY PLANNING",
-    desc: "Data-driven capacity calculations to ensure your plant meets today's needs and tomorrow's growth.",
+    desc: "Production requirements are evaluated to help determine suitable equipment capacity, crushing stages, screening requirements and material flow.",
     image: "/solutionspage/our services 1.png",
   },
   {
     step: "05",
     title: "SITE CONSULTATION",
-    desc: "On-site analysis & expert guidance to create solutions tailored to your exact site conditions.",
+    desc: "Site conditions, material characteristics and project requirements are assessed to develop a crushing solution suited to the actual application.",
     image: "/solutionspage/our services 2.png",
   },
 ];
@@ -426,37 +428,37 @@ const smartProcessSteps = [
   {
     step: "01",
     title: "SITE INSPECTION",
-    desc: "We assess your site conditions, material characteristics, and production goals.",
+    desc: "We assess site conditions, material characteristics, available space and production requirements.",
     image: "/solutionspage/our smart procss 1.jpg",
   },
   {
     step: "02",
     title: "PLANNING",
-    desc: "Our engineers create optimized plant layouts and process flows tailored to your requirements.",
+    desc: "Our engineers develop the process flow and plant configuration according to your application and required output.",
     image: "/solutionspage/our smart procss2.jpg",
   },
   {
     step: "03",
     title: "MACHINE SELECTION",
-    desc: "We recommend the right equipment for maximum efficiency and long-term value.",
+    desc: "We recommend suitable crushing, screening and material-handling equipment based on the required duty.",
     image: "/solutionspage/our smart procss3.jpg",
   },
   {
     step: "04",
     title: "INSTALLATION",
-    desc: "Our team ensures safe, timely, and precise installation with minimal downtime.",
+    desc: "The selected equipment is installed and integrated according to the planned plant configuration.",
     image: "/solutionspage/our smart procss 4.jpg",
   },
   {
     step: "05",
     title: "COMMISSIONING",
-    desc: "We test, optimize, and fine-tune the system for reliable and consistent performance.",
+    desc: "The system is checked and optimized to support reliable operation and consistent material flow.",
     image: "/solutionspage/our smart procss 5.jpg",
   },
   {
     step: "06",
     title: "SUPPORT",
-    desc: "24/7 support, preventive maintenance, and genuine parts for uninterrupted operations.",
+    desc: "Technical assistance, maintenance guidance and service support help keep your crushing operation running efficiently.",
     image: "/solutionspage/our smart procss 6.jpg",
   },
 ];
@@ -553,32 +555,32 @@ const globalBottomValues = [
 const whyChooseCards = [
   {
     title: "CUSTOMIZED SOLUTIONS",
-    desc: "Tailored solutions designed around your material, capacity and site requirements.",
+    desc: "Crushing plant configurations developed around your material, capacity, output and site requirements.",
     icon: "puzzle",
   },
   {
-    title: "FAST INSTALLATION",
-    desc: "Optimized processes and skilled teams ensure quick and hassle-free installation.",
+    title: "PRACTICAL INSTALLATION",
+    desc: "Equipment and plant layouts planned for efficient installation and straightforward operation.",
     icon: "stopwatch",
   },
   {
     title: "EXPERT ENGINEERING",
-    desc: "Experienced engineers delivering innovative, reliable and field-proven crushing solutions.",
+    desc: "Application-focused engineering for crushing, screening and material-handling requirements.",
     icon: "engineer",
   },
   {
-    title: "LOW DOWNTIME",
-    desc: "Heavy-duty components and precise engineering keep your plant running longer with minimal downtime.",
+    title: "RELIABLE PERFORMANCE",
+    desc: "Robust equipment and carefully selected crushing stages designed for demanding applications.",
     icon: "gauge",
   },
   {
     title: "END-TO-END SUPPORT",
-    desc: "From planning to commissioning and after-sales support – we are with you at every step.",
+    desc: "Support from initial consultation and planning through installation, commissioning and after-sales service.",
     icon: "handshake",
   },
   {
     title: "SCALABLE PLANT DESIGN",
-    desc: "Flexible, future-ready plant solutions that grow with your business and production demands.",
+    desc: "Flexible solutions designed to accommodate changing production requirements where applicable.",
     icon: "scalable",
   },
 ];
@@ -892,6 +894,39 @@ function renderApplicationIcon(title: string) {
   }
 }
 
+const solutionsFaqData = {
+  eyebrow: "FREQUENTLY ASKED QUESTIONS",
+  title: "Frequently Asked",
+  highlight: "Questions",
+  faqs: [
+    {
+      question: "What are crushing solutions?",
+      answer:
+        "Crushing solutions are complete equipment and process configurations designed to reduce and classify raw material according to specific production requirements. A solution may include crushers, feeders, vibrating screens, conveyors and other plant components.",
+    },
+    {
+      question: "How do I choose the right crushing solution?",
+      answer:
+        "The right crushing solution depends on factors such as material type, hardness, abrasiveness, moisture, feed size, required production capacity, desired output sizes and the number of crushing stages required.",
+    },
+    {
+      question: "What equipment is used in a complete crushing plant?",
+      answer:
+        "A complete crushing plant may include feeders, jaw crushers, cone crushers, VSI crushers, vibrating screens and conveyors. The exact configuration depends on the application, material characteristics and final product requirements.",
+    },
+    {
+      question: "Can Pithal Machines design customized crushing plants?",
+      answer:
+        "Yes. Pithal Machines can develop plant configurations around material characteristics, production capacity, required product sizes, available site space and application requirements.",
+    },
+    {
+      question: "What is the role of screening in a crushing plant?",
+      answer:
+        "Screening separates crushed material into different size fractions. It helps produce the required product sizes and can also allow oversize material to return to the appropriate crushing stage in a closed-circuit plant.",
+    },
+  ],
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 // SOLUTIONS MAIN COMPONENT
 // ─────────────────────────────────────────────────────────────────────────────
@@ -910,6 +945,18 @@ export default function SolutionsPage() {
 
   return (
     <>
+      <WebPageSchema
+        title="Crushing Solutions for Mining, Aggregates & Construction| Pithal Machine"
+        description="Explore engineered crushing solutions for mining, aggregates and construction, designed for efficient processing, consistent output and reliable performance."
+        url="/solutions"
+      />
+      <BreadcrumbSchema
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Solutions", href: "/solutions" },
+        ]}
+      />
+      <FAQSchema faqs={solutionsFaqData.faqs} />
       <Header />
       <main className="min-h-screen bg-slate-50 text-slate-800">
         {/* ========================================================================= */}
@@ -922,7 +969,7 @@ export default function SolutionsPage() {
             fill
             preload
             sizes="100vw"
-            src="/solutionspage/ffirst page.jpg"
+            src="/images/solutions/engineered-solutions-for-every-industry.png"
           />
           <div 
             aria-hidden
@@ -934,19 +981,13 @@ export default function SolutionsPage() {
               <div className="max-w-[650px] py-0 lg:py-2">
                 <HeroNavigation current="Solutions & Applications" eyebrow="Solutions" />
 
-                <h1 className="headline mb-4 text-[clamp(2.15rem,5.2vw,4rem)] uppercase leading-[1.05] tracking-tight text-primary sm:mb-6">
-                  ENGINEERED SOLUTIONS <br />
-                  FOR <span className="text-secondary">EVERY INDUSTRY.</span>
+                <h1 className="headline mb-4 text-[clamp(2.15rem,5.2vw,3.8rem)] uppercase leading-[1.05] tracking-tight text-primary sm:mb-6">
+                  CRUSHING SOLUTIONS FOR <br />
+                  <span className="text-secondary">MINING, AGGREGATES</span> &amp; CONSTRUCTION
                 </h1>
 
                 <p className="mt-8 max-w-[560px] text-sm font-medium leading-6 text-primary md:text-[16px] lg:leading-7">
-                  From rugged mining operations to large-scale infrastructure
-                  projects, we deliver crushing solutions that maximize
-                  performance, minimize downtime, and drive{" "}
-                  <span className="text-secondary font-bold italic">
-                    real results
-                  </span>
-                  .
+                  Pithal Machines delivers engineered crushing solutions for mining, aggregates and construction, built around your material, capacity and output requirements.
                 </p>
 
                 <div className="mt-5 flex flex-col sm:flex-row gap-3 lg:mt-8">
@@ -1097,13 +1138,11 @@ export default function SolutionsPage() {
                 <span className="h-[1.5px] w-6 bg-secondary rounded-full" />
               </div>
               <h2 className="headline text-center lg:whitespace-nowrap text-[clamp(1.65rem,5.5vw,2.25rem)] sm:text-[2.8rem] lg:text-[3.2rem] font-black leading-[1.05] text-primary">
-                <span className="block sm:inline">SOLUTIONS THAT POWER</span>{" "}
+                <span className="block sm:inline">CRUSHING SOLUTIONS THAT POWER</span>{" "}
                 <span className="block sm:inline text-secondary">EVERY INDUSTRY</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                From raw material to final output, our engineered crushing
-                solutions are built to perform in the toughest industrial
-                environments.
+                Every material and production environment requires a different approach. Pithal Machines develops crushing and screening solutions based on material characteristics, capacity and final product requirements.
               </p>
             </div>
 
@@ -1291,9 +1330,7 @@ export default function SolutionsPage() {
                 </span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                We understand the real challenges of industrial operations and
-                deliver solutions that improve performance, reduce downtime, and
-                maximize productivity.
+                Crushing performance depends on material characteristics, equipment selection, process flow and plant layout. Pithal Machines develops crushing solutions around the practical challenges faced by mining, quarrying, aggregate and construction operations.
               </p>
             </div>
 
@@ -1394,7 +1431,7 @@ export default function SolutionsPage() {
               {/* Right Column: Large plant visual */}
               <div className="relative hidden lg:block w-full min-h-[450px] overflow-hidden rounded-2xl border border-slate-200/60 shadow-md">
                 <Image
-                  src="/solutionspage/challenges we solve 5.jpg"
+                  src="/images/solutions/every-challenge-engineered-solution.png"
                   alt="Pithal Machines Crushing Plant"
                   fill
                   className="object-cover"
@@ -1460,7 +1497,7 @@ export default function SolutionsPage() {
             }}
           >
             <Image
-              src="/solutionspage/blueprint_1440x780.png"
+              src="/images/solutions/engineered-around-your-operation.png"
               alt="Engineering Blueprint Background"
               fill
               className="object-contain object-right"
@@ -1482,9 +1519,7 @@ export default function SolutionsPage() {
                 </h2>
 
                 <p className="mt-6 text-sm md:text-base leading-relaxed text-slate-600 font-medium">
-                  Every site is unique. Our engineering experts design and
-                  deliver customized crushing solutions that match your goals,
-                  site conditions, and production requirements.
+                  Every crushing project has different requirements. Feed material, hardness, abrasiveness, production capacity, final product sizes, site conditions and available space all influence plant design.
                 </p>
 
                 {/* Bullets horizontal row layout */}
@@ -1604,9 +1639,7 @@ export default function SolutionsPage() {
                 <span className="text-secondary">EVERY APPLICATION.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                Our crushing solutions are engineered to perform across a wide
-                range of industries and applications — delivering results where
-                it matters most.
+                From hard-rock crushing to aggregate production and manufactured sand, Pithal Machines develops crushing solutions for a wide range of material-processing applications.
               </p>
             </div>
 
@@ -1766,9 +1799,7 @@ export default function SolutionsPage() {
                 <span className="block sm:inline text-secondary">MAXIMUM RESULTS.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-center text-sm md:text-base leading-relaxed text-text-muted font-medium">
-                Our engineered crushing solutions are built to deliver superior
-                performance, reduce operational costs, and maximize your
-                productivity.
+                Designed for efficient crushing, consistent output, reliable operation and measurable plant performance.
               </p>
             </div>
 
@@ -2065,7 +2096,7 @@ export default function SolutionsPage() {
                 <div className="lg:col-span-5 relative min-h-[320px] sm:min-h-0 sm:aspect-[16/11] w-full rounded-2xl border border-slate-200/60 overflow-hidden shadow-sm">
                   {/* Background Image - positioned properly to prevent cutting off */}
                   <Image
-                    src="/solutionspage/our performance your advantage.jpg"
+                    src="/images/solutions/performance-that-drives-your-success.png"
                     alt="Crushing Plant Equipment"
                     fill
                     className="object-cover object-right-bottom"
@@ -2349,9 +2380,7 @@ export default function SolutionsPage() {
                 <span className="block sm:inline text-secondary">SEAMLESS RESULTS.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                From initial consultation to lifelong support — our structured
-                process ensures efficiency, transparency, and performance at
-                every stage.
+                From initial project assessment to commissioning and ongoing support, our structured process keeps equipment selection and plant design aligned with your requirements.
               </p>
             </div>
 
@@ -2668,8 +2697,7 @@ export default function SolutionsPage() {
                 <span className="block sm:inline text-secondary">YOUR SUCCESS.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-center text-sm md:text-base leading-relaxed text-text-muted">
-                We combine engineering excellence with practical solutions to
-                deliver maximum performance, reliability, and long-term value.
+                Pithal Machines combines crushing equipment with application-focused engineering to create solutions designed around your production requirements.
               </p>
             </div>
 
@@ -2749,6 +2777,21 @@ export default function SolutionsPage() {
                   </div>
                 );
               })}
+            </div>
+
+            {/* Explore Pithal Machines Link */}
+            <div className="mt-8 flex justify-center">
+              <Button
+                href="https://www.pithalmachine.com/"
+                variant="primary"
+                className="group flex min-h-[48px] items-center justify-center gap-2 px-8 py-3.5 text-xs sm:text-sm font-black tracking-wider uppercase rounded-xl shadow-md hover:shadow-lg transition-all"
+              >
+                Explore Pithal Machines
+                <ArrowRight
+                  size={15}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </Button>
             </div>
           </Container>
         </section>
@@ -2874,6 +2917,11 @@ export default function SolutionsPage() {
         </section> */}
 
         {/* ========================================================================= */}
+        {/* SECTION: FREQUENTLY ASKED QUESTIONS */}
+        {/* ========================================================================= */}
+        <ProductFAQ data={solutionsFaqData} />
+
+        {/* ========================================================================= */}
         {/* SECTION 12: LET'S ENGINEER YOUR NEXT CRUSHING SOLUTION (CTA) */}
         {/* ========================================================================= */}
         <section
@@ -2909,10 +2957,11 @@ export default function SolutionsPage() {
                 </h2>
 
                 {/* Subtitle */}
-                <p className="text-slate-600 text-base sm:text-lg max-w-xl mb-10 leading-relaxed font-medium">
-                  From concept to commissioning, we deliver engineering-driven
-                  solutions that maximize performance, efficiency, and long-term
-                  value.
+                <p className="text-slate-600 text-base sm:text-lg max-w-xl mb-4 leading-relaxed font-medium">
+                  From application assessment and plant planning to equipment selection, installation and commissioning, Pithal Machines provides crushing solutions designed around your operational requirements.
+                </p>
+                <p className="text-slate-600 text-sm sm:text-base max-w-xl mb-10 leading-relaxed font-normal">
+                  Tell us about your material, required capacity and desired output. Our team can help you determine the right equipment configuration for your application.
                 </p>
 
                 {/* 4 Cards Grid */}
@@ -3112,7 +3161,7 @@ export default function SolutionsPage() {
               {/* RIGHT COLUMN: Image */}
               <div className="lg:w-[45%] relative w-full h-[400px] lg:h-[650px] rounded-tl-[100px] rounded-tr-[20px] rounded-b-[20px] overflow-hidden shadow-xl mt-8 lg:mt-0">
                 <img
-                  src="/solutionspage/ready to build ready to perform.jpg"
+                  src="/images/solutions/lets-engineer-your-next-crushing-solution.png"
                   alt="Engineering Professional"
                   className="w-full h-full object-cover"
                 />
