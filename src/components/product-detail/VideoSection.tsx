@@ -111,8 +111,9 @@ export function VideoSection({ data }: { data: VideoSectionData }) {
                 alt={data.thumbnail.alt}
                 className="object-cover opacity-90"
                 fill
+                unoptimized
                 sizes="(max-width: 1023px) 100vw, 58vw"
-                src={data.thumbnail.src}
+                src={data.thumbnail.src.includes("?") ? data.thumbnail.src : `${data.thumbnail.src}?v=2`}
               />
               <div className="absolute inset-0 bg-primary-dark/15" />
 
