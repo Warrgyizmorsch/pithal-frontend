@@ -18,9 +18,9 @@ import { vsiCrusherData } from "@/data/products/vsiCrusherData";
 import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
-  title: "VSI Crusher Manufacturer in India | Sand Making Machine | Pithal Machines",
+  title: "VSI Crusher Manufacturer in India | Pithal Machines",
   description:
-    "Vertical shaft impact (VSI) sand making machines for manufactured sand and aggregate shaping. High efficiency, cubical product and reliable operation from Pithal Machines.",
+    "Explore VSI crushers from Pithal Machines for manufactured sand and aggregate production. Discuss your feed material, capacity and plant requirements.",
 };
 
 export default function VsiCrushersPage() {

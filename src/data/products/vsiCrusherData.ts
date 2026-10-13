@@ -387,98 +387,150 @@ export const vsiCrusherData: ProductDetailData = {
     highlight: "Questions",
     faqs: [
       {
-        question: "1. What is a vertical shaft impactor?",
-        answer: "A vertical shaft impactor is a crushing machine that uses high-speed impact forces to reduce and shape suitable materials. It is commonly used for fine crushing, aggregate shaping and manufactured sand production."
+        question: "1. What is a VSI crusher used for?",
+        answer:
+          "A VSI crusher is used for further crushing and shaping suitable rock materials through high-speed impact. Common applications include manufactured sand production, aggregate shaping and tertiary crushing.",
       },
       {
-        question: "2. What is a VSI crusher used for?",
-        answer: "A VSI crusher is primarily used for fine crushing, particle shaping and producing cubical aggregates. It is also widely used for manufactured VSI sand production."
+        question: "2. Can a VSI crusher produce M-sand?",
+        answer:
+          "Yes. A suitably configured VSI crusher plant can produce manufactured sand from appropriate feed material. Screening, washing and classification may be required to achieve the specified grading and quality.",
       },
       {
-        question: "3. What materials can a vertical shaft impactor crusher process?",
-        answer: "A vertical shaft impactor crusher can process suitable rocks, aggregates and other mineral-based materials. The appropriate configuration depends on material characteristics and application requirements."
+        question: "3. What factors affect VSI crusher price?",
+        answer:
+          "The price depends on capacity, rotor design, motor power, construction, wear components and the equipment included in the supply. Installation and supporting plant equipment can also affect the total project cost.",
       },
       {
-        question: "4. What is the difference between a VSI crusher and a conventional crusher?",
-        answer: "A VSI crusher uses high-speed impact to crush and shape material, while conventional crushers may primarily use compression or other crushing forces. VSI technology is particularly useful when particle shape and fine material production are important."
+        question: "4. How do I choose the right VSI crusher manufacturer?",
+        answer:
+          "Evaluate the manufacturer's technical specifications, application suitability, spare-part availability, maintenance requirements and support arrangements. Provide clear information about your material and production target before requesting a quotation.",
       },
       {
-        question: "5. What is a VSI plant?",
-        answer: "A VSI plant is a material-processing setup that incorporates a VSI crusher with other equipment such as screens and conveyors to produce and separate aggregates or manufactured sand according to specific requirements."
+        question: "5. Can a VSI crusher be added to an existing crushing plant?",
+        answer:
+          "Yes, provided the existing equipment can accommodate the required material flow. The capacities of upstream crushers, feeders, screens and conveyors should be assessed before installation.",
       },
       {
-        question: "6. How do I choose the right VSI crusher machine?",
-        answer: "The right VSI crusher machine should be selected based on feed material, feed size, required production capacity, desired output, particle-shape requirements and overall plant configuration."
+        question: "6. What affects the quality of VSI sand?",
+        answer:
+          "Sand quality depends on the feed material, particle-size distribution, crusher settings and downstream screening or classification. Washing may also be required, depending on the material and intended use.",
       },
-      {
-        question: "7. What affects the VSI crusher price?",
-        answer: "The VSI crusher price depends on factors such as model, capacity, configuration, application requirements and additional plant equipment. For an accurate quotation, discuss your requirements with Pithal Machine."
-      }
-    ]
+    ],
   },
   longContent: {
-    content: `## Prime Vertical Shaft Impactor for Efficient Crushing and Particle Shaping
+    content: `## Prime VSI Crusher Manufacturer in India for Manufactured Sand and Aggregates
 
-The Prime Vertical Shaft Impactor is designed for efficient crushing, particle shaping and size reduction of suitable hard and abrasive materials. With a robust construction and reliable impact crushing mechanism, it is suitable for demanding applications in mining, quarrying, construction, aggregate production and manufactured sand processing.
+Manufactured sand production requires more than just crushing rocks into smaller pieces. The finished material must have suitable particle shape, grading and quality for its intended construction application. This is where a VSI crusher becomes an important part of a modern crushing and screening plant.
 
-The VSI crusher is designed to deliver controlled material reduction and improved particle shape while maintaining consistent crushing performance. Its practical design makes it a dependable solution for industries that require efficient aggregate production, fine crushing and VSI sand manufacturing.
+A VSI crusher, also known as a vertical shaft impactor, uses high-speed impact to reduce the size of suitable feed material and improve aggregate shape. It is commonly used in the tertiary crushing stage, particularly when the objective is to produce manufactured sand (M-sand) or better-shaped aggregates for concrete, asphalt and road construction.
 
-### Why Choose Prime VSI Crusher Machine from Pithal Machine
+For crushing plant operators, the challenge is to achieve the required product quality without allowing power consumption, wear-part replacement and maintenance to drive up production costs. Selecting the right VSI crusher machine requires a clear understanding of the feed material, production target and finished-product specifications.
 
-Choosing the right VSI crusher machine can directly impact productivity, product quality, operating efficiency and overall plant performance. The Pithal Prime Vertical Shaft Impactor is engineered to provide a combination of crushing efficiency, durability and dependable operation.
+Pithal Machines offers crushing and screening equipment solutions for industrial material processing. Businesses planning a new sand-making facility or upgrading an existing crushing plant should evaluate the VSI configuration according to their actual production requirements.
 
-Its robust construction and high-speed impact crushing mechanism allow the vertical shaft impactor crusher to efficiently reduce and shape suitable materials. This makes the Prime VSI Crusher a suitable choice for businesses looking for reliable crushing and particle-shaping equipment.
+### What Is a Vertical Shaft Impactor?
 
-### Vertical Shaft Impactor Crusher for Mining and Quarrying
+A vertical shaft impactor is a crushing machine that uses a high-speed rotor to accelerate material towards a crushing zone. Instead of relying mainly on compression, as a jaw crusher does, it breaks material through impact between particles or against wear-resistant surfaces.
 
-Mining and quarrying operations often require equipment capable of processing hard and abrasive materials while producing consistent aggregate sizes and shapes. The Prime vertical shaft impactor crusher is designed for applications where further material reduction and particle shaping are required.
+This crushing action makes the vertical shaft impactor crusher particularly useful for shaping aggregates and producing fine material from suitable rock. Depending on the machine design, it can operate using a rock-on-rock or rock-on-metal crushing arrangement.
 
-Its powerful impact crushing action makes the VSI crusher suitable for processing rocks, aggregates and other suitable materials used in demanding industrial and infrastructure applications.
+In a rock-on-rock configuration, particles collide with a layer of rock inside the crushing chamber. In a rock-on-metal arrangement, material strikes metal anvils or other wear-resistant surfaces. The appropriate configuration depends on the feed material, desired reduction, product requirements and wear costs.
 
-### Efficient Crushing and Particle Shaping
+A VSI crusher is generally used after primary or secondary crushing rather than as the first machine in a conventional hard-rock crushing circuit. Jaw crushers and cone crushers reduce larger rocks, while the VSI provides further crushing and shaping when required.
 
-The primary function of a vertical shaft impactor is to reduce material through high-speed impact while improving particle shape. The Prime VSI Crusher uses a high-speed rotor to accelerate material and generate impact forces that crush and reshape the particles.
+This combination is particularly useful in aggregate plants where particle shape and manufactured sand quality are important considerations.
 
-The machine can be integrated into a wider VSI plant, where crushed material can be screened, separated and further processed according to the required application. This makes it suitable for aggregate production and VSI sand manufacturing.
+### How Does a VSI Crusher Machine Work?
 
-### Built for Demanding Material-Processing Applications
+The working principle of a VSI crusher machine centres on centrifugal acceleration and high-speed impact.
 
-Our VSI crusher machine is designed for industries where reliable equipment performance and consistent material quality are essential. From mining and quarrying to aggregate production, construction and manufactured sand applications, the machine can support a wide range of crushing requirements.
+Feed material enters the machine through the feed opening and moves towards the rotating rotor. The rotor accelerates the particles and directs them into the crushing chamber, where repeated collisions break the material into smaller pieces.
 
-Its heavy-duty design helps provide dependable operation under demanding conditions while supporting efficient crushing, particle shaping and material processing.
+The crushed material then leaves the machine and moves to the next stage of processing. Vibrating screens separate the output into different size fractions, while material that does not meet the required specifications may be returned for further crushing in a closed-circuit arrangement.
 
-### Reliable VSI Crusher for Long-Term Operation
+Several operating factors influence the final result. Rotor speed affects the intensity of impact, while feed rate and feed-size distribution influence the load on the machine. Rock hardness and abrasiveness affect both crushing behaviour and wear-part consumption.
 
-Durability is an important consideration when selecting industrial crushing equipment. Pithal VSI crusher is manufactured with a focus on structural strength, reliable components and long-term operational performance.
+For example, an inconsistent feed can make it difficult to maintain stable output. Similarly, feeding material outside the machine's specified size range may increase wear and affect performance.
 
-With appropriate maintenance and operating practices, the machine can provide dependable service while helping businesses maintain efficient crushing and aggregate production operations.
+A well-matched crushing circuit helps maintain a consistent material flow and allows the VSI crusher to perform its intended role without creating unnecessary bottlenecks.
 
-### VSI Crusher Plant for Efficient Material Processing
+### Key Benefits of a VSI Crusher
 
-The Prime VSI Crusher can be integrated into a complete VSI crusher plant according to specific production and material-processing requirements. It can work alongside primary and secondary crushers, vibrating screens and conveyor systems to create an efficient multi-stage crushing solution.
+A VSI crusher improves aggregate shape, supports consistent manufactured sand production and helps meet the quality requirements of modern construction projects.
 
-A properly configured VSI plant can help improve material flow, particle shaping and product consistency while supporting the production of aggregates and VSI sand.
+#### Better Particle Shape
 
-### VSI Crusher Price and Machine Cost
+Particle shape matters when crushed aggregates are used in concrete, asphalt and other construction applications. Poorly shaped particles can affect packing, workability and the properties of the finished mix.
 
-The VSI crusher price can vary depending on the selected model, production capacity, configuration, application requirements and overall plant setup. The VSI crusher machine price may also vary when additional equipment or customized configurations are required.
+A VSI crusher can help produce more cubical aggregates by breaking material through repeated impact. The actual improvement depends on the rock type, feed characteristics, rotor settings and the performance of the complete crushing circuit.
 
-When evaluating the cost of a VSI crusher, businesses should consider factors such as production capacity, material requirements, operating efficiency, maintenance and long-term performance rather than focusing only on the initial investment.
+#### Suitable for Manufactured Sand Production
 
-For accurate pricing, contact Pithal Machines with your application and production requirements.
+Manufactured sand is produced by processing suitable rock through crushing, screening and where required, washing or classification. A VSI crusher can play an important role in this process by reducing particle size and improving shape.
 
-### Choose a Reliable VSI Crusher Manufacturer
+The quality of VSI sand depends on the grading of the feed, crusher operation and downstream processing. Excess fines, moisture and variations in feed material must be managed to meet the specifications of the intended application.
 
-Selecting experienced VSI crusher manufacturers is important when investing in crushing and material-processing equipment. A reliable VSI crusher manufacturer can provide suitable equipment configurations, technical guidance and application support based on specific project requirements.
+For plants supplying sand to concrete manufacturers, product testing and regular grading checks are essential. A crusher alone cannot guarantee compliance with a particular sand specification.
 
-Pithal Machines provides crushing and screening solutions for demanding mining, quarrying, construction, aggregate and material-processing applications.
+#### Better Control Over the Finished Product
 
-### Get the Right Vertical Shaft Impactor for Your Application
+When correctly configured with suitable screens and material-handling equipment, a VSI crusher plant can help operators manage product-size distribution and separate aggregates into usable fractions.
 
-Every crushing operation has different requirements based on material type, feed size, required output, production capacity and desired particle shape. Selecting the appropriate vertical shaft impactor configuration is therefore important for achieving efficient plant performance.
+Closed-circuit operation may be appropriate where material requires additional crushing to meet the target size. However, the amount of recirculating material must be considered when sizing the crusher, screens and conveyors.
 
-[Pithal Machine](https://www.pithalmachine.com/) can help you identify a suitable Prime VSI Crusher configuration based on your application and crushing requirements. Contact our team to discuss your requirements and get detailed technical information, configuration options and the latest VSI crusher price.`
-  }
+#### Integration With Existing Equipment
+
+A VSI crusher can be incorporated into an existing crushing line or included in a new plant layout. Its effectiveness depends on how well the machine matches the upstream crushers and downstream screening equipment.
+
+Proper coordination between feeders, crushers, screens and conveyors helps avoid uneven loading and unnecessary material handling.
+
+### Applications of a VSI Crusher Plant
+
+A VSI crusher plant is commonly used where aggregate shaping or manufactured sand production is required. Its suitability depends on the characteristics of the material being processed and the specifications of the final product.
+
+* **M-sand manufacturing:** Suitable crushed rock is processed into fine aggregate for construction applications. Screening and washing may be required to achieve the desired grading and manage excess fines.
+* **Concrete aggregate production:** VSI crushing can improve particle shape for aggregates intended for concrete production. The final material must still meet the applicable grading and quality requirements.
+* **Road and highway construction:** VSI-produced aggregates can be used in road construction and asphalt applications when their size, shape and other properties meet project specifications.
+* **Quarrying and stone crushing:** Existing crushing plants may use a VSI crusher as a tertiary stage to improve aggregate shape or produce additional fine fractions.
+* **Selected mining applications:** A VSI can be useful for further crushing or shaping suitable materials in mineral-processing operations, depending on the process requirements.
+
+Before selecting a machine for any of these applications, operators should assess the feed material, required throughput and intended product. These details determine whether a VSI is the appropriate solution and how it should be integrated into the plant.
+
+### Factors to Consider When Selecting a VSI Crusher Machine
+
+The right machine depends on the production target and the material being processed. Comparing crushers solely by their stated capacity can lead to poor equipment selection because actual performance varies with operating conditions.
+
+* **Feed material and size:** Identify the type of rock, maximum feed size, hardness and abrasiveness. The feed must remain within the manufacturer's specified limits for the selected configuration.
+* **Required capacity:** Define the expected throughput in tonnes per hour. It is also important to distinguish total crusher throughput from saleable finished-product output, particularly when the plant operates with recirculation.
+* **Product grading:** Specify the required sand or aggregate size distribution. This helps determine the crusher configuration and the screening or classification equipment needed after crushing.
+* **Rotor and crushing configuration:** Rock-on-rock and rock-on-metal arrangements offer different operating characteristics. The choice should reflect the material's abrasiveness, required reduction and expected wear costs.
+* **Power and operating expenses:** Consider the machine's power requirements alongside the expected production rate, wear-part consumption and maintenance needs. The lowest initial purchase price does not necessarily represent the lowest cost per tonne.
+* **Maintenance and service access:** Ask about inspection procedures, replacement wear parts, routine maintenance and spare-part availability. These factors affect machine downtime and long-term operating reliability.
+* **Compatibility with the plant:** Check whether the existing feeder, upstream crushers, screens and conveyors can handle the intended material flow. If the plant is new, these components should be designed as one coordinated system.
+
+Discussing these requirements with the supplier before purchase helps identify a machine that fits the application instead of relying on general capacity claims.
+
+### Choosing Pithal Machines for VSI Crushing Solutions
+
+Selecting a VSI crusher manufacturer involves more than finding a machine with the required capacity. Buyers need to understand whether the proposed equipment is suitable for their material, production process and finished-product requirements.
+
+Pithal Machines provides crushing and screening equipment solutions for businesses involved in aggregate production, mining and manufactured sand processing. Its VSI crushing solutions can be evaluated according to the requirements of a proposed installation or an existing crushing operation.
+
+When discussing your requirements with Pithal Machines, share details about the feed material, desired output, target grading and available equipment. This information helps establish the intended application and identify the technical details that need to be confirmed before purchasing.
+
+Before finalising an order, request the applicable technical specifications, capacity information, power requirements, wear-part details and scope of supply. These details are important for planning installation, estimating operating expenses and coordinating the crusher with the rest of the plant.
+
+Looking for a VSI crusher for manufactured sand or aggregate production? Contact [Pithal Machines](https://www.pithalmachine.com/) to discuss your application, production requirements and suitable crushing and screening configuration.
+
+### Discuss Your VSI Crusher Requirements With Pithal Machines
+
+Manufactured sand and aggregate production depend on suitable feed material, the right crushing process and effective screening. A VSI crusher can improve particle shape and support the production of fine aggregates when its configuration matches the application.
+
+For businesses planning a new sand-making plant or upgrading an existing crushing line, equipment selection should begin with the required output, material characteristics and finished-product specifications.
+
+Contact Pithal Machines to discuss your VSI crusher requirements and request a suitable crushing solution for your operation.`,
+  },
 };
 
 export type VsiCrusherData = ProductDetailData;
