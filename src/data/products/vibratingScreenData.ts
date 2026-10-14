@@ -364,104 +364,139 @@ export const vibratingScreenData: ProductDetailData = {
     highlight: "Questions",
     faqs: [
       {
-        question: "What is a Vibrating Screen?",
-        answer: "A Vibrating Screen is an industrial screening machine designed to separate and classify materials according to particle size. It uses controlled vibration to move material across a screening surface, allowing smaller particles to pass through while larger particles continue toward the discharge point. It is commonly used in mining, quarrying, aggregate production and stone crushing applications."
+        question: "1. What is the main purpose of vibrating screens?",
+        answer:
+          "Vibrating screens separate materials into different particle sizes. They are widely used in stone crushing, mining, quarrying and aggregate production to control product grading and direct material to the appropriate processing stage.",
       },
       {
-        question: "What materials can a Vibrating Screen handle?",
-        answer: "Vibrating Screens can be used for screening materials such as crushed stone, rocks, aggregates, sand, gravel and various mineral materials. The suitable configuration depends on the material characteristics, feed size, moisture content and required screening output."
+        question: "2. How do I choose a vibrating screen for a stone crusher plant?",
+        answer:
+          "Consider the crusher's output, feed-size distribution, required aggregate fractions, material characteristics and expected production capacity. The deck arrangement and screen openings should match the plant's separation requirements.",
       },
       {
-        question: "What is a vibrating sieve used for?",
-        answer: "A vibrating sieve is used to separate materials into different size fractions by passing smaller particles through a screening surface while retaining larger particles. In industrial applications, vibrating sieves can be used for material classification, screening and size separation."
+        question: "3. What is the difference between a linear vibrating screen and a vibro screener?",
+        answer:
+          "A linear vibrating screen uses linear vibration to move material across its screening surface and is used in various industrial applications. A vibro screener commonly refers to equipment used for separating powders, granules and smaller particles. The appropriate choice depends on the material and process.",
       },
       {
-        question: "Can Prime Vibrating Screens be used with stone crushers?",
-        answer: "Yes. Prime Vibrating Screens can be integrated into crushing and screening plants and used as a vibrating screen for stone crusher applications. They help separate crushed material into different sizes and can improve the efficiency of downstream crushing and screening processes."
+        question: "4. What factors affect vibrating screen performance?",
+        answer:
+          "Screen performance depends on feed rate, particle-size distribution, moisture content, screen aperture, deck arrangement, feed distribution and the condition of the screening surface. Blocked openings and uneven feeding can reduce separation effectiveness.",
       },
       {
-        question: "How do I choose the right Prime Vibrating Screen?",
-        answer: "The right vibrating screen depends on factors such as material type, feed size, required capacity, desired separation sizes, number of decks and operating conditions. Pithal Machine can help identify a suitable configuration based on your specific screening requirements."
+        question: "5. Are vibrating mining screens suitable for aggregate production?",
+        answer:
+          "Screening equipment may be used in both mining and aggregate processing, provided its design and configuration suit the material and operating requirements. Capacity, abrasiveness, feed size and target grading should be evaluated before selection.",
       },
       {
-        question: "How can I get the price of a Prime Vibrating Screen?",
-        answer: "The price of a vibrating screen depends on its model, size, configuration, capacity and application requirements. Contact Pithal Machine with your material type and production requirements to receive a suitable machine recommendation and quotation."
+        question: "6. How do I select a vibrating screen manufacturer in India?",
+        answer:
+          "Evaluate the manufacturer's relevant product range, technical specifications, available configurations, application suitability and support arrangements. Share your feed material, feed size, expected throughput and required output grading when requesting a recommendation.",
       },
-      {
-        question: "How can I request a quotation for a Prime Vibrating Screen?",
-        answer: "You can contact Pithal Machine through the enquiry form or contact details available on the website. Share your required capacity, material type, feed size and screening requirements to receive a suitable recommendation and quotation."
-      }
-    ]
+    ],
   },
   longContent: {
-    content: `## Prime Vibrating Screens for Efficient Material Separation
+    content: `## Vibrating Screens Manufacturer in India – Pithal Machines
 
-The Prime Vibrating Screens are designed for efficient screening, accurate material separation and reliable performance across demanding mining, quarrying, construction and aggregate-processing applications. This versatile vibro screener helps separate materials according to size while maintaining consistent material flow.
+In a stone crushing plant, crushing the material is only part of the process. The crushed material must also be separated into the correct sizes before it can be used in construction or sent for further processing. Vibrating screens perform this essential task by classifying aggregates, removing correctly sized material from the crushing circuit and directing oversized particles for additional crushing when required.
 
-Built for demanding industrial environments, Prime Vibrating Screens offer a practical screening solution for crushing plants, mining operations and material-processing applications where efficient classification and reliable operation are essential.
+Pithal Machines provides crushing and screening equipment for stone crushing, mining, quarrying and aggregate processing applications. Our vibrating screen solutions are intended to support material classification at different stages of production, helping operators manage material flow and achieve the required product grading.
 
-### Why Choose Prime Vibrating Screens from Pithal Machine
+For businesses looking for a vibrating screen manufacturer in India, selecting the right equipment starts with understanding the feed material, required production capacity, output sizes and overall plant configuration.
 
-Choosing the right screening equipment can directly affect plant productivity, material quality and overall processing efficiency. Pithal Prime Vibrating Screens are engineered to provide effective screening performance, robust construction and dependable operation.
+### What Is a Vibrating Screen?
 
-The machine is designed to handle continuous material flow while separating different particle sizes efficiently. Its practical design makes it suitable for applications requiring reliable and consistent screening.
+A vibrating screen is a mechanical screening machine that separates bulk materials according to particle size. It uses controlled vibration to move material across a screening surface. Particles smaller than the screen openings pass through, while larger particles travel along the deck towards the discharge point.
 
-### Vibrating Screens for Mining and Quarrying
+In a typical crushing plant, the vibrating screen receives material from a crusher and separates it into different size fractions. Depending on the plant arrangement, the separated material may be sent to stockpiles, transferred to another processing stage or returned for further crushing.
 
-Mining and quarrying operations require durable equipment capable of handling large volumes of material. Prime vibrating mining screens are designed to screen rocks, minerals, aggregates and other materials according to the required size.
+The screening process influences the grading of the final product. Screen aperture size, deck arrangement, feed distribution, moisture content and material characteristics all affect how effectively particles are separated.
 
-The controlled vibration helps move material across the screening surface, allowing smaller particles to pass through while larger particles continue toward the discharge section.
+### Vibrating Screen for Stone Crusher Plants
 
-### Efficient Material Separation
+A vibrating screen for stone crusher applications helps separate crushed rock into the sizes required for construction aggregates and other uses. It works alongside crushing equipment to maintain the desired product grading and prevent material from moving unnecessarily through the production circuit.
 
-The main purpose of vibrating screens is to classify materials into different sizes for further processing or final use. Prime screens use controlled vibration to create effective material movement and separation.
+Consider a plant producing several aggregate sizes. After crushing, the material enters the screening stage, where different fractions are separated according to the screen openings. Material that meets the required size can move to stockpiling, while oversized particles may return to the crusher for further reduction.
 
-Depending on the application and screen configuration, the machine can be used as a vibrating sieve for separating different particle sizes and improving the efficiency of material-processing operations.
+In a closed-circuit arrangement, the crusher vibrating screen plays an important role in controlling the return of oversized material. If the screen is undersized or poorly matched to the feed rate, material can accumulate and restrict the performance of the entire plant.
 
-### Linear Vibrating Screen for Consistent Screening
+When selecting a screening machine, buyers should consider the crusher's output, feed-size distribution, number of required product fractions and expected throughput. The screening equipment should be capable of handling the actual operating conditions rather than being selected on nominal capacity alone.
 
-A linear vibrating screen is designed to move material across the screening surface in a controlled direction while separating particles according to size. This type of screening system is suitable for applications that require continuous material flow and consistent classification.
+### Vibrating Mining Screens for Mineral Processing
 
-Prime Vibrating Screens can be configured according to the specific requirements of the material, capacity and screening application.
+Mining and quarrying operations process materials that can vary considerably in hardness, abrasiveness, moisture and particle size. Vibrating mining screens help classify these materials at different stages of the processing circuit.
 
-### Built for Crushing and Screening Plants
+Screening may take place before crushing, between crushing stages or after the final crusher. Pre-screening can separate smaller particles before they enter a crusher, while post-crushing screening separates the processed material into the required size fractions.
 
-Prime Vibrating Screens are suitable for integration with crushing and screening plants. A vibrating screen for stone crusher applications helps separate crushed material into different sizes, allowing suitable material to move to the next processing stage.
+Material characteristics are especially important in mining applications. Abrasive feed can accelerate screen-media wear, while wet or sticky material may block the openings and reduce the effective screening area. Feed distribution and the required separation size also influence the equipment configuration.
 
-The equipment can also be used as a crusher vibrating screen alongside crushers, conveyors and other material-processing equipment to support an efficient multi-stage crushing and screening process.
+Understanding these conditions before selecting a screen helps businesses choose equipment that fits their production requirements and plant layout.
 
-### Reliable Vibrating Sieve Shaker Performance
+### Types of Vibrating Screening Equipment
 
-The controlled vibration generated by the screening mechanism enables effective material movement across the screen deck. As material passes over the screening surface, particles smaller than the selected openings pass through while larger particles are discharged separately.
+Screening machines are available in different designs and their suitability depends on the material being processed and the required separation. The following terms describe related screening equipment, although they are not interchangeable in every application.
 
-This vibrating sieve shaker principle helps improve screening efficiency and provides consistent material classification for various industrial applications.
+#### Linear Vibrating Screen
 
-### Durable Screening Equipment for Long-Term Operation
+A linear vibrating screen uses a linear vibration pattern to move material across the screening surface. It is used in various industrial applications for separating and grading bulk materials.
 
-Durability is an important factor when selecting screening equipment for mining and aggregate operations. Prime Vibrating Screens are manufactured with a focus on structural strength, dependable components and reliable operation.
+Its suitability depends on the feed characteristics, required throughput, screen openings and installation conditions. For heavy-duty crushing applications, buyers should confirm that the machine is designed for the expected material load and operating environment.
 
-With proper installation, maintenance and operating practices, the equipment is designed to support continuous screening operations in demanding working environments.
+#### Vibro Screener
 
-### Choose a Reliable Vibrating Screen Manufacturer
+A vibro screener uses vibration to separate particles through a mesh or screening surface. The term is commonly associated with machines used for powders, granules and smaller particles in industries such as food processing and chemicals.
 
-Selecting experienced vibrating screen manufacturers is important when investing in industrial screening equipment. The right manufacturer can help with machine selection, configuration, technical requirements and application-specific solutions.
+A vibro screener should not automatically be treated as equivalent to a heavy-duty vibrating screen for stone crushing. The equipment must match the material size, volume and operating conditions of the intended application.
 
-Pithal Machine provides crushing and screening equipment designed for demanding mining, quarrying, aggregate and construction applications. As a vibro screen manufacturer, Pithal Machine focuses on delivering practical and reliable screening solutions for different material-processing requirements.
+#### Vibrating Sieve and Vibrating Sieve Shaker
 
-### Vibrating Screen Price and Machine Cost
+A vibrating sieve separates particles according to the size of the openings in its screening surface. The term is used across different industries, depending on the equipment design and scale of operation.
 
-The vibrating screen price depends on factors such as screen size, capacity, configuration, number of decks, application requirements and overall plant setup. The total cost may also vary depending on customization and additional equipment.
+A vibrating sieve shaker is generally used for laboratory testing and particle-size analysis. It passes a material sample through a series of test sieves to determine the distribution of particle sizes.
 
-When evaluating screening equipment, businesses should consider screening capacity, material characteristics, operating requirements, maintenance and long-term performance rather than focusing only on the initial machine cost.
+For commercial crushing and mining operations, industrial vibrating screens are selected according to production capacity, material characteristics and the required grading. Understanding this distinction helps buyers identify equipment suitable for their actual process.
 
-Pithal Machine can provide pricing based on the selected vibrating screen configuration and specific application requirements.
+### How to Choose the Right Vibrating Screen
 
-### Get the Right Vibrating Screen for Your Application
+The performance of a screening system depends on how well the equipment matches the material and the production targets. Before purchasing a screen, businesses should evaluate the following factors:
 
-Every screening operation has different requirements based on material type, feed size, required output, production capacity and desired separation. Selecting the right vibrating screen configuration is therefore important for maintaining efficient plant performance.
+* **Required capacity:** The machine must handle the expected feed rate without restricting the crushing circuit. Actual screening capacity depends on the material, feed distribution, moisture and required separation accuracy.
+* **Screen openings and deck arrangement:** Aperture size determines which particles pass through the screen. A multi-deck arrangement can separate material into several size fractions, depending on the required product grading and machine configuration.
+* **Material characteristics:** Particle size, shape, hardness, abrasiveness and moisture influence screening performance. Wet or sticky feed can block the openings, while abrasive materials can increase wear on screen panels.
+* **Feed distribution:** Material should be spread appropriately across the screening surface. Uneven feeding can leave portions of the deck underused and reduce the consistency of separation.
+* **Maintenance requirements:** Screen panels, drive components, bearings and supporting structures require regular inspection. Maintenance schedules should follow the manufacturer's recommendations and account for the material being processed.
+* **Plant compatibility:** The screen must work effectively with the crusher, conveyors and downstream processing equipment. A machine that cannot handle the incoming material may become a bottleneck even when the crusher has sufficient capacity.
 
-[Pithal Machine](https://www.pithalmachine.com/) can help you identify a suitable Prime Vibrating Screen based on your material-processing and screening requirements. Contact our team to discuss your application, technical requirements and get detailed product information and pricing.`
-  }
+Providing these details to the manufacturer helps narrow down the available configurations and identify a screening solution suited to the project.
+
+### How Vibrating Screens Affect Crushing Plant Performance
+
+Screening directly influences how material moves through a crushing plant. If the particles are not properly sized, they may undergo unnecessary crushing. If oversized material passes into a stage that cannot handle it efficiently, product quality and downstream processing may be affected.
+
+A properly configured screening system separates material into the required fractions and directs each fraction to the appropriate destination. In closed-circuit plants, this helps manage the return of oversized particles. In plants producing multiple aggregate sizes, it allows different fractions to be collected separately.
+
+Operating conditions also matter. Excessive feed, blocked screen openings, uneven material distribution and worn screen media can reduce screening effectiveness. Regular inspections and timely maintenance help operators identify these issues before they cause extended production interruptions.
+
+For this reason, vibrating screens should be selected as part of the complete crushing and screening circuit, with the crusher output, conveyor arrangement and final product requirements considered together.
+
+### Why Choose Pithal Machines for Vibrating Screens?
+
+Choosing a vibrating screen manufacturer involves evaluating the suitability of the equipment, available configurations, technical specifications and compatibility with the intended processing application.
+
+Pithal Machines provides crushing and screening equipment for material-processing operations, including jaw crushers, cone crushers, VSI crushers, crusher buckets and vibrating screens. These machines serve different stages of material reduction, classification and handling.
+
+For buyers planning a new crushing plant or upgrading an existing setup, the screening requirement should be considered alongside the crushing process. Feed size, expected throughput, material properties, target aggregate grading and available installation space all influence the equipment selection.
+
+Businesses searching for a vibro screen manufacturer or an industrial screening solution should confirm the machine's technical details and intended application before making a purchase. Comparing equipment on suitability and operating requirements provides a more useful basis for selection than price alone.
+
+Pithal Machines can help prospective buyers explore its crushing and screening equipment according to their project requirements.
+
+### Discuss Your Vibrating Screen Requirements with Pithal Machines
+
+Choosing suitable screening equipment helps maintain aggregate grading and manage material flow through crushing and mining operations. The right configuration depends on the material, expected production capacity, and required output sizes.
+
+[Contact Pithal Machines](https://www.pithalmachine.com/) to discuss your screening requirements. Share your feed material, feed size, required capacity and target product grading to help identify a suitable crushing and screening configuration for your plant.`,
+  },
 };
 
 export type VibratingScreenData = ProductDetailData;

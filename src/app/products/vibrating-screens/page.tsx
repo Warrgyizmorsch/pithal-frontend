@@ -18,9 +18,9 @@ import { vibratingScreenData } from "@/data/products/vibratingScreenData";
 import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
-  title: "Vibrating Screen Manufacturer in India | 80–700 TPH | Pithal Machines",
+  title: "Vibrating Screens Manufacturer in India | Pithal Machines",
   description:
-    "High-performance vibrating screens from 80–700 TPH for mining, quarrying and aggregate plants. View models, specifications and applications from Pithal Machines.",
+    "Explore vibrating screens from Pithal Machines for stone crushing, mining and aggregate processing. Find screening solutions for your plant requirements.",
 };
 
 export default function VibratingScreensPage() {
