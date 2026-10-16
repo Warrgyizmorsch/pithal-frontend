@@ -18,9 +18,9 @@ import { coneCrusherData } from "@/data/products/coneCrusherData";
 import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
-  title: "Cone Crusher Manufacturer in India | 80–600 TPH | Pithal Machines",
+  title: "Cone Crusher Manufacturer in India | Pithal Machines",
   description:
-    "Secondary and tertiary cone crushers from 80–600 TPH for hard rock, granite and basalt. View models, specifications and applications from Pithal Machine.",
+    "Explore cone crushing solutions from Pithal Machines for mining, quarrying and aggregate production. Discuss your capacity requirements and request a quotation.",
 };
 
 export default function ConeCrusherProductPage() {

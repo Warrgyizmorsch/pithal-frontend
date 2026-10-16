@@ -445,98 +445,127 @@ export const coneCrusherData: ProductDetailData = {
     highlight: "Questions",
     faqs: [
       {
-        question: "1. What is a Cone Crusher?",
-        answer: "Prime Cone Crusher is designed for efficient secondary and tertiary crushing of hard and abrasive materials in mining, quarrying, construction and aggregate applications."
+        question: "1. What is a cone crusher used for?",
+        answer:
+          "A cone crusher is primarily used for secondary and tertiary crushing of hard rock. Common applications include mining, quarrying, aggregate production and manufactured sand processing.",
       },
       {
-        question: "2. What materials can a Cone Crusher process?",
-        answer: "It can process suitable hard and abrasive materials such as rocks, stones and aggregates, depending on the model and application."
+        question: "2. What determines cone crusher capacity?",
+        answer:
+          "Capacity depends on feed size, material hardness, crushing chamber configuration, discharge setting and operating conditions. The performance of connected screens and conveyors also affects total plant output.",
       },
       {
-        question: "3. Where is Prime Cone Crusher used?",
-        answer: "Prime Cone Crusher is suitable for mining, quarrying, aggregate production, construction, road projects and other material-processing applications."
+        question: "3. What is the cone crusher machine price in India?",
+        answer:
+          "The price varies according to capacity, technical specifications, configuration and supporting equipment. Contact the manufacturer with your application requirements to request a suitable quotation.",
       },
       {
-        question: "4. How does a cone crusher work?",
-        answer: "A cone crusher reduces material through compression between the mantle and concave inside the crushing chamber, producing smaller and controlled-sized output."
+        question: "4. What is a hydraulic cone crusher?",
+        answer:
+          "A hydraulic cone crusher uses hydraulic systems for functions that may include setting adjustment and overload protection, depending on its design and configuration.",
       },
       {
-        question: "5. What are the benefits of using a cone crusher?",
-        answer: "A cone crusher provides efficient material reduction, consistent product sizing and reliable performance for secondary and tertiary crushing applications."
+        question: "5. Can a cone crusher be used for manufactured sand?",
+        answer:
+          "Yes. A cone crusher can reduce rock size within a manufactured sand production line. A VSI crusher may be required for additional particle shaping, depending on the feed material and final sand specifications.",
       },
       {
-        question: "6. How do I choose the right Cone Crusher?",
-        answer: "Selection depends on feed size, material type, required production capacity, desired output size and the overall crushing plant configuration."
+        question: "6. How do I choose the right cone crusher manufacturer?",
+        answer:
+          "Evaluate technical specifications, application suitability, maintenance requirements, spare parts availability and after-sales support. Confirm that the proposed machine matches your required production conditions before purchasing.",
       },
-      {
-        question: "7. Can Prime Cone Crusher be used in a complete crushing plant?",
-        answer: "Yes. Prime Cone Crusher can be integrated with jaw crushers, vibrating screens and conveyor systems to create an efficient multi-stage crushing and screening plant."
-      }
-    ]
+    ],
   },
   longContent: {
-    content: `## Prime Cone Crusher for Efficient Secondary and Tertiary Crushing
+    content: `## Cone Crusher Manufacturer in India – Pithal Machines
 
-The Prime Cone Crusher is designed for efficient secondary and tertiary crushing of hard, abrasive and high-strength materials. This reliable cone crusher machine is suitable for demanding applications in mining, quarrying, construction, aggregate production and material processing.
+A cone crusher is an important part of crushing operations where hard rock needs to be reduced into smaller, consistently sized aggregates. It is widely used in mining, quarrying, road construction and aggregate production, particularly when material requires further processing after primary crushing.
 
-With robust construction and a dependable crushing mechanism, the Prime Cone Crusher delivers consistent material reduction and controlled product sizing. Its heavy-duty design makes it a suitable solution for industries requiring continuous crushing and efficient material processing.
+Pithal Machines provides crushing and screening equipment for industrial material-processing applications. Selecting the right cone crusher machine depends on the type of rock, feed size, required output, production target and the specifications of the finished material. These factors influence machine selection, operating efficiency and long-term maintenance costs.
 
-### Why Choose Prime Cone Crusher Machine from Pithal Machine
+Whether you are establishing a new crushing plant or expanding an existing operation, understanding the equipment's working principle and application requirements helps you make a more informed investment.
 
-Choosing the right cone crusher machine can directly impact productivity, operating efficiency, product quality and overall plant performance. The Pithal Prime Cone Crusher is engineered to provide a combination of crushing efficiency, durability and dependable operation.
+### What Is a Cone Crusher?
 
-Its strong construction allows the machine to perform effectively in demanding working environments, while its practical design supports consistent output and efficient material reduction. This makes Prime Cone Crusher a reliable choice for businesses looking for high-performance crushing equipment.
+A cone crusher is a compression-based machine that breaks rocks and minerals by squeezing them between a moving inner cone and a stationary outer crushing surface. This action reduces larger pieces into smaller particles suitable for further processing.
 
-### Cone Crusher Machine for Mining and Quarrying
+Cone crushers are generally used for secondary and tertiary crushing, after primary equipment such as a jaw crusher has reduced the initial feed size. The processed material may then pass through vibrating screens to separate aggregates according to the required grading.
 
-Mining and quarrying operations often require equipment capable of processing hard and abrasive materials. The Prime cone crusher is designed for secondary and tertiary crushing applications where material needs to be reduced further after primary crushing.
+These machines are commonly considered for hard and abrasive materials such as granite, basalt and other types of rock. Their suitability depends on the material characteristics, required product size and overall crushing circuit.
 
-Its robust construction and powerful compression-crushing action make the cone crusher suitable for processing rocks, aggregates and other hard materials for demanding industrial applications.
+### How Does a Cone Crusher Machine Work?
 
-### Efficient Material Reduction
+The working process begins when pre-crushed material enters the crushing chamber. An eccentric mechanism moves the inner cone, creating a continuous compression action against the outer crushing surface.
 
-The primary function of a cone crusher is to further reduce material after primary crushing and produce smaller, manageable aggregate sizes. The Prime Cone Crusher uses a compression-based crushing mechanism to efficiently reduce suitable feed material.
+As the gap between the surfaces changes, the material is compressed and fractured into smaller pieces. The crushed material gradually moves through the chamber and exits through the discharge opening.
 
-The material is crushed between the mantle and concave as it passes through the crushing chamber, helping achieve controlled size reduction and consistent output. The machine can be integrated into a wider cone crusher plant where material is further screened, conveyed or processed according to project requirements.
+The final product size depends on the discharge setting, feed characteristics, crushing chamber configuration and condition of the wear components. A consistent feed supply also helps maintain stable operation.
 
-### Built for Demanding Industrial Applications
+In a complete crushing plant, the cone crusher machine works alongside feeding equipment, vibrating screens and belt conveyors. When these components are properly matched, the plant can maintain a more consistent material flow and reduce unnecessary production interruptions.
 
-Our cone crusher machine is designed for industries where reliable equipment performance is essential. From mining and quarrying to aggregate production, construction and infrastructure development, the machine can support a wide range of secondary and tertiary crushing requirements.
+### Key Features of a Cone Crusher
 
-Its heavy-duty design helps provide dependable operation under demanding conditions while supporting consistent production and efficient material processing.
+The performance of a cone crusher depends on its construction, crushing mechanism and suitability for the material being processed. These factors influence product grading, component wear and operating requirements.
 
-### Reliable Cone Crusher Machine for Long-Term Operation
+#### Durable Crushing Components
 
-Durability is an important consideration when selecting industrial crushing equipment. Pithal Cone Crusher is manufactured with a focus on structural strength, reliable components and long-term operational performance.
+Cone crushers operate under repeated compressive loads, particularly when handling hard rock. Durable crushing surfaces and a suitably designed supporting structure are important for managing wear and maintaining reliable operation.
 
-With appropriate installation, maintenance and operating practices, the machine can provide dependable service while helping businesses maintain efficient crushing operations.
+#### Controlled Product Size
 
-### Cone Crusher Plant for Efficient Material Processing
+The crushing chamber and discharge setting influence the size of the finished material. Correct configuration helps operators achieve the required aggregate grading for subsequent processing and end-use applications.
 
-The Prime Cone Crusher can be integrated into a complete cone crusher plant according to specific production and material-processing requirements. It can work alongside primary crushers, vibrating screens and conveyor systems to create an efficient multi-stage crushing solution.
+#### Hydraulic Adjustment
 
-A properly configured plant helps maintain an effective flow of material from primary crushing through secondary and tertiary stages, screening and final stockpiling.
+A hydraulic cone crusher may use hydraulic systems for discharge-setting adjustment, overload protection or clearing certain blockages, depending on the model. Buyers should confirm the specific functions available in the proposed machine rather than assume that every hydraulic crusher offers identical features.
 
-### Cone Crusher Price and Machine Cost
+#### Integration with Other Equipment
 
-The cone crusher price depends on factors such as the crusher model, production capacity, configuration, application requirements and plant setup. The overall cone crusher machine price may also vary depending on additional equipment and customization requirements.
+Cone crushers can be integrated with jaw crushers, vibrating screens and conveyors to create a coordinated crushing circuit. Proper equipment selection helps ensure that material can move through each processing stage without creating unnecessary bottlenecks.
 
-When evaluating the cost of a cone crusher, businesses should consider not only the initial investment but also production capacity, operating efficiency, maintenance requirements, durability and long-term performance.
+### Applications of a Cone Stone Crusher
 
-Pithal Machines can provide pricing based on the specific crusher configuration and application requirements.
+A cone stone crusher is used in several industries where hard rock must be processed into smaller aggregate sizes.
 
-### Choose Reliable Cone Crusher Manufacturers
+* **Mining and quarrying:** Cone crushers reduce pre-crushed rock for subsequent processing. The appropriate configuration depends on the material's hardness, abrasiveness and required output.
+* **Aggregate production:** Construction projects require aggregates in specified sizes and grading ranges. Cone crushing helps prepare material for screening and separation into different grades.
+* **Road construction:** Crushed aggregates are used in road foundations and pavement layers according to project specifications. A suitable crushing and screening arrangement helps produce material that meets the required grading.
+* **Manufactured sand production:** Cone crushers can reduce rock size before additional processing. Where further particle shaping is necessary, a vertical shaft impactor (VSI) crusher may be included in the production line.
 
-Selecting experienced cone crusher manufacturers is important when investing in heavy-duty crushing equipment. The right manufacturer can provide suitable equipment configuration, technical guidance, application support and after-sales assistance.
+The final equipment arrangement should reflect the raw material, intended application and quality requirements of the finished product.
 
-Pithal Machines focuses on providing reliable crushing and screening solutions designed for demanding mining, quarrying, construction and aggregate-processing applications.
+### Cone Crusher Cost and Machine Price in India
 
-### Get the Right Cone Crusher Machine for Your Application
+The cone crusher cost depends on the machine's capacity, configuration, technical specifications and intended application. The overall investment may also include feeders, conveyors, vibrating screens, electrical systems and installation.
 
-Every crushing operation has different requirements based on material type, feed size, required output, production capacity and crushing stage. Selecting the appropriate cone crusher machine configuration is therefore important for achieving efficient plant performance.
+When comparing the cone crusher machine price, consider operating expenses alongside the initial purchase cost. Wear parts, spare parts availability, maintenance requirements and technical support can influence the total cost of ownership.
 
-[Pithal Machine](https://www.pithalmachine.com/) can help you identify a suitable Prime Cone Crusher configuration based on your application and crushing requirements. Contact our team to discuss your requirements and get detailed technical information and the latest cone crusher machine price.`
-  }
+A machine that is unsuitable for the feed material or production target may result in reduced output and unnecessary wear. On the other hand, selecting excessive capacity can increase investment without providing a corresponding operational benefit.
+
+For a meaningful quotation, share your required capacity, material type, maximum feed size and desired final product grading with the manufacturer. These details help establish whether the proposed equipment suits your production requirements.
+
+### How to Choose the Right Cone Crusher Manufacturer
+
+Choosing between cone crusher manufacturers requires careful evaluation of equipment suitability, technical support and long-term operating requirements.
+
+Start by defining the material you need to process and the production rate your plant must achieve. Review the manufacturer's specifications for feed size, discharge adjustment, power requirements and available operating features.
+
+Next, understand the maintenance requirements, replacement liner availability and access to spare parts. Installation requirements and compatibility with existing crushing equipment should also be considered before placing an order.
+
+Pithal Machines offers crushing and screening equipment for industrial material-processing applications. Discussing your project requirements with the supplier can help you assess a suitable arrangement for your crushing circuit.
+
+Before finalising a purchase, confirm the machine specifications, expected operating conditions, delivery scope and installation requirements. A clear understanding of these details helps reduce uncertainty during equipment selection.
+
+### Crushing Solutions from Pithal Machines
+
+Selecting a cone crusher requires more than comparing machine prices. The equipment must suit the feed material, required output and operating conditions of the plant.
+
+Pithal Machines provides crushing and screening solutions for applications across mining, quarrying, construction and aggregate processing. When planning a new installation or upgrading an existing facility, consider how the crusher will work with the feeding, screening and conveying equipment.
+
+Reviewing these requirements before purchase helps identify a suitable configuration and avoid capacity mismatches across the production line.
+
+[Contact Pithal Machines](https://www.pithalmachine.com/) to discuss your crushing requirements and request a quotation for your project.`,
+  },
 };
 
 export type ConeCrusherData = ProductDetailData;
