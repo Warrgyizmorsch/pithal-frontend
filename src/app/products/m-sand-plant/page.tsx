@@ -5,9 +5,9 @@ import { ProductDetailTemplate } from "@/components/product-detail/ProductDetail
 import { mSandPlantData } from "@/data/products/mSandPlantData";
 
 export const metadata: Metadata = {
-  title: "M-Sand Crusher Plant & Manufacturing Machine | Pithal Machines",
+  title: "M Sand Plant Manufacturer in India | Pithal Machines",
   description:
-    "Get a complete M-sand crusher plant with VSI crusher, sand making machine, screening and washing systems. Explore M-sand plant cost and customized solutions from Pithal Machines.",
+    "Explore M sand crusher plant solutions for manufactured sand production, including crushing, sand-making and screening equipment from Pithal Machines.",
 };
 
 export default function MSandPlantPage() {
