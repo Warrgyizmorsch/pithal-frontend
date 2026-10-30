@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   title: "Industrial Insights & Engineering Blog | Pithal Machinery",
   description:
     "Explore expert insights, equipment selection guides, operational best practices, and technological innovations in aggregate and mining operations.",
+  alternates: {
+    canonical: "https://www.pithalmachine.com/blog",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 // Ensure page is always dynamically fetched from MongoDB on every request/reload
