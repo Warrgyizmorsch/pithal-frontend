@@ -66,12 +66,14 @@ const getBlogPost = cache(async (rawSlug: string) => {
           slug: b.slug,
           tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
           title: b.title,
-          desc: b.excerpt || b.title,
+          desc: b.excerpt || b.desc || b.title,
           date: b.publishedAt || "Today",
           read: b.readTime || "5 min read",
           views: b.views || "1.2K",
           img: b.image || "/blogpageimg/crusherguide.jpg",
           content: b.content,
+          metaTags: b.metaTags || "",
+          metaDescription: b.metaDescription || "",
           faqs: Array.isArray(b.faqs)
             ? b.faqs.map((f: any) => ({
                 question: String(f.question || ""),
@@ -84,7 +86,15 @@ const getBlogPost = cache(async (rawSlug: string) => {
   } catch (err) {
     console.warn("[Blog Log] Direct DB blog fetch error, checking static fallback:", err);
   }
-  return getPostBySlug(slug) || null;
+  const fallback = getPostBySlug(slug);
+  if (fallback) {
+    return {
+      ...fallback,
+      metaTags: fallback.metaTags || "",
+      metaDescription: fallback.metaDescription || "",
+    };
+  }
+  return null;
 });
 
 const getAllBackendBlogs = cache(async () => {
@@ -123,15 +133,29 @@ export async function generateMetadata({
     };
   }
 
+  // Purely backend data only - no extra hardcoded strings or unwanted fallbacks
+  const metaTitle = (post.title || "").trim();
+  const metaDesc = (post.metaDescription || "").trim();
+
   return {
-    title: post.title,
-    description: post.desc,
+    title: metaTitle,
+    description: metaDesc,
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
     openGraph: {
-      title: post.title,
-      description: post.desc,
+      title: metaTitle,
+      description: metaDesc,
+      images: [
+        post.img && !post.img.startsWith("data:")
+          ? post.img
+          : "/blogpageimg/crusherguide.jpg",
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metaTitle,
+      description: metaDesc,
       images: [
         post.img && !post.img.startsWith("data:")
           ? post.img

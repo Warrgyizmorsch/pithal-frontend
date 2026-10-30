@@ -20,6 +20,8 @@ export interface BlogPost {
   content?: string;
   faqs?: { question: string; answer: string }[];
   num?: string;
+  metaTags?: string;
+  metaDescription?: string;
 }
 
 export const blogPosts: BlogPost[] = [
