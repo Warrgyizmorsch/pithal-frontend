@@ -197,130 +197,159 @@ export const footerColumns = [
 ];
 
 export const homeLongContent = {
-  content: `## Stone Crusher Manufacturer in India | Pithal Machines
+  content: `## Stone Crusher Manufacturer in India – Pithal Machines
 
-Pithal Machines is a stone crusher and crushing equipment manufacturer in India, providing crushing and screening solutions for mining, quarrying, aggregate production, construction and infrastructure projects. Our equipment range includes jaw crushers, cone crushers, VSI crushers, vibrating screens and complete crushing plant solutions.
+The demand for quality aggregates is growing with the development of roads, buildings, highways and infrastructure projects. Reliable crushing equipment plays an important role in processing raw stones into usable materials for these applications. Choosing the right stone crusher manufacturer is essential for businesses looking for machinery that meets their production and material processing requirements.
 
-Crusher selection depends on the material being processed, feed size, required production capacity and final product specifications. Pithal Machines develops crushing solutions around these requirements to support efficient material processing and consistent production.
+Pithal Machines offers stone crushing and screening equipment for different industrial applications. Our machinery range includes jaw crushers, cone crushers, VSI crushers, bucket crushers, vibrating screens and complete crushing plants. These machines support different stages of crushing, screening and aggregate production.
 
-Whether you need a primary crusher for hard rock, a secondary crushing solution for aggregates or a complete crushing plant, Pithal Machines can help you identify a suitable equipment configuration for your application.
+Whether you are setting up a new crushing plant, expanding an existing facility or upgrading your equipment, selecting suitable machinery is important. As a stone crusher machine manufacturer, Pithal Machines focuses on providing equipment solutions for businesses involved in mining, quarrying, construction and aggregate production.
 
-### Industrial Stone Crusher Machines
+### Explore Stone Crushing and Screening Machines
 
-Pithal Machines provides industrial stone crusher equipment for mining, quarrying, aggregate production and construction applications. Crushing systems can be configured according to material characteristics, production requirements and desired output.
-
-A complete crushing operation may include feeding, primary crushing, secondary or tertiary crushing, screening and conveying. Selecting compatible equipment for each stage helps maintain a controlled flow of material through the plant.
-
-Our crushing equipment range includes:
-
-- **Jaw Crushers** for primary crushing
-- **Cone Crushers** for secondary and tertiary crushing
-- **VSI Crushers** for fine crushing and particle shaping
-- **Vibrating Screens** for material separation
-- **Conveyor Systems** for material handling
-- **Complete Crushing Plants** for integrated crushing and screening
-
-### Types of Stone Crusher Machines
-
-Different crushing stages require different equipment. The appropriate type of stone crusher depends on the feed material, required reduction, production capacity and final product.
+Every crushing operation has different requirements. The type of stone, feed size, production capacity and final aggregate specifications determine which machines are needed. Pithal Machines offers equipment for different stages of material processing.
 
 #### Jaw Crusher
 
-Jaw crushers are commonly used for primary crushing. They reduce large rocks into smaller sizes and are suitable for hard rock, quarrying, mining and aggregate applications.
-
-[Explore Jaw Crushers](https://www.pithalmachine.com/products/jaw-crushers) →
+A jaw crusher is generally used for primary crushing, where large rocks are reduced into smaller pieces. It works through compression between two jaw plates, one fixed and the other moving. [Jaw crushers](/products/jaw-crushers) are commonly used in mining, quarrying and aggregate production. They prepare large feed material for further processing.
 
 #### Cone Crusher
 
-Cone crushers are commonly used for secondary and tertiary crushing. They further reduce material after primary crushing and are used where additional size reduction and controlled product sizing are required.
-
-[Explore Cone Crushers](https://www.pithalmachine.com/products/cone-crushers) →
+A cone crusher is commonly used for secondary and tertiary crushing. It reduces material that has already passed through primary crushing equipment. [Cone crusher](/products/cone-crushers) is suitable for processing hard and abrasive stones and helps produce aggregates for construction and infrastructure applications.
 
 #### VSI Crusher
 
-VSI or Vertical Shaft Impactors are used for fine crushing and particle shaping. They are commonly used for manufactured sand and aggregate applications where particle shape is important.
+A Vertical Shaft Impact (VSI) crusher uses high-speed impact to reduce material size and improve particle shape. [VSI crusher](/products/vsi-crushers) is commonly used in manufactured sand production and aggregate processing, particularly when the final material requires suitable particle characteristics.
 
-[Explore VSI Crushers](https://www.pithalmachine.com/products/vsi-crushers) →
+#### Bucket Crusher
+
+Bucket crushers are generally mounted on compatible excavators and are designed for on-site crushing. [Bucket crusher](/products/prime-bucket) allow suitable materials to be crushed directly at the work location. They can be useful in selected construction, demolition and material recycling applications.
 
 #### Vibrating Screen
 
-Vibrating screens separate crushed material into different size fractions. Proper screening helps produce the required aggregate sizes and can return oversize material to the crushing circuit for further reduction.
+A vibrating screen separates crushed material into different sizes. It uses vibration and screening surfaces to classify particles according to the required grading. [Vibrating screen](/products/vibrating-screens) are important in aggregate plants, mining operations and manufactured sand production.
 
-[Explore Vibrating Screens](https://www.pithalmachine.com/products/vibrating-screens) →
+#### Complete Crushing Plants
 
-#### Complete Crushing Plant
+A [complete crushing plant](/products/complete-plants) combines different machines into a connected material processing system. Depending on the application, it may include crushers, vibrating screens and conveyors. The arrangement depends on the raw material, production capacity and final product specifications.
 
-A complete crushing plant integrates equipment such as feeders, crushers, screens and conveyors into a coordinated material-processing system. The configuration depends on the feed material, required capacity and final product specifications.
+### How Does a Stone Crusher Machine Work?
 
-[Explore Complete Crushing Plants →](https://www.pithalmachine.com/products/complete-plants)
+A stone crusher machine reduces large rocks into smaller pieces that can be used in construction, road development and other industrial applications. The process generally involves feeding raw material into a crusher, reducing its size and separating the processed material.
 
-### Stone Crusher Machine Cost and Price Factors
+#### Primary Crushing
 
-The cost of a stone crusher machine depends on the equipment configuration and the project's requirements. Crusher type, production capacity, material characteristics, feed size and supporting equipment can all affect the final investment.
+The process usually begins with primary crushing. Large stones are fed into a jaw crusher, where compression breaks them into smaller pieces for further processing.
 
-When evaluating stone crusher machine price, it is important to consider the complete crushing system rather than the cost of an individual machine.
+#### Secondary and Tertiary Crushing
 
-Key factors include:
+Depending on the required output, the crushed material moves to secondary or tertiary equipment. Cone crushers are commonly used to reduce material size further, while VSI crushers can be included when particle shaping or manufactured sand production is required.
 
-- Production capacity
-- Crusher type and size
-- Material hardness and abrasiveness
-- Maximum feed size
-- Required output size
-- Number of crushing stages
-- Screening requirements
-- Conveyor arrangement
-- Power requirements
-- Plant layout
-- Wear and maintenance requirements
+#### Screening and Material Separation
 
-A higher-capacity plant may require additional crushing stages, larger screens and conveyors compared with a smaller installation. The final configuration should therefore be based on the actual material and production requirements.
+After crushing, vibrating screens separate material into different sizes. Oversized material may be returned for further crushing, depending on the plant configuration. This helps produce aggregates according to the required specifications.
 
-[Discuss Your Crushing Requirement →](https://www.pithalmachine.com/contact)
+### Industrial Applications of Stone Crushing Machines
 
-### How to Choose the Best Stone Crusher for Your Application
+An industrial stone crusher is used in industries where rocks and minerals need to be reduced into smaller sizes. Processed aggregates are important raw materials for several construction and infrastructure activities.
 
-The best stone crusher depends on the requirements of the application. Crusher selection should consider the material being processed, production target and required final product rather than capacity alone.
+#### Construction and Infrastructure
 
-- **Material Characteristics**: Rock hardness, abrasiveness, moisture and material composition can affect crusher selection and wear requirements.
-- **Feed Size**: The maximum size of material entering the crusher influences the required crusher type and feeding arrangement.
-- **Production Capacity**: The required tonnes per hour determines the size and configuration of the crushing equipment.
-- **Final Product**: Required output size and particle shape influence the number of crushing stages and whether equipment such as a cone crusher, VSI or vibrating screen is required.
-- **Plant Configuration**: Feeding, crushing, screening and conveying equipment need to work together to maintain an efficient material flow through the plant.
+Crushed aggregates are used in concrete, foundations, building work and other construction applications. Different aggregate sizes are selected according to project requirements.
 
-Pithal Machines can help evaluate these factors and develop a crushing configuration according to your application.
+#### Road Development
 
-### Why Choose Pithal Machines?
+Road construction uses crushed stones for base layers, sub-base materials and other road-building applications. Screening equipment helps separate aggregates according to the required grading.
 
-Choosing a stone crusher manufacturer requires more than comparing machine prices. The equipment needs to match the material, production target, plant configuration and final product requirements.
+#### Mining and Quarrying
 
-Pithal Machines provides crushing equipment and integrated solutions for different material-processing applications.
+Mining and quarrying operations use crushing machinery to process extracted rocks into manageable sizes. Equipment selection depends on the hardness and characteristics of the material.
 
-- **Application-Based Equipment Selection**: Equipment can be selected according to material characteristics, feed size, production capacity and required output.
-- **Complete Crushing Solutions**: Pithal Machines can combine crushers, vibrating screens and conveyor systems into integrated crushing and screening solutions according to project requirements.
-- **Solutions for Different Production Requirements**: Crushing equipment can be configured for different production capacities and plant requirements.
-- **Technical Support**: Our team can assist with evaluating equipment requirements and developing a suitable crushing configuration for the application.
+#### Manufactured Sand Production
 
-### Stone Crusher Applications
+Manufactured sand production requires suitable crushing and screening equipment. VSI crushers can process suitable raw materials into sand-sized particles, while vibrating screens separate material according to size.
 
-Pithal Machines' crushing equipment can be used across a range of industries and material-processing applications.
+### Factors Affecting Stone Crusher Machine Cost
 
-- **Mining and Quarrying**: Stone crushers can reduce extracted rock and mineral materials to sizes suitable for further processing or aggregate production.
-- **Aggregate Production**: Jaw, cone and VSI crushers can be combined with vibrating screens to produce aggregates according to required size specifications.
-- **Road and Infrastructure Projects**: Crushed stone and aggregates are widely used in road construction and infrastructure development.
-- **Manufactured Sand**: VSI crushing technology can be used for manufactured sand production and applications requiring improved aggregate particle shape.
+The stone crusher machine cost is an important consideration when planning a new plant or upgrading existing equipment. Pricing varies according to machine type, capacity, specifications and overall plant requirements.
 
-### Buy Stone Crusher Machine from Pithal Machines
+#### Machine Type and Configuration
 
-Planning to buy a stone crusher? The equipment should be selected according to your material, feed size, production capacity and required final product.
+Jaw crushers, cone crushers and VSI crushers have different designs and applications. Their cost depends on their individual specifications and intended crushing stage.
 
-Pithal Machines provides jaw crushers, cone crushers, VSI crushers, vibrating screens and complete crushing solutions for mining, quarrying, aggregate production, construction and infrastructure applications.
+#### Production Capacity
 
-Share your material type, required capacity and output specifications with our team to discuss a suitable crushing solution for your project.
+Machines designed for different production requirements may have different sizes and configurations. Buyers should select equipment according to their expected material handling capacity.
 
-### Get the Right Stone Crushing Solution for Your Project
+#### Material Characteristics
 
-The right crushing system depends on the material, feed size, production capacity and required final product. Pithal Machines provides stone crusher machines and complete crushing solutions for mining, quarrying, aggregates, construction and infrastructure applications.
+The hardness and abrasiveness of the stone influence equipment selection. Different materials may require specific crushing components and configurations.
 
-Whether you are planning a new crushing plant, expanding an existing operation or looking to buy a stone crusher machine, share your project requirements with Pithal Machines.`
+#### Complete Plant Requirements
+
+Purchasing an individual crusher is different from investing in a complete crushing plant. A complete setup may include multiple crushers, vibrating screens, conveyors and supporting equipment. Installation, electrical requirements and site preparation may also affect the overall investment.
+
+Before comparing prices, identify your production targets, material type and required aggregate sizes. This makes it easier to evaluate machinery according to its suitability for your project.
+
+### How to Choose the Best Stone Crusher for Your Business?
+
+Finding the best stone crusher depends on your application, material and production requirements. Consider the following factors before making a purchase.
+
+#### Identify Your Material Requirements
+
+Start by identifying the type of stone you want to crush. Granite, basalt and limestone have different physical properties that influence equipment selection.
+
+#### Consider Production Capacity
+
+Estimate how much material your plant needs to process per hour or per day. This helps narrow down suitable machinery options.
+
+#### Check the Required Output Size
+
+Concrete aggregates, road construction materials and manufactured sand may have different size requirements. Your crushing and screening arrangement should match the intended final product.
+
+#### Evaluate Installation and Maintenance
+
+Consider available installation space, power requirements, maintenance needs and future expansion plans. Discussing these details with a manufacturer can help you select suitable equipment.
+
+### Why Choose Pithal Machines as Your Stone Crusher Manufacturer?
+
+Selecting crushing equipment is a major investment for businesses involved in mining, construction and aggregate production. Buyers need to understand their requirements before choosing machinery.
+
+Pithal Machines offers a range of crushing and screening equipment for different industrial applications.
+
+#### Range of Crushing and Screening Equipment
+
+Our machinery range includes jaw crushers, cone crushers, VSI crushers, bucket crushers, vibrating screens and complete crushing plants. This allows buyers to explore equipment for different stages of material processing.
+
+#### Equipment for Industrial Applications
+
+Different industries have different crushing requirements. Mining, quarrying, road construction and aggregate production involve different materials and output specifications. Selecting suitable machinery helps businesses plan their operations more effectively.
+
+#### Focus on Equipment Selection
+
+Feed size, material hardness, production capacity and final aggregate size are important considerations when selecting a crusher. Understanding these factors helps buyers compare suitable machinery instead of choosing equipment based only on price.
+
+#### Complete Plant Planning
+
+A crushing plant requires different machines to work together. Crushers, screens and conveyors should be arranged according to material flow and production requirements. Planning the complete setup helps businesses understand their equipment needs before making an investment.
+
+### Buy Stone Crusher Machines from Pithal Machines
+
+If you are planning to buy stone crusher equipment for your business, choosing the right machinery is an important first step.
+
+Pithal Machines offers crushing and screening equipment for different material processing requirements. From jaw and cone crushers to VSI crushers, bucket crushers, vibrating screens and complete crushing plants, buyers can explore machinery for different stages of aggregate production.
+
+Before finalising your purchase, consider the material, feed size, production capacity and final output specifications. These factors help determine whether you need an individual crusher or a complete plant configuration.
+
+Looking for a reliable stone crusher machine manufacturer in India? Contact Pithal Machines to discuss your requirements and explore suitable crushing and screening equipment for your project.
+
+### Choose the Right Crushing Solution with Pithal Machines
+
+Successful aggregate production depends on selecting machinery that suits the material, production requirements and intended application. From primary crushing and secondary processing to particle shaping and screening, every stage contributes to the final output.
+
+Pithal Machines offers crushing and screening equipment for businesses involved in mining, quarrying, construction and aggregate production. Whether you need an individual crusher or are planning a complete crushing plant, understanding your project requirements is the first step towards selecting suitable machinery.
+
+Explore the equipment range from Pithal Machines and discuss your material processing requirements with our team.
+
+Get in touch with Pithal Machines today to explore suitable stone crushing and screening solutions for your business.`,
 };

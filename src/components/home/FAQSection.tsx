@@ -5,37 +5,36 @@ import { Container } from "@/components/common/Container";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-
 const faqs = [
   {
-    question: "What is a stone crusher machine?",
+    question: "What does a stone crusher manufacturer do?",
     answer:
-      "A stone crusher machine is equipment used to reduce large rocks and stones into smaller sizes for mining, quarrying, aggregate production, construction and infrastructure applications.",
+      "A stone crusher manufacturer designs and produces machinery used to reduce large rocks into smaller sizes. These machines are used in construction, mining, quarrying and aggregate production.",
   },
   {
-    question: "What factors affect stone crusher machine cost?",
+    question: "Which type of stone crusher is best for industrial use?",
     answer:
-      "The stone crusher machine cost depends on crusher type, production capacity, material characteristics, feed size, output requirements, number of crushing stages, screening, conveyors and the overall plant configuration.",
+      "Jaw crushers are generally used for primary crushing, cone crushers for secondary and tertiary crushing and VSI crushers for particle shaping and manufactured sand production. The right choice depends on the material and required output.",
   },
   {
-    question: "Which type of stone crusher is suitable for hard rock?",
+    question: "What is the stone crusher machine cost in India?",
     answer:
-      "Jaw crushers are commonly used for primary crushing of hard rock. Cone crushers or other equipment may be used for further reduction depending on the required product size and crushing circuit.",
+      "The cost varies according to machine type, production capacity, technical specifications and configuration. Individual crushers and complete crushing plants have different investment requirements.",
   },
   {
-    question: "What is the difference between a jaw crusher, cone crusher and VSI crusher?",
+    question: "How do I select the right stone crusher machine?",
     answer:
-      "A jaw crusher is generally used for primary crushing, a cone crusher is commonly used for secondary or tertiary crushing and a VSI crusher is used for fine crushing and particle shaping. The appropriate combination depends on the material and final product requirements.",
+      "Consider the type of stone, feed size, required production capacity and final aggregate size. Installation space, power requirements and crushing stages should also be evaluated.",
   },
   {
-    question: "What should I consider before buying a stone crusher?",
+    question: "Which industries use industrial stone crushers?",
     answer:
-      "Consider the material type, hardness, abrasiveness, maximum feed size, required production capacity, final product size, number of crushing stages and screening requirements before selecting a stone crusher.",
+      "Industrial stone crushers are commonly used in construction, mining, quarrying, road development and aggregate production.",
   },
   {
-    question: "Can Pithal Machines provide a complete crushing plant?",
+    question: "Can different crushers be used in one crushing plant?",
     answer:
-      "Yes. Pithal Machines provides crushing and screening solutions that can integrate crushers, vibrating screens and conveyor systems according to the production capacity and material-processing requirements of the project.",
+      "Yes. A crushing plant can combine jaw crushers, cone crushers, VSI crushers and vibrating screens. The configuration depends on the raw material, production capacity and final product requirements.",
   },
 ];
 
