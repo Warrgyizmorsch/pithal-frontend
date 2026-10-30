@@ -171,6 +171,8 @@ export const blogs: BlogPost[] = blogPosts.map((b) => ({
   views: b.views || '1.2K',
   image: getResolvedBlogImageUrl(b.image || b.img),
   status: 'Publish',
+  metaTags: b.metaTags || '',
+  metaDescription: b.metaDescription || '',
   faqs: b.faqs || [],
   publishedAt: b.date,
 }));

@@ -1523,7 +1523,7 @@ export default function BackendAdminPortal() {
     setCustomSlug(blog.slug);
     setBlogAuthor(blog.author || "Pithal Engineering Team");
     setBlogCategory(blog.category || "Crushing Solutions");
-    setBlogExcerpt(blog.excerpt || "");
+    setBlogExcerpt(blog.excerpt || (blog as any).desc || "");
     setBlogContent(blog.content || "");
     setBlogImage(blog.image || DEFAULT_FALLBACK_IMAGE);
     setBlogStatus(blog.status || "Publish");
@@ -1557,7 +1557,7 @@ export default function BackendAdminPortal() {
 
     const payload = {
       id: editingBlogId || `blog-${Date.now()}`,
-      title: blogTitle,
+      title: blogTitle.trim(),
       slug: generatedSlug,
       category: blogCategory,
       tag: blogTag,
@@ -1566,8 +1566,8 @@ export default function BackendAdminPortal() {
       content: blogContent,
       image: blogImage || DEFAULT_FALLBACK_IMAGE,
       status: blogStatus,
-      metaTags,
-      metaDescription,
+      metaTags: metaTags.trim(),
+      metaDescription: metaDescription.trim(),
       faqs: faqs.filter(f => f.question.trim()),
     };
 
