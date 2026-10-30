@@ -1,20 +1,8 @@
 User-agent: *
 Allow: /
 
-# Block internal Next.js build/runtime paths (no SEO value, wastes crawl budget)
-Disallow: /_next/
+# Disallow admin and API endpoints
+Disallow: /admin/
 Disallow: /api/
-
-# Block common non-public paths (uncomment/add any that actually exist on this site)
-# Disallow: /admin/
-# Disallow: /cart/
-# Disallow: /thank-you/
-# Disallow: /search/
-# Disallow: /*?*preview=
-
-# Explicitly allow assets so pages render correctly for crawlers/rich snippets
-Allow: /_next/static/
-Allow: /*.css$
-Allow: /*.js$
 
 Sitemap: https://www.pithalmachine.com/sitemap.xml

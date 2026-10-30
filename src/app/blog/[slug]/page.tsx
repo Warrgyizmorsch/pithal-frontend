@@ -127,6 +127,7 @@ export async function generateMetadata({
   if (!post) {
     return {
       title: "Blog Post | Pithal Machine Pvt.",
+      robots: { index: false, follow: false },
       alternates: {
         canonical: `/blog/${slug}`,
       },
@@ -135,32 +136,55 @@ export async function generateMetadata({
 
   // Purely backend data only - no extra hardcoded strings or unwanted fallbacks
   const metaTitle = (post.title || "").trim();
-  const metaDesc = (post.metaDescription || "").trim();
+  const metaDesc = (post.metaDescription && post.metaDescription.trim())
+    ? post.metaDescription.trim()
+    : (post.desc && post.desc.trim())
+    ? post.desc.trim()
+    : metaTitle;
+
+  const postUrl = `https://www.pithalmachine.com/blog/${post.slug}`;
+  const postImg = post.img && !post.img.startsWith("data:")
+    ? (post.img.startsWith("http") ? post.img : `https://www.pithalmachine.com${post.img}`)
+    : "https://www.pithalmachine.com/blogpageimg/crusherguide.jpg";
 
   return {
     title: metaTitle,
     description: metaDesc,
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: postUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
     openGraph: {
       title: metaTitle,
       description: metaDesc,
+      url: postUrl,
+      siteName: "Pithal Machines",
+      type: "article",
+      publishedTime: post.date,
       images: [
-        post.img && !post.img.startsWith("data:")
-          ? post.img
-          : "/blogpageimg/crusherguide.jpg",
+        {
+          url: postImg,
+          width: 1200,
+          height: 630,
+          alt: metaTitle,
+        },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: metaTitle,
       description: metaDesc,
-      images: [
-        post.img && !post.img.startsWith("data:")
-          ? post.img
-          : "/blogpageimg/crusherguide.jpg",
-      ],
+      images: [postImg],
     },
   };
 }
@@ -179,6 +203,51 @@ export default async function BlogPostPage({
   if (!post) {
     notFound();
   }
+
+  const postUrl = `https://www.pithalmachine.com/blog/${post.slug}`;
+  const postImg = post.img && !post.img.startsWith("data:")
+    ? (post.img.startsWith("http") ? post.img : `https://www.pithalmachine.com${post.img}`)
+    : "https://www.pithalmachine.com/blogpageimg/crusherguide.jpg";
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.metaDescription || post.desc || post.title,
+    image: [postImg],
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Organization",
+      name: "Pithal Engineering Team",
+      url: "https://www.pithalmachine.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Pithal Machines",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.pithalmachine.com/icon.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+  };
+
+  const faqSchema = post.faqs && post.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faqs.map((f: any) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  } : null;
 
   // Prepare top/latest sidebar posts from backend
   const sidebarPosts =
@@ -201,6 +270,20 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+          }}
+        />
+      )}
       <Header />
       <main className="min-h-screen bg-white font-sans py-6 sm:py-8 lg:py-10">
         {/* HEADER: Breadcrumbs, Title, Sub-heading (Left-anchored with edge padding, wrapped in 2-3 lines) */}
