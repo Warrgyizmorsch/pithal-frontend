@@ -19,9 +19,9 @@ import {
 } from "@/components/seo";
 
 export const metadata: Metadata = {
-  title: "Stone Crusher Manufacturer In India | Industrial Stone Crusher Machines – Pithal Machines",
+  title: "Stone Crusher Manufacturer in India | Pithal Machines",
   description:
-    "Leading stone crusher manufacturer in India. Get best prices on 150 TPH, 250 TPH & 500 TPH stone crushers. Industrial-grade, reliable & affordable.",
+    "Looking for a stone crusher manufacturer in India? Explore jaw crushers, cone crushers, VSI crushers, vibrating screens and complete crushing plants from Pithal Machines.",
 };
 
 export default function Home() {
@@ -30,8 +30,8 @@ export default function Home() {
       <OrganizationSchema />
       <WebSiteSchema />
       <WebPageSchema
-        title="Stone Crusher Manufacturer In India | Industrial Stone Crusher Machines – Pithal Machines"
-        description="Leading stone crusher manufacturer in India. Get best prices on 150 TPH, 250 TPH & 500 TPH stone crushers. Industrial-grade, reliable & affordable."
+        title="Stone Crusher Manufacturer in India | Pithal Machines"
+        description="Looking for a stone crusher manufacturer in India? Explore jaw crushers, cone crushers, VSI crushers, vibrating screens and complete crushing plants from Pithal Machines."
         url="/"
       />
       <Header />
