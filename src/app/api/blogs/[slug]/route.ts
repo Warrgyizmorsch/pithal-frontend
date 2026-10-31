@@ -107,6 +107,8 @@ export async function PUT(
             if (body.slug && body.slug !== slug) {
               revalidatePath(`/blog/${body.slug}`);
             }
+            revalidatePath('/sitemap-blog.xml');
+            revalidatePath('/sitemap.xml');
           } catch (e) {
             console.warn("revalidatePath error:", e);
           }
@@ -181,6 +183,8 @@ export async function DELETE(
       try {
         revalidatePath('/blog');
         revalidatePath(`/blog/${slug}`);
+        revalidatePath('/sitemap-blog.xml');
+        revalidatePath('/sitemap.xml');
       } catch (e) {
         console.warn("revalidatePath error:", e);
       }

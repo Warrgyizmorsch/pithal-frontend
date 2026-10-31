@@ -24,9 +24,8 @@ export const metadata: Metadata = {
   },
 };
 
-// Ensure page is always dynamically fetched from MongoDB on every request/reload
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
+// Pre-render blog listing statically for instant search engine indexing, revalidate every 60s
+export const revalidate = 60;
 
 async function getInitialBlogs() {
   try {

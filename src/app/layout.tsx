@@ -27,6 +27,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.ico?v=2", sizes: "any" },
@@ -42,7 +53,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`} suppressHydrationWarning>
-      <head>
+      <body>
         <Script
           id="perf-measure-patch"
           strategy="beforeInteractive"
@@ -61,8 +72,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NQNJCS84');`,
           }}
         />
-      </head>
-      <body>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
