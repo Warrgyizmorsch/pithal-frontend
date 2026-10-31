@@ -6,3 +6,6 @@ Disallow: /admin/
 Disallow: /api/
 
 Sitemap: https://www.pithalmachine.com/sitemap.xml
+Sitemap: https://www.pithalmachine.com/sitemap-blog.xml
+Sitemap: https://www.pithalmachine.com/sitemap-products.xml
+Sitemap: https://www.pithalmachine.com/sitemap-pages.xml

@@ -145,6 +145,11 @@ export async function POST(request: Request) {
 
     try {
       revalidatePath('/blog');
+      if (newBlog.slug) {
+        revalidatePath(`/blog/${newBlog.slug}`);
+      }
+      revalidatePath('/sitemap-blog.xml');
+      revalidatePath('/sitemap.xml');
     } catch (e) {
       console.warn("revalidatePath error:", e);
     }

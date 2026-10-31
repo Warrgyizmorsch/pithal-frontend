@@ -5,6 +5,7 @@ import BlogModel from '@/lib/models/Blog';
 import { blogPosts as fallbackBlogs } from '@/data/blogData';
 
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 function parseDateSafe(dateVal: any, fallbackDate: string): string {
   if (!dateVal) return fallbackDate;
@@ -19,7 +20,12 @@ export async function GET() {
   try {
     const conn = await connectDB();
     if (conn) {
-      dbBlogs = await BlogModel.find({ status: { $ne: 'Draft' } }).lean();
+      dbBlogs = await BlogModel.find({
+        $or: [
+          { status: { $ne: 'Draft' } },
+          { status: { $exists: false } },
+        ],
+      }).lean();
     }
   } catch (err) {
     console.warn('Sitemap blog fetch error:', err);
@@ -28,10 +34,16 @@ export async function GET() {
   // Merge blogs so no published post is ever omitted
   const postMap = new Map<string, any>();
   for (const b of fallbackBlogs) {
-    if (b.slug) postMap.set(b.slug, b);
+    if (b.slug) {
+      const clean = b.slug.trim().toLowerCase().replace(/^\/+|\/+$/g, '');
+      postMap.set(clean, { ...b, slug: clean });
+    }
   }
   for (const b of dbBlogs) {
-    if (b.slug && b.status !== 'Draft') postMap.set(b.slug, b);
+    if (b.slug && b.status !== 'Draft') {
+      const clean = b.slug.trim().toLowerCase().replace(/^\/+|\/+$/g, '');
+      postMap.set(clean, { ...b, slug: clean });
+    }
   }
 
   const allPublished = Array.from(postMap.values());
@@ -56,7 +68,7 @@ export async function GET() {
   return new NextResponse(xml, {
     headers: {
       'Content-Type': 'application/xml; charset=utf-8',
-      'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+      'Cache-Control': 'public, max-age=60, s-maxage=60, stale-while-revalidate=300',
     },
   });
 }

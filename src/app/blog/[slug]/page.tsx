@@ -13,9 +13,8 @@ import { cache } from "react";
 import { BlogFaqAccordion } from "@/components/blog/BlogFaqAccordion";
 import { BlogShareButtons } from "@/components/blog/BlogShareButtons";
 
-// Ensure detail page is always dynamically fetched from MongoDB on every request/reload
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
+// Use ISR (Incremental Static Regeneration) so blog pages are fully pre-rendered for search engines with instant response times and proper <head> metadata, while refreshing every 60s
+export const revalidate = 60;
 
 function cleanBlogContentHtml(html: string, title?: string): string {
   if (!html) return "";
@@ -51,14 +50,46 @@ function cleanBlogContentHtml(html: string, title?: string): string {
 
 import { connectDB } from "@/lib/db/mongodb";
 import BlogModel from "@/lib/models/Blog";
+import { blogPosts } from "@/data/blogData";
+
+export async function generateStaticParams() {
+  const postMap = new Map<string, { slug: string }>();
+
+  // Include all static fallback blogs
+  for (const b of blogPosts) {
+    if (b.slug) postMap.set(b.slug, { slug: b.slug });
+  }
+
+  // Include all published MongoDB blogs
+  try {
+    const conn = await connectDB();
+    if (conn) {
+      const dbBlogs: any[] = await BlogModel.find({ status: { $ne: "Draft" } })
+        .select("slug")
+        .lean();
+      for (const b of dbBlogs) {
+        if (b.slug) postMap.set(b.slug, { slug: b.slug });
+      }
+    }
+  } catch (err) {
+    console.warn("[Blog Log] Error generating static params for blogs:", err);
+  }
+
+  return Array.from(postMap.values());
+}
 
 const getBlogPost = cache(async (rawSlug: string) => {
-  const slug = decodeURIComponent(rawSlug).trim();
+  if (!rawSlug) return null;
+  const slug = decodeURIComponent(rawSlug).trim().toLowerCase().replace(/\/+$/, "");
   try {
     const conn = await connectDB();
     if (conn) {
       const b: any = await BlogModel.findOne({
-        $or: [{ slug }, { id: slug }],
+        $or: [
+          { slug },
+          { id: slug },
+          { slug: { $regex: new RegExp(`^${slug}$`, "i") } },
+        ],
       }).lean();
 
       if (b) {
@@ -86,7 +117,7 @@ const getBlogPost = cache(async (rawSlug: string) => {
   } catch (err) {
     console.warn("[Blog Log] Direct DB blog fetch error, checking static fallback:", err);
   }
-  const fallback = getPostBySlug(slug);
+  const fallback = getPostBySlug(slug) || blogPosts.find((p) => p.slug?.toLowerCase() === slug);
   if (fallback) {
     return {
       ...fallback,
@@ -126,11 +157,8 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Blog Post | Pithal Machine Pvt.",
+      title: "Blog Post Not Found | Pithal Machine Pvt.",
       robots: { index: false, follow: false },
-      alternates: {
-        canonical: `/blog/${slug}`,
-      },
     };
   }
 
