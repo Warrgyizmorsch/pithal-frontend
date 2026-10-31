@@ -3,8 +3,12 @@ import React from "react";
 export const RAW_GITHUB_IMG_BASE =
   "https://raw.githubusercontent.com/Warrgyizmorsch/pithal-frontend/main/public/blogpageimg/";
 
-export function getResolvedBlogImageUrl(src?: string): string {
+export function getResolvedBlogImageUrl(src?: string, slug?: string): string {
   if (!src) return "/blogpageimg/crusherguide.jpg";
+  if (src.startsWith("data:")) {
+    if (slug) return `/blogpageimg/${slug}.jpg`;
+    return "/blogpageimg/crusherguide.jpg";
+  }
   return src;
 }
 

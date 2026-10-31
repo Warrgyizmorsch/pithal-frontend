@@ -37,7 +37,17 @@ async function getInitialBlogs() {
         .lean();
 
       if (blogs && blogs.length > 0) {
-        return JSON.parse(JSON.stringify(blogs));
+        const sanitized = blogs.map((b: any) => {
+          const resolvedImg = b.image && !b.image.startsWith("data:")
+            ? b.image
+            : (b.slug ? `/blogpageimg/${b.slug}.jpg` : "/blogpageimg/crusherguide.jpg");
+          return {
+            ...b,
+            image: resolvedImg,
+            img: resolvedImg,
+          };
+        });
+        return JSON.parse(JSON.stringify(sanitized));
       }
     }
   } catch (err) {

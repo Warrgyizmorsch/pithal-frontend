@@ -53,7 +53,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`} suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning>
         <Script
           id="perf-measure-patch"
           strategy="beforeInteractive"
