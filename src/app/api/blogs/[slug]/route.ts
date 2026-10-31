@@ -73,10 +73,12 @@ export async function PUT(
             fs.mkdirSync(publicDir, { recursive: true });
           }
           fs.writeFileSync(path.join(publicDir, fileName), imgBuffer);
+          body.image = `/blogpageimg/${fileName}`;
           console.log(`[Blog Log] Saved local backup of updated blog image to /blogpageimg/${fileName}`);
         }
       } catch (imgErr) {
         console.warn('[Blog Warning] Could not persist local backup image:', imgErr);
+        body.image = '/blogpageimg/crusherguide.jpg';
       }
     }
 

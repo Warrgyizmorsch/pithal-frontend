@@ -93,6 +93,9 @@ const getBlogPost = cache(async (rawSlug: string) => {
       }).lean();
 
       if (b) {
+        const resolvedImg = b.image && !b.image.startsWith("data:")
+          ? b.image
+          : (b.slug ? `/blogpageimg/${b.slug}.jpg` : "/blogpageimg/crusherguide.jpg");
         return {
           slug: b.slug,
           tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
@@ -101,7 +104,7 @@ const getBlogPost = cache(async (rawSlug: string) => {
           date: b.publishedAt || "Today",
           read: b.readTime || "5 min read",
           views: b.views || "1.2K",
-          img: b.image || "/blogpageimg/crusherguide.jpg",
+          img: resolvedImg,
           content: b.content,
           metaTags: b.metaTags || "",
           metaDescription: b.metaDescription || "",
@@ -138,7 +141,12 @@ const getAllBackendBlogs = cache(async () => {
         .sort({ createdAt: -1 })
         .lean();
       if (blogs && blogs.length > 0) {
-        return blogs;
+        return blogs.map((b: any) => ({
+          ...b,
+          image: b.image && !b.image.startsWith("data:")
+            ? b.image
+            : (b.slug ? `/blogpageimg/${b.slug}.jpg` : "/blogpageimg/crusherguide.jpg"),
+        }));
       }
     }
   } catch (err) {
@@ -237,14 +245,18 @@ export default async function BlogPostPage({
     ? (post.img.startsWith("http") ? post.img : `https://www.pithalmachine.com${post.img}`)
     : "https://www.pithalmachine.com/blogpageimg/crusherguide.jpg";
 
+  const parsedDate = post.date && !isNaN(new Date(post.date).getTime())
+    ? new Date(post.date).toISOString()
+    : new Date().toISOString();
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription || post.desc || post.title,
     image: [postImg],
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: parsedDate,
+    dateModified: parsedDate,
     author: {
       "@type": "Organization",
       name: "Pithal Engineering Team",
