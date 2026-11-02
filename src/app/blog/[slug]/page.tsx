@@ -91,7 +91,7 @@ const getBlogPost = cache(async (rawSlug: string) => {
       if (b) {
         const resolvedImg = b.image && !b.image.startsWith("data:")
           ? b.image
-          : (b.slug ? `/blogpageimg/${b.slug}.webp` : "/blogpageimg/crusherguide.jpg");
+          : (b.imageData ? `/api/blog-image/${b.slug}` : (b.slug ? `/blogpageimg/${b.slug}.webp` : "/blogpageimg/crusherguide.jpg"));
         return {
           slug: b.slug,
           tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
@@ -351,7 +351,7 @@ export default async function BlogPostPage({
                       fill
                       className="object-cover object-center"
                       priority
-                      unoptimized={Boolean(post.img && post.img.startsWith("data:"))}
+                      unoptimized={Boolean(post.img && (post.img.startsWith("data:") || post.img.includes("?")))}
                     />
                   </div>
 
@@ -451,7 +451,7 @@ export default async function BlogPostPage({
                               alt={sp.title}
                               fill
                               className="object-cover group-hover:scale-110 transition-transform duration-300"
-                              unoptimized={Boolean(sp.img && sp.img.startsWith("data:"))}
+                              unoptimized={Boolean(sp.img && (sp.img.startsWith("data:") || sp.img.includes("?")))}
                             />
                           </div>
                           <div className="min-w-0 flex-1">

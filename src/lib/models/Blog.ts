@@ -17,6 +17,7 @@ export interface IBlog extends Document {
   readTime: string;
   views: string;
   image: string;
+  imageData?: string;
   status: "Publish" | "Draft";
   publishedAt: string;
   metaTags?: string;
@@ -44,13 +45,14 @@ const BlogSchema = new Schema<IBlog>(
     readTime: { type: String, default: "5 min read" },
     views: { type: String, default: "1" },
     image: { type: String, default: "/blogpageimg/crusherguide.jpg" },
+    imageData: { type: String, default: "" },
     status: { type: String, enum: ["Publish", "Draft"], default: "Publish" },
     publishedAt: { type: String, default: () => new Date().toISOString().split("T")[0] },
     metaTags: { type: String, default: "" },
     metaDescription: { type: String, default: "" },
     faqs: [BlogFaqSchema],
   },
-  { timestamps: true, autoIndex: false }
+  { timestamps: true, autoIndex: false, strict: false }
 );
 
 export const BlogModel: Model<IBlog> =
