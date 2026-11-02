@@ -63,7 +63,7 @@ async function getInitialBlogs() {
         const sanitized = blogs.map((b: any) => {
           const resolvedImg = b.image && !b.image.startsWith("data:")
             ? b.image
-            : (b.slug ? `/blogpageimg/${b.slug}.webp` : "/blogpageimg/crusherguide.jpg");
+            : (b.imageData ? `/api/blog-image/${b.slug}` : (b.slug ? `/blogpageimg/${b.slug}.webp` : "/blogpageimg/crusherguide.jpg"));
           return {
             ...b,
             image: resolvedImg,

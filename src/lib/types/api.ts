@@ -61,6 +61,7 @@ export interface BlogPost {
   readTime?: string;
   views?: string;
   image?: string;
+  imageData?: string;
   status?: 'Publish' | 'Draft';
   metaTags?: string;
   metaDescription?: string;

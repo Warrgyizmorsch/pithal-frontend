@@ -105,30 +105,33 @@ export async function POST(request: Request) {
     const finalContent = sanitizeContentImages(String(content), generatedSlug || `blog-${Date.now()}`);
 
     let finalImageUrl = image ? String(image) : '/blogpageimg/crusherguide.jpg';
+    let rawImageData = body.imageData || (image && String(image).startsWith('data:image/') ? String(image) : '');
+    const timestamp = Date.now();
+
     if (finalImageUrl.startsWith('data:image/')) {
       try {
         const match = finalImageUrl.match(/^data:image\/([a-zA-Z0-9+]+);base64,(.+)$/);
         if (match) {
           const ext = match[1] === 'jpeg' ? 'jpg' : match[1].replace('svg+xml', 'svg');
           const imgBuffer = Buffer.from(match[2], 'base64');
-          const fileName = `${generatedSlug || `blog-${Date.now()}`}.${ext}`;
+          const fileName = `${generatedSlug || `blog-${timestamp}`}.${ext}`;
           const publicDir = path.join(process.cwd(), 'public', 'blogpageimg');
           if (!fs.existsSync(publicDir)) {
             fs.mkdirSync(publicDir, { recursive: true });
           }
           fs.writeFileSync(path.join(publicDir, fileName), imgBuffer);
-          finalImageUrl = `/blogpageimg/${fileName}`;
+          finalImageUrl = `/blogpageimg/${fileName}?v=${timestamp}`;
           console.log(`[Blog Log] Saved local backup image to /blogpageimg/${fileName}`);
         }
       } catch (imgErr) {
         console.warn('[Blog Warning] Could not persist local backup image:', imgErr);
-        finalImageUrl = '/blogpageimg/crusherguide.jpg';
+        finalImageUrl = `/api/blog-image/${generatedSlug || `blog-${timestamp}`}?v=${timestamp}`;
       }
     }
 
-    const newBlog: BlogPost = {
-      id: body.id || `blog-${Date.now()}`,
-      slug: generatedSlug || `blog-${Date.now()}`,
+    const newBlog: BlogPost & { imageData?: string } = {
+      id: body.id || `blog-${timestamp}`,
+      slug: generatedSlug || `blog-${timestamp}`,
       title: String(title),
       excerpt: excerpt ? String(excerpt) : String(title),
       content: finalContent,
@@ -138,6 +141,7 @@ export async function POST(request: Request) {
       readTime: readTime ? String(readTime) : '5 min read',
       views: '1',
       image: finalImageUrl,
+      imageData: rawImageData,
       status: status || 'Publish',
       publishedAt: new Date().toISOString().split('T')[0],
       metaTags: metaTags || '',

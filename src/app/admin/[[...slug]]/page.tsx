@@ -1476,6 +1476,7 @@ export default function BackendAdminPortal() {
       };
     };
     reader.readAsDataURL(file);
+    e.target.value = "";
   };
 
   const handleUserPicUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -1525,7 +1526,7 @@ export default function BackendAdminPortal() {
     setBlogCategory(blog.category || "Crushing Solutions");
     setBlogExcerpt(blog.excerpt || (blog as any).desc || "");
     setBlogContent(blog.content || "");
-    setBlogImage(blog.image || DEFAULT_FALLBACK_IMAGE);
+    setBlogImage((blog as any).imageData || blog.image || DEFAULT_FALLBACK_IMAGE);
     setBlogStatus(blog.status || "Publish");
     setMetaTags(blog.metaTags || "");
     setMetaDescription(blog.metaDescription || "");
@@ -1565,6 +1566,7 @@ export default function BackendAdminPortal() {
       excerpt: blogExcerpt.trim(),
       content: blogContent,
       image: blogImage || DEFAULT_FALLBACK_IMAGE,
+      imageData: blogImage && blogImage.startsWith("data:image/") ? blogImage : undefined,
       status: blogStatus,
       metaTags: metaTags.trim(),
       metaDescription: metaDescription.trim(),
@@ -1589,7 +1591,7 @@ export default function BackendAdminPortal() {
         });
 
         if (editingBlogId) {
-          setBlogs(blogs.map(b => (b.id === editingBlogId ? { ...b, ...data.data } : b)));
+          setBlogs(blogs.map(b => (b.id === editingBlogId || b.slug === editingBlogId || b.slug === data.data.slug ? { ...b, ...data.data } : b)));
         } else {
           setBlogs([data.data, ...blogs]);
         }

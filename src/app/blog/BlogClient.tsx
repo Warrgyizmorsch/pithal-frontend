@@ -899,34 +899,43 @@ function ImgBox({
   onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
 }) {
   const [imgSrc, setImgSrc] = useState(src || "/blogpageimg/crusherguide.jpg");
-  const [fallbackAttempted, setFallbackAttempted] = useState(false);
+  const [fallbackStep, setFallbackStep] = useState(0);
 
   useEffect(() => {
     setImgSrc(src || "/blogpageimg/crusherguide.jpg");
-    setFallbackAttempted(false);
+    setFallbackStep(0);
   }, [src]);
 
   const handleError = () => {
-    if (!fallbackAttempted) {
-      setFallbackAttempted(true);
-      // 1. If pointing to local /blogpageimg/ and it failed (e.g. on Hostinger), fallback to GitHub CDN
-      if (imgSrc.includes("/blogpageimg/") && !imgSrc.includes("raw.githubusercontent.com")) {
+    if (fallbackStep === 0) {
+      setFallbackStep(1);
+      // 1. If pointing to local /blogpageimg/, try dynamic DB route /api/blog-image/[slug]
+      if (imgSrc.includes("/blogpageimg/")) {
         const filename = imgSrc.split("/blogpageimg/")[1]?.split("?")[0];
         if (filename) {
-          setImgSrc(`${RAW_GITHUB_IMG_BASE}${filename}`);
-          return;
-        }
-      }
-      // 2. If pointing to GitHub CDN and it failed, fallback to local /blogpageimg/
-      if (imgSrc.includes("raw.githubusercontent.com") && imgSrc.includes("/blogpageimg/")) {
-        const filename = imgSrc.split("/blogpageimg/")[1]?.split("?")[0];
-        if (filename) {
-          setImgSrc(`/blogpageimg/${filename}`);
+          const slug = filename.replace(/\.(webp|jpg|jpeg|png|svg|gif)$/i, "");
+          setImgSrc(`/api/blog-image/${slug}`);
           return;
         }
       }
     }
+
+    if (fallbackStep <= 1) {
+      setFallbackStep(2);
+      // 2. Try GitHub CDN
+      const filename = imgSrc.includes("/blogpageimg/")
+        ? imgSrc.split("/blogpageimg/")[1]?.split("?")[0]
+        : imgSrc.includes("/api/blog-image/")
+        ? `${imgSrc.split("/api/blog-image/")[1]?.split("?")[0]}.webp`
+        : "";
+      if (filename && !imgSrc.includes("raw.githubusercontent.com")) {
+        setImgSrc(`${RAW_GITHUB_IMG_BASE}${filename}`);
+        return;
+      }
+    }
+
     // 3. Fallback to standard placeholder
+    setFallbackStep(3);
     setImgSrc("/blogpageimg/crusherguide.jpg");
   };
 

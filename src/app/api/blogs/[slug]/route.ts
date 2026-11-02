@@ -85,25 +85,31 @@ export async function PUT(
       body.content = sanitizeContentImages(body.content, body.slug || slug);
     }
 
+    const targetSlug = body.slug || slug;
+    const timestamp = Date.now();
+
     if (body.image && typeof body.image === 'string' && body.image.startsWith('data:image/')) {
+      body.imageData = body.image;
       try {
         const match = body.image.match(/^data:image\/([a-zA-Z0-9+]+);base64,(.+)$/);
         if (match) {
           const ext = match[1] === 'jpeg' ? 'jpg' : match[1].replace('svg+xml', 'svg');
           const imgBuffer = Buffer.from(match[2], 'base64');
-          const fileName = `${body.slug || slug}.${ext}`;
+          const fileName = `${targetSlug}.${ext}`;
           const publicDir = path.join(process.cwd(), 'public', 'blogpageimg');
           if (!fs.existsSync(publicDir)) {
             fs.mkdirSync(publicDir, { recursive: true });
           }
           fs.writeFileSync(path.join(publicDir, fileName), imgBuffer);
-          body.image = `/blogpageimg/${fileName}`;
+          body.image = `/blogpageimg/${fileName}?v=${timestamp}`;
           console.log(`[Blog Log] Saved local backup of updated blog image to /blogpageimg/${fileName}`);
         }
       } catch (imgErr) {
         console.warn('[Blog Warning] Could not persist local backup image:', imgErr);
-        body.image = '/blogpageimg/crusherguide.jpg';
+        body.image = `/api/blog-image/${targetSlug}?v=${timestamp}`;
       }
+    } else if (body.imageData && typeof body.imageData === 'string' && body.imageData.startsWith('data:image/')) {
+      body.image = `/api/blog-image/${targetSlug}?v=${timestamp}`;
     }
 
     try {
@@ -132,6 +138,10 @@ export async function PUT(
             revalidatePath(`/blog/${slug}`);
             if (body.slug && body.slug !== slug) {
               revalidatePath(`/blog/${body.slug}`);
+            }
+            revalidatePath(`/api/blog-image/${slug}`);
+            if (body.slug && body.slug !== slug) {
+              revalidatePath(`/api/blog-image/${body.slug}`);
             }
             revalidatePath('/sitemap-blog.xml');
             revalidatePath('/sitemap.xml');
