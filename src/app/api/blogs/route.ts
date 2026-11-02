@@ -63,6 +63,26 @@ export async function GET() {
   );
 }
 
+function sanitizeContentImages(content: string, slug: string): string {
+  if (!content || !content.includes('data:image/')) return content;
+  let imgIndex = 1;
+  const publicDir = path.join(process.cwd(), 'public', 'blogpageimg');
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
+  }
+  return content.replace(/src=["'](data:image\/([a-zA-Z0-9+]+);base64,([^"']+))["']/gi, (_match, _fullData, format, base64) => {
+    try {
+      const ext = format === 'jpeg' ? 'jpg' : format.replace('svg+xml', 'svg');
+      const imgBuffer = Buffer.from(base64, 'base64');
+      const fileName = `${slug}-content-${imgIndex++}.${ext}`;
+      fs.writeFileSync(path.join(publicDir, fileName), imgBuffer);
+      return `src="/blogpageimg/${fileName}"`;
+    } catch {
+      return _match;
+    }
+  });
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json().catch(() => ({}));
@@ -81,6 +101,8 @@ export async function POST(request: Request) {
     // Auto-generate URL slug from title or custom slug
     const rawSlug = body.slug || title;
     const generatedSlug = String(rawSlug).toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+
+    const finalContent = sanitizeContentImages(String(content), generatedSlug || `blog-${Date.now()}`);
 
     let finalImageUrl = image ? String(image) : '/blogpageimg/crusherguide.jpg';
     if (finalImageUrl.startsWith('data:image/')) {
@@ -109,7 +131,7 @@ export async function POST(request: Request) {
       slug: generatedSlug || `blog-${Date.now()}`,
       title: String(title),
       excerpt: excerpt ? String(excerpt) : String(title),
-      content: String(content),
+      content: finalContent,
       author: author ? String(author) : 'Pithal Machinery Team',
       category: categoryStr,
       tag: tagStr,

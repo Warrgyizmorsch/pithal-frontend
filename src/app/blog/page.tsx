@@ -22,6 +22,29 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  openGraph: {
+    title: "Industrial Insights & Engineering Blog | Pithal Machinery",
+    description:
+      "Explore expert insights, equipment selection guides, operational best practices, and technological innovations in aggregate and mining operations.",
+    url: "https://www.pithalmachine.com/blog",
+    siteName: "Pithal Machines",
+    type: "website",
+    images: [
+      {
+        url: "https://www.pithalmachine.com/blogpageimg/plantdesignlayout.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Pithal Industrial Insights & Engineering Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Industrial Insights & Engineering Blog | Pithal Machinery",
+    description:
+      "Explore expert insights, equipment selection guides, operational best practices, and technological innovations in aggregate and mining operations.",
+    images: ["https://www.pithalmachine.com/blogpageimg/plantdesignlayout.jpg"],
+  },
 };
 
 // Pre-render blog listing statically for instant search engine indexing, revalidate every 60s
@@ -40,7 +63,7 @@ async function getInitialBlogs() {
         const sanitized = blogs.map((b: any) => {
           const resolvedImg = b.image && !b.image.startsWith("data:")
             ? b.image
-            : (b.slug ? `/blogpageimg/${b.slug}.jpg` : "/blogpageimg/crusherguide.jpg");
+            : (b.slug ? `/blogpageimg/${b.slug}.webp` : "/blogpageimg/crusherguide.jpg");
           return {
             ...b,
             image: resolvedImg,

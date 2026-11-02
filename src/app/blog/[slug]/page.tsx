@@ -33,13 +33,7 @@ function cleanBlogContentHtml(html: string, title?: string): string {
     .replace(/font-weight\s*:\s*(600|700|800|900|bold|bolder)\s*;?/gi, "font-weight: 400;")
     .replace(/font-family\s*:\s*[^;"]+;?/gi, "");
 
-  // 3. Strip <strong> and <b> tags from inside <p> paragraphs so all paragraph content is 100% normal weight
-  cleaned = cleaned.replace(/<p([^>]*)>([\s\S]*?)<\/p>/gi, (_match, pAttr, pInner) => {
-    const cleanInner = pInner.replace(/<\/?(strong|b)[^>]*>/gi, "");
-    return `<p${pAttr}>${cleanInner}</p>`;
-  });
-
-  // 4. Convert any GitHub raw URLs pointing to blogpageimg to direct local paths
+  // 3. Convert any GitHub raw URLs pointing to blogpageimg to direct local paths
   cleaned = cleaned.replace(
     /https?:\/\/raw\.githubusercontent\.com\/[^\/]+\/[^\/]+\/[^\/]+\/public\/blogpageimg\//gi,
     "/blogpageimg/"
@@ -81,21 +75,23 @@ export async function generateStaticParams() {
 const getBlogPost = cache(async (rawSlug: string) => {
   if (!rawSlug) return null;
   const slug = decodeURIComponent(rawSlug).trim().toLowerCase().replace(/\/+$/, "");
+  const targetSlug = slug === "what-is-a-jaw-crusher" ? "what-is-a-jaw-crusher1" : slug;
+
   try {
     const conn = await connectDB();
     if (conn) {
       const b: any = await BlogModel.findOne({
         $or: [
-          { slug },
-          { id: slug },
-          { slug: { $regex: new RegExp(`^${slug}$`, "i") } },
+          { slug: targetSlug },
+          { id: targetSlug },
+          { slug: { $regex: new RegExp(`^${targetSlug}$`, "i") } },
         ],
       }).lean();
 
       if (b) {
         const resolvedImg = b.image && !b.image.startsWith("data:")
           ? b.image
-          : (b.slug ? `/blogpageimg/${b.slug}.jpg` : "/blogpageimg/crusherguide.jpg");
+          : (b.slug ? `/blogpageimg/${b.slug}.webp` : "/blogpageimg/crusherguide.jpg");
         return {
           slug: b.slug,
           tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
@@ -107,7 +103,7 @@ const getBlogPost = cache(async (rawSlug: string) => {
           img: resolvedImg,
           content: b.content,
           metaTags: b.metaTags || "",
-          metaDescription: b.metaDescription || "",
+          metaDescription: b.metaDescription || b.excerpt || b.desc || b.title,
           faqs: Array.isArray(b.faqs)
             ? b.faqs.map((f: any) => ({
                 question: String(f.question || ""),
@@ -120,12 +116,13 @@ const getBlogPost = cache(async (rawSlug: string) => {
   } catch (err) {
     console.warn("[Blog Log] Direct DB blog fetch error, checking static fallback:", err);
   }
-  const fallback = getPostBySlug(slug) || blogPosts.find((p) => p.slug?.toLowerCase() === slug);
+
+  const fallback = getPostBySlug(targetSlug) || blogPosts.find((p) => p.slug?.toLowerCase() === targetSlug);
   if (fallback) {
     return {
       ...fallback,
       metaTags: fallback.metaTags || "",
-      metaDescription: fallback.metaDescription || "",
+      metaDescription: fallback.metaDescription || fallback.excerpt || fallback.desc || fallback.title,
     };
   }
   return null;
@@ -145,7 +142,7 @@ const getAllBackendBlogs = cache(async () => {
           ...b,
           image: b.image && !b.image.startsWith("data:")
             ? b.image
-            : (b.slug ? `/blogpageimg/${b.slug}.jpg` : "/blogpageimg/crusherguide.jpg"),
+            : (b.slug ? `/blogpageimg/${b.slug}.webp` : "/blogpageimg/crusherguide.jpg"),
         }));
       }
     }
@@ -165,18 +162,21 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Blog Post Not Found | Pithal Machine Pvt.",
+      title: "Blog Post Not Found | Pithal Machines",
       robots: { index: false, follow: false },
     };
   }
 
-  // Purely backend data only - no extra hardcoded strings or unwanted fallbacks
-  const metaTitle = (post.title || "").trim();
+  const rawTitle = (post.title || "").trim();
+  const metaTitle = rawTitle.toLowerCase().includes("pithal")
+    ? rawTitle
+    : `${rawTitle} | Pithal Machines`;
+
   const metaDesc = (post.metaDescription && post.metaDescription.trim())
     ? post.metaDescription.trim()
     : (post.desc && post.desc.trim())
     ? post.desc.trim()
-    : metaTitle;
+    : rawTitle;
 
   const postUrl = `https://www.pithalmachine.com/blog/${post.slug}`;
   const postImg = post.img && !post.img.startsWith("data:")

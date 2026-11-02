@@ -90,8 +90,8 @@ export async function connectDB(): Promise<typeof mongoose | null> {
     maxIdleTimeMS: 60000,
   };
 
-  const primaryUri = process.env.MONGODB_URI || DIRECT_MONGODB_URI;
-  const secondaryUri = primaryUri === DIRECT_MONGODB_URI ? SRV_MONGODB_URI : DIRECT_MONGODB_URI;
+  const primaryUri = process.env.MONGODB_URI || SRV_MONGODB_URI;
+  const secondaryUri = primaryUri === SRV_MONGODB_URI ? DIRECT_MONGODB_URI : SRV_MONGODB_URI;
 
   cached.promise = (async () => {
     try {
