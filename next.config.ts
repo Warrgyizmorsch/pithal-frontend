@@ -38,6 +38,16 @@ const nextConfig: NextConfig = {
         destination: "/products/crusher-machine",
         permanent: true,
       },
+      {
+        source: "/blogs/:slug*",
+        destination: "/blog/:slug*",
+        permanent: true,
+      },
+      {
+        source: "/blog/what-is-a-jaw-crusher",
+        destination: "/blog/what-is-a-jaw-crusher1",
+        permanent: true,
+      },
     ];
   },
 };

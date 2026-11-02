@@ -53,6 +53,26 @@ export async function GET(
   );
 }
 
+function sanitizeContentImages(content: string, slug: string): string {
+  if (!content || !content.includes('data:image/')) return content;
+  let imgIndex = 1;
+  const publicDir = path.join(process.cwd(), 'public', 'blogpageimg');
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
+  }
+  return content.replace(/src=["'](data:image\/([a-zA-Z0-9+]+);base64,([^"']+))["']/gi, (_match, _fullData, format, base64) => {
+    try {
+      const ext = format === 'jpeg' ? 'jpg' : format.replace('svg+xml', 'svg');
+      const imgBuffer = Buffer.from(base64, 'base64');
+      const fileName = `${slug}-content-${imgIndex++}.${ext}`;
+      fs.writeFileSync(path.join(publicDir, fileName), imgBuffer);
+      return `src="/blogpageimg/${fileName}"`;
+    } catch {
+      return _match;
+    }
+  });
+}
+
 export async function PUT(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
@@ -60,6 +80,10 @@ export async function PUT(
   try {
     const { slug } = await params;
     const body = await request.json();
+
+    if (body.content && typeof body.content === 'string') {
+      body.content = sanitizeContentImages(body.content, body.slug || slug);
+    }
 
     if (body.image && typeof body.image === 'string' && body.image.startsWith('data:image/')) {
       try {

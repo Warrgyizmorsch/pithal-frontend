@@ -1,9 +1,18 @@
 User-agent: *
 Allow: /
 
-# Disallow admin and API endpoints
+# Allow public resources needed for rendering
+Allow: /api/blogs
+Allow: /api/products
+
+# Disallow administrative and submission endpoints
 Disallow: /admin/
-Disallow: /api/
+Disallow: /dashboard/
+Disallow: /api/leads
+Disallow: /api/dealers
+Disallow: /api/contact
+Disallow: /api/careers
+Disallow: /api/users
 
 Sitemap: https://www.pithalmachine.com/sitemap.xml
 Sitemap: https://www.pithalmachine.com/sitemap-blog.xml

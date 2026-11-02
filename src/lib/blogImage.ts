@@ -6,7 +6,7 @@ export const RAW_GITHUB_IMG_BASE =
 export function getResolvedBlogImageUrl(src?: string, slug?: string): string {
   if (!src) return "/blogpageimg/crusherguide.jpg";
   if (src.startsWith("data:")) {
-    if (slug) return `/blogpageimg/${slug}.jpg`;
+    if (slug) return `/blogpageimg/${slug}.webp`;
     return "/blogpageimg/crusherguide.jpg";
   }
   return src;
