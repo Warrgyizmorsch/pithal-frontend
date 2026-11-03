@@ -18,9 +18,9 @@ import { conveyorSystemData } from "@/data/products/conveyorSystemData";
 import { ProductPageSchemas } from "@/components/seo";
 
 export const metadata: Metadata = {
-  title: "Conveyor System for Crushing Plants | Belt Conveyors | Pithal Machines",
+  title: "Conveyor System Manufacturer in India | Pithal Machines",
   description:
-    "Heavy-duty belt conveyor systems for crushing and screening plants. Engineered for mining, quarrying and aggregate handling with high reliability from Pithal Machines.",
+    "Explore industrial conveyor systems for crushing and screening plants. Learn about conveyor belts, applications, selection and pricing. Contact Pithal Machines.",
 };
 
 export default function ConveyorSystemsPage() {
