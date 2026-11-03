@@ -20,7 +20,7 @@ import { ProductPageSchemas } from "@/components/seo";
 export const metadata: Metadata = {
   title: "Bucket Crusher Manufacturer in India | Pithal Machines",
   description:
-    "Transform your excavator into a mobile crushing plant with Pithal Machines bucket crusher. High output, simple maintenance and reliable performance on site.",
+    "Explore Prime Bucket Crushers by Pithal Machines for efficient on-site crushing. Find excavator-compatible crusher buckets, key features and pricing details.",
 };
 
 export default function PrimeBucketProductPage() {
