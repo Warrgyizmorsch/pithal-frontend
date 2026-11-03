@@ -412,178 +412,177 @@ export const primeBucketData: ProductDetailData = {
     highlight: "Questions",
     faqs: [
       {
-        question: "1. What is a crusher bucket?",
-        answer: "A crusher bucket is an excavator attachment designed to crush concrete, stones, bricks and other suitable construction and demolition materials directly at the job site."
+        question: "1. What is a bucket crusher used for?",
+        answer:
+          "A bucket crusher is used to crush suitable concrete, rocks, asphalt and demolition materials directly at a job site. It is commonly used in construction, demolition, quarrying, mining and recycling applications.",
       },
       {
-        question: "2. What materials can a crusher bucket crush?",
-        answer: "Crusher buckets can crush materials such as concrete, reinforced concrete, bricks, stones, asphalt and suitable demolition waste, depending on the model and application."
+        question: "2. What is the production capacity of a bucket crusher?",
+        answer:
+          "The Prime Bucket Crusher range offers published production capacities from 15 to 150 TPH, depending on the model. Actual output varies according to material properties and operating conditions.",
       },
       {
-        question: "3. What are the main benefits of using a crusher bucket?",
-        answer: "A crusher bucket enables on-site crushing, reduces material transportation, supports material recycling and can eliminate the need for a separate crushing machine for certain applications."
+        question: "3. What affects the bucket crusher price?",
+        answer:
+          "The price depends on the attachment model, crushing capacity, excavator compatibility, technical specifications and configuration. Contact the manufacturer for a quotation based on your requirements.",
       },
       {
-        question: "4. How do I choose the right crusher bucket for my excavator?",
-        answer: "Choose a crusher bucket based on your excavator's operating weight, hydraulic flow and pressure, material type, required crushing capacity and desired output size."
+        question: "4. Can I use a JCB crusher bucket on any JCB excavator?",
+        answer:
+          "No. Compatibility depends on the specific JCB model, hydraulic specifications, operating weight and mounting arrangement. Always confirm technical compatibility before purchasing.",
       },
       {
-        question: "5. Can a crusher bucket be used for recycling construction waste?",
-        answer: "Yes. A crusher bucket can process suitable concrete, bricks, masonry and other mineral-based waste into reusable material, helping support on-site recycling and waste reduction."
+        question: "5. How do I choose the right crusher bucket for an excavator?",
+        answer:
+          "Consider excavator weight, hydraulic flow, feed opening, material type, required output size and production capacity. These factors help determine the most suitable model.",
       },
-      {
-        question: "6. How does a crusher bucket work?",
-        answer: "The crusher bucket is mounted directly onto a compatible excavator and uses the excavator's hydraulic power to operate its crushing mechanism. Material is fed into the bucket and crushed to the required size."
-      },
-      {
-        question: "7. Why choose a Pithal crusher bucket?",
-        answer: "Pithal crusher buckets are designed to provide an efficient excavator-mounted solution for crushing and processing suitable materials on-site. The appropriate model can be selected based on the excavator and the specific project requirements."
-      }
-    ]
+    ],
   },
   longContent: {
-    content: `## Prime Crusher Bucket for Efficient On-Site Crushing
+    content: `## Bucket Crusher Manufacturer in India – Pithal Machines
 
-The Prime Crusher Bucket is designed for efficient on-site crushing of concrete, rocks, asphalt, demolition waste and other suitable materials. Mounted directly onto a compatible excavator, the crusher bucket allows material to be processed at the job site without requiring a separate crushing machine for suitable applications.
+Crushing concrete, rocks and demolition waste at a construction site often involves additional transportation, material handling and operating costs. Moving heavy materials to a separate crushing plant can also slow down project operations. For contractors looking for a more flexible approach, a bucket crusher offers the ability to crush suitable materials directly at the job site using an excavator.
 
-With a robust Hardox body, manganese steel jaws, hydraulic drive, adjustable output and hydraulic reverse function, the Prime Bucket is built for demanding applications across construction, demolition, roadwork, mining, quarrying, infrastructure and material recycling.
+Pithal Machines offers the Prime Bucket Crusher, an excavator-mounted crushing attachment designed for construction, demolition, mining, quarrying and recycling applications. It combines hydraulic operation with a heavy-duty crushing mechanism to process suitable materials where they are generated.
 
-### Why Choose Prime Crusher Bucket from Pithal Machine
+With models designed for compatible excavators ranging from 8 to 50 tonnes, the Prime Bucket Crusher range addresses different project sizes and production requirements. Whether you are looking for a crusher bucket for excavator applications, comparing crushing capacities or researching the bucket crusher price, selecting the right equipment starts with understanding your operational requirements.
 
-Choosing the right bucket crusher can directly influence material handling, project productivity and operating efficiency. The Prime Crusher Bucket is engineered to bring crushing capability directly to the excavation or demolition site, allowing suitable materials to be reduced where they are generated.
+### What Is a Bucket Crusher?
 
-Unlike conventional stationary crushing equipment, a crusher bucket for excavator applications can move with the machine from one working area to another. This provides greater flexibility for projects where material processing requirements change across the site.
+A bucket crusher is an excavator attachment designed to crush rocks, concrete, asphalt and other suitable materials into smaller sizes. Unlike a conventional excavator bucket used for digging and loading, it contains a crushing mechanism that performs material reduction.
 
-The hydraulic design also allows the bucket to use the compatible excavator's hydraulic system, making it a practical solution for contractors looking for a mobile crushing attachment.
+A bucket crusher for excavator applications allows contractors to process suitable materials directly at the worksite. This can be particularly useful in demolition projects, road reconstruction, infrastructure development and construction waste recycling.
 
-### Crusher Bucket for Excavator Applications
+For example, when an old concrete structure is demolished, the resulting material may need to be crushed before further handling or reuse. With a suitable attachment, contractors can process this material closer to its source instead of transporting every load to an external crushing facility.
 
-A crusher bucket for excavator is designed to combine excavation and crushing capabilities in one machine. The Prime Crusher Bucket is mounted directly onto a compatible excavator and uses hydraulic power to operate its crushing mechanism.
+The crushed output can be considered for backfilling, roadwork and other construction applications, provided it meets the required quality and project specifications.
 
-This setup allows an excavator with crusher attachment to process suitable concrete, rocks, asphalt and demolition materials directly at the project location.
+### Prime Bucket Crusher Specifications
 
-Using an excavator crusher can help reduce unnecessary material movement and simplify site operations. Instead of transporting all suitable material to an external crushing plant, contractors can process it closer to where it is generated.
+Pithal Machines offers four Prime Bucket Crusher models to accommodate different excavator sizes and crushing requirements.
 
-### Efficient Material Reduction
+| Specification | Details |
+|---|---|
+| Excavator compatibility | 8–50 tonnes |
+| Maximum feed size | Up to 1,500 mm |
+| Hydraulic oil flow | 80–240 LPM |
+| Adjustable output size | 20–160 mm, model-dependent |
+| Attachment weight | 1,850–4,800 kg |
+| Crushing mechanism | Jaw crushing system |
+| Drive system | Hydraulic |
 
-The Prime Crusher Bucket uses a jaw crushing mechanism to apply compressive force to suitable feed material and reduce it into smaller, more manageable sizes.
+### How Does a Crusher Bucket for Excavator Work?
 
-The bucket features an adjustable CSS system, allowing the crushing output to be adjusted from approximately 20 mm to 100 mm according to application requirements.
+A crusher bucket operates through the hydraulic system of a compatible excavator. Once mounted, the attachment uses hydraulic power to operate its internal jaw-crushing mechanism.
 
-This flexibility makes the bucket crusher suitable for different material-processing requirements, including construction waste recycling, roadwork, backfilling applications and other projects where controlled material reduction is required.
+Material enters the crushing chamber, where the jaws apply compressive force to break it into smaller pieces. The adjustable closed-side setting (CSS) allows the discharge size to be selected according to the application and model.
 
-Actual crushing performance depends on material characteristics, feed size, excavator specifications, operating conditions and the selected Prime Bucket model.
+The Prime Bucket Crusher features hydraulic reverse, which helps operators clear suitable material blockages by reversing the crushing mechanism. This can reduce interruptions during operation.
 
-### Built for Demanding Crushing Applications
+Before installation, it is important to check the excavator's hydraulic flow, operating pressure, machine weight and mounting compatibility. Correct equipment matching helps maintain efficient operation and reduces unnecessary stress on the machinery.
 
-The Prime Crusher Bucket is designed for demanding environments where crushing equipment is exposed to heavy loads and abrasive materials.
+### Applications of an Excavator Crusher
 
-Its Hardox body provides a strong and wear-resistant structure, while manganese steel jaws are designed to withstand the demanding conditions associated with crushing.
+An excavator crusher is suitable for various industries where on-site crushing, material reduction and efficient handling of construction waste are important.
 
-The reversible jaw configuration can help improve wear-component utilization, while the hydraulic reverse function assists in clearing suitable material blockages from the crushing chamber.
+#### Construction and Demolition
 
-These features make the Prime Crusher Bucket a dependable solution for construction, demolition, quarrying, mining, infrastructure and recycling applications.
+Construction and demolition projects generate concrete, bricks, asphalt and other mineral-based waste. An excavator crusher can help reduce suitable materials directly at the site, making them easier to manage and process.
 
-### Hydraulic Excavator Crusher for Flexible Operation
+This is particularly useful for RCC demolition, building renovation, road reconstruction and construction waste recycling.
 
-The Prime Bucket operates using the hydraulic system of a compatible excavator. This means the attachment does not require a separate engine or independent power unit for its crushing operation.
+#### Road Construction and Infrastructure
 
-The hydraulic drive allows the excavator crusher to combine mobility with material-processing capability. Contractors can move the crusher around the site using the excavator and process suitable material at different working locations.
+Highway development, railway projects, metro construction and smart city projects often involve removing existing concrete, asphalt and rock material. A bucket crusher can help process suitable material closer to the working area.
 
-For optimum performance, the excavator's hydraulic flow, pressure, operating weight and attachment compatibility should be checked before selecting a crusher bucket model.
+On-site crushing may simplify material handling and reduce the need for repeated transportation, depending on the project's requirements.
 
-### Anti-Jamming Hydraulic Reverse
+#### Mining and Quarrying
 
-Material blockages can affect crushing productivity and interrupt normal operation. Prime Crusher Bucket incorporates a hydraulic reverse function designed to help clear blockages from the crushing mechanism.
+Mining and quarrying operations involve handling hard and abrasive materials such as limestone, granite, basalt and marble waste. The Prime Bucket Crusher is designed for selected material-processing applications where excavator-mounted crushing is suitable.
 
-The hydraulic reverse allows the operator to reverse the crushing action when required, helping manage suitable blockages and reduce unnecessary interruptions during crushing.
+The appropriate model should be selected according to material characteristics, excavator capacity and expected production.
 
-This feature is particularly useful for demanding applications where material characteristics can vary during operation.
+#### Concrete and Asphalt Recycling
 
-### Crusher Bucket for Construction and Demolition
+Recycling suitable concrete and asphalt helps reduce construction waste and supports better material utilisation. A crusher bucket can process selected debris into smaller sizes for approved secondary applications.
 
-Construction and demolition sites can generate substantial quantities of concrete, bricks, asphalt and other mineral-based materials. Transporting this material away from the site can increase handling requirements and project logistics.
+The final material must meet the required engineering and quality standards before reuse.
 
-A crusher bucket for excavator applications allows suitable material to be processed directly at the source. This can help contractors reduce material movement and make better use of suitable demolition and excavation materials.
+### Benefits of Using an Excavator with Crusher Attachment
 
-The Prime Crusher Bucket can be used for suitable concrete recycling, demolition waste processing and material reduction applications, depending on project requirements.
+An excavator with crusher attachment combines excavation equipment with material-crushing capabilities. This arrangement can be useful for contractors who need flexibility across different working locations.
 
-### Crusher Bucket for Road and Infrastructure Projects
+#### On-Site Material Crushing
 
-Road construction and infrastructure projects often involve excavation, demolition and removal of existing materials. Suitable rock, concrete, asphalt and other mineral-based materials may require crushing before they can be reused or transported.
+Processing suitable material where it is generated can reduce unnecessary movement between the demolition area and an external crushing facility. This may simplify site logistics and improve material-handling efficiency.
 
-An excavator with crusher attachment provides the flexibility to process suitable materials close to the work area.
+#### Heavy-Duty Construction
 
-The Prime Crusher Bucket can support road construction, road reconstruction, highway development, infrastructure projects and other applications where mobile on-site crushing can improve material-handling efficiency.
+The Prime Bucket Crusher features a Hardox body designed to withstand abrasive working conditions. Its manganese steel jaws provide wear resistance during crushing operations.
 
-### Crusher Bucket for Mining and Quarrying
+#### Hydraulic Reverse Function
 
-Mining and quarrying operations require equipment capable of handling hard and abrasive materials. The Prime Crusher Bucket is designed for suitable rock and mineral processing applications where material needs to be reduced at or close to the source.
+Material blockages can interrupt crushing operations. The hydraulic reverse function helps clear suitable blockages by reversing the crushing mechanism, reducing unnecessary downtime.
 
-The combination of heavy-duty construction, manganese jaws, hydraulic operation and adjustable output makes the Prime Bucket suitable for selected mining and quarrying applications.
+#### Reversible Jaw Design
 
-The correct model should be selected according to the excavator, feed material, production requirement and operating conditions.
+Reversible jaws help improve the utilisation of wear components and can support longer operating life when maintained and used correctly.
 
-### Reliable Bucket Crusher for Material Recycling
+#### Lower Material Handling Requirements
 
-Recycling suitable construction and demolition material can help reduce waste and improve material utilization. The Prime Crusher Bucket allows suitable concrete, masonry, asphalt and other mineral-based materials to be processed directly at the project site.
+By bringing crushing capability closer to the material source, contractors may reduce certain transportation and handling requirements. Actual savings depend on project size, operating hours, fuel consumption and maintenance costs.
 
-Using a bucket crusher can reduce the amount of material that needs to be transported to an external processing facility. Crushed material may also be suitable for applications such as backfilling, roadwork and other construction uses, depending on the material quality and project specifications.
+### How to Choose the Right Bucket Crusher
 
-### Prime Crusher Bucket Models
+Selecting the right attachment requires more than matching its physical size with an excavator. The equipment must suit the machine, material and expected production.
 
-The Prime Bucket range includes different models designed for excavators of different operating sizes and crushing requirements.
+* **Excavator compatibility:** Check the machine's operating weight, hydraulic flow, pressure and mounting arrangement before selecting a model.
+* **Material type:** Consider whether you will process concrete, asphalt, natural stone or demolition waste. Material hardness and contamination can influence crushing performance.
+* **Feed opening:** Check the maximum feed dimensions to ensure that the material can enter the crushing chamber without unnecessary preparation.
+* **Production capacity:** Estimate the amount of material you need to process per hour and compare it with the selected model's published TPH range.
+* **Output size:** Choose a model based on the required discharge size and the intended use of the crushed material.
+* **Maintenance support:** Consider spare-part availability, jaw replacement, service assistance and maintenance requirements before purchasing.
 
-| Model | Excavator Size | Bucket Capacity | Feed Opening | Production |
-|---|---|---|---|---|
-| PB70 | 8–12 Ton | 0.30 m³ | 700 × 450 mm | 15–35 TPH |
-| PB90 | 12–20 Ton | 0.55 m³ | 900 × 500 mm | 25–60 TPH |
-| PB120 | 20–35 Ton | 0.80 m³ | 1200 × 550 mm | 50–100 TPH |
-| PB150 | 35–50 Ton | 1.20 m³ | 1500 × 700 mm | 80–150 TPH |
+A properly matched crusher bucket can help improve operating efficiency and avoid unnecessary equipment-related expenses.
 
-The Prime Bucket range provides crushing capacity from approximately 15 TPH to 150 TPH, depending on the model and operating conditions.
+### Bucket Crusher Price in India: What Determines the Cost?
 
-### How to Select the Right Crusher Bucket
+The bucket crusher price depends on the selected model, crushing capacity, attachment weight, hydraulic requirements and configuration. Larger models designed for heavier excavators and higher production requirements generally involve a different investment from smaller models.
 
-Selecting the correct crusher bucket for excavator applications requires more than simply choosing a bucket based on physical size. The excavator's operating weight, hydraulic oil flow, hydraulic pressure, attachment compatibility, feed material, feed size, required output and production target should all be considered.
+However, purchase price should not be the only deciding factor. Buyers should also consider maintenance expenses, replacement wear parts, expected production, operating costs and the potential savings from reduced material transportation.
 
-For example, smaller excavators may require a compact model, while larger excavators used for high-volume crushing applications may require a higher-capacity Prime Bucket.
+Pithal Machines provides quotation assistance based on the customer's equipment and project requirements. Sharing your excavator model, material type, required output size and production target can help the team recommend an appropriate configuration.
 
-Matching the crusher bucket with the excavator correctly helps ensure efficient hydraulic performance and reliable crushing operation.
+### JCB Crusher Bucket: Compatibility and Price
 
-### Understanding Bucket Crusher Price
+A JCB crusher bucket is a common search term among contractors looking for crushing attachments for JCB excavators and backhoe loaders.
 
-The bucket crusher price can vary depending on the selected model, excavator compatibility, production capacity, specifications and configuration. Larger models with higher crushing capacities and larger feed openings generally have different pricing from compact models.
+However, not every crusher attachment is compatible with every JCB machine. Compatibility depends on the excavator's operating weight, hydraulic flow, pressure, mounting arrangement and attachment requirements.
 
-When comparing a bucket crusher price, it is important to consider more than the initial purchase cost. Factors such as production capacity, material transportation savings, equipment utilization, maintenance requirements and expected operating life can influence the overall value of the investment.
+The JCB crusher bucket price also varies depending on the selected model, specifications, capacity and supplier. Buyers should compare technical suitability, maintenance requirements, warranty and service support before making a purchase.
 
-For an accurate price, buyers should provide their excavator details and application requirements to the manufacturer.
+If you operate a JCB machine, share its exact model and technical specifications with Pithal Machines to check whether a suitable Prime Bucket Crusher configuration is available.
 
-### JCB Crusher Bucket Applications
+### Why Choose Pithal Machines for Bucket Crushers?
 
-A JCB crusher bucket can be considered for compatible JCB excavators where the machine meets the hydraulic and attachment requirements of the selected crusher bucket.
+Choosing industrial crushing equipment requires a manufacturer that understands the practical requirements of construction, demolition and material-processing projects.
 
-Before purchasing a JCB crusher bucket, contractors should verify the excavator's operating weight, hydraulic flow, hydraulic pressure, mounting arrangement and other technical requirements.
+Pithal Machines offers the Prime Bucket Crusher range with different configurations for compatible excavators from 8 to 50 tonnes.
 
-The same principle applies when comparing a JCB crusher bucket price. Pricing depends on the specific crusher bucket model, capacity, configuration and application rather than only the excavator brand.
+Its key product features include a Hardox body, manganese steel jaws, hydraulic drive, adjustable output and hydraulic reverse. The company also highlights local manufacturing, spare-parts access, site analysis, ROI calculations and operator training.
 
-Pithal Machine can help customers identify the appropriate Prime Bucket model based on their excavator and crushing requirements.
+Customers can discuss their material-processing requirements with the team and receive guidance on model selection, hydraulic compatibility and production expectations.
 
-### Durable Crusher Bucket for Long-Term Operation
+With technical documentation, maintenance assistance and operator support, Pithal Machines aims to help customers select equipment that matches their actual working conditions.
 
-Durability is an important consideration when investing in crushing equipment. The Prime Crusher Bucket is manufactured with a focus on structural strength and wear resistance for demanding applications.
+### Get the Right Bucket Crusher from Pithal Machines
 
-The Hardox body, manganese steel jaws, reversible jaw design, hydraulic drive and hydraulic reverse system are designed to support reliable operation and practical maintenance.
+Choosing the right crushing attachment can make a difference in how efficiently construction, demolition and recycling projects handle material. The key is to select equipment that matches your excavator's capabilities and your project's production requirements.
 
-With proper operation, routine inspection and recommended maintenance, the Prime Crusher Bucket can provide dependable performance across a wide range of suitable crushing applications.
+Pithal Machines offers the Prime Bucket Crusher range for different excavator sizes and on-site crushing applications.
 
-### Get the Right Prime Crusher Bucket for Your Application
-
-Every project has different crushing requirements based on material type, excavator size, hydraulic capacity, feed size, desired output and production capacity. Selecting the right crusher bucket is therefore essential for achieving efficient and reliable performance.
-
-[Pithal Machine](https://www.pithalmachine.com/) offers the Prime Bucket range for suitable excavator-mounted crushing applications. Contact the Pithal team with your excavator model and project requirements to identify the right bucket crusher for excavator applications, obtain detailed technical information, and enquire about the bucket crusher price.
-
-Choose Prime Crusher Bucket for flexible, durable and efficient on-site material crushing.`
+[Contact Pithal Machines](https://www.pithalmachine.com/) today to request a quotation. Share your excavator model, material type and expected production capacity to receive guidance on selecting the right bucket crusher for your application.`,
   }
 };
 
