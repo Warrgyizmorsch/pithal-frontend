@@ -381,91 +381,164 @@ export const conveyorSystemData: ProductDetailData = {
     highlight: "Questions",
     faqs: [
       {
-        question: "1. What is a Conveyor System?",
-        answer: "Prime Conveyor System is designed for efficient and continuous transportation of bulk materials in mining, quarrying, construction and aggregate applications."
+        question: "1. What is a conveyor system used for?",
+        answer:
+          "A conveyor system transports materials between different locations. In crushing plants, it commonly moves stones, sand and aggregates between crushers, screens and stockpiles.",
       },
       {
-        question: "2. What materials can a Conveyor System handle?",
-        answer: "It can handle suitable bulk materials such as rocks, stones, crushed aggregates and other materials, depending on the model and application."
+        question: "2. Which conveyor is commonly used in crushing plants?",
+        answer:
+          "Belt conveyors are widely used because they can transport bulk materials between different processing stages. The suitable arrangement depends on material characteristics, capacity and plant layout.",
       },
       {
-        question: "3. Where is Prime Conveyor System used?",
-        answer: "Prime Conveyor System is suitable for mining, quarrying, aggregate production, construction, crushing plants and other material-processing applications."
+        question: "3. How is conveyor capacity determined?",
+        answer:
+          "Capacity depends on belt width, belt speed, material density and the amount of material carried on the belt. Inclination and loading conditions also influence performance.",
       },
       {
-        question: "4. How does a conveyor system work?",
-        answer: "A conveyor system transports material using a continuously moving conveyor belt supported by rollers and driven by a motor, moving material from one point to another."
+        question: "4. What information is needed for a conveyor quotation?",
+        answer:
+          "Buyers should provide material type, required capacity in TPH, conveyor length, height difference, loading and discharge locations and site layout.",
       },
       {
-        question: "5. What are the benefits of using a conveyor system?",
-        answer: "A conveyor system provides efficient material transportation, continuous material flow, reduced manual handling and reliable performance for demanding industrial applications."
+        question: "5. What affects conveyor belt price?",
+        answer:
+          "Belt dimensions, construction, capacity, motor specifications, conveyor configuration and installation requirements influence the overall price.",
       },
       {
-        question: "6. How do I choose the right Conveyor System?",
-        answer: "Selection depends on material type, required production capacity, conveying distance, belt size, operating conditions and the overall plant configuration."
+        question: "6. Can conveyors be integrated with crushing and screening equipment?",
+        answer:
+          "Yes. Conveyors commonly connect jaw crushers, cone crushers, VSI crushers and vibrating screens. Their layout should match the required material flow and plant configuration.",
       },
-      {
-        question: "7. Can Prime Conveyor System be used in a complete crushing plant?",
-        answer: "Yes. Prime Conveyor System can be integrated with crushers, vibrating screens and other equipment to create an efficient material-handling and processing plant."
-      }
-    ]
+    ],
   },
   longContent: {
-    content: `## Prime Conveyor System for Efficient Material Handling
+    content: `## Conveyor System Manufacturer in India – Pithal Machines
 
-The Prime Conveyor System is designed for efficient and continuous transportation of bulk materials. With robust construction and reliable material-handling performance, it is suitable for demanding applications in mining, quarrying, construction, aggregate production and material processing.
+In a crushing and screening plant, moving materials efficiently is just as important as processing them. Raw stones need to reach crushers, crushed material must move towards screening units and finished aggregates have to be transferred to storage areas. Poor material handling can slow down production, increase manual work and create unnecessary operating costs.
 
-The conveyor belt is designed to maintain consistent material flow while reducing the need for manual material handling. Its heavy-duty design makes it a dependable solution for industries that require continuous transportation and efficient movement of bulk materials.
+A reliable conveyor system helps maintain a continuous flow of materials between different processing stages. It connects machines, reduces manual handling and supports smoother plant operations. For industries involved in mining, quarrying, construction and aggregate production, selecting the right conveying equipment is essential for efficient material movement.
 
-### Why Choose Prime Conveyor System from Pithal Machine
+Pithal Machines caters to the requirements of the crushing and screening industry. Understanding material characteristics, required capacity and plant layout helps businesses identify suitable conveying arrangements for their operations.
 
-Choosing the right conveyor system can have a direct impact on productivity, operating efficiency and overall plant performance. The Pithal Prime Conveyor System is engineered to provide a combination of reliable material handling, durability and dependable operation.
+### What Is a Conveyor System?
 
-Its strong construction allows the conveyor machine to perform effectively in demanding working environments, while its practical design supports continuous material transportation. This makes the Prime Conveyor System a suitable choice for businesses looking for reliable material-handling equipment.
+A conveyor system is a mechanical arrangement used to transport materials from one location to another. It commonly handles bulk materials such as stones, sand, minerals and aggregates.
 
-### Conveyor System for Mining and Quarrying
+In a crushing plant, conveyors connect equipment such as crushers, vibrating screens and stockpiles. For example, material discharged from a jaw crusher can be transferred to a screening unit through a belt conveyor. After screening, different aggregate sizes can be transported to separate storage areas.
 
-Mining and quarrying operations often require equipment capable of transporting large quantities of bulk material efficiently. The Prime Conveyor System is designed for material-handling applications where processed material needs to be moved between different stages of a plant.
+The system generally includes a moving belt, motor, gearbox, pulleys, rollers and supporting structure. Its design depends on material type, transportation distance, required capacity and site conditions.
 
-As part of conveyors and conveying system solutions, the equipment can support material movement from crushers and screens to stockpiles or other processing stages. Its robust construction makes it suitable for handling rocks, aggregates and other bulk materials.
+### Types of Conveyor Systems
 
-### Efficient Material Transportation
+Different conveyor arrangements are used according to the material being transported and the plant layout.
 
-The primary function of a conveyor is to transport materials continuously from one point to another. The Prime Conveyor System uses a moving belted conveyor mechanism to provide consistent material flow across the required conveying distance.
+#### 1. Belt Conveyor
 
-The conveyor belt moves over supporting components while the drive system provides continuous movement. The machine can be integrated into a wider crushing and screening plant where materials are transferred between crushers, screens and stockpiling areas.
+A belt conveyor uses a continuous moving belt supported by rollers and driven by a motorised pulley arrangement. It is widely used for transporting stones, aggregates and other bulk materials.
 
-### Built for Demanding Industrial Applications
+In crushing and screening plants, it connects crushers, screens and stockpiles. Belt width, speed and construction should match the material's weight, size and abrasiveness to support reliable operation.
 
-Our conveyor machine is designed for industries where reliable material transportation is essential. From mining and quarrying to aggregate production and construction material processing, the machine can support a wide range of material-handling requirements.
+#### 2. Inclined Belt Conveyor
 
-Its heavy-duty design helps provide dependable operation under demanding conditions while supporting continuous material flow and efficient plant operations.
+An inclined belt conveyor moves materials between different elevations. It is useful when machines or stockpiles are positioned at different heights.
 
-### Reliable Conveyor Machine for Long-Term Operation
+The inclination, belt surface and material characteristics must be considered during selection. An unsuitable angle can cause material to slip or spill during transportation.
 
-Durability is an important consideration when selecting industrial material-handling equipment. Pithal Conveyor System is manufactured with a focus on structural strength, reliable components and long-term operational performance.
+#### 3. Horizontal Belt Conveyor
 
-With appropriate maintenance and operating practices, the equipment can provide dependable service while helping businesses maintain efficient material transportation operations.
+A horizontal conveyor moves materials along a relatively level path. It is commonly used to connect processing machines or transfer finished aggregates towards storage areas.
 
-### Conveyor Belt Price and Machine Cost
+Its length and capacity should be planned according to the plant layout and expected material flow.
 
-The conveyor belt price depends on factors such as conveyor length, belt width, material-handling capacity, configuration and application requirements. The overall cost may also vary according to the plant layout and additional equipment requirements.
+#### 4. Radial Stacker Conveyor
 
-When evaluating the cost of a conveyor system, businesses should consider not only the initial investment but also operating efficiency, durability, maintenance requirements and long-term performance.
+A radial stacker conveyor distributes bulk materials across a stockpile area. Its movement around a pivot point allows material to be deposited over a wider space.
 
-Pithal Machine can provide pricing based on the specific conveyor configuration and material-handling requirements.
+It is useful in aggregate processing facilities where organised stockpile management is important.
 
-### Choose a Reliable Conveyor Manufacturer
+### Important Components of a Conveyor Machine
 
-Selecting experienced conveyor manufacturers is important when investing in industrial material-handling equipment. The right manufacturer can provide suitable equipment configuration, technical guidance and application support.
+Each component contributes to the performance and reliability of a conveyor machine.
 
-Pithal Machine focuses on providing reliable crushing, screening and conveying solutions designed for demanding mining, quarrying, construction and aggregate-processing applications. As a conveyor belt manufacturer, Pithal Machine provides practical conveying solutions for efficient bulk-material transportation.
+* **Conveyor Belt:** The belt carries material from the loading point to the discharge location. Its construction should suit the material's size, weight and abrasive properties.
+* **Drive Unit:** The drive unit provides the power needed to move the belt. It generally includes a motor and gearbox. Selection depends on the load, belt speed, conveyor length and operating conditions.
+* **Pulleys:** Drive and tail pulleys guide belt movement. Correct alignment helps maintain smooth operation and reduces unnecessary belt wear.
+* **Idlers and Rollers:** Idlers support the belt and the material being transported. Damaged or seized rollers can increase friction and affect belt tracking.
+* **Supporting Structure:** The conveyor frame supports the belt, rollers, pulleys and drive components. It should be suitable for the expected operating load and installation environment.
+* **Loading and Discharge Arrangements:** Loading points guide material onto the belt, while discharge arrangements control where it leaves the conveyor. Properly designed transfer points help reduce spillage and material buildup.
 
-### Get the Right Conveyor System for Your Application
+### Benefits of Choosing the Right Conveyor System
 
-Every material-handling operation has different requirements based on material type, conveying distance, required capacity and plant configuration. Selecting the appropriate conveyor system is therefore important for achieving efficient plant performance.
+A properly planned conveyor arrangement can improve material handling and support efficient plant operations.
 
-[Pithal Machine](https://www.pithalmachine.com/) can help you identify a suitable Prime Conveyor System configuration based on your application and material-handling requirements. Contact our team to discuss your requirements and get detailed technical information and the latest pricing from an experienced conveyor system manufacturer.`
+* **Continuous material movement:** Conveyors transport materials between machines and help maintain a steady flow through different processing stages.
+* **Reduced manual handling:** They reduce the need to move heavy stones and aggregates manually, allowing workers to focus on other plant activities.
+* **Improved productivity:** A suitable conveying arrangement helps prevent material accumulation and delays between processing stages.
+* **Better material management:** Conveyors can direct different aggregate sizes towards designated stockpiles or processing units.
+* **Flexible plant layout:** Horizontal and inclined arrangements can connect equipment installed at different locations and elevations.
+* **Safer operations:** Reducing unnecessary manual movement can help improve workplace safety. Suitable guards, emergency stops and safe access arrangements are still essential.
+
+### How to Select the Right Conveyor Belt
+
+Selecting the right conveyor belt requires an understanding of the actual working conditions.
+
+* **Material characteristics:** Consider material size, weight, moisture and abrasiveness. Sharp stones and heavy aggregates can cause greater belt wear.
+* **Required capacity:** Estimate the quantity of material to be transported per hour, generally measured in tonnes per hour (TPH). Belt width, speed and material density influence capacity.
+* **Conveyor length and inclination:** Measure the distance and height difference between loading and discharge points. Inclined conveyors require suitable belt grip to prevent material from slipping.
+* **Loading conditions:** Material should be distributed properly across the belt. Uneven loading can cause spillage, misalignment and premature wear.
+* **Operating environment:** Dust, moisture and temperature can affect belt and component performance. Select equipment suitable for the plant's working conditions.
+* **Maintenance access:** Ensure that rollers, pulleys, belt joints and drive components can be inspected and serviced conveniently.
+
+### What Factors Determine Conveyor Belt Price?
+
+The conveyor belt price depends on equipment specifications and project requirements. Important cost factors include:
+
+* **Belt dimensions:** Width and length influence the quantity of belt material required.
+* **Belt quality:** Construction, thickness and wear resistance affect selection and cost.
+* **Capacity:** Higher material-handling requirements may need different belt and drive specifications.
+* **Motor and gearbox:** Drive requirements depend on load, speed, distance and elevation.
+* **Conveyor configuration:** Horizontal, inclined and specialised arrangements have different design requirements.
+* **Supporting structure:** Frame dimensions, installation height and site conditions influence the overall cost.
+* **Additional components:** Chutes, guards and discharge arrangements may add to the quotation.
+
+For an accurate quotation, buyers should share the material type, required capacity, conveyor length, height difference, loading and discharge points and site layout. This helps the manufacturer understand the application and recommend a suitable arrangement.
+
+### How to Choose the Right Conveyor System Manufacturer
+
+Choosing the right conveyor manufacturer is important for long-term equipment performance. The proposed system should match the material-handling requirements of the plant rather than being selected on price alone.
+
+Check the manufacturer's experience with industrial material handling and crushing and screening applications. Discuss the material type, required capacity, belt dimensions, transportation distance and plant layout.
+
+It is also important to understand the quality of the belt, pulleys, rollers, drive unit and supporting structure. Ask for clear technical specifications and check what is included in the quotation. Maintenance guidance, replacement components and service support should also be considered.
+
+An experienced conveyor belt manufacturer should be able to explain belt selection and its suitability for the application. Similarly, a capable conveyor system manufacturer should understand how material movement connects with the overall plant arrangement.
+
+Pithal Machines works in the crushing and screening equipment segment, where efficient material transfer is an important part of plant operations. Businesses planning a new installation or upgrading an existing facility can contact the team to discuss their project requirements.
+
+### Applications of Conveyor Systems
+
+* **Mining and Quarrying:** Conveyors transport extracted rocks and minerals between crushing, screening and storage areas.
+* **Crushing and Screening Plants:** They connect jaw crushers, cone crushers, VSI crushers and vibrating screens, helping move raw materials and processed aggregates between different stages.
+* **Construction and Infrastructure:** Conveyor systems support the movement of sand, crushed stones and aggregates used in construction and infrastructure projects.
+* **Cement and Building Materials:** They transport bulk materials between storage, handling and processing areas in cement and building-material facilities.
+* **Aggregate Processing:** Conveyors help move screened aggregates towards separate stockpiles according to their size and intended application.
+
+### Conveyor System Maintenance Tips
+
+Regular inspection helps maintain conveyor performance and identify problems before they cause major interruptions.
+
+* **Inspect the belt:** Check for cuts, cracks, tears and unusual wear.
+* **Check alignment:** Belt misalignment can cause edge damage and material spillage.
+* **Examine rollers:** Replace damaged or seized rollers to prevent additional friction.
+* **Monitor the drive unit:** Check for unusual noise, vibration or overheating.
+* **Clean transfer points:** Remove material buildup around loading and discharge areas.
+* **Inspect safety devices:** Check guards and emergency stops regularly.
+* **Maintain service records:** Record inspections, repairs and component replacements.
+
+Maintenance should be carried out by trained personnel using appropriate safety procedures and following the manufacturer's recommendations.
+
+[Contact Pithal Machines](https://www.pithalmachine.com/) to discuss your conveyor system requirements and request a quotation for your crushing and screening plant.`,
   }
 };
 
