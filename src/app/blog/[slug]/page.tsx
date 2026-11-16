@@ -12,6 +12,7 @@ import ReactMarkdown from "react-markdown";
 import { cache } from "react";
 import { BlogFaqAccordion } from "@/components/blog/BlogFaqAccordion";
 import { BlogShareButtons } from "@/components/blog/BlogShareButtons";
+import { getBlogThumbnailUrl } from "@/lib/blogImage";
 
 // Use ISR (Incremental Static Regeneration) so blog pages are fully pre-rendered for search engines with instant response times and proper <head> metadata, while refreshing every 60s
 export const revalidate = 60;
@@ -89,9 +90,7 @@ const getBlogPost = cache(async (rawSlug: string) => {
       }).lean();
 
       if (b) {
-        const resolvedImg = b.image && !b.image.startsWith("data:")
-          ? b.image
-          : (b.imageData ? `/api/blog-image/${b.slug}` : (b.slug ? `/blogpageimg/${b.slug}.webp` : "/blogpageimg/crusherguide.jpg"));
+        const resolvedImg = getBlogThumbnailUrl(b);
         return {
           slug: b.slug,
           tag: b.tag || b.category?.toUpperCase() || "CRUSHING SOLUTIONS",
@@ -133,16 +132,14 @@ const getAllBackendBlogs = cache(async () => {
     const conn = await connectDB();
     if (conn) {
       const blogs: any = await BlogModel.find({ status: { $ne: "Draft" } })
-        .select("slug title readTime publishedAt image")
+        .select("slug title readTime publishedAt image imageData")
         .limit(6)
         .sort({ createdAt: -1 })
         .lean();
       if (blogs && blogs.length > 0) {
         return blogs.map((b: any) => ({
           ...b,
-          image: b.image && !b.image.startsWith("data:")
-            ? b.image
-            : (b.slug ? `/blogpageimg/${b.slug}.webp` : "/blogpageimg/crusherguide.jpg"),
+          image: getBlogThumbnailUrl(b),
         }));
       }
     }

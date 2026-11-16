@@ -42,7 +42,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
 import { HeroNavigation } from "@/components/common/HeroNavigation";
-import { handleBlogImageError, RAW_GITHUB_IMG_BASE } from "@/lib/blogImage";
+import { getBlogThumbnailUrl, handleBlogImageError, RAW_GITHUB_IMG_BASE } from "@/lib/blogImage";
 
 
 const CalendarIcon = () => (
@@ -1135,7 +1135,7 @@ export default function BlogClient({ initialBlogs = [] }: { initialBlogs?: any[]
       read: b.readTime || "5 min read",
       views: b.views || "1.2K",
       category: b.category || "Crushing Solutions",
-      img: b.image || "/blogpageimg/crusherguide.jpg",
+      img: getBlogThumbnailUrl(b),
       num: `0${index + 1}`,
     };
   });

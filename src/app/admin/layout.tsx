@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import styles from "./layout.module.css";
 
 export const metadata: Metadata = {
   title: "Pithal Industrial Admin Portal",
@@ -11,7 +12,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="admin-root-layout min-h-screen bg-[#F8FAFC] dark:bg-[#090D16] text-slate-900 dark:text-slate-100">
+    <div className={`${styles.root} admin-root-layout bg-[#F8FAFC] dark:bg-[#090D16] text-slate-900 dark:text-slate-100`}>
       <script
         dangerouslySetInnerHTML={{
           __html: `

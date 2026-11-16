@@ -10,6 +10,22 @@ export function getResolvedBlogImageUrl(src?: string, slug?: string): string {
   return "/blogpageimg/crusherguide.jpg";
 }
 
+/** Uploaded thumbnail bytes are authoritative; local files may be older backups. */
+export function getBlogThumbnailUrl(blog: { slug?: string; id?: string; image?: string; img?: string; imageData?: string }): string {
+  const src = blog.image || blog.img;
+  const upload = blog.imageData?.startsWith("data:image/") ? blog.imageData : src?.startsWith("data:image/") ? src : undefined;
+  const slug = blog.slug || blog.id;
+  if (upload && slug) {
+    // A content revision changes even for two uploads with the same byte length.
+    let revision = 2166136261;
+    for (let index = 0; index < upload.length; index++) {
+      revision = Math.imul(revision ^ upload.charCodeAt(index), 16777619);
+    }
+    return `/api/blog-image/${encodeURIComponent(slug)}?v=${(revision >>> 0).toString(16)}-${upload.length}`;
+  }
+  return getResolvedBlogImageUrl(src, slug);
+}
+
 export function handleBlogImageError(
   e: React.SyntheticEvent<HTMLImageElement>,
   defaultFallback = "/blogpageimg/crusherguide.jpg"
