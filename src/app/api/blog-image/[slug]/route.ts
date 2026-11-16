@@ -4,6 +4,7 @@ import BlogModel from "@/lib/models/Blog";
 import mongoose from "mongoose";
 import fs from "fs";
 import path from "path";
+import { createHash } from "node:crypto";
 
 export const dynamic = "force-dynamic";
 
@@ -17,7 +18,7 @@ function getMimeType(filenameOrFormat: string): string {
 }
 
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
@@ -34,10 +35,11 @@ export async function GET(
     try {
       const conn = await connectDB();
       if (conn) {
+        const escapedSlug = cleanSlug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         const orConditions: any[] = [
           { slug: cleanSlug },
           { id: cleanSlug },
-          { slug: { $regex: new RegExp(`^${cleanSlug}$`, "i") } },
+          { slug: { $regex: new RegExp(`^${escapedSlug}$`, "i") } },
         ];
         if (mongoose.Types.ObjectId.isValid(cleanSlug)) {
           orConditions.push({ _id: new mongoose.Types.ObjectId(cleanSlug) });
@@ -45,34 +47,23 @@ export async function GET(
 
         const blog = await BlogModel.findOne({ $or: orConditions }).lean();
 
-        if (blog && blog.imageData && blog.imageData.startsWith("data:image/")) {
-          const match = blog.imageData.match(/^data:image\/([a-zA-Z0-9+]+);base64,(.+)$/);
+        const upload = blog?.imageData?.startsWith("data:image/") ? blog.imageData : blog?.image?.startsWith("data:image/") ? blog.image : "";
+        if (upload) {
+          const match = upload.match(/^data:image\/([a-zA-Z0-9+]+);base64,(.+)$/);
           if (match) {
             const format = match[1] === "jpeg" ? "jpg" : match[1].replace("svg+xml", "svg");
             const buffer = Buffer.from(match[2], "base64");
             const mime = getMimeType(format);
 
-            // Best effort cache to disk for fast future access
-            try {
-              const publicDir = path.join(process.cwd(), "public", "blogpageimg");
-              if (!fs.existsSync(publicDir)) {
-                fs.mkdirSync(publicDir, { recursive: true });
-              }
-              const diskFile = path.join(publicDir, `${cleanSlug}.${format}`);
-              if (!fs.existsSync(diskFile) || fs.statSync(diskFile).size !== buffer.length) {
-                fs.writeFileSync(diskFile, buffer);
-              }
-            } catch {
-              // Ignore disk write errors in read-only / serverless runtimes
-            }
-
-            return new NextResponse(buffer, {
-              status: 200,
+            const etag = `"${createHash("sha256").update(buffer).digest("hex")}"`;
+            const unchanged = request.headers.get("if-none-match") === etag;
+            return new NextResponse(unchanged ? null : buffer, {
+              status: unchanged ? 304 : 200,
               headers: {
                 "Content-Type": mime,
-                "Content-Length": String(buffer.length),
-                "Cache-Control": "public, max-age=120, s-maxage=300, stale-while-revalidate=86400",
-                "ETag": `"${cleanSlug}-${buffer.length}"`,
+                ...(unchanged ? {} : { "Content-Length": String(buffer.length) }),
+                "Cache-Control": "public, no-cache, must-revalidate",
+                "ETag": etag,
               },
             });
           }

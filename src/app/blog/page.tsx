@@ -3,6 +3,7 @@ import { connectDB } from "@/lib/db/mongodb";
 import BlogModel from "@/lib/models/Blog";
 import BlogClient from "./BlogClient";
 import { blogPosts } from "@/data/blogData";
+import { getBlogThumbnailUrl } from "@/lib/blogImage";
 
 export const metadata: Metadata = {
   title: "Industrial Insights & Engineering Blog | Pithal Machinery",
@@ -61,9 +62,7 @@ async function getInitialBlogs() {
 
       if (blogs && blogs.length > 0) {
         const sanitized = blogs.map((b: any) => {
-          const resolvedImg = b.image && !b.image.startsWith("data:")
-            ? b.image
-            : (b.imageData ? `/api/blog-image/${b.slug}` : (b.slug ? `/blogpageimg/${b.slug}.webp` : "/blogpageimg/crusherguide.jpg"));
+          const resolvedImg = getBlogThumbnailUrl(b);
           return {
             ...b,
             image: resolvedImg,

@@ -1,0 +1,17 @@
+/* The admin content owns scrolling; the document must not scroll underneath it. */
+:global(html):has(.root),
+:global(body):has(.root) {
+  height: 100%;
+  overflow: hidden;
+}
+
+.root {
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  overflow: auto;
+}
+
+.root:has(:global(.admin-portal > aside)) {
+  overflow: clip;
+}

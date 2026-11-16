@@ -8,6 +8,7 @@ export async function GET() {
     { url: `${BASE_URL}/sitemap-pages.xml`, lastModified: currentDate },
     { url: `${BASE_URL}/sitemap-products.xml`, lastModified: currentDate },
     { url: `${BASE_URL}/sitemap-blog.xml`, lastModified: currentDate },
+    { url: `${BASE_URL}/sitemap-cities.xml`, lastModified: currentDate },
   ];
 
   const xml = generateSitemapIndexXml(sitemaps);

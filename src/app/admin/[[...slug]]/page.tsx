@@ -2,10 +2,13 @@
 
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { handleBlogImageError } from "@/lib/blogImage";
+import { CityManager } from "@/components/admin/CityManager";
+import { MapPin } from "lucide-react";
+import { getBlogThumbnailUrl, handleBlogImageError } from "@/lib/blogImage";
 
 export type AdminMenu =
   | "dashboard"
+  | "cities"
   | "blogs-list"
   | "blogs-add"
   | "leads-list"
@@ -16,6 +19,7 @@ export type AdminMenu =
 
 export const MENU_TO_ROUTE: Record<AdminMenu, string> = {
   "dashboard": "/admin",
+  "cities": "/admin/cities",
   "blogs-list": "/admin/allblogpost",
   "blogs-add": "/admin/addnewblog",
   "leads-list": "/admin/allquoteleads",
@@ -35,6 +39,9 @@ export function resolveMenuFromPathname(pathname: string | null | undefined): Ad
   const sub = segments[1];
 
   switch (sub) {
+    case "cities":
+      return "cities";
+
     case "allblogpost":
     case "allblogposts":
     case "all-blog-posts":
@@ -125,6 +132,7 @@ interface BlogItem {
   tag?: string;
   readTime?: string;
   image?: string;
+  imageData?: string;
   status: "Publish" | "Draft";
   publishedAt: string;
   metaTags?: string;
@@ -2032,6 +2040,7 @@ export default function BackendAdminPortal() {
   };
 
   const currentRoleObj = rolesList.find(r => r.roleName === adminUser.role) || rolesList[0];
+  const canAccessCities = ["Super Admin", "Admin", "Content Editor"].includes(adminUser.role);
   const canAccessBlogs = adminUser.role === "Super Admin" || currentRoleObj.canAccessBlogs;
   const canAccessLeads = adminUser.role === "Super Admin" || currentRoleObj.canAccessLeads;
   const canAccessUsers = adminUser.role === "Super Admin" || currentRoleObj.canAccessUsers;
@@ -2243,7 +2252,7 @@ export default function BackendAdminPortal() {
 
   // ─── AUTHENTICATED PITHAL MACHINERY ADMIN PORTAL ──────────────────────────
   return (
-    <div className={`admin-portal flex h-screen font-sans overflow-hidden transition-colors duration-300 ${isDark ? "bg-[#090D16] text-slate-100" : "bg-[#F8FAFC] text-slate-900"}`}>
+    <div className={`admin-portal flex h-full min-h-0 font-sans overflow-hidden transition-colors duration-300 ${isDark ? "bg-[#090D16] text-slate-100" : "bg-[#F8FAFC] text-slate-900"}`}>
 
       {/* ─── PURE LOGO HEADER SIDEBAR ───────────────────────────────────── */}
       <aside className={`fixed inset-y-0 left-0 z-40 w-72 border-r flex flex-col justify-between shrink-0 transition-all duration-300 lg:static ${mobileSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
@@ -2280,6 +2289,16 @@ export default function BackendAdminPortal() {
               <Icons.Dashboard />
               <span>Dashboard Overview</span>
             </button>
+
+            {canAccessCities && (
+              <button
+                onClick={() => { navigateToMenu("cities"); setMobileSidebarOpen(false); }}
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition cursor-pointer font-bold ${activeMenu === "cities" ? isDark ? "bg-slate-800 text-amber-400 border-l-4 border-amber-500" : "bg-slate-900 text-white border-l-4 border-amber-500" : isDark ? "text-slate-200 hover:bg-slate-800" : "text-slate-700 hover:bg-slate-100"}`}
+              >
+                <MapPin className="h-4 w-4 shrink-0 text-amber-500" />
+                <span>City Pages</span>
+              </button>
+            )}
 
             {/* Blogs Accordion */}
             {canAccessBlogs && (
@@ -2663,7 +2682,7 @@ export default function BackendAdminPortal() {
         </header>
 
         {/* Scrollable Body Content */}
-        <main className="flex-1 overflow-y-auto p-4 lg:p-8 space-y-8">
+        <main className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain p-4 lg:p-8 space-y-8">
 
           {/* Status Alert Banner with Auto Disappear */}
           {statusMsg && (
@@ -2687,6 +2706,10 @@ export default function BackendAdminPortal() {
               </div>
               <button onClick={() => setStatusMsg(null)} className="text-slate-400 hover:text-white px-2 cursor-pointer">✕</button>
             </div>
+          )}
+
+          {activeMenu === "cities" && canAccessCities && (
+            <CityManager email={adminUser.email} password={adminUser.password} isDark={isDark} />
           )}
 
           {/* ─── MODULE 1: DASHBOARD OVERVIEW ───────────────────────────────── */}
@@ -2909,7 +2932,7 @@ export default function BackendAdminPortal() {
                         <td className="p-3">
                           <div className="w-12 h-10 rounded-lg bg-slate-200 overflow-hidden relative border border-slate-300 shrink-0">
                             <img
-                              src={b.image || DEFAULT_FALLBACK_IMAGE}
+                              src={getBlogThumbnailUrl(b)}
                               alt={b.title}
                               onError={(e) => handleBlogImageError(e, DEFAULT_FALLBACK_IMAGE)}
                               className="w-full h-full object-cover"
