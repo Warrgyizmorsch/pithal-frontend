@@ -64,6 +64,7 @@ async function main() {
   const records = new Map();
   let available = true;
   const CityModel = {
+    find() { return { sort: () => ({ lean: async () => [...records.values()] }) }; },
     async exists({ slug }) { const record = records.get(slug); return record && !record.productSlug ? true : null; },
     findOne({ slug }) { return { lean: async () => records.get(slug) || null }; },
     async create(record) {
@@ -78,8 +79,16 @@ async function main() {
       return record;
     },
   };
+  const savedCities = load('src/lib/cities.ts', {
+    'server-only': {},
+    react: { cache: fn => fn },
+    '@/lib/db/mongodb': { connectDB: async () => available },
+    '@/lib/models/City': { CityModel },
+    '@/lib/city-content': content,
+  });
+  assert.deepEqual(await savedCities.getCities(), { cities: [], available: true });
   const mocks = {
-    '@/lib/cities': { getCities: async () => ({ cities: [...records.values()], available }) },
+    '@/lib/cities': savedCities,
     '@/lib/db/mongodb': { connectDB: async () => available },
     '@/lib/models/City': { CityModel },
     '@/lib/city-admin-auth': { canManageCities: async request => request.headers.get('x-city-admin-password') === 'test-valid-password' },
@@ -97,6 +106,7 @@ async function main() {
   assert.equal(records.get(cityWithoutState.slug).state, '');
   assert.equal((await collection.POST(request(jaipur))).status, 409);
   assert.equal((await collection.POST(request(jaipurJaw))).status, 201);
+  assert.deepEqual((await savedCities.getCities()).cities.map(city => city.slug), [...records.keys()]);
   const context = { params: Promise.resolve({ slug: jaipur.slug }) };
   assert.equal((await item.PATCH(request({ ...jaipur, h1: 'Updated Jaipur heading' }), context)).status, 200);
   assert.equal(records.get(jaipur.slug).h1, 'Updated Jaipur heading');
@@ -128,11 +138,16 @@ async function main() {
   assert.equal((await item.PATCH(request(content.createCityContent('Missing', 'Rajasthan')), { params: Promise.resolve({ slug: 'stone-crusher-missing' }) })).status, 404);
   assert.equal((await collection.GET()).status, 200);
   available = false;
+  assert.deepEqual(await savedCities.getCities(), { cities: [], available: false });
   assert.equal((await collection.POST(request(jaipur))).status, 503);
   assert.equal((await item.PATCH(request(jaipur), context)).status, 503);
   assert.equal((await collection.GET()).status, 503);
 
   // Resolve canonical and legacy public URLs against isolated saved pages.
+  const cityIndex = load('src/app/city/page.tsx', {
+    'next/navigation': { notFound: () => { throw Object.assign(new Error('Not found'), { status: 404 }); } },
+  });
+  assert.throws(() => cityIndex.default(), error => error.status === 404);
   const routes = load('src/components/city/CityRoute.tsx', {
     '@/lib/cities': { getCities: async () => ({ cities: [jaipur, jaipurJaw, delhi], available: true }) },
     '@/lib/city-products': catalog,
