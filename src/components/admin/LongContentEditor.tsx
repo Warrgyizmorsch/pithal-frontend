@@ -108,19 +108,8 @@ export function LongContentEditor({ value, onChange, email, password, isDark, di
   const input = `w-full rounded-lg border px-3 py-2 ${isDark ? "border-slate-600 bg-slate-800 text-white" : "border-slate-300 bg-white text-slate-900"}`;
   const button = "rounded-lg border border-slate-400 px-3 py-2 text-sm font-semibold disabled:opacity-50";
   return <div className="space-y-3">
-    <p id="long-content-label" className="text-sm font-semibold">Long content</p>
-    <div className="flex flex-wrap items-end gap-3">
-      <label className="min-w-56 flex-1 text-sm">Google Docs link<input type="url" className={`mt-1 ${input}`} value={url} onChange={event => setUrl(event.target.value)} placeholder="https://docs.google.com/document/d/…/edit" /></label>
-      <button type="button" className={button} disabled={busy || !url.trim()} onClick={() => void importDocument()}>{busy ? "Importing…" : "Import Google Doc"}</button>
-      <label className={`${button} cursor-pointer`}>Upload document<input aria-label="Upload long content document" type="file" accept=".docx,.html,.htm,.md,.txt" disabled={busy} className="sr-only" onChange={event => { const file = event.target.files?.[0]; if (file) void importDocument(file); event.target.value = ""; }} /></label>
-    </div>
     {notice && <p role="status" className="text-sm text-emerald-600">{notice}</p>}
-    {sections.length > 1 && <div className="flex flex-wrap gap-3 rounded-lg border border-amber-500 p-3">
-      <label className="min-w-56 flex-1 text-sm">Choose article<select className={`mt-1 ${input}`} value={sectionIndex} onChange={event => setSectionIndex(Number(event.target.value))}>{sections.map((section, index) => <option key={index} value={index}>{section.title}</option>)}</select></label>
-      <button type="button" className={button} onClick={() => { if (update(sections[sectionIndex].html)) { setSections([]); setNotice("Selected article imported. Preview it, then save the page."); } }}>Use selected article</button>
-    </div>}
     {error && <p role="alert" className="text-sm text-red-500">{error}</p>}
-    {warnings.length > 0 && <details className="text-sm"><summary>Document conversion notes ({warnings.length})</summary><ul className="list-disc pl-5">{warnings.map((warning, index) => <li key={index}>{warning}</li>)}</ul></details>}
     <div className="overflow-hidden rounded-xl border border-slate-300">
       <div className="flex flex-wrap items-center gap-2 border-b border-slate-300 bg-slate-100 p-2 text-slate-900">
         {!sourceMode && <>
@@ -133,7 +122,7 @@ export function LongContentEditor({ value, onChange, email, password, isDark, di
         ? <textarea aria-labelledby="long-content-label" required maxLength={LONG_CONTENT_LIMIT} rows={16} className={`${input} rounded-none font-mono text-sm`} value={value} onChange={event => update(event.target.value)} />
         : <div ref={editor} role="textbox" aria-multiline="true" aria-labelledby="long-content-label" aria-disabled={disabled} contentEditable={!disabled} suppressContentEditableWarning onInput={handleInput} onPaste={paste} className={`${contentStyles.content} min-h-80 max-h-[640px] overflow-y-auto bg-white p-5 outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500`} />}
     </div>
-    <p className="text-xs text-slate-500">Paste directly from Google Docs with Ctrl+V, import a shared link, or upload Word (.docx), HTML or Markdown. Headings H1–H6, bold, italic, links, lists and tables are preserved. Plain text cannot retain document heading styles.</p>
+    <p className="text-xs text-slate-500">Paste or type your content directly. Headings H1–H6, bold, italic, links, lists and tables are preserved.</p>
     <div ref={rendered} hidden><LongContent content={value} /></div>
   </div>;
 }
