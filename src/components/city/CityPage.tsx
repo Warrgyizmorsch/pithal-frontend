@@ -1,8 +1,8 @@
 import Image from "next/image";
 import pithalLogo from "../../../public/images/brand/pithal-logo.png";
 import { Fragment } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { LongContent } from "@/components/content/LongContent";
+import { hasContentHeading } from "@/lib/long-content";
 import type { CityContent } from "@/lib/city-content";
 import { getCityProduct, cityPagePath } from "@/lib/city-products";
 import { resolveCityContent } from "@/lib/city-content";
@@ -10,6 +10,7 @@ import { getCitySections } from "@/data/cityPageData";
 import { CityFAQs, CityMobileMenu, CityQuoteForm } from "./CityInteractions";
 import styles from "./CityPage.module.css";
 import { CityProductSlider } from "./CityProductSlider";
+import { CityLongContent } from "./CityLongContent";
 
 const productImages = ["/images/products/prime-jaw-crusher.png", "/images/products/prime-cone-crusher.png", "/images/products/prime-vsi-crusher.png", "/images/products/prime-m-sand-plant.png", "/images/products/prime-vibrating-screen.png", "/images/products/prime-complete-plant.png"];
 const productLinks = ["/products/jaw-crushers", "/products/cone-crushers", "/products/vsi-crushers", "/products/m-sand-plant", "/products/vibrating-screens", "/products/complete-plants"];
@@ -23,6 +24,8 @@ export function CityPage({ city: record, sourcePage, cities }: { city: CityConte
   const { reasons, products, industries, projects, steps, factors } = getCitySections(city);
   const nearby = city === "Jaipur" ? ["Ajmer", "Alwar", "Sikar", "Tonk", "Dausa", "Kishangarh", "Bhilwara", "Kota"] : cities.filter(c => c.citySlug !== record.citySlug && c.state === state && c.productSlug === record.productSlug).map(c => c.name);
   const nearbyLinks = Object.fromEntries(cities.filter(c => c.productSlug === record.productSlug).map(c => [c.name, cityPagePath(c)]));
+  const defaultHeading = `Buying ${general ? "a stone crusher" : product.name} in ${city}: a quick guide`;
+  const hasDocumentHeading = hasContentHeading(content.longContent);
   return (
 <div className={`${styles.page} ${styles.s0}`}>
 
@@ -260,13 +263,18 @@ Supplying &amp; servicing in {city}{state && `, ${state}`}</span>
 </div>
 </section>
 
-{/* BUYER GUIDE (SEO copy) */}
-<section className={styles.s104}>
-<div className={styles.s114}>
-<h2 className={styles.s115}>Buying {general ? "a stone crusher" : product.name} in {city}: a quick guide</h2>
-<div className={styles.longContent}><ReactMarkdown remarkPlugins={[remarkGfm]}>{content.longContent}</ReactMarkdown></div>
-<a href="/blog" className={styles.s116}>Read the full buyer's guide →</a>
-</div>
+{/* BUYER GUIDE / LONG CONTENT */}
+<section className="bg-white py-16 sm:py-20">
+  <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <CityLongContent key={record.slug}>
+      {!hasDocumentHeading && <div className="mb-5">
+        <h2 className="text-2xl sm:text-3xl lg:text-[2.2rem] font-black text-primary tracking-tight leading-tight">{defaultHeading}</h2>
+      </div>}
+      <article aria-label="City product guide">
+        <LongContent content={content.longContent} />
+      </article>
+    </CityLongContent>
+  </div>
 </section>
 
 {/* LEAD FORM */}

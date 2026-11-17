@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { LongContent } from "@/components/content/LongContent";
+import { LongContentEditor } from "./LongContentEditor";
 import { CITY_PRODUCTS, getCityProduct, cityPagePath } from "@/lib/city-products";
 import { citySlug, createCityContent, resolveCityContent, validateCityContent, type CityContent } from "@/lib/city-content";
 
@@ -170,7 +170,7 @@ export function CityManager({ email, password, isDark }: Props) {
           <legend className="sr-only">City content</legend>
           <label className={label}>H1 heading<textarea required maxLength={500} rows={3} className={input} value={draft.h1} onChange={event => change({ h1: event.target.value })} /><span className={`mt-2 block text-xs ${muted}`}>Use a new line for each heading line. The second line uses the design’s olive accent.</span></label>
           <label className={label}>Subheading<textarea required maxLength={5000} rows={4} className={input} value={draft.subheading} onChange={event => change({ subheading: event.target.value })} /></label>
-          <label className={label}>Long content<textarea required maxLength={150000} rows={14} className={input} value={draft.longContent} onChange={event => change({ longContent: event.target.value })} /><span className={`mt-2 block text-xs ${muted}`}>Supports Markdown headings, paragraphs, links, lists and tables. Displayed in the buyer’s guide section.</span></label>
+          <LongContentEditor key={draft.slug} value={draft.longContent} onChange={longContent => change({ longContent })} email={email} password={password} isDark={isDark} disabled={saving} />
         </fieldset>
         <fieldset disabled={saving} className={`${panel} space-y-5 disabled:opacity-60`}>
           <legend className="sr-only">Frequently asked questions</legend>
@@ -182,7 +182,30 @@ export function CityManager({ email, password, isDark }: Props) {
             <label className={label}>Answer<textarea required maxLength={10000} rows={3} className={input} value={faq.answer} onChange={event => change({ faqs: draft.faqs.map((item, position) => position === index ? { ...item, answer: event.target.value } : item) })} /></label>
           </div>)}
         </fieldset>
-        {preview && resolved && <div className={`${panel} space-y-5`}><h2 className="text-lg font-bold">Content Preview — {selectedProduct?.name} in {draft.name}</h2><p className="whitespace-pre-line text-2xl font-bold">{resolved.h1}</p><p>{resolved.subheading}</p><div><p className="text-2xl font-bold">{resolved.capacityValue}</p><p className={`mt-1 text-sm uppercase ${muted}`}>{resolved.capacityLabel}</p></div><div className={`prose max-w-none ${isDark ? "prose-invert" : ""}`}><ReactMarkdown remarkPlugins={[remarkGfm]}>{resolved.longContent}</ReactMarkdown></div>{resolved.faqs.map((faq, index) => <div key={index}><p className="font-bold">{faq.question}</p><p className={`mt-2 ${muted}`}>{faq.answer}</p></div>)}</div>}
+        {preview && resolved && (
+          <div className={`${panel} space-y-6`}>
+            <h2 className="text-lg font-bold">Content Preview — {selectedProduct?.name} in {draft.name}</h2>
+            <p className="whitespace-pre-line text-2xl font-bold">{resolved.h1}</p>
+            <p className="text-slate-600">{resolved.subheading}</p>
+            <div>
+              <p className="text-2xl font-bold text-primary">{resolved.capacityValue}</p>
+              <p className={`mt-1 text-sm uppercase ${muted}`}>{resolved.capacityLabel}</p>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Buyer&apos;s Guide / Long Content Preview</h3>
+              <LongContent content={resolved.longContent} />
+            </div>
+            <div className="space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">FAQs Preview</h3>
+              {resolved.faqs.map((faq, index) => (
+                <div key={index} className="rounded-lg border border-slate-200 p-4">
+                  <p className="font-bold text-primary">{faq.question}</p>
+                  <p className={`mt-1 text-sm ${muted}`}>{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="flex flex-wrap items-center gap-4 pb-8"><button type="submit" disabled={saving} className="rounded-xl bg-amber-500 px-6 py-3 text-sm font-bold text-slate-950 disabled:opacity-50">{saving ? "Saving…" : !draft.updatedAt ? "Create Product Page" : "Save Product Content"}</button>{dirty && <span className={`text-xs ${muted}`}>Unsaved changes</span>}</div>
       </form>
     </>}
