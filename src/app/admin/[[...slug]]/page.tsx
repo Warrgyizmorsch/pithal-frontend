@@ -9,6 +9,8 @@ import { getBlogThumbnailUrl, handleBlogImageError } from "@/lib/blogImage";
 export type AdminMenu =
   | "dashboard"
   | "cities"
+  | "cities-list"
+  | "cities-add"
   | "blogs-list"
   | "blogs-add"
   | "leads-list"
@@ -19,7 +21,9 @@ export type AdminMenu =
 
 export const MENU_TO_ROUTE: Record<AdminMenu, string> = {
   "dashboard": "/admin",
-  "cities": "/admin/cities",
+  "cities": "/admin/allcities",
+  "cities-list": "/admin/allcities",
+  "cities-add": "/admin/addcity",
   "blogs-list": "/admin/allblogpost",
   "blogs-add": "/admin/addnewblog",
   "leads-list": "/admin/allquoteleads",
@@ -40,7 +44,19 @@ export function resolveMenuFromPathname(pathname: string | null | undefined): Ad
 
   switch (sub) {
     case "cities":
-      return "cities";
+    case "allcities":
+    case "all-cities":
+    case "cities-list":
+    case "city-list":
+      return "cities-list";
+
+    case "addcity":
+    case "add-city":
+    case "addnewcity":
+    case "add-new-city":
+    case "cities-add":
+    case "newcity":
+      return "cities-add";
 
     case "allblogpost":
     case "allblogposts":
@@ -992,13 +1008,15 @@ export default function BackendAdminPortal() {
 
   // Navigation State - initialized directly from URL pathname so direct visits and reloads open correct tab
   const [activeMenu, setActiveMenu] = useState<AdminMenu>(() => resolveMenuFromPathname(pathname));
-  const [openSubmenu, setOpenSubmenu] = useState<{ [key: string]: boolean }>({ blogs: true, leads: true, users: true });
+  const [openSubmenu, setOpenSubmenu] = useState<{ [key: string]: boolean }>({ cities: true, blogs: true, leads: true, users: true });
 
   // Keep activeMenu in sync with pathname changes (e.g. direct Next.js navigation)
   useEffect(() => {
     const menuFromUrl = resolveMenuFromPathname(pathname);
     setActiveMenu(menuFromUrl);
-    if (menuFromUrl.startsWith("blogs")) {
+    if (menuFromUrl.startsWith("cities")) {
+      setOpenSubmenu((prev) => ({ ...prev, cities: true }));
+    } else if (menuFromUrl.startsWith("blogs")) {
       setOpenSubmenu((prev) => ({ ...prev, blogs: true }));
     } else if (menuFromUrl.startsWith("leads")) {
       setOpenSubmenu((prev) => ({ ...prev, leads: true }));
@@ -1012,7 +1030,9 @@ export default function BackendAdminPortal() {
     const handlePopState = () => {
       const menuFromUrl = resolveMenuFromPathname(window.location.pathname);
       setActiveMenu(menuFromUrl);
-      if (menuFromUrl.startsWith("blogs")) {
+      if (menuFromUrl.startsWith("cities")) {
+        setOpenSubmenu((prev) => ({ ...prev, cities: true }));
+      } else if (menuFromUrl.startsWith("blogs")) {
         setOpenSubmenu((prev) => ({ ...prev, blogs: true }));
       } else if (menuFromUrl.startsWith("leads")) {
         setOpenSubmenu((prev) => ({ ...prev, leads: true }));
@@ -1026,7 +1046,9 @@ export default function BackendAdminPortal() {
 
   const navigateToMenu = (menu: AdminMenu) => {
     setActiveMenu(menu);
-    if (menu.startsWith("blogs")) {
+    if (menu.startsWith("cities")) {
+      setOpenSubmenu((prev) => ({ ...prev, cities: true }));
+    } else if (menu.startsWith("blogs")) {
       setOpenSubmenu((prev) => ({ ...prev, blogs: true }));
     } else if (menu.startsWith("leads")) {
       setOpenSubmenu((prev) => ({ ...prev, leads: true }));
@@ -2290,14 +2312,57 @@ export default function BackendAdminPortal() {
               <span>Dashboard Overview</span>
             </button>
 
+            {/* City Pages Accordion */}
             {canAccessCities && (
-              <button
-                onClick={() => { navigateToMenu("cities"); setMobileSidebarOpen(false); }}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition cursor-pointer font-bold ${activeMenu === "cities" ? isDark ? "bg-slate-800 text-amber-400 border-l-4 border-amber-500" : "bg-slate-900 text-white border-l-4 border-amber-500" : isDark ? "text-slate-200 hover:bg-slate-800" : "text-slate-700 hover:bg-slate-100"}`}
-              >
-                <MapPin className="h-4 w-4 shrink-0 text-amber-500" />
-                <span>City Pages</span>
-              </button>
+              <div>
+                <button
+                  onClick={() => setOpenSubmenu({ ...openSubmenu, cities: !openSubmenu.cities })}
+                  className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer font-bold ${activeMenu.startsWith("cities")
+                      ? isDark ? "bg-slate-800 text-amber-400 border-l-4 border-amber-500" : "bg-slate-900 text-white shadow-sm border-l-4 border-amber-500"
+                      : isDark ? "text-slate-200 hover:bg-slate-800 hover:text-white" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                    }`}
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <MapPin className="h-4 w-4 shrink-0 text-amber-500" />
+                    <span className="truncate">City Pages</span>
+                  </div>
+                  <svg
+                    className={`w-4 h-4 transform transition-transform duration-200 shrink-0 ${openSubmenu.cities ? "rotate-180 text-amber-500" : activeMenu.startsWith("cities") ? "text-amber-400" : isDark ? "text-slate-300" : "text-slate-400"
+                      }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                <div className={`transition-all duration-300 ease-in-out overflow-hidden ${openSubmenu.cities ? "max-h-40 opacity-100 mt-1" : "max-h-0 opacity-0"}`}>
+                  <div className={`ml-5 space-y-1 border-l-2 ${isDark ? "border-slate-700" : "border-slate-200"} pl-3 py-1`}>
+                    <button
+                      onClick={() => { navigateToMenu("cities-list"); setMobileSidebarOpen(false); }}
+                      className={`w-full text-left px-3 py-2 rounded-xl text-xs transition cursor-pointer flex items-center gap-2.5 ${activeMenu === "cities-list" || activeMenu === "cities"
+                          ? isDark ? "bg-amber-500/20 text-amber-400 font-black border-l-2 border-amber-500" : "bg-amber-500/15 text-amber-700 font-black border-l-2 border-amber-500"
+                          : isDark ? "text-slate-200 hover:text-white hover:bg-slate-800/80 font-bold" : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 font-semibold"
+                        }`}
+                    >
+                      <Icons.List />
+                      <span>All Cities</span>
+                    </button>
+                    <button
+                      onClick={() => { navigateToMenu("cities-add"); setMobileSidebarOpen(false); }}
+                      className={`w-full text-left px-3 py-2 rounded-xl text-xs transition cursor-pointer flex items-center gap-2.5 ${activeMenu === "cities-add"
+                          ? isDark ? "bg-amber-500/20 text-amber-400 font-black border-l-2 border-amber-500" : "bg-amber-500/15 text-amber-700 font-black border-l-2 border-amber-500"
+                          : isDark ? "text-slate-200 hover:text-white hover:bg-slate-800/80 font-bold" : "text-slate-700 hover:text-slate-900 hover:bg-slate-100 font-semibold"
+                        }`}
+                    >
+                      <Icons.Plus />
+                      <span>Add New City</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             )}
 
             {/* Blogs Accordion */}
@@ -2708,8 +2773,14 @@ export default function BackendAdminPortal() {
             </div>
           )}
 
-          {activeMenu === "cities" && canAccessCities && (
-            <CityManager email={adminUser.email} password={adminUser.password} isDark={isDark} />
+          {(activeMenu === "cities" || activeMenu === "cities-list" || activeMenu === "cities-add") && canAccessCities && (
+            <CityManager
+              email={adminUser.email}
+              password={adminUser.password}
+              isDark={isDark}
+              activeMenu={activeMenu === "cities" ? "cities-list" : activeMenu}
+              onNavigateMenu={navigateToMenu}
+            />
           )}
 
           {/* ─── MODULE 1: DASHBOARD OVERVIEW ───────────────────────────────── */}
@@ -2993,7 +3064,7 @@ export default function BackendAdminPortal() {
 
           {/* ─── MODULE 3: BLOG EDITOR ─────────────────────────────────────── */}
           {activeMenu === "blogs-add" && canAccessBlogs && (
-            <div className={`rounded-2xl border p-6 lg:p-8 space-y-6 max-w-5xl mx-auto ${isDark ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900 shadow-xl"}`}>
+            <div className={`rounded-2xl border p-6 lg:p-8 space-y-6 w-full ${isDark ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900 shadow-xl"}`}>
 
               <div className="flex items-center justify-between border-b pb-4 border-slate-200">
                 <div>
@@ -3693,7 +3764,7 @@ export default function BackendAdminPortal() {
 
           {/* ─── MODULE 5A: ADD USER FORM ──────────────────────────────────────── */}
           {activeMenu === "users-add" && canAccessUsers && (
-            <div className={`rounded-2xl border p-6 lg:p-8 space-y-6 max-w-4xl mx-auto ${isDark ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900 shadow-xl"}`}>
+            <div className={`rounded-2xl border p-6 lg:p-8 space-y-6 w-full ${isDark ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900 shadow-xl"}`}>
               <div className="flex items-center justify-between border-b pb-4 border-slate-200">
                 <div>
                   <h2 className="text-base font-bold text-slate-900 dark:text-white">Add User</h2>

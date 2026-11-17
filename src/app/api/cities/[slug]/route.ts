@@ -30,3 +30,28 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ sl
     return NextResponse.json({ success: false, error: "Could not update this city. Please try again." }, { status: 500 });
   }
 }
+
+export async function DELETE(request: Request, { params }: { params: Promise<{ slug: string }> }) {
+  try {
+    if (!request.headers.get("x-city-admin-email") || !request.headers.get("x-city-admin-password")) {
+      return NextResponse.json({ success: false, error: "Admin authentication is required." }, { status: 401 });
+    }
+    if (!(await connectDB())) {
+      return NextResponse.json({ success: false, error: "City storage is unavailable. No changes were saved." }, { status: 503 });
+    }
+    if (!(await canManageCities(request))) {
+      return NextResponse.json({ success: false, error: "Your account cannot manage city pages. Please sign in with an active content account." }, { status: 403 });
+    }
+    const { slug } = await params;
+    const deleted = await CityModel.findOneAndDelete({
+      $or: [{ slug }, { storageSlug: slug }, { citySlug: slug }]
+    });
+    if (!deleted) {
+      return NextResponse.json({ success: false, error: "City page not found. Reload the list and try again." }, { status: 404 });
+    }
+    return NextResponse.json({ success: true, message: "City page deleted successfully." });
+  } catch (err) {
+    console.warn("[Cities] Delete failed:", err);
+    return NextResponse.json({ success: false, error: "Could not delete this city page. Please try again." }, { status: 500 });
+  }
+}
