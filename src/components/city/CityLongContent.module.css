@@ -1,0 +1,11 @@
+.container { scroll-margin-top: 100px; }
+.preview { position: relative; max-height: 250px; overflow: hidden; }
+.expanded { max-height: none; overflow: visible; }
+.fade { position: absolute; inset: auto 0 0; height: 110px; background: linear-gradient(to top, #fff, transparent); pointer-events: none; }
+.actions { display: flex; justify-content: center; margin-top: 24px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 9px 22px; border: 1px solid #abb000; border-radius: 9999px; background: #fff; color: #8a8f00; font-family: inherit; font-size: 14px; font-weight: 500; line-height: 1.5; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: background-color 180ms, color 180ms; }
+.button:hover { background: #abb000; color: #fff; }
+.button:focus-visible { outline: 2px solid #0c2862; outline-offset: 4px; }
+.button svg { transition: transform 200ms; }
+.up { transform: rotate(180deg); }
+@media (prefers-reduced-motion: reduce) { .button, .button svg { transition: none; } }
