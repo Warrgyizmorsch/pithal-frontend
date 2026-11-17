@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import pithalLogo from "../../../public/images/brand/pithal-logo.png";
 import { Fragment } from "react";
 import { LongContent } from "@/components/content/LongContent";
@@ -22,8 +23,7 @@ export function CityPage({ city: record, sourcePage, cities }: { city: CityConte
   const city = record.name;
   const state = record.state;
   const { reasons, products, industries, projects, steps, factors } = getCitySections(city);
-  const nearby = city === "Jaipur" ? ["Ajmer", "Alwar", "Sikar", "Tonk", "Dausa", "Kishangarh", "Bhilwara", "Kota"] : cities.filter(c => c.citySlug !== record.citySlug && c.state === state && c.productSlug === record.productSlug).map(c => c.name);
-  const nearbyLinks = Object.fromEntries(cities.filter(c => c.productSlug === record.productSlug).map(c => [c.name, cityPagePath(c)]));
+  const otherCityPages = cities.filter(c => c.citySlug !== record.citySlug);
   const defaultHeading = `Buying ${general ? "a stone crusher" : product.name} in ${city}: a quick guide`;
   const hasDocumentHeading = hasContentHeading(content.longContent);
   return (
@@ -57,7 +57,6 @@ export function CityPage({ city: record, sourcePage, cities }: { city: CityConte
 <div className={styles.s11}>
 <nav aria-label="Breadcrumb" className={styles.s12}>
 <a href="/" className={styles.s13}>Home</a><span aria-hidden="true">›</span>
-<a href="/city" className={styles.s13}>Locations</a><span aria-hidden="true">›</span>
 <span className={styles.s14}>{product.name} Manufacturer in {city}</span>
 </nav>
 </div>
@@ -237,19 +236,21 @@ Supplying &amp; servicing in {city}{state && `, ${state}`}</span>
 </section>
 
 {/* SERVICE AREA */}
+{otherCityPages.length > 0 && (
 <section className={styles.s104}>
 <div className={styles.s105}>
 <div className={styles.s106}>
-<h2 className={styles.s107}>We also supply <span className={styles.s38}>near {city}</span></h2>
-<p className={styles.s108}>Same machines, same installation and service team for projects across the surrounding districts.</p>
+<h2 className={styles.s107}>We also supply <span className={styles.s38}>in other cities</span></h2>
+<p className={styles.s108}>Explore our city pages for machines, installation and service support in your area.</p>
 </div>
-<div className={styles.s109}>
-{nearby.map((c, index) => <a key={index} href={nearbyLinks[c] || `/contact?city=${encodeURIComponent(c)}`} className={styles.s110}>
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z" stroke="#8A8F00" strokeWidth="2.2"></path></svg>{product.name} in {c}</a>
+<nav aria-label="Other city pages" className={styles.s109}>
+{otherCityPages.map(c => <Link key={c.slug} href={cityPagePath(c)} className={styles.s110}>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z" stroke="#8A8F00" strokeWidth="2.2"></path></svg>{getCityProduct(c.productSlug)!.name} in {c.name}</Link>
 )}
-</div>
+</nav>
 </div>
 </section>
+)}
 
 {/* FAQ */}
 <section className={styles.s15}>
