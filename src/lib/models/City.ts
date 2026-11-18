@@ -9,6 +9,8 @@ const CitySchema = new Schema<CityContent>({
   productSlug: { type: String, required: true, maxlength: 100 },
   h1: { type: String, required: true, maxlength: 500 },
   subheading: { type: String, required: true, maxlength: 5000 },
+  metaTags: { type: String, default: "", maxlength: 500 },
+  metaDescription: { type: String, default: "", maxlength: 5000 },
   capacityValue: { type: String, required: true, maxlength: 60 },
   capacityLabel: { type: String, required: true, maxlength: 100 },
   longContent: { type: String, required: true, maxlength: 150000 },
@@ -20,4 +22,5 @@ const existingModel = mongoose.models.City as Model<CityContent> | undefined;
 if (existingModel && !existingModel.schema.path("productSlug")) existingModel.schema.add(CitySchema.obj);
 if (existingModel && !existingModel.schema.path("capacityValue")) existingModel.schema.add({ capacityValue: CitySchema.obj.capacityValue, capacityLabel: CitySchema.obj.capacityLabel });
 existingModel?.schema.path("state")?.required(false);
+if (existingModel && !existingModel.schema.path("metaTags")) existingModel.schema.add({ metaTags: CitySchema.obj.metaTags, metaDescription: CitySchema.obj.metaDescription });
 export const CityModel: Model<CityContent> = existingModel || mongoose.model<CityContent>("City", CitySchema);

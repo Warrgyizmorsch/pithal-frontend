@@ -61,6 +61,26 @@ async function main() {
   for (const invalid of [null, {}, { ...jaipur, slug: '../admin' }, { ...jaipur, faqs: [{}] }, { ...jaipur, faqs: Array(51).fill(jaipur.faqs[0]) }, { ...jaipur, name: ' ' }, { ...jaipur, productSlug: 'unknown' }, { ...jaipurJaw, slug: jaipur.slug }, { ...jaipur, longContent: '' }]) assert(content.validateCityContent(invalid).error);
   assert.equal(content.validateCityContent({ ...jaipur, admin: true }).data.admin, undefined);
 
+  const beforeMetadataControls = { ...jaipur };
+  delete beforeMetadataControls.metaTags;
+  delete beforeMetadataControls.metaDescription;
+  assert.equal(content.normalizeCityContent(beforeMetadataControls).metaTags, '');
+  assert.equal(content.resolveCityContent(beforeMetadataControls).metaDescription, '');
+  assert.equal(content.validateCityContent(beforeMetadataControls).data.metaTags, '');
+  const seoFields = {
+    metaTags: '{{product}} in {{city}} | Pithal Machines',
+    metaDescription: 'Explore {{product}} equipment in {{city}}, {{state}}.',
+  };
+  const seoCity = { ...delhi, ...seoFields };
+  const storedSeoCity = new StorageModel(seoCity);
+  await storedSeoCity.validate();
+  assert.equal(storedSeoCity.toObject().metaTags, seoFields.metaTags);
+  assert.equal(storedSeoCity.toObject().metaDescription, seoFields.metaDescription);
+  const trimmedSeo = content.validateCityContent({ ...seoCity, metaTags: ` ${seoFields.metaTags} `, metaDescription: ` ${seoFields.metaDescription} ` }).data;
+  assert.equal(trimmedSeo.metaTags, seoFields.metaTags);
+  assert.equal(trimmedSeo.metaDescription, seoFields.metaDescription);
+  for (const invalidSeo of [{ metaTags: 123 }, { metaDescription: null }, { metaTags: 'x'.repeat(501) }, { metaDescription: 'x'.repeat(5001) }]) assert(content.validateCityContent({ ...jaipur, ...invalidSeo }).error);
+
   const records = new Map();
   let available = true;
   const CityModel = {
@@ -101,7 +121,9 @@ async function main() {
   assert.equal((await collection.POST(request(jaipur, 'wrong-password'))).status, 403);
   assert.equal((await collection.POST(request({}))).status, 400);
   assert.equal((await collection.POST(request(jaipur))).status, 201);
-  assert.equal((await collection.POST(request(delhi))).status, 201);
+  assert.equal((await collection.POST(request(seoCity))).status, 201);
+  assert.equal(records.get(delhi.slug).metaTags, seoFields.metaTags);
+  assert.equal(records.get(delhi.slug).metaDescription, seoFields.metaDescription);
   assert.equal((await collection.POST(request(payloadWithoutState))).status, 201);
   assert.equal(records.get(cityWithoutState.slug).state, '');
   assert.equal((await collection.POST(request(jaipur))).status, 409);
@@ -112,6 +134,21 @@ async function main() {
   assert.equal(records.get(jaipur.slug).h1, 'Updated Jaipur heading');
   assert.equal(records.get(delhi.slug).h1, delhi.h1);
   assert.equal(records.get(jaipurJaw.slug).h1, jaipurJaw.h1);
+  const seoContext = { params: Promise.resolve({ slug: delhi.slug }) };
+  const updatedSeo = { ...seoCity, metaTags: 'Custom Delhi title', metaDescription: 'Custom Delhi description' };
+  assert.equal((await item.PATCH(request(updatedSeo), seoContext)).status, 200);
+  const reloadedSeo = (await (await collection.GET()).json()).data.find(city => city.slug === delhi.slug);
+  assert.equal(reloadedSeo.metaTags, updatedSeo.metaTags);
+  assert.equal(reloadedSeo.metaDescription, updatedSeo.metaDescription);
+  const olderClientPayload = { ...delhi };
+  delete olderClientPayload.metaTags;
+  delete olderClientPayload.metaDescription;
+  assert.equal((await item.PATCH(request(olderClientPayload), seoContext)).status, 200);
+  assert.equal(records.get(delhi.slug).metaTags, updatedSeo.metaTags);
+  assert.equal(records.get(delhi.slug).metaDescription, updatedSeo.metaDescription);
+  assert.equal((await item.PATCH(request({ ...delhi, metaTags: '', metaDescription: '' }), seoContext)).status, 200);
+  assert.equal(records.get(delhi.slug).metaTags, '');
+  assert.equal(records.get(delhi.slug).metaDescription, '');
   const jawContext = { params: Promise.resolve({ slug: jaipurJaw.slug }) };
   assert.equal((await item.PATCH(request({ ...jaipurJaw, h1: 'Updated Jaipur Jaw', subheading: 'Jaw subheading', longContent: 'Jaw long content', faqs: [{question:'Jaw FAQ?',answer:'Jaw answer'}] }), jawContext)).status, 200);
   assert.equal(records.get(jaipur.slug).h1, 'Updated Jaipur heading');
@@ -148,8 +185,9 @@ async function main() {
     'next/navigation': { notFound: () => { throw Object.assign(new Error('Not found'), { status: 404 }); } },
   });
   assert.throws(() => cityIndex.default(), error => error.status === 404);
+  const routeCities = [beforeMetadataControls, jaipurJaw, seoCity];
   const routes = load('src/components/city/CityRoute.tsx', {
-    '@/lib/cities': { getCities: async () => ({ cities: [jaipur, jaipurJaw, delhi], available: true }) },
+    '@/lib/cities': { getCities: async () => ({ cities: routeCities, available: true }) },
     '@/lib/city-products': catalog,
     '@/lib/city-content': content,
     './CityPage': { CityPage: () => null },
@@ -160,6 +198,20 @@ async function main() {
   assert.equal(jawPage.props.city.productSlug, 'prime-jaw-crusher');
   assert.equal(jawPage.props.sourcePage, '/prime-jaw-crusher-jaipur');
   assert.equal((await routes.cityRouteMetadata(publicProps(jaipurJaw.slug), true)).alternates.canonical, '/prime-jaw-crusher-jaipur');
+  const legacyMetadata = await routes.cityRouteMetadata(publicProps(jaipur.slug));
+  assert.equal(legacyMetadata.title, 'Stone Crusher Manufacturer in Jaipur | Pithal Machines');
+  assert.equal(legacyMetadata.description, content.resolveCityContent(jaipur).subheading);
+  const seoMetadata = await routes.cityRouteMetadata(publicProps(delhi.slug));
+  assert.equal(seoMetadata.title, 'Stone Crusher in Delhi | Pithal Machines');
+  assert.equal(seoMetadata.description, 'Explore Stone Crusher equipment in Delhi, Delhi.');
+  routeCities[1] = { ...jaipurJaw, ...seoFields };
+  const productMetadata = await routes.cityRouteMetadata(publicProps(jaipurJaw.slug), true);
+  assert.equal(productMetadata.title, 'Prime Jaw Crusher in Jaipur | Pithal Machines');
+  assert.equal(productMetadata.description, 'Explore Prime Jaw Crusher equipment in Jaipur, Rajasthan.');
+  routeCities[1] = { ...jaipurJaw, metaTags: '  ', metaDescription: '' };
+  const fallbackMetadata = await routes.cityRouteMetadata(publicProps(jaipurJaw.slug), true);
+  assert.equal(fallbackMetadata.title, 'Prime Jaw Crusher Manufacturer in Jaipur | Pithal Machines');
+  assert.equal(fallbackMetadata.description, content.resolveCityContent(jaipurJaw).subheading);
   assert.equal((await routes.renderCityRoute(publicProps(jaipur.slug))).props.sourcePage, '/city/stone-crusher-jaipur');
   await assert.rejects(routes.renderCityRoute(publicProps('jaipur')), error => error.status === 308 && error.url === '/city/stone-crusher-jaipur');
   await assert.rejects(routes.renderCityRoute(publicProps(jaipurJaw.slug)), error => error.status === 308 && error.url === '/prime-jaw-crusher-jaipur');

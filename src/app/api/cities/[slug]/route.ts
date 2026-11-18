@@ -21,7 +21,7 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ sl
     if (result.data.slug !== current.slug || result.data.citySlug !== current.citySlug || result.data.productSlug !== current.productSlug) return NextResponse.json({ success: false, error: "Select the city and product separately to edit their page. An existing page's city and product cannot be changed." }, { status: 400 });
     if (result.data.name !== current.name || result.data.state !== current.state) return NextResponse.json({ success: false, error: "The selected city details cannot be changed from a product page." }, { status: 400 });
     const incoming = payload as Record<string, unknown>;
-    const data = { ...result.data, capacityValue: incoming.capacityValue === undefined ? current.capacityValue : result.data.capacityValue, capacityLabel: incoming.capacityLabel === undefined ? current.capacityLabel : result.data.capacityLabel };
+    const data = { ...result.data, metaTags: incoming.metaTags === undefined ? current.metaTags : result.data.metaTags, metaDescription: incoming.metaDescription === undefined ? current.metaDescription : result.data.metaDescription, capacityValue: incoming.capacityValue === undefined ? current.capacityValue : result.data.capacityValue, capacityLabel: incoming.capacityLabel === undefined ? current.capacityLabel : result.data.capacityLabel };
     const city = await CityModel.findOneAndUpdate({ slug }, { $set: data }, { new: true, runValidators: true });
     if (!city) return NextResponse.json({ success: false, error: "City not found. Reload the list and try again." }, { status: 404 });
     return NextResponse.json({ success: true, data: city });

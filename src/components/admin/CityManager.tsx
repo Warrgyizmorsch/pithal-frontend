@@ -45,6 +45,8 @@ export function CityManager({ email, password, isDark, activeMenu = "cities-list
       capacityLabel: "",
       h1: "",
       subheading: "",
+      metaTags: "",
+      metaDescription: "",
       longContent: "",
       faqs: [],
     };
@@ -159,7 +161,7 @@ export function CityManager({ email, password, isDark, activeMenu = "cities-list
     const original =
       cities.find(page => page.slug === draft.slug) ||
       createCityContent(draft.name, draft.state, draft.productSlug, draft.citySlug);
-    const contentChanged = (["h1", "subheading", "capacityValue", "capacityLabel", "longContent", "faqs"] as const).some(
+    const contentChanged = (["h1", "subheading", "metaTags", "metaDescription", "capacityValue", "capacityLabel", "longContent", "faqs"] as const).some(
       key => JSON.stringify(original[key]) !== JSON.stringify(draft[key])
     );
     if (contentChanged && !canSwitch()) return;
@@ -825,12 +827,60 @@ export function CityManager({ email, password, isDark, activeMenu = "cities-list
                 </label>
               </fieldset>
 
-              {/* Card 2: Hero Capacity */}
+              {/* Card 2: SEO Metadata */}
+              <fieldset disabled={saving} className={`${panel} space-y-5 disabled:opacity-60`}>
+                <legend className="sr-only">SEO Metadata</legend>
+                <div className="border-b pb-3 border-slate-700/40">
+                  <h2 className="text-sm font-bold text-amber-500 uppercase tracking-wider">
+                    2. SEO Metadata
+                  </h2>
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:items-center">
+                  <label htmlFor="city-meta-tags" className={label}>Meta Tag</label>
+                  <div className="md:col-span-2">
+                    <input
+                      id="city-meta-tags"
+                      aria-describedby="city-meta-tags-hint"
+                      type="text"
+                      maxLength={500}
+                      placeholder="Enter Meta Tag"
+                      className={input}
+                      value={draft.metaTags ?? ""}
+                      onChange={event => change({ metaTags: event.target.value })}
+                    />
+                    <span id="city-meta-tags-hint" className={`mt-1.5 block text-[11px] ${muted}`}>
+                      SEO page title. Leave blank to use the H1 heading and Pithal Machines.
+                    </span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:items-center">
+                  <label htmlFor="city-meta-description" className={label}>Meta Description</label>
+                  <div className="md:col-span-2">
+                    <textarea
+                      id="city-meta-description"
+                      aria-describedby="city-meta-description-hint"
+                      rows={3}
+                      maxLength={5000}
+                      placeholder="Enter Meta Description"
+                      className={input}
+                      value={draft.metaDescription ?? ""}
+                      onChange={event => change({ metaDescription: event.target.value })}
+                    />
+                    <span id="city-meta-description-hint" className={`mt-1.5 block text-[11px] ${muted}`}>
+                      Leave blank to use the subheading. Both fields support {"{{city}}"}, {"{{state}}"} and {"{{product}}"}.
+                    </span>
+                  </div>
+                </div>
+              </fieldset>
+
+              {/* Card 3: Hero Capacity */}
               <fieldset disabled={saving} className={`${panel} grid gap-5 sm:grid-cols-2 disabled:opacity-60`}>
                 <legend className="sr-only">Hero Capacity</legend>
                 <div className="sm:col-span-2 border-b pb-3 border-slate-700/40">
                   <h2 className="text-sm font-bold text-amber-500 uppercase tracking-wider">
-                    2. Hero Capacity &amp; Key Highlights
+                    3. Hero Capacity &amp; Key Highlights
                   </h2>
                   <p className={`mt-1 text-xs ${muted}`}>
                     Configures the primary statistic displayed directly below the hero buttons on the landing page.
@@ -862,12 +912,12 @@ export function CityManager({ email, password, isDark, activeMenu = "cities-list
                 </label>
               </fieldset>
 
-              {/* Card 3: Headings & Long Content */}
+              {/* Card 4: Headings & Long Content */}
               <fieldset disabled={saving} className={`${panel} space-y-5 disabled:opacity-60`}>
                 <legend className="sr-only">City Content</legend>
                 <div className="border-b pb-3 border-slate-700/40">
                   <h2 className="text-sm font-bold text-amber-500 uppercase tracking-wider">
-                    3. Page Content &amp; Buyer&apos;s Guide
+                    4. Page Content &amp; Buyer&apos;s Guide
                   </h2>
                   <p className={`mt-1 text-xs ${muted}`}>
                     Long content automatically formats headings, tables, callout boxes, and paragraphs just like blog posts.
@@ -918,13 +968,13 @@ export function CityManager({ email, password, isDark, activeMenu = "cities-list
                 </div>
               </fieldset>
 
-              {/* Card 4: FAQs */}
+              {/* Card 5: FAQs */}
               <fieldset disabled={saving} className={`${panel} space-y-5 disabled:opacity-60`}>
                 <legend className="sr-only">Frequently Asked Questions</legend>
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b pb-3 border-slate-700/40">
                   <div>
                     <h2 className="text-sm font-bold text-amber-500 uppercase tracking-wider">
-                      4. Frequently Asked Questions ({draft.faqs.length})
+                      5. Frequently Asked Questions ({draft.faqs.length})
                     </h2>
                     <p className={`mt-1 text-xs ${muted}`}>
                       Add FAQ items for local city queries and technical product specs.
