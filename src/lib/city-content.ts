@@ -14,6 +14,8 @@ export interface CityContent {
   storageSlug?: string;
   h1: string;
   subheading: string;
+  metaTags: string;
+  metaDescription: string;
   capacityValue: string;
   capacityLabel: string;
   faqs: CityFAQ[];
@@ -40,6 +42,8 @@ export function createCityContent(name = "Jaipur", state = "Rajasthan", productS
     slug: `${productSlug}-${locationSlug}`,
     citySlug: locationSlug,
     productSlug,
+    metaTags: "",
+    metaDescription: "",
     ...cityCapacityDefaults(productSlug),
     h1: "Stone Crusher\nManufacturer\nin {{city}}",
     subheading: "Pithal Machines builds high-performance stone crushers and complete crushing plants from 150 TPH to 600 TPH at our Udaipur factory — and supplies, installs and services them for quarries, contractors and infrastructure projects across {{city}}.",
@@ -75,14 +79,14 @@ export function normalizeCityContent(record: CityContent): CityContent {
   const locationSlug = record.citySlug || (record.slug.startsWith(`${productSlug}-`) ? record.slug.slice(productSlug.length + 1) : record.slug);
   const slug = `${productSlug}-${locationSlug}`;
   const defaults = cityCapacityDefaults(productSlug);
-  return { ...record, capacityValue: record.capacityValue ?? defaults.capacityValue, capacityLabel: record.capacityLabel ?? defaults.capacityLabel, state: record.state || "", productSlug, citySlug: locationSlug, slug, ...(record.slug !== slug ? { storageSlug: record.slug } : {}) };
+  return { ...record, metaTags: record.metaTags ?? "", metaDescription: record.metaDescription ?? "", capacityValue: record.capacityValue ?? defaults.capacityValue, capacityLabel: record.capacityLabel ?? defaults.capacityLabel, state: record.state || "", productSlug, citySlug: locationSlug, slug, ...(record.slug !== slug ? { storageSlug: record.slug } : {}) };
 }
 
 export function resolveCityContent(city: CityContent): CityContent {
   const product = getCityProduct(city.productSlug);
   const resolve = (text: string) => text.replace(/{{city}}/g, () => city.name).replace(/{{state}}/g, () => city.state).replace(/{{product}}/g, () => product?.name || "Stone Crusher");
   const defaults = cityCapacityDefaults(city.productSlug);
-  return { ...city, capacityValue: resolve(city.capacityValue ?? defaults.capacityValue), capacityLabel: resolve(city.capacityLabel ?? defaults.capacityLabel), h1: resolve(city.h1), subheading: resolve(city.subheading), longContent: resolve(city.longContent), faqs: city.faqs.map(faq => ({ question: resolve(faq.question), answer: resolve(faq.answer) })) };
+  return { ...city, metaTags: resolve(city.metaTags ?? ""), metaDescription: resolve(city.metaDescription ?? ""), capacityValue: resolve(city.capacityValue ?? defaults.capacityValue), capacityLabel: resolve(city.capacityLabel ?? defaults.capacityLabel), h1: resolve(city.h1), subheading: resolve(city.subheading), longContent: resolve(city.longContent), faqs: city.faqs.map(faq => ({ question: resolve(faq.question), answer: resolve(faq.answer) })) };
 }
 
 export function validateCityContent(value: unknown): { data: CityContent; error?: never } | { error: string; data?: never } {
@@ -93,6 +97,9 @@ export function validateCityContent(value: unknown): { data: CityContent; error?
     if (typeof body[key] !== "string" || !body[key].trim() || body[key].length > max) return { error: `${key} is required and must be at most ${max} characters.` };
   }
   if (body.state !== undefined && (typeof body.state !== "string" || body.state.length > 100)) return { error: "State must be text of at most 100 characters." };
+  for (const [field, max] of Object.entries({ metaTags: 500, metaDescription: 5000 })) {
+    if (body[field] !== undefined && (typeof body[field] !== "string" || body[field].length > max)) return { error: `${field} must be text of at most ${max} characters.` };
+  }
   for (const [field, max] of Object.entries({ capacityValue: 60, capacityLabel: 100 })) {
     if (body[field] !== undefined && (typeof body[field] !== "string" || !body[field].trim() || body[field].length > max)) return { error: `${field} must be non-empty text of at most ${max} characters.` };
   }
@@ -107,5 +114,5 @@ export function validateCityContent(value: unknown): { data: CityContent; error?
     faqs.push({ question: faq.question.trim(), answer: faq.answer.trim() });
   }
   const defaults = cityCapacityDefaults(body.productSlug as string);
-  return { data: { name: (body.name as string).trim(), state: typeof body.state === "string" ? body.state.trim() : "", slug: body.slug as string, citySlug: body.citySlug as string, productSlug: body.productSlug as string, h1: (body.h1 as string).trim(), subheading: (body.subheading as string).trim(), capacityValue: typeof body.capacityValue === "string" ? body.capacityValue.trim() : defaults.capacityValue, capacityLabel: typeof body.capacityLabel === "string" ? body.capacityLabel.trim() : defaults.capacityLabel, longContent: (body.longContent as string).trim(), faqs } };
+  return { data: { name: (body.name as string).trim(), state: typeof body.state === "string" ? body.state.trim() : "", slug: body.slug as string, citySlug: body.citySlug as string, productSlug: body.productSlug as string, h1: (body.h1 as string).trim(), subheading: (body.subheading as string).trim(), metaTags: typeof body.metaTags === "string" ? body.metaTags.trim() : "", metaDescription: typeof body.metaDescription === "string" ? body.metaDescription.trim() : "", capacityValue: typeof body.capacityValue === "string" ? body.capacityValue.trim() : defaults.capacityValue, capacityLabel: typeof body.capacityLabel === "string" ? body.capacityLabel.trim() : defaults.capacityLabel, longContent: (body.longContent as string).trim(), faqs } };
 }

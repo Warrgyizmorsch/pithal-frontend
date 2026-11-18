@@ -22,7 +22,7 @@ async function lookup(slug: string, root: boolean) {
 export async function cityRouteMetadata({ params }: CityRouteProps, root = false): Promise<Metadata> {
   const { city: record } = await lookup((await params).slug, root);
   const city = resolveCityContent(record);
-  return { title: `${city.h1.replace(/\n/g, " ")} | Pithal Machines`, description: city.subheading, alternates: { canonical: cityPagePath(record) } };
+  return { title: city.metaTags.trim() || `${city.h1.replace(/\n/g, " ")} | Pithal Machines`, description: city.metaDescription.trim() || city.subheading, alternates: { canonical: cityPagePath(record) } };
 }
 
 export async function renderCityRoute({ params }: CityRouteProps, root = false) {
